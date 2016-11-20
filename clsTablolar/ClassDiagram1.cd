@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="clsTablolar.Stok.csStokFiyatKarsilastirma" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAwAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Stok\csStokFiyatKarsilastirma.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="clsTablolar.Stok.csStok" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>YQRPENBEkyA9gHB0NASgqFCqqgg6hEAQEiAEAYUBDAs=</HashCode>
+      <FileName>Stok\csStok.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.258" Collapsed="true" />
+  </Class>
+  <Class Name="clsTablolar.Stok.csStokBirimTanimlari" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAQCAAAAAAAAAAAAAAAAAAgAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Stok\csStokBirimTanimlari.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

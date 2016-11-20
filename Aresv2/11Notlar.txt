@@ -1,0 +1,69 @@
+﻿test hamısına
+
+a
+of be amk
+dsds
+
+ne alaka nan
+
+heyyyyhmmm sanbırınm olucak
+heyyyy
+ama amk ben senin
+VOIP
+LİSANSLAMA
+HEMENAL.COM
+daha hızlı olması lazım aslında
+ nan neden olmuyor
+senoznikahsekeri.com/adminv2
+fatih@osmansenoz.com
+123456
+*****************
+KULLANICININ HANGİ BAĞLANTIYI KULLANACAĞI SEÇİLEBİLSİN.
+BİRDEN FAZLA VOIP TANIMI YAPILABİLİR.
+*****************
+- BÜTÜN CLASS VE FORMLARDA "Organize Using->Remove and Sort" ÇALIŞTIRILACAK.
+- BÜTÜN DEĞİŞKENLER KÜÇÜK HARF İLE BAŞLAYACAK
+-- SqlConnection -> baglanti
+-- SqlTransaction -> trGenel
+-- DataTable -> dtFaturaHareket
+-- Forma Dışarıdan gödnerilen değişkenlerin başına alt çizgi (_) eklenecek.
+
+**********************
+PROGRAMDAKİ KISAYOLLAR
+F1  : YARDIM
+F2  : KAYDET
+F3  : KAPAT/VAZGEÇ
+F10 : LİSTEYİ AÇ (buton editlerde konumlandığın butonun üç noktası varsa o buton çalışacak.)
+
+****************************************************************************************************
+
+- stok aramalarında miktarın barkoddan veya istenilirse elle eklenmesini sağlamak,
+	ayarlar bölümünden barkodu nasıl okuyacağını bildirmem gerekiyor
++	Fatura Bölümünü bitirip, alış faturası, satış faturası, alıştan iade faturası, satıştan iade.
++	Fatura, cari stok vb kartların cari kodu stok kodu gibi otomatik verilen numaralarını hazırlanacak.
+	gene ayarlaardan hangisinin numaralara bağlanacağı nasıl artacağı seçilecek.
++	Fatura Bölümünde cari ile alakalı bölümlerin aynısını fatura vt nına da kaydedicek.
+Bazen aynı firmanın hesabına farklı adresteki hatta farklı ünvanlara faturalar kesmemiz gerekebiliyor.
+Mantığı nerede bunun neden böyle bişi olsun denilebilir. Meseala kendi başına çalışan pazarlamacımız var. O nereye fatura keserse 
+kessin kestiği faturalar onun hesabına işleniyor.
+
+fatura hareketdetay tablosuna faturaturu alanı eklenecek. başlıktaki nin aynısı olsun.
+daha sonra trigger lar bu değişikliğe göre düzenlenecek
+
++ Tabloların hiyerarşileri çıkartılacak. -> Projeye "Paylasim" isminde klasör eklendi. içinde AresDBSablon.xls dosyası var.
++ Fatura Satırına fiyat girilmese hata veriyor
++ Numara şablonu ayarlardan alınacak
++ Faturaya nın düzenlenmesi ve ilgili notların eklenmesi
++ Tabloların excel eaktarılması (gridlerin) ( Ör :  StokSayim -> frmStokSayimDetayv2 )
++ Gridlerin ve form özelliklerinin kaydedilmesi
+- iki veritabanı üstündeki tabloların ve bu tabloların içindeki kolonların isimleri ve özelliklerini karşılaştırılan programcık.
+- devexpress in 12.1.4 versiyonunun dil kümesi bulunacak
++ bütün formlara "grid arayüzlerini" kaydetme komutu uygulandı.
++ kullanıcı girişteki hata giderildi.
+
+- FaturaDetaydaki arayüz işlemlerini inceledim sanki biraz uzatılmış, her forma bu kadar kod yazmaktansa
+başka bir class a veya forma gridleri gönderip o form veya class ın içinde yapılsa
+
+- StokBirimID yerine StokAnaBirimID, yazarsak daha mantıklı olur.
+- kontrol paneli
+--------------------------------

@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TeraziSatisBaslat2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TerazininYolu" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\ARESV2\ARES\BuildProcessTemplates\TeraziSatis\bin\Debug\TeraziSatis.exe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

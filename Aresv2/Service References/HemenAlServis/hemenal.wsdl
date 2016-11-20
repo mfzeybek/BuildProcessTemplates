@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Auth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Auth_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FirmaBilgisi">
+        <s:complexType />
+      </s:element>
+      <s:element name="FirmaBilgisiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirmaBilgisiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKategori">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetKategoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKategoriResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnlineOdeme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ilktarih" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sontarih" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnlineOdemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOnlineOdemeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUrun">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUrunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUrunResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUrunResim">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aktif" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUrunResimResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUrunResimResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUrunStokFiyat">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUrunStokFiyatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUrunStokFiyatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecenekStokFiyat">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSecenekStokFiyatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecenekStokFiyatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarka">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMarkaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarkaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStokTip">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStokTipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStokTipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecenek">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSecenekResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecenekResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUrun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntegrasyonAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogicalRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MarkaAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriKod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KisaAciklama" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunAciklama" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunResim" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SKFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BayiFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OzelFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PiyasaFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParaBirim" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Kdv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokMiktar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokVarDurumID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokYokDurumID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Garanti" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriGuncellenmesin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Durum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUrunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetUrunResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUrunNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntegrasyonAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogicalRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MarkaAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriKod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KisaAciklama" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunAciklama" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunResim" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SKFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BayiFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OzelFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PiyasaFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParaBirim" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Kdv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokMiktar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokVarDurumID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokYokDurumID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Garanti" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriGuncellenmesin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Durum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sira" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aksesuar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="anahtarKelime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ozelKatID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="indirim" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="indirimbayi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="puancarpan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUrunNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetUrunNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKategori">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntegrasyonAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BagliOlduguUstKategoriKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sira" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKategoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetKategoriResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKategoriSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntegrasyonAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriKodu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKategoriSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetKategoriSilResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMarka">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntegrasyonAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MarkaAdi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMarkaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMarkaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOzellik">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntegrasyonAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OzellikKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OzellikBaslik" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OzellikIcerik" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OzellikSira" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOzellikResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetOzellikResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSecenek">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntegrasyonAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecenekGrubu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SatirKod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SutunKod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SatirSecenek" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SutunSecenek" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Kavala" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sira" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SatisFiyat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokMiktar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GoruntulemeSekli" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StokKontrol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UrunFiyatiYerineGecsin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeciliGelsin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecimZorunlu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecenekAktif" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSecenekResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetSecenekResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisDurum">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiparisDurumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiparisDurumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOdemeSekli">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOdemeSekliResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOdemeSekliResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKargo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetKargoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKargoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCari">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCariResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCariResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCari">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entKod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bayiKod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="adsoyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tckimlikno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gsm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="adres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pk" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ilce" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="il" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ulke" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firmaAdres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firmaPK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firmaIlce" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firmaIl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vDaire" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Aktiflik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCariResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetCariResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCariHesapBilgisi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entKod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hesapBilgisi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCariHesapBilgisiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetCariHesapBilgisiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ilktarih" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sontarih" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiparisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ilktarih" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sontarih" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sipID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sipDurum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiparisNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisMain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ilktarih" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sontarih" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisMainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiparisMainResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisMainNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ilktarih" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sontarih" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sipID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sipDurum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisMainNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiparisMainNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siparisID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiparisDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiparisDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiparisDurum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SiparisID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DurumID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiparisDurumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetSiparisDurumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKargoDurum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SiparisID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DurumBilgisi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKargoDurumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetKargoDurumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKargoKodu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SiparisID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KargoKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TeslimTarihi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetKargoKoduResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetKargoKoduResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiparisOkundu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SiparisID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KargoKodu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiparisOkunduResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetSiparisOkunduResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiparisOkunmadi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SiparisID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiparisOkunmadiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetSiparisOkunmadiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDoviz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DovizDeger" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DovizSembol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDovizResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetDovizResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoviz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DovizSembol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDovizResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDovizResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthSoapIn">
+    <wsdl:part name="parameters" element="tns:Auth" />
+  </wsdl:message>
+  <wsdl:message name="AuthSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="FirmaBilgisiSoapIn">
+    <wsdl:part name="parameters" element="tns:FirmaBilgisi" />
+  </wsdl:message>
+  <wsdl:message name="FirmaBilgisiSoapOut">
+    <wsdl:part name="parameters" element="tns:FirmaBilgisiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKategoriSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKategori" />
+  </wsdl:message>
+  <wsdl:message name="GetKategoriSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKategoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOnlineOdemeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOnlineOdeme" />
+  </wsdl:message>
+  <wsdl:message name="GetOnlineOdemeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOnlineOdemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUrunSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUrun" />
+  </wsdl:message>
+  <wsdl:message name="GetUrunSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUrunResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUrunResimSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUrunResim" />
+  </wsdl:message>
+  <wsdl:message name="GetUrunResimSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUrunResimResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUrunStokFiyatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUrunStokFiyat" />
+  </wsdl:message>
+  <wsdl:message name="GetUrunStokFiyatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUrunStokFiyatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecenekStokFiyatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecenekStokFiyat" />
+  </wsdl:message>
+  <wsdl:message name="GetSecenekStokFiyatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecenekStokFiyatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarka" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStokTipSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStokTip" />
+  </wsdl:message>
+  <wsdl:message name="GetStokTipSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStokTipResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecenekSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecenek" />
+  </wsdl:message>
+  <wsdl:message name="GetSecenekSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecenekResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUrunSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUrun" />
+  </wsdl:message>
+  <wsdl:message name="SetUrunSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUrunResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUrunNewSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUrunNew" />
+  </wsdl:message>
+  <wsdl:message name="SetUrunNewSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUrunNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetKategoriSoapIn">
+    <wsdl:part name="parameters" element="tns:SetKategori" />
+  </wsdl:message>
+  <wsdl:message name="SetKategoriSoapOut">
+    <wsdl:part name="parameters" element="tns:SetKategoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetKategoriSilSoapIn">
+    <wsdl:part name="parameters" element="tns:SetKategoriSil" />
+  </wsdl:message>
+  <wsdl:message name="SetKategoriSilSoapOut">
+    <wsdl:part name="parameters" element="tns:SetKategoriSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMarkaSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMarka" />
+  </wsdl:message>
+  <wsdl:message name="SetMarkaSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMarkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOzellikSoapIn">
+    <wsdl:part name="parameters" element="tns:SetOzellik" />
+  </wsdl:message>
+  <wsdl:message name="SetOzellikSoapOut">
+    <wsdl:part name="parameters" element="tns:SetOzellikResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSecenekSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSecenek" />
+  </wsdl:message>
+  <wsdl:message name="SetSecenekSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSecenekResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisDurumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiparisDurum" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisDurumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiparisDurumResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOdemeSekliSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOdemeSekli" />
+  </wsdl:message>
+  <wsdl:message name="GetOdemeSekliSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOdemeSekliResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKargoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKargo" />
+  </wsdl:message>
+  <wsdl:message name="GetKargoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKargoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCariSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCari" />
+  </wsdl:message>
+  <wsdl:message name="GetCariSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCariResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCariSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCari" />
+  </wsdl:message>
+  <wsdl:message name="SetCariSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCariResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCariHesapBilgisiSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCariHesapBilgisi" />
+  </wsdl:message>
+  <wsdl:message name="SetCariHesapBilgisiSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCariHesapBilgisiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiparis" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiparisResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiparisNew" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiparisNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisMainSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiparisMain" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisMainSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiparisMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisMainNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiparisMainNew" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisMainNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiparisMainNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiparisDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetSiparisDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiparisDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSiparisDurumSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSiparisDurum" />
+  </wsdl:message>
+  <wsdl:message name="SetSiparisDurumSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSiparisDurumResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetKargoDurumSoapIn">
+    <wsdl:part name="parameters" element="tns:SetKargoDurum" />
+  </wsdl:message>
+  <wsdl:message name="SetKargoDurumSoapOut">
+    <wsdl:part name="parameters" element="tns:SetKargoDurumResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetKargoKoduSoapIn">
+    <wsdl:part name="parameters" element="tns:SetKargoKodu" />
+  </wsdl:message>
+  <wsdl:message name="SetKargoKoduSoapOut">
+    <wsdl:part name="parameters" element="tns:SetKargoKoduResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSiparisOkunduSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSiparisOkundu" />
+  </wsdl:message>
+  <wsdl:message name="SetSiparisOkunduSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSiparisOkunduResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSiparisOkunmadiSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSiparisOkunmadi" />
+  </wsdl:message>
+  <wsdl:message name="SetSiparisOkunmadiSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSiparisOkunmadiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDovizSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDoviz" />
+  </wsdl:message>
+  <wsdl:message name="SetDovizSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDovizResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDovizSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoviz" />
+  </wsdl:message>
+  <wsdl:message name="GetDovizSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDovizResponse" />
+  </wsdl:message>
+  <wsdl:portType name="hemenalserviceSoap">
+    <wsdl:operation name="Auth">
+      <wsdl:input message="tns:AuthSoapIn" />
+      <wsdl:output message="tns:AuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FirmaBilgisi">
+      <wsdl:input message="tns:FirmaBilgisiSoapIn" />
+      <wsdl:output message="tns:FirmaBilgisiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKategori">
+      <wsdl:input message="tns:GetKategoriSoapIn" />
+      <wsdl:output message="tns:GetKategoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineOdeme">
+      <wsdl:input message="tns:GetOnlineOdemeSoapIn" />
+      <wsdl:output message="tns:GetOnlineOdemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUrun">
+      <wsdl:input message="tns:GetUrunSoapIn" />
+      <wsdl:output message="tns:GetUrunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUrunResim">
+      <wsdl:input message="tns:GetUrunResimSoapIn" />
+      <wsdl:output message="tns:GetUrunResimSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUrunStokFiyat">
+      <wsdl:input message="tns:GetUrunStokFiyatSoapIn" />
+      <wsdl:output message="tns:GetUrunStokFiyatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecenekStokFiyat">
+      <wsdl:input message="tns:GetSecenekStokFiyatSoapIn" />
+      <wsdl:output message="tns:GetSecenekStokFiyatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarka">
+      <wsdl:input message="tns:GetMarkaSoapIn" />
+      <wsdl:output message="tns:GetMarkaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStokTip">
+      <wsdl:input message="tns:GetStokTipSoapIn" />
+      <wsdl:output message="tns:GetStokTipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecenek">
+      <wsdl:input message="tns:GetSecenekSoapIn" />
+      <wsdl:output message="tns:GetSecenekSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUrun">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SetUrun</wsdl:documentation>
+      <wsdl:input message="tns:SetUrunSoapIn" />
+      <wsdl:output message="tns:SetUrunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUrun">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SetUrunNew</wsdl:documentation>
+      <wsdl:input name="SetUrunNew" message="tns:SetUrunNewSoapIn" />
+      <wsdl:output name="SetUrunNew" message="tns:SetUrunNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKategori">
+      <wsdl:input message="tns:SetKategoriSoapIn" />
+      <wsdl:output message="tns:SetKategoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKategoriSil">
+      <wsdl:input message="tns:SetKategoriSilSoapIn" />
+      <wsdl:output message="tns:SetKategoriSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMarka">
+      <wsdl:input message="tns:SetMarkaSoapIn" />
+      <wsdl:output message="tns:SetMarkaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOzellik">
+      <wsdl:input message="tns:SetOzellikSoapIn" />
+      <wsdl:output message="tns:SetOzellikSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSecenek">
+      <wsdl:input message="tns:SetSecenekSoapIn" />
+      <wsdl:output message="tns:SetSecenekSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisDurum">
+      <wsdl:input message="tns:GetSiparisDurumSoapIn" />
+      <wsdl:output message="tns:GetSiparisDurumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOdemeSekli">
+      <wsdl:input message="tns:GetOdemeSekliSoapIn" />
+      <wsdl:output message="tns:GetOdemeSekliSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKargo">
+      <wsdl:input message="tns:GetKargoSoapIn" />
+      <wsdl:output message="tns:GetKargoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCari">
+      <wsdl:input message="tns:GetCariSoapIn" />
+      <wsdl:output message="tns:GetCariSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCari">
+      <wsdl:input message="tns:SetCariSoapIn" />
+      <wsdl:output message="tns:SetCariSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCariHesapBilgisi">
+      <wsdl:input message="tns:SetCariHesapBilgisiSoapIn" />
+      <wsdl:output message="tns:SetCariHesapBilgisiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparis">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetSiparis</wsdl:documentation>
+      <wsdl:input message="tns:GetSiparisSoapIn" />
+      <wsdl:output message="tns:GetSiparisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparis">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetSiparisNew</wsdl:documentation>
+      <wsdl:input name="GetSiparisNew" message="tns:GetSiparisNewSoapIn" />
+      <wsdl:output name="GetSiparisNew" message="tns:GetSiparisNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisMain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetSiparisMain</wsdl:documentation>
+      <wsdl:input message="tns:GetSiparisMainSoapIn" />
+      <wsdl:output message="tns:GetSiparisMainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisMain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetSiparisMainNew</wsdl:documentation>
+      <wsdl:input name="GetSiparisMainNew" message="tns:GetSiparisMainNewSoapIn" />
+      <wsdl:output name="GetSiparisMainNew" message="tns:GetSiparisMainNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisDetail">
+      <wsdl:input message="tns:GetSiparisDetailSoapIn" />
+      <wsdl:output message="tns:GetSiparisDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisDurum">
+      <wsdl:input message="tns:SetSiparisDurumSoapIn" />
+      <wsdl:output message="tns:SetSiparisDurumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKargoDurum">
+      <wsdl:input message="tns:SetKargoDurumSoapIn" />
+      <wsdl:output message="tns:SetKargoDurumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKargoKodu">
+      <wsdl:input message="tns:SetKargoKoduSoapIn" />
+      <wsdl:output message="tns:SetKargoKoduSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisOkundu">
+      <wsdl:input message="tns:SetSiparisOkunduSoapIn" />
+      <wsdl:output message="tns:SetSiparisOkunduSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisOkunmadi">
+      <wsdl:input message="tns:SetSiparisOkunmadiSoapIn" />
+      <wsdl:output message="tns:SetSiparisOkunmadiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDoviz">
+      <wsdl:input message="tns:SetDovizSoapIn" />
+      <wsdl:output message="tns:SetDovizSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoviz">
+      <wsdl:input message="tns:GetDovizSoapIn" />
+      <wsdl:output message="tns:GetDovizSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="hemenalserviceSoap" type="tns:hemenalserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Auth">
+      <soap:operation soapAction="http://tempuri.org/Auth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirmaBilgisi">
+      <soap:operation soapAction="http://tempuri.org/FirmaBilgisi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKategori">
+      <soap:operation soapAction="http://tempuri.org/GetKategori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineOdeme">
+      <soap:operation soapAction="http://tempuri.org/GetOnlineOdeme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUrun">
+      <soap:operation soapAction="http://tempuri.org/GetUrun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUrunResim">
+      <soap:operation soapAction="http://tempuri.org/GetUrunResim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUrunStokFiyat">
+      <soap:operation soapAction="http://tempuri.org/GetUrunStokFiyat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecenekStokFiyat">
+      <soap:operation soapAction="http://tempuri.org/GetSecenekStokFiyat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarka">
+      <soap:operation soapAction="http://tempuri.org/GetMarka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStokTip">
+      <soap:operation soapAction="http://tempuri.org/GetStokTip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecenek">
+      <soap:operation soapAction="http://tempuri.org/GetSecenek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUrun">
+      <soap:operation soapAction="http://tempuri.org/SetUrun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUrun">
+      <soap:operation soapAction="http://tempuri.org/SetUrunNew" style="document" />
+      <wsdl:input name="SetUrunNew">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetUrunNew">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKategori">
+      <soap:operation soapAction="http://tempuri.org/SetKategori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKategoriSil">
+      <soap:operation soapAction="http://tempuri.org/SetKategoriSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMarka">
+      <soap:operation soapAction="http://tempuri.org/SetMarka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOzellik">
+      <soap:operation soapAction="http://tempuri.org/SetOzellik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSecenek">
+      <soap:operation soapAction="http://tempuri.org/SetSecenek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisDurum">
+      <soap:operation soapAction="http://tempuri.org/GetSiparisDurum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOdemeSekli">
+      <soap:operation soapAction="http://tempuri.org/GetOdemeSekli" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKargo">
+      <soap:operation soapAction="http://tempuri.org/GetKargo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCari">
+      <soap:operation soapAction="http://tempuri.org/GetCari" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCari">
+      <soap:operation soapAction="http://tempuri.org/SetCari" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCariHesapBilgisi">
+      <soap:operation soapAction="http://tempuri.org/SetCariHesapBilgisi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparis">
+      <soap:operation soapAction="http://tempuri.org/GetSiparis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparis">
+      <soap:operation soapAction="http://tempuri.org/GetSiparisNew" style="document" />
+      <wsdl:input name="GetSiparisNew">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSiparisNew">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisMain">
+      <soap:operation soapAction="http://tempuri.org/GetSiparisMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisMain">
+      <soap:operation soapAction="http://tempuri.org/GetSiparisMainNew" style="document" />
+      <wsdl:input name="GetSiparisMainNew">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSiparisMainNew">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisDetail">
+      <soap:operation soapAction="http://tempuri.org/GetSiparisDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisDurum">
+      <soap:operation soapAction="http://tempuri.org/SetSiparisDurum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKargoDurum">
+      <soap:operation soapAction="http://tempuri.org/SetKargoDurum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKargoKodu">
+      <soap:operation soapAction="http://tempuri.org/SetKargoKodu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisOkundu">
+      <soap:operation soapAction="http://tempuri.org/SetSiparisOkundu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisOkunmadi">
+      <soap:operation soapAction="http://tempuri.org/SetSiparisOkunmadi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDoviz">
+      <soap:operation soapAction="http://tempuri.org/SetDoviz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoviz">
+      <soap:operation soapAction="http://tempuri.org/GetDoviz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="hemenalserviceSoap12" type="tns:hemenalserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Auth">
+      <soap12:operation soapAction="http://tempuri.org/Auth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirmaBilgisi">
+      <soap12:operation soapAction="http://tempuri.org/FirmaBilgisi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKategori">
+      <soap12:operation soapAction="http://tempuri.org/GetKategori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineOdeme">
+      <soap12:operation soapAction="http://tempuri.org/GetOnlineOdeme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUrun">
+      <soap12:operation soapAction="http://tempuri.org/GetUrun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUrunResim">
+      <soap12:operation soapAction="http://tempuri.org/GetUrunResim" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUrunStokFiyat">
+      <soap12:operation soapAction="http://tempuri.org/GetUrunStokFiyat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecenekStokFiyat">
+      <soap12:operation soapAction="http://tempuri.org/GetSecenekStokFiyat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarka">
+      <soap12:operation soapAction="http://tempuri.org/GetMarka" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStokTip">
+      <soap12:operation soapAction="http://tempuri.org/GetStokTip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecenek">
+      <soap12:operation soapAction="http://tempuri.org/GetSecenek" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUrun">
+      <soap12:operation soapAction="http://tempuri.org/SetUrun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUrun">
+      <soap12:operation soapAction="http://tempuri.org/SetUrunNew" style="document" />
+      <wsdl:input name="SetUrunNew">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetUrunNew">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKategori">
+      <soap12:operation soapAction="http://tempuri.org/SetKategori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKategoriSil">
+      <soap12:operation soapAction="http://tempuri.org/SetKategoriSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMarka">
+      <soap12:operation soapAction="http://tempuri.org/SetMarka" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOzellik">
+      <soap12:operation soapAction="http://tempuri.org/SetOzellik" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSecenek">
+      <soap12:operation soapAction="http://tempuri.org/SetSecenek" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisDurum">
+      <soap12:operation soapAction="http://tempuri.org/GetSiparisDurum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOdemeSekli">
+      <soap12:operation soapAction="http://tempuri.org/GetOdemeSekli" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKargo">
+      <soap12:operation soapAction="http://tempuri.org/GetKargo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCari">
+      <soap12:operation soapAction="http://tempuri.org/GetCari" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCari">
+      <soap12:operation soapAction="http://tempuri.org/SetCari" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCariHesapBilgisi">
+      <soap12:operation soapAction="http://tempuri.org/SetCariHesapBilgisi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparis">
+      <soap12:operation soapAction="http://tempuri.org/GetSiparis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparis">
+      <soap12:operation soapAction="http://tempuri.org/GetSiparisNew" style="document" />
+      <wsdl:input name="GetSiparisNew">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSiparisNew">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisMain">
+      <soap12:operation soapAction="http://tempuri.org/GetSiparisMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisMain">
+      <soap12:operation soapAction="http://tempuri.org/GetSiparisMainNew" style="document" />
+      <wsdl:input name="GetSiparisMainNew">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSiparisMainNew">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiparisDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetSiparisDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisDurum">
+      <soap12:operation soapAction="http://tempuri.org/SetSiparisDurum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKargoDurum">
+      <soap12:operation soapAction="http://tempuri.org/SetKargoDurum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKargoKodu">
+      <soap12:operation soapAction="http://tempuri.org/SetKargoKodu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisOkundu">
+      <soap12:operation soapAction="http://tempuri.org/SetSiparisOkundu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiparisOkunmadi">
+      <soap12:operation soapAction="http://tempuri.org/SetSiparisOkunmadi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDoviz">
+      <soap12:operation soapAction="http://tempuri.org/SetDoviz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoviz">
+      <soap12:operation soapAction="http://tempuri.org/GetDoviz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="hemenalservice">
+    <wsdl:port name="hemenalserviceSoap" binding="tns:hemenalserviceSoap">
+      <soap:address location="http://www.cikolatacerez.com/service/hemenal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="hemenalserviceSoap12" binding="tns:hemenalserviceSoap12">
+      <soap12:address location="http://www.cikolatacerez.com/service/hemenal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

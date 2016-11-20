@@ -1,0 +1,1860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65C4DA11-726F-4AAE-B081-811086E29816}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aresv2</RootNamespace>
+    <AssemblyName>Aresv2</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ares fth.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>80EAAD3B848E508585B46347A566A9621EA6E90E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Aresv2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.Designer.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeConverter.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeRush.Common, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.Interop, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.PlugInCore, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.StaticAnalysisTools, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.StructuralParser, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.UpdateManager, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.UserControls, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.VSCore, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.VSCore10, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.VSCore11, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.VSCore12, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.VSCore14, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeRush.WPFUserControls, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v16.1.Web, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v16.1.Web.Mvc, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v16.1.Web.Mvc5, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v16.1.Win, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v16.1.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DevAV.v16.1.Data, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DevAV.v16.1.Reports, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.AssemblyResolver, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.Data.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.SpellChecker.v6.3.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.Utils.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraBars.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraEditors.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraGrid.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraLayout.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraNavBar.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraSpellChecker.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraTreeList.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Controls.XtraVerticalGrid.v6.3, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Decompiler, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Gdi, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Loader, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Localization, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.MetaData, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Mvvm, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Mvvm.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Parser, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Platform, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Platform.Gdi, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Platform.Wpf, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Remote, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Shell, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.StandAlone, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Testing, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Wizards.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Wizards80, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Wpf, Version=16.1.4.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.EasyTest.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.AuditTrail.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.CloneObject.Mobile.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.CloneObject.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.DataService.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Demos.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Demos.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.EasyTest.WebAdapter.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.EasyTest.WinAdapter.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.EF.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Mobile.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.HtmlPropertyEditor.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.HtmlPropertyEditor.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Images.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Kpi.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Maps.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Mobile.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Notifications.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Notifications.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Notifications.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Objects.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotChart.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotChart.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotChart.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Reports.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Reports.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Reports.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Mobile.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Scheduler.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Scheduler.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Scheduler.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ScriptRecorder.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ScriptRecorder.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ScriptRecorder.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Security.EF.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Security.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.StateMachine.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Validation.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Validation.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Workflow.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Workflow.Win.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Xpo.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Images.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Map.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v16.1.DataModel, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v16.1.DataModel.EF6, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v16.1.DataModel.WCF, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v16.1.ViewModel, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v16.1.Drawing, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Persistent.Base.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.BaseImpl.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SharePoint.2013.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Snap.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.TreeMap.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Tutorials.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGauges.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxRichEdit.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Mvc.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Mvc5.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Workflow.Activities.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Workflow.Activities.v16.1.Design, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.Web, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v16.1.Presets, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v16.1.Win, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraMap.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Service, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.1.Web, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.1.Web.Azure, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Reporting.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Reporting, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeMap.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC\Microsoft.mshtml\7.0.3300.0__b03f5f7f11d50a3a\Microsoft.mshtml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.103\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.103\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.103\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Messaging">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationProvider">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VSLangProj80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="webcam_capture">
+      <HintPath>..\..\..\webcam_capture.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ajanda\frmAjanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajanda\frmAjanda.Designer.cs">
+      <DependentUpon>frmAjanda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajanda\frmNotGruplari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajanda\frmNotGruplari.Designer.cs">
+      <DependentUpon>frmNotGruplari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajanda\frmNotKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajanda\frmNotKarti.Designer.cs">
+      <DependentUpon>frmNotKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajanda\frmNotListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajanda\frmNotListesi.Designer.cs">
+      <DependentUpon>frmNotListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajanda\frmIslemlerIcinRenkSecimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajanda\frmIslemlerIcinRenkSecimi.Designer.cs">
+      <DependentUpon>frmIslemlerIcinRenkSecimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AyarlarHemeAl\frmHAKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyarlarHemeAl\frmHAKategori.Designer.cs">
+      <DependentUpon>frmHAKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AyarlarHemeAl\frmHAStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyarlarHemeAl\frmHAStok.designer.cs">
+      <DependentUpon>frmHAStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\csYetkilendirmeyeGoreButonlariDuzenle.cs" />
+    <Compile Include="Ayarlar\frmAyarlarKullanici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmAyarlarKullanici.Designer.cs">
+      <DependentUpon>frmAyarlarKullanici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\frmAyarlarVOIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmAyarlarVOIP.Designer.cs">
+      <DependentUpon>frmAyarlarVOIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\frmBarkodAyar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmBarkodAyar.Designer.cs">
+      <DependentUpon>frmBarkodAyar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\frmGenelAyarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmGenelAyarlar.Designer.cs">
+      <DependentUpon>frmGenelAyarlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\frmHemenAlEntg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmHemenAlEntg.Designer.cs">
+      <DependentUpon>frmHemenAlEntg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\frmVeriTabaniYedekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmVeriTabaniYedekle.Designer.cs">
+      <DependentUpon>frmVeriTabaniYedekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\frmYetkiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmYetkiler.Designer.cs">
+      <DependentUpon>frmYetkiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasitUretim\frmBasitUretim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasitUretim\frmBasitUretim.Designer.cs">
+      <DependentUpon>frmBasitUretim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasitUretim\frmBasitUretimRecetesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasitUretim\frmBasitUretimRecetesi.Designer.cs">
+      <DependentUpon>frmBasitUretimRecetesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasitUretim\frmBasitUretimRecetesiListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasitUretim\frmBasitUretimRecetesiListesi.Designer.cs">
+      <DependentUpon>frmBasitUretimRecetesiListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasitUretim\frmKarisikCerez.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasitUretim\frmKarisikCerez.Designer.cs">
+      <DependentUpon>frmKarisikCerez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\CariHr\frmCariHrKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\CariHr\frmCariHrKarti.Designer.cs">
+      <DependentUpon>frmCariHrKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\CariHr\frmCariHrListesiv3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\CariHr\frmCariHrListesiv3.Designer.cs">
+      <DependentUpon>frmCariHrListesiv3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\frmCariAdres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\frmCariAdres.Designer.cs">
+      <DependentUpon>frmCariAdres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\frmCariDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\frmCariDetay.designer.cs">
+      <DependentUpon>frmCariDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\frmCariListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\frmCariListe.designer.cs">
+      <DependentUpon>frmCariListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\frmCariOzelBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\frmCariOzelBilgi.designer.cs">
+      <DependentUpon>frmCariOzelBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cari\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cek\frmCekKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cek\frmCekKarti.Designer.cs">
+      <DependentUpon>frmCekKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cek\frmCekListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cek\frmCekListesi.Designer.cs">
+      <DependentUpon>frmCekListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvrakYonetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvrakYonetimi.Designer.cs">
+      <DependentUpon>frmEvrakYonetimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInge.Designer.cs">
+      <DependentUpon>frmInge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPDFGoruntuleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPDFGoruntuleme.Designer.cs">
+      <DependentUpon>frmPDFGoruntuleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPDFOnizleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPDFOnizleme.Designer.cs">
+      <DependentUpon>frmPDFOnizleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ingenico.cs" />
+    <Compile Include="cs\csWebCam.cs" />
+    <Compile Include="cs\frmHesapMak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cs\frmHesapMak.Designer.cs">
+      <DependentUpon>frmHesapMak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\frmWebCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cs\frmWebCam.Designer.cs">
+      <DependentUpon>frmWebCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExceldenUrun,CariCek\frmExceldenCariAktar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceldenUrun,CariCek\frmExceldenCariAktar.Designer.cs">
+      <DependentUpon>frmExceldenCariAktar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura\frmFaturaKarAnalizi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura\frmFaturaKarAnalizi.Designer.cs">
+      <DependentUpon>frmFaturaKarAnalizi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuyukFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuyukFoto.Designer.cs">
+      <DependentUpon>frmBuyukFoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNumaraCevirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNumaraCevirme.Designer.cs">
+      <DependentUpon>frmNumaraCevirme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVeriTabaniBaglanti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVeriTabaniBaglanti.Designer.cs">
+      <DependentUpon>frmVeriTabaniBaglanti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\csFtpYeGonder.cs" />
+    <Compile Include="HemenAl\csHemenAlGetSet.cs" />
+    <Compile Include="frmHAMarka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHAMarka.designer.cs">
+      <DependentUpon>frmHAMarka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlKategori.Designer.cs">
+      <DependentUpon>frmHemenAlKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlStokFiyat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlStokFiyat.Designer.cs">
+      <DependentUpon>frmHemenAlStokFiyat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlUrunFotoFtp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlUrunFotoFtp.Designer.cs">
+      <DependentUpon>frmHemenAlUrunFotoFtp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\frmTopluUrunGonder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\frmTopluUrunGonder.Designer.cs">
+      <DependentUpon>frmTopluUrunGonder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\frmWebEntegrasyonUrunler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\frmWebEntegrasyonUrunler.Designer.cs">
+      <DependentUpon>frmWebEntegrasyonUrunler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlTeesst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\frmHemenAlTeesst.Designer.cs">
+      <DependentUpon>frmHemenAlTeesst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\frmXmlUrunAktarimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\frmXmlUrunAktarimi.Designer.cs">
+      <DependentUpon>frmXmlUrunAktarimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\HemenAlUrunFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\HemenAlUrunFoto.Designer.cs">
+      <DependentUpon>HemenAlUrunFoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\UrunSecenek\frmHemenAlUrunSecenekOnTanimDetaylari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\UrunSecenek\frmHemenAlUrunSecenekOnTanimDetaylari.Designer.cs">
+      <DependentUpon>frmHemenAlUrunSecenekOnTanimDetaylari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\UrunSecenek\HemenAlUrunSecenekOnTanimlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\UrunSecenek\HemenAlUrunSecenekOnTanimlari.Designer.cs">
+      <DependentUpon>HemenAlUrunSecenekOnTanimlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemenAl\XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemenAl\XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\frmBasvuruKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\frmBasvuruKarti.Designer.cs">
+      <DependentUpon>frmBasvuruKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\frmIsBasvuruListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\frmIsBasvuruListesi.Designer.cs">
+      <DependentUpon>frmIsBasvuruListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDKSSqlconnection.cs" />
+    <Compile Include="Personel\frmDisaridakiPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmDisaridakiPersonel.Designer.cs">
+      <DependentUpon>frmDisaridakiPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPdkRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPdkRapor.Designer.cs">
+      <DependentUpon>frmPdkRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPdks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPdks.Designer.cs">
+      <DependentUpon>frmPdks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPdksKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPdksKart.Designer.cs">
+      <DependentUpon>frmPdksKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPDKSVeriAktar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPDKSVeriAktar.Designer.cs">
+      <DependentUpon>frmPDKSVeriAktar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HemenAlServis\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Siparis\frmSiparisHazirlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Siparis\frmSiparisHazirlama.Designer.cs">
+      <DependentUpon>frmSiparisHazirlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StokSayim\frmStokSayimKarsilastirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokSayim\frmStokSayimKarsilastirma.Designer.cs">
+      <DependentUpon>frmStokSayimKarsilastirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StokFiyat\frmStokFiyatKarsilastirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokFiyat\frmStokFiyatKarsilastirma.Designer.cs">
+      <DependentUpon>frmStokFiyatKarsilastirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmOzelEtiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmOzelEtiket.Designer.cs">
+      <DependentUpon>frmOzelEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmStokBirim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokBirim.Designer.cs">
+      <DependentUpon>frmStokBirim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmStokDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokDetay.designer.cs">
+      <DependentUpon>frmStokDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmStokHrGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokHrGirisi.Designer.cs">
+      <DependentUpon>frmStokHrGirisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmStokHrListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokHrListesi.Designer.cs">
+      <DependentUpon>frmStokHrListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmTopluStokGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmTopluStokGuncelleme.Designer.cs">
+      <DependentUpon>frmTopluStokGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmStokEtiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokEtiket.Designer.cs">
+      <DependentUpon>frmStokEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\Paket\frmPaketDetayi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\Paket\frmPaketDetayi.Designer.cs">
+      <DependentUpon>frmPaketDetayi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\Paket\frmPaketListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\Paket\frmPaketListesi.Designer.cs">
+      <DependentUpon>frmPaketListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stok\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziDeadLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziDeadLock.Designer.cs">
+      <DependentUpon>frmTeraziDeadLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziKarti.Designer.cs">
+      <DependentUpon>frmTeraziKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziListesi.Designer.cs">
+      <DependentUpon>frmTeraziListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziStokButonGrupTanimlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziStokButonGrupTanimlari.Designer.cs">
+      <DependentUpon>frmTeraziStokButonGrupTanimlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziStokGruplarininStokButonlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terazi\frmTeraziStokGruplarininStokButonlari.Designer.cs">
+      <DependentUpon>frmTeraziStokGruplarininStokButonlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yazdirma\csYazdirmaIslemiIcinDatasetVer.cs" />
+    <Compile Include="Yazdirma\frmRaporDizaynListesiV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yazdirma\frmRaporDizaynListesiV2.designer.cs">
+      <DependentUpon>frmRaporDizaynListesiV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="csDelegeler.cs" />
+    <Compile Include="cs\cdiste.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cs\cdiste.Designer.cs">
+      <DependentUpon>cdiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\csEkranYakala.cs" />
+    <Compile Include="csGenelKodlar.cs" />
+    <Compile Include="cs\csGridLayout.cs" />
+    <Compile Include="Yazdirma\csYazdir.cs" />
+    <Compile Include="EksilenStokListesi\EksilenStokDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EksilenStokListesi\EksilenStokDetay.designer.cs">
+      <DependentUpon>EksilenStokDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EksilenStokListesi\EksilenStokListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EksilenStokListesi\EksilenStokListesi.designer.cs">
+      <DependentUpon>EksilenStokListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExceldenUrun,CariCek\frmExceldenUrunCek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceldenUrun,CariCek\frmExceldenUrunCek.designer.cs">
+      <DependentUpon>frmExceldenUrunCek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura\frmFaturaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura\frmFaturaDetay.designer.cs">
+      <DependentUpon>frmFaturaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura\frmFaturaListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura\frmFaturaListesi.designer.cs">
+      <DependentUpon>frmFaturaListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnaForm.designer.cs">
+      <DependentUpon>frmAnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExceleAktar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExceleAktar.designer.cs">
+      <DependentUpon>frmExceleAktar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStokIhtiyac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStokIhtiyac.Designer.cs">
+      <DependentUpon>frmStokIhtiyac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHataBildir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHataBildir.designer.cs">
+      <DependentUpon>frmHataBildir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKullaniciGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKullaniciGiris.designer.cs">
+      <DependentUpon>frmKullaniciGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HizliSatis\frmHizliSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HizliSatis\frmHizliSatis.Designer.cs">
+      <DependentUpon>frmHizliSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Irsaliye\frmIrsaliyeDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Irsaliye\frmIrsaliyeDetay.designer.cs">
+      <DependentUpon>frmIrsaliyeDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Irsaliye\frmIrsaliyeListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Irsaliye\frmIrsaliyeListesi.designer.cs">
+      <DependentUpon>frmIrsaliyeListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumaraSablon\frmNumaraSablon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumaraSablon\frmNumaraSablon.designer.cs">
+      <DependentUpon>frmNumaraSablon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumaraSablon\frmNumaraSablonListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumaraSablon\frmNumaraSablonListesi.designer.cs">
+      <DependentUpon>frmNumaraSablonListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPersonelGorevTanimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPersonelGorevTanimi.Designer.cs">
+      <DependentUpon>frmPersonelGorevTanimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPersonelKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPersonelKarti.Designer.cs">
+      <DependentUpon>frmPersonelKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPersonelListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPersonelListesi.Designer.cs">
+      <DependentUpon>frmPersonelListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Siparis\frmSiparisDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Siparis\frmSiparisDetay.designer.cs">
+      <DependentUpon>frmSiparisDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Siparis\frmSiparisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Siparis\frmSiparisListesi.designer.cs">
+      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnections.cs" />
+    <Compile Include="StokSayim\frmCevrimBirimListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokSayim\frmCevrimBirimListesi.designer.cs">
+      <DependentUpon>frmCevrimBirimListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StokSayim\frmStokSayim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokSayim\frmStokSayim.designer.cs">
+      <DependentUpon>frmStokSayim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StokSayim\frmStokSayimDetayv2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokSayim\frmStokSayimDetayv2.designer.cs">
+      <DependentUpon>frmStokSayimDetayv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmAmbarTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmAmbarTransfer.designer.cs">
+      <DependentUpon>frmAmbarTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmATListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmATListesi.designer.cs">
+      <DependentUpon>frmATListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StokFiyat\frmStokFiyatlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokFiyat\frmStokFiyatlari.designer.cs">
+      <DependentUpon>frmStokFiyatlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmStokListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokListesi.designer.cs">
+      <DependentUpon>frmStokListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmRDCikti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmRDCikti.Designer.cs">
+      <DependentUpon>frmRDCikti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmRDHammadde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmRDHammadde.Designer.cs">
+      <DependentUpon>frmRDHammadde.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmRDYariMamul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmRDYariMamul.Designer.cs">
+      <DependentUpon>frmRDYariMamul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmRecete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmRecete.Designer.cs">
+      <DependentUpon>frmRecete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmReceteDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmReceteDetay.Designer.cs">
+      <DependentUpon>frmReceteDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmReceteDetayCikti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmReceteDetayCikti.Designer.cs">
+      <DependentUpon>frmReceteDetayCikti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmReceteListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmReceteListesi.Designer.cs">
+      <DependentUpon>frmReceteListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmUretimEmri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmUretimEmri.Designer.cs">
+      <DependentUpon>frmUretimEmri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uretim\frmUretimEmriDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uretim\frmUretimEmriDetay.designer.cs">
+      <DependentUpon>frmUretimEmriDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmhtmlEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmhtmlEditor.Designer.cs">
+      <DependentUpon>frmhtmlEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMiktarGir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMiktarGir.Designer.cs">
+      <DependentUpon>frmMiktarGir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yonetim\frmYonetim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yonetim\frmYonetim.Designer.cs">
+      <DependentUpon>frmYonetim.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ajanda\frmAjanda.resx">
+      <DependentUpon>frmAjanda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajanda\frmNotGruplari.resx">
+      <DependentUpon>frmNotGruplari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajanda\frmNotKarti.resx">
+      <DependentUpon>frmNotKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajanda\frmNotListesi.resx">
+      <DependentUpon>frmNotListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajanda\frmIslemlerIcinRenkSecimi.resx">
+      <DependentUpon>frmIslemlerIcinRenkSecimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyarlarHemeAl\frmHAKategori.resx">
+      <DependentUpon>frmHAKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyarlarHemeAl\frmHAStok.resx">
+      <DependentUpon>frmHAStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmAyarlarKullanici.resx">
+      <DependentUpon>frmAyarlarKullanici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmAyarlarVOIP.resx">
+      <DependentUpon>frmAyarlarVOIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmBarkodAyar.resx">
+      <DependentUpon>frmBarkodAyar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmGenelAyarlar.resx">
+      <DependentUpon>frmGenelAyarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmHemenAlEntg.resx">
+      <DependentUpon>frmHemenAlEntg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmVeriTabaniYedekle.resx">
+      <DependentUpon>frmVeriTabaniYedekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmYetkiler.resx">
+      <DependentUpon>frmYetkiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasitUretim\frmBasitUretim.resx">
+      <DependentUpon>frmBasitUretim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasitUretim\frmBasitUretimRecetesi.resx">
+      <DependentUpon>frmBasitUretimRecetesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasitUretim\frmBasitUretimRecetesiListesi.resx">
+      <DependentUpon>frmBasitUretimRecetesiListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasitUretim\frmKarisikCerez.resx">
+      <DependentUpon>frmKarisikCerez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\CariHr\frmCariHrKarti.resx">
+      <DependentUpon>frmCariHrKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\CariHr\frmCariHrListesiv3.resx">
+      <DependentUpon>frmCariHrListesiv3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\frmCariAdres.resx">
+      <DependentUpon>frmCariAdres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\frmCariDetay.resx">
+      <DependentUpon>frmCariDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\frmCariListe.resx">
+      <DependentUpon>frmCariListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\frmCariOzelBilgi.resx">
+      <DependentUpon>frmCariOzelBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cek\frmCekKarti.resx">
+      <DependentUpon>frmCekKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cek\frmCekListesi.resx">
+      <DependentUpon>frmCekListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cs\frmHesapMak.resx">
+      <DependentUpon>frmHesapMak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cs\frmWebCam.resx">
+      <DependentUpon>frmWebCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceldenUrun,CariCek\frmExceldenCariAktar.resx">
+      <DependentUpon>frmExceldenCariAktar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura\frmFaturaKarAnalizi.resx">
+      <DependentUpon>frmFaturaKarAnalizi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuyukFoto.resx">
+      <DependentUpon>frmBuyukFoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvrakYonetimi.resx">
+      <DependentUpon>frmEvrakYonetimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHAMarka.resx">
+      <DependentUpon>frmHAMarka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInge.resx">
+      <DependentUpon>frmInge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNumaraCevirme.resx">
+      <DependentUpon>frmNumaraCevirme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPDFGoruntuleme.resx">
+      <DependentUpon>frmPDFGoruntuleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPDFOnizleme.resx">
+      <DependentUpon>frmPDFOnizleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVeriTabaniBaglanti.resx">
+      <DependentUpon>frmVeriTabaniBaglanti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\frmHemenAlKategori.resx">
+      <DependentUpon>frmHemenAlKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\frmHemenAlStokFiyat.resx">
+      <DependentUpon>frmHemenAlStokFiyat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\frmHemenAlUrunFotoFtp.resx">
+      <DependentUpon>frmHemenAlUrunFotoFtp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\frmTopluUrunGonder.resx">
+      <DependentUpon>frmTopluUrunGonder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\frmWebEntegrasyonUrunler.resx">
+      <DependentUpon>frmWebEntegrasyonUrunler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\frmHemenAlTeesst.resx">
+      <DependentUpon>frmHemenAlTeesst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\frmXmlUrunAktarimi.resx">
+      <DependentUpon>frmXmlUrunAktarimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\HemenAlUrunFoto.resx">
+      <DependentUpon>HemenAlUrunFoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\UrunSecenek\frmHemenAlUrunSecenekOnTanimDetaylari.resx">
+      <DependentUpon>frmHemenAlUrunSecenekOnTanimDetaylari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\UrunSecenek\HemenAlUrunSecenekOnTanimlari.resx">
+      <DependentUpon>HemenAlUrunSecenekOnTanimlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemenAl\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\frmBasvuruKarti.resx">
+      <DependentUpon>frmBasvuruKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\frmIsBasvuruListesi.resx">
+      <DependentUpon>frmIsBasvuruListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmDisaridakiPersonel.resx">
+      <DependentUpon>frmDisaridakiPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPdkRapor.resx">
+      <DependentUpon>frmPdkRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPdks.resx">
+      <DependentUpon>frmPdks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPdksKArt.resx">
+      <DependentUpon>frmPdksKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPDKSVeriAktar.resx">
+      <DependentUpon>frmPDKSVeriAktar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Siparis\frmSiparisHazirlama.resx">
+      <DependentUpon>frmSiparisHazirlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokSayim\frmStokSayimDetayv2.tr-TR.resx">
+      <DependentUpon>frmStokSayimDetayv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokSayim\frmStokSayimKarsilastirma.resx">
+      <DependentUpon>frmStokSayimKarsilastirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokFiyat\frmStokFiyatKarsilastirma.resx">
+      <DependentUpon>frmStokFiyatKarsilastirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmOzelEtiket.resx">
+      <DependentUpon>frmOzelEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokBirim.resx">
+      <DependentUpon>frmStokBirim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokDetay.resx">
+      <DependentUpon>frmStokDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokHrGirisi.resx">
+      <DependentUpon>frmStokHrGirisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokHrListesi.resx">
+      <DependentUpon>frmStokHrListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmTopluStokGuncelleme.resx">
+      <DependentUpon>frmTopluStokGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokEtiket.resx">
+      <DependentUpon>frmStokEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\Paket\frmPaketDetayi.resx">
+      <DependentUpon>frmPaketDetayi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\Paket\frmPaketListesi.resx">
+      <DependentUpon>frmPaketListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\XtraReport1.tr-TR.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terazi\frmTeraziDeadLock.resx">
+      <DependentUpon>frmTeraziDeadLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terazi\frmTeraziKarti.resx">
+      <DependentUpon>frmTeraziKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terazi\frmTeraziListesi.resx">
+      <DependentUpon>frmTeraziListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terazi\frmTeraziStokButonGrupTanimlari.resx">
+      <DependentUpon>frmTeraziStokButonGrupTanimlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terazi\frmTeraziStokGruplarininStokButonlari.resx">
+      <DependentUpon>frmTeraziStokGruplarininStokButonlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yazdirma\frmRaporDizaynListesiV2.resx">
+      <DependentUpon>frmRaporDizaynListesiV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cs\cdiste.resx">
+      <DependentUpon>cdiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EksilenStokListesi\EksilenStokDetay.resx">
+      <DependentUpon>EksilenStokDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EksilenStokListesi\EksilenStokListesi.resx">
+      <DependentUpon>EksilenStokListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceldenUrun,CariCek\frmExceldenUrunCek.resx">
+      <DependentUpon>frmExceldenUrunCek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura\frmFaturaDetay.resx">
+      <DependentUpon>frmFaturaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura\frmFaturaListesi.resx">
+      <DependentUpon>frmFaturaListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnaForm.resx">
+      <DependentUpon>frmAnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExceleAktar.resx">
+      <DependentUpon>frmExceleAktar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStokIhtiyac.resx">
+      <DependentUpon>frmStokIhtiyac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHataBildir.resx">
+      <DependentUpon>frmHataBildir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKullaniciGiris.resx">
+      <DependentUpon>frmKullaniciGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HizliSatis\frmHizliSatis.resx">
+      <DependentUpon>frmHizliSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Irsaliye\frmIrsaliyeDetay.resx">
+      <DependentUpon>frmIrsaliyeDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Irsaliye\frmIrsaliyeListesi.resx">
+      <DependentUpon>frmIrsaliyeListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumaraSablon\frmNumaraSablon.resx">
+      <DependentUpon>frmNumaraSablon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumaraSablon\frmNumaraSablonListesi.resx">
+      <DependentUpon>frmNumaraSablonListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPersonelGorevTanimi.resx">
+      <DependentUpon>frmPersonelGorevTanimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPersonelKarti.resx">
+      <DependentUpon>frmPersonelKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPersonelListesi.resx">
+      <DependentUpon>frmPersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <EmbeddedResource Include="Siparis\frmSiparisDetay.resx">
+      <DependentUpon>frmSiparisDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Siparis\frmSiparisListesi.resx">
+      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokSayim\frmCevrimBirimListesi.resx">
+      <DependentUpon>frmCevrimBirimListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokSayim\frmStokSayim.resx">
+      <DependentUpon>frmStokSayim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokSayim\frmStokSayimDetayv2.resx">
+      <DependentUpon>frmStokSayimDetayv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmAmbarTransfer.resx">
+      <DependentUpon>frmAmbarTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmATListesi.resx">
+      <DependentUpon>frmATListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokFiyat\frmStokFiyatlari.resx">
+      <DependentUpon>frmStokFiyatlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokListesi.resx">
+      <DependentUpon>frmStokListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmRDCikti.resx">
+      <DependentUpon>frmRDCikti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmRDHammadde.resx">
+      <DependentUpon>frmRDHammadde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmRDYariMamul.resx">
+      <DependentUpon>frmRDYariMamul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmRecete.resx">
+      <DependentUpon>frmRecete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmReceteDetay.resx">
+      <DependentUpon>frmReceteDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmReceteDetayCikti.resx">
+      <DependentUpon>frmReceteDetayCikti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmReceteListesi.resx">
+      <DependentUpon>frmReceteListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmUretimEmri.resx">
+      <DependentUpon>frmUretimEmri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uretim\frmUretimEmriDetay.resx">
+      <DependentUpon>frmUretimEmriDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmhtmlEditor.resx">
+      <DependentUpon>frmhtmlEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMiktarGir.resx">
+      <DependentUpon>frmMiktarGir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yonetim\frmYonetim.resx">
+      <DependentUpon>frmYonetim.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Paylasim\AresDBSablon.xls" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.AuthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.FirmaBilgisiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetCariResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetDovizResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetKargoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetKategoriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetMarkaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetOdemeSekliResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetOnlineOdemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSecenekResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSecenekStokFiyatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSiparisDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSiparisDurumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSiparisMainNew1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSiparisMainResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSiparisNew1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetSiparisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetStokTipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetUrunResimResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.GetUrunStokFiyatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetCariHesapBilgisiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetCariResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetDovizResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetKargoDurumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetKargoKoduResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetKategoriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetKategoriSilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetMarkaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetOzellikResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetSecenekResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetSiparisDurumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetSiparisOkunduResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetSiparisOkunmadiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetUrunNew1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\Aresv2.HemenAlServis.SetUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HemenAlServis\hemenal.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="11Notlar.txt" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\11866382_886550004790846_1980937716037633175_n.jpg" />
+    <Content Include="Resources\backcolor.bmp" />
+    <None Include="Resources\blue-ok-icon[1].png" />
+    <None Include="Resources\blue-cross-icon[1].png" />
+    <Content Include="Resources\bold.bmp" />
+    <Content Include="Resources\cj.bmp" />
+    <Content Include="Resources\color.bmp" />
+    <None Include="Resources\Double-J-Design-Origami-Colored-Pencil-Blue-ok.ico" />
+    <Content Include="Resources\fj.bmp" />
+    <Content Include="Resources\indent.bmp" />
+    <Content Include="Resources\italic.bmp" />
+    <Content Include="Resources\link.bmp" />
+    <Content Include="Resources\lj.bmp" />
+    <Content Include="Resources\ol.bmp" />
+    <Content Include="Resources\outdent.bmp" />
+    <Content Include="Resources\right_arrow.bmp" />
+    <Content Include="Resources\rj.bmp" />
+    <Content Include="Resources\underscore.bmp" />
+    <Content Include="Resources\uol.bmp" />
+    <None Include="Service References\HemenAlServis\hemenal.disco" />
+    <None Include="Service References\HemenAlServis\configuration91.svcinfo" />
+    <None Include="Service References\HemenAlServis\configuration.svcinfo" />
+    <None Include="Service References\HemenAlServis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\ares.gif" />
+    <Content Include="ares fth.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\1347979804_DeleteRed.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SqlScripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HemenAlServis\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clsTablolar\clsTablolar.csproj">
+      <Project>{222cdcff-bba7-4363-8346-2556a90604b0}</Project>
+      <Name>clsTablolar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.103\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.103\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.103\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.103\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

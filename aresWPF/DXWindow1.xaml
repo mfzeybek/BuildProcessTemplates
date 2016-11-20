@@ -1,0 +1,27 @@
+﻿<dx:DXWindow
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="frmAnaForm" mc:Ignorable="d"
+	x:Class="aresWPF.DXWindow1"
+	Title="DXWindow1" Height="382" Width="804" ScrollViewer.HorizontalScrollBarVisibility="Visible" UseLayoutRounding="False" Loaded="DXTabbedWindow_Loaded" BorderEffect="Default" IsAeroMode="False" KeyDown="frmAnaForm_KeyDown"
+    >
+    <dx:DXWindow.TaskbarItemInfo>
+        <TaskbarItemInfo/>
+    </dx:DXWindow.TaskbarItemInfo>
+    <Grid Margin="0,0,2,7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <dxe:TextEdit x:Name="txtBarkod" Margin="25,10,35,0" VerticalAlignment="Top" Height="60" FontSize="20"/>
+        <dx:SimpleButton x:Name="simpleButton" Content="Ara" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,80,0,0" Width="208" ButtonKind="Simple" Click="simpleButton_Click" Height="20"/>
+        <dxg:GridControl x:Name="gcfalanfilan" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" Margin="10,10,10,0" RenderTransformOrigin="1.649,-0.164" Grid.Column="1">
+            <dxg:GridControl.View>
+                <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True" ShowGroupPanel="False"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</dx:DXWindow>
