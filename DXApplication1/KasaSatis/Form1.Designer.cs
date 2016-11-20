@@ -162,7 +162,7 @@
             this.txtBarkodu.Name = "txtBarkodu";
             this.txtBarkodu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.txtBarkodu.Properties.Appearance.Options.UseFont = true;
-            this.txtBarkodu.Size = new System.Drawing.Size(267, 30);
+            this.txtBarkodu.Size = new System.Drawing.Size(267, 54);
             this.txtBarkodu.TabIndex = 7;
             this.txtBarkodu.EditValueChanged += new System.EventHandler(this.txtBarkodu_EditValueChanged);
             this.txtBarkodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkodu_KeyDown);
@@ -236,7 +236,7 @@
             this.btnYazdir.Appearance.Options.UseFont = true;
             this.btnYazdir.Image = ((System.Drawing.Image)(resources.GetObject("btnYazdir.Image")));
             this.btnYazdir.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnYazdir.Location = new System.Drawing.Point(812, 6);
+            this.btnYazdir.Location = new System.Drawing.Point(776, 6);
             this.btnYazdir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(123, 52);
@@ -532,7 +532,7 @@
             this.labelControl3.Location = new System.Drawing.Point(271, 60);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(80, 16);
+            this.labelControl3.Size = new System.Drawing.Size(167, 33);
             this.labelControl3.TabIndex = 72;
             this.labelControl3.Text = "Son 40 Satış";
             this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click_1);
