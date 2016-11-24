@@ -26,17 +26,18 @@ namespace KasaSatis
                     MessageBox.Show("Satış yok veya seçili satışın daha tüm bilgileri gelmedi mk");
                     return;
                 }
-                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                OdemeKay.OdemeyiKaydet(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
-                TrGenel.Commit();
+                //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                //OdemeKay.OdemeyiKaydet(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
+                //TrGenel.Commit();
                 gvOdemesiYapilacakSatis.SetFocusedRowCellValue("OdendiMi", true);
-                SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID");
+                SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
                 TrGenel.Commit();
 
                 // bunu raşağıda yazdığın row style girdin diye yaptın.
+                btnYenile_Click(null, null);
                 gvOdemesiYapilacakSatis.RefreshRow(gvOdemesiYapilacakSatis.GetRowHandle(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()));
 
 
@@ -96,9 +97,9 @@ namespace KasaSatis
             //txtFaturaTutari.DataBindings.Add("EditValue", gcSatislar.DataSource, "FaturaTutari");
             Satislar.dt_threadSatislar.RowDeleted += dt_threadSatislar_RowDeleted;
 
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            Satislar.OdemesiAlinanSonKirkSatis(SqlConnections.GetBaglanti(), TrGenel);
-            TrGenel.Commit();
+            //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+            //Satislar.OdemesiAlinanSonKirkSatis(SqlConnections.GetBaglanti(), TrGenel);
+            //TrGenel.Commit();
 
             gvOdemesiYapilacakSatis_FocusedRowChanged(null, null);
         }
@@ -240,7 +241,7 @@ namespace KasaSatis
             else //Müşteri barkodu değilse
                 try
                 {
-                    if ((bool)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colOdendiMi))
+                    if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
                     {
                         MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
                         return;
@@ -469,7 +470,7 @@ namespace KasaSatis
             {
                 //lock (Satislar.KilitHamisina)
                 {
-                    if ((bool)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colOdendiMi))
+                    if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
                     {
                         MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
                         return;
@@ -514,7 +515,8 @@ namespace KasaSatis
             {
                 gvOdemesiYapilacakSatis_FocusedRowChanged(null, null);
                 //gvSatisHareketleri_CellValueChanged(null, null);
-                Satislar.FaturaIDdenFaturayiYenile(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
+                //Satislar.FaturaIDdenFaturayiYenile(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
+                Satislar.FaturaBarkodtanSatisiGetir(SqlConnections.GetBaglanti(), TrGenel, gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaBarkod").ToString());
                 gvOdemesiYapilacakSatis.RefreshRow(gvOdemesiYapilacakSatis.FocusedRowHandle);
                 //Hesapla.AltToplamlariHesapla();
             }
@@ -554,7 +556,7 @@ namespace KasaSatis
         {
             //lock (Satislar.KilitHamisina)
             {
-                if ((bool)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colOdendiMi))
+                if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
                 {
                     MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
                     return;
@@ -583,12 +585,25 @@ namespace KasaSatis
             }
         }
 
+        private bool OdemesiTamamlanmisMi(int datasourceRowIndex)
+        {
+            int RowHandlee = gvOdemesiYapilacakSatis.GetRowHandle(datasourceRowIndex);
+            if (Math.Round((decimal)gvOdemesiYapilacakSatis.GetRowCellValue(RowHandlee, colOdenenTutar), 2) == Math.Round((decimal)gvOdemesiYapilacakSatis.GetRowCellValue(RowHandlee, "FaturaTutari"), 2))
+            {
+                return true;
+            }
+            else
+            { return false; }
+
+        }
+
         private void btnSeciliUrununMiktariniBirArttir_Click(object sender, EventArgs e)
         {
             //lock (Satislar.KilitHamisina)
             try
             {
-                if ((bool)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colOdendiMi))
+                //if ((bool)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colOdendiMi))
+                if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
                 {
                     MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
                     return;
@@ -662,18 +677,29 @@ group by Fatura.OdendiMi", SqlConnections.GetBaglanti()))
             DevExpress.XtraGrid.Views.Grid.GridView View = sender as DevExpress.XtraGrid.Views.Grid.GridView;
             if (e.RowHandle >= 0)
             {
-                if ((bool)View.GetRowCellValue(e.RowHandle, View.Columns["OdendiMi"]))
+                decimal KalanBakiye = Convert.ToDecimal(View.GetRowCellValue(e.RowHandle, View.Columns["KalanBakiye"]));
+                decimal OdenenTutar = Convert.ToDecimal(View.GetRowCellValue(e.RowHandle, View.Columns["OdenenTutar"]));
+                decimal FaturaTutari = Convert.ToDecimal(View.GetRowCellValue(e.RowHandle, View.Columns["FaturaTutari"]));
+                //if ((bool)View.GetRowCellValue(e.RowHandle, View.Columns["OdendiMi"]))
+                if (OdenenTutar == 0)
+                {
+
+                }
+                else if (OdenenTutar == FaturaTutari)
                 {
                     e.HighPriority = true;
                     //e.Appearance.BackColor = System.Drawing.Color.PeachPuff;
                     //e.Appearance.BackColor = System.Drawing.Color.White;
                     e.Appearance.ForeColor = System.Drawing.Color.Red;
-
                     e.Appearance.Options.UseBackColor = false;
                 }
-                else
+                else if (OdenenTutar < FaturaTutari)
                 {
-
+                    e.HighPriority = true;
+                    //e.Appearance.BackColor = System.Drawing.Color.PeachPuff;
+                    //e.Appearance.BackColor = System.Drawing.Color.White;
+                    e.Appearance.ForeColor = System.Drawing.Color.Pink;
+                    e.Appearance.Options.UseBackColor = false;
                 }
             }
             //e.Appearance.Options.UseBackColor = true;
@@ -686,7 +712,7 @@ group by Fatura.OdendiMi", SqlConnections.GetBaglanti()))
             {
                 btnYeniMusteri_Click(null, null);
             }
-            if ((bool)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colOdendiMi))
+            if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
             {
                 MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
                 return;
