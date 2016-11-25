@@ -44,5 +44,17 @@ namespace KasaSatis.Properties {
                 return ((string)(this["connstr"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int KasaID {
+            get {
+                return ((int)(this["KasaID"]));
+            }
+            set {
+                this["KasaID"] = value;
+            }
+        }
     }
 }

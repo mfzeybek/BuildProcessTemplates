@@ -639,15 +639,7 @@ namespace KasaSatis
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            using (SqlCommand cmd = new SqlCommand(@"select sum (fatura.FaturaTutari) from fatura with(nolock)
-where OdendiMi = 1 and SilindiMi = 0 and FaturaTarihi between CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 101))   
-and 
-CONVERT(DATETIME, CONVERT(VARCHAR, DATEADD(day,1,getdate()), 101))
-group by Fatura.OdendiMi", SqlConnections.GetBaglanti()))
-            {
-                decimal ToplamKasaBakiyesi = Convert.ToDecimal(cmd.ExecuteScalar());
-                simpleButton2.Text = "Kasa Bakiyesi\n" + ToplamKasaBakiyesi.ToString();
-            }
+            
         }
 
         private void labelControl3_Click(object sender, EventArgs e)
@@ -826,6 +818,19 @@ group by Fatura.OdendiMi", SqlConnections.GetBaglanti()))
 
         private void btnSatisiSil_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            for (int i = 0; i < gvOdemesiYapilacakSatis.RowCount; i++)
+            {
+                //gvOdemesiYapilacakSatis.GetFocusedDataRow
+            }
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             if (gvSatisHareketleri.RowCount != 0)
             {
                 MessageBox.Show("satışın hareketleri varken satış silinemez");
@@ -844,14 +849,6 @@ group by Fatura.OdendiMi", SqlConnections.GetBaglanti()))
                 try { TrGenel.Rollback(); }
                 catch (Exception) { }
                 MessageBox.Show("Satı Silmede Hata Bunu bildir");
-            }
-        }
-
-        private void simpleButton1_Click_1(object sender, EventArgs e)
-        {
-            for (int i = 0; i < gvOdemesiYapilacakSatis.RowCount; i++)
-            {
-                //gvOdemesiYapilacakSatis.GetFocusedDataRow
             }
         }
     }

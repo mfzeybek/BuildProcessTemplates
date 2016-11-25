@@ -13,5 +13,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=192.168.2.3;Initial Catalog=ARES;User ID=sa;Password=1;Pooling=True</Value>
     </Setting>
+    <Setting Name="KasaID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

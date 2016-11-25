@@ -65,7 +65,6 @@
             this.colOdenenTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnMiktarGir = new DevExpress.XtraEditors.SimpleButton();
             this.btnSeciliUrununMiktariniBirArttir = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.gvSatisHareketleri = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -124,15 +123,12 @@
             this.gcSatisHareketleri = new DevExpress.XtraGrid.GridControl();
             this.btnMusteriler = new DevExpress.XtraEditors.SimpleButton();
             this.chckbtnIskontoIslemleri = new DevExpress.XtraEditors.CheckButton();
-            this.btnSatisiSil = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnItemFormSecerekYazdir = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -141,8 +137,11 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnItemFormSecerekYazdir = new DevExpress.XtraBars.BarButtonItem();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarkodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceBarkoduOkutulanFaturaninOdemesiniYap.Properties)).BeginInit();
@@ -554,16 +553,6 @@
             this.btnSeciliUrununMiktariniBirArttir.TabIndex = 69;
             this.btnSeciliUrununMiktariniBirArttir.Text = "Miktarı 1 Arttır";
             this.btnSeciliUrununMiktariniBirArttir.Click += new System.EventHandler(this.btnSeciliUrununMiktariniBirArttir_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(781, 134);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(284, 56);
-            this.simpleButton2.TabIndex = 70;
-            this.simpleButton2.Text = "Kasa Bakiyesi";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // labelControl3
             // 
@@ -1085,16 +1074,6 @@
             this.chckbtnIskontoIslemleri.Visible = false;
             this.chckbtnIskontoIslemleri.CheckedChanged += new System.EventHandler(this.chckbtnIskontoIslemleri_CheckedChanged);
             // 
-            // btnSatisiSil
-            // 
-            this.btnSatisiSil.Location = new System.Drawing.Point(471, 388);
-            this.btnSatisiSil.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSatisiSil.Name = "btnSatisiSil";
-            this.btnSatisiSil.Size = new System.Drawing.Size(133, 56);
-            this.btnSatisiSil.TabIndex = 115;
-            this.btnSatisiSil.Text = "Satışı Sil";
-            this.btnSatisiSil.Click += new System.EventHandler(this.btnSatisiSil_Click);
-            // 
             // simpleButton1
             // 
             this.simpleButton1.Location = new System.Drawing.Point(678, 253);
@@ -1116,47 +1095,39 @@
             this.dropDownButton1.TabIndex = 117;
             this.dropDownButton1.Text = "İşlemler";
             // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Location = new System.Drawing.Point(2, 148);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(284, 54);
-            this.simpleButton4.TabIndex = 118;
-            this.simpleButton4.Text = "Kalan Bakiyeyi Kredi Kartı İle Al";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Location = new System.Drawing.Point(2, 208);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(284, 54);
-            this.simpleButton5.TabIndex = 118;
-            this.simpleButton5.Text = "simpleButton4";
-            // 
             // popupMenu_Islemler
             // 
             this.popupMenu_Islemler.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
             this.popupMenu_Islemler.Manager = this.barManager1;
             this.popupMenu_Islemler.Name = "popupMenu_Islemler";
             // 
-            // barButtonItem3
+            // barButtonItem5
             // 
-            this.barButtonItem3.Caption = "barButtonItem3";
-            this.barButtonItem3.Id = 7;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem5.Caption = "Kasa Bakiye Bilgileri";
+            this.barButtonItem5.Id = 10;
+            this.barButtonItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barButtonItem5.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // barButtonItem4
+            // barButtonItem6
             // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 8;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem6.Caption = "Satışı Sil";
+            this.barButtonItem6.Id = 11;
+            this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
-            // barBtnItemFormSecerekYazdir
+            // barButtonItem7
             // 
-            this.barBtnItemFormSecerekYazdir.Caption = "Form Seçerek Yazdır";
-            this.barBtnItemFormSecerekYazdir.Id = 9;
-            this.barBtnItemFormSecerekYazdir.Name = "barBtnItemFormSecerekYazdir";
+            this.barButtonItem7.Caption = "Kapora";
+            this.barButtonItem7.Id = 12;
+            this.barButtonItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barButtonItem7.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem7.Name = "barButtonItem7";
             // 
             // barManager1
             // 
@@ -1173,8 +1144,9 @@
             this.barButtonItem4,
             this.barBtnItemFormSecerekYazdir,
             this.barButtonItem5,
-            this.barButtonItem6});
-            this.barManager1.MaxItemId = 12;
+            this.barButtonItem6,
+            this.barButtonItem7});
+            this.barManager1.MaxItemId = 13;
             // 
             // barDockControlTop
             // 
@@ -1228,17 +1200,39 @@
             this.barButtonItem1.Id = 5;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem5
+            // barButtonItem3
             // 
-            this.barButtonItem5.Caption = "Kasa Bakiye Bilgileri";
-            this.barButtonItem5.Id = 10;
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 7;
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // barButtonItem6
+            // barButtonItem4
             // 
-            this.barButtonItem6.Caption = "Satışı Sil";
-            this.barButtonItem6.Id = 11;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 8;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barBtnItemFormSecerekYazdir
+            // 
+            this.barBtnItemFormSecerekYazdir.Caption = "Form Seçerek Yazdır";
+            this.barBtnItemFormSecerekYazdir.Id = 9;
+            this.barBtnItemFormSecerekYazdir.Name = "barBtnItemFormSecerekYazdir";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Location = new System.Drawing.Point(2, 148);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(284, 54);
+            this.simpleButton4.TabIndex = 118;
+            this.simpleButton4.Text = "Kalan Bakiyeyi Kredi Kartı İle Al";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Location = new System.Drawing.Point(2, 208);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(284, 54);
+            this.simpleButton5.TabIndex = 118;
+            this.simpleButton5.Text = "simpleButton4";
             // 
             // frmKasaOdeme
             // 
@@ -1247,20 +1241,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 764);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.btnSatisiSil);
             this.Controls.Add(this.chckbtnIskontoIslemleri);
             this.Controls.Add(this.btnMusteriler);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.btnSeciliUrununMiktariniBirArttir);
             this.Controls.Add(this.btnMiktarGir);
             this.Controls.Add(this.gcOdemesiYapilacakSatis);
@@ -1279,6 +1267,10 @@
             this.Controls.Add(this.txtBarkodu);
             this.Controls.Add(this.btnAlisVerisiNakitOlarakKapat);
             this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.KeyPreview = true;
             this.Name = "frmKasaOdeme";
             this.Text = "Ödeme Ekranı v3";
@@ -1335,7 +1327,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colOdendiMi;
         private DevExpress.XtraEditors.SimpleButton btnMiktarGir;
         private DevExpress.XtraEditors.SimpleButton btnSeciliUrununMiktariniBirArttir;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         public DevExpress.XtraGrid.Views.Grid.GridView gvSatisHareketleri;
@@ -1394,7 +1385,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKdvDahilStokIskonto1IndirimMiktari;
         private DevExpress.XtraGrid.Columns.GridColumn colAltBirimKdvDahilIndirimHaricFiyat;
         private DevExpress.XtraGrid.Columns.GridColumn colAltBirimKdvDahilFiyat;
-        private DevExpress.XtraEditors.SimpleButton btnSatisiSil;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.DropDownButton dropDownButton1;
@@ -1416,6 +1406,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barBtnItemFormSecerekYazdir;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }
 

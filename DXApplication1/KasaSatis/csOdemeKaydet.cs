@@ -29,6 +29,7 @@ namespace KasaSatis
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
+                cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaSatis.Properties.Settings.Default.KasaID;
 
                 cmd.ExecuteNonQuery();
             }
