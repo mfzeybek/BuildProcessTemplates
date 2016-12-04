@@ -38,7 +38,7 @@ namespace clsTablolar.BasitUretim
 
 
         private SqlDataAdapter da;
-        private DataTable dt;
+        public DataTable dt;
 
         public csBasitUretimArama()
         {

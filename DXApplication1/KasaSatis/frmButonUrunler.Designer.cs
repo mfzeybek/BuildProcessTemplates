@@ -35,9 +35,10 @@
             // btnVazgec
             // 
             this.btnVazgec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVazgec.Location = new System.Drawing.Point(460, 12);
+            this.btnVazgec.Location = new System.Drawing.Point(789, 19);
+            this.btnVazgec.Margin = new System.Windows.Forms.Padding(5);
             this.btnVazgec.Name = "btnVazgec";
-            this.btnVazgec.Size = new System.Drawing.Size(163, 49);
+            this.btnVazgec.Size = new System.Drawing.Size(279, 77);
             this.btnVazgec.TabIndex = 1;
             this.btnVazgec.Text = "Kapat";
             this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
@@ -48,18 +49,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.stokButonGrupVeStokButonlari1.CausesValidation = false;
-            this.stokButonGrupVeStokButonlari1.Location = new System.Drawing.Point(12, 76);
+            this.stokButonGrupVeStokButonlari1.Location = new System.Drawing.Point(21, 119);
+            this.stokButonGrupVeStokButonlari1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.stokButonGrupVeStokButonlari1.Name = "stokButonGrupVeStokButonlari1";
-            this.stokButonGrupVeStokButonlari1.Size = new System.Drawing.Size(611, 646);
+            this.stokButonGrupVeStokButonlari1.Size = new System.Drawing.Size(1047, 1009);
             this.stokButonGrupVeStokButonlari1.TabIndex = 0;
             // 
             // frmButonUrunler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 734);
+            this.ClientSize = new System.Drawing.Size(1082, 1147);
             this.Controls.Add(this.btnVazgec);
             this.Controls.Add(this.stokButonGrupVeStokButonlari1);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmButonUrunler";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmButonUrunler";

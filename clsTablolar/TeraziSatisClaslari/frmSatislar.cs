@@ -38,16 +38,19 @@ namespace clsTablolar.TeraziSatisClaslari
             try
             {
                 using (SqlDataAdapter da = new SqlDataAdapter(@"select CariID, CariKod, CariTanim, FaturaNo, DegismeTarihi, FaturaBarkod, 
-FaturaTutari, DuzenlemeTarihi, FaturaTarihi, FaturaTipi, Fatura.FaturaID, TeraziFaturaID from Fatura with(nolock)
-inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID where 1 = 1  ", _Baglanti))
+FaturaTutari, DuzenlemeTarihi, FaturaTarihi, FaturaTipi, Fatura.FaturaID
+--, TeraziFaturaID 
+from Fatura with(nolock)
+--inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID 
+where HizliSatistaGozukecekMi = 1  ", _Baglanti))
                 {
                     if (checkButton_OdemesiTamamlanmamis.Checked == true)
                     {
-                        da.SelectCommand.CommandText += @" and fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ";
+                        da.SelectCommand.CommandText += @" and [dbo].[FaturaninOdemesiTamamlanmisMi](Fatura.FaturaID) = 0 and fatura.SilindiMi = 0 ";
                     }
                     else if (checkButton_OdemesiTamamlanmis.Checked == true)
                     {
-                        da.SelectCommand.CommandText += @" and fatura.OdendiMi = 1 and fatura.SilindiMi = 0 and DegismeTarihi > (select DATEADD(hour, -3, getdate()))";
+                        da.SelectCommand.CommandText += @" and [dbo].[FaturaninOdemesiTamamlanmisMi](Fatura.FaturaID) = 1 and fatura.SilindiMi = 0 and DegismeTarihi > (select DATEADD(hour, -3, getdate()))";
                     }
 
                     if (checkButton1.Checked == true)

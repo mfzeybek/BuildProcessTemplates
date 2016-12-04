@@ -23,13 +23,14 @@ namespace KasaSatis
             }
         }
 
-        public void FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID)
+        public void FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, string Aciklama)
         {
             using (SqlCommand cmd = new SqlCommand("FaturaninBakiyesininKalaniniNakitTahsilEt", Baglanti, Tr))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
                 cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaSatis.Properties.Settings.Default.KasaID;
+                cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
 
                 cmd.ExecuteNonQuery();
             }

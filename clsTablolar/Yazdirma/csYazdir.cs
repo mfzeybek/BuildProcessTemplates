@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using DevExpress.XtraReports.UI;
-//using DevExpress.XtraReports.UserDesigner;
 using DevExpress.XtraReports.UserDesigner;
 using System.Drawing.Printing;
 

@@ -38,7 +38,7 @@ namespace TeraziSatis.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ARES;Integrated Security=True;Pooling=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.2.3;Initial Catalog=ARES;User ID=sa;Password=1;Pooling=True")]
         public string DBConStr {
             get {
                 return ((string)(this["DBConStr"]));

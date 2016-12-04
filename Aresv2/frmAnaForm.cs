@@ -977,5 +977,12 @@ namespace Aresv2
             clsTablolar.FormState fs = new clsTablolar.FormState();
             fs.Maximize(this);
         }
+
+        private void barButtonItem41_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            BasitUretim.frmBasitUretim frmm = new BasitUretim.frmBasitUretim(-1);
+
+            FormuAc2(frmm);
+        }
     }
 }

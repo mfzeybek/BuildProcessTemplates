@@ -676,6 +676,12 @@
     <Compile Include="BasitUretim\frmKarisikCerez.Designer.cs">
       <DependentUpon>frmKarisikCerez.cs</DependentUpon>
     </Compile>
+    <Compile Include="BasitUretim\frmUretimListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasitUretim\frmUretimListesi.Designer.cs">
+      <DependentUpon>frmUretimListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cari\CariHr\frmCariHrKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1348,6 +1354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BasitUretim\frmKarisikCerez.resx">
       <DependentUpon>frmKarisikCerez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasitUretim\frmUretimListesi.resx">
+      <DependentUpon>frmUretimListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cari\CariHr\frmCariHrKarti.resx">
       <DependentUpon>frmCariHrKarti.cs</DependentUpon>

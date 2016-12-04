@@ -65,7 +65,7 @@ namespace TeraziSatis
               BindingFlags.InvokeMethod | BindingFlags.Instance, null,
               control, new object[] { 0x400000, false });
         }
-        public static string VersiyonNo = "Test - 99";
+        public static string VersiyonNo = "Test - 102";
         System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
         csTeraziLogs LogLar;
 

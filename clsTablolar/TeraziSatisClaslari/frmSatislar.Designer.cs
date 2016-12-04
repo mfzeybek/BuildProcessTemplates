@@ -257,7 +257,7 @@
             this.btnYenile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnYenile.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnYenile.Appearance.Options.UseFont = true;
-            this.btnYenile.Location = new System.Drawing.Point(1682, 10);
+            this.btnYenile.Location = new System.Drawing.Point(1682, 6);
             this.btnYenile.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnYenile.Name = "btnYenile";
             this.btnYenile.Size = new System.Drawing.Size(210, 125);
@@ -297,7 +297,7 @@
             this.btnSonrakiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.Image")));
             this.btnSonrakiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnSonrakiSayfa.Location = new System.Drawing.Point(2036, 10);
-            this.btnSonrakiSayfa.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSonrakiSayfa.Margin = new System.Windows.Forms.Padding(6);
             this.btnSonrakiSayfa.Name = "btnSonrakiSayfa";
             this.btnSonrakiSayfa.Size = new System.Drawing.Size(124, 125);
             this.btnSonrakiSayfa.TabIndex = 55;
@@ -309,7 +309,7 @@
             this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
             this.btnOncekiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnOncekiSayfa.Location = new System.Drawing.Point(1902, 10);
-            this.btnOncekiSayfa.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnOncekiSayfa.Margin = new System.Windows.Forms.Padding(6);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
             this.btnOncekiSayfa.Size = new System.Drawing.Size(124, 125);
             this.btnOncekiSayfa.TabIndex = 56;

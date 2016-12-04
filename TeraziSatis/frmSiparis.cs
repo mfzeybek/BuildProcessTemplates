@@ -710,5 +710,22 @@ namespace TeraziSatis
             Siparis.SiparisSil(SqlConnections.GetBaglanti(), TrGenel, Siparis.SiparisID);
             TrGenel.Commit();
         }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli);
+
+            if (frm.ShowDialog() == DialogResult.Yes)
+            {
+                //clsTablolar.cari.CariHr.csCariHr KApora = new clsTablolar.cari.CariHr.csCariHr();
+                //KApora.Aciklama = "Kapora";
+                //KApora.AlacakMiBorcMu = clsTablolar.cari.CariHr.HareketYonu.Alacak;
+                //KApora.CariID = Siparis.CariID;
+                //KApora.Devirmi = false;
+                //KApora.Entegrasyon = clsTablolar.cari.CariHr.CariHrEntegrasyon.CariKartHareketi;
+                //KApora.
+                txtKaporaTutari.Text = frm.textEdit1.Text;
+            }
+        }
     }
 }

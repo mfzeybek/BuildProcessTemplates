@@ -15,7 +15,7 @@ namespace clsTablolar.BasitUretim
             GC.SuppressFinalize(this);
         }
 
-       public  int BasitUretimID { get; set; }
+        public int BasitUretimID { get; set; }
         public int BUReceteID { get; set; }
         public int UretilenStokID { get; set; }
         public int CariID { get; set; }
@@ -23,26 +23,49 @@ namespace clsTablolar.BasitUretim
         public decimal UretimMiktari { get; set; }
         public decimal UretimMaliyeti { get; set; }
 
+        public string UretilenStokAdi { get; set; }
+
+        public string UretilenStokKodu { get; set; }
+
         SqlCommand cmd;
 
 
 
         public void Getir(SqlConnection Baglanti, SqlTransaction Tr, int BasitUretimID)
         {
-            using (cmd = new SqlCommand("select * from BasitUretim where BasitUretimID = @BasitUretimID", Baglanti, Tr))
+            if (BasitUretimID == -1)
             {
-                cmd.Parameters.Add("@BasitUretimID", SqlDbType.Int).Value = BasitUretimID;
-                using (SqlDataReader dr = cmd.ExecuteReader())
+                this.BasitUretimID = -1;
+                this.BUReceteID = -1;
+                this.UretilenStokID = -1;
+                this.CariID = -1;
+                this.Aciklama = string.Empty;
+                this.UretimMiktari = 0;
+                this.UretimMaliyeti = 0;
+                this.UretilenStokAdi = string.Empty;
+                this.UretilenStokKodu = string.Empty;
+            }
+
+            else
+            {
+                using (cmd = new SqlCommand(@"select BasitUretim.*, Stok.StokAdi, StokKodu from BasitUretim
+inner join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID = @BasitUretimID", Baglanti, Tr))
                 {
-                    if (dr.Read())
+                    cmd.Parameters.Add("@BasitUretimID", SqlDbType.Int).Value = BasitUretimID;
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        this.BasitUretimID = (int)dr["BasitUretimID"];
-                        this.BUReceteID = (int)dr["BUReceteID"];
-                        this.UretilenStokID = (int)dr["UretilenStokID"];
-                        this.CariID = (int)dr["CariID"];
-                        this.Aciklama = dr["Aciklama"].ToString();
-                        this.UretimMiktari = (decimal)dr["UretimMiktari"];
-                        this.UretimMaliyeti = (decimal)dr["UretimMaliyeti"];
+                        if (dr.Read())
+                        {
+                            this.BasitUretimID = (int)dr["BasitUretimID"];
+                            this.BUReceteID = (int)dr["BUReceteID"];
+                            this.UretilenStokID = (int)dr["UretilenStokID"];
+                            this.CariID = (int)dr["CariID"];
+                            this.Aciklama = dr["Aciklama"].ToString();
+                            this.UretimMiktari = (decimal)dr["UretimMiktari"];
+                            this.UretimMaliyeti = (decimal)dr["UretimMaliyeti"];
+                            this.UretilenStokAdi = dr["StokAdi"].ToString();
+                            this.UretilenStokKodu = dr["StokKodu"].ToString();
+                        }
                     }
                 }
             }

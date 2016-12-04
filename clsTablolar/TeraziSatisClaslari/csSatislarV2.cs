@@ -41,7 +41,10 @@ namespace clsTablolar.TeraziSatisClaslari
             using (SqlDataAdapter da = new SqlDataAdapter("", Baglanti))
             {
                 da.SelectCommand.Transaction = Tr;
-                da.SelectCommand.CommandText = "select top 40 *  from fatura where OdendiMi = 1 and silindimi = 0 and Iptal = 0 order by DegismeTarihi desc";
+                da.SelectCommand.CommandText = @"select top 40 Fatura.FaturaID, FaturaTipi, FaturaTarihi, DuzenlemeTarihi, FaturaNo, CariID,CariKod ,CariTanim, VergiDairesi ,VergiNo, Adres, Il, Ilce, Vadesi, Iptal, SilindiMi, Aciklama, KaydedenID, KayitTarihi, DegistirenID, DegismeTarihi, DepoID, SatisElemaniID, Toplam_Iskontosuz_Kdvsiz, CariIskontoToplami, StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, FaturaTutari, KullanilanFiyatTanimID, SiparisID, FaturaGrupID, OdendiMi, FaturaBarkod, TeraziFaturaID, TeraziID,  
+[dbo].[FaturaBakiyesiniGetir](Fatura.FaturaID) KalanBakiye, isnull([dbo].[FaturaninOdemeTutariniGetir](Fatura.FaturaID), 0) OdenenTutar from Fatura with(nolock)
+inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID
+where fatura.SilindiMi = 0 order by DegismeTarihi desc";
                 da.Fill(dt_threadSatislar);
             }
         }
@@ -53,7 +56,9 @@ namespace clsTablolar.TeraziSatisClaslari
         {
             using (SqlDataAdapter da_Thread = new SqlDataAdapter(@"select fatura.FaturaID, FaturaTipi, FaturaTarihi, fatura.DuzenlemeTarihi, FaturaNo, CariID, CariKod, CariTanim, VergiDairesi, VergiNo, Adres, Il, Ilce, 
 Vadesi, Iptal, SilindiMi, Aciklama, KaydedenID, KayitTarihi, DegistirenID, DegismeTarihi, DepoID, SatisElemaniID, Toplam_Iskontosuz_Kdvsiz, 
-CariIskontoToplami , StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, FaturaTutari, KullanilanFiyatTanimID, SiparisID, FaturaGrupID, OdendiMi, FaturaBarkod, TeraziFaturaID, TeraziID
+CariIskontoToplami , StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, isnull(FaturaTutari, 0) as FaturaTutari, KullanilanFiyatTanimID, SiparisID, FaturaGrupID, OdendiMi, 
+FaturaBarkod, TeraziFaturaID, TeraziID, isnull([dbo].[FaturaBakiyesiniGetir](Fatura.FaturaID), 0) KalanBakiye
+,isnull([dbo].[FaturaninOdemeTutariniGetir](Fatura.FaturaID), 0) OdenenTutar
 from Fatura  with(nolock, index = IX_Fatura_2)
 inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID 
 where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
@@ -127,6 +132,9 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
             droww["FaturaGrupID"] = -1;
             droww["OdendiMi"] = 0;
             droww["FaturaBarkod"] = string.Empty;
+            droww["KalanBakiye"] = 0;
+            droww["OdenenTutar"] = 0;
+
             dt_threadSatislar.Rows.Add(droww);
         }
         int _BeklemeSurasi = 0;
@@ -290,6 +298,9 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["FaturaGrupID"] = dr["FaturaGrupID"];
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["OdendiMi"] = dr["OdendiMi"];
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["FaturaBarkod"] = dr["FaturaBarkod"];
+                        dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["KalanBakiye"] = dr["KalanBakiye"];
+                        dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["OdenenTutar"] = dr["OdenenTutar"];
+
 
                         //return dr["FaturaBarkod"].ToString();
                         Barkod = dr["FaturaBarkod"].ToString();
@@ -338,6 +349,9 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
                     droww["FaturaGrupID"] = dr["FaturaGrupID"];
                     droww["OdendiMi"] = dr["OdendiMi"];
                     droww["FaturaBarkod"] = dr["FaturaBarkod"];
+                    droww["KalanBakiye"] = dr["KalanBakiye"];
+                    droww["OdenenTutar"] = dr["OdenenTutar"];
+
 
                     dt_threadSatislar.Rows.Add(droww);
 
@@ -434,7 +448,7 @@ and
                 int EtkilenenSatirSayisi = cmdKayit.ExecuteNonQuery();
 
 
-                if (EtkilenenSatirSayisi == 0) // etkilenen satır sayısı 0 ise kayıt gerçekleşmememiş
+                if (EtkilenenSatirSayisi == 0 || EtkilenenSatirSayisi == -1) // etkilenen satır sayısı 0 ise kayıt gerçekleşmememiş
                 // ve büyük ihtimalle ödemesi tamamlandığı için etkilenen satır sayısı 0 olmuştur.
                 { // burada kaldın hamısına ahahah
                     return -5;
@@ -475,9 +489,7 @@ and
 
         public string OdemesiYapilanSatisiGeriGetir(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID)
         {
-            using (SqlCommand cmd = new SqlCommand(@"update Fatura set OdendiMi = 0 where Fatura.SilindiMi = 0 and Fatura.OdendiMi = 1 and FaturaID = @FaturaID
-select * from fatura with(nolock) where Fatura.SilindiMi = 0 and Fatura.OdendiMi = 0 and FaturaID = @FaturaID
-", Baglanti, Tr))
+            using (SqlCommand cmd = new SqlCommand(@"update CariHr set SilindiMi = 1 where FaturaID = @FaturaID", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
 

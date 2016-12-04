@@ -12,6 +12,7 @@ namespace Aresv2.BasitUretim
 
 
         SqlTransaction TrGenel;
+        public int ReceteID;
 
         private void btnFiltrele_Click(object sender, EventArgs e)
         {
@@ -263,6 +264,13 @@ namespace Aresv2.BasitUretim
                 ((sender) as DevExpress.XtraEditors.LookUpEdit).EditValue = -1;
                 lkpHammaddeStokAltGrubu.EditValue = -1;
             }
+        }
+
+        private void btnSec_Click(object sender, EventArgs e)
+        {
+            ReceteID = (int)gridView1.GetFocusedRowCellValue("BUReceteID");
+            this.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.Close();
         }
     }
 }

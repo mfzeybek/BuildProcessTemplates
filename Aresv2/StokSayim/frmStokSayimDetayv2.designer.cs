@@ -644,23 +644,27 @@
             // 
             resources.ApplyResources(this.btnMiktarDegistir, "btnMiktarDegistir");
             this.btnMiktarDegistir.Name = "btnMiktarDegistir";
+            this.btnMiktarDegistir.Click += new System.EventHandler(this.btnMiktarDegistir_Click);
             // 
             // btnKartiAc
             // 
             resources.ApplyResources(this.btnKartiAc, "btnKartiAc");
             this.btnKartiAc.Name = "btnKartiAc";
+            this.btnKartiAc.Click += new System.EventHandler(this.btnKartiAc_Click);
             // 
             // btnStokSil
             // 
             this.btnStokSil.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnStokSil, "btnStokSil");
             this.btnStokSil.Name = "btnStokSil";
+            this.btnStokSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnStokEkle
             // 
             this.btnStokEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnStokEkle, "btnStokEkle");
             this.btnStokEkle.Name = "btnStokEkle";
+            this.btnStokEkle.Click += new System.EventHandler(this.btnStokEkle_Click);
             // 
             // labelControl6
             // 
