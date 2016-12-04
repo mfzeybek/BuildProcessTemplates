@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace clsTablolar.BasitUretim
 {
     class csBasitUretimArama
-    {
+    { // aahdan git hub düzgün çalışıyor
     }
 }
