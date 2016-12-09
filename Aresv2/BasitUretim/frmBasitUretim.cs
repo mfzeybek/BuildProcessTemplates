@@ -24,6 +24,9 @@ namespace Aresv2.BasitUretim
         clsTablolar.BasitUretim.csBasitUretimDetay UretimDetay = new clsTablolar.BasitUretim.csBasitUretimDetay();
         clsTablolar.csFiyatTanim FiyatTanimlari = new clsTablolar.csFiyatTanim();
         SqlTransaction TrGenel;
+        int _UretilenStokID = -1;
+        int _ReceteID = -1;
+        int _CariID = -1;
 
 
         private void BasitUretim_Load(object sender, EventArgs e)
@@ -46,6 +49,10 @@ namespace Aresv2.BasitUretim
             lkpKullanilanFiyatTanimi.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel);
             lkpKullanilanFiyatTanimi.Properties.DisplayMember = "FiyatTanimAdi";
             lkpKullanilanFiyatTanimi.Properties.ValueMember = "FiyatTanimID";
+
+            repositoryItemLookUpEdit1.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel);
+            repositoryItemLookUpEdit1.DisplayMember = "FiyatTanimAdi";
+            repositoryItemLookUpEdit1.ValueMember = "FiyatTanimID";
         }
 
         void Al()
@@ -53,13 +60,21 @@ namespace Aresv2.BasitUretim
             txtUretilenStokAdi.EditValue = Uretim.UretilenStokAdi;
             txtUretilenStokKodu.EditValue = Uretim.UretilenStokKodu;
             txtUretimMiktari.EditValue = Uretim.UretimMiktari;
+            txtAciklama.EditValue = Uretim.Aciklama;
+            _UretilenStokID = Uretim.UretilenStokID;
+            _CariID = Uretim.CariID;
+            _ReceteID = Uretim.BUReceteID;
         }
 
         void Ver()
         {
-            txtUretilenStokAdi.EditValue = Uretim.UretilenStokAdi;
-            txtUretilenStokKodu.EditValue = Uretim.UretilenStokKodu;
-            txtUretimMiktari.EditValue = Uretim.UretimMiktari;
+            Uretim.UretilenStokAdi = txtUretilenStokAdi.Text;
+            Uretim.UretilenStokKodu = txtUretilenStokKodu.Text;
+            Uretim.UretimMiktari = Convert.ToDecimal(txtUretimMiktari.EditValue);
+            Uretim.Aciklama = txtAciklama.Text;
+            Uretim.UretilenStokID = _UretilenStokID;
+            Uretim.CariID = _CariID;
+            Uretim.BUReceteID = _ReceteID;
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -90,6 +105,7 @@ namespace Aresv2.BasitUretim
             txtUretimMiktari.EditValue = Recete.UretimMiktari;
             txtUretilenStokAdi.EditValue = Recete.StokAdi;
             txtUretilenStokKodu.EditValue = Recete.StokKodu;
+            _UretilenStokID = Recete.UretilenStokID;
 
 
             clsTablolar.BasitUretim.csBasitUretimReceteDetay Recetedetay = new clsTablolar.BasitUretim.csBasitUretimReceteDetay();
@@ -123,12 +139,43 @@ namespace Aresv2.BasitUretim
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtUretilenStokKodu.Text))
+            {
+                MessageBox.Show("Üretilecek Stok Seçilmedi");
+                return;
+            }
 
+            Ver();
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             Uretim.Kaydet(SqlConnections.GetBaglanti(), TrGenel, Uretim.BasitUretimID);
             UretimDetay.Kaydet(SqlConnections.GetBaglanti(), TrGenel, Uretim.BasitUretimID);
             TrGenel.Commit();
+        }
 
+        private void btnStokEkle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        frmCariListe cariSec = new frmCariListe();
+
+        private void btnCariSec_Click(object sender, EventArgs e)
+        {
+            cariSec._CariIDVer = CariSec;
+            cariSec.ShowDialog();
+        }
+
+        void CariSec(int CariID)
+        {
+            this._CariID = CariID;
+            clsTablolar.cari.csCariv2 carr = new clsTablolar.cari.csCariv2(SqlConnections.GetBaglanti(), TrGenel, CariID);
+            txtCariTanim.Text = carr.CariTanim;
+            txtCariKodu.Text = carr.CariKod;
         }
     }
 }

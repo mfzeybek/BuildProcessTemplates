@@ -49,7 +49,7 @@ namespace clsTablolar.BasitUretim
             else
             {
                 using (cmd = new SqlCommand(@"select BasitUretim.*, Stok.StokAdi, StokKodu from BasitUretim
-inner join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID = @BasitUretimID", Baglanti, Tr))
+left join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID = @BasitUretimID", Baglanti, Tr))
                 {
                     cmd.Parameters.Add("@BasitUretimID", SqlDbType.Int).Value = BasitUretimID;
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -82,7 +82,7 @@ inner join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID 
                 }
                 else
                 {
-                    cmd.CommandText = " update BasitUretim set BUReceteID = @BUReceteID, UretilenStokID = @UretilenStokID, CariID = @CariID, Aciklama = @Aciklama, UretimMiktari = @UretimMiktari = @UretimMaliyeti wehere BasitUretimID = @BasitUretimID";
+                    cmd.CommandText = " update BasitUretim set BUReceteID = @BUReceteID, UretilenStokID = @UretilenStokID, CariID = @CariID, Aciklama = @Aciklama, UretimMiktari = @UretimMiktari, UretimMaliyeti = @UretimMaliyeti where BasitUretimID = @BasitUretimID";
                     cmd.Parameters.Add("@BasitUretimID", SqlDbType.Int).Value = BasitUretimID;
                 }
                 cmd.Parameters.Add("@BUReceteID", SqlDbType.Int).Value = BUReceteID;
@@ -94,6 +94,12 @@ inner join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID 
                 cmd.Parameters.Add("@UretimMaliyeti", SqlDbType.Decimal).Value = UretimMaliyeti;
 
                 cmd.ExecuteNonQuery();
+
+                if (BasitUretimID == -1)
+                {
+                    this.BasitUretimID = (int)cmd.Parameters["@YeniID"].Value;
+
+                }
 
             }
         }

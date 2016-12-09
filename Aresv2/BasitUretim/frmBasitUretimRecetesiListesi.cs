@@ -59,7 +59,7 @@ namespace Aresv2.BasitUretim
             }
 
         }
-        clsTablolar.BasitUretim.csBasitUretimArama UretimRecetesiArama = new clsTablolar.BasitUretim.csBasitUretimArama();
+        clsTablolar.BasitUretim.csBasitUretimReceteArama UretimRecetesiArama = new clsTablolar.BasitUretim.csBasitUretimReceteArama();
         void AramaKriterleriniGonder()
         {
             UretimRecetesiArama.UretilenStokAdi = txtUretilenStokAdi.EditValue.ToString();

@@ -248,7 +248,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
             {
                 if (dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'").Length != 0)
                 {
-                    if ((bool)dr["Iptal"] || (bool)dr["SilindiMi"] || (bool)dr["OdendiMi"]) // eğer gelen satır silinmişse, Iptal edilmişse veya Ödenmişse çıkartıyoruz
+                    if ((bool)dr["Iptal"] || (bool)dr["SilindiMi"])// || (bool)dr["OdendiMi"]) // eğer gelen satır silinmişse, Iptal edilmişse veya Ödenmişse çıkartıyoruz
                     {
                         foreach (var item in dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'").AsEnumerable())
                         {
@@ -493,10 +493,12 @@ and
             {
                 cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
 
-                using (SqlDataReader dr = cmd.ExecuteReader())
-                {
-                    return SatisGetir(dr, false);
-                }
+                cmd.ExecuteNonQuery();
+                //using (SqlDataReader dr = cmd.ExecuteReader())
+                //{
+                //    return SatisGetir(dr, false);
+                //}
+                return string.Empty;
             }
         }
 
@@ -569,5 +571,6 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and Fatura.FaturaID = @Fatura
 
             //}
         }
+
     }
 }

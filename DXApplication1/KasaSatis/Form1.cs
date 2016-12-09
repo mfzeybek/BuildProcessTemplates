@@ -33,8 +33,14 @@ namespace KasaSatis
                 SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), "Fatura Nakit Ödeme");
+                csOdemeKaydet.OdemeDonenBilgisi donenOdemeBilgisi = OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), "Fatura Nakit Ödeme");
+
                 TrGenel.Commit();
+
+                if (csOdemeKaydet.OdemeDonenBilgisi.OncedenOdemesiTamamlanmis == donenOdemeBilgisi)
+                {
+                    MessageBox.Show("Ödemesi önceden tamamlanmış hamısına");
+                }
 
                 // bunu raşağıda yazdığın row style girdin diye yaptın.
                 btnYenile_Click(null, null);
@@ -279,6 +285,8 @@ namespace KasaSatis
 
         void BarkodtanMusteriAra(string BarkodNumarasi)
         {
+            if (string.IsNullOrEmpty(BarkodNumarasi))
+                return;
             Satislar.FaturaBarkodtanSatisiGetir(SqlConnections.GetBaglanti(), TrGenel, txtBarkodu.Text); // Bu yüklü olan varsa günceller yüklü olan yoksa yükler
 
             if (Satislar.dt_threadSatislar.Select("FaturaBarkod = '" + BarkodNumarasi + "'").Length > 0) // Bu tereaziye yüklü olan bir fatura var demekmtir sanırım
@@ -533,9 +541,11 @@ namespace KasaSatis
                 //lock (Satislar.KilitHamisina)
                 {
                     TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                    string barkodNo = Satislar.OdemesiYapilanSatisiGeriGetir(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
+                    //string barkodNo = Satislar.OdemesiYapilanSatisiGeriGetir(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
+                    Satislar.OdemesiYapilanSatisiGeriGetir(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
                     TrGenel.Commit();
-                    BarkodtanMusteriAra(barkodNo);
+                    //BarkodtanMusteriAra(barkodNo);
+                    btnYenile_Click(null, null);
                     SonOdemesiYapilanMusterinin_FaturaID = -1;
                 }
             }
@@ -588,7 +598,7 @@ namespace KasaSatis
         private bool OdemesiTamamlanmisMi(int datasourceRowIndex)
         {
             int RowHandlee = gvOdemesiYapilacakSatis.GetRowHandle(datasourceRowIndex);
-            if (Math.Round((decimal)gvOdemesiYapilacakSatis.GetRowCellValue(RowHandlee, colOdenenTutar), 2) == Math.Round((decimal)gvOdemesiYapilacakSatis.GetRowCellValue(RowHandlee, "FaturaTutari"), 2))
+            if (Math.Round((decimal)gvOdemesiYapilacakSatis.GetRowCellValue(RowHandlee, colOdenenTutar), 2) == Math.Round((decimal)gvOdemesiYapilacakSatis.GetRowCellValue(RowHandlee, "FaturaTutari"), 2) && Math.Round((decimal)gvOdemesiYapilacakSatis.GetRowCellValue(RowHandlee, "FaturaTutari"), 2) != 0)
             {
                 return true;
             }

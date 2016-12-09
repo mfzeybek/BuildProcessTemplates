@@ -24,10 +24,16 @@ namespace Aresv2.BasitUretim
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            arama.GetirHamisina(SqlConnections.GetBaglanti(), TrGenel);
+            arama.Getir(SqlConnections.GetBaglanti(), TrGenel);
             gridControl1.DataSource = arama.dt;
-
             TrGenel.Commit();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            BasitUretim.frmBasitUretim frm = new frmBasitUretim((int)gridView1.GetFocusedRowCellValue(colBasitUretimID));
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

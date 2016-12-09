@@ -294,6 +294,7 @@
     <Compile Include="Ayarlar\KullaniciIslemleri\csYetkiler.cs" />
     <Compile Include="BasitUretim\csBasitUretim.cs" />
     <Compile Include="BasitUretim\csBasitUretimArama.cs" />
+    <Compile Include="BasitUretim\csBasitUretimReceteArama.cs" />
     <Compile Include="BasitUretim\csBasitUretimDetay.cs" />
     <Compile Include="BasitUretim\csBasitUretimReceteDetay.cs" />
     <Compile Include="BasitUretim\csBasitUretimRecete.cs" />

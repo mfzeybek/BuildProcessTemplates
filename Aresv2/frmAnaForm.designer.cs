@@ -183,6 +183,7 @@
             this.barButtonItem40 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPageCategory2 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+            this.barButtonItem44 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ımageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -881,6 +882,7 @@
             // ribbonPageGroup32
             // 
             this.ribbonPageGroup32.ItemLinks.Add(this.barButtonItem41);
+            this.ribbonPageGroup32.ItemLinks.Add(this.barButtonItem44);
             this.ribbonPageGroup32.Name = "ribbonPageGroup32";
             this.ribbonPageGroup32.Text = "ribbonPageGroup32";
             // 
@@ -1535,11 +1537,12 @@
             this.barButtonItem39,
             this.barButtonItem40,
             this.barButtonItem_TamEkran,
-            this.barButtonItem41});
+            this.barButtonItem41,
+            this.barButtonItem44});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 6;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.ribbon.MaxItemId = 7;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.OptionsTouch.ShowTouchUISelectorInQAT = true;
@@ -1563,25 +1566,32 @@
             this.rpTerazi,
             this.rpYonetim,
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(962, 143);
+            this.ribbon.Size = new System.Drawing.Size(1924, 282);
             // 
             // ribbonPageCategory2
             // 
             this.ribbonPageCategory2.Name = "ribbonPageCategory2";
             this.ribbonPageCategory2.Text = "ribbonPageCategory2";
             // 
+            // barButtonItem44
+            // 
+            this.barButtonItem44.Caption = "Üretim Listesi";
+            this.barButtonItem44.Id = 6;
+            this.barButtonItem44.Name = "barButtonItem44";
+            this.barButtonItem44.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem44_ItemClick);
+            // 
             // frmAnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(962, 625);
+            this.ClientSize = new System.Drawing.Size(1924, 1202);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "frmAnaForm";
             this.Ribbon = this.ribbon;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -1752,5 +1762,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem41;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup32;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem44;
     }
 }

@@ -117,12 +117,12 @@
             // 
             this.gcSatislar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSatislar.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.gcSatislar.Location = new System.Drawing.Point(20, 138);
+            this.gcSatislar.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcSatislar.Location = new System.Drawing.Point(10, 72);
             this.gcSatislar.MainView = this.gvSatislar;
-            this.gcSatislar.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.gcSatislar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSatislar.Name = "gcSatislar";
-            this.gcSatislar.Size = new System.Drawing.Size(2396, 638);
+            this.gcSatislar.Size = new System.Drawing.Size(1139, 332);
             this.gcSatislar.TabIndex = 16;
             this.gcSatislar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatislar});
@@ -257,10 +257,10 @@
             this.btnYenile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnYenile.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnYenile.Appearance.Options.UseFont = true;
-            this.btnYenile.Location = new System.Drawing.Point(1682, 6);
-            this.btnYenile.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnYenile.Location = new System.Drawing.Point(781, 2);
+            this.btnYenile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnYenile.Name = "btnYenile";
-            this.btnYenile.Size = new System.Drawing.Size(210, 125);
+            this.btnYenile.Size = new System.Drawing.Size(105, 65);
             this.btnYenile.TabIndex = 17;
             this.btnYenile.Text = "Yenile";
             this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
@@ -270,10 +270,10 @@
             this.btnTamam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTamam.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnTamam.Appearance.Options.UseFont = true;
-            this.btnTamam.Location = new System.Drawing.Point(1460, 10);
-            this.btnTamam.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnTamam.Location = new System.Drawing.Point(670, 4);
+            this.btnTamam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTamam.Name = "btnTamam";
-            this.btnTamam.Size = new System.Drawing.Size(210, 125);
+            this.btnTamam.Size = new System.Drawing.Size(105, 65);
             this.btnTamam.TabIndex = 18;
             this.btnTamam.Text = "Aktar";
             this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
@@ -283,10 +283,10 @@
             this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIptal.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnIptal.Appearance.Options.UseFont = true;
-            this.btnIptal.Location = new System.Drawing.Point(2220, 10);
-            this.btnIptal.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnIptal.Location = new System.Drawing.Point(1050, 4);
+            this.btnIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(198, 125);
+            this.btnIptal.Size = new System.Drawing.Size(99, 65);
             this.btnIptal.TabIndex = 18;
             this.btnIptal.Text = "Kapat";
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
@@ -296,10 +296,9 @@
             this.btnSonrakiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSonrakiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.Image")));
             this.btnSonrakiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSonrakiSayfa.Location = new System.Drawing.Point(2036, 10);
-            this.btnSonrakiSayfa.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSonrakiSayfa.Location = new System.Drawing.Point(958, 4);
             this.btnSonrakiSayfa.Name = "btnSonrakiSayfa";
-            this.btnSonrakiSayfa.Size = new System.Drawing.Size(124, 125);
+            this.btnSonrakiSayfa.Size = new System.Drawing.Size(62, 65);
             this.btnSonrakiSayfa.TabIndex = 55;
             this.btnSonrakiSayfa.Click += new System.EventHandler(this.btnSonrakiSayfa_Click);
             // 
@@ -308,10 +307,9 @@
             this.btnOncekiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
             this.btnOncekiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOncekiSayfa.Location = new System.Drawing.Point(1902, 10);
-            this.btnOncekiSayfa.Margin = new System.Windows.Forms.Padding(6);
+            this.btnOncekiSayfa.Location = new System.Drawing.Point(891, 4);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
-            this.btnOncekiSayfa.Size = new System.Drawing.Size(124, 125);
+            this.btnOncekiSayfa.Size = new System.Drawing.Size(62, 65);
             this.btnOncekiSayfa.TabIndex = 56;
             this.btnOncekiSayfa.Click += new System.EventHandler(this.btnOncekiSayfa_Click);
             // 
@@ -321,14 +319,14 @@
             this.gcSatisHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.gcSatisHareketleri.Location = new System.Drawing.Point(20, 865);
+            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcSatisHareketleri.Location = new System.Drawing.Point(10, 450);
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
-            this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
             this.gcSatisHareketleri.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(2394, 398);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(1139, 271);
             this.gcSatisHareketleri.TabIndex = 57;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -780,10 +778,10 @@
             this.checkButton_OdemesiTamamlanmis.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.checkButton_OdemesiTamamlanmis.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
             this.checkButton_OdemesiTamamlanmis.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.checkButton_OdemesiTamamlanmis.Location = new System.Drawing.Point(20, 4);
-            this.checkButton_OdemesiTamamlanmis.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.checkButton_OdemesiTamamlanmis.Location = new System.Drawing.Point(10, 2);
+            this.checkButton_OdemesiTamamlanmis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkButton_OdemesiTamamlanmis.Name = "checkButton_OdemesiTamamlanmis";
-            this.checkButton_OdemesiTamamlanmis.Size = new System.Drawing.Size(282, 125);
+            this.checkButton_OdemesiTamamlanmis.Size = new System.Drawing.Size(141, 65);
             this.checkButton_OdemesiTamamlanmis.TabIndex = 59;
             this.checkButton_OdemesiTamamlanmis.Text = "Ödemesi Tamamlanmış";
             this.checkButton_OdemesiTamamlanmis.CheckedChanged += new System.EventHandler(this.checkButton_OdemesiTamamlanmis_CheckedChanged);
@@ -795,30 +793,30 @@
             this.checkButton_OdemesiTamamlanmamis.Appearance.Options.UseTextOptions = true;
             this.checkButton_OdemesiTamamlanmamis.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.checkButton_OdemesiTamamlanmamis.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
-            this.checkButton_OdemesiTamamlanmamis.Location = new System.Drawing.Point(314, 4);
-            this.checkButton_OdemesiTamamlanmamis.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.checkButton_OdemesiTamamlanmamis.Location = new System.Drawing.Point(157, 2);
+            this.checkButton_OdemesiTamamlanmamis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkButton_OdemesiTamamlanmamis.Name = "checkButton_OdemesiTamamlanmamis";
-            this.checkButton_OdemesiTamamlanmamis.Size = new System.Drawing.Size(290, 125);
+            this.checkButton_OdemesiTamamlanmamis.Size = new System.Drawing.Size(145, 65);
             this.checkButton_OdemesiTamamlanmamis.TabIndex = 59;
             this.checkButton_OdemesiTamamlanmamis.Text = "Ödemesi Tamamlanmamış";
             this.checkButton_OdemesiTamamlanmamis.CheckedChanged += new System.EventHandler(this.checkButton_OdemesiTamamlanmamis_CheckedChanged);
             // 
             // btnBirlestir
             // 
-            this.btnBirlestir.Location = new System.Drawing.Point(616, 13);
-            this.btnBirlestir.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnBirlestir.Location = new System.Drawing.Point(308, 7);
+            this.btnBirlestir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBirlestir.Name = "btnBirlestir";
-            this.btnBirlestir.Size = new System.Drawing.Size(248, 52);
+            this.btnBirlestir.Size = new System.Drawing.Size(124, 27);
             this.btnBirlestir.TabIndex = 60;
             this.btnBirlestir.Text = "Birleştir";
             this.btnBirlestir.Click += new System.EventHandler(this.btnBirlestir_Click);
             // 
             // btnAyir
             // 
-            this.btnAyir.Location = new System.Drawing.Point(616, 75);
-            this.btnAyir.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnAyir.Location = new System.Drawing.Point(308, 39);
+            this.btnAyir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAyir.Name = "btnAyir";
-            this.btnAyir.Size = new System.Drawing.Size(248, 54);
+            this.btnAyir.Size = new System.Drawing.Size(124, 28);
             this.btnAyir.TabIndex = 60;
             this.btnAyir.Text = "Ayır";
             // 
@@ -830,10 +828,10 @@
             this.checkButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.checkButton1.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
             this.checkButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.checkButton1.Location = new System.Drawing.Point(876, 8);
-            this.checkButton1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.checkButton1.Location = new System.Drawing.Point(438, 4);
+            this.checkButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkButton1.Name = "checkButton1";
-            this.checkButton1.Size = new System.Drawing.Size(262, 121);
+            this.checkButton1.Size = new System.Drawing.Size(131, 63);
             this.checkButton1.TabIndex = 59;
             this.checkButton1.Text = "Son 1 Saat";
             this.checkButton1.CheckedChanged += new System.EventHandler(this.checkButton1_CheckedChanged);
@@ -842,9 +840,9 @@
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2426, 1281);
+            this.ClientSize = new System.Drawing.Size(1162, 732);
             this.ControlBox = false;
             this.Controls.Add(this.btnAyir);
             this.Controls.Add(this.btnBirlestir);
@@ -858,7 +856,7 @@
             this.Controls.Add(this.btnTamam);
             this.Controls.Add(this.btnYenile);
             this.Controls.Add(this.gcSatislar);
-            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSatislar";
             this.Text = "frmSatislar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

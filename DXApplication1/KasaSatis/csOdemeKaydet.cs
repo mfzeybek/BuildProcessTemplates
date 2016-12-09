@@ -23,7 +23,13 @@ namespace KasaSatis
             }
         }
 
-        public void FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, string Aciklama)
+        public enum OdemeDonenBilgisi
+        {
+            OdemesiTamamlandi = 1,
+            OncedenOdemesiTamamlanmis = 0
+        }
+
+        public OdemeDonenBilgisi FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, string Aciklama)
         {
             using (SqlCommand cmd = new SqlCommand("FaturaninBakiyesininKalaniniNakitTahsilEt", Baglanti, Tr))
             {
@@ -32,11 +38,15 @@ namespace KasaSatis
                 cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaSatis.Properties.Settings.Default.KasaID;
                 cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
 
+                cmd.Parameters.Add("@RETURN_VALUE", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
                 cmd.ExecuteNonQuery();
+
+                int DonenDeger = (int)cmd.Parameters["@RETURN_VALUE"].Value;
+
+                return (OdemeDonenBilgisi)DonenDeger;
+                //string value = cmd.Parameters["@return_value"].Value.ToString();
             }
-
-
-
         }
     }
 }
