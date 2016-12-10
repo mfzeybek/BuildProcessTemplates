@@ -497,7 +497,6 @@ namespace Aresv2.Fatura
                 //FaturaHareket.dt_FaturaHareketleri.Rows[gvFaturaHareket.FocusedRowHandle].Delete();
                 //SatirNumaralariniOlustur();
                 Hesaplamalar.AltToplamlariHesapla();
-
             }
             catch (Exception hata)
             {

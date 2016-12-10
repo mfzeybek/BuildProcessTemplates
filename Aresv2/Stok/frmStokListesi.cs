@@ -62,8 +62,6 @@ namespace Aresv2.Stok
             btnSec.Enabled = _StokAramaYap;
             btnKaydiAc.Visible = !_StokAramaYap;
             barButtonItem2.Enabled = !_StokAramaYap;
-
-
         }
 
         public static string StokID = "", StokAdi = "";
@@ -374,7 +372,9 @@ namespace Aresv2.Stok
                         frmMiktarGirr.ShowDialog();
                         Miktarr = Convert.ToDecimal(frmMiktarGirr.textEdit1.EditValue);
                     }
-                    Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
+                    if ((int)btnEdit_SayimAciklama.EditValue != -1)
+
+                        Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
                 }
             }
             else
@@ -963,6 +963,8 @@ namespace Aresv2.Stok
                     {
                         clsTablolar.Sayim.csSayim SayimBir = new clsTablolar.Sayim.csSayim(SqlConnections.GetBaglanti(), trGenel, SayimHamisina.SecilenSayimID);
                         btnEdit_SayimAciklama.Text = SayimBir.Aciklama;
+                        btnEdit_SayimAciklama.EditValue = SayimBir.SayimID;
+                        MessageBox.Show(btnEdit_SayimAciklama.EditValue.ToString());
                         StokArama.SayimID = SayimBir.SayimID;
                     }
             }

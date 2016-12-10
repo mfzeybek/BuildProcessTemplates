@@ -154,11 +154,19 @@ namespace Aresv2.BasitUretim
 
         private void btnStokEkle_Click(object sender, EventArgs e)
         {
-
+            Stok.frmStokListesi frm = new Stok.frmStokListesi(true);
+            frm.Stok_Sec = StokEkle;
+            frm.ShowDialog();
         }
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
+
+        }
+
+        void StokEkle(int StokID, decimal Miktar)
+        {
+
 
         }
 
@@ -176,6 +184,25 @@ namespace Aresv2.BasitUretim
             clsTablolar.cari.csCariv2 carr = new clsTablolar.cari.csCariv2(SqlConnections.GetBaglanti(), TrGenel, CariID);
             txtCariTanim.Text = carr.CariTanim;
             txtCariKodu.Text = carr.CariKod;
+        }
+
+        private void btnStokCikar_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                return;
+            if (MessageBox.Show("Seçili Satır Silinsin Mi??", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                gridView1.DeleteSelectedRows();
+            }
+        }
+
+        private void btnStokAc_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                return;
+
+            Stok.frmStokDetay frm = new Stok.frmStokDetay((int)gridView1.GetFocusedRowCellValue(colMalzemeStokID));
+            frm.ShowDialog();
         }
     }
 }

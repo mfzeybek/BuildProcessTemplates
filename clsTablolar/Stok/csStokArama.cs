@@ -366,7 +366,7 @@ namespace clsTablolar.Stok
             da.SelectCommand.CommandText = @"SELECT DISTINCT s.StokID, s.Aktif, s.StokKodu, s.StokAdi, s.OzelKod1, s.OzelKod2, s.OzelKod3, s.Aciklama, s.KayitTarihi, s.DegismeTarihi, s.iskOrani1, s.iskOrani2, s.iskOrani3, s.MinumumMiktar, s.MaksimumMiktar, s.EtiketAdi,
 s.AlisKdv, s.SatisKdv, s.Barkod, sb.BirimAdi, s.RafYeriAciklama, s.UrunTanitimdaGoster, s.Garanti, s.EMagazaErisimi, s.Desi, s.KisaAciklama, 
 s.HemenAlID, s.HemenAlSira, s.StokSayimGrubuID, s.OlmasiGerekenMiktar, s.StokTipi
-, isnull(Girisler.Girisler, 0.0000) GirenMiktar , isnull(Cikislar.Cikislar, 0.000) CikanMiktar, isnull(Girisler,0.0000) - isnull(Cikislar, 0.000) as KalanMiktar ";
+, isnull(Girisler.Girisler, 0.0000) GirenMiktar , isnull(Cikislar.Cikislar, 0.000) CikanMiktar, isnull(Girisler,0.0000) - isnull(Cikislar, 0.000) as KalanMiktar, SayimDetay.Miktar1 ";
 
 
             //for (int i = 0; i < FiyatTanimlariID().Count(); i++)
