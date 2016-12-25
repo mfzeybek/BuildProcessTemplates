@@ -234,7 +234,7 @@ namespace Aresv2.Fatura
                 // TODO: Burada satış faturasına göre veya alış faturasına göre ayarlar gelecek bitane
                 // if konarak alış mı satış mı olduğu saptanmalı
 
-                lkpKullanilanFiyatTanimi.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), trGenel);
+                lkpKullanilanFiyatTanimi.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), trGenel, false);
                 lkpKullanilanFiyatTanimi.Properties.DisplayMember = "FiyatTanimAdi";
                 lkpKullanilanFiyatTanimi.Properties.ValueMember = "FiyatTanimID";
 

@@ -5,15 +5,16 @@ namespace Aresv2.BasitUretim
 {
     public partial class frmBasitUretimRecetesiListesi : DevExpress.XtraEditors.XtraForm
     {
-        public frmBasitUretimRecetesiListesi()
+        public frmBasitUretimRecetesiListesi(bool ListeIcinAc)
         {
+            ListelemeIcinmiAciliyor = ListeIcinAc;
             InitializeComponent();
         }
 
 
         SqlTransaction TrGenel;
         public int ReceteID;
-
+        bool ListelemeIcinmiAciliyor;
         private void btnFiltrele_Click(object sender, EventArgs e)
         {
 
@@ -45,6 +46,15 @@ namespace Aresv2.BasitUretim
         private void frmBasitUretimRecetesiListesi_Load(object sender, EventArgs e)
         {
             AramaKriterleriniAl();
+
+            if (ListelemeIcinmiAciliyor)
+            {
+                btnSec.Visible = false;
+            }
+            else
+            {
+                btnKaydiAc.Visible = false;
+            }
 
             try
             {
@@ -271,6 +281,23 @@ namespace Aresv2.BasitUretim
             ReceteID = (int)gridView1.GetFocusedRowCellValue("BUReceteID");
             this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.Close();
+        }
+
+        private void Textler_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == System.Windows.Forms.Keys.Enter)
+            {
+                btnFiltrele_Click(null, null);
+                if (gridView1.RowCount == 1)
+                    if (ListelemeIcinmiAciliyor)
+                    {
+                        btnKaydiAc_Click(null, null);
+                    }
+                    else
+                    {
+                        btnSec_Click(null, null);
+                    }
+            }
         }
     }
 }

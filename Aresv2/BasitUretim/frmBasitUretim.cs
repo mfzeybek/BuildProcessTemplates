@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Helpers;
+
+
 
 namespace Aresv2.BasitUretim
 {
@@ -35,7 +38,10 @@ namespace Aresv2.BasitUretim
             Uretim.Getir(SqlConnections.GetBaglanti(), TrGenel, _BasitUretimID);
             UretimDetay.getir(SqlConnections.GetBaglanti(), TrGenel, _BasitUretimID);
 
+            //gridView1.DataSource
+            //colMaliyet.OptionsColumn.ImmediateUpdateRowPosition = 
 
+            DevExpress.XtraGrid.Helpers.GridColumnData data = new GridColumnData(gridView1);
 
             FiyatTaniminiYukle();
             TrGenel.Commit();
@@ -46,11 +52,11 @@ namespace Aresv2.BasitUretim
 
         void FiyatTaniminiYukle()
         {
-            lkpKullanilanFiyatTanimi.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel);
+            lkpKullanilanFiyatTanimi.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel, true);
             lkpKullanilanFiyatTanimi.Properties.DisplayMember = "FiyatTanimAdi";
             lkpKullanilanFiyatTanimi.Properties.ValueMember = "FiyatTanimID";
 
-            repositoryItemLookUpEdit1.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel);
+            repositoryItemLookUpEdit1.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel, true);
             repositoryItemLookUpEdit1.DisplayMember = "FiyatTanimAdi";
             repositoryItemLookUpEdit1.ValueMember = "FiyatTanimID";
         }
@@ -84,7 +90,7 @@ namespace Aresv2.BasitUretim
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            using (frmBasitUretimRecetesiListesi frm = new frmBasitUretimRecetesiListesi())
+            using (frmBasitUretimRecetesiListesi frm = new frmBasitUretimRecetesiListesi(false))
             {
                 if (frm.ShowDialog() == DialogResult.Yes)
                 {
@@ -139,6 +145,12 @@ namespace Aresv2.BasitUretim
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            if (gridView1.IsEditing)
+                gridView1.CloseEditor();
+
+            if (gridView1.FocusedRowModified)
+                gridView1.UpdateCurrentRow();
+
             if (string.IsNullOrEmpty(txtUretilenStokKodu.Text))
             {
                 MessageBox.Show("Üretilecek Stok Seçilmedi");
@@ -149,6 +161,10 @@ namespace Aresv2.BasitUretim
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             Uretim.Kaydet(SqlConnections.GetBaglanti(), TrGenel, Uretim.BasitUretimID);
             UretimDetay.Kaydet(SqlConnections.GetBaglanti(), TrGenel, Uretim.BasitUretimID);
+
+            clsTablolar.Stok.csStokHr UretilenStok = new clsTablolar.Stok.csStokHr();
+            UretilenStok.AhandaKolaycaBasitUretimdetaydanStokHrEEkledik(SqlConnections.GetBaglanti(), TrGenel, Uretim.BasitUretimID);
+
             TrGenel.Commit();
         }
 
@@ -203,6 +219,84 @@ namespace Aresv2.BasitUretim
 
             Stok.frmStokDetay frm = new Stok.frmStokDetay((int)gridView1.GetFocusedRowCellValue(colMalzemeStokID));
             frm.ShowDialog();
+        }
+
+        private void btnFiyatTanim_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0) return;
+            Stok.frmStokFiyatlari frm = new Stok.frmStokFiyatlari(Stok.frmStokFiyatlari.NeFiyati.Hepsi, (int)gridView1.GetFocusedRowCellValue(colMalzemeStokID), -1);
+            if (frm.ShowDialog() == DialogResult.Yes)
+            {
+                gridView1.SetFocusedRowCellValue(colMaliyet, frm.Fiyat);
+                gridView1.SetFocusedRowCellValue(colMaliyetFiyatTanimID, frm.FiyatTanimID);
+            }
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column == colMaliyet || e.Column == colGerekliMiktar)
+            {
+                decimal Maliyet = Convert.ToDecimal(gridView1.GetRowCellValue(e.RowHandle, colMaliyet));
+                decimal GerekliMiktar = Convert.ToDecimal(gridView1.GetRowCellValue(e.RowHandle, colGerekliMiktar));
+                decimal MAliyetTutari = Maliyet * GerekliMiktar;
+                gridView1.SetRowCellValue(e.RowHandle, colMaliyetTutari, MAliyetTutari);
+            }
+        }
+
+        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column == colMaliyet)
+            {
+                //e.Value
+                gridView1.SetFocusedRowCellValue(colMaliyetFiyatTanimID, -2);
+
+                //gridView1.SetFocusedRowCellValue(colMaliyet, e.Value);
+                //gridView1.InvalidateRowCell(e.RowHandle, e.Column);
+                //gridView1.
+            }
+            //if (gridView1.FocusedRowModified)
+
+            //    if (gridView1.IsEditing)
+            //        gridView1.PostEditor();
+
+
+
+            //gridView1.BeginInit();
+            //gridView1.EndInit();
+            //gridView1.
+            //if (gridView1.IsEditing)
+            //    gridView1.CloseEditor();
+
+
+            //gridView1.UpdateCurrentRow();
+
+            //gridView1.UpdateCurrentRow();
+
+            //DevExpress.XtraGrid.Views.Grid.GridView view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+            //TextEdit edit = view.ActiveEditor as TextEdit;
+            //if (edit == null) return;
+            ////if (edit.Text.Length > 3)
+            //{
+            //    edit.SelectionStart = edit.Text.Length;
+            //    edit.SelectionLength = 0;
+            //}
+
+
+
+
+            //gridView1.
+            //gridView1.SetFocusedRowCellValue(e.Column, e.Value);
+            //gridView1.UpdateCurrentRow();
+            //gridView1.PostEditor();
+
+
+
+            //if (gridView1.IsEditing)
+            //    gridView1.CloseEditor();
+
+            //if (gridView1.FocusedRowModified)
+            //    gridView1.UpdateCurrentRow();
+
         }
     }
 }

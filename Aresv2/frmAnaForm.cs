@@ -830,7 +830,7 @@ namespace Aresv2
 
         private void barButtonItem39_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            BasitUretim.frmBasitUretimRecetesiListesi frm = new BasitUretim.frmBasitUretimRecetesiListesi();
+            BasitUretim.frmBasitUretimRecetesiListesi frm = new BasitUretim.frmBasitUretimRecetesiListesi(true);
             FormuAc(frm);
         }
 

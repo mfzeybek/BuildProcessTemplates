@@ -242,7 +242,7 @@ namespace Aresv2.Stok
         clsTablolar.frmMiktarGir frmMiktarGirr;
         void SeciliFiyatTanimlariniAl()
         {
-            checkedListBox_FiyatTanimlari.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), trGenel);
+            checkedListBox_FiyatTanimlari.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), trGenel, false);
             checkedListBox_FiyatTanimlari.DisplayMember = "FiyatTanimAdi";
             checkedListBox_FiyatTanimlari.ValueMember = "FiyatTanimID";
 
@@ -372,9 +372,9 @@ namespace Aresv2.Stok
                         frmMiktarGirr.ShowDialog();
                         Miktarr = Convert.ToDecimal(frmMiktarGirr.textEdit1.EditValue);
                     }
-                    if ((int)btnEdit_SayimAciklama.EditValue != -1)
+                    //if ((int)btnEdit_SayimAciklama.EditValue != -1)
 
-                        Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
+                    Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
                 }
             }
             else

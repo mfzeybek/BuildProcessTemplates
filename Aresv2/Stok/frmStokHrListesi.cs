@@ -80,7 +80,7 @@ namespace Aresv2.Stok
                           //ToplamIskonto = g.Sum(p => Convert.ToDecimal((p["ToplamIskonto"]).ToString()))
                       };
 
-                gridControl2.DataSource = categories;
+                //gridControl2.DataSource = categories;
                 //dtt2.Clear();
 
                 //foreach (var item in categories)
@@ -107,7 +107,7 @@ namespace Aresv2.Stok
         {
             txtStokAdi.EditValue = HareketArama.StokAdi;
             txtStokKodu.EditValue = HareketArama.StokKodu;
-            comboBoxEdit1.SelectedIndex = HareketArama.GirisCikis;
+            N.SelectedIndex = HareketArama.GirisCikis;
             deTarih1.DateTime = HareketArama.IlkTarih;
             deTarih2.DateTime = HareketArama.IkinciTarih;
             lkpGrup.EditValue = HareketArama.StokGrupID;
@@ -118,7 +118,7 @@ namespace Aresv2.Stok
         {
             HareketArama.StokAdi = txtStokAdi.EditValue.ToString();
             HareketArama.StokKodu = txtStokKodu.EditValue.ToString();
-            HareketArama.GirisCikis = comboBoxEdit1.SelectedIndex;
+            HareketArama.GirisCikis = N.SelectedIndex;
             HareketArama.IlkTarih = deTarih1.DateTime;
             HareketArama.IkinciTarih = deTarih2.DateTime;
             HareketArama.StokGrupID = (int)lkpGrup.EditValue;
@@ -244,7 +244,10 @@ namespace Aresv2.Stok
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-
+            if (gridView1.GetFocusedRowCellValue(colStokID) == null) return;
+            Stok.frmStokDetay frm = new frmStokDetay((int)gridView1.GetFocusedRowCellValue(colStokID));
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void lkpGrup_EditValueChanged(object sender, EventArgs e)
@@ -255,6 +258,62 @@ namespace Aresv2.Stok
         private void lkpAraGrup_EditValueChanged(object sender, EventArgs e)
         {
             AltGrupGetir((int)lkpAraGrup.EditValue);
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbHizliTarih_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbHizliTarih.SelectedIndex == 0)
+            {
+
+            }
+
+            switch (cmbHizliTarih.SelectedIndex)
+            {
+                case 0:
+                    deTarih1.DateTime = DateTime.Today;
+                    deTarih2.DateTime = DateTime.Today; break;
+                case 1:
+                    deTarih1.DateTime = DateTime.Today.AddDays(-1);
+                    deTarih2.DateTime = DateTime.Today.AddDays(-1); break;
+                case 2:
+                    deTarih1.DateTime = haftaBasi(DateTime.Today, DayOfWeek.Monday);
+                    deTarih2.DateTime = haftasonu(DateTime.Today, DayOfWeek.Sunday);
+                    break;
+                case 3:
+                    deTarih1.DateTime = haftaBasi(DateTime.Today, DayOfWeek.Monday);
+                    deTarih2.DateTime = haftasonu(DateTime.Today, DayOfWeek.Sunday);
+                    break;
+            }
+
+
+
+        }
+
+
+
+
+        DateTime haftaBasi(DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = dt.DayOfWeek - startOfWeek;
+            if (diff < 0)
+            {
+                diff += 7;
+            }
+            return dt.AddDays(-1 * diff).Date;
+        }
+        DateTime haftasonu(DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = dt.DayOfWeek - startOfWeek;
+            if (diff < 0)
+            {
+                diff += 7;
+            }
+            return dt.AddDays(diff).Date;
         }
     }
 }

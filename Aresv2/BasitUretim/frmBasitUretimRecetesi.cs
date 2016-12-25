@@ -56,7 +56,7 @@ namespace Aresv2.BasitUretim
                 claslardanYukle();
                 TrGenel.Commit();
 
-                Kaydet_Vazgec_Sil_Enable(true);
+                Kaydet_Vazgec_Sil_Enable(false);
             }
             catch (Exception hata)
             {
@@ -116,7 +116,7 @@ namespace Aresv2.BasitUretim
             dt_MaliyetTanimlari = new DataTable();
 
 
-            dt_MaliyetTanimlari = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel).Copy();
+            dt_MaliyetTanimlari = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel, true).Copy();
 
 
 

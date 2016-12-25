@@ -92,12 +92,12 @@ namespace Aresv2.Stok
 
       TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
 
-      lkpStokFiyat1.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel);
+      lkpStokFiyat1.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel, false);
       lkpStokFiyat1.Properties.ValueMember = "FiyatTanimID";
       lkpStokFiyat1.Properties.DisplayMember = "FiyatTanimAdi";
       lkpStokFiyat1.EditValue = 1;
 
-      lkpStokFiyat2.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel);
+      lkpStokFiyat2.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel, false);
       lkpStokFiyat2.Properties.ValueMember = "FiyatTanimID";
       lkpStokFiyat2.Properties.DisplayMember = "FiyatTanimAdi";
       lkpStokFiyat2.EditValue = 2;

@@ -29,52 +29,43 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.lkpAltGrup = new DevExpress.XtraEditors.LookUpEdit();
-            this.lkpAraGrup = new DevExpress.XtraEditors.LookUpEdit();
-            this.lkpGrup = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.frmStokHrListesilayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.cmbHizliTarih = new System.Windows.Forms.ComboBox();
+            this.btnHareketiAc = new DevExpress.XtraEditors.SimpleButton();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem_KolonIslemleri = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItemYerlesimiKaydet = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnExceleAktar = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXmlOlustur = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnHemenAlUrunleriGetir = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem_KolonIslemleri = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem_KolonIslemleri = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItemYerlesimiKaydet = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnExceleAktar = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnYazdir = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnOnizle = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnListedenYazdir = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXmlOlustur = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.btnHemenAlUrunleriGetir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.btnBugun = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.deTarih2 = new DevExpress.XtraEditors.DateEdit();
-            this.txtStokAdi = new DevExpress.XtraEditors.TextEdit();
-            this.deTarih1 = new DevExpress.XtraEditors.DateEdit();
+            this.btnStokKartiniAc = new DevExpress.XtraEditors.SimpleButton();
+            this.lkpAraGrup = new DevExpress.XtraEditors.LookUpEdit();
+            this.lkpGrup = new DevExpress.XtraEditors.LookUpEdit();
+            this.N = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtCariAdi = new DevExpress.XtraEditors.TextEdit();
             this.txtStokKodu = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.deTarih1 = new DevExpress.XtraEditors.DateEdit();
+            this.txtStokAdi = new DevExpress.XtraEditors.TextEdit();
+            this.deTarih2 = new DevExpress.XtraEditors.DateEdit();
             this.btnFiltrele = new DevExpress.XtraEditors.SimpleButton();
-            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btnBugun = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStokID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -96,205 +87,222 @@
             this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnHareketiAc = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.lkpAltGrup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmStokHrListesilayoutControl1ConvertedLayout)).BeginInit();
+            this.frmStokHrListesilayoutControl1ConvertedLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpAraGrup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStokAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCariAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deTarih1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deTarih1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
-            this.tabPane1.SuspendLayout();
-            this.tabNavigationPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStokAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             this.SuspendLayout();
-            // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 41);
-            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.xtraTabControl1);
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltrele);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.tabPane1);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(959, 523);
-            this.splitContainerControl1.SplitterPosition = 228;
-            this.splitContainerControl1.TabIndex = 0;
-            this.splitContainerControl1.Text = "splitContainerControl1";
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
-            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(228, 486);
-            this.xtraTabControl1.TabIndex = 16;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.lkpAltGrup);
-            this.xtraTabPage1.Controls.Add(this.lkpAraGrup);
-            this.xtraTabPage1.Controls.Add(this.lkpGrup);
-            this.xtraTabPage1.Controls.Add(this.labelControl9);
-            this.xtraTabPage1.Controls.Add(this.labelControl5);
-            this.xtraTabPage1.Controls.Add(this.labelControl6);
-            this.xtraTabPage1.Controls.Add(this.labelControl1);
-            this.xtraTabPage1.Controls.Add(this.textEdit1);
-            this.xtraTabPage1.Controls.Add(this.labelControl2);
-            this.xtraTabPage1.Controls.Add(this.btnBugun);
-            this.xtraTabPage1.Controls.Add(this.labelControl3);
-            this.xtraTabPage1.Controls.Add(this.deTarih2);
-            this.xtraTabPage1.Controls.Add(this.txtStokAdi);
-            this.xtraTabPage1.Controls.Add(this.deTarih1);
-            this.xtraTabPage1.Controls.Add(this.txtStokKodu);
-            this.xtraTabPage1.Controls.Add(this.labelControl4);
-            this.xtraTabPage1.Controls.Add(this.comboBoxEdit1);
-            this.xtraTabPage1.Controls.Add(this.labelControl8);
-            this.xtraTabPage1.Controls.Add(this.labelControl7);
-            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(222, 458);
-            this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // lkpAltGrup
             // 
             this.lkpAltGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lkpAltGrup.EditValue = -1;
-            this.lkpAltGrup.Location = new System.Drawing.Point(76, 351);
-            this.lkpAltGrup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.lkpAltGrup.Location = new System.Drawing.Point(162, 510);
+            this.lkpAltGrup.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpAltGrup.Name = "lkpAltGrup";
             this.lkpAltGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpAltGrup.Properties.NullText = "";
-            this.lkpAltGrup.Size = new System.Drawing.Size(140, 20);
+            this.lkpAltGrup.Size = new System.Drawing.Size(203, 34);
+            this.lkpAltGrup.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.lkpAltGrup.TabIndex = 18;
             // 
-            // lkpAraGrup
+            // frmStokHrListesilayoutControl1ConvertedLayout
             // 
-            this.lkpAraGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkpAraGrup.EditValue = -1;
-            this.lkpAraGrup.Location = new System.Drawing.Point(76, 325);
-            this.lkpAraGrup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.lkpAraGrup.Name = "lkpAraGrup";
-            this.lkpAraGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
-            this.lkpAraGrup.Properties.NullText = "";
-            this.lkpAraGrup.Size = new System.Drawing.Size(140, 20);
-            this.lkpAraGrup.TabIndex = 17;
-            this.lkpAraGrup.EditValueChanged += new System.EventHandler(this.lkpAraGrup_EditValueChanged);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.cmbHizliTarih);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.btnHareketiAc);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.dropDownButton1);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.btnStokKartiniAc);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.lkpAltGrup);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.lkpAraGrup);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.lkpGrup);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.N);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.txtCariAdi);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.txtStokKodu);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.deTarih1);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.txtStokAdi);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.deTarih2);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.btnFiltrele);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.btnBugun);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Controls.Add(this.gridControl1);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Name = "frmStokHrListesilayoutControl1ConvertedLayout";
+            this.frmStokHrListesilayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(425, 322, 1401, 1148);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Size = new System.Drawing.Size(1982, 1173);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.TabIndex = 6;
             // 
-            // lkpGrup
+            // cmbHizliTarih
             // 
-            this.lkpGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkpGrup.EditValue = -1;
-            this.lkpGrup.Location = new System.Drawing.Point(76, 299);
-            this.lkpGrup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.lkpGrup.Name = "lkpGrup";
-            this.lkpGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
-            this.lkpGrup.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StokGrupAdi", "StokGrupAdi")});
-            this.lkpGrup.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.lkpGrup.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Value;
-            this.lkpGrup.Properties.NullText = "";
-            this.lkpGrup.Properties.NullValuePrompt = "-1";
-            this.lkpGrup.Size = new System.Drawing.Size(140, 20);
-            this.lkpGrup.TabIndex = 16;
-            this.lkpGrup.EditValueChanged += new System.EventHandler(this.lkpGrup_EditValueChanged);
+            this.cmbHizliTarih.FormattingEnabled = true;
+            this.cmbHizliTarih.Items.AddRange(new object[] {
+            "Bugün",
+            "Dün",
+            "Bu hafta",
+            "Bu ay"});
+            this.cmbHizliTarih.Location = new System.Drawing.Point(162, 284);
+            this.cmbHizliTarih.Name = "cmbHizliTarih";
+            this.cmbHizliTarih.Size = new System.Drawing.Size(203, 33);
+            this.cmbHizliTarih.TabIndex = 11;
+            this.cmbHizliTarih.SelectedIndexChanged += new System.EventHandler(this.cmbHizliTarih_SelectedIndexChanged);
             // 
-            // labelControl9
+            // btnHareketiAc
             // 
-            this.labelControl9.Location = new System.Drawing.Point(4, 354);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(63, 13);
-            this.labelControl9.TabIndex = 19;
-            this.labelControl9.Text = "Stok Alt Grup";
+            this.btnHareketiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHareketiAc.Location = new System.Drawing.Point(510, 24);
+            this.btnHareketiAc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHareketiAc.Name = "btnHareketiAc";
+            this.btnHareketiAc.Size = new System.Drawing.Size(720, 42);
+            this.btnHareketiAc.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.btnHareketiAc.TabIndex = 4;
+            this.btnHareketiAc.Text = "Hareketi Aç";
+            this.btnHareketiAc.Click += new System.EventHandler(this.btnHareketiAc_Click);
             // 
-            // labelControl5
+            // dropDownButton1
             // 
-            this.labelControl5.Location = new System.Drawing.Point(4, 328);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(67, 13);
-            this.labelControl5.TabIndex = 20;
-            this.labelControl5.Text = "Stok Ara Grup";
+            this.dropDownButton1.AllowDrop = true;
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
+            this.dropDownButton1.DropDownControl = this.popupMenu1;
+            this.dropDownButton1.Location = new System.Drawing.Point(1238, 24);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(720, 42);
+            this.dropDownButton1.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.dropDownButton1.TabIndex = 5;
+            this.dropDownButton1.Text = "dropDownButton1";
             // 
-            // labelControl6
+            // popupMenu1
             // 
-            this.labelControl6.Location = new System.Drawing.Point(4, 302);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(47, 13);
-            this.labelControl6.TabIndex = 21;
-            this.labelControl6.Text = "Stok Grup";
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem_KolonIslemleri),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnExceleAktar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnXmlOlustur),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
             // 
-            // labelControl1
+            // barSubItem2
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 12);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(39, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Stok Adi";
+            this.barSubItem2.Caption = "Kolon İşlemleri ";
+            this.barSubItem2.Id = 14;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            this.barSubItem2.Name = "barSubItem2";
             // 
-            // textEdit1
+            // barButtonItem3
             // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(76, 258);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(140, 20);
-            this.textEdit1.TabIndex = 6;
+            this.barButtonItem3.Caption = "Yerleşimi KAydet";
+            this.barButtonItem3.Id = 15;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barSubItem_KolonIslemleri
+            // 
+            this.barSubItem_KolonIslemleri.Caption = "KolonIslemleri";
+            this.barSubItem_KolonIslemleri.Id = 1;
+            this.barSubItem_KolonIslemleri.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemYerlesimiKaydet)});
+            this.barSubItem_KolonIslemleri.Name = "barSubItem_KolonIslemleri";
+            // 
+            // barButtonItemYerlesimiKaydet
+            // 
+            this.barButtonItemYerlesimiKaydet.Caption = "Yerleşimi Kaydet";
+            this.barButtonItemYerlesimiKaydet.Id = 2;
+            this.barButtonItemYerlesimiKaydet.Name = "barButtonItemYerlesimiKaydet";
+            // 
+            // barBtnExceleAktar
+            // 
+            this.barBtnExceleAktar.Caption = "Excel e aktar";
+            this.barBtnExceleAktar.Id = 4;
+            this.barBtnExceleAktar.Name = "barBtnExceleAktar";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Önizle";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnXmlOlustur
+            // 
+            this.btnXmlOlustur.Caption = "Xml Oluştur (HemenAl.com)";
+            this.btnXmlOlustur.Id = 10;
+            this.btnXmlOlustur.Name = "btnXmlOlustur";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "HemenAl Entegrasyonu";
+            this.barSubItem1.Id = 11;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnHemenAlUrunleriGetir)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // btnHemenAlUrunleriGetir
+            // 
+            this.btnHemenAlUrunleriGetir.Caption = "Ürünleri Getir";
+            this.btnHemenAlUrunleriGetir.Id = 12;
+            this.btnHemenAlUrunleriGetir.Name = "btnHemenAlUrunleriGetir";
             // 
             // barManager1
             // 
@@ -326,63 +334,37 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlTop.Size = new System.Drawing.Size(959, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlTop.Size = new System.Drawing.Size(1982, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 564);
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlBottom.Size = new System.Drawing.Size(959, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1173);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1982, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 564);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1173);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(959, 0);
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 564);
+            this.barDockControlRight.Location = new System.Drawing.Point(1982, 0);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1173);
             // 
             // barButtonItem_KolonIslemleri
             // 
             this.barButtonItem_KolonIslemleri.Id = 3;
             this.barButtonItem_KolonIslemleri.Name = "barButtonItem_KolonIslemleri";
-            // 
-            // barSubItem_KolonIslemleri
-            // 
-            this.barSubItem_KolonIslemleri.Caption = "KolonIslemleri";
-            this.barSubItem_KolonIslemleri.Id = 1;
-            this.barSubItem_KolonIslemleri.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemYerlesimiKaydet)});
-            this.barSubItem_KolonIslemleri.Name = "barSubItem_KolonIslemleri";
-            // 
-            // barButtonItemYerlesimiKaydet
-            // 
-            this.barButtonItemYerlesimiKaydet.Caption = "Yerleşimi Kaydet";
-            this.barButtonItemYerlesimiKaydet.Id = 2;
-            this.barButtonItemYerlesimiKaydet.Name = "barButtonItemYerlesimiKaydet";
-            // 
-            // barBtnExceleAktar
-            // 
-            this.barBtnExceleAktar.Caption = "Excel e aktar";
-            this.barBtnExceleAktar.Id = 4;
-            this.barBtnExceleAktar.Name = "barBtnExceleAktar";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Önizle";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // barbtnYazdir
             // 
@@ -408,231 +390,187 @@
             this.barBtnListedenYazdir.Id = 9;
             this.barBtnListedenYazdir.Name = "barBtnListedenYazdir";
             // 
-            // btnXmlOlustur
-            // 
-            this.btnXmlOlustur.Caption = "Xml Oluştur (HemenAl.com)";
-            this.btnXmlOlustur.Id = 10;
-            this.btnXmlOlustur.Name = "btnXmlOlustur";
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "HemenAl Entegrasyonu";
-            this.barSubItem1.Id = 11;
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnHemenAlUrunleriGetir)});
-            this.barSubItem1.Name = "barSubItem1";
-            // 
-            // btnHemenAlUrunleriGetir
-            // 
-            this.btnHemenAlUrunleriGetir.Caption = "Ürünleri Getir";
-            this.btnHemenAlUrunleriGetir.Id = 12;
-            this.btnHemenAlUrunleriGetir.Name = "btnHemenAlUrunleriGetir";
-            // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "Kolon İşlemleri";
             this.barButtonItem2.Id = 13;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // barSubItem2
+            // btnStokKartiniAc
             // 
-            this.barSubItem2.Caption = "Kolon İşlemleri ";
-            this.barSubItem2.Id = 14;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
-            this.barSubItem2.Name = "barSubItem2";
+            this.btnStokKartiniAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStokKartiniAc.Location = new System.Drawing.Point(24, 24);
+            this.btnStokKartiniAc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStokKartiniAc.Name = "btnStokKartiniAc";
+            this.btnStokKartiniAc.Size = new System.Drawing.Size(478, 42);
+            this.btnStokKartiniAc.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.btnStokKartiniAc.TabIndex = 4;
+            this.btnStokKartiniAc.Text = "Stok Kartını Aç";
+            this.btnStokKartiniAc.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // barButtonItem3
+            // lkpAraGrup
             // 
-            this.barButtonItem3.Caption = "Yerleşimi KAydet";
-            this.barButtonItem3.Id = 15;
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 32);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Stok Kodu";
-            // 
-            // btnBugun
-            // 
-            this.btnBugun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lkpAraGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBugun.Location = new System.Drawing.Point(76, 204);
-            this.btnBugun.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnBugun.Name = "btnBugun";
-            this.btnBugun.Size = new System.Drawing.Size(140, 19);
-            this.btnBugun.TabIndex = 15;
-            this.btnBugun.Text = "Bugün";
-            this.btnBugun.Click += new System.EventHandler(this.btnBugun_Click);
+            this.lkpAraGrup.EditValue = -1;
+            this.lkpAraGrup.Location = new System.Drawing.Point(162, 468);
+            this.lkpAraGrup.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.lkpAraGrup.Name = "lkpAraGrup";
+            this.lkpAraGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
+            this.lkpAraGrup.Properties.NullText = "";
+            this.lkpAraGrup.Size = new System.Drawing.Size(203, 34);
+            this.lkpAraGrup.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.lkpAraGrup.TabIndex = 17;
+            this.lkpAraGrup.EditValueChanged += new System.EventHandler(this.lkpAraGrup_EditValueChanged);
             // 
-            // labelControl3
+            // lkpGrup
             // 
-            this.labelControl3.Location = new System.Drawing.Point(12, 54);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(51, 13);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Giriş / Çıkış";
-            // 
-            // deTarih2
-            // 
-            this.deTarih2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lkpGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.deTarih2.EditValue = null;
-            this.deTarih2.Location = new System.Drawing.Point(76, 182);
-            this.deTarih2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.deTarih2.Name = "deTarih2";
-            this.deTarih2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lkpGrup.EditValue = -1;
+            this.lkpGrup.Location = new System.Drawing.Point(162, 426);
+            this.lkpGrup.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.lkpGrup.Name = "lkpGrup";
+            this.lkpGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
+            this.lkpGrup.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StokGrupAdi", "StokGrupAdi")});
+            this.lkpGrup.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.lkpGrup.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Value;
+            this.lkpGrup.Properties.NullText = "";
+            this.lkpGrup.Properties.NullValuePrompt = "-1";
+            this.lkpGrup.Size = new System.Drawing.Size(203, 34);
+            this.lkpGrup.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.lkpGrup.TabIndex = 16;
+            this.lkpGrup.EditValueChanged += new System.EventHandler(this.lkpGrup_EditValueChanged);
+            // 
+            // N
+            // 
+            this.N.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.N.Location = new System.Drawing.Point(162, 158);
+            this.N.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.N.MenuManager = this.barManager1;
+            this.N.Name = "N";
+            this.N.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deTarih2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deTarih2.Properties.NullDate = new System.DateTime(((long)(0)));
-            this.deTarih2.Size = new System.Drawing.Size(140, 20);
-            this.deTarih2.TabIndex = 11;
+            this.N.Properties.Items.AddRange(new object[] {
+            "Hepsi",
+            "Giriş",
+            "Çıkış"});
+            this.N.Size = new System.Drawing.Size(203, 34);
+            this.N.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.N.TabIndex = 6;
+            this.N.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
-            // txtStokAdi
+            // txtCariAdi
             // 
-            this.txtStokAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCariAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStokAdi.Location = new System.Drawing.Point(76, 9);
-            this.txtStokAdi.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStokAdi.MenuManager = this.barManager1;
-            this.txtStokAdi.Name = "txtStokAdi";
-            this.txtStokAdi.Size = new System.Drawing.Size(140, 20);
-            this.txtStokAdi.TabIndex = 4;
+            this.txtCariAdi.Location = new System.Drawing.Point(162, 384);
+            this.txtCariAdi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtCariAdi.MenuManager = this.barManager1;
+            this.txtCariAdi.Name = "txtCariAdi";
+            this.txtCariAdi.Size = new System.Drawing.Size(203, 34);
+            this.txtCariAdi.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.txtCariAdi.TabIndex = 6;
+            // 
+            // txtStokKodu
+            // 
+            this.txtStokKodu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStokKodu.Location = new System.Drawing.Point(162, 116);
+            this.txtStokKodu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStokKodu.Name = "txtStokKodu";
+            this.txtStokKodu.Size = new System.Drawing.Size(203, 34);
+            this.txtStokKodu.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.txtStokKodu.TabIndex = 4;
             // 
             // deTarih1
             // 
             this.deTarih1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deTarih1.EditValue = null;
-            this.deTarih1.Location = new System.Drawing.Point(76, 159);
-            this.deTarih1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.deTarih1.MenuManager = this.barManager1;
+            this.deTarih1.Location = new System.Drawing.Point(162, 200);
+            this.deTarih1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deTarih1.Name = "deTarih1";
             this.deTarih1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deTarih1.Properties.NullDate = "1.1.0001 00:00:00";
-            this.deTarih1.Size = new System.Drawing.Size(140, 20);
+            this.deTarih1.Properties.NullDate = new System.DateTime(((long)(0)));
+            this.deTarih1.Size = new System.Drawing.Size(203, 34);
+            this.deTarih1.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.deTarih1.TabIndex = 12;
             // 
-            // txtStokKodu
+            // txtStokAdi
             // 
-            this.txtStokKodu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtStokAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStokKodu.Location = new System.Drawing.Point(76, 29);
-            this.txtStokKodu.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStokKodu.Name = "txtStokKodu";
-            this.txtStokKodu.Size = new System.Drawing.Size(140, 20);
-            this.txtStokKodu.TabIndex = 4;
+            this.txtStokAdi.Location = new System.Drawing.Point(162, 74);
+            this.txtStokAdi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStokAdi.MenuManager = this.barManager1;
+            this.txtStokAdi.Name = "txtStokAdi";
+            this.txtStokAdi.Size = new System.Drawing.Size(203, 34);
+            this.txtStokAdi.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.txtStokAdi.TabIndex = 4;
             // 
-            // labelControl4
+            // deTarih2
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 261);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(46, 13);
-            this.labelControl4.TabIndex = 13;
-            this.labelControl4.Text = "Cari Kodu";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.deTarih2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit1.Location = new System.Drawing.Point(76, 51);
-            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deTarih2.EditValue = null;
+            this.deTarih2.Location = new System.Drawing.Point(162, 242);
+            this.deTarih2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.deTarih2.Name = "deTarih2";
+            this.deTarih2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
-            "Hepsi",
-            "Giriş",
-            "Çıkış"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(140, 20);
-            this.comboBoxEdit1.TabIndex = 6;
-            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(10, 184);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(33, 13);
-            this.labelControl8.TabIndex = 13;
-            this.labelControl8.Text = "Tarih 2";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(10, 162);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(33, 13);
-            this.labelControl7.TabIndex = 14;
-            this.labelControl7.Text = "Tarih 1";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(222, 458);
-            this.xtraTabPage2.Text = "xtraTabPage2";
+            this.deTarih2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deTarih2.Properties.NullDate = new System.DateTime(((long)(0)));
+            this.deTarih2.Size = new System.Drawing.Size(203, 34);
+            this.deTarih2.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.deTarih2.TabIndex = 11;
             // 
             // btnFiltrele
             // 
-            this.btnFiltrele.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnFiltrele.Location = new System.Drawing.Point(0, 486);
-            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiltrele.Location = new System.Drawing.Point(24, 1107);
+            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(228, 37);
+            this.btnFiltrele.Size = new System.Drawing.Size(341, 42);
+            this.btnFiltrele.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.btnFiltrele.TabIndex = 3;
             this.btnFiltrele.Text = "Filtrele";
             this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
             // 
-            // tabPane1
+            // btnBugun
             // 
-            this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Controls.Add(this.tabNavigationPage2);
-            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 0);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPane1.Name = "tabPane1";
-            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2});
-            this.tabPane1.RegularSize = new System.Drawing.Size(726, 523);
-            this.tabPane1.SelectedPage = this.tabNavigationPage2;
-            this.tabPane1.Size = new System.Drawing.Size(726, 523);
-            this.tabPane1.TabIndex = 17;
-            this.tabPane1.Text = "tabPane1";
-            // 
-            // tabNavigationPage1
-            // 
-            this.tabNavigationPage1.Caption = "tabNavigationPage1";
-            this.tabNavigationPage1.Controls.Add(this.gridControl1);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(708, 478);
+            this.btnBugun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBugun.Location = new System.Drawing.Point(24, 334);
+            this.btnBugun.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnBugun.Name = "btnBugun";
+            this.btnBugun.Size = new System.Drawing.Size(341, 42);
+            this.btnBugun.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
+            this.btnBugun.TabIndex = 15;
+            this.btnBugun.Text = "Bugün";
+            this.btnBugun.Click += new System.EventHandler(this.btnBugun_Click);
             // 
             // gridControl1
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gridControl1.Location = new System.Drawing.Point(383, 74);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(708, 478);
+            this.gridControl1.Size = new System.Drawing.Size(1575, 1075);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -657,24 +595,33 @@
             this.gridColumn18,
             this.gridColumn19});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupPanelText = "ahanda buradan grupla";
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Miktar", null, "(Miktar: SUM={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Miktar", this.colMiktar, "(Top Mik={0:0.##})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Fiyat", null, "(Fiyat: SUM={0:0.##})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Max, "Fiyat", null, "(Fiyat: MAX={0})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", null, "(Toplam Tutar: {0:0.##})")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AlignGroupSummaryInGroupRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowChildrenInGroupPanel = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupedColumns = true;
             // 
             // colStokID
             // 
             this.colStokID.Caption = "StokID";
             this.colStokID.FieldName = "StokID";
             this.colStokID.Name = "colStokID";
+            this.colStokID.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Miktar", "SUM={0:0.##}")});
             this.colStokID.Visible = true;
             this.colStokID.VisibleIndex = 0;
+            this.colStokID.Width = 131;
             // 
             // colStokAdi
             // 
@@ -700,6 +647,7 @@
             this.colStokHrID.Name = "colStokHrID";
             this.colStokHrID.Visible = true;
             this.colStokHrID.VisibleIndex = 18;
+            this.colStokHrID.Width = 230;
             // 
             // colTarih
             // 
@@ -770,6 +718,8 @@
             this.colFiyat.Caption = "Fiyat";
             this.colFiyat.FieldName = "Fiyat";
             this.colFiyat.Name = "colFiyat";
+            this.colFiyat.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Fiyat", "SUM={0:0.##}")});
             this.colFiyat.Visible = true;
             this.colFiyat.VisibleIndex = 11;
             // 
@@ -804,6 +754,8 @@
             this.colTutar.Caption = "Tutar";
             this.colTutar.FieldName = "Tutar";
             this.colTutar.Name = "colTutar";
+            this.colTutar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", "{0:0.##}")});
             this.colTutar.UnboundExpression = "[Fiyat] * [Miktar]";
             this.colTutar.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colTutar.Visible = true;
@@ -823,203 +775,291 @@
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 17;
             // 
-            // tabNavigationPage2
+            // layoutControlGroup1
             // 
-            this.tabNavigationPage2.Caption = "tabNavigationPage2";
-            this.tabNavigationPage2.Controls.Add(this.gridControl2);
-            this.tabNavigationPage2.Controls.Add(this.panelControl2);
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(708, 478);
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup2,
+            this.layoutControlItem15,
+            this.layoutControlItem14,
+            this.layoutControlItem16});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1982, 1173);
+            this.layoutControlGroup1.TextVisible = false;
             // 
-            // gridControl2
+            // layoutControlGroup2
             // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gridControl2.Location = new System.Drawing.Point(0, 53);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(2);
-            this.gridControl2.MenuManager = this.barManager1;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(708, 425);
-            this.gridControl2.TabIndex = 16;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup3,
+            this.splitterItem1,
+            this.layoutControlItem13});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 50);
+            this.layoutControlGroup2.Name = "splitContainerControl1item";
+            this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1942, 1083);
+            this.layoutControlGroup2.Text = "splitContainerControl1";
             // 
-            // gridView2
+            // layoutControlGroup3
             // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Miktar", null, "")});
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.layoutControlGroup3.GroupBordersVisible = false;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.layoutControlItem9,
+            this.layoutControlItem10,
+            this.layoutControlItem12,
+            this.layoutControlItem8,
+            this.layoutControlItem11,
+            this.emptySpaceItem1,
+            this.layoutControlItem1});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "Panel1item";
+            this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup3.Size = new System.Drawing.Size(349, 1083);
+            this.layoutControlGroup3.Text = "Panel1";
             // 
-            // panelControl2
+            // layoutControlItem2
             // 
-            this.panelControl2.Controls.Add(this.checkEdit1);
-            this.panelControl2.Controls.Add(this.comboBoxEdit2);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 0);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(708, 53);
-            this.panelControl2.TabIndex = 17;
+            this.layoutControlItem2.Control = this.lkpAltGrup;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 436);
+            this.layoutControlItem2.Name = "lkpAltGrupitem";
+            this.layoutControlItem2.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem2.Text = "Stok Alt Grup";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // checkEdit1
+            // layoutControlItem3
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(377, 5);
-            this.checkEdit1.MenuManager = this.barManager1;
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "Fiyatları Ayır";
-            this.checkEdit1.Size = new System.Drawing.Size(75, 19);
-            this.checkEdit1.TabIndex = 1;
+            this.layoutControlItem3.Control = this.lkpAraGrup;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 394);
+            this.layoutControlItem3.Name = "lkpAraGrupitem";
+            this.layoutControlItem3.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem3.Text = "Stok Ara Grup";
+            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // comboBoxEdit2
+            // layoutControlItem4
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(5, 5);
-            this.comboBoxEdit2.MenuManager = this.barManager1;
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(188, 20);
-            this.comboBoxEdit2.TabIndex = 0;
+            this.layoutControlItem4.Control = this.lkpGrup;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 352);
+            this.layoutControlItem4.Name = "lkpGrupitem";
+            this.layoutControlItem4.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem4.Text = "Stok Grup";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // panelControl1
+            // layoutControlItem5
             // 
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Controls.Add(this.dropDownButton1);
-            this.panelControl1.Controls.Add(this.simpleButton2);
-            this.panelControl1.Controls.Add(this.btnHareketiAc);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(959, 41);
-            this.panelControl1.TabIndex = 1;
+            this.layoutControlItem5.Control = this.N;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 84);
+            this.layoutControlItem5.Name = "comboBoxEdit1item";
+            this.layoutControlItem5.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem5.Text = "Giriş / Çıkış";
+            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // label1
+            // layoutControlItem6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(10, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "STOK HAREKETLERİ";
+            this.layoutControlItem6.Control = this.txtCariAdi;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 310);
+            this.layoutControlItem6.Name = "textEdit1item";
+            this.layoutControlItem6.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem6.Text = "Cari Kodu";
+            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // dropDownButton1
+            // layoutControlItem7
             // 
-            this.dropDownButton1.AllowDrop = true;
-            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
-            this.dropDownButton1.DropDownControl = this.popupMenu1;
-            this.dropDownButton1.Location = new System.Drawing.Point(788, 4);
-            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(116, 32);
-            this.dropDownButton1.TabIndex = 5;
-            this.dropDownButton1.Text = "dropDownButton1";
+            this.layoutControlItem7.Control = this.txtStokKodu;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 42);
+            this.layoutControlItem7.Name = "txtStokKoduitem";
+            this.layoutControlItem7.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem7.Text = "Stok Kodu";
+            this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // popupMenu1
+            // layoutControlItem9
             // 
-            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem_KolonIslemleri),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnExceleAktar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnXmlOlustur),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1)});
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
+            this.layoutControlItem9.Control = this.txtStokAdi;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem9.Name = "txtStokAdiitem";
+            this.layoutControlItem9.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem9.Text = "Stok Adi";
+            this.layoutControlItem9.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // simpleButton2
+            // layoutControlItem10
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Location = new System.Drawing.Point(689, 3);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(86, 32);
-            this.simpleButton2.TabIndex = 4;
-            this.simpleButton2.Text = "Stok Kartını Aç";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.layoutControlItem10.Control = this.deTarih2;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem10.Name = "deTarih2item";
+            this.layoutControlItem10.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem10.Text = "Tarih 2";
+            this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(132, 25);
             // 
-            // btnHareketiAc
+            // layoutControlItem12
             // 
-            this.btnHareketiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHareketiAc.Location = new System.Drawing.Point(619, 3);
-            this.btnHareketiAc.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHareketiAc.Name = "btnHareketiAc";
-            this.btnHareketiAc.Size = new System.Drawing.Size(64, 32);
-            this.btnHareketiAc.TabIndex = 4;
-            this.btnHareketiAc.Text = "Hareketi Aç";
-            this.btnHareketiAc.Click += new System.EventHandler(this.btnHareketiAc_Click);
+            this.layoutControlItem12.Control = this.btnBugun;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 260);
+            this.layoutControlItem12.Name = "btnBugunitem";
+            this.layoutControlItem12.Size = new System.Drawing.Size(349, 50);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.deTarih1;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 126);
+            this.layoutControlItem8.Name = "deTarih1item";
+            this.layoutControlItem8.Size = new System.Drawing.Size(349, 42);
+            this.layoutControlItem8.Text = "Tarih 1";
+            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(132, 25);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.btnFiltrele;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 1033);
+            this.layoutControlItem11.Name = "btnFiltreleitem";
+            this.layoutControlItem11.Size = new System.Drawing.Size(349, 50);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 478);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(349, 555);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.cmbHizliTarih;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 210);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(349, 50);
+            this.layoutControlItem1.Text = "Tarih Seç";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(132, 25);
+            // 
+            // splitterItem1
+            // 
+            this.splitterItem1.AllowHotTrack = true;
+            this.splitterItem1.Location = new System.Drawing.Point(349, 0);
+            this.splitterItem1.Name = "splitterItem1";
+            this.splitterItem1.Size = new System.Drawing.Size(10, 1083);
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.gridControl1;
+            this.layoutControlItem13.Location = new System.Drawing.Point(359, 0);
+            this.layoutControlItem13.Name = "gridControl1item";
+            this.layoutControlItem13.Size = new System.Drawing.Size(1583, 1083);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.btnStokKartiniAc;
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(486, 50);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.btnHareketiAc;
+            this.layoutControlItem14.ImageAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.layoutControlItem14.Location = new System.Drawing.Point(486, 0);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(728, 50);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.BestFitWeight = 50;
+            this.layoutControlItem16.Control = this.dropDownButton1;
+            this.layoutControlItem16.FillControlToClientArea = false;
+            this.layoutControlItem16.Location = new System.Drawing.Point(1214, 0);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(728, 50);
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
             // 
             // frmStokHrListesi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 564);
-            this.Controls.Add(this.splitContainerControl1);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(1982, 1173);
+            this.Controls.Add(this.frmStokHrListesilayoutControl1ConvertedLayout);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmStokHrListesi";
             this.Text = "Stok Hareketleri";
             this.Load += new System.EventHandler(this.frmStokHrListesi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkpAltGrup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmStokHrListesilayoutControl1ConvertedLayout)).EndInit();
+            this.frmStokHrListesilayoutControl1ConvertedLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpAraGrup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStokAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCariAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deTarih1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deTarih1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
-            this.tabPane1.ResumeLayout(false);
-            this.tabNavigationPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtStokAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTarih2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
     }
 
     #endregion
-
-    private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
     private DevExpress.XtraEditors.SimpleButton btnFiltrele;
-    private DevExpress.XtraEditors.LabelControl labelControl2;
-    private DevExpress.XtraEditors.LabelControl labelControl1;
     private DevExpress.XtraGrid.GridControl gridControl1;
     private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-    private DevExpress.XtraEditors.PanelControl panelControl1;
     private DevExpress.XtraEditors.DropDownButton dropDownButton1;
-    private DevExpress.XtraEditors.SimpleButton simpleButton2;
+    private DevExpress.XtraEditors.SimpleButton btnStokKartiniAc;
     private DevExpress.XtraEditors.SimpleButton btnHareketiAc;
     private DevExpress.XtraBars.PopupMenu popupMenu1;
     private DevExpress.XtraBars.BarSubItem barSubItem2;
@@ -1042,35 +1082,16 @@
     private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     private DevExpress.XtraBars.BarButtonItem barBtnListedenYazdir;
     private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-    private System.Windows.Forms.Label label1;
     private DevExpress.XtraEditors.TextEdit txtStokAdi;
     public DevExpress.XtraEditors.TextEdit txtStokKodu;
-    private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-    private DevExpress.XtraEditors.LabelControl labelControl3;
+    private DevExpress.XtraEditors.ComboBoxEdit N;
     private DevExpress.XtraEditors.SimpleButton btnBugun;
     private DevExpress.XtraEditors.DateEdit deTarih2;
     private DevExpress.XtraEditors.DateEdit deTarih1;
-    private DevExpress.XtraEditors.LabelControl labelControl8;
-    private DevExpress.XtraEditors.LabelControl labelControl7;
-    private DevExpress.XtraEditors.TextEdit textEdit1;
-    private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+    private DevExpress.XtraEditors.TextEdit txtCariAdi;
         private DevExpress.XtraEditors.LookUpEdit lkpAltGrup;
         private DevExpress.XtraEditors.LookUpEdit lkpAraGrup;
         private DevExpress.XtraEditors.LookUpEdit lkpGrup;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colStokID;
         private DevExpress.XtraGrid.Columns.GridColumn colStokAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colStokKodu;
@@ -1090,5 +1111,29 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTutar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraLayout.LayoutControl frmStokHrListesilayoutControl1ConvertedLayout;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
+        private DevExpress.XtraLayout.SplitterItem splitterItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private System.Windows.Forms.ComboBox cmbHizliTarih;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

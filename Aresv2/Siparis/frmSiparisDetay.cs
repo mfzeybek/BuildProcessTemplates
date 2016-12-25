@@ -285,7 +285,7 @@ namespace Aresv2.Siparis
         }
         private void FiyatTanimlariniDoldur()
         {
-            lkpKullanilanFiyatTanimi.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), trGenel);
+            lkpKullanilanFiyatTanimi.Properties.DataSource = FiyatTanimlari.TumFiyatTanimlariniGetir(SqlConnections.GetBaglanti(), trGenel, false);
             lkpKullanilanFiyatTanimi.Properties.DisplayMember = "FiyatTanimAdi";
             lkpKullanilanFiyatTanimi.Properties.ValueMember = "FiyatTanimID";
 
