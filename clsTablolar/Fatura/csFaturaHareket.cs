@@ -63,7 +63,6 @@ namespace clsTablolar.Fatura
 
                         //dt_FaturaHareketleri.Columns.Add("KdvDahilToplamIndirim", Type.GetType("System.Decimal")).Expression = "SatirIndirimliToplam + KdvTutari";
                         //dt_FaturaHareketleri.Columns.Add("KdvDahilToplamIndirim", Type.GetType("System.Decimal")).Expression = "SatirIndirimliToplam + KdvTutari";
-
                     }
                 }
             }

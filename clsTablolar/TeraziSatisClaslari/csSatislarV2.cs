@@ -57,16 +57,18 @@ where fatura.SilindiMi = 0 order by DegismeTarihi desc";
             using (SqlDataAdapter da_Thread = new SqlDataAdapter(@"select fatura.FaturaID, FaturaTipi, FaturaTarihi, fatura.DuzenlemeTarihi, FaturaNo, CariID, CariKod, CariTanim, VergiDairesi, VergiNo, Adres, Il, Ilce, 
 Vadesi, Iptal, SilindiMi, Aciklama, KaydedenID, KayitTarihi, DegistirenID, DegismeTarihi, DepoID, SatisElemaniID, Toplam_Iskontosuz_Kdvsiz, 
 CariIskontoToplami , StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, isnull(FaturaTutari, 0) as FaturaTutari, KullanilanFiyatTanimID, SiparisID, FaturaGrupID, OdendiMi, 
-FaturaBarkod, TeraziFaturaID, TeraziID, isnull([dbo].[FaturaBakiyesiniGetir](Fatura.FaturaID), 0) KalanBakiye
+FaturaBarkod
+---, TeraziFaturaID, TeraziID
+, isnull([dbo].[FaturaBakiyesiniGetir](Fatura.FaturaID), 0) KalanBakiye
 ,isnull([dbo].[FaturaninOdemeTutariniGetir](Fatura.FaturaID), 0) OdenenTutar
 from Fatura  with(nolock, index = IX_Fatura_2)
-inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID 
-where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
+--inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID 
+where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
             {
                 if (_TeraziID != -1)
-                {
-                    da_Thread.SelectCommand.CommandText = da_Thread.SelectCommand.CommandText + " and TeraziFaturaIliski.TeraziID = @TeraziID ";
-                    da_Thread.SelectCommand.Parameters.Add("@TeraziID", SqlDbType.Int, 0).Value = _TeraziID;
+                {// artık teraziye göre getirmiyoruz
+                    //da_Thread.SelectCommand.CommandText = da_Thread.SelectCommand.CommandText + " and TeraziFaturaIliski.TeraziID = @TeraziID ";
+                    //da_Thread.SelectCommand.Parameters.Add("@TeraziID", SqlDbType.Int, 0).Value = _TeraziID;
 
                     this._TeraziID = _TeraziID;
                 }
@@ -150,7 +152,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
                 int g = 1;
                 foreach (var item in dt_threadSatislar.AsEnumerable().Where(s => s.RowState != DataRowState.Deleted)) // .Where( k => k.Field<int>("RowNo") == KacinciSatirdanGuncellemeyeBaslasin))
                 {
-                    if (g > 100) //101n ci parametre yok parametreler 10 kadar
+                    if (g > 100) //101n ci parametre yok parametreler 100 kadar
                     {
                         Exception e = new Exception("Bu aslında hata değil");
                         break;
@@ -248,7 +250,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 ", Baglanti))
             {
                 if (dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'").Length != 0)
                 {
-                    if ((bool)dr["Iptal"] || (bool)dr["SilindiMi"])// || (bool)dr["OdendiMi"]) // eğer gelen satır silinmişse, Iptal edilmişse veya Ödenmişse çıkartıyoruz
+                    if ((bool)dr["Iptal"] || (bool)dr["SilindiMi"] || (bool)dr["OdendiMi"]) // eğer gelen satır silinmişse, Iptal edilmişse veya Ödenmişse çıkartıyoruz
                     {
                         foreach (var item in dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'").AsEnumerable())
                         {

@@ -83,6 +83,14 @@ values
 
 
             da.Update(dt);
+
+
+
+            Stok.csStokHr CikisiYapilacakStok = new Stok.csStokHr(Baglanti, Tr, -1);
+            //CikisiYapilacakStok.
+
+
+
         }
 
         private void Da_RowUpdated(object sender, SqlRowUpdatedEventArgs e)

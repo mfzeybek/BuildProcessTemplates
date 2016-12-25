@@ -354,7 +354,7 @@ namespace clsTablolar.Stok
         SqlCommand cmb;
         public DataTable dt_StokListesi;
         public DataTable dt_FiyatListesi;
-
+        
         public DataTable StokListeGetir(SqlConnection Baglanti, SqlTransaction Tr)
         {
             da = new SqlDataAdapter();
@@ -366,7 +366,7 @@ namespace clsTablolar.Stok
             da.SelectCommand.CommandText = @"SELECT DISTINCT s.StokID, s.Aktif, s.StokKodu, s.StokAdi, s.OzelKod1, s.OzelKod2, s.OzelKod3, s.Aciklama, s.KayitTarihi, s.DegismeTarihi, s.iskOrani1, s.iskOrani2, s.iskOrani3, s.MinumumMiktar, s.MaksimumMiktar, s.EtiketAdi,
 s.AlisKdv, s.SatisKdv, s.Barkod, sb.BirimAdi, s.RafYeriAciklama, s.UrunTanitimdaGoster, s.Garanti, s.EMagazaErisimi, s.Desi, s.KisaAciklama, 
 s.HemenAlID, s.HemenAlSira, s.StokSayimGrubuID, s.OlmasiGerekenMiktar, s.StokTipi
-, isnull(Girisler.Girisler, 0.0000) GirenMiktar , isnull(Cikislar.Cikislar, 0.000) CikanMiktar, isnull(Girisler,0.0000) - isnull(Cikislar, 0.000) as KalanMiktar, SayimDetay.Miktar1 ";
+, isnull(Girisler.Girisler, 0.0000) GirenMiktar , isnull(Cikislar.Cikislar, 0.000) CikanMiktar, isnull(Girisler,0.0000) - isnull(Cikislar, 0.000) as KalanMiktar  ";
 
 
             //for (int i = 0; i < FiyatTanimlariID().Count(); i++)
@@ -396,7 +396,7 @@ s.HemenAlID, s.HemenAlSira, s.StokSayimGrubuID, s.OlmasiGerekenMiktar, s.StokTip
 					  (select Stokhr.StokID, ISNULL(SUM(StokHr.Miktar), 0) as Cikislar from StokHr
 				      where StokHr.GirisMiCikisMi = 2 and StokHr.SilindiMi = 0
 				      group by StokHr.StokID) Cikislar on Cikislar.StokID = s.StokID
-                      left join SayimDetay on SayimDetay.StokID = s.StokID
+                      --left join SayimDetay on SayimDetay.StokID = s.StokID
 WHERE     (s.Silindi = 'false') ";
 
             da.SelectCommand.Connection = Baglanti;
@@ -636,8 +636,8 @@ WHERE     (s.Silindi = 'false') ";
             }
             if (_SayimID != -1)
             {
-                da.SelectCommand.CommandText += " and SayimDetay.SayimID = @SayimID ";
-                da.SelectCommand.Parameters.Add("@SayimID", SqlDbType.Int).Value = _SayimID;
+                //da.SelectCommand.CommandText += " and SayimDetay.SayimID = @SayimID ";
+                //da.SelectCommand.Parameters.Add("@SayimID", SqlDbType.Int).Value = _SayimID;
             }
 
 

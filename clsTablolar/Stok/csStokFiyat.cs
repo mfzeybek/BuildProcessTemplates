@@ -144,6 +144,21 @@ namespace clsTablolar.Stok
             da_AlisFiyati.Fill(dt_AlisFiyati);
             return dt_AlisFiyati;
         }
+        
+        public DataTable ButunFiyatlariniGetir(SqlConnection Baglanti ,SqlTransaction Tr, int StokID)
+        {
+            da_AlisFiyati = new SqlDataAdapter();
+            da_AlisFiyati.SelectCommand = new SqlCommand();
+            da_AlisFiyati.SelectCommand.CommandText = "select StokFiyatID, FiyatTanimID, Fiyat, StokID, AlisMiSatisMi, KdvDahil from StokFiyat where StokID = @StokID ";
+            da_AlisFiyati.SelectCommand.Parameters.Add("@StokID", SqlDbType.Int).Value = StokID;
+
+            da_AlisFiyati.SelectCommand.Connection = Baglanti;
+            da_AlisFiyati.SelectCommand.Transaction = Tr;
+
+            dt_AlisFiyati = new DataTable();
+            da_AlisFiyati.Fill(dt_AlisFiyati);
+            return dt_AlisFiyati;
+        }
 
         public decimal StokKartindakiVarsayilanAlisFiyatiniGetir(SqlConnection Baglanti, SqlTransaction Tr, int StokID)
         {

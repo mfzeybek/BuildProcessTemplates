@@ -26,6 +26,7 @@ namespace clsTablolar.BasitUretim
         public string UretilenStokAdi { get; set; }
 
         public string UretilenStokKodu { get; set; }
+        public DateTime UretimTarihi { get; set; }
 
         SqlCommand cmd;
 
@@ -44,6 +45,7 @@ namespace clsTablolar.BasitUretim
                 this.UretimMaliyeti = 0;
                 this.UretilenStokAdi = string.Empty;
                 this.UretilenStokKodu = string.Empty;
+                this.UretimTarihi = DateTime.Now;
             }
 
             else
@@ -65,6 +67,7 @@ left join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID =
                             this.UretimMaliyeti = (decimal)dr["UretimMaliyeti"];
                             this.UretilenStokAdi = dr["StokAdi"].ToString();
                             this.UretilenStokKodu = dr["StokKodu"].ToString();
+                            this.UretimTarihi = (DateTime)dr["UretimTarihi"];
                         }
                     }
                 }
@@ -77,12 +80,12 @@ left join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID =
             {
                 if (BasitUretimID == -1)
                 {
-                    cmd.CommandText = "insert into BasitUretim (BUReceteID, UretilenStokID, CariID, Aciklama, UretimMiktari, UretimMaliyeti  ) values (@BUReceteID, @UretilenStokID, @CariID, @Aciklama, @UretimMiktari, @UretimMaliyeti  )   set @YeniID = SCOPE_IDENTITY() ";
+                    cmd.CommandText = "insert into BasitUretim (BUReceteID, UretilenStokID, CariID, Aciklama, UretimMiktari, UretimMaliyeti ,UretimTarihi ) values (@BUReceteID, @UretilenStokID, @CariID, @Aciklama, @UretimMiktari, @UretimMaliyeti , @UretimTarihi )   set @YeniID = SCOPE_IDENTITY() ";
                     cmd.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
                 }
                 else
                 {
-                    cmd.CommandText = " update BasitUretim set BUReceteID = @BUReceteID, UretilenStokID = @UretilenStokID, CariID = @CariID, Aciklama = @Aciklama, UretimMiktari = @UretimMiktari, UretimMaliyeti = @UretimMaliyeti where BasitUretimID = @BasitUretimID";
+                    cmd.CommandText = " update BasitUretim set BUReceteID = @BUReceteID, UretilenStokID = @UretilenStokID, CariID = @CariID, Aciklama = @Aciklama, UretimMiktari = @UretimMiktari, UretimMaliyeti = @UretimMaliyeti, UretimTarihi = @UretimTarihi where BasitUretimID = @BasitUretimID";
                     cmd.Parameters.Add("@BasitUretimID", SqlDbType.Int).Value = BasitUretimID;
                 }
                 cmd.Parameters.Add("@BUReceteID", SqlDbType.Int).Value = BUReceteID;
@@ -92,6 +95,7 @@ left join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID =
                 cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
                 cmd.Parameters.Add("@UretimMiktari", SqlDbType.Decimal).Value = UretimMiktari;
                 cmd.Parameters.Add("@UretimMaliyeti", SqlDbType.Decimal).Value = UretimMaliyeti;
+                cmd.Parameters.Add("@UretimTarihi", SqlDbType.DateTime).Value = UretimTarihi;
 
                 cmd.ExecuteNonQuery();
 
@@ -103,5 +107,7 @@ left join Stok on Stok.StokID = BasitUretim.UretilenStokID where BasitUretimID =
 
             }
         }
+
+
     }
 }

@@ -39,7 +39,9 @@ namespace clsTablolar
         CariListe = 23,
         CariHareket = 24, // CariHr nakit ödemeler burada
         SiparisVerme = 25,
-        BasitUretimRecetesi = 26
+        BasitUretimRecetesi = 26,
+        BasitUretim = 27,
+        BasitUretimDetay = 28
     }
 
     public class FormBaslik
