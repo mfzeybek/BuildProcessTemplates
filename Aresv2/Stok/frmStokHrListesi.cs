@@ -285,16 +285,14 @@ namespace Aresv2.Stok
                     deTarih2.DateTime = haftasonu(DateTime.Today, DayOfWeek.Sunday);
                     break;
                 case 3:
-                    deTarih1.DateTime = haftaBasi(DateTime.Today, DayOfWeek.Monday);
-                    deTarih2.DateTime = haftasonu(DateTime.Today, DayOfWeek.Sunday);
+                    deTarih1.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                    deTarih2.DateTime = deTarih1.DateTime.AddMonths(1).AddDays(-1);
                     break;
             }
 
 
 
         }
-
-
 
 
         DateTime haftaBasi(DateTime dt, DayOfWeek startOfWeek)
@@ -314,6 +312,11 @@ namespace Aresv2.Stok
                 diff += 7;
             }
             return dt.AddDays(diff).Date;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
