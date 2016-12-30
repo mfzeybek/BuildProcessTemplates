@@ -2831,5 +2831,10 @@ ne hatısı diye sorarsam hamısına hatası de
         {
 
         }
+
+        private void labelControl11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
