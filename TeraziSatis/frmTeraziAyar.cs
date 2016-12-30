@@ -24,15 +24,16 @@ namespace TeraziSatis
             TeraziListesi.TeraziGetir(SqlConnections.GetBaglanti(), TrGenel);
             TrGenel.Commit();
 
-            comboBox1.DataSource = TeraziListesi.dt;
+            lookUpEdit1.Properties.DataSource = TeraziListesi.dt;
+
 
             //cmbTeraziNumarasi.
             //    com
             //                cmbTeraziNumarasi.DataSource = teraziListesi.dt;
-            comboBox1.DisplayMember = "TeraziAdi";
-            comboBox1.ValueMember = "TeraziID";
+            lookUpEdit1.Properties.DisplayMember = "TeraziAdi";
+            lookUpEdit1.Properties.ValueMember = "TeraziID";
 
-            comboBox1.SelectedValue = TeraziSatis.Properties.Settings.Default.TeraziID;
+            lookUpEdit1.EditValue = TeraziSatis.Properties.Settings.Default.TeraziID;
 
             foreach (String yazici in PrinterSettings.InstalledPrinters)
             {
@@ -53,7 +54,7 @@ namespace TeraziSatis
 
             XmlNodeList nl = doc.SelectNodes("/configuration/userSettings/TeraziSatis.Properties.Settings/setting/value");
             //XmlNode node = nl[0];
-            nl[0].InnerText = comboBox1.SelectedValue.ToString(); // teraziID
+            nl[0].InnerText = lookUpEdit1.EditValue.ToString(); // teraziID
             //nl[1].InnerText = txtKullaniciSifre.Text;
             //node.Value = txtKullaniciSifre.Text;
 
@@ -65,12 +66,12 @@ namespace TeraziSatis
             nl[5].InnerText = comboBoxEdit1.Text; // teraziID
             nl[6].InnerText = comboBoxEdit2.Text; // teraziID
 
-            doc.Load("TeraziSatis.exe.config");
-            
+            //doc.Load("TeraziSatis.exe.config");
+
 
             //XDocument doc = XDocument.Load("dosya.xml");
             //doc.Element("tablo").Element("surum").Value = "1.1";
-            //doc.Save("dosya.xml"); 
+            doc.Save("TeraziSatis.exe.config");
 
             //Aresv2.Properties.Settings.Default.KullaniciAdi = txtKullaniciAdi.EditValue.ToString();
             //Aresv2.Properties.Settings.Default.KullaniciSifresi = txtKullaniciSifre.EditValue.ToString();
@@ -78,7 +79,7 @@ namespace TeraziSatis
             MessageBox.Show("Kapatıp yeniden açman lazım hamısına");
         }
 
-        
+
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
