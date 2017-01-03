@@ -25,6 +25,8 @@ namespace clsTablolar.cari.CariHr
         private int _EntegrasyonID;
         private bool _Devirmi;
         private bool _SilindiMi;
+        private int _KasaID;
+        private int _KasaHrID;
 
         public int _FaturaID { get; set; }
 
@@ -89,7 +91,31 @@ namespace clsTablolar.cari.CariHr
             set { _EntegrasyonID = value; }
         }
 
+        public int KasaHrID
+        {
+            get
+            {
+                return _KasaHrID;
+            }
 
+            set
+            {
+                _KasaHrID = value;
+            }
+        }
+
+        public int KasaID
+        {
+            get
+            {
+                return _KasaID;
+            }
+
+            set
+            {
+                _KasaID = value;
+            }
+        }
 
         SqlCommand cmd;
         SqlDataReader dr;
@@ -118,6 +144,7 @@ namespace clsTablolar.cari.CariHr
                 _Devirmi = false;
                 _SilindiMi = false;
                 _FaturaID = -1;
+                _KasaHrID = -1;
             }
             else
             {
@@ -141,7 +168,7 @@ end
 else
 begin
 insert into CariHr 
-                                    ( CariID, Tarih, AlacakMiBorcMu, Aciklama, EvrakNo, Tutar, Entegrasyon, EntegrasyonID, Devirmi, SilindiMi, FaturaID ) 
+                                    ( CariID, Tarih, AlacakMiBorcMu, Aciklama, EvrakNo, Tutar, Entegrasyon, EntegrasyonID, Devirmi, SilindiMi, FaturaID, KasaID, KasaHrID ) 
                                     values 
                                     ( @CariID, @Tarih, @AlacakMiBorcMu, @Aciklama, @EvrakNo, @Tutar, @Entegrasyon, @EntegrasyonID, @Devirmi, @SilindiMi , @FaturaID)
 end", Baglanti, Tr);
@@ -157,6 +184,8 @@ end", Baglanti, Tr);
             cmd.Parameters.Add("@Devirmi", SqlDbType.Bit).Value = _Devirmi;
             cmd.Parameters.Add("@SilindiMi", SqlDbType.Bit).Value = _SilindiMi;
             cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = _FaturaID;
+            cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = _KasaID;
+            cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = _KasaHrID;
 
             cmd.ExecuteNonQuery();
         }
