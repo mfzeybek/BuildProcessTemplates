@@ -45,7 +45,7 @@
             // 
             // memoEdit2
             // 
-            this.memoEdit2.Location = new System.Drawing.Point(768, 26);
+            this.memoEdit2.Location = new System.Drawing.Point(724, 302);
             this.memoEdit2.Name = "memoEdit2";
             this.memoEdit2.Size = new System.Drawing.Size(100, 96);
             this.memoEdit2.TabIndex = 1;
