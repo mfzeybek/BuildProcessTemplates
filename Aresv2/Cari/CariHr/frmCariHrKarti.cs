@@ -59,10 +59,12 @@ namespace Aresv2.Cari.CariHr
         int _CariID = -1;
         public int _CariHrID = -1;
         int _FaturaID = -1;
+        int _KasaHrID = -1;
 
         clsTablolar.cari.CariHr.csCariHr Hareket;
         clsTablolar.cari.csCariv2 Cari;
         clsTablolar.cari.csCariBakiye Bakiye = new clsTablolar.cari.csCariBakiye();
+        clsTablolar.Kasa.csKasaHareket KasaHareketi = new clsTablolar.Kasa.csKasaHareket();
 
         SqlTransaction TrGenel;
         private void frmCariHrKarti_Load(object sender, EventArgs e)
@@ -84,8 +86,12 @@ namespace Aresv2.Cari.CariHr
                 Bakiye.BakiyeVer(SqlConnections.GetBaglanti(), TrGenel, _CariID);
 
                 VeriAlVer(GET_SET.get);
-
+                lkpKasa.Properties.DataSource = KasaHareketi.KasaListeGetir(SqlConnections.GetBaglanti(), TrGenel);
                 TrGenel.Commit();
+
+                lkpKasa.Properties.ValueMember = "KasaID";
+                lkpKasa.Properties.DisplayMember = "KasaAdi";
+
                 if (_FaturaID != -1)
                 {
                     groupControl3.Visible = true;
@@ -161,7 +167,6 @@ namespace Aresv2.Cari.CariHr
                 Hareket.Aciklama = memoEdit_Aciklama.EditValue.ToString();
                 Hareket.Devirmi = checkEdit_Devirmi.Checked;
                 Hareket._FaturaID = _FaturaID;
-
                 Hareket.CariID = Cari.CariID;
             }
             ButtonEnabled(false);
@@ -188,12 +193,15 @@ namespace Aresv2.Cari.CariHr
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 VeriAlVer(GET_SET.set);
 
+                if (Hareket.AlacakMiBorcMu == clsTablolar.cari.CariHr.HareketYonu.Alacak)
+                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, Hareket.Tutar, 0, "");
+                else if (Hareket.AlacakMiBorcMu == clsTablolar.cari.CariHr.HareketYonu.Borc)
+                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, 0, Hareket.Tutar, "");
 
-                //if (KapaliFatura.dt.Rows.Count > 0)
-                //    KapaliFatura.Kaydet(SqlConnections.GetBaglanti(), TrGenel, (int)KapaliFatura.dt.Rows[0]["FaturaID"]);
 
 
                 Hareket.Kaydet(SqlConnections.GetBaglanti(), TrGenel);
+
 
                 TrGenel.Commit();
                 this.DialogResult = System.Windows.Forms.DialogResult.Yes;
