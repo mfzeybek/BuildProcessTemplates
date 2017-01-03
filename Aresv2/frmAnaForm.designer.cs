@@ -117,6 +117,7 @@
             this.btnReceteEkle = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup32 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem41 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem44 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage12 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnSiparisListesi = new DevExpress.XtraBars.BarButtonItem();
@@ -182,8 +183,7 @@
             this.barButtonItem39 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem40 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonPageCategory2 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.barButtonItem44 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ımageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -893,6 +893,13 @@
             this.barButtonItem41.Name = "barButtonItem41";
             this.barButtonItem41.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem41_ItemClick_1);
             // 
+            // barButtonItem44
+            // 
+            this.barButtonItem44.Caption = "Üretim Listesi";
+            this.barButtonItem44.Id = 6;
+            this.barButtonItem44.Name = "barButtonItem44";
+            this.barButtonItem44.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem44_ItemClick);
+            // 
             // ribbonPage12
             // 
             this.ribbonPage12.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1442,6 +1449,7 @@
             // 
             this.ribbon.ApplicationButtonText = null;
             this.ribbon.AutoHideEmptyItems = true;
+            this.ribbon.AutoSizeItems = true;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -1538,17 +1546,17 @@
             this.barButtonItem40,
             this.barButtonItem_TamEkran,
             this.barButtonItem41,
-            this.barButtonItem44});
+            this.barButtonItem44,
+            this.skinRibbonGalleryBarItem1});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.ribbon.MaxItemId = 7;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ribbon.MaxItemId = 9;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.OptionsTouch.ShowTouchUISelectorInQAT = true;
             this.ribbon.OptionsTouch.TouchUI = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
-            this.ribbonPageCategory2});
+            this.ribbon.PageHeaderItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpCari,
             this.rpStok,
@@ -1566,32 +1574,27 @@
             this.rpTerazi,
             this.rpYonetim,
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1924, 282);
+            this.ribbon.Size = new System.Drawing.Size(962, 143);
             // 
-            // ribbonPageCategory2
+            // skinRibbonGalleryBarItem1
             // 
-            this.ribbonPageCategory2.Name = "ribbonPageCategory2";
-            this.ribbonPageCategory2.Text = "ribbonPageCategory2";
-            // 
-            // barButtonItem44
-            // 
-            this.barButtonItem44.Caption = "Üretim Listesi";
-            this.barButtonItem44.Id = 6;
-            this.barButtonItem44.Name = "barButtonItem44";
-            this.barButtonItem44.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem44_ItemClick);
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 8;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
             // frmAnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1924, 1202);
+            this.ClientSize = new System.Drawing.Size(962, 625);
             this.Controls.Add(this.ribbon);
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAnaForm";
             this.Ribbon = this.ribbon;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -1760,8 +1763,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup31;
         private DevExpress.XtraBars.BarButtonItem barButtonItem41;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup32;
         private DevExpress.XtraBars.BarButtonItem barButtonItem44;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
     }
 }

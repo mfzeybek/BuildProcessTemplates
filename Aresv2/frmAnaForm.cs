@@ -25,6 +25,7 @@ namespace Aresv2
         {
             //frmInge frmm = new frmInge();
             //frmm.Show();
+            //ribbon.ScreenModeChanged += Ribbon_ScreenModeChanged;
 
             ribbon.ApplicationIcon = (Bitmap)ımageCollection1.Images[0];
             ribbon.ApplicationIcon.MakeTransparent(Color.White);
@@ -376,6 +377,10 @@ namespace Aresv2
             }
         }
 
+        private void Ribbon_ScreenModeChanged(object sender, DevExpress.XtraBars.Ribbon.ScreenModeChangedEventArgs e)
+        {
+
+        }
 
         private void FormuAc(Form GelenForm)
         {
