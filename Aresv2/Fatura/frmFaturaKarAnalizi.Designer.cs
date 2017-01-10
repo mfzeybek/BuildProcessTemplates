@@ -55,12 +55,12 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(148, 70);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.gridControl1.Location = new System.Drawing.Point(99, 45);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(901, 680);
+            this.gridControl1.Size = new System.Drawing.Size(1013, 752);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -165,10 +165,10 @@
             // btnFaturadanSec
             // 
             this.btnFaturadanSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnFaturadanSec.Location = new System.Drawing.Point(14, 681);
-            this.btnFaturadanSec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFaturadanSec.Location = new System.Drawing.Point(9, 753);
+            this.btnFaturadanSec.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnFaturadanSec.Name = "btnFaturadanSec";
-            this.btnFaturadanSec.Size = new System.Drawing.Size(128, 69);
+            this.btnFaturadanSec.Size = new System.Drawing.Size(85, 45);
             this.btnFaturadanSec.TabIndex = 1;
             this.btnFaturadanSec.Text = "Fatura Seç";
             this.btnFaturadanSec.Click += new System.EventHandler(this.btnFaturadanSec_Click);
@@ -176,23 +176,23 @@
             // comboBoxEdit1
             // 
             this.comboBoxEdit1.EditValue = "Stok Kartındaki Alış Fiyatı";
-            this.comboBoxEdit1.Location = new System.Drawing.Point(207, 15);
-            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(138, 10);
+            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
             "Stok Kartındaki Alış Fiyatı",
             "Son Alış Fiyatı"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(212, 26);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(141, 20);
             this.comboBoxEdit1.TabIndex = 2;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(107, 15);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(71, 10);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 19);
+            this.labelControl1.Size = new System.Drawing.Size(67, 13);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Maliyet Tanımı";
             // 
@@ -201,38 +201,38 @@
             this.btnStokHarekettenSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnStokHarekettenSec.Appearance.Options.UseTextOptions = true;
             this.btnStokHarekettenSec.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnStokHarekettenSec.Location = new System.Drawing.Point(14, 605);
-            this.btnStokHarekettenSec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnStokHarekettenSec.Location = new System.Drawing.Point(9, 703);
+            this.btnStokHarekettenSec.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnStokHarekettenSec.Name = "btnStokHarekettenSec";
-            this.btnStokHarekettenSec.Size = new System.Drawing.Size(128, 69);
+            this.btnStokHarekettenSec.Size = new System.Drawing.Size(85, 45);
             this.btnStokHarekettenSec.TabIndex = 4;
             this.btnStokHarekettenSec.Text = "Stok Hareketten Seç";
             // 
             // btnStokKartiniAc
             // 
-            this.btnStokKartiniAc.Location = new System.Drawing.Point(14, 88);
-            this.btnStokKartiniAc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnStokKartiniAc.Location = new System.Drawing.Point(9, 57);
+            this.btnStokKartiniAc.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnStokKartiniAc.Name = "btnStokKartiniAc";
-            this.btnStokKartiniAc.Size = new System.Drawing.Size(128, 61);
+            this.btnStokKartiniAc.Size = new System.Drawing.Size(85, 40);
             this.btnStokKartiniAc.TabIndex = 5;
             this.btnStokKartiniAc.Text = "simpleButton1";
             this.btnStokKartiniAc.Click += new System.EventHandler(this.btnStokKartiniAc_Click);
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(460, 14);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton1.Location = new System.Drawing.Point(307, 9);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(158, 49);
+            this.simpleButton1.Size = new System.Drawing.Size(105, 32);
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Stok A Göre Grupla";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // frmFaturaKarAnalizi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 765);
+            this.ClientSize = new System.Drawing.Size(958, 610);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnStokKartiniAc);
             this.Controls.Add(this.btnStokHarekettenSec);
@@ -240,7 +240,7 @@
             this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.btnFaturadanSec);
             this.Controls.Add(this.gridControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "frmFaturaKarAnalizi";
             this.Text = "frmFaturaKarAnalizi";
             this.Load += new System.EventHandler(this.frmFaturaKarAnalizi_Load);

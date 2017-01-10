@@ -56,7 +56,7 @@ where fatura.SilindiMi = 0 order by DegismeTarihi desc";
         {
             using (SqlDataAdapter da_Thread = new SqlDataAdapter(@"select fatura.FaturaID, FaturaTipi, FaturaTarihi, fatura.DuzenlemeTarihi, FaturaNo, CariID, CariKod, CariTanim, VergiDairesi, VergiNo, Adres, Il, Ilce, 
 Vadesi, Iptal, SilindiMi, Aciklama, KaydedenID, KayitTarihi, DegistirenID, DegismeTarihi, DepoID, SatisElemaniID, Toplam_Iskontosuz_Kdvsiz, 
-CariIskontoToplami , StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, isnull(FaturaTutari, 0) as FaturaTutari, KullanilanFiyatTanimID, SiparisID, FaturaGrupID, OdendiMi, 
+CariIskontoToplami , StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, isnull(FaturaTutari, 0) as FaturaTutari, KullanilanFiyatTanimID, SiparisID, FaturaGrupID, OdendiMi, '' as OdemeSekli,
 FaturaBarkod
 ---, TeraziFaturaID, TeraziID
 , isnull([dbo].[FaturaBakiyesiniGetir](Fatura.FaturaID), 0) KalanBakiye
@@ -302,6 +302,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["FaturaBarkod"] = dr["FaturaBarkod"];
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["KalanBakiye"] = dr["KalanBakiye"];
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["OdenenTutar"] = dr["OdenenTutar"];
+                        dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["OdemeSekli"] = dr["OdemeSekli"];
 
 
                         //return dr["FaturaBarkod"].ToString();
@@ -353,7 +354,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
                     droww["FaturaBarkod"] = dr["FaturaBarkod"];
                     droww["KalanBakiye"] = dr["KalanBakiye"];
                     droww["OdenenTutar"] = dr["OdenenTutar"];
-
+                    droww["OdemeSekli"] = dr["OdemeSekli"];
 
                     dt_threadSatislar.Rows.Add(droww);
 

@@ -100,7 +100,7 @@ namespace clsTablolar.TeraziSatisClaslari
                 if (TeraziTipi == 1)
                     sp1.BaudRate = 9600;
                 else if (TeraziTipi == 3)
-                    sp1.BaudRate = 38400;
+                    sp1.BaudRate = 9600;
 
                 try
                 {

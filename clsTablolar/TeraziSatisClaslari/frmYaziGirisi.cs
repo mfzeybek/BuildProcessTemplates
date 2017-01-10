@@ -1,8 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Windows.Input;
-
-
+using System.Runtime.InteropServices;
 
 namespace clsTablolar.TeraziSatisClaslari
 {
@@ -13,6 +10,17 @@ namespace clsTablolar.TeraziSatisClaslari
             InitializeComponent();
         }
 
+
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr FindWindow(string sClassName, string sAppName);
+
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string lclassName, string windowTitle);
+
+        [DllImport("User32.Dll", EntryPoint = "PostMessageA")]
+        static extern bool PostMessage(IntPtr hWnd, uint msg, int wParam, int lParam);
+
+
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             memoEdit1.EditValue = string.Empty;
@@ -21,8 +29,6 @@ namespace clsTablolar.TeraziSatisClaslari
         private void btnTamam_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            //proc.Close();
-            //proc.CloseMainWindow();
 
             KlavyeyiKapat();
             Close();
@@ -35,7 +41,6 @@ namespace clsTablolar.TeraziSatisClaslari
             {
                 onscreenProcess.Kill();
             }
-
         }
 
         private void btnVazgec_Click(object sender, EventArgs e)
@@ -44,40 +49,44 @@ namespace clsTablolar.TeraziSatisClaslari
             KlavyeyiKapat();
             Close();
         }
-        System.Diagnostics.Process proc = new System.Diagnostics.Process();// = System.Diagnostics.Process.Start(keyboardPath);
+
         private void frmYaziGirisi_Load(object sender, EventArgs e)
         {
-            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
-            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
-
-            //inputPanelConfig.EnableFocusTracking();
-            proc.StartInfo = new System.Diagnostics.ProcessStartInfo(keyboardPath);
-            proc.Start();
-            //proc.
+            btnKlavyeyiAc_Click(null, null);
         }
-        public sealed class InputPane
-        {
 
 
-        }
         private void btnKlavyeyiAc_Click(object sender, EventArgs e)
         {
-            InputPane pann = new InputPane();
-
-            System.Windows.Input.ICommand cxcx;
-
+            var trayWnd = FindWindow("Shell_TrayWnd", null);
+            var nullIntPtr = new IntPtr(0);
 
 
+            if (trayWnd != nullIntPtr)
+            {
+                var trayNotifyWnd = FindWindowEx(trayWnd, nullIntPtr, "TrayNotifyWnd", null);
+                if (trayNotifyWnd != nullIntPtr)
+                {
+                    var tIPBandWnd = FindWindowEx(trayNotifyWnd, nullIntPtr, "TIPBand", null);
 
-
-
-            //pann.
-            proc.Start();
+                    if (tIPBandWnd != nullIntPtr)
+                    {
+                        PostMessage(tIPBandWnd, (UInt32)WMessages.WM_LBUTTONDOWN, 1, 65537);
+                        PostMessage(tIPBandWnd, (UInt32)WMessages.WM_LBUTTONUP, 1, 65537);
+                    }
+                }
+            }
             memoEdit1.Focus();
         }
 
-
-
-
+        public enum WMessages : int
+        {
+            WM_LBUTTONDOWN = 0x201,
+            WM_LBUTTONUP = 0x202,
+            WM_KEYDOWN = 0x100,
+            WM_KEYUP = 0x101,
+            WH_KEYBOARD_LL = 13,
+            WH_MOUSE_LL = 14,
+        }
     }
 }

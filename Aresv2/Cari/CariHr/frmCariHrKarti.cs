@@ -60,6 +60,7 @@ namespace Aresv2.Cari.CariHr
         public int _CariHrID = -1;
         int _FaturaID = -1;
         int _KasaHrID = -1;
+        int _KasaID = 2; // TODO: varsayılan daha sonra ayarlardan alıcak
 
         clsTablolar.cari.CariHr.csCariHr Hareket;
         clsTablolar.cari.csCariv2 Cari;
@@ -91,7 +92,7 @@ namespace Aresv2.Cari.CariHr
 
                 lkpKasa.Properties.ValueMember = "KasaID";
                 lkpKasa.Properties.DisplayMember = "KasaAdi";
-
+                lkpKasa.EditValue = _KasaID;
                 if (_FaturaID != -1)
                 {
                     groupControl3.Visible = true;
@@ -151,6 +152,8 @@ namespace Aresv2.Cari.CariHr
                 memoEdit_Aciklama.EditValue = Hareket.Aciklama;
                 checkEdit_Devirmi.Checked = Hareket.Devirmi;
                 _FaturaID = Hareket._FaturaID;
+                _KasaHrID = Hareket.KasaHrID;
+                _KasaID = Hareket.KasaID;
 
                 // sadece get
                 lblBakiye.Text = Bakiye.Bakiye.ToString();
@@ -168,6 +171,10 @@ namespace Aresv2.Cari.CariHr
                 Hareket.Devirmi = checkEdit_Devirmi.Checked;
                 Hareket._FaturaID = _FaturaID;
                 Hareket.CariID = Cari.CariID;
+
+                Hareket.KasaHrID = _KasaHrID;
+                Hareket.KasaID = _KasaID;
+
             }
             ButtonEnabled(false);
             lblCariKodu.Text = Cari.CariKod;

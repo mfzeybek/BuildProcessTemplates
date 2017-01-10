@@ -265,34 +265,6 @@ namespace Aresv2.Stok
 
         }
 
-        private void cmbHizliTarih_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbHizliTarih.SelectedIndex == 0)
-            {
-
-            }
-
-            switch (cmbHizliTarih.SelectedIndex)
-            {
-                case 0:
-                    deTarih1.DateTime = DateTime.Today;
-                    deTarih2.DateTime = DateTime.Today; break;
-                case 1:
-                    deTarih1.DateTime = DateTime.Today.AddDays(-1);
-                    deTarih2.DateTime = DateTime.Today.AddDays(-1); break;
-                case 2:
-                    deTarih1.DateTime = haftaBasi(DateTime.Today, DayOfWeek.Monday);
-                    deTarih2.DateTime = haftasonu(DateTime.Today, DayOfWeek.Sunday);
-                    break;
-                case 3:
-                    deTarih1.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-                    deTarih2.DateTime = deTarih1.DateTime.AddMonths(1).AddDays(-1);
-                    break;
-            }
-
-
-
-        }
 
 
         DateTime haftaBasi(DateTime dt, DayOfWeek startOfWeek)
@@ -314,9 +286,26 @@ namespace Aresv2.Stok
             return dt.AddDays(diff).Date;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
 
+        private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmbHizliTarih.SelectedIndex)
+            {
+                case 0:
+                    deTarih1.DateTime = DateTime.Today;
+                    deTarih2.DateTime = DateTime.Today; break;
+                case 1:
+                    deTarih1.DateTime = DateTime.Today.AddDays(-1);
+                    deTarih2.DateTime = DateTime.Today.AddDays(-1); break;
+                case 2:
+                    deTarih1.DateTime = haftaBasi(DateTime.Today, DayOfWeek.Monday);
+                    deTarih2.DateTime = haftasonu(DateTime.Today, DayOfWeek.Sunday);
+                    break;
+                case 3:
+                    deTarih1.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                    deTarih2.DateTime = deTarih1.DateTime.AddMonths(1).AddDays(-1);
+                    break;
+            }
         }
     }
 }

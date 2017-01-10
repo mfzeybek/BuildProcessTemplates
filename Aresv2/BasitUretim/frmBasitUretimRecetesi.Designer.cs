@@ -146,7 +146,7 @@
             this.groupControl1.Location = new System.Drawing.Point(4, 43);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1018, 100);
+            this.groupControl1.Size = new System.Drawing.Size(1018, 107);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Üretilen Stok Bilgileri";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
