@@ -321,31 +321,24 @@
     <Compile Include="frmKapora.Designer.cs">
       <DependentUpon>frmKapora.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMiktarGir.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmMiktarGir.cs" />
     <Compile Include="frmMiktarGir.Designer.cs">
       <DependentUpon>frmMiktarGir.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStokBilgileri.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmStokBilgileri.cs" />
     <Compile Include="frmStokBilgileri.Designer.cs">
       <DependentUpon>frmStokBilgileri.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStokBirim.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmStokBirim.cs" />
     <Compile Include="frmStokBirim.Designer.cs">
       <DependentUpon>frmStokBirim.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmYaziciSec.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmYaziciSec.cs" />
     <Compile Include="frmYaziciSec.Designer.cs">
       <DependentUpon>frmYaziciSec.cs</DependentUpon>
     </Compile>
     <Compile Include="HemenAl\csEticaretDurumTanimlari.cs" />
+    <Compile Include="Kasa\csKasaHareket.cs" />
     <Compile Include="Personel\csDisaridakiPersonel.cs" />
     <Compile Include="Personel\PDKS\csPDKSdenVeriAktar.cs" />
     <Compile Include="Personel\PDKS\csPDKSYerler.cs" />
@@ -467,15 +460,11 @@
     <Compile Include="TeraziSatisClaslari\csTeraziAyarlari.cs" />
     <Compile Include="TeraziSatisClaslari\csTerazidenMiktarAl.cs" />
     <Compile Include="TeraziSatisClaslari\csthreadsafe.cs" />
-    <Compile Include="TeraziSatisClaslari\frmSatislar.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmSatislar.cs" />
     <Compile Include="TeraziSatisClaslari\frmSatislar.Designer.cs">
       <DependentUpon>frmSatislar.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeraziSatisClaslari\frmSatislariBirlestir.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmSatislariBirlestir.cs" />
     <Compile Include="TeraziSatisClaslari\frmSatislariBirlestir.Designer.cs">
       <DependentUpon>frmSatislariBirlestir.cs</DependentUpon>
     </Compile>
@@ -487,9 +476,7 @@
       <DependentUpon>StokButonGrupVeStokButonlari.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="TeraziSatisClaslari\frmYaziGirisi.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmYaziGirisi.cs" />
     <Compile Include="TeraziSatisClaslari\frmYaziGirisi.Designer.cs">
       <DependentUpon>frmYaziGirisi.cs</DependentUpon>
     </Compile>
