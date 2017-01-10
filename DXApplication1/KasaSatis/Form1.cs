@@ -33,7 +33,7 @@ namespace KasaSatis
                 SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                csOdemeKaydet.OdemeDonenBilgisi donenOdemeBilgisi = OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), "Fatura Nakit Ödeme");
+                csOdemeKaydet.OdemeDonenBilgisi donenOdemeBilgisi = OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), Properties.Settings.Default.KasaID, "Fatura Nakit Ödeme", 0);
 
                 TrGenel.Commit();
 
@@ -700,7 +700,7 @@ namespace KasaSatis
                     e.HighPriority = true;
                     //e.Appearance.BackColor = System.Drawing.Color.PeachPuff;
                     //e.Appearance.BackColor = System.Drawing.Color.White;
-                    e.Appearance.ForeColor = System.Drawing.Color.Pink;
+                    e.Appearance.ForeColor = System.Drawing.Color.Blue;
                     e.Appearance.Options.UseBackColor = false;
                 }
             }
@@ -876,12 +876,44 @@ namespace KasaSatis
             SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), "Fatura Kredi KArtı İle ödeme");
+            OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), 3, "Fatura Kredi KArtı İle ödeme", 0); // KAsaID 3 pos cihazı için verilen ID
             TrGenel.Commit();
 
             // bunu raşağıda yazdığın row style girdin diye yaptın.
             btnYenile_Click(null, null);
             gvOdemesiYapilacakSatis.RefreshRow(gvOdemesiYapilacakSatis.GetRowHandle(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()));
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value)
+            {
+                MessageBox.Show("Satış yok veya seçili satışın daha tüm bilgileri gelmedi mk");
+                return;
+            }
+
+            frmKismiOdeme frm = new frmKismiOdeme();
+            if (DialogResult.Yes == frm.ShowDialog())
+            {
+                SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
+
+                int KismiOdemeKasaID = frm.KismiOdemesiYapilanKasaID;
+                decimal KismiOdemeTutari = frm.Tutar;
+                string KismiODemeAciklama = frm.Aciklama;
+
+                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), KismiOdemeKasaID, KismiODemeAciklama, KismiOdemeTutari);
+                TrGenel.Commit();
+
+                // bunu raşağıda yazdığın row style girdin diye yaptın.
+                btnYenile_Click(null, null);
+                gvOdemesiYapilacakSatis.RefreshRow(gvOdemesiYapilacakSatis.GetRowHandle(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()));
+            }
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

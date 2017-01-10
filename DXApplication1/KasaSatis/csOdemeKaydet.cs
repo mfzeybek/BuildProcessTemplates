@@ -28,25 +28,42 @@ namespace KasaSatis
             OdemesiTamamlandi = 1,
             OncedenOdemesiTamamlanmis = 0
         }
-
-        public OdemeDonenBilgisi FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, string Aciklama)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Baglanti"></param>
+        /// <param name="Tr"></param>
+        /// <param name="FaturaID"></param>
+        /// <param name="Aciklama"></param>
+        /// <param name="OdemeTutari">eğer 0 verilirse kalan fatura bakiyesini öder</param>
+        /// <returns></returns>
+        public OdemeDonenBilgisi FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, int KasaID, string Aciklama, decimal OdemeTutari)
         {
-            using (SqlCommand cmd = new SqlCommand("FaturaninBakiyesininKalaniniNakitTahsilEt", Baglanti, Tr))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
-                cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaSatis.Properties.Settings.Default.KasaID;
-                cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
+                using (SqlCommand cmd = new SqlCommand("FaturaninBakiyesininKalaniniNakitTahsilEt", Baglanti, Tr))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
+                    cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaID;
+                    cmd.Parameters.Add("@OdemeTutari", SqlDbType.Decimal).Value = OdemeTutari;
+                    cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
 
-                cmd.Parameters.Add("@RETURN_VALUE", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add("@RETURN_VALUE", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                int DonenDeger = (int)cmd.Parameters["@RETURN_VALUE"].Value;
+                    int DonenDeger = (int)cmd.Parameters["@RETURN_VALUE"].Value;
 
-                return (OdemeDonenBilgisi)DonenDeger;
-                //string value = cmd.Parameters["@return_value"].Value.ToString();
+                    return (OdemeDonenBilgisi)DonenDeger;
+                    //string value = cmd.Parameters["@return_value"].Value.ToString();
+                }
             }
+            catch (Exception hata)
+            {
+                throw hata;
+            }
+
         }
     }
 }
