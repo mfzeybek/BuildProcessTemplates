@@ -1276,7 +1276,7 @@
             // 
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Location = new System.Drawing.Point(15, 466);
+            this.simpleButton5.Location = new System.Drawing.Point(15, 586);
             this.simpleButton5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(568, 104);
