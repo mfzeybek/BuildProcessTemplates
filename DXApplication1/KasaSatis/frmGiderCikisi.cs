@@ -16,5 +16,15 @@ namespace KasaSatis
         {
             InitializeComponent();
         }
+
+        private void frmGiderCikisi_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
