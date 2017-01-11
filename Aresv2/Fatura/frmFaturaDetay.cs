@@ -536,7 +536,7 @@ namespace Aresv2.Fatura
                 //  txtFaturaNo.Focus();
                 //  return;
                 //}
-                if (txtUnvan.Text == "")
+                if (txtUnvan.Text == "" || Fatura.CariID == -1)
                 {
                     XtraMessageBox.Show("Cari seçiniz.", "Ares", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUnvan.Focus();
