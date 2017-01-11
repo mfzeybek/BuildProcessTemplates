@@ -73,7 +73,7 @@ namespace clsTablolar.Kasa
         }
 
 
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -95,12 +95,58 @@ namespace clsTablolar.Kasa
         /// </summary>
         public void ZRaporuAl()
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"insert into ZRaporu (ZRaporuID, Tarih, Aciklama, RaporuAlanPersonelID, NakitTutar, KrediKartiTutari, KasaBakiyesi)
-values(@ZRaporuID, @Tarih, @Aciklama, @RaporuAlanPersonelID, @NakitTutar, @KrediKartiTutari, @KasaBakiyesi)";
-            cmd.Parameters.Add()
+            //            SqlCommand cmd = new SqlCommand();
+            //            cmd.CommandText = @"insert into ZRaporu (ZRaporuID, Tarih, Aciklama, RaporuAlanPersonelID, NakitTutar, KrediKartiTutari, KasaBakiyesi)
+            //values(@ZRaporuID, @Tarih, @Aciklama, @RaporuAlanPersonelID, @NakitTutar, @KrediKartiTutari, @KasaBakiyesi)";
+            //            cmd.Parameters.Add()
 
 
         }
+
+        public class KasaRapor : IDisposable
+        {
+            public decimal KasaBakiye { get; set; }
+            public decimal Alacak { get; set; }
+            public decimal Borc { get; set; }
+
+
+            public void Dispose()
+            {
+                GC.SuppressFinalize(this);
+            }
+        }
+
+        public KasaRapor KasaBakiyeVer(SqlConnection Baglanti, SqlTransaction Tr, int KasaID)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(@"select SUM(Alacak) - SUM(Borc) as Bakiye, SUM(Alacak) Alacak, SUM(Borc) Borc from KasaHareket
+inner join CariHr on CariHr.KasaHrID = KasaHareket.KasaHrID and CariHr.SilindiMi = 0
+where  isnull((select top 1 KasaHareketID from ZRaporu),-1) < kasahareket.KasaHrID and KasaHareket.KasaID = @KasaID
+group by KasaHareket.KasaID", Baglanti, Tr))
+                {
+                    cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaID;
+                    using (KasaRapor ksarpr = new KasaRapor())
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                ksarpr.KasaBakiye = (decimal)dr["Bakiye"];
+                                ksarpr.Alacak = (decimal)dr["Alacak"];
+                                ksarpr.Borc = (decimal)dr["Borc"];
+                            }
+                        }
+
+                        return ksarpr;
+                    }
+                }
+            }
+            catch (Exception hata)
+            {
+                throw hata;
+            }
+        }
     }
 }
+
