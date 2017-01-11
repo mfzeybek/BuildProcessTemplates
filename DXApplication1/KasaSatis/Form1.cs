@@ -915,6 +915,12 @@ namespace KasaSatis
         {
 
         }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKasaRaporu Rapor = new frmKasaRaporu();
+            Rapor.ShowDialog();
+        }
     }
 }
 
