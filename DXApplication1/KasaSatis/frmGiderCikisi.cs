@@ -26,5 +26,10 @@ namespace KasaSatis
         {
 
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

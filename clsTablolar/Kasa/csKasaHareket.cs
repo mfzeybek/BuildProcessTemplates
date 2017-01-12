@@ -75,22 +75,6 @@ namespace clsTablolar.Kasa
 
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="Baglanti"></param>
-        /// <param name="Tr"></param>
-        /// <param name="KasaID"></param>
-        /// <param name="SonAlinanZraporudanSonrakileriGetir"></param>
-        public DataTable KasaHareketListe(SqlConnection Baglanti, SqlTransaction Tr, int KasaID, bool SonAlinanZraporudanSonrakileriGetir)
-        {
-            SqlDataAdapter da = new SqlDataAdapter();
-            //da.SelectCommand
-            DataTable dt = new DataTable();
-
-            return dt;
-        }
-
-        /// <summary>
         /// Kasadaki Bütün Paraların çıkışını yapar.
         /// </summary>
         public void ZRaporuAl()
@@ -99,8 +83,6 @@ namespace clsTablolar.Kasa
             //            cmd.CommandText = @"insert into ZRaporu (ZRaporuID, Tarih, Aciklama, RaporuAlanPersonelID, NakitTutar, KrediKartiTutari, KasaBakiyesi)
             //values(@ZRaporuID, @Tarih, @Aciklama, @RaporuAlanPersonelID, @NakitTutar, @KrediKartiTutari, @KasaBakiyesi)";
             //            cmd.Parameters.Add()
-
-
         }
 
         public class KasaRapor : IDisposable
@@ -147,6 +129,8 @@ group by KasaHareket.KasaID", Baglanti, Tr))
                 throw hata;
             }
         }
+
+
     }
 }
 

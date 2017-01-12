@@ -350,6 +350,7 @@
     </Compile>
     <Compile Include="HemenAl\csEticaretDurumTanimlari.cs" />
     <Compile Include="Kasa\csKasaHareket.cs" />
+    <Compile Include="Kasa\csKasaHareketArama.cs" />
     <Compile Include="Personel\csDisaridakiPersonel.cs" />
     <Compile Include="Personel\PDKS\csPDKSdenVeriAktar.cs" />
     <Compile Include="Personel\PDKS\csPDKSYerler.cs" />
