@@ -16,12 +16,13 @@ namespace clsTablolar.Kasa
         }
 
 
-        public bool AramaKriteriSonZRaporundanSonraMi { get; set; }
+        public bool SonZRaporundanSonraMi { get; set; }
 
-        public hareketYonu yonu { get; set; }
+        public hareketYonu Yonu { get; set; }
 
         public enum hareketYonu
         {
+            Hepsi,
             Alacak,
             Borc
         }
@@ -29,18 +30,23 @@ namespace clsTablolar.Kasa
         public int KasaID { get; set; }
 
 
-        public DataTable KasaHareketListe(SqlConnection Baglanti, SqlTransaction Tr, int KasaID, bool SonAlinanZraporudanSonrakileriGetir)
+        public DataTable KasaHareketListe(SqlConnection Baglanti, SqlTransaction Tr, int KasaID)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand.CommandText = @"select SUM(Borc) from kasahareket 
-where 1 = 1 
+where 1 = 1 ";
 
-and
-KasaHareket.KasaID = @Kasa";
-
-            if (SonAlinanZraporudanSonrakileriGetir)
+            if (SonZRaporundanSonraMi)
             {
                 da.SelectCommand.CommandText = da.SelectCommand.CommandText + " and isnull((select top 1 ZRaporu.KasaHareketID from ZRaporu),-1) < KasaHareket.KasaHrID ";
+            }
+            if (KasaID != -1)
+            {
+                da.SelectCommand.CommandText = da.SelectCommand.CommandText + " and KasaHareket.KasaID = @KasaID ";
+            }
+            if (Yonu == hareketYonu.Borc)
+            {
+                da.SelectCommand.CommandText = da.SelectCommand.CommandText + " and Borc > 0 ";
             }
 
 
@@ -48,6 +54,5 @@ KasaHareket.KasaID = @Kasa";
 
             return dt;
         }
-
     }
 }
