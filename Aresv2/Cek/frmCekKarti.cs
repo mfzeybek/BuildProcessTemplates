@@ -63,6 +63,8 @@ namespace Aresv2.Cek
             CariHr.CariID = Hareket.CariID;
             CariHr.Tutar = Hareket.Tutari;
             CariHr._FaturaID = -1;
+            CariHr.KasaID = -1;
+            CariHr.KasaHrID = -1;
 
             CariHr.CariHrKaydet(SqlConnections.GetBaglanti(), TrGenel, (clsTablolar.cari.CariHr.CariHrEntegrasyon)Hareket.EvrakTipi, Hareket.CekHrID);
         }
