@@ -11,7 +11,7 @@ namespace clsTablolar.Personel
     {
         public void Dispose()
         {
-            throw new NotImplementedException();
+            GC.SuppressFinalize(this);
         }
 
         private int _PersonelID;

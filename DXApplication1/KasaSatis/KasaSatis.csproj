@@ -353,6 +353,12 @@
     <Compile Include="frmGiderCikisi.Designer.cs">
       <DependentUpon>frmGiderCikisi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGiderKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiderKarti.Designer.cs">
+      <DependentUpon>frmGiderKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKasaRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiderCikisi.resx">
       <DependentUpon>frmGiderCikisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGiderKarti.resx">
+      <DependentUpon>frmGiderKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKasaRaporu.resx">
       <DependentUpon>frmKasaRaporu.cs</DependentUpon>

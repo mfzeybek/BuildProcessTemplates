@@ -127,10 +127,10 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -142,9 +142,9 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnItemFormSecerekYazdir = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarkodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceBarkoduOkutulanFaturaninOdemesiniYap.Properties)).BeginInit();
@@ -165,7 +165,7 @@
             this.labelControl2.Location = new System.Drawing.Point(264, 477);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(37, 13);
+            this.labelControl2.Size = new System.Drawing.Size(75, 25);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Ürünleri";
             // 
@@ -288,7 +288,7 @@
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Appearance.Options.UseImage = true;
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Image = ((System.Drawing.Image)(resources.GetObject("btnAktifSatisaDigerSatisinHareketleriniEkle.Image")));
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Location = new System.Drawing.Point(3274, 6);
+            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Location = new System.Drawing.Point(4134, 6);
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Name = "btnAktifSatisaDigerSatisinHareketleriniEkle";
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Size = new System.Drawing.Size(58, 54);
@@ -339,12 +339,12 @@
             this.gcOdemesiYapilacakSatis.AccessibleDescription = "fth2";
             this.gcOdemesiYapilacakSatis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcOdemesiYapilacakSatis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.gcOdemesiYapilacakSatis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(32, 15, 32, 15);
             this.gcOdemesiYapilacakSatis.Location = new System.Drawing.Point(308, 76);
             this.gcOdemesiYapilacakSatis.MainView = this.gvOdemesiYapilacakSatis;
             this.gcOdemesiYapilacakSatis.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.gcOdemesiYapilacakSatis.Name = "gcOdemesiYapilacakSatis";
-            this.gcOdemesiYapilacakSatis.Size = new System.Drawing.Size(919, 386);
+            this.gcOdemesiYapilacakSatis.Size = new System.Drawing.Size(1595, 386);
             this.gcOdemesiYapilacakSatis.TabIndex = 66;
             this.gcOdemesiYapilacakSatis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvOdemesiYapilacakSatis});
@@ -1064,12 +1064,12 @@
             this.gcSatisHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(32, 15, 32, 15);
             this.gcSatisHareketleri.Location = new System.Drawing.Point(308, 477);
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
             this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(919, 291);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(1595, 685);
             this.gcSatisHareketleri.TabIndex = 62;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -1091,7 +1091,7 @@
             this.chckbtnIskontoIslemleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chckbtnIskontoIslemleri.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.chckbtnIskontoIslemleri.Appearance.Options.UseFont = true;
-            this.chckbtnIskontoIslemleri.Location = new System.Drawing.Point(746, 266);
+            this.chckbtnIskontoIslemleri.Location = new System.Drawing.Point(1204, 190);
             this.chckbtnIskontoIslemleri.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.chckbtnIskontoIslemleri.Name = "chckbtnIskontoIslemleri";
             this.chckbtnIskontoIslemleri.Size = new System.Drawing.Size(132, 56);
@@ -1116,7 +1116,7 @@
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
             this.dropDownButton1.DropDownControl = this.popupMenu_Islemler;
             this.dropDownButton1.Location = new System.Drawing.Point(8, 4);
-            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2);
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(128, 52);
             this.dropDownButton1.TabIndex = 117;
@@ -1125,21 +1125,12 @@
             // popupMenu_Islemler
             // 
             this.popupMenu_Islemler.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9)});
             this.popupMenu_Islemler.Manager = this.barManager1;
             this.popupMenu_Islemler.Name = "popupMenu_Islemler";
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "Kasa Bakiye Bilgileri";
-            this.barButtonItem5.Id = 10;
-            this.barButtonItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.barButtonItem5.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem5.Name = "barButtonItem5";
             // 
             // barButtonItem6
             // 
@@ -1162,8 +1153,19 @@
             // 
             this.barButtonItem8.Caption = "Ödeme";
             this.barButtonItem8.Id = 13;
+            this.barButtonItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barButtonItem8.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Rapor";
+            this.barButtonItem9.Id = 14;
+            this.barButtonItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barButtonItem9.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
             // barManager1
             // 
@@ -1192,17 +1194,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1240, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1916, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 779);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1173);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1240, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1916, 0);
             // 
             // barDockControlLeft
             // 
@@ -1210,17 +1212,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 779);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1173);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1240, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1916, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 779);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1173);
             // 
             // barSubItem1
             // 
@@ -1260,6 +1262,14 @@
             this.barBtnItemFormSecerekYazdir.Id = 9;
             this.barBtnItemFormSecerekYazdir.Name = "barBtnItemFormSecerekYazdir";
             // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Kasa Bakiye Bilgileri";
+            this.barButtonItem5.Id = 10;
+            this.barButtonItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barButtonItem5.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
             // simpleButton4
             // 
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -1284,13 +1294,6 @@
             this.simpleButton5.Text = "Kısmi Ödeme";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
-            // barButtonItem9
-            // 
-            this.barButtonItem9.Caption = "Rapor";
-            this.barButtonItem9.Id = 14;
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
-            // 
             // frmKasaOdeme
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1298,7 +1301,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 779);
+            this.ClientSize = new System.Drawing.Size(1916, 1173);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.dropDownButton1);

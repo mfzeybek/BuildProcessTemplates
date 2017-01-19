@@ -21,8 +21,49 @@ namespace clsTablolar.Kasa
         public decimal Borc { get; set; }
         public string Aciklama { get; set; }
 
+        public csKasaHareket()
+        {
+            this.KasaHrID = -1;
+            this.KasaID = -1;
+            this.Alacak = 0;
+            this.Borc = 0;
+            this.Aciklama = String.Empty;
+        }
 
+        public void Getir(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID)
+        {
+            if (KasaHrID == -1)
+                return;
+
+            using (SqlCommand cmd = new SqlCommand("Select * from KasaHareket where KasaHrID = @KasaHrID", Baglanti, Tr))
+            {
+                cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = KasaHrID;
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        this.KasaHrID = (int)dr["KasaHrID"];
+                        this.KasaID = (int)dr["KasaID"];
+                        this.Alacak = (decimal)dr["Alacak"];
+                        this.Borc = (decimal)dr["Borc"];
+                        this.Aciklama = dr["Aciklama"].ToString();
+                    }
+                }
+            }
+        }
         public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID, int KasaID, decimal Alacak, decimal Borc, string Aciklama)
+        {
+            this.KasaHrID = KasaHrID;
+            this.KasaID = KasaID;
+            this.Alacak = Alacak;
+            this.Borc = Borc;
+            this.Aciklama = Aciklama;
+
+
+            return HarekeKaydet(Baglanti, Tr);
+        }
+        public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -50,7 +91,6 @@ namespace clsTablolar.Kasa
                 if (KasaHrID == -1)
                 {
                     this.KasaHrID = (int)cmd.Parameters["@YeniID"].Value;
-                    KasaHrID = this.KasaHrID;
                 }
             }
 
@@ -58,6 +98,7 @@ namespace clsTablolar.Kasa
 
             return KasaHrID;
         }
+
 
         public DataTable KasaListeGetir(SqlConnection baglanti, SqlTransaction Tr)
         {
@@ -83,51 +124,6 @@ namespace clsTablolar.Kasa
             //            cmd.CommandText = @"insert into ZRaporu (ZRaporuID, Tarih, Aciklama, RaporuAlanPersonelID, NakitTutar, KrediKartiTutari, KasaBakiyesi)
             //values(@ZRaporuID, @Tarih, @Aciklama, @RaporuAlanPersonelID, @NakitTutar, @KrediKartiTutari, @KasaBakiyesi)";
             //            cmd.Parameters.Add()
-        }
-
-        public class KasaRapor : IDisposable
-        {
-            public decimal KasaBakiye { get; set; }
-            public decimal Alacak { get; set; }
-            public decimal Borc { get; set; }
-
-
-            public void Dispose()
-            {
-                GC.SuppressFinalize(this);
-            }
-        }
-
-        public KasaRapor KasaBakiyeVer(SqlConnection Baglanti, SqlTransaction Tr, int KasaID)
-        {
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand(@"select SUM(Alacak) - SUM(Borc) as Bakiye, SUM(Alacak) Alacak, SUM(Borc) Borc from KasaHareket
-inner join CariHr on CariHr.KasaHrID = KasaHareket.KasaHrID and CariHr.SilindiMi = 0
-where  isnull((select top 1 KasaHareketID from ZRaporu),-1) < kasahareket.KasaHrID and KasaHareket.KasaID = @KasaID
-group by KasaHareket.KasaID", Baglanti, Tr))
-                {
-                    cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaID;
-                    using (KasaRapor ksarpr = new KasaRapor())
-                    {
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.Read())
-                            {
-                                ksarpr.KasaBakiye = (decimal)dr["Bakiye"];
-                                ksarpr.Alacak = (decimal)dr["Alacak"];
-                                ksarpr.Borc = (decimal)dr["Borc"];
-                            }
-                        }
-
-                        return ksarpr;
-                    }
-                }
-            }
-            catch (Exception hata)
-            {
-                throw hata;
-            }
         }
 
 

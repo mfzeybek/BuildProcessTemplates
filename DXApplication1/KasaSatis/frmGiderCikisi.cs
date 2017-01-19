@@ -31,9 +31,14 @@ namespace KasaSatis
             GiderHareketi.KasaID = KasaSatis.Properties.Settings.Default.KasaID;
             GiderHareketi.Yonu = clsTablolar.Kasa.csKasaHareketArama.hareketYonu.Borc;
 
+            Getir();
+        }
 
+        void Getir()
+        {
+            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             gridControl1.DataSource = GiderHareketi.KasaHareketListe(SqlConnections.GetBaglanti(), TrGenel, KasaSatis.Properties.Settings.Default.KasaID);
-
+            TrGenel.Commit();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -44,6 +49,36 @@ namespace KasaSatis
         private void simpleButton3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        clsTablolar.Kasa.csKasaHareket Hareket = new clsTablolar.Kasa.csKasaHareket();
+
+        private void btnTamam_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void btnEkle_Click_1(object sender, EventArgs e)
+        {
+            using (frmGiderKarti frm = new frmGiderKarti(-1))
+            {
+                if (frm.ShowDialog() == DialogResult.Yes)
+                {
+                    Getir();
+                }
+            }
+        }
+
+        private void btnDuzelt_Click(object sender, EventArgs e)
+        {
+            using (frmGiderKarti frm = new frmGiderKarti(Convert.ToInt32(gridView1.GetFocusedRowCellValue("KasaHrID"))))
+            {
+                if (frm.ShowDialog() == DialogResult.Yes)
+                {
+                    Getir();
+                }
+            }
         }
     }
 }

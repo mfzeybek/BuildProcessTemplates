@@ -206,6 +206,7 @@
             // 
             // lblCariTanim
             // 
+            this.lblCariTanim.Appearance.Options.UseTextOptions = true;
             this.lblCariTanim.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.lblCariTanim.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCariTanim.Location = new System.Drawing.Point(730, 89);
@@ -425,6 +426,7 @@
             // lblCekTipi
             // 
             this.lblCekTipi.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.lblCekTipi.Appearance.Options.UseFont = true;
             this.lblCekTipi.Location = new System.Drawing.Point(29, 19);
             this.lblCekTipi.Margin = new System.Windows.Forms.Padding(5);
             this.lblCekTipi.Name = "lblCekTipi";

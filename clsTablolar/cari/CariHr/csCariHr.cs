@@ -162,15 +162,15 @@ if (select CariHr.Entegrasyon from CariHr where CariHr.EntegrasyonID = @Entegras
 begin
 update CariHr set 
                  CariID = @CariID, Tarih = @Tarih, AlacakMiBorcMu = @AlacakMiBorcMu, Aciklama = @Aciklama,
-                 EvrakNo = @EvrakNo, Tutar = @Tutar, Entegrasyon = @Entegrasyon, EntegrasyonID = @EntegrasyonID, Devirmi = @Devirmi, SilindiMi = @SilindiMi, CariHr.FaturaID = @FaturaID
+                 EvrakNo = @EvrakNo, Tutar = @Tutar, Entegrasyon = @Entegrasyon, EntegrasyonID = @EntegrasyonID, Devirmi = @Devirmi, SilindiMi = @SilindiMi, CariHr.FaturaID = @FaturaID, KasaID = @KasaID, KasaHrID = @KasaHrID
 where CariHr.EntegrasyonID = @EntegrasyonID and CariHr.Entegrasyon = @Entegrasyon
 end
 else
 begin
 insert into CariHr 
-                                    ( CariID, Tarih, AlacakMiBorcMu, Aciklama, EvrakNo, Tutar, Entegrasyon, EntegrasyonID, Devirmi, SilindiMi, FaturaID, KasaID, KasaHrID ) 
+                                    ( CariID, Tarih, AlacakMiBorcMu, Aciklama, EvrakNo, Tutar, Entegrasyon, EntegrasyonID, Devirmi, SilindiMi, FaturaID, KasaID, KasaHrID )
                                     values 
-                                    ( @CariID, @Tarih, @AlacakMiBorcMu, @Aciklama, @EvrakNo, @Tutar, @Entegrasyon, @EntegrasyonID, @Devirmi, @SilindiMi , @FaturaID)
+                                    ( @CariID, @Tarih, @AlacakMiBorcMu, @Aciklama, @EvrakNo, @Tutar, @Entegrasyon, @EntegrasyonID, @Devirmi, @SilindiMi , @FaturaID, @KasaID, @KasaHrID )
 end", Baglanti, Tr);
 
             cmd.Parameters.Add("@CariID", SqlDbType.Int).Value = _CariID;
