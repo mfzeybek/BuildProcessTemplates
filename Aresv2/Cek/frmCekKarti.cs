@@ -116,6 +116,11 @@ namespace Aresv2.Cek
 
         void Kaydet_Vazgec_sil(bool true_false)
         {
+            if (true_false == true)
+                Tag = 0;
+            else
+                Tag = 1;
+
             btnKaydet.Enabled = true_false;
             btnVazgec.Enabled = true_false;
             btnSil.Enabled = !true_false;
