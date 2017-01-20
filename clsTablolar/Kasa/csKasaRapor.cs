@@ -106,8 +106,6 @@ isnull((select top 1 KasaHareketID from KasaRaporu),-1) < CariHr.KasaHrID ", Bag
                     cmd.CommandText = "insert into KasaRaporu (Tarih, Aciklama, RaporuAlanPersonelID, NakitBakiye, ) values ()";
 
                 }
-
-
             }
         }
     }
