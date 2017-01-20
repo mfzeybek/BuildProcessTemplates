@@ -26,7 +26,7 @@ namespace Aresv2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.2.71;Initial Catalog=PDKS;User ID=sa;Password=1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ARES;Integrated Security=True")]
         public string DBConStrPDKS {
             get {
                 return ((string)(this["DBConStrPDKS"]));
@@ -60,7 +60,7 @@ namespace Aresv2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.2.3;Initial Catalog=ARES;User ID=sa;Password=1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ARES;Integrated Security=True")]
         public string DBConStr {
             get {
                 return ((string)(this["DBConStr"]));
@@ -76,6 +76,36 @@ namespace Aresv2.Properties {
             }
             set {
                 this["GelistiriciModu"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.n11.com/ws/productService/")]
+        public string Aresv2_ProductService_ProductServicePortService {
+            get {
+                return ((string)(this["Aresv2_ProductService_ProductServicePortService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.n11.com/ws/categoryService/")]
+        public string Aresv2_CategoryService_CategoryServicePortService {
+            get {
+                return ((string)(this["Aresv2_CategoryService_CategoryServicePortService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.n11.com/ws/categoryService/")]
+        public string Aresv2_n11CategoryService_CategoryServicePortService {
+            get {
+                return ((string)(this["Aresv2_n11CategoryService_CategoryServicePortService"]));
             }
         }
     }

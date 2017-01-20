@@ -165,7 +165,7 @@
             this.labelControl2.Location = new System.Drawing.Point(264, 477);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(75, 25);
+            this.labelControl2.Size = new System.Drawing.Size(37, 13);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Ürünleri";
             // 
@@ -339,7 +339,7 @@
             this.gcOdemesiYapilacakSatis.AccessibleDescription = "fth2";
             this.gcOdemesiYapilacakSatis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcOdemesiYapilacakSatis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(32, 15, 32, 15);
+            this.gcOdemesiYapilacakSatis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(64, 29, 64, 29);
             this.gcOdemesiYapilacakSatis.Location = new System.Drawing.Point(308, 76);
             this.gcOdemesiYapilacakSatis.MainView = this.gvOdemesiYapilacakSatis;
             this.gcOdemesiYapilacakSatis.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1064,7 +1064,7 @@
             this.gcSatisHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(32, 15, 32, 15);
+            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(64, 29, 64, 29);
             this.gcSatisHareketleri.Location = new System.Drawing.Point(308, 477);
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
             this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);

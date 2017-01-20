@@ -995,5 +995,11 @@ namespace Aresv2
             BasitUretim.frmUretimListesi frmm = new BasitUretim.frmUretimListesi();
             FormuAc2(frmm);
         }
+
+        private void barButtonItem45_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            n11.frmN11 frm = new n11.frmN11();
+            FormuAc2(frm);
+        }
     }
 }

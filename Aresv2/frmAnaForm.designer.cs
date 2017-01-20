@@ -184,6 +184,10 @@
             this.barButtonItem40 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.barButtonItem45 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ımageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -1547,11 +1551,12 @@
             this.barButtonItem_TamEkran,
             this.barButtonItem41,
             this.barButtonItem44,
-            this.skinRibbonGalleryBarItem1});
+            this.skinRibbonGalleryBarItem1,
+            this.barButtonItem45});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 9;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.ribbon.MaxItemId = 10;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.OptionsTouch.ShowTouchUISelectorInQAT = true;
@@ -1573,8 +1578,9 @@
             this.PageAyarlar,
             this.rpTerazi,
             this.rpYonetim,
-            this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(962, 143);
+            this.ribbonPage1,
+            this.ribbonPage3});
+            this.ribbon.Size = new System.Drawing.Size(1924, 282);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -1582,19 +1588,44 @@
             this.skinRibbonGalleryBarItem1.Id = 8;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup33});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "ribbonPage3";
+            // 
+            // ribbonPageGroup33
+            // 
+            this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem45);
+            this.ribbonPageGroup33.Name = "ribbonPageGroup33";
+            this.ribbonPageGroup33.Text = "ribbonPageGroup33";
+            // 
+            // ribbonPage8
+            // 
+            this.ribbonPage8.Name = "ribbonPage8";
+            this.ribbonPage8.Text = "ribbonPage8";
+            // 
+            // barButtonItem45
+            // 
+            this.barButtonItem45.Caption = "barButtonItem45";
+            this.barButtonItem45.Id = 9;
+            this.barButtonItem45.Name = "barButtonItem45";
+            this.barButtonItem45.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem45_ItemClick);
+            // 
             // frmAnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(962, 625);
+            this.ClientSize = new System.Drawing.Size(1924, 1202);
             this.Controls.Add(this.ribbon);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "frmAnaForm";
             this.Ribbon = this.ribbon;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -1766,5 +1797,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup32;
         private DevExpress.XtraBars.BarButtonItem barButtonItem44;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem45;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup33;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage8;
     }
 }
