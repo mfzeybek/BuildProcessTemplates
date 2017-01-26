@@ -37,16 +37,18 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(259, 121);
+            this.simpleButton1.Location = new System.Drawing.Point(13, 13);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(454, 102);
+            this.simpleButton1.Size = new System.Drawing.Size(454, 77);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "simpleButton1";
             // 
             // listBoxControl1
             // 
             this.listBoxControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxControl1.Location = new System.Drawing.Point(321, 305);
+            this.listBoxControl1.Location = new System.Drawing.Point(13, 315);
+            this.listBoxControl1.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxControl1.Name = "listBoxControl1";
             this.listBoxControl1.Size = new System.Drawing.Size(632, 758);
             this.listBoxControl1.TabIndex = 2;
@@ -54,7 +56,8 @@
             // listBoxControl2
             // 
             this.listBoxControl2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxControl2.Location = new System.Drawing.Point(1072, 305);
+            this.listBoxControl2.Location = new System.Drawing.Point(653, 315);
+            this.listBoxControl2.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxControl2.Name = "listBoxControl2";
             this.listBoxControl2.Size = new System.Drawing.Size(632, 758);
             this.listBoxControl2.TabIndex = 3;
@@ -63,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2292, 1371);
+            this.ClientSize = new System.Drawing.Size(1888, 1179);
             this.Controls.Add(this.listBoxControl2);
             this.Controls.Add(this.listBoxControl1);
             this.Controls.Add(this.simpleButton1);

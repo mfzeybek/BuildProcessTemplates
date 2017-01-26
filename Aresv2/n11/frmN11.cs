@@ -30,12 +30,11 @@ namespace Aresv2.n11
 
             KategorileriGetir();
             //UrunGetir();
+            hamisina();
 
             AltKategoriGetir();
 
         }
-
-
 
         void hamisina()
         {
@@ -59,7 +58,7 @@ namespace Aresv2.n11
             var sku1 = new ProductSkuRequest();
             sku1.sellerStockCode = "1"; //stokkodu;
             sku1.quantity = "1"; //Stokmiktar;
-            sku1.optionPrice = 10; // Stok Fiyatı
+            sku1.optionPrice = 105; // Stok Fiyatı
             stockItems.Add(sku1);
 
             var categoryRequest = new CategoryRequest();
@@ -67,15 +66,15 @@ namespace Aresv2.n11
 
             ProductRequest productRequest = new ProductRequest();
             productRequest.productSellerCode = "1";
-            productRequest.title = "Ürün Adı";
-            productRequest.subtitle = "Küçük Açıklama";
-            productRequest.description = "Açıklama";
+            productRequest.title = "MEHMET ALİ HASAN";
+            productRequest.subtitle = "BUAYA AÇIKLAMA LAZIM";
+            productRequest.description = "AçıklamaWEWQE";
             productRequest.category = categoryRequest;
-            productRequest.price = 10;//Ürün Fiyatı
-            productRequest.currencyType = "1";//Döviztipi
+            productRequest.price = 105;//Ürün Fiyatı
+            productRequest.currencyType = "9999";//Döviztipi
             productRequest.images = productImageList.ToArray();
             productRequest.approvalStatus = "1";// 1: Onaylanmış ürün | 0: Beklemede
-            productRequest.preparingDay = "1"; //Ürün Hazırlık Süresi;
+            productRequest.preparingDay = "3"; //Ürün Hazırlık Süresi;
             productRequest.stockItems = stockItems.ToArray();
             productRequest.productCondition = "1"; // 1 Yeni Ürün | 2 İkinci El
             productRequest.shipmentTemplate = "AKİDE";//Kargo Şablon adı;
@@ -91,8 +90,8 @@ namespace Aresv2.n11
             productRequest.attributes = attList.ToArray();
 
             var discount = new ProductDiscountRequest();
-            discount.type = "1"; //1: İndirim Tutarı Cinsinden | 2: İndirim Oranı Cinsinden | 3: İndirimli Fiyat Cinsinden
-            discount.value = "5"; // % olarak indirim
+            discount.type = "3"; //1: İndirim Tutarı Cinsinden | 2: İndirim Oranı Cinsinden | 3: İndirimli Fiyat Cinsinden
+            discount.value = "80"; // % olarak indirim
 
             productRequest.discount = discount;
 
@@ -106,7 +105,6 @@ namespace Aresv2.n11
             MessageBox.Show(saveProductResponse.result.errorMessage);
 
         }
-
 
         void KategorileriGetir()
         {
@@ -160,12 +158,9 @@ namespace Aresv2.n11
 
             request.categoryId = 1000210;
 
-
             //var categories = proxy.GetTopLevelCategories(request);
 
             var categories = proxy.GetSubCategories(request);
-
-
 
             //MessageBox.Show(categories.category.);
 
