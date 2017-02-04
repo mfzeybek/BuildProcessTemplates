@@ -953,13 +953,14 @@ namespace Aresv2.Stok
 
         private void btnDetayliAcilamaDuzenle_Click(object sender, EventArgs e)
         {
-            frmhtmlEditor htmm = new frmhtmlEditor();
-            htmm.richEditControl1.HtmlText = Stok.DetayliUrunBilgisi;
-            htmm.ShowDialog();
-            webBrowser2.DocumentText = htmm.richEditControl1.HtmlText;
-            Stok.DetayliUrunBilgisi = htmm.richEditControl1.HtmlText;
-
-            ButonlariAktifPasifYap(true);
+            using (frmhtmlEditor htmm = new frmhtmlEditor())
+            {
+                htmm.richEditControl1.HtmlText = Stok.DetayliUrunBilgisi;
+                htmm.ShowDialog();
+                webBrowser2.DocumentText = htmm.richEditControl1.HtmlText;
+                Stok.DetayliUrunBilgisi = htmm.richEditControl1.HtmlText;
+                ButonlariAktifPasifYap(true);
+            }
         }
 
         private void HemenAlKategoriDoldur()

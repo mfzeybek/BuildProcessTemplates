@@ -36,6 +36,8 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAciklamaDuzenle = new DevExpress.XtraEditors.SimpleButton();
+            this.DetayliUrunBilgisi = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
@@ -43,7 +45,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(77, 112);
+            this.textEdit1.Location = new System.Drawing.Point(77, 101);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(498, 34);
             this.textEdit1.TabIndex = 0;
@@ -58,7 +60,7 @@
             // 
             // treeListLookUpEdit1
             // 
-            this.treeListLookUpEdit1.Location = new System.Drawing.Point(733, 112);
+            this.treeListLookUpEdit1.Location = new System.Drawing.Point(699, 101);
             this.treeListLookUpEdit1.Name = "treeListLookUpEdit1";
             this.treeListLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -77,7 +79,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(733, 70);
+            this.labelControl2.Location = new System.Drawing.Point(711, 70);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(114, 25);
             this.labelControl2.TabIndex = 1;
@@ -85,33 +87,53 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(36, 1453);
+            this.simpleButton1.Location = new System.Drawing.Point(47, 1384);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(393, 105);
+            this.simpleButton1.Size = new System.Drawing.Size(293, 105);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Kaydet";
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(894, 1453);
+            this.simpleButton2.Location = new System.Drawing.Point(874, 1384);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(393, 105);
+            this.simpleButton2.Size = new System.Drawing.Size(293, 105);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "Sil";
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(458, 1453);
+            this.simpleButton3.Location = new System.Drawing.Point(368, 1384);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(393, 105);
+            this.simpleButton3.Size = new System.Drawing.Size(293, 105);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Vazgeç";
+            // 
+            // btnAciklamaDuzenle
+            // 
+            this.btnAciklamaDuzenle.Location = new System.Drawing.Point(324, 390);
+            this.btnAciklamaDuzenle.Name = "btnAciklamaDuzenle";
+            this.btnAciklamaDuzenle.Size = new System.Drawing.Size(288, 61);
+            this.btnAciklamaDuzenle.TabIndex = 4;
+            this.btnAciklamaDuzenle.Text = "Düzenle";
+            this.btnAciklamaDuzenle.Click += new System.EventHandler(this.btnAciklamaDuzenle_Click);
+            // 
+            // DetayliUrunBilgisi
+            // 
+            this.DetayliUrunBilgisi.Location = new System.Drawing.Point(31, 610);
+            this.DetayliUrunBilgisi.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.DetayliUrunBilgisi.MinimumSize = new System.Drawing.Size(34, 31);
+            this.DetayliUrunBilgisi.Name = "DetayliUrunBilgisi";
+            this.DetayliUrunBilgisi.Size = new System.Drawing.Size(1252, 367);
+            this.DetayliUrunBilgisi.TabIndex = 7;
             // 
             // frmN11Urun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1870, 1591);
+            this.Controls.Add(this.DetayliUrunBilgisi);
+            this.Controls.Add(this.btnAciklamaDuzenle);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -140,5 +162,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnAciklamaDuzenle;
+        private System.Windows.Forms.WebBrowser DetayliUrunBilgisi;
     }
 }

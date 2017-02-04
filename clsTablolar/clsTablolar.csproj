@@ -304,6 +304,8 @@
     <Compile Include="Kasa\csKasaHareketArama.cs" />
     <Compile Include="Kasa\csKasaRapor.cs" />
     <Compile Include="n11\csN11Kategori.cs" />
+    <Compile Include="n11\csN11Product.cs" />
+    <Compile Include="n11\csn11ProductList.cs" />
     <Compile Include="Personel\csDisaridakiPersonel.cs" />
     <Compile Include="Personel\PDKS\csPDKSdenVeriAktar.cs" />
     <Compile Include="Personel\PDKS\csPDKSYerler.cs" />
