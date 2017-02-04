@@ -870,6 +870,12 @@
     <Compile Include="n11\frmN11.Designer.cs">
       <DependentUpon>frmN11.cs</DependentUpon>
     </Compile>
+    <Compile Include="n11\frmN11Urun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="n11\frmN11Urun.Designer.cs">
+      <DependentUpon>frmN11Urun.cs</DependentUpon>
+    </Compile>
     <Compile Include="PDKSSqlconnection.cs" />
     <Compile Include="Personel\frmDisaridakiPersonel.cs">
       <SubType>Form</SubType>
@@ -1452,6 +1458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="n11\frmN11.resx">
       <DependentUpon>frmN11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="n11\frmN11Urun.resx">
+      <DependentUpon>frmN11Urun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personel\frmDisaridakiPersonel.resx">
       <DependentUpon>frmDisaridakiPersonel.cs</DependentUpon>

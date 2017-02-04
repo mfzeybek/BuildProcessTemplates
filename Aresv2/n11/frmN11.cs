@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aresv2.n11CategoryService;
 using Aresv2.n11ProductService;
+using System.Data.SqlClient;
 
 
 
@@ -27,14 +28,21 @@ namespace Aresv2.n11
         {
             //hamisina();
             //UrunGetir();
+            dt_Kategoriler = new DataTable();
+            dt_Kategoriler.Columns.Add("ID");
+            dt_Kategoriler.Columns.Add("UstKategoriID");
+            dt_Kategoriler.Columns.Add("KategoriAdi");
 
             KategorileriGetir();
             //UrunGetir();
-            hamisina();
+            //hamisina();
 
-            AltKategoriGetir();
+            //AltKategoriGetir(1);
 
+            KategorileriKaydet();
         }
+        clsTablolar.n11.csN11Kategori kateg = new clsTablolar.n11.csN11Kategori();
+        DataTable dt_Kategoriler;
 
         void hamisina()
         {
@@ -126,48 +134,63 @@ namespace Aresv2.n11
 
             var categories = proxy.GetTopLevelCategories(request);
 
-
             foreach (var item in categories.categoryList)
             {
-                listBoxControl1.Items.Add(item.id + "-" + item.name);
+                dt_Kategoriler.Rows.Add(dt_Kategoriler.NewRow());
+                dt_Kategoriler.Rows[dt_Kategoriler.Rows.Count - 1]["ID"] = item.id;
+                dt_Kategoriler.Rows[dt_Kategoriler.Rows.Count - 1]["KategoriAdi"] = item.name;
+                ahanadaAltKAteroriGetir(item.id);
             }
+            gridControl1.DataSource = dt_Kategoriler;
+            treeList1.DataSource = dt_Kategoriler;
         }
 
-        void AltKategoriGetir()
+
+        n11CategoryService.Authentication authentication;
+        n11CategoryService.CategoryServicePortService proxy;
+        GetCategoryAttributesRequest ALtKategoriOZelligi;
+        void ahanadaAltKAteroriGetir(Int64 CategoriyID)
         {
-            var authentication = new n11CategoryService.Authentication();
+            authentication = new n11CategoryService.Authentication();
             authentication.appKey = "66e296ef-ba12-4c7a-8d3f-67027f1e1962"; //api anahtarınız
             authentication.appSecret = "OiVekmVJRKC2wi0X";//api şifeniz
 
-            var proxy = new n11CategoryService.CategoryServicePortService();
+            proxy = new n11CategoryService.CategoryServicePortService();
 
-
-            var ALtKategoriOZelligi = new GetCategoryAttributesRequest();
+            ALtKategoriOZelligi = new GetCategoryAttributesRequest();
             ALtKategoriOZelligi.auth = authentication;
-            ALtKategoriOZelligi.categoryId = 1000210;
+
 
             proxy.GetCategoryAttributes(ALtKategoriOZelligi);
+            AltKategoriGetir(CategoriyID);
+        }
 
 
-
-
+        void AltKategoriGetir(Int64 CategoriyID)
+        {
             //n11ProductService.get
+            ALtKategoriOZelligi.categoryId = CategoriyID;
 
             var request = new GetSubCategoriesRequest();
             request.auth = authentication;
 
-            request.categoryId = 1000210;
+            request.categoryId = CategoriyID;
 
             //var categories = proxy.GetTopLevelCategories(request);
 
             var categories = proxy.GetSubCategories(request);
 
-            //MessageBox.Show(categories.category.);
 
-            foreach (var item in categories.category[0].subCategoryList)
-            {
-                listBoxControl2.Items.Add(item.id + "-" + item.name);
-            }
+            //MessageBox.Show(categories.category.);
+            if (categories.category[0].subCategoryList != null)
+                foreach (var item in categories.category[0].subCategoryList)
+                {
+                    dt_Kategoriler.Rows.Add(dt_Kategoriler.NewRow());
+                    dt_Kategoriler.Rows[dt_Kategoriler.Rows.Count - 1]["ID"] = item.id;
+                    dt_Kategoriler.Rows[dt_Kategoriler.Rows.Count - 1]["KategoriAdi"] = item.name;
+                    dt_Kategoriler.Rows[dt_Kategoriler.Rows.Count - 1]["UstKategoriID"] = CategoriyID;
+                    AltKategoriGetir(item.id);
+                }
         }
 
         void UrunGetir(int ProducktID)
@@ -187,6 +210,33 @@ namespace Aresv2.n11
             var ahandaURun = porttur.GetProductByProductId(ress);
 
             MessageBox.Show(ahandaURun.product.title);
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        SqlTransaction TrGenel;
+        public void KategorileriKaydet()
+        {
+            //dt_Kategoriler
+            foreach (var item in dt_Kategoriler.AsEnumerable())
+            {
+                int ID = Convert.ToInt32(item["ID"]);
+                int UstKatID = -1;
+                if (string.IsNullOrEmpty(item["UstKategoriID"].ToString()))
+                    UstKatID = -1;
+                else
+                    UstKatID = Convert.ToInt32(item["UstKategoriID"]);
+
+                string KatAdi = item["KategoriAdi"].ToString();
+
+                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                kateg.KategorileriGuncelle(SqlConnections.GetBaglanti(), TrGenel, ID, UstKatID, KatAdi, "");
+                TrGenel.Commit();
+
+            }
         }
     }
 }

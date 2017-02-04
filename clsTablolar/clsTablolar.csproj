@@ -303,6 +303,7 @@
     <Compile Include="Kasa\csKasaHareket.cs" />
     <Compile Include="Kasa\csKasaHareketArama.cs" />
     <Compile Include="Kasa\csKasaRapor.cs" />
+    <Compile Include="n11\csN11Kategori.cs" />
     <Compile Include="Personel\csDisaridakiPersonel.cs" />
     <Compile Include="Personel\PDKS\csPDKSdenVeriAktar.cs" />
     <Compile Include="Personel\PDKS\csPDKSYerler.cs" />
@@ -525,9 +526,7 @@
   <ItemGroup>
     <None Include="Resources\cancel_32x321.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="n11\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
