@@ -107,6 +107,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(6);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.btnBugun);
             this.splitContainerControl1.Panel1.Controls.Add(this.deTarih2);
@@ -134,8 +135,8 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl2);
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1156, 446);
-            this.splitContainerControl1.SplitterPosition = 212;
+            this.splitContainerControl1.Size = new System.Drawing.Size(2532, 1646);
+            this.splitContainerControl1.SplitterPosition = 398;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -143,9 +144,10 @@
             // 
             this.btnBugun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBugun.Location = new System.Drawing.Point(69, 255);
+            this.btnBugun.Location = new System.Drawing.Point(138, 490);
+            this.btnBugun.Margin = new System.Windows.Forms.Padding(6);
             this.btnBugun.Name = "btnBugun";
-            this.btnBugun.Size = new System.Drawing.Size(142, 18);
+            this.btnBugun.Size = new System.Drawing.Size(258, 35);
             this.btnBugun.TabIndex = 10;
             this.btnBugun.Text = "Bugün";
             this.btnBugun.Click += new System.EventHandler(this.btnBugun_Click);
@@ -155,14 +157,15 @@
             this.deTarih2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deTarih2.EditValue = null;
-            this.deTarih2.Location = new System.Drawing.Point(69, 231);
+            this.deTarih2.Location = new System.Drawing.Point(138, 444);
+            this.deTarih2.Margin = new System.Windows.Forms.Padding(6);
             this.deTarih2.Name = "deTarih2";
             this.deTarih2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih2.Properties.NullDate = new System.DateTime(((long)(0)));
-            this.deTarih2.Size = new System.Drawing.Size(142, 20);
+            this.deTarih2.Size = new System.Drawing.Size(258, 34);
             this.deTarih2.TabIndex = 5;
             this.deTarih2.EditValueChanged += new System.EventHandler(this.deTarih2_EditValueChanged);
             // 
@@ -171,7 +174,8 @@
             this.deTarih1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deTarih1.EditValue = null;
-            this.deTarih1.Location = new System.Drawing.Point(69, 209);
+            this.deTarih1.Location = new System.Drawing.Point(138, 402);
+            this.deTarih1.Margin = new System.Windows.Forms.Padding(6);
             this.deTarih1.MenuManager = this.barManager1;
             this.deTarih1.Name = "deTarih1";
             this.deTarih1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -179,7 +183,7 @@
             this.deTarih1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih1.Properties.NullDate = "1.1.0001 00:00:00";
-            this.deTarih1.Size = new System.Drawing.Size(142, 20);
+            this.deTarih1.Size = new System.Drawing.Size(258, 34);
             this.deTarih1.TabIndex = 5;
             this.deTarih1.EditValueChanged += new System.EventHandler(this.deTarih1_EditValueChanged);
             // 
@@ -204,28 +208,36 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1156, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(6);
+            this.barDockControlTop.Size = new System.Drawing.Size(2532, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 446);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1156, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1646);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6);
+            this.barDockControlBottom.Size = new System.Drawing.Size(2532, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 446);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1646);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1156, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 446);
+            this.barDockControlRight.Location = new System.Drawing.Point(2532, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1646);
             // 
             // mbtnYazdir
             // 
@@ -274,12 +286,13 @@
             // 
             this.cmbOdeme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbOdeme.Location = new System.Drawing.Point(69, 177);
+            this.cmbOdeme.Location = new System.Drawing.Point(138, 340);
+            this.cmbOdeme.Margin = new System.Windows.Forms.Padding(6);
             this.cmbOdeme.MenuManager = this.barManager1;
             this.cmbOdeme.Name = "cmbOdeme";
             this.cmbOdeme.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbOdeme.Size = new System.Drawing.Size(142, 20);
+            this.cmbOdeme.Size = new System.Drawing.Size(258, 34);
             this.cmbOdeme.TabIndex = 9;
             // 
             // cmbGirisCikis
@@ -287,7 +300,8 @@
             this.cmbGirisCikis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbGirisCikis.EditValue = "Hepsi";
-            this.cmbGirisCikis.Location = new System.Drawing.Point(69, 130);
+            this.cmbGirisCikis.Location = new System.Drawing.Point(138, 250);
+            this.cmbGirisCikis.Margin = new System.Windows.Forms.Padding(6);
             this.cmbGirisCikis.MenuManager = this.barManager1;
             this.cmbGirisCikis.Name = "cmbGirisCikis";
             this.cmbGirisCikis.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -296,44 +310,44 @@
             "Hepsi",
             "Giriş",
             "Çıkış"});
-            this.cmbGirisCikis.Size = new System.Drawing.Size(142, 20);
+            this.cmbGirisCikis.Size = new System.Drawing.Size(258, 34);
             this.cmbGirisCikis.TabIndex = 8;
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(3, 234);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.labelControl8.Location = new System.Drawing.Point(6, 450);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(33, 13);
+            this.labelControl8.Size = new System.Drawing.Size(66, 25);
             this.labelControl8.TabIndex = 7;
             this.labelControl8.Text = "Tarih 2";
             this.labelControl8.Click += new System.EventHandler(this.labelControl8_Click);
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(3, 211);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.labelControl7.Location = new System.Drawing.Point(6, 406);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(33, 13);
+            this.labelControl7.Size = new System.Drawing.Size(66, 25);
             this.labelControl7.TabIndex = 7;
             this.labelControl7.Text = "Tarih 1";
             this.labelControl7.Click += new System.EventHandler(this.labelControl7_Click);
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(3, 179);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.labelControl5.Location = new System.Drawing.Point(6, 344);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(34, 13);
+            this.labelControl5.Size = new System.Drawing.Size(67, 25);
             this.labelControl5.TabIndex = 7;
             this.labelControl5.Text = "Ödeme";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(3, 133);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.labelControl3.Location = new System.Drawing.Point(6, 256);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(51, 13);
+            this.labelControl3.Size = new System.Drawing.Size(105, 25);
             this.labelControl3.TabIndex = 7;
             this.labelControl3.Text = "Giriş / Çıkış";
             // 
@@ -342,10 +356,11 @@
             this.txtFaturaBarkod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFaturaBarkod.EditValue = "";
-            this.txtFaturaBarkod.Location = new System.Drawing.Point(69, 107);
+            this.txtFaturaBarkod.Location = new System.Drawing.Point(138, 206);
+            this.txtFaturaBarkod.Margin = new System.Windows.Forms.Padding(6);
             this.txtFaturaBarkod.MenuManager = this.barManager1;
             this.txtFaturaBarkod.Name = "txtFaturaBarkod";
-            this.txtFaturaBarkod.Size = new System.Drawing.Size(142, 20);
+            this.txtFaturaBarkod.Size = new System.Drawing.Size(258, 34);
             this.txtFaturaBarkod.TabIndex = 5;
             // 
             // lkpFaturaTipi
@@ -353,7 +368,8 @@
             this.lkpFaturaTipi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lkpFaturaTipi.EditValue = -1;
-            this.lkpFaturaTipi.Location = new System.Drawing.Point(69, 83);
+            this.lkpFaturaTipi.Location = new System.Drawing.Point(138, 160);
+            this.lkpFaturaTipi.Margin = new System.Windows.Forms.Padding(6);
             this.lkpFaturaTipi.Name = "lkpFaturaTipi";
             this.lkpFaturaTipi.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.lkpFaturaTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -362,57 +378,63 @@
             this.lkpFaturaTipi.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.lkpFaturaTipi.Properties.NullText = "Yok";
             this.lkpFaturaTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lkpFaturaTipi.Size = new System.Drawing.Size(142, 20);
+            this.lkpFaturaTipi.Size = new System.Drawing.Size(258, 34);
             this.lkpFaturaTipi.TabIndex = 4;
             this.lkpFaturaTipi.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpFaturaTipi_ButtonClick);
             // 
             // lblFaturaBarkod
             // 
-            this.lblFaturaBarkod.Location = new System.Drawing.Point(3, 109);
+            this.lblFaturaBarkod.Location = new System.Drawing.Point(6, 210);
+            this.lblFaturaBarkod.Margin = new System.Windows.Forms.Padding(6);
             this.lblFaturaBarkod.Name = "lblFaturaBarkod";
-            this.lblFaturaBarkod.Size = new System.Drawing.Size(39, 13);
+            this.lblFaturaBarkod.Size = new System.Drawing.Size(77, 25);
             this.lblFaturaBarkod.TabIndex = 3;
             this.lblFaturaBarkod.Text = "Barkodu";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(3, 87);
+            this.labelControl2.Location = new System.Drawing.Point(6, 167);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(51, 13);
+            this.labelControl2.Size = new System.Drawing.Size(101, 25);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Fatura Tipi";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(3, 62);
+            this.labelControl4.Location = new System.Drawing.Point(6, 119);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(65, 13);
+            this.labelControl4.Size = new System.Drawing.Size(131, 25);
             this.labelControl4.TabIndex = 3;
             this.labelControl4.Text = "F. Cari Tanımı";
             this.labelControl4.ToolTip = "Faturadaki Cari Tanım\r\n";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(3, 16);
+            this.labelControl6.Location = new System.Drawing.Point(6, 31);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(46, 13);
+            this.labelControl6.Size = new System.Drawing.Size(91, 25);
             this.labelControl6.TabIndex = 3;
             this.labelControl6.Text = "Cari Kodu";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(3, 38);
+            this.labelControl1.Location = new System.Drawing.Point(6, 73);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(52, 13);
+            this.labelControl1.Size = new System.Drawing.Size(107, 25);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Cari Tanımı";
             // 
             // simpleButton2
             // 
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Location = new System.Drawing.Point(155, 420);
+            this.simpleButton2.Location = new System.Drawing.Point(284, 1596);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(56, 23);
+            this.simpleButton2.Size = new System.Drawing.Size(112, 44);
             this.simpleButton2.TabIndex = 2;
             this.simpleButton2.Text = "Temizle";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -421,9 +443,10 @@
             // 
             this.btnFiltrele.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltrele.Location = new System.Drawing.Point(5, 420);
+            this.btnFiltrele.Location = new System.Drawing.Point(10, 1596);
+            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(6);
             this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(144, 23);
+            this.btnFiltrele.Size = new System.Drawing.Size(262, 44);
             this.btnFiltrele.TabIndex = 1;
             this.btnFiltrele.Text = "Filtrele (F2)";
             this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
@@ -432,9 +455,10 @@
             // 
             this.txtFaturadakiCariTanim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFaturadakiCariTanim.Location = new System.Drawing.Point(69, 60);
+            this.txtFaturadakiCariTanim.Location = new System.Drawing.Point(138, 115);
+            this.txtFaturadakiCariTanim.Margin = new System.Windows.Forms.Padding(6);
             this.txtFaturadakiCariTanim.Name = "txtFaturadakiCariTanim";
-            this.txtFaturadakiCariTanim.Size = new System.Drawing.Size(142, 20);
+            this.txtFaturadakiCariTanim.Size = new System.Drawing.Size(258, 34);
             this.txtFaturadakiCariTanim.TabIndex = 0;
             this.txtFaturadakiCariTanim.ToolTip = "Faturadaki Cari Tanım";
             // 
@@ -442,27 +466,31 @@
             // 
             this.txtCariKodu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCariKodu.Location = new System.Drawing.Point(69, 12);
+            this.txtCariKodu.Location = new System.Drawing.Point(138, 23);
+            this.txtCariKodu.Margin = new System.Windows.Forms.Padding(6);
             this.txtCariKodu.Name = "txtCariKodu";
-            this.txtCariKodu.Size = new System.Drawing.Size(142, 20);
+            this.txtCariKodu.Size = new System.Drawing.Size(258, 34);
             this.txtCariKodu.TabIndex = 0;
             // 
             // txtCariAdi
             // 
             this.txtCariAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCariAdi.Location = new System.Drawing.Point(69, 35);
+            this.txtCariAdi.Location = new System.Drawing.Point(138, 67);
+            this.txtCariAdi.Margin = new System.Windows.Forms.Padding(6);
             this.txtCariAdi.Name = "txtCariAdi";
-            this.txtCariAdi.Size = new System.Drawing.Size(142, 20);
+            this.txtCariAdi.Size = new System.Drawing.Size(258, 34);
             this.txtCariAdi.TabIndex = 0;
             // 
             // gcFatura
             // 
             this.gcFatura.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcFatura.Location = new System.Drawing.Point(0, 38);
+            this.gcFatura.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
+            this.gcFatura.Location = new System.Drawing.Point(0, 73);
             this.gcFatura.MainView = this.gvFatura;
+            this.gcFatura.Margin = new System.Windows.Forms.Padding(6);
             this.gcFatura.Name = "gcFatura";
-            this.gcFatura.Size = new System.Drawing.Size(939, 363);
+            this.gcFatura.Size = new System.Drawing.Size(2124, 1486);
             this.gcFatura.TabIndex = 4;
             this.gcFatura.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFatura});
@@ -490,45 +518,45 @@
             this.panelControl2.Controls.Add(this.labelControl10);
             this.panelControl2.Controls.Add(this.labelControl9);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 401);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControl2.Location = new System.Drawing.Point(0, 1559);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(939, 45);
+            this.panelControl2.Size = new System.Drawing.Size(2124, 87);
             this.panelControl2.TabIndex = 11;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(389, 3);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(2);
+            this.textEdit1.Location = new System.Drawing.Point(778, 6);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(4);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(139, 20);
+            this.textEdit1.Size = new System.Drawing.Size(278, 34);
             this.textEdit1.TabIndex = 7;
             // 
             // txtFaturaSayisi
             // 
-            this.txtFaturaSayisi.Location = new System.Drawing.Point(81, 5);
-            this.txtFaturaSayisi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFaturaSayisi.Location = new System.Drawing.Point(162, 10);
+            this.txtFaturaSayisi.Margin = new System.Windows.Forms.Padding(4);
             this.txtFaturaSayisi.MenuManager = this.barManager1;
             this.txtFaturaSayisi.Name = "txtFaturaSayisi";
-            this.txtFaturaSayisi.Size = new System.Drawing.Size(112, 20);
+            this.txtFaturaSayisi.Size = new System.Drawing.Size(224, 34);
             this.txtFaturaSayisi.TabIndex = 6;
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(266, 5);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl10.Location = new System.Drawing.Point(532, 10);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(114, 13);
+            this.labelControl10.Size = new System.Drawing.Size(227, 25);
             this.labelControl10.TabIndex = 5;
             this.labelControl10.Text = "Fatura Tutarları Toplamı";
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(17, 8);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl9.Location = new System.Drawing.Point(34, 15);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(62, 13);
+            this.labelControl9.Size = new System.Drawing.Size(119, 25);
             this.labelControl9.TabIndex = 5;
             this.labelControl9.Text = "Fatura Sayısı";
             // 
@@ -543,33 +571,37 @@
             this.panelControl1.Controls.Add(this.btnKaydiAc);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(939, 38);
+            this.panelControl1.Size = new System.Drawing.Size(2124, 73);
             this.panelControl1.TabIndex = 3;
             // 
             // btnSec
             // 
-            this.btnSec.Location = new System.Drawing.Point(599, 12);
+            this.btnSec.Location = new System.Drawing.Point(652, 15);
+            this.btnSec.Margin = new System.Windows.Forms.Padding(6);
             this.btnSec.Name = "btnSec";
-            this.btnSec.Size = new System.Drawing.Size(75, 23);
+            this.btnSec.Size = new System.Drawing.Size(150, 44);
             this.btnSec.TabIndex = 5;
             this.btnSec.Text = "Fatura Seç";
             this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(135, 8);
+            this.btnYazdir.Location = new System.Drawing.Point(270, 15);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(6);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(75, 23);
+            this.btnYazdir.Size = new System.Drawing.Size(150, 44);
             this.btnYazdir.TabIndex = 12;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(356, 8);
+            this.btnSil.Location = new System.Drawing.Point(472, 15);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(6);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.Size = new System.Drawing.Size(150, 44);
             this.btnSil.TabIndex = 11;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -579,11 +611,13 @@
             this.btnIslemler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIslemler.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
             this.btnIslemler.DropDownControl = this.popupMenu1;
-            this.btnIslemler.Location = new System.Drawing.Point(895, 12);
+            this.btnIslemler.Location = new System.Drawing.Point(1732, 21);
+            this.btnIslemler.Margin = new System.Windows.Forms.Padding(6);
             this.btnIslemler.Name = "btnIslemler";
-            this.btnIslemler.Size = new System.Drawing.Size(103, 23);
+            this.btnIslemler.Size = new System.Drawing.Size(206, 44);
             this.btnIslemler.TabIndex = 5;
             this.btnIslemler.Text = "İşlemler";
+            this.btnIslemler.Click += new System.EventHandler(this.btnIslemler_Click);
             // 
             // popupMenu1
             // 
@@ -601,42 +635,49 @@
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Centaur", 14F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl15.Location = new System.Drawing.Point(4, 8);
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseForeColor = true;
+            this.labelControl15.Location = new System.Drawing.Point(8, 15);
+            this.labelControl15.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(111, 21);
+            this.labelControl15.Size = new System.Drawing.Size(198, 41);
             this.labelControl15.TabIndex = 4;
             this.labelControl15.Text = "Fatura Listesi";
             // 
             // btnCariHareketleri
             // 
             this.btnCariHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCariHareketleri.Location = new System.Drawing.Point(814, 12);
+            this.btnCariHareketleri.Location = new System.Drawing.Point(1570, 21);
+            this.btnCariHareketleri.Margin = new System.Windows.Forms.Padding(6);
             this.btnCariHareketleri.Name = "btnCariHareketleri";
-            this.btnCariHareketleri.Size = new System.Drawing.Size(75, 23);
+            this.btnCariHareketleri.Size = new System.Drawing.Size(150, 44);
             this.btnCariHareketleri.TabIndex = 3;
             this.btnCariHareketleri.Text = "Hareketleri";
+            this.btnCariHareketleri.Click += new System.EventHandler(this.btnCariHareketleri_Click);
             // 
             // btnKaydiAc
             // 
             this.btnKaydiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydiAc.Location = new System.Drawing.Point(733, 12);
+            this.btnKaydiAc.Location = new System.Drawing.Point(1408, 21);
+            this.btnKaydiAc.Margin = new System.Windows.Forms.Padding(6);
             this.btnKaydiAc.Name = "btnKaydiAc";
-            this.btnKaydiAc.Size = new System.Drawing.Size(75, 23);
+            this.btnKaydiAc.Size = new System.Drawing.Size(150, 44);
             this.btnKaydiAc.TabIndex = 3;
             this.btnKaydiAc.Text = "Kaydı Aç ";
             this.btnKaydiAc.Click += new System.EventHandler(this.btnKaydiAc_Click);
             // 
             // frmFaturaListesi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 446);
+            this.ClientSize = new System.Drawing.Size(2532, 1646);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmFaturaListesi";
             this.Text = "Fatura Listesi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmFaturaListesi_FormClosed);

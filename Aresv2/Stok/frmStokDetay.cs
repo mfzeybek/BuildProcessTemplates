@@ -1368,6 +1368,13 @@ namespace Aresv2.Stok
             Clipboard.Clear();
         }
 
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            n11.frmN11Urun frm = new n11.frmN11Urun(Stok.StokID);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
         public System.Drawing.Image cropImage(System.Drawing.Image img, Rectangle cropArea)
         {
             Bitmap bmpImage = new Bitmap(img);

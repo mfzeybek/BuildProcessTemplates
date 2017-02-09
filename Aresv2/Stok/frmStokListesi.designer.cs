@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
@@ -44,7 +45,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.checkEdit_OlmasiGerekenMiktardanAzOlanlar = new DevExpress.XtraEditors.CheckEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -88,10 +89,12 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtRafYeriAciklama = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.cmbN11 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lkpHemenAlKategori = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
@@ -152,12 +155,12 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btnIslemler = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnSec = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydiAc = new DevExpress.XtraEditors.SimpleButton();
             this.btnStokHareketleri = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_yazdirma = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu_yazdirma = new DevExpress.XtraBars.PopupMenu(this.components);
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -181,6 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKodu3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRafYeriAciklama.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbN11.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpHemenAlKategori.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEMagazaErisimi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHemenAlID.Properties)).BeginInit();
@@ -345,6 +349,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.barDockControlTop.Size = new System.Drawing.Size(2400, 0);
             // 
@@ -353,6 +358,7 @@
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 1611);
+            this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.barDockControlBottom.Size = new System.Drawing.Size(2400, 0);
             // 
@@ -361,6 +367,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 1611);
             // 
@@ -369,6 +376,7 @@
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(2400, 0);
+            this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 1611);
             // 
@@ -780,10 +788,12 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.AutoScroll = true;
+            this.xtraTabPage2.Controls.Add(this.cmbN11);
             this.xtraTabPage2.Controls.Add(this.lkpHemenAlKategori);
             this.xtraTabPage2.Controls.Add(this.labelControl21);
             this.xtraTabPage2.Controls.Add(this.labelControl20);
             this.xtraTabPage2.Controls.Add(this.labelControl22);
+            this.xtraTabPage2.Controls.Add(this.labelControl36);
             this.xtraTabPage2.Controls.Add(this.labelControl24);
             this.xtraTabPage2.Controls.Add(this.labelControl23);
             this.xtraTabPage2.Controls.Add(this.labelControl19);
@@ -805,6 +815,20 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(455, 1200);
             this.xtraTabPage2.Text = "Hemen Al";
             // 
+            // cmbN11
+            // 
+            this.cmbN11.Location = new System.Drawing.Point(178, 567);
+            this.cmbN11.MenuManager = this.barManager1;
+            this.cmbN11.Name = "cmbN11";
+            this.cmbN11.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbN11.Properties.Items.AddRange(new object[] {
+            "Hepsi",
+            "Olanlar",
+            "Olmayanlar"});
+            this.cmbN11.Size = new System.Drawing.Size(271, 34);
+            this.cmbN11.TabIndex = 13;
+            // 
             // lkpHemenAlKategori
             // 
             this.lkpHemenAlKategori.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -824,6 +848,7 @@
             // 
             // labelControl21
             // 
+            this.labelControl21.Appearance.Options.UseTextOptions = true;
             this.labelControl21.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl21.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl21.Location = new System.Drawing.Point(4, 298);
@@ -835,6 +860,7 @@
             // 
             // labelControl20
             // 
+            this.labelControl20.Appearance.Options.UseTextOptions = true;
             this.labelControl20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl20.Location = new System.Drawing.Point(4, 238);
@@ -852,6 +878,15 @@
             this.labelControl22.Size = new System.Drawing.Size(155, 25);
             this.labelControl22.TabIndex = 4;
             this.labelControl22.Text = "HemenAl Durum";
+            // 
+            // labelControl36
+            // 
+            this.labelControl36.Location = new System.Drawing.Point(4, 576);
+            this.labelControl36.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl36.Name = "labelControl36";
+            this.labelControl36.Size = new System.Drawing.Size(147, 25);
+            this.labelControl36.TabIndex = 4;
+            this.labelControl36.Text = "n11 Entegrayon";
             // 
             // labelControl24
             // 
@@ -1052,7 +1087,7 @@
             // 
             this.btnEdit_SayimAciklama.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit_SayimAciklama.Location = new System.Drawing.Point(168, 502);
+            this.btnEdit_SayimAciklama.Location = new System.Drawing.Point(124, 502);
             this.btnEdit_SayimAciklama.Margin = new System.Windows.Forms.Padding(6);
             this.btnEdit_SayimAciklama.MenuManager = this.barManager1;
             this.btnEdit_SayimAciklama.Name = "btnEdit_SayimAciklama";
@@ -1060,7 +1095,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Clear)});
             this.btnEdit_SayimAciklama.Properties.Click += new System.EventHandler(this.buttonEdit1_Properties_Click);
-            this.btnEdit_SayimAciklama.Size = new System.Drawing.Size(339, 34);
+            this.btnEdit_SayimAciklama.Size = new System.Drawing.Size(325, 34);
             this.btnEdit_SayimAciklama.TabIndex = 62;
             this.btnEdit_SayimAciklama.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEdit_SayimAciklama_ButtonClick);
             // 
@@ -1068,7 +1103,7 @@
             // 
             this.cmbStokTipi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbStokTipi.Location = new System.Drawing.Point(168, 387);
+            this.cmbStokTipi.Location = new System.Drawing.Point(124, 387);
             this.cmbStokTipi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.cmbStokTipi.MenuManager = this.barManager1;
             this.cmbStokTipi.Name = "cmbStokTipi";
@@ -1079,7 +1114,7 @@
             "Hazır Stok (Hazır alınıp satılıyor)",
             "Mamül (Üretilen Stok Neredeyse Sadece Üretilen Stok)",
             "Hammade (Mamül üretirken Kullanılıyor)"});
-            this.cmbStokTipi.Size = new System.Drawing.Size(335, 34);
+            this.cmbStokTipi.Size = new System.Drawing.Size(325, 34);
             this.cmbStokTipi.TabIndex = 61;
             this.cmbStokTipi.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmbStokTipi_ButtonClick);
             this.cmbStokTipi.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cmbStokTipi_PreviewKeyDown);
@@ -1093,7 +1128,7 @@
             this.checkEdit_SadeceSeciliFiyatiOlanlar.MenuManager = this.barManager1;
             this.checkEdit_SadeceSeciliFiyatiOlanlar.Name = "checkEdit_SadeceSeciliFiyatiOlanlar";
             this.checkEdit_SadeceSeciliFiyatiOlanlar.Properties.Caption = "Seçili Fiyatı Olanları Listele";
-            this.checkEdit_SadeceSeciliFiyatiOlanlar.Size = new System.Drawing.Size(419, 34);
+            this.checkEdit_SadeceSeciliFiyatiOlanlar.Size = new System.Drawing.Size(353, 34);
             this.checkEdit_SadeceSeciliFiyatiOlanlar.TabIndex = 60;
             // 
             // checkedListBox_FiyatTanimlari
@@ -1101,10 +1136,11 @@
             this.checkedListBox_FiyatTanimlari.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBox_FiyatTanimlari.CheckOnClick = true;
+            this.checkedListBox_FiyatTanimlari.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkedListBox_FiyatTanimlari.Location = new System.Drawing.Point(168, 108);
             this.checkedListBox_FiyatTanimlari.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.checkedListBox_FiyatTanimlari.Name = "checkedListBox_FiyatTanimlari";
-            this.checkedListBox_FiyatTanimlari.Size = new System.Drawing.Size(347, 206);
+            this.checkedListBox_FiyatTanimlari.Size = new System.Drawing.Size(281, 206);
             this.checkedListBox_FiyatTanimlari.TabIndex = 58;
             // 
             // lkpStokSayimGrubu
@@ -1121,7 +1157,7 @@
             this.lkpStokSayimGrubu.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SayimAdi", "SayimAdi")});
             this.lkpStokSayimGrubu.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpStokSayimGrubu_Properties_ButtonClick);
-            this.lkpStokSayimGrubu.Size = new System.Drawing.Size(347, 34);
+            this.lkpStokSayimGrubu.Size = new System.Drawing.Size(281, 34);
             this.lkpStokSayimGrubu.TabIndex = 3;
             // 
             // lookUpEdit1
@@ -1137,7 +1173,7 @@
             this.lookUpEdit1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("value", "value", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(347, 34);
+            this.lookUpEdit1.Size = new System.Drawing.Size(281, 34);
             this.lookUpEdit1.TabIndex = 56;
             // 
             // labelControl35
@@ -1242,7 +1278,7 @@
             this.labelControl33.Location = new System.Drawing.Point(4, 308);
             this.labelControl33.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(133, 25);
+            this.labelControl33.Size = new System.Drawing.Size(132, 25);
             this.labelControl33.TabIndex = 5;
             this.labelControl33.Text = "Çıkış Tarihi İlk";
             // 
@@ -1260,7 +1296,7 @@
             this.labelControl31.Location = new System.Drawing.Point(4, 112);
             this.labelControl31.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(132, 25);
+            this.labelControl31.Size = new System.Drawing.Size(131, 25);
             this.labelControl31.TabIndex = 5;
             this.labelControl31.Text = "Giriş Tarihi İlk";
             // 
@@ -1458,6 +1494,7 @@
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEdit1.Location = new System.Drawing.Point(442, 477);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureEdit1.MenuManager = this.barManager1;
@@ -1539,6 +1576,7 @@
             // 
             // lblAciklama
             // 
+            this.lblAciklama.Appearance.Options.UseTextOptions = true;
             this.lblAciklama.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Word;
             this.lblAciklama.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.lblAciklama.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -1691,6 +1729,8 @@
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseForeColor = true;
             this.labelControl15.Location = new System.Drawing.Point(12, 19);
             this.labelControl15.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.labelControl15.Name = "labelControl15";
@@ -1742,6 +1782,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRafYeriAciklama.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbN11.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpHemenAlKategori.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEMagazaErisimi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHemenAlID.Properties)).EndInit();
@@ -1916,6 +1957,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.ButtonEdit btnEdit_SayimAciklama;
         private DevExpress.XtraEditors.LabelControl labelControl35;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbN11;
+        private DevExpress.XtraEditors.LabelControl labelControl36;
         //private DevExpress.XtraBars.BarDockControl barDockControlTop;
         //private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         //private DevExpress.XtraBars.BarDockControl barDockControlLeft;

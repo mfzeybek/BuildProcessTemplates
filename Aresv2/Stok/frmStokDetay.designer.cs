@@ -29,8 +29,8 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.ContextButton contextButton2 = new DevExpress.Utils.ContextButton();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.ContextButton contextButton1 = new DevExpress.Utils.ContextButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtEtiketAdi = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -40,6 +40,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Hareketleri = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ceAktif = new DevExpress.XtraEditors.CheckEdit();
@@ -476,8 +477,9 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
-            this.barButtonItem_Hareketleri});
-            this.barManager1.MaxItemId = 8;
+            this.barButtonItem_Hareketleri,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 9;
             // 
             // barDockControlTop
             // 
@@ -529,6 +531,13 @@
             this.barButtonItem_Hareketleri.Name = "barButtonItem_Hareketleri";
             this.barButtonItem_Hareketleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Hareketleri_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "N11";
+            this.barButtonItem2.Id = 8;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // dropDownButton1
             // 
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
@@ -544,7 +553,8 @@
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem_Hareketleri)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem_Hareketleri),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
@@ -578,7 +588,7 @@
             this.txtStokKodu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtStokKodu.Name = "txtStokKodu";
             this.txtStokKodu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Undo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "Kod Değiştir", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Undo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Kod Değiştir", null, null, true)});
             this.txtStokKodu.Properties.MaxLength = 50;
             this.txtStokKodu.Properties.ReadOnly = true;
             this.txtStokKodu.Size = new System.Drawing.Size(634, 34);
@@ -693,6 +703,7 @@
             // 
             // peVarsayilanStokResim
             // 
+            this.peVarsayilanStokResim.Cursor = System.Windows.Forms.Cursors.Default;
             this.peVarsayilanStokResim.Location = new System.Drawing.Point(1174, 23);
             this.peVarsayilanStokResim.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.peVarsayilanStokResim.Name = "peVarsayilanStokResim";
@@ -1928,7 +1939,7 @@
             // btnYukaridanKes
             // 
             this.btnYukaridanKes.Location = new System.Drawing.Point(1314, 113);
-            this.btnYukaridanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnYukaridanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnYukaridanKes.Name = "btnYukaridanKes";
             this.btnYukaridanKes.Size = new System.Drawing.Size(260, 44);
             this.btnYukaridanKes.TabIndex = 10;
@@ -1940,7 +1951,7 @@
             this.btnSagdanKes.Appearance.Options.UseTextOptions = true;
             this.btnSagdanKes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSagdanKes.Location = new System.Drawing.Point(1788, 369);
-            this.btnSagdanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSagdanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnSagdanKes.Name = "btnSagdanKes";
             this.btnSagdanKes.Size = new System.Drawing.Size(46, 185);
             this.btnSagdanKes.TabIndex = 16;
@@ -1952,7 +1963,7 @@
             this.btnSoldanKes.Appearance.Options.UseTextOptions = true;
             this.btnSoldanKes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSoldanKes.Location = new System.Drawing.Point(1060, 369);
-            this.btnSoldanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSoldanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnSoldanKes.Name = "btnSoldanKes";
             this.btnSoldanKes.Size = new System.Drawing.Size(46, 185);
             this.btnSoldanKes.TabIndex = 10;
@@ -1962,7 +1973,7 @@
             // btnAsagidanKes
             // 
             this.btnAsagidanKes.Location = new System.Drawing.Point(1314, 779);
-            this.btnAsagidanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAsagidanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnAsagidanKes.Name = "btnAsagidanKes";
             this.btnAsagidanKes.Size = new System.Drawing.Size(260, 44);
             this.btnAsagidanKes.TabIndex = 10;
@@ -1974,7 +1985,7 @@
             this.simpleButton2.Appearance.Options.UseTextOptions = true;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton2.Location = new System.Drawing.Point(1852, 319);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(304, 92);
             this.simpleButton2.TabIndex = 14;
@@ -1984,7 +1995,7 @@
             // labelControl69
             // 
             this.labelControl69.Location = new System.Drawing.Point(2200, 631);
-            this.labelControl69.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl69.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl69.Name = "labelControl69";
             this.labelControl69.Size = new System.Drawing.Size(169, 25);
             this.labelControl69.TabIndex = 13;
@@ -1993,7 +2004,7 @@
             // lblFotoBilgileri
             // 
             this.lblFotoBilgileri.Location = new System.Drawing.Point(2200, 692);
-            this.lblFotoBilgileri.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblFotoBilgileri.Margin = new System.Windows.Forms.Padding(6);
             this.lblFotoBilgileri.Name = "lblFotoBilgileri";
             this.lblFotoBilgileri.Size = new System.Drawing.Size(133, 25);
             this.lblFotoBilgileri.TabIndex = 11;
@@ -2002,7 +2013,7 @@
             // btnBuyukFoto
             // 
             this.btnBuyukFoto.Location = new System.Drawing.Point(1852, 188);
-            this.btnBuyukFoto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBuyukFoto.Margin = new System.Windows.Forms.Padding(6);
             this.btnBuyukFoto.Name = "btnBuyukFoto";
             this.btnBuyukFoto.Size = new System.Drawing.Size(304, 119);
             this.btnBuyukFoto.TabIndex = 10;
@@ -2046,10 +2057,10 @@
             this.pictureEdit1.Location = new System.Drawing.Point(1116, 169);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.pictureEdit1.Name = "pictureEdit1";
-            contextButton2.Id = new System.Guid("b594f429-2de9-42f9-92cb-7c382cced6d7");
-            contextButton2.Name = "ContextButton";
-            contextButton2.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            this.pictureEdit1.Properties.ContextButtons.Add(contextButton2);
+            contextButton1.Id = new System.Guid("b594f429-2de9-42f9-92cb-7c382cced6d7");
+            contextButton1.Name = "ContextButton";
+            contextButton1.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            this.pictureEdit1.Properties.ContextButtons.Add(contextButton1);
             this.pictureEdit1.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
@@ -2170,7 +2181,7 @@
             // btnFotoYapistir
             // 
             this.btnFotoYapistir.Location = new System.Drawing.Point(714, 6);
-            this.btnFotoYapistir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFotoYapistir.Margin = new System.Windows.Forms.Padding(6);
             this.btnFotoYapistir.Name = "btnFotoYapistir";
             this.btnFotoYapistir.Size = new System.Drawing.Size(150, 44);
             this.btnFotoYapistir.TabIndex = 10;
@@ -3771,5 +3782,6 @@
         private DevExpress.XtraEditors.SimpleButton btnSoldanKes;
         private DevExpress.XtraEditors.SimpleButton btnSagdanKes;
         private DevExpress.XtraEditors.SimpleButton btnFotoYapistir;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

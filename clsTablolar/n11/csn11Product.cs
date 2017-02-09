@@ -16,7 +16,15 @@ namespace clsTablolar.n11
         }
 
 
+
+
+
         public int n11ProductID { get; set; }
+        public string UrunBasligi { get; set; }
+        public string AltBaslik { get; set; }
+
+        public decimal Fiyat { get; set; }
+
         public int KategoriID { get; set; }
         public int StokID { get; set; }
         public string DetayliUrunBilgisi { get; set; }
@@ -25,9 +33,22 @@ namespace clsTablolar.n11
         SqlDataReader dr;
         SqlCommand cmd;
 
+        public csN11Product(SqlConnection Baglanti, SqlTransaction Tr, int stokID)
+        {
+            if (stokID == -1)
+            {
+                n11ProductID = -1;
+                KategoriID = -1;
+                stokID = -1;
+                DetayliUrunBilgisi = string.Empty;
+            }
+            else
+            {
+                Getir(Baglanti, Tr, stokID);
+            }
+        }
 
-
-        public void Getir(SqlConnection Baglanti, SqlTransaction Tr, int StokID)
+        private void Getir(SqlConnection Baglanti, SqlTransaction Tr, int StokID)
         {
             using (cmd = new SqlCommand())
             {

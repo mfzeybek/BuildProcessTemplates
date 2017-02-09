@@ -341,5 +341,15 @@ namespace Aresv2.Fatura
         {
             txtFaturaSayisi.EditValue = gvFatura.RowCount;
         }
+
+        private void btnIslemler_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCariHareketleri_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

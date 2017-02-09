@@ -1001,5 +1001,11 @@ namespace Aresv2
             n11.frmN11 frm = new n11.frmN11();
             FormuAc2(frm);
         }
+
+        private void barButtonItem46_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            n11.frmN11ProductList frm = new n11.frmN11ProductList();
+            FormuAc2(frm);
+        }
     }
 }

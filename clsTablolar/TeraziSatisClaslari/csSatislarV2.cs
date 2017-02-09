@@ -492,17 +492,18 @@ and
 
         public string OdemesiYapilanSatisiGeriGetir(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID)
         {
-            using (SqlCommand cmd = new SqlCommand(@"update CariHr set SilindiMi = 1 where FaturaID = @FaturaID", Baglanti, Tr))
-            {
-                cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
+            if (FaturaID != -1)
+                using (SqlCommand cmd = new SqlCommand(@"update CariHr set SilindiMi = 1 where FaturaID = @FaturaID", Baglanti, Tr))
+                {
+                    cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
 
-                cmd.ExecuteNonQuery();
-                //using (SqlDataReader dr = cmd.ExecuteReader())
-                //{
-                //    return SatisGetir(dr, false);
-                //}
-                return string.Empty;
-            }
+                    cmd.ExecuteNonQuery();
+                    //using (SqlDataReader dr = cmd.ExecuteReader())
+                    //{
+                    //    return SatisGetir(dr, false);
+                    //}
+                }
+            return string.Empty;
         }
 
         public int FaturaBarkodtanSatisiGetir(SqlConnection baglanti, SqlTransaction Tr, string _FaturaBarkod)

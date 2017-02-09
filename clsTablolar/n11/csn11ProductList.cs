@@ -22,6 +22,7 @@ namespace clsTablolar.n11
         {
             using (da = new SqlDataAdapter())
             {
+                da.SelectCommand = new SqlCommand();
                 da.SelectCommand.CommandText = " select * from n11Product ";
                 da.SelectCommand.Connection = Baglanti;
                 da.SelectCommand.Transaction = Tr;

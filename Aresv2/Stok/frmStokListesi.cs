@@ -290,9 +290,15 @@ namespace Aresv2.Stok
                     }
                 }
 
-                trGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                if (cmbN11.SelectedIndex == 1)
+                {
+                    StokArama.N11Entegrasyonu = 1;
+                }
+                else
+                { StokArama.N11Entegrasyonu = -1; }
 
                 gvStokListesi.Columns.Clear();
+                trGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 gcStokListesi.DataSource = StokArama.StokListeGetir(SqlConnections.GetBaglanti(), trGenel);
                 //= StokArama.dt_StokListesi;
 

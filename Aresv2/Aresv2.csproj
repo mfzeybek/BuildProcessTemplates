@@ -870,6 +870,12 @@
     <Compile Include="n11\frmN11.Designer.cs">
       <DependentUpon>frmN11.cs</DependentUpon>
     </Compile>
+    <Compile Include="n11\frmN11ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="n11\frmN11ProductList.Designer.cs">
+      <DependentUpon>frmN11ProductList.cs</DependentUpon>
+    </Compile>
     <Compile Include="n11\frmN11Urun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1458,6 +1464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="n11\frmN11.resx">
       <DependentUpon>frmN11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="n11\frmN11ProductList.resx">
+      <DependentUpon>frmN11ProductList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="n11\frmN11Urun.resx">
       <DependentUpon>frmN11Urun.cs</DependentUpon>

@@ -339,7 +339,7 @@ namespace clsTablolar.Fatura
                dbo.Fatura.StokIskontoToplami, dbo.Fatura.Toplam_Iskontosuz_Kdvsiz, dbo.Fatura.FaturaTutari, dbo.Fatura.IskontoluToplam, dbo.Fatura.KullanilanFiyatTanimID, Fatura.FaturaGrupID, Fatura.FaturaBarkod
 FROM  dbo.Fatura INNER JOIN
                dbo.Cari ON dbo.Fatura.CariID = dbo.Cari.CariID
-WHERE     (dbo.Fatura.FaturaID = @FaturaID)";
+WHERE     (dbo.Fatura.FaturaID = @FaturaID) ";
 
         private void FaturaGetir(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID) // ilerde burasını da ayırmak gerekiyor
         { // neden mi çünkü aşağıdaki sql e başka yerlerde de ihtiyaç olabiliyor

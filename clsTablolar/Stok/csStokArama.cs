@@ -73,6 +73,8 @@ namespace clsTablolar.Stok
         /// </summary>
         private int _StokTipi;
         private int _SayimID;
+        private Int16 _N11Entegrasyonu;
+
 
         public bool SadeceFiyatiOlanlar
         {
@@ -298,6 +300,19 @@ namespace clsTablolar.Stok
             }
         }
 
+        public short N11Entegrasyonu
+        {
+            get
+            {
+                return _N11Entegrasyonu;
+            }
+
+            set
+            {
+                _N11Entegrasyonu = value;
+            }
+        }
+
 
         #endregion
 
@@ -354,7 +369,7 @@ namespace clsTablolar.Stok
         SqlCommand cmb;
         public DataTable dt_StokListesi;
         public DataTable dt_FiyatListesi;
-        
+
         public DataTable StokListeGetir(SqlConnection Baglanti, SqlTransaction Tr)
         {
             da = new SqlDataAdapter();
@@ -452,7 +467,6 @@ WHERE     (s.Silindi = 'false') ";
             }
             if (!string.IsNullOrEmpty(_Barkod))
             {
-
                 da.SelectCommand.CommandText += @" and
                                           (stkbrm.Barkodu like 
                                           case
@@ -639,8 +653,10 @@ WHERE     (s.Silindi = 'false') ";
                 //da.SelectCommand.CommandText += " and SayimDetay.SayimID = @SayimID ";
                 //da.SelectCommand.Parameters.Add("@SayimID", SqlDbType.Int).Value = _SayimID;
             }
-
-
+            if (_N11Entegrasyonu != -1)
+            {
+                da.SelectCommand.CommandText += " and s.StokID in (select StokID from n11Product) ";
+            }
 
             dt_StokListesi = new DataTable();
 

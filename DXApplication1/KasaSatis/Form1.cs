@@ -14,7 +14,7 @@ namespace KasaSatis
             InitializeComponent();
         }
 
-        int SonOdemesiYapilanMusterinin_FaturaID = -1;
+        //int SonOdemesiYapilanMusterinin_FaturaID = -1;
 
         clsTablolar.TeraziSatisClaslari.csBarkodtanStokArama BarkodtanStokArma;
         private void btnAlisVerisiNakitOlarakKapat_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace KasaSatis
                 //OdemeKay.OdemeyiKaydet(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
                 //TrGenel.Commit();
                 gvOdemesiYapilacakSatis.SetFocusedRowCellValue("OdendiMi", true);
-                SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
+                //SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 csOdemeKaydet.OdemeDonenBilgisi donenOdemeBilgisi = OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), Properties.Settings.Default.KasaID, "Fatura Nakit Ödeme", 0);
@@ -361,8 +361,7 @@ namespace KasaSatis
 
         private void btnUrunBilgileri_Click(object sender, EventArgs e)
         {
-            clsTablolar.frmStokBilgileri frm = new clsTablolar.frmStokBilgileri(SqlConnections.GetBaglanti());
-            frm.ShowDialog();
+
         }
 
         private void btnYazdir_Click(object sender, EventArgs e)
@@ -453,7 +452,7 @@ namespace KasaSatis
 
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
-            //gvSatislar.MovePrevPage();
+            gvOdemesiYapilacakSatis.MovePrevPage();
         }
 
         private void gvSatisHareketleri_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -540,13 +539,19 @@ namespace KasaSatis
             {
                 //lock (Satislar.KilitHamisina)
                 {
+                    int FatId = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID);
+
+                    if (FatId == -1)
+                        MessageBox.Show("Burada -1 gelmemesi gerekiyordu bunu bana bildir.");
+
                     TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                     //string barkodNo = Satislar.OdemesiYapilanSatisiGeriGetir(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
-                    Satislar.OdemesiYapilanSatisiGeriGetir(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
+
+                    Satislar.OdemesiYapilanSatisiGeriGetir(SqlConnections.GetBaglanti(), TrGenel, FatId);
                     TrGenel.Commit();
                     //BarkodtanMusteriAra(barkodNo);
                     btnYenile_Click(null, null);
-                    SonOdemesiYapilanMusterinin_FaturaID = -1;
+                    //SonOdemesiYapilanMusterinin_FaturaID = -1;
                 }
             }
             catch (Exception)
@@ -790,7 +795,7 @@ namespace KasaSatis
         }
 
         private void chckbtnIskontoIslemleri_CheckedChanged(object sender, EventArgs e)
-        {
+        { /*
             if (gvSatisHareketleri.RowCount == 0)
             {
                 chckbtnIskontoIslemleri.Checked = false;
@@ -823,7 +828,7 @@ namespace KasaSatis
                 colStokIskonto1.AppearanceCell.BackColor = System.Drawing.Color.White;
                 colStokIskonto1.AppearanceCell.Options.HighPriority = false;
                 colAltBirimKdvDahilFiyat.AppearanceCell.Options.HighPriority = false;
-            }
+            }*/
         }
 
         private void btnSatisiSil_Click(object sender, EventArgs e)
@@ -873,7 +878,7 @@ namespace KasaSatis
             //OdemeKay.OdemeyiKaydet(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
             //TrGenel.Commit();
             //gvOdemesiYapilacakSatis.SetFocusedRowCellValue("OdendiMi", true);
-            SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
+            //SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), 3, "Fatura Kredi KArtı İle ödeme", 0); // KAsaID 3 pos cihazı için verilen ID
@@ -895,7 +900,7 @@ namespace KasaSatis
             frmKismiOdeme frm = new frmKismiOdeme();
             if (DialogResult.Yes == frm.ShowDialog())
             {
-                SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
+                //SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 int KismiOdemeKasaID = frm.KismiOdemesiYapilanKasaID;
                 decimal KismiOdemeTutari = frm.Tutar;
@@ -921,6 +926,12 @@ namespace KasaSatis
         {
             frmKasaRaporu Rapor = new frmKasaRaporu(1007);
             Rapor.ShowDialog();
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            clsTablolar.frmStokBilgileri frm = new clsTablolar.frmStokBilgileri(SqlConnections.GetBaglanti());
+            frm.ShowDialog();
         }
     }
 }
