@@ -2131,7 +2131,7 @@ ne hatısı diye sorarsam hamısına hatası de
 
 
 
-                System.Diagnostics.Process.Start(Application.StartupPath + @"\TeraziGuncelleme\TeraziSatisGuncelleme.exe");
+                System.Diagnostics.Process.Start(Application.StartupPath + @"\TeraziGuncelleme\TeraziSatisGuncelleme.exe", "2");
                 Application.Exit();
             }
             catch (Exception)

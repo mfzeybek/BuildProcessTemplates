@@ -28,12 +28,13 @@ namespace clsTablolar.n11
         public int KategoriID { get; set; }
         public int StokID { get; set; }
         public string DetayliUrunBilgisi { get; set; }
+        public int HazirlikSuresi { get; set; }
 
 
         SqlDataReader dr;
         SqlCommand cmd;
 
-        public csN11Product(SqlConnection Baglanti, SqlTransaction Tr, int stokID)
+        public csN11Product(SqlConnection Baglanti, SqlTransaction Tr, int stokID) // StokID buradan hiçbir zaman -1 gelmez zaten var olan stok un üzerine açılacak çünkü
         {
             if (stokID == -1)
             {

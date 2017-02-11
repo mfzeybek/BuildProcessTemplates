@@ -32,10 +32,14 @@ namespace Aresv2.n11
             Urun = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
             TrGenel.Commit();
         }
+
         void Al()
         {
+            txtUrunBasligi.EditValue = Urun.UrunBasligi;
+            txtAltBaslik.EditValue = Urun.AltBaslik;
+            txtBarkod.EditValue = "";
             DetayliUrunBilgisi.DocumentText = Urun.DetayliUrunBilgisi;
-
+            txtHazirlikSuresi.EditValue = Urun.HazirlikSuresi;
 
         }
 
@@ -50,6 +54,11 @@ namespace Aresv2.n11
                 Urun.DetayliUrunBilgisi = htmm.richEditControl1.HtmlText;
                 //ButonlariAktifPasifYap(true);
             }
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

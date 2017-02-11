@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKasaOdeme));
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnAlisVerisiNakitOlarakKapat = new DevExpress.XtraEditors.SimpleButton();
@@ -54,13 +53,13 @@
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -141,7 +140,8 @@
             this.btnOncekiSayfa = new DevExpress.XtraEditors.SimpleButton();
             this.btnMusteriUrunAra = new DevExpress.XtraEditors.SimpleButton();
             this.txtBarkodu = new DevExpress.XtraEditors.TextEdit();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemesiYapilacakSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemesiYapilacakSatis)).BeginInit();
@@ -161,10 +161,10 @@
             // 
             this.btnAlisVerisiNakitOlarakKapat.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnAlisVerisiNakitOlarakKapat.Appearance.Options.UseFont = true;
-            this.btnAlisVerisiNakitOlarakKapat.Location = new System.Drawing.Point(11, 140);
+            this.btnAlisVerisiNakitOlarakKapat.Location = new System.Drawing.Point(12, 140);
             this.btnAlisVerisiNakitOlarakKapat.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAlisVerisiNakitOlarakKapat.Name = "btnAlisVerisiNakitOlarakKapat";
-            this.btnAlisVerisiNakitOlarakKapat.Size = new System.Drawing.Size(379, 103);
+            this.btnAlisVerisiNakitOlarakKapat.Size = new System.Drawing.Size(380, 104);
             this.btnAlisVerisiNakitOlarakKapat.TabIndex = 5;
             this.btnAlisVerisiNakitOlarakKapat.Text = "Kalan Bakiyeyi\r\nNakit Al";
             this.btnAlisVerisiNakitOlarakKapat.Click += new System.EventHandler(this.btnAlisVerisiNakitOlarakKapat_Click);
@@ -174,8 +174,8 @@
             this.gcOdemesiYapilacakSatis.AccessibleDescription = "";
             this.gcOdemesiYapilacakSatis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcOdemesiYapilacakSatis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(607, 246, 607, 246);
-            this.gcOdemesiYapilacakSatis.Location = new System.Drawing.Point(427, 140);
+            this.gcOdemesiYapilacakSatis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(608, 246, 608, 246);
+            this.gcOdemesiYapilacakSatis.Location = new System.Drawing.Point(428, 140);
             this.gcOdemesiYapilacakSatis.MainView = this.gvOdemesiYapilacakSatis;
             this.gcOdemesiYapilacakSatis.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.gcOdemesiYapilacakSatis.Name = "gcOdemesiYapilacakSatis";
@@ -391,10 +391,10 @@
             // 
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Location = new System.Drawing.Point(11, 362);
+            this.simpleButton5.Location = new System.Drawing.Point(12, 362);
             this.simpleButton5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(379, 103);
+            this.simpleButton5.Size = new System.Drawing.Size(380, 104);
             this.simpleButton5.TabIndex = 118;
             this.simpleButton5.Text = "Kısmi Ödeme";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
@@ -403,10 +403,10 @@
             // 
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Location = new System.Drawing.Point(11, 251);
+            this.simpleButton4.Location = new System.Drawing.Point(12, 252);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(379, 103);
+            this.simpleButton4.Size = new System.Drawing.Size(380, 104);
             this.simpleButton4.TabIndex = 118;
             this.simpleButton4.Text = "Kalan Bakiyeyi\r\nKredi Kartı İle Al";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -415,10 +415,10 @@
             // 
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
             this.dropDownButton1.DropDownControl = this.popupMenu_Islemler;
-            this.dropDownButton1.Location = new System.Drawing.Point(11, 25);
-            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.dropDownButton1.Location = new System.Drawing.Point(12, 24);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(379, 103);
+            this.dropDownButton1.Size = new System.Drawing.Size(380, 104);
             this.dropDownButton1.TabIndex = 117;
             this.dropDownButton1.Text = "İşlemler";
             // 
@@ -429,7 +429,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11)});
             this.popupMenu_Islemler.Manager = this.barManager1;
             this.popupMenu_Islemler.Name = "popupMenu_Islemler";
             // 
@@ -496,8 +497,9 @@
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
-            this.barButtonItem10});
-            this.barManager1.MaxItemId = 16;
+            this.barButtonItem10,
+            this.barButtonItem11});
+            this.barManager1.MaxItemId = 17;
             // 
             // barDockControlTop
             // 
@@ -505,17 +507,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlTop.Size = new System.Drawing.Size(2404, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1918, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1434);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1176);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(2404, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1918, 0);
             // 
             // barDockControlLeft
             // 
@@ -523,17 +525,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1434);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1176);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(2404, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1918, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1434);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1176);
             // 
             // barSubItem1
             // 
@@ -585,19 +587,19 @@
             // 
             this.btnMusteriler.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriler.Image")));
             this.btnMusteriler.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnMusteriler.Location = new System.Drawing.Point(1483, 22);
+            this.btnMusteriler.Location = new System.Drawing.Point(1484, 22);
             this.btnMusteriler.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnMusteriler.Name = "btnMusteriler";
-            this.btnMusteriler.Size = new System.Drawing.Size(256, 99);
+            this.btnMusteriler.Size = new System.Drawing.Size(256, 100);
             this.btnMusteriler.TabIndex = 74;
             this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(11, 719);
+            this.simpleButton3.Location = new System.Drawing.Point(12, 720);
             this.simpleButton3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(379, 102);
+            this.simpleButton3.Size = new System.Drawing.Size(380, 102);
             this.simpleButton3.TabIndex = 73;
             this.simpleButton3.Text = "Butondan Ürün Bul";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -608,10 +610,10 @@
             this.btnSeciliUrununMiktariniBirArttir.Appearance.Options.UseFont = true;
             this.btnSeciliUrununMiktariniBirArttir.Appearance.Options.UseTextOptions = true;
             this.btnSeciliUrununMiktariniBirArttir.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSeciliUrununMiktariniBirArttir.Location = new System.Drawing.Point(11, 1051);
+            this.btnSeciliUrununMiktariniBirArttir.Location = new System.Drawing.Point(12, 1052);
             this.btnSeciliUrununMiktariniBirArttir.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSeciliUrununMiktariniBirArttir.Name = "btnSeciliUrununMiktariniBirArttir";
-            this.btnSeciliUrununMiktariniBirArttir.Size = new System.Drawing.Size(379, 107);
+            this.btnSeciliUrununMiktariniBirArttir.Size = new System.Drawing.Size(380, 108);
             this.btnSeciliUrununMiktariniBirArttir.TabIndex = 69;
             this.btnSeciliUrununMiktariniBirArttir.Text = "Miktarı\r\n1 Arttır";
             this.btnSeciliUrununMiktariniBirArttir.Click += new System.EventHandler(this.btnSeciliUrununMiktariniBirArttir_Click);
@@ -622,17 +624,17 @@
             this.btnMiktarGir.Appearance.Options.UseFont = true;
             this.btnMiktarGir.Appearance.Options.UseTextOptions = true;
             this.btnMiktarGir.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMiktarGir.Location = new System.Drawing.Point(11, 940);
+            this.btnMiktarGir.Location = new System.Drawing.Point(12, 940);
             this.btnMiktarGir.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnMiktarGir.Name = "btnMiktarGir";
-            this.btnMiktarGir.Size = new System.Drawing.Size(379, 107);
+            this.btnMiktarGir.Size = new System.Drawing.Size(380, 108);
             this.btnMiktarGir.TabIndex = 68;
             this.btnMiktarGir.Text = "Miktar Gir";
             this.btnMiktarGir.Click += new System.EventHandler(this.btnMiktarGir_Click);
             // 
             // ceBarkoduOkutulanFaturaninOdemesiniYap
             // 
-            this.ceBarkoduOkutulanFaturaninOdemesiniYap.Location = new System.Drawing.Point(427, 84);
+            this.ceBarkoduOkutulanFaturaninOdemesiniYap.Location = new System.Drawing.Point(428, 84);
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.Name = "ceBarkoduOkutulanFaturaninOdemesiniYap";
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -650,10 +652,10 @@
             this.btnOdemeIptal.Appearance.Options.UseTextOptions = true;
             this.btnOdemeIptal.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Word;
             this.btnOdemeIptal.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnOdemeIptal.Location = new System.Drawing.Point(11, 473);
+            this.btnOdemeIptal.Location = new System.Drawing.Point(12, 472);
             this.btnOdemeIptal.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnOdemeIptal.Name = "btnOdemeIptal";
-            this.btnOdemeIptal.Size = new System.Drawing.Size(379, 110);
+            this.btnOdemeIptal.Size = new System.Drawing.Size(380, 110);
             this.btnOdemeIptal.TabIndex = 64;
             this.btnOdemeIptal.Text = "Seçili Ödemesi Yapılan\r\nMüşterinin Ödemesini\r\nİptal Et";
             this.btnOdemeIptal.Click += new System.EventHandler(this.btnOdemeIptal_Click);
@@ -662,10 +664,10 @@
             // 
             this.btnYenile.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnYenile.Appearance.Options.UseFont = true;
-            this.btnYenile.Location = new System.Drawing.Point(11, 835);
+            this.btnYenile.Location = new System.Drawing.Point(12, 836);
             this.btnYenile.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnYenile.Name = "btnYenile";
-            this.btnYenile.Size = new System.Drawing.Size(379, 97);
+            this.btnYenile.Size = new System.Drawing.Size(380, 96);
             this.btnYenile.TabIndex = 63;
             this.btnYenile.Text = "Yenile";
             this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
@@ -676,8 +678,8 @@
             this.gcSatisHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(607, 246, 607, 246);
-            this.gcSatisHareketleri.Location = new System.Drawing.Point(427, 719);
+            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(608, 246, 608, 246);
+            this.gcSatisHareketleri.Location = new System.Drawing.Point(428, 720);
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
             this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
@@ -1150,10 +1152,10 @@
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Appearance.Options.UseImage = true;
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Image = ((System.Drawing.Image)(resources.GetObject("btnAktifSatisaDigerSatisinHareketleriniEkle.Image")));
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Location = new System.Drawing.Point(1747, 22);
+            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Location = new System.Drawing.Point(1748, 22);
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Name = "btnAktifSatisaDigerSatisinHareketleriniEkle";
-            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Size = new System.Drawing.Size(255, 99);
+            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Size = new System.Drawing.Size(256, 100);
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.TabIndex = 60;
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Click += new System.EventHandler(this.btnAktifSatisaDigerSatisinHareketleriniEkle_Click);
             // 
@@ -1163,10 +1165,10 @@
             this.btnUrunCikar.Appearance.Options.UseFont = true;
             this.btnUrunCikar.Appearance.Options.UseTextOptions = true;
             this.btnUrunCikar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnUrunCikar.Location = new System.Drawing.Point(11, 1171);
+            this.btnUrunCikar.Location = new System.Drawing.Point(12, 1172);
             this.btnUrunCikar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUrunCikar.Name = "btnUrunCikar";
-            this.btnUrunCikar.Size = new System.Drawing.Size(379, 103);
+            this.btnUrunCikar.Size = new System.Drawing.Size(380, 104);
             this.btnUrunCikar.TabIndex = 20;
             this.btnUrunCikar.Text = "Ürünü Çıkar";
             this.btnUrunCikar.Click += new System.EventHandler(this.btnUrunCikar_Click);
@@ -1177,10 +1179,10 @@
             this.btnYeniMusteri.Appearance.Options.UseFont = true;
             this.btnYeniMusteri.Appearance.Options.UseTextOptions = true;
             this.btnYeniMusteri.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnYeniMusteri.Location = new System.Drawing.Point(1047, 22);
+            this.btnYeniMusteri.Location = new System.Drawing.Point(1048, 22);
             this.btnYeniMusteri.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnYeniMusteri.Name = "btnYeniMusteri";
-            this.btnYeniMusteri.Size = new System.Drawing.Size(267, 99);
+            this.btnYeniMusteri.Size = new System.Drawing.Size(268, 100);
             this.btnYeniMusteri.TabIndex = 19;
             this.btnYeniMusteri.Text = "Yeni Müşteri";
             this.btnYeniMusteri.Click += new System.EventHandler(this.btnYeniMusteri_Click);
@@ -1194,7 +1196,7 @@
             this.btnYazdir.Location = new System.Drawing.Point(1322, 22);
             this.btnYazdir.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(153, 99);
+            this.btnYazdir.Size = new System.Drawing.Size(152, 100);
             this.btnYazdir.TabIndex = 18;
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
@@ -1202,10 +1204,10 @@
             // 
             this.btnSonrakiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.Image")));
             this.btnSonrakiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSonrakiSayfa.Location = new System.Drawing.Point(205, 587);
+            this.btnSonrakiSayfa.Location = new System.Drawing.Point(204, 588);
             this.btnSonrakiSayfa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSonrakiSayfa.Name = "btnSonrakiSayfa";
-            this.btnSonrakiSayfa.Size = new System.Drawing.Size(185, 102);
+            this.btnSonrakiSayfa.Size = new System.Drawing.Size(184, 102);
             this.btnSonrakiSayfa.TabIndex = 17;
             this.btnSonrakiSayfa.Click += new System.EventHandler(this.simpleButton3_Click_1);
             // 
@@ -1213,7 +1215,7 @@
             // 
             this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
             this.btnOncekiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOncekiSayfa.Location = new System.Drawing.Point(11, 587);
+            this.btnOncekiSayfa.Location = new System.Drawing.Point(12, 588);
             this.btnOncekiSayfa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
             this.btnOncekiSayfa.Size = new System.Drawing.Size(186, 102);
@@ -1224,7 +1226,7 @@
             // 
             this.btnMusteriUrunAra.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnMusteriUrunAra.Appearance.Options.UseFont = true;
-            this.btnMusteriUrunAra.Location = new System.Drawing.Point(737, 22);
+            this.btnMusteriUrunAra.Location = new System.Drawing.Point(736, 22);
             this.btnMusteriUrunAra.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnMusteriUrunAra.Name = "btnMusteriUrunAra";
             this.btnMusteriUrunAra.Size = new System.Drawing.Size(302, 54);
@@ -1235,7 +1237,7 @@
             // 
             // txtBarkodu
             // 
-            this.txtBarkodu.Location = new System.Drawing.Point(427, 22);
+            this.txtBarkodu.Location = new System.Drawing.Point(428, 22);
             this.txtBarkodu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtBarkodu.Name = "txtBarkodu";
             this.txtBarkodu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -1245,6 +1247,13 @@
             this.txtBarkodu.EditValueChanged += new System.EventHandler(this.txtBarkodu_EditValueChanged);
             this.txtBarkodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkodu_KeyDown);
             // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Güncelleme";
+            this.barButtonItem11.Id = 16;
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
+            // 
             // frmKasaOdeme
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1252,7 +1261,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(2404, 1434);
+            this.ClientSize = new System.Drawing.Size(1918, 1176);
             this.Controls.Add(this.btnMiktarGir);
             this.Controls.Add(this.btnMusteriler);
             this.Controls.Add(this.btnYenile);
@@ -1280,7 +1289,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Tahoma", 7F);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmKasaOdeme";
             this.Text = "Ödeme Ekranı v3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1415,6 +1424,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
     }
 }
 

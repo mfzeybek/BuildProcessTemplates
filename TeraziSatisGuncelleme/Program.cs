@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-//using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TeraziSatisGuncelleme
@@ -12,11 +9,13 @@ namespace TeraziSatisGuncelleme
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] MyParameters)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 frm = new Form1();
+            frm.AhandaGuncellenecekProgram = (Form1.GuncellenecekProgram)Convert.ToInt32(MyParameters[0]);
+            Application.Run(frm);
         }
     }
 }

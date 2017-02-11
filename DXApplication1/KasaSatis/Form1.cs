@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Threading;
-
+using System.IO;
 
 namespace KasaSatis
 {
@@ -932,6 +932,33 @@ namespace KasaSatis
         {
             clsTablolar.frmStokBilgileri frm = new clsTablolar.frmStokBilgileri(SqlConnections.GetBaglanti());
             frm.ShowDialog();
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                //foreach (System.Diagnostics.Process proc in System.Diagnostics.Process.GetProcessesByName("TeraziSatisBaslat2"))
+                //{
+                //    proc.Kill();
+                //}
+
+                if (!Directory.Exists(Application.StartupPath + @"\Guncelleme"))
+                {
+                    Directory.CreateDirectory(Application.StartupPath + @"\Guncelleme");
+                }
+
+                File.Copy(Application.StartupPath + @"\TeraziSatisGuncelleme.exe", Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.exe", true);
+                File.Copy(Application.StartupPath + @"\TeraziSatisGuncelleme.pdb", Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.pdb", true);
+
+
+                System.Diagnostics.Process.Start(Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.exe", "3");
+                Application.Exit();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

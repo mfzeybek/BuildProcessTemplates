@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aresv2", "Aresv2\Aresv2.csproj", "{65C4DA11-726F-4AAE-B081-811086E29816}"
 EndProject
@@ -99,6 +99,7 @@ Global
 		{628318BB-094F-433F-8468-7B0E647735F7}.Release|x86.ActiveCfg = Release|Any CPU
 		{F632BC66-4E67-4D79-933E-F35BB2D41ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F632BC66-4E67-4D79-933E-F35BB2D41ED5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F632BC66-4E67-4D79-933E-F35BB2D41ED5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{F632BC66-4E67-4D79-933E-F35BB2D41ED5}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{F632BC66-4E67-4D79-933E-F35BB2D41ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F632BC66-4E67-4D79-933E-F35BB2D41ED5}.Release|Any CPU.Build.0 = Release|Any CPU

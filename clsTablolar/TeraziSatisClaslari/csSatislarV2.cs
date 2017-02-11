@@ -493,7 +493,10 @@ and
         public string OdemesiYapilanSatisiGeriGetir(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID)
         {
             if (FaturaID != -1)
-                using (SqlCommand cmd = new SqlCommand(@"update CariHr set SilindiMi = 1 where FaturaID = @FaturaID", Baglanti, Tr))
+                using (SqlCommand cmd = new SqlCommand(@"update CariHr set SilindiMi = 1 where FaturaID = @FaturaID and silindiMi = 0
+update KasaHareket set SilindiMi = 1 
+where KasaHrID = 
+(select KasaHrID from CariHr where FaturaID = @FaturaID and SilindiMi = 0)", Baglanti, Tr))
                 {
                     cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
 

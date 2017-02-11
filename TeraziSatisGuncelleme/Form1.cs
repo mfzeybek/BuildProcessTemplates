@@ -8,12 +8,28 @@ namespace TeraziSatisGuncelleme
     {
         public Form1()
         {
+            //AhandaGuncellenecekProgram = ahanda;
             InitializeComponent();
         }
 
+
+        public enum GuncellenecekProgram
+        {
+            Ares = 1,
+            Terazi = 2,
+            Kasa = 3
+        }
+
+        public GuncellenecekProgram AhandaGuncellenecekProgram;
+
+
+        // Güncellemelerde config dosyası yani ayar dosyası güncellenmez, ama istenirse onunda güncellenebilmesi bir için bişiler yapılabilir
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = "2.8";
+            this.Text = "3";
         }
         // burada devexpressten bişi kullanma
 
@@ -87,7 +103,10 @@ namespace TeraziSatisGuncelleme
                             && Path.GetFileName(Path.GetDirectoryName(file)) != "Loglar"
                             && Path.GetFileName(Path.GetDirectoryName(file)) != "TeraziGuncelleme"
                         //&& Path.get
-                        && Path.GetFileName(file) != "TeraziSatis.vshost.exe") // son parametre aslında olmasada olur
+                        && Path.GetFileName(file) != "TeraziSatis.vshost.exe"
+                        && Path.GetFileName(file) != "Aresv2.exe.config"
+                        && Path.GetFileName(file) != "KasaSatis.exe.config"
+                        ) // son parametre aslında olmasada olur
                         {
                             File.Copy(file, TargetFolderPath + Path.GetFileName(file), true);
                             KopyalananDosyaSayisi++;
@@ -107,13 +126,34 @@ namespace TeraziSatisGuncelleme
 
         private void btnTamGuncelleme_Click(object sender, EventArgs e)
         {
+            if (AhandaGuncellenecekProgram == GuncellenecekProgram.Ares)
+            {
+                MessageBox.Show("ahanda ares");
+                return;
+            }
+            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Kasa)
+            {
+                MessageBox.Show("ahanda kasa");
+                MessageBox.Show("ahanda terazi");
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Kasa\Debug\", Directory.GetParent(Application.StartupPath).FullName);
+                MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
+                System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\KasaSatis.exe");
 
-            CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Debug\", Directory.GetParent(Application.StartupPath).FullName);
-            MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
+            }
+            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Terazi)
+            {
+                MessageBox.Show("ahanda terazi");
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Debug\", Directory.GetParent(Application.StartupPath).FullName);
+                MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
+                System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatisBaslat2.exe");
+            }
+
+
+
 
             label1.Text = "Güncelleme Tamamlandi";
 
-            System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatisBaslat2.exe");
+
 
             Close();
             Application.Exit();
@@ -131,7 +171,7 @@ namespace TeraziSatisGuncelleme
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)

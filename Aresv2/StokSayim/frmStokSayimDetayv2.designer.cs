@@ -538,21 +538,25 @@
             // 
             this.barDockControlTop.CausesValidation = false;
             resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
+            this.barDockControlTop.Manager = this.barManager1;
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             resources.ApplyResources(this.barDockControlBottom, "barDockControlBottom");
+            this.barDockControlBottom.Manager = this.barManager1;
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             resources.ApplyResources(this.barDockControlLeft, "barDockControlLeft");
+            this.barDockControlLeft.Manager = this.barManager1;
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
+            this.barDockControlRight.Manager = this.barManager1;
             // 
             // barbtnExceleAktar
             // 
@@ -600,6 +604,7 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl5.Appearance.Font")));
+            this.labelControl5.Appearance.Options.UseFont = true;
             resources.ApplyResources(this.labelControl5, "labelControl5");
             this.labelControl5.Name = "labelControl5";
             // 
