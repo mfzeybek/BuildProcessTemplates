@@ -38,12 +38,12 @@
             // 
             // gcStokButonGruplari
             // 
-            this.gcStokButonGruplari.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcStokButonGruplari.Location = new System.Drawing.Point(10, 10);
+            this.gcStokButonGruplari.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.gcStokButonGruplari.Location = new System.Drawing.Point(20, 19);
             this.gcStokButonGruplari.MainView = this.gvStokButonGruplari;
-            this.gcStokButonGruplari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcStokButonGruplari.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.gcStokButonGruplari.Name = "gcStokButonGruplari";
-            this.gcStokButonGruplari.Size = new System.Drawing.Size(362, 362);
+            this.gcStokButonGruplari.Size = new System.Drawing.Size(840, 696);
             this.gcStokButonGruplari.TabIndex = 0;
             this.gcStokButonGruplari.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvStokButonGruplari});
@@ -70,23 +70,23 @@
             this.btnKaydet.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnKaydet.Image = global::Aresv2.Properties.Resources.blue_cross_icon_1_;
             this.btnKaydet.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btnKaydet.Location = new System.Drawing.Point(10, 376);
+            this.btnKaydet.Location = new System.Drawing.Point(20, 723);
             this.btnKaydet.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.btnKaydet.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.btnKaydet.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(123, 89);
+            this.btnKaydet.Size = new System.Drawing.Size(246, 171);
             this.btnKaydet.TabIndex = 1;
             this.btnKaydet.Text = "Kaydet dfsdfsdfsdfdfsdfs dfsdfdsfsdfsdf";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnGrubunStoklariniDuzenle
             // 
-            this.btnGrubunStoklariniDuzenle.Location = new System.Drawing.Point(400, 11);
-            this.btnGrubunStoklariniDuzenle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGrubunStoklariniDuzenle.Location = new System.Drawing.Point(889, 19);
+            this.btnGrubunStoklariniDuzenle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnGrubunStoklariniDuzenle.Name = "btnGrubunStoklariniDuzenle";
-            this.btnGrubunStoklariniDuzenle.Size = new System.Drawing.Size(145, 19);
+            this.btnGrubunStoklariniDuzenle.Size = new System.Drawing.Size(290, 167);
             this.btnGrubunStoklariniDuzenle.TabIndex = 2;
             this.btnGrubunStoklariniDuzenle.Text = "Grubun Stoklarını Düzenle";
             this.btnGrubunStoklariniDuzenle.Click += new System.EventHandler(this.btnGrubunStoklariniDuzenle_Click);
@@ -95,13 +95,13 @@
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 466);
+            this.ClientSize = new System.Drawing.Size(1194, 896);
             this.Controls.Add(this.btnGrubunStoklariniDuzenle);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.gcStokButonGruplari);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "frmTeraziStokButonGrupTanimlari";
             this.Text = "Terazi Grup Tanımları";
             this.Load += new System.EventHandler(this.frmTeraziStokButonGrupTanimlari_Load);

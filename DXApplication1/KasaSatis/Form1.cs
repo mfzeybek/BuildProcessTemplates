@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Threading;
 using System.IO;
 
 namespace KasaSatis
@@ -77,7 +76,7 @@ namespace KasaSatis
         private void Form1_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
-            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
+            //DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
             SqlConnections conn = new SqlConnections();
 

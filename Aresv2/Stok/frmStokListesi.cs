@@ -357,11 +357,15 @@ namespace Aresv2.Stok
             }
             if (ceMiktariElleGir.Checked == true && !gvStokListesi.IsMultiSelect) // eğer çoklu seçim ise aşağıda çağıracak bu satırları
             {
-
                 frmMiktarGirr = new clsTablolar.frmMiktarGir(Miktarr, clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli);
                 frmMiktarGirr.labelControl1.Text = gvStokListesi.GetFocusedRowCellValue("StokAdi").ToString() + "\n Eklenecek Miktarı Girin";
                 frmMiktarGirr.ShowDialog();
                 Miktarr = Convert.ToDecimal(frmMiktarGirr.textEdit1.EditValue);
+            }
+
+            if (StokArama.SayimID != -1)
+            {
+                Miktarr = Convert.ToDecimal(gvStokListesi.GetFocusedRowCellValue("SayimMiktari"));
             }
 
 
@@ -378,9 +382,16 @@ namespace Aresv2.Stok
                         frmMiktarGirr.ShowDialog();
                         Miktarr = Convert.ToDecimal(frmMiktarGirr.textEdit1.EditValue);
                     }
-                    //if ((int)btnEdit_SayimAciklama.EditValue != -1)
 
-                    Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
+                    //if ((int)btnEdit_SayimAciklama.EditValue != -1)
+                    if (StokArama.SayimID != -1)
+                    {
+                        Miktarr = Convert.ToDecimal(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "SayimMiktari"));
+                    }
+                    
+                    
+                        Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
+                    
                 }
             }
             else

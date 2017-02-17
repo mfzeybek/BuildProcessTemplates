@@ -47,7 +47,7 @@ namespace TeraziSatis.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM6")]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM8")]
         public string TeraziBagNok {
             get {
                 return ((string)(this["TeraziBagNok"]));
@@ -83,7 +83,7 @@ namespace TeraziSatis.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int TeraziModel {
             get {
                 return ((int)(this["TeraziModel"]));

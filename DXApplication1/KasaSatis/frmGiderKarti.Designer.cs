@@ -53,10 +53,10 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 215);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.simpleButton1.Location = new System.Drawing.Point(24, 625);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(178, 46);
+            this.simpleButton1.Size = new System.Drawing.Size(656, 141);
             this.simpleButton1.StyleController = this.frmGiderKartilayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 13;
             this.simpleButton1.Text = "Kaydet";
@@ -70,41 +70,43 @@
             this.frmGiderKartilayoutControl1ConvertedLayout.Controls.Add(this.simpleButton1);
             this.frmGiderKartilayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmGiderKartilayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
-            this.frmGiderKartilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.frmGiderKartilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.frmGiderKartilayoutControl1ConvertedLayout.Name = "frmGiderKartilayoutControl1ConvertedLayout";
             this.frmGiderKartilayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1565, 453, 900, 800);
             this.frmGiderKartilayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.frmGiderKartilayoutControl1ConvertedLayout.Size = new System.Drawing.Size(384, 273);
+            this.frmGiderKartilayoutControl1ConvertedLayout.Size = new System.Drawing.Size(1369, 790);
             this.frmGiderKartilayoutControl1ConvertedLayout.TabIndex = 16;
             // 
             // memoEdit1
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(12, 124);
+            this.memoEdit1.Location = new System.Drawing.Point(24, 330);
+            this.memoEdit1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.memoEdit1.Properties.Appearance.Options.UseFont = true;
-            this.memoEdit1.Size = new System.Drawing.Size(360, 87);
+            this.memoEdit1.Size = new System.Drawing.Size(1321, 287);
             this.memoEdit1.StyleController = this.frmGiderKartilayoutControl1ConvertedLayout;
             this.memoEdit1.TabIndex = 11;
             this.memoEdit1.Click += new System.EventHandler(this.memoEdit1_Click);
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(12, 31);
+            this.textEdit1.Location = new System.Drawing.Point(24, 55);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(360, 30);
+            this.textEdit1.Size = new System.Drawing.Size(1321, 54);
             this.textEdit1.StyleController = this.frmGiderKartilayoutControl1ConvertedLayout;
             this.textEdit1.TabIndex = 10;
             this.textEdit1.Click += new System.EventHandler(this.textEdit1_Click);
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(194, 215);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.simpleButton2.Location = new System.Drawing.Point(688, 625);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(178, 46);
+            this.simpleButton2.Size = new System.Drawing.Size(657, 141);
             this.simpleButton2.StyleController = this.frmGiderKartilayoutControl1ConvertedLayout;
             this.simpleButton2.TabIndex = 14;
             this.simpleButton2.Text = "Vazgeç";
@@ -122,20 +124,20 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(384, 273);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1369, 790);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.memoEdit1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 93);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 275);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(91, 89);
             this.layoutControlItem1.Name = "memoEdit1item";
-            this.layoutControlItem1.Size = new System.Drawing.Size(364, 110);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1329, 326);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Açıklama";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(41, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(83, 25);
             // 
             // layoutControlItem2
             // 
@@ -143,19 +145,19 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(91, 93);
             this.layoutControlItem2.Name = "textEdit1item";
-            this.layoutControlItem2.Size = new System.Drawing.Size(364, 93);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1329, 275);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Tutar";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(41, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(83, 25);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 203);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 601);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(84, 50);
             this.layoutControlItem5.Name = "simpleButton1item";
-            this.layoutControlItem5.Size = new System.Drawing.Size(182, 50);
+            this.layoutControlItem5.Size = new System.Drawing.Size(664, 149);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -163,21 +165,21 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.simpleButton2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(182, 203);
+            this.layoutControlItem4.Location = new System.Drawing.Point(664, 601);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(87, 50);
             this.layoutControlItem4.Name = "simpleButton2item";
-            this.layoutControlItem4.Size = new System.Drawing.Size(182, 50);
+            this.layoutControlItem4.Size = new System.Drawing.Size(665, 149);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // frmGiderKarti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 273);
+            this.ClientSize = new System.Drawing.Size(1369, 790);
             this.Controls.Add(this.frmGiderKartilayoutControl1ConvertedLayout);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGiderKarti";
             this.Text = "frmGiderKarti";
             this.Load += new System.EventHandler(this.frmGiderKarti_Load);

@@ -58,6 +58,11 @@ namespace clsTablolar.TeraziSatisClaslari
 
         private void btnKlavyeyiAc_Click(object sender, EventArgs e)
         {
+            if (Environment.OSVersion.VersionString != "" )
+            {
+                labelControl1.Text = Environment.OSVersion.VersionString;
+            }
+
             var trayWnd = FindWindow("Shell_TrayWnd", null);
             var nullIntPtr = new IntPtr(0);
 

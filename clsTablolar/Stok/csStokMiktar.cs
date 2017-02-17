@@ -20,7 +20,7 @@ namespace clsTablolar.Stok
 set @ArtiMiktar = (select sum (StokHr.Miktar) from StokHr where StokHr.GirisMiCikisMi = 1 and StokHr.SilindiMi = 0 and StokHr.StokID = @StokID)
 set @EksiMiktar = (select sum (StokHr.Miktar) from StokHr where StokHr.GirisMiCikisMi = 2 and StokHr.SilindiMi = 0 and StokHr.StokID = @StokID)
 
-select isnull(@ArtiMiktar, 0) - isnull(@EksiMiktar ,0) as Miktar", Baglanti, Tr))
+select isnull(@ArtiMiktar, 0) - isnull(@EksiMiktar ,0) as Miktar ", Baglanti, Tr))
             {
                 cmdGenel.Parameters.Add("@StokID", SqlDbType.Decimal).Value = StokID;
                 return Convert.ToDecimal(cmdGenel.ExecuteScalar());

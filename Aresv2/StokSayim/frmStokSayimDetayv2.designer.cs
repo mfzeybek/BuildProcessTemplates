@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStokSayimDetayv2));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnFarklıSatirlardakiAyniUrunleriBirlestir = new DevExpress.XtraEditors.SimpleButton();
@@ -68,11 +67,11 @@
             this.lkpBirim2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu();
             this.barBtn_Yazdir = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnOnizle = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnFormSecerekYazdir = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -82,7 +81,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ddbtnIslemler = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -323,6 +322,7 @@
             // gcSayim
             // 
             resources.ApplyResources(this.gcSayim, "gcSayim");
+            this.gcSayim.EmbeddedNavigator.Margin = ((System.Windows.Forms.Padding)(resources.GetObject("gcSayim.EmbeddedNavigator.Margin")));
             this.gcSayim.MainView = this.gvSayim;
             this.gcSayim.Name = "gcSayim";
             this.gcSayim.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -662,7 +662,7 @@
             this.btnStokSil.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnStokSil, "btnStokSil");
             this.btnStokSil.Name = "btnStokSil";
-            this.btnStokSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.btnStokSil.Click += new System.EventHandler(this.btnStokSil_Click_1);
             // 
             // btnStokEkle
             // 

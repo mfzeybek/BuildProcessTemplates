@@ -57,11 +57,11 @@
             // gridControl1
             // 
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
-            this.gridControl1.Location = new System.Drawing.Point(12, 43);
+            this.gridControl1.Location = new System.Drawing.Point(24, 55);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(694, 472);
+            this.gridControl1.Size = new System.Drawing.Size(670, 448);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -102,10 +102,10 @@
             // 
             this.btnTamam.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnTamam.Appearance.Options.UseFont = true;
-            this.btnTamam.Location = new System.Drawing.Point(12, 519);
+            this.btnTamam.Location = new System.Drawing.Point(24, 511);
             this.btnTamam.Margin = new System.Windows.Forms.Padding(6);
             this.btnTamam.Name = "btnTamam";
-            this.btnTamam.Size = new System.Drawing.Size(228, 115);
+            this.btnTamam.Size = new System.Drawing.Size(217, 111);
             this.btnTamam.StyleController = this.frmGiderCikisilayoutControl1ConvertedLayout;
             this.btnTamam.TabIndex = 5;
             this.btnTamam.Text = "Tamam";
@@ -129,10 +129,10 @@
             // 
             this.btnDuzelt.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnDuzelt.Appearance.Options.UseFont = true;
-            this.btnDuzelt.Location = new System.Drawing.Point(244, 519);
+            this.btnDuzelt.Location = new System.Drawing.Point(249, 511);
             this.btnDuzelt.Margin = new System.Windows.Forms.Padding(6);
             this.btnDuzelt.Name = "btnDuzelt";
-            this.btnDuzelt.Size = new System.Drawing.Size(229, 115);
+            this.btnDuzelt.Size = new System.Drawing.Size(218, 111);
             this.btnDuzelt.StyleController = this.frmGiderCikisilayoutControl1ConvertedLayout;
             this.btnDuzelt.TabIndex = 5;
             this.btnDuzelt.Text = "Düzelt";
@@ -142,10 +142,10 @@
             // 
             this.btnEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnEkle.Appearance.Options.UseFont = true;
-            this.btnEkle.Location = new System.Drawing.Point(477, 519);
+            this.btnEkle.Location = new System.Drawing.Point(475, 511);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(6);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(229, 115);
+            this.btnEkle.Size = new System.Drawing.Size(219, 111);
             this.btnEkle.StyleController = this.frmGiderCikisilayoutControl1ConvertedLayout;
             this.btnEkle.TabIndex = 5;
             this.btnEkle.Text = "Ekle";
@@ -172,7 +172,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(108, 59);
             this.layoutControlItem1.Name = "gridControl1item";
-            this.layoutControlItem1.Size = new System.Drawing.Size(698, 507);
+            this.layoutControlItem1.Size = new System.Drawing.Size(678, 487);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Giderler";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
@@ -181,11 +181,11 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnDuzelt;
-            this.layoutControlItem2.Location = new System.Drawing.Point(232, 507);
+            this.layoutControlItem2.Location = new System.Drawing.Point(225, 487);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 119);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(107, 119);
             this.layoutControlItem2.Name = "btnDuzeltitem";
-            this.layoutControlItem2.Size = new System.Drawing.Size(233, 119);
+            this.layoutControlItem2.Size = new System.Drawing.Size(226, 119);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -193,11 +193,11 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnEkle;
-            this.layoutControlItem3.Location = new System.Drawing.Point(465, 507);
+            this.layoutControlItem3.Location = new System.Drawing.Point(451, 487);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 119);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(78, 119);
             this.layoutControlItem3.Name = "btnEkleitem";
-            this.layoutControlItem3.Size = new System.Drawing.Size(233, 119);
+            this.layoutControlItem3.Size = new System.Drawing.Size(227, 119);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -205,11 +205,11 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnTamam;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 507);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 487);
             this.layoutControlItem4.MaxSize = new System.Drawing.Size(0, 119);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(122, 119);
             this.layoutControlItem4.Name = "btnTamamitem";
-            this.layoutControlItem4.Size = new System.Drawing.Size(232, 119);
+            this.layoutControlItem4.Size = new System.Drawing.Size(225, 119);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;

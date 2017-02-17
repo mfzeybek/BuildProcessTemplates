@@ -60,6 +60,10 @@ namespace KasaSatis
         private void btnZRaporuAl_Click(object sender, EventArgs e)
         {
 
+            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+            Rapor.RaporKaydet(SqlConnections.GetBaglanti(), TrGenel);
+            TrGenel.Commit();
+
         }
 
         private void memoEdit1_Click(object sender, EventArgs e)

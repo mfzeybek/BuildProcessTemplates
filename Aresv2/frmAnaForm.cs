@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using System.Data.SqlClient;
+using System.IO;
 
 
 namespace Aresv2
@@ -362,7 +363,7 @@ namespace Aresv2
                 }
 
 
-                this.Text = SqlConnections._DB + " - " + " Versiyon = Beta 11 - " + SqlConnections._Server;
+                this.Text = SqlConnections._DB + " - " + " Versiyon = Beta 12 - " + SqlConnections._Server;
 
                 if (clsTablolar.Ayarlar.csYetkiler.AjandaGorme == true)
                 {
@@ -1006,6 +1007,33 @@ namespace Aresv2
         {
             n11.frmN11ProductList frm = new n11.frmN11ProductList();
             FormuAc2(frm);
+        }
+
+        private void barButtonItem47_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                //foreach (System.Diagnostics.Process proc in System.Diagnostics.Process.GetProcessesByName("TeraziSatisBaslat2"))
+                //{
+                //    proc.Kill();
+                //}
+
+                if (!Directory.Exists(Application.StartupPath + @"\Guncelleme"))
+                {
+                    Directory.CreateDirectory(Application.StartupPath + @"\Guncelleme");
+                }
+
+                File.Copy(Application.StartupPath + @"\TeraziSatisGuncelleme.exe", Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.exe", true);
+                File.Copy(Application.StartupPath + @"\TeraziSatisGuncelleme.pdb", Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.pdb", true);
+
+
+                System.Diagnostics.Process.Start(Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.exe", "1");
+                Application.Exit();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

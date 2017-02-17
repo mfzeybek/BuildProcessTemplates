@@ -794,6 +794,13 @@ WHERE  (S.StokID = @StokID)", SqlConnections.GetBaglanti())
             }
         }
 
+        private void btnStokSil_Click_1(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show(gvSayim.GetFocusedRowCellValue(colStokAdi).ToString() + " Silmek İstediğinden emin misin", " silerim haaa", MessageBoxButtons.YesNo))
+            {
+                gvSayim.DeleteSelectedRows();
+            }
+        }
         /*Miktar1 = Sayım Miktarı  */
     }
 }

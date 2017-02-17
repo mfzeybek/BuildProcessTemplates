@@ -39,8 +39,18 @@ namespace Aresv2.Terazi
 
         private void frmTeraziStokGruplarininStokButonlari_Load(object sender, EventArgs e)
         {
+
             Stoklar.TeraziStokGruplari_Getir(SqlConnections.GetBaglanti(), TrGenel, _TeraziStokGrupTanimID);
             gcStokButonlari.DataSource = Stoklar.dt;
+
+            if (clsTablolar.Ayarlar.csYetkiler.StokKartGorme)
+            {
+                btnStokKartiAc.Visible = true;
+            }
+            else
+            {
+                btnStokKartiAc.Visible = false;
+            }
         }
 
 
@@ -58,6 +68,11 @@ namespace Aresv2.Terazi
             if (Stoklar.dt.Select("StokID = '" + StokID.ToString() + "'").Length > 0)
             {
                 MessageBox.Show("Stok Daha Önce eklenmiş");
+
+
+                int dtRowIndex = Stoklar.dt.Rows.IndexOf(Stoklar.dt.Select("StokID = '" + StokID.ToString() + "'")[0]);
+                int RowHandle = gvStokButonlari.GetRowHandle(dtRowIndex);
+                gvStokButonlari.FocusedRowHandle = RowHandle;
                 return;
             }
 
@@ -75,6 +90,8 @@ namespace Aresv2.Terazi
             Stoklar.dt.Rows[Stoklar.dt.Rows.Count - 1]["SiraNu"] = gvStokButonlari.RowCount;
             Stoklar.dt.Rows[Stoklar.dt.Rows.Count - 1]["Aktif"] = true;
             Stoklar.dt.Rows[Stoklar.dt.Rows.Count - 1]["ButonTipi"] = 1;
+
+            gvStokButonlari.FocusedRowHandle = gvStokButonlari.RowCount - 1;
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -147,6 +164,13 @@ namespace Aresv2.Terazi
             {
                 gvStokButonlari.SetRowCellValue(gvStokButonlari.GetVisibleIndex(i), colSiraNu, gvStokButonlari.GetVisibleIndex(i) + 1);
             }
+        }
+
+        private void btnStokKartiAc_Click(object sender, EventArgs e)
+        {
+            Stok.frmStokDetay frm = new Stok.frmStokDetay((int)gvStokButonlari.GetFocusedRowCellValue(colStokID));
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

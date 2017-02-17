@@ -30,6 +30,19 @@ namespace TeraziSatisGuncelleme
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text = "3";
+
+            if (AhandaGuncellenecekProgram == GuncellenecekProgram.Ares)
+            {
+                label1.Text = "Güncellenecek Program Ares";
+            }
+            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Kasa)
+            {
+                label1.Text = "Güncellenecek Program Kasa";
+            }
+            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Terazi)
+            {
+                label1.Text = "Güncellenecek Program Terazi";
+            }
         }
         // burada devexpressten bişi kullanma
 
@@ -106,7 +119,8 @@ namespace TeraziSatisGuncelleme
                         && Path.GetFileName(file) != "TeraziSatis.vshost.exe"
                         && Path.GetFileName(file) != "Aresv2.exe.config"
                         && Path.GetFileName(file) != "KasaSatis.exe.config"
-                        ) // son parametre aslında olmasada olur
+                        && Path.GetFileName(file) != "YaziciAyarlari.sqlite"
+                        )
                         {
                             File.Copy(file, TargetFolderPath + Path.GetFileName(file), true);
                             KopyalananDosyaSayisi++;
@@ -128,33 +142,23 @@ namespace TeraziSatisGuncelleme
         {
             if (AhandaGuncellenecekProgram == GuncellenecekProgram.Ares)
             {
-                MessageBox.Show("ahanda ares");
-                return;
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Kasa\Debug\", Directory.GetParent(Application.StartupPath).FullName);
+                MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
+                System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\Aresv2.exe");
             }
             else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Kasa)
             {
-                MessageBox.Show("ahanda kasa");
-                MessageBox.Show("ahanda terazi");
                 CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Kasa\Debug\", Directory.GetParent(Application.StartupPath).FullName);
                 MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
                 System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\KasaSatis.exe");
-
             }
             else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Terazi)
             {
-                MessageBox.Show("ahanda terazi");
                 CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Debug\", Directory.GetParent(Application.StartupPath).FullName);
                 MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
                 System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatisBaslat2.exe");
             }
-
-
-
-
             label1.Text = "Güncelleme Tamamlandi";
-
-
-
             Close();
             Application.Exit();
         }

@@ -383,6 +383,10 @@ s.AlisKdv, s.SatisKdv, s.Barkod, sb.BirimAdi, s.RafYeriAciklama, s.UrunTanitimda
 s.HemenAlID, s.HemenAlSira, s.StokSayimGrubuID, s.OlmasiGerekenMiktar, s.StokTipi
 , isnull(Girisler.Girisler, 0.0000) GirenMiktar , isnull(Cikislar.Cikislar, 0.000) CikanMiktar, isnull(Girisler,0.0000) - isnull(Cikislar, 0.000) as KalanMiktar  ";
 
+            if (_SayimID != -1)
+            {
+                da.SelectCommand.CommandText += ", (select Miktar1 from SayimDetay where SayimDetay.StokID = s.StokID and SayimDetay.SayimID = @SayimID) as SayimMiktari";
+            }
 
             //for (int i = 0; i < FiyatTanimlariID().Count(); i++)
             //{//-- top 1 denmesinin amacı gerçi program aynı stok a aynı fiyat tanımını 2 kez verdirttirmeyecek ama top 1 verilirsede top 1 ile sadece tek bir fiyat gelmesini sağlamış olucaz
@@ -650,8 +654,8 @@ WHERE     (s.Silindi = 'false') ";
             }
             if (_SayimID != -1)
             {
-                //da.SelectCommand.CommandText += " and SayimDetay.SayimID = @SayimID ";
-                //da.SelectCommand.Parameters.Add("@SayimID", SqlDbType.Int).Value = _SayimID;
+                da.SelectCommand.CommandText += " and s.StokID in (select StokID from SayimDetay where SayimDetay.SayimID = @SayimID )";
+                da.SelectCommand.Parameters.Add("@SayimID", SqlDbType.Int).Value = _SayimID;
             }
             if (_N11Entegrasyonu != -1)
             {

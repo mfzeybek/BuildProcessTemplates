@@ -14,7 +14,7 @@
       <Value Profile="(Default)">Data Source=192.168.2.3;Initial Catalog=ARES;User ID=sa;Password=1;Pooling=True</Value>
     </Setting>
     <Setting Name="TeraziBagNok" Type="System.String" Scope="User">
-      <Value Profile="(Default)">COM6</Value>
+      <Value Profile="(Default)">COM8</Value>
     </Setting>
     <Setting Name="DemoMod" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -23,7 +23,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="TeraziModel" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">3</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="Yazici1" Type="System.String" Scope="User">
       <Value Profile="(Default)">Aclas Printer</Value>
