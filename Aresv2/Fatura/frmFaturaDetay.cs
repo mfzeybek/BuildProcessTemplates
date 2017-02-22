@@ -660,7 +660,6 @@ namespace Aresv2.Fatura
                     frmHataBildir.ShowDialog();
                 }
             }
-
         }
 
         #endregion

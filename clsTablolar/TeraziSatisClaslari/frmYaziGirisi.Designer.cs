@@ -39,18 +39,20 @@
             // 
             // memoEdit1
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(7, 76);
+            this.memoEdit1.Location = new System.Drawing.Point(12, 119);
+            this.memoEdit1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.memoEdit1.Properties.Appearance.Options.UseFont = true;
-            this.memoEdit1.Size = new System.Drawing.Size(741, 208);
+            this.memoEdit1.Size = new System.Drawing.Size(1270, 325);
             this.memoEdit1.TabIndex = 0;
             // 
             // btnVazgec
             // 
-            this.btnVazgec.Location = new System.Drawing.Point(336, 290);
+            this.btnVazgec.Location = new System.Drawing.Point(576, 453);
+            this.btnVazgec.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnVazgec.Name = "btnVazgec";
-            this.btnVazgec.Size = new System.Drawing.Size(162, 60);
+            this.btnVazgec.Size = new System.Drawing.Size(278, 94);
             this.btnVazgec.TabIndex = 1;
             this.btnVazgec.Text = "Vazgeç";
             this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
@@ -58,46 +60,51 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Enabled = false;
-            this.labelControl1.Location = new System.Drawing.Point(7, 3);
+            this.labelControl1.Location = new System.Drawing.Point(12, 5);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(598, 67);
+            this.labelControl1.Size = new System.Drawing.Size(1025, 105);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "labelControl1";
             // 
             // btnTamam
             // 
-            this.btnTamam.Location = new System.Drawing.Point(7, 290);
+            this.btnTamam.Location = new System.Drawing.Point(12, 453);
+            this.btnTamam.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnTamam.Name = "btnTamam";
-            this.btnTamam.Size = new System.Drawing.Size(253, 60);
+            this.btnTamam.Size = new System.Drawing.Size(434, 94);
             this.btnTamam.TabIndex = 1;
             this.btnTamam.Text = "Tamam";
             this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
             // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(574, 290);
+            this.btnTemizle.Location = new System.Drawing.Point(984, 453);
+            this.btnTemizle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(173, 60);
+            this.btnTemizle.Size = new System.Drawing.Size(297, 94);
             this.btnTemizle.TabIndex = 3;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnKlavyeyiAc
             // 
-            this.btnKlavyeyiAc.Location = new System.Drawing.Point(611, 12);
+            this.btnKlavyeyiAc.Location = new System.Drawing.Point(1047, 19);
+            this.btnKlavyeyiAc.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnKlavyeyiAc.Name = "btnKlavyeyiAc";
-            this.btnKlavyeyiAc.Size = new System.Drawing.Size(130, 53);
+            this.btnKlavyeyiAc.Size = new System.Drawing.Size(223, 83);
             this.btnKlavyeyiAc.TabIndex = 4;
             this.btnKlavyeyiAc.Text = "Klavyeyi Aç";
             this.btnKlavyeyiAc.Click += new System.EventHandler(this.btnKlavyeyiAc_Click);
             // 
             // frmYaziGirisi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 358);
+            this.ClientSize = new System.Drawing.Size(1291, 559);
             this.ControlBox = false;
             this.Controls.Add(this.btnKlavyeyiAc);
             this.Controls.Add(this.btnTemizle);
@@ -105,6 +112,7 @@
             this.Controls.Add(this.btnVazgec);
             this.Controls.Add(this.btnTamam);
             this.Controls.Add(this.memoEdit1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmYaziGirisi";
             this.Text = "Yaz Hamısına";
             this.Load += new System.EventHandler(this.frmYaziGirisi_Load);

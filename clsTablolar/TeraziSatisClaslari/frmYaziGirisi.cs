@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Management;
+using System.Linq;
+
 
 namespace clsTablolar.TeraziSatisClaslari
 {
@@ -55,12 +58,28 @@ namespace clsTablolar.TeraziSatisClaslari
             btnKlavyeyiAc_Click(null, null);
         }
 
+        //public static string GetOSFriendlyName()
+        //{
+        //    string result = string.Empty;
+        //    System.Management.Instrumentation.
+        //    ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem");
+        //    foreach (ManagementObject os in searcher.Get())
+        //    {
+        //        result = os["Caption"].ToString();
+        //        break;
+        //    }
+        //    return result;
+        //}
 
         private void btnKlavyeyiAc_Click(object sender, EventArgs e)
         {
-            if (Environment.OSVersion.VersionString != "" )
+            if (Environment.OSVersion.VersionString != "")
             {
-                labelControl1.Text = Environment.OSVersion.VersionString;
+
+                //labelControl1.Text = ;
+
+                System.OperatingSystem osInfo = System.Environment.OSVersion;
+                labelControl1.Text = osInfo.Platform.ToString();
             }
 
             var trayWnd = FindWindow("Shell_TrayWnd", null);

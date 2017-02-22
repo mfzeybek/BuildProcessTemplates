@@ -72,7 +72,7 @@ namespace TeraziSatis
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread.CurrentThread.Name = "TeraziFormuAnaThread";
+             Thread.CurrentThread.Name = "TeraziFormuAnaThread";
 
             LogLar = new csTeraziLogs();
 
