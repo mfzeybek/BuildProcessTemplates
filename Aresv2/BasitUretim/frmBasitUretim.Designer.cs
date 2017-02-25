@@ -69,6 +69,9 @@
             this.btnReceteAc = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiyatTanim = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtUretilenStokAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -121,7 +124,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1009, 452);
+            this.gridControl1.Size = new System.Drawing.Size(894, 378);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -286,7 +289,7 @@
             // btnStokEkle
             // 
             this.btnStokEkle.Location = new System.Drawing.Point(11, 176);
-            this.btnStokEkle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStokEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnStokEkle.Name = "btnStokEkle";
             this.btnStokEkle.Size = new System.Drawing.Size(38, 34);
             this.btnStokEkle.TabIndex = 9;
@@ -296,7 +299,7 @@
             // btnStokCikar
             // 
             this.btnStokCikar.Location = new System.Drawing.Point(11, 217);
-            this.btnStokCikar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStokCikar.Margin = new System.Windows.Forms.Padding(2);
             this.btnStokCikar.Name = "btnStokCikar";
             this.btnStokCikar.Size = new System.Drawing.Size(38, 34);
             this.btnStokCikar.TabIndex = 9;
@@ -306,7 +309,7 @@
             // btnStokAc
             // 
             this.btnStokAc.Location = new System.Drawing.Point(11, 260);
-            this.btnStokAc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStokAc.Margin = new System.Windows.Forms.Padding(2);
             this.btnStokAc.Name = "btnStokAc";
             this.btnStokAc.Size = new System.Drawing.Size(38, 34);
             this.btnStokAc.TabIndex = 9;
@@ -353,7 +356,7 @@
             // 
             this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnKaydet.Location = new System.Drawing.Point(54, 631);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(255, 34);
             this.btnKaydet.TabIndex = 11;
@@ -364,7 +367,7 @@
             // 
             this.btnVazgec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVazgec.Location = new System.Drawing.Point(341, 631);
-            this.btnVazgec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVazgec.Margin = new System.Windows.Forms.Padding(2);
             this.btnVazgec.Name = "btnVazgec";
             this.btnVazgec.Size = new System.Drawing.Size(75, 34);
             this.btnVazgec.TabIndex = 11;
@@ -374,7 +377,7 @@
             // 
             this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSil.Location = new System.Drawing.Point(465, 631);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(2);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 34);
             this.btnSil.TabIndex = 11;
@@ -464,12 +467,43 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(766, 9);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelControl8.Location = new System.Drawing.Point(640, 8);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(255, 13);
             this.labelControl8.TabIndex = 17;
             this.labelControl8.Text = "Üretim Yapıldığında Maliyeti Stokun Alış Fiyatına Yazılır";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.simpleButton1.Location = new System.Drawing.Point(54, 566);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(255, 34);
+            this.simpleButton1.TabIndex = 11;
+            this.simpleButton1.Text = "Kaydet";
+            this.simpleButton1.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.simpleButton3.Location = new System.Drawing.Point(341, 566);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 34);
+            this.simpleButton3.TabIndex = 11;
+            this.simpleButton3.Text = "Vazgeç";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.simpleButton4.Location = new System.Drawing.Point(465, 566);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(75, 34);
+            this.simpleButton4.TabIndex = 11;
+            this.simpleButton4.Text = "Sil";
             // 
             // frmBasitUretim
             // 
@@ -483,8 +517,11 @@
             this.Controls.Add(this.txtAciklama);
             this.Controls.Add(this.txtCariTanim);
             this.Controls.Add(this.btnCariSec);
+            this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.btnVazgec);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.lkpKullanilanFiyatTanimi);
             this.Controls.Add(this.btnStokAc);
@@ -567,5 +604,8 @@
         private DevExpress.XtraEditors.SimpleButton btnReceteAc;
         private DevExpress.XtraEditors.SimpleButton btnFiyatTanim;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }

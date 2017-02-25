@@ -72,7 +72,7 @@ namespace TeraziSatis
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             Thread.CurrentThread.Name = "TeraziFormuAnaThread";
+            Thread.CurrentThread.Name = "TeraziFormuAnaThread";
 
             LogLar = new csTeraziLogs();
 
@@ -473,6 +473,7 @@ namespace TeraziSatis
             txtFaturaNo.DataBindings.Clear();
             txtFaturaTutari.DataBindings.Clear();
             txtIndirimMiktari.DataBindings.Clear();
+            memoCariTanim.DataBindings.Clear();
 
 
 
@@ -480,6 +481,7 @@ namespace TeraziSatis
             txtMiktari.DataBindings.Add("EditValue", gcSatisHareketleri.DataSource, "Miktar", false, DataSourceUpdateMode.OnValidation);
             txtKdvDahilFiyati.DataBindings.Add("EditValue", gcSatisHareketleri.DataSource, "KdvDahilFiyat");
             txtTutari.DataBindings.Add("EditValue", gcSatisHareketleri.DataSource, "KdvDahilToplam");
+            memoCariTanim.DataBindings.Add("EditValue", gcSatislar.DataSource, "CariTanim");
             txtFireMiktari.DataBindings.Add("EditValue", gcSatisHareketleri.DataSource, "FireMiktari");
             //txtIndirimMiktari.DataBindings.Add("EditVAlue", )
 
@@ -2833,6 +2835,31 @@ ne hatısı diye sorarsam hamısına hatası de
         }
 
         private void labelControl11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTutari_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
         {
 
         }

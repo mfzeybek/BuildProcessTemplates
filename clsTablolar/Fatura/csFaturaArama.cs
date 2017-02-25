@@ -21,10 +21,24 @@ namespace clsTablolar.Fatura
         /// 1 Odenmedi \n
         /// 2 Odendi
         /// </summary>
-        private Int32 _OdendiMi;
+        private OdememisMi _OdendiMi;
+        private HizliSatistaGozukme _HizliSatistaGozukecekMi;
+
+        public enum HizliSatistaGozukme
+        {
+            Hepsi = 1,
+            Gozukenler = 2,
+            Gozukmeyenler = 3
+        }
 
 
-
+        public enum OdememisMi
+        {
+            Hepsi = -1,
+            Odenmedi = 0,
+            Odendi = 1,
+            KismiOdeme = 2
+        }
 
         public int FaturaAramaID
         {
@@ -86,7 +100,7 @@ namespace clsTablolar.Fatura
         /// 1 Odenmedi
         /// 2 Odendi
         /// </summary>
-        public Int32 OdendiMi
+        public OdememisMi OdendiMi
         {
             get
             {
@@ -96,6 +110,19 @@ namespace clsTablolar.Fatura
             set
             {
                 _OdendiMi = value;
+            }
+        }
+
+        public HizliSatistaGozukme HizliSatistaGozukecekMi
+        {
+            get
+            {
+                return _HizliSatistaGozukecekMi;
+            }
+
+            set
+            {
+                _HizliSatistaGozukecekMi = value;
             }
         }
 
@@ -115,7 +142,8 @@ namespace clsTablolar.Fatura
                 _CariKodu = string.Empty;
                 _Tarih1 = DateTime.MinValue;
                 _Tarih2 = DateTime.MinValue;
-                _OdendiMi = 0;
+                _OdendiMi = OdememisMi.Hepsi;
+                _HizliSatistaGozukecekMi = HizliSatistaGozukme.Hepsi;
             }
         }
         public DataTable FaturaAraListe(SqlConnection Baglanti, SqlTransaction Tr)
@@ -138,7 +166,7 @@ END AS FaturaTipi, dbo.Fatura.CariID, dbo.Cari.CariKod, dbo.Cari.CariTanim, dbo.
 dbo.Fatura.ToplamKdv, dbo.Fatura.Vadesi, fatura.CariTanim as FaturaCariTanim, 
 CASE WHEN dbo.Fatura.Iptal =1 THEN 'İPTAL EDİLDİ' ELSE '' end AS Iptal , CASE WHEN dbo.Fatura.SilindiMi =1 THEN 'SİLİNDİ' ELSE '' END AS SilindiMi, dbo.Fatura.Aciklama
 FROM         dbo.Fatura INNER JOIN dbo.Cari ON dbo.Fatura.CariID = dbo.Cari.CariID
-WHERE     (1 = 1)
+WHERE     (1 = 1 and Fatura.SilindiMi = 0)
 ";
 
                 da_FaturaListesi.SelectCommand = new SqlCommand("", Baglanti, Tr);
@@ -199,15 +227,41 @@ WHERE     (1 = 1)
                     WhereCumlesi += " and Fatura.FaturaTarihi <= @Tarih2";
                     da_FaturaListesi.SelectCommand.Parameters.Add("@Tarih2", SqlDbType.DateTime).Value = _Tarih2.AddDays(1);
                 }
-                if (_OdendiMi != 0)
+                if (_OdendiMi != OdememisMi.Hepsi)
                 {
-                    WhereCumlesi += " and Fatura.OdendiMi = @OdendiMi ";
-                    if (_OdendiMi == 1)
-                        da_FaturaListesi.SelectCommand.Parameters.Add("@OdendiMi", SqlDbType.Bit).Value = 0;
-                    else
-                        da_FaturaListesi.SelectCommand.Parameters.Add("@OdendiMi", SqlDbType.Bit).Value = 1;
-
+                    switch (_OdendiMi)
+                    {
+                        case OdememisMi.Odenmedi:
+                            WhereCumlesi += " and (Fatura.FaturaTutari = [dbo].FaturaBakiyesiniGetir(Fatura.FaturaID)) ";
+                            break;
+                        case OdememisMi.Odendi:
+                            WhereCumlesi += " and ([dbo].FaturaBakiyesiniGetir(Fatura.FaturaID) = 0 )";
+                            break;
+                        case OdememisMi.KismiOdeme:
+                            WhereCumlesi += " and (Fatura.FaturaTutari > [dbo].FaturaBakiyesiniGetir(Fatura.FaturaID))  and ([dbo].FaturaBakiyesiniGetir(Fatura.FaturaID) != 0)";
+                            break;
+                        default:
+                            break;
+                    }
                 }
+
+                if (_HizliSatistaGozukecekMi != HizliSatistaGozukme.Hepsi)
+                {
+                    switch (_HizliSatistaGozukecekMi)
+                    {
+                        case HizliSatistaGozukme.Gozukenler:
+                            WhereCumlesi += " and fatura.HizliSatistaGozukecekMi = 1 ";
+                            break;
+                        case HizliSatistaGozukme.Gozukmeyenler:
+                            WhereCumlesi += " and fatura.HizliSatistaGozukecekMi = 0 ";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+
+
 
                 da_FaturaListesi.SelectCommand.CommandText = WhereCumlesi;
 

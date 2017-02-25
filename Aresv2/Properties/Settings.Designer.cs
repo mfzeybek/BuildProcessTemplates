@@ -26,7 +26,7 @@ namespace Aresv2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.2.3;Initial Catalog=ARES;User ID=sa;Password=1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.2.71;Initial Catalog=PDKS;User ID=sa;Password=1")]
         public string DBConStrPDKS {
             get {
                 return ((string)(this["DBConStrPDKS"]));

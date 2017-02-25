@@ -291,7 +291,8 @@ namespace Aresv2.Fatura
                 lkpKullanilanFiyatTanimi.DataBindings.Clear();
                 lkpFaturaGrubu.DataBindings.Clear();
                 txtFaturaBarkodu.DataBindings.Clear();
-
+                checkEdit1.DataBindings.Clear();
+                checkEdit2.DataBindings.Clear();
                 #endregion
 
 
@@ -322,7 +323,6 @@ namespace Aresv2.Fatura
 
                 memoNot.DataBindings.Add("EditValue", Fatura, "Aciklama", true, DataSourceUpdateMode.OnPropertyChanged);
 
-
                 lkpDepo.DataBindings.Add("EditValue", Fatura, "DepoID", true, DataSourceUpdateMode.OnPropertyChanged);
                 lkpDepo.Properties.DataSource = Fatura.Depo.dt_Depo;
                 lkpDepo.Properties.PopulateColumns();
@@ -340,6 +340,8 @@ namespace Aresv2.Fatura
                 lkpFaturaGrubu.DataBindings.Add("EditValue", Fatura, "FaturaGrupID", true, DataSourceUpdateMode.OnPropertyChanged);
 
                 txtFaturaBarkodu.DataBindings.Add("EditValue", Fatura, "FaturaBarkod", true, DataSourceUpdateMode.OnPropertyChanged);
+                checkEdit1.DataBindings.Add("Checked", Fatura, "HizliSatistaGozukecekMi", true, DataSourceUpdateMode.OnPropertyChanged);
+                checkEdit2.DataBindings.Add("Checked", Fatura, "HizliSatistaDegisiklikYapilmasinaIzniVarMi", true, DataSourceUpdateMode.OnPropertyChanged);
             }
             catch (Exception hata)
             {
@@ -643,6 +645,12 @@ namespace Aresv2.Fatura
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (gvOdemeleri.RowCount != 0)
+            {
+                MessageBox.Show("Odemesi Olan Fatura silinemez.");
+                return;
+            }
+
             if (DialogResult.Yes == MessageBox.Show("Dikkat silerim hamısına", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 try
@@ -1145,6 +1153,7 @@ namespace Aresv2.Fatura
                 Cari.CariHr.frmCariHrKarti frm = new Cari.CariHr.frmCariHrKarti((Cari.CariHr.frmCariHrKarti.VerilenID_Nerenin)Fatura.FaturaTipi, Fatura.FaturaID, Fatura.CariID);
                 if (DialogResult.Yes == frm.ShowDialog())
                 {
+                    KapaliFaturaHareketleriniGetir();
                     // Bu işlemler CariKarttanYapılacak, Tabi kasadan sıcak satışta nasıl yapılacak acaba
                     //KapaliFaturaBilgileri.YeniOdeme(Fatura.FaturaID, frm._CariHrID, IslemTipi.CariHareket);
                 }
@@ -1173,14 +1182,6 @@ namespace Aresv2.Fatura
             //trGenel = SqlConnections.GetBaglanti().BeginTransaction();
             //FaturaOdemeleri.Getir(SqlConnections.GetBaglanti(), trGenel, Fatura.FaturaID);
             //trGenel.Commit();
-
-        }
-
-
-
-
-        private void xtraTabPage7_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -1279,11 +1280,6 @@ order by fatura.FaturaTarihi desc", SqlConnections.GetBaglanti()))
 
         }
 
-        private void xtraTabControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textDegisirse_EditValueChanged(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
 
@@ -1297,6 +1293,25 @@ order by fatura.FaturaTarihi desc", SqlConnections.GetBaglanti()))
             }
             else
                 layoutControlGroup7.Expanded = true;
+        }
+
+        private void checkEdit3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            using (Cari.CariHr.frmCariHrKarti frm = new Cari.CariHr.frmCariHrKarti(Convert.ToInt32(gvOdemeleri.GetFocusedRowCellValue("CariHrID"))))
+            {
+                if (frm.ShowDialog() == DialogResult.Yes)
+                    KapaliFaturaHareketleriniGetir();
+            }
         }
     }
 }

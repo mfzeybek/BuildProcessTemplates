@@ -363,7 +363,7 @@ namespace Aresv2
                 }
 
 
-                this.Text = SqlConnections._DB + " - " + " Versiyon = Beta 12 - " + SqlConnections._Server;
+                this.Text = SqlConnections._DB + " - " + " Versiyon = Beta 15 - " + SqlConnections._Server;
 
                 if (clsTablolar.Ayarlar.csYetkiler.AjandaGorme == true)
                 {

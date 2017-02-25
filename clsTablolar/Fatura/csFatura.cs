@@ -46,9 +46,11 @@ namespace clsTablolar.Fatura
         private decimal _FaturaTutari;
         private int _KullanilanFiyatTanimID;
         private int _FaturaGrupID;
-        private bool _OdendiMi;
+        private bool _OdendiMi; // bu silinecek odendi mi diye bir kolon olmayacak artık
         private string _FaturaBarkod;
 
+        private bool _HizliSatistaGozukecekMi;
+        private bool _HizliSatistaDegisiklikYapilmasinaIzniVarMi;
 
 
 
@@ -260,6 +262,32 @@ namespace clsTablolar.Fatura
             }
         }
 
+        public bool HizliSatistaGozukecekMi
+        {
+            get
+            {
+                return _HizliSatistaGozukecekMi;
+            }
+
+            set
+            {
+                _HizliSatistaGozukecekMi = value;
+            }
+        }
+
+        public bool HizliSatistaDegisiklikYapilmasinaIzniVarMi
+        {
+            get
+            {
+                return _HizliSatistaDegisiklikYapilmasinaIzniVarMi;
+            }
+
+            set
+            {
+                _HizliSatistaDegisiklikYapilmasinaIzniVarMi = value;
+            }
+        }
+
 
 
         #endregion
@@ -321,6 +349,8 @@ namespace clsTablolar.Fatura
             _FaturaGrupID = -1;
             _FaturaBarkod = string.Empty;
             _OdendiMi = false;
+            _HizliSatistaGozukecekMi = false;
+            _HizliSatistaDegisiklikYapilmasinaIzniVarMi = false;
 
             Depo = new csDepo(Baglanti, Tr);
             SatisPersoneli = new Personel.csSatistaGorevliPersonel();
@@ -336,7 +366,7 @@ namespace clsTablolar.Fatura
                dbo.Fatura.Ilce, dbo.Fatura.FaturaNo, dbo.Fatura.FaturaTarihi, dbo.Fatura.Vadesi, dbo.Fatura.Iptal, dbo.Fatura.SilindiMi, dbo.Fatura.KayitTarihi, 
                dbo.Fatura.KaydedenID, dbo.Fatura.DegismeTarihi, dbo.Fatura.DegistirenID, dbo.Fatura.Aciklama,  dbo.Fatura.ToplamIndirim, 
                dbo.Fatura.ToplamKdv, dbo.Fatura.DuzenlemeTarihi, dbo.Fatura.DepoID, dbo.Fatura.SatisElemaniID, dbo.Fatura.CariIskontoToplami, 
-               dbo.Fatura.StokIskontoToplami, dbo.Fatura.Toplam_Iskontosuz_Kdvsiz, dbo.Fatura.FaturaTutari, dbo.Fatura.IskontoluToplam, dbo.Fatura.KullanilanFiyatTanimID, Fatura.FaturaGrupID, Fatura.FaturaBarkod
+               dbo.Fatura.StokIskontoToplami, dbo.Fatura.Toplam_Iskontosuz_Kdvsiz, dbo.Fatura.FaturaTutari, dbo.Fatura.IskontoluToplam, dbo.Fatura.KullanilanFiyatTanimID, Fatura.FaturaGrupID, Fatura.FaturaBarkod, Fatura.HizliSatistaGozukecekMi, Fatura.HizliSatistaDegisiklikYapilmasinaIzniVarMi
 FROM  dbo.Fatura INNER JOIN
                dbo.Cari ON dbo.Fatura.CariID = dbo.Cari.CariID
 WHERE     (dbo.Fatura.FaturaID = @FaturaID) ";
@@ -406,6 +436,8 @@ WHERE     (dbo.Fatura.FaturaID = @FaturaID) ";
 
                         _FaturaGrupID = Convert.ToInt32(drGenel["FaturaGrupID"]);
                         _FaturaBarkod = drGenel["FaturaBarkod"].ToString();
+                        _HizliSatistaGozukecekMi = (bool)drGenel["HizliSatistaGozukecekMi"];
+                        _HizliSatistaDegisiklikYapilmasinaIzniVarMi = (bool)drGenel["HizliSatistaDegisiklikYapilmasinaIzniVarMi"];
                     }
                 }
             }
@@ -427,11 +459,11 @@ WHERE     (dbo.Fatura.FaturaID = @FaturaID) ";
                 cmdGenel = new SqlCommand(@"insert into Fatura 
 ( FaturaTipi, FaturaTarihi, DuzenlemeTarihi, FaturaNo, CariID, CariKod, CariTanim, VergiDairesi, VergiNo, Adres, Il, Ilce, Vadesi,
 Iptal, SilindiMi, Aciklama, KaydedenID, KayitTarihi, DepoID, SatisElemaniID, Toplam_Iskontosuz_Kdvsiz, 
-CariIskontoToplami, StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, FaturaTutari, KullanilanFiyatTanimID, FaturaGrupID, OdendiMi, FaturaBarkod )
+CariIskontoToplami, StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, FaturaTutari, KullanilanFiyatTanimID, FaturaGrupID, OdendiMi, FaturaBarkod, HizliSatistaGozukecekMi , HizliSatistaDegisiklikYapilmasinaIzniVarMi)
 values 
 ( @FaturaTipi, @FaturaTarihi, @DuzenlemeTarihi, @FaturaNo, @CariID, @CariKod, @CariTanim, @VergiDairesi, @VergiNo, @Adres, 
 @Il, @Ilce, @Vadesi, @Iptal, @SilindiMi, @Aciklama, @KaydedenID, @KayitTarihi, @DepoID, @SatisElemaniID, 
-@Toplam_Iskontosuz_Kdvsiz, @CariIskontoToplami, @StokIskontoToplami, @ToplamIndirim, @ToplamKdv, @IskontoluToplam, @FaturaTutari, @KullanilanFiyatTanimID, @FaturaGrupID, @OdendiMi, @FaturaBarkod) 
+@Toplam_Iskontosuz_Kdvsiz, @CariIskontoToplami, @StokIskontoToplami, @ToplamIndirim, @ToplamKdv, @IskontoluToplam, @FaturaTutari, @KullanilanFiyatTanimID, @FaturaGrupID, @OdendiMi, @FaturaBarkod, @HizliSatistaGozukecekMi , @HizliSatistaDegisiklikYapilmasinaIzniVarMi) 
 set @YeniID = SCOPE_IDENTITY()", Baglanti, Tr);
 
                 cmdGenel.Parameters.Add("@KayitTarihi", SqlDbType.DateTime).Value = DateTime.Now;
@@ -447,7 +479,7 @@ VergiDairesi = @VergiDairesi, VergiNo = @VergiNo, Adres = @Adres, Il = @Il, Ilce
 SilindiMi = @SilindiMi, Aciklama = @Aciklama, DegistirenID = @DegistirenID,
 DegismeTarihi = @DegismeTarihi, DepoID = @DepoID, SatisElemaniID = @SatisElemaniID, Toplam_Iskontosuz_Kdvsiz = @Toplam_Iskontosuz_Kdvsiz, 
 CariIskontoToplami = @CariIskontoToplami, StokIskontoToplami = @StokIskontoToplami, ToplamIndirim = @ToplamIndirim, ToplamKdv = @ToplamKdv, 
-IskontoluToplam = @IskontoluToplam, FaturaTutari = @FaturaTutari, KullanilanFiyatTanimID = @KullanilanFiyatTanimID, FaturaGrupID = @FaturaGrupID , OdendiMi = @OdendiMi, FaturaBarkod = @FaturaBarkod
+IskontoluToplam = @IskontoluToplam, FaturaTutari = @FaturaTutari, KullanilanFiyatTanimID = @KullanilanFiyatTanimID, FaturaGrupID = @FaturaGrupID , OdendiMi = @OdendiMi, FaturaBarkod = @FaturaBarkod, HizliSatistaGozukecekMi = @HizliSatistaGozukecekMi, HizliSatistaDegisiklikYapilmasinaIzniVarMi = @HizliSatistaDegisiklikYapilmasinaIzniVarMi
 where FaturaID = @FaturaID ", Baglanti, Tr);
 
                 cmdGenel.Parameters.Add("@DegismeTarihi", SqlDbType.DateTime).Value = DateTime.Now;
@@ -484,6 +516,9 @@ where FaturaID = @FaturaID ", Baglanti, Tr);
             cmdGenel.Parameters.Add("@FaturaGrupID", SqlDbType.Int).Value = _FaturaGrupID;
             cmdGenel.Parameters.Add("@OdendiMi", SqlDbType.Bit).Value = 0;
             cmdGenel.Parameters.Add("@FaturaBarkod", SqlDbType.NVarChar).Value = _FaturaBarkod;
+            cmdGenel.Parameters.Add("@HizliSatistaGozukecekMi", SqlDbType.Bit).Value = _HizliSatistaGozukecekMi;
+            cmdGenel.Parameters.Add("@HizliSatistaDegisiklikYapilmasinaIzniVarMi", SqlDbType.Bit).Value = _HizliSatistaDegisiklikYapilmasinaIzniVarMi;
+
 
             try
             {

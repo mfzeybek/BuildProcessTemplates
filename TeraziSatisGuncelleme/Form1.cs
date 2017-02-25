@@ -79,7 +79,7 @@ namespace TeraziSatisGuncelleme
         //}
         int KopyalananDosyaSayisi = 0;
 
-        public void CopyDirectory(string SourceFolderPath, string TargetFolderPath)
+        public void CopyDirectory(string SourceFolderPath, string TargetFolderPath, bool HizliGuncelleme)
         {
             try
             {
@@ -105,28 +105,44 @@ namespace TeraziSatisGuncelleme
                     {
                         // metot öz yineleme (recursive) kullanarak kaynak dizinde dosya bulunduğu
                         // müddetçe dizindeki tüm dosyalar hedef dizine kopyalanmaya devam ediyor.
-                        CopyDirectory(file, TargetFolderPath + Path.GetFileName(file));
+                        CopyDirectory(file, TargetFolderPath + Path.GetFileName(file), HizliGuncelleme);
                     }
-
                     // dizindeki dosyalar
                     else
                     {
-                        if (Path.GetFileName(file) != "TeraziSatis.exe.config"
-                            && Path.GetFileName(file) != "Loglar.db"
-                            && Path.GetFileName(Path.GetDirectoryName(file)) != "Loglar"
-                            && Path.GetFileName(Path.GetDirectoryName(file)) != "TeraziGuncelleme"
-                        //&& Path.get
-                        && Path.GetFileName(file) != "TeraziSatis.vshost.exe"
-                        && Path.GetFileName(file) != "Aresv2.exe.config"
-                        && Path.GetFileName(file) != "KasaSatis.exe.config"
-                        && Path.GetFileName(file) != "YaziciAyarlari.sqlite"
-                        )
+                        if (HizliGuncelleme)
                         {
-                            File.Copy(file, TargetFolderPath + Path.GetFileName(file), true);
-                            KopyalananDosyaSayisi++;
+                            if (Path.GetFileName(file) == "Aresv2.exe"
+                            && Path.GetFileName(file) != "clsTablolar.dll"
+                            && Path.GetFileName(file) != "TeraziSatisGuncelleme.exe"
+                            && Path.GetFileName(file) != "clsTablolar.dll"
+                            && Path.GetFileName(file) != "clsTablolar.dll"
+
+                            )
+                            {
+                                File.Copy(file, TargetFolderPath + Path.GetFileName(file), true);
+                                KopyalananDosyaSayisi++;
+                            }
                         }
                         else
                         {
+
+                            if (Path.GetFileName(file) != "TeraziSatis.exe.config"
+                            && Path.GetFileName(file) != "Loglar.db"
+                            && Path.GetFileName(Path.GetDirectoryName(file)) != "Loglar"
+                            && Path.GetFileName(Path.GetDirectoryName(file)) != "TeraziGuncelleme"
+                            && Path.GetFileName(file) != "TeraziSatis.vshost.exe"
+                            && Path.GetFileName(file) != "Aresv2.exe.config"
+                            && Path.GetFileName(file) != "KasaSatis.exe.config"
+                            && Path.GetFileName(file) != "YaziciAyarlari.sqlite"
+                            )
+                            {
+                                File.Copy(file, TargetFolderPath + Path.GetFileName(file), true);
+                                KopyalananDosyaSayisi++;
+                            }
+                            else
+                            {
+                            }
                         }
                     }
                 }
@@ -142,19 +158,19 @@ namespace TeraziSatisGuncelleme
         {
             if (AhandaGuncellenecekProgram == GuncellenecekProgram.Ares)
             {
-                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Kasa\Debug\", Directory.GetParent(Application.StartupPath).FullName);
+                CopyDirectory(@"\\192.168.2.8\AresSonSurumu\Debug\", Directory.GetParent(Application.StartupPath).FullName, false);
                 MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
                 System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\Aresv2.exe");
             }
             else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Kasa)
             {
-                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Kasa\Debug\", Directory.GetParent(Application.StartupPath).FullName);
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Kasa\Debug\", Directory.GetParent(Application.StartupPath).FullName, false);
                 MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
                 System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\KasaSatis.exe");
             }
             else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Terazi)
             {
-                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Debug\", Directory.GetParent(Application.StartupPath).FullName);
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\Debug\", Directory.GetParent(Application.StartupPath).FullName, false);
                 MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
                 System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatisBaslat2.exe");
             }

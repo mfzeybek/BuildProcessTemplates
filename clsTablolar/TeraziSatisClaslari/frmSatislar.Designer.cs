@@ -122,7 +122,7 @@
             this.gcSatislar.MainView = this.gvSatislar;
             this.gcSatislar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSatislar.Name = "gcSatislar";
-            this.gcSatislar.Size = new System.Drawing.Size(1139, 332);
+            this.gcSatislar.Size = new System.Drawing.Size(1251, 332);
             this.gcSatislar.TabIndex = 16;
             this.gcSatislar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatislar});
@@ -184,9 +184,7 @@
             this.colFaturaNo.Caption = "FaturaNo";
             this.colFaturaNo.FieldName = "FaturaNo";
             this.colFaturaNo.Name = "colFaturaNo";
-            this.colFaturaNo.Visible = true;
-            this.colFaturaNo.VisibleIndex = 0;
-            this.colFaturaNo.Width = 55;
+            this.colFaturaNo.Width = 141;
             // 
             // colCariID
             // 
@@ -205,6 +203,9 @@
             this.colCariTanim.Caption = "CariTanim";
             this.colCariTanim.FieldName = "CariTanim";
             this.colCariTanim.Name = "colCariTanim";
+            this.colCariTanim.Visible = true;
+            this.colCariTanim.VisibleIndex = 2;
+            this.colCariTanim.Width = 318;
             // 
             // colTeraziFaturaID
             // 
@@ -219,7 +220,7 @@
             this.colFaturaBarkod.Name = "colFaturaBarkod";
             this.colFaturaBarkod.Visible = true;
             this.colFaturaBarkod.VisibleIndex = 3;
-            this.colFaturaBarkod.Width = 287;
+            this.colFaturaBarkod.Width = 674;
             // 
             // colFaturaTutari
             // 
@@ -230,7 +231,7 @@
             this.colFaturaTutari.Name = "colFaturaTutari";
             this.colFaturaTutari.Visible = true;
             this.colFaturaTutari.VisibleIndex = 4;
-            this.colFaturaTutari.Width = 259;
+            this.colFaturaTutari.Width = 612;
             // 
             // colDegismeTarihi
             // 
@@ -238,8 +239,8 @@
             this.colDegismeTarihi.FieldName = "DegismeTarihi";
             this.colDegismeTarihi.Name = "colDegismeTarihi";
             this.colDegismeTarihi.Visible = true;
-            this.colDegismeTarihi.VisibleIndex = 1;
-            this.colDegismeTarihi.Width = 101;
+            this.colDegismeTarihi.VisibleIndex = 0;
+            this.colDegismeTarihi.Width = 260;
             // 
             // colFaturaTarihi_saat
             // 
@@ -249,15 +250,15 @@
             this.colFaturaTarihi_saat.FieldName = "DegismeTarihi";
             this.colFaturaTarihi_saat.Name = "colFaturaTarihi_saat";
             this.colFaturaTarihi_saat.Visible = true;
-            this.colFaturaTarihi_saat.VisibleIndex = 2;
-            this.colFaturaTarihi_saat.Width = 93;
+            this.colFaturaTarihi_saat.VisibleIndex = 1;
+            this.colFaturaTarihi_saat.Width = 239;
             // 
             // btnYenile
             // 
             this.btnYenile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnYenile.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnYenile.Appearance.Options.UseFont = true;
-            this.btnYenile.Location = new System.Drawing.Point(781, 2);
+            this.btnYenile.Location = new System.Drawing.Point(876, 4);
             this.btnYenile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnYenile.Name = "btnYenile";
             this.btnYenile.Size = new System.Drawing.Size(105, 65);
@@ -270,7 +271,7 @@
             this.btnTamam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTamam.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnTamam.Appearance.Options.UseFont = true;
-            this.btnTamam.Location = new System.Drawing.Point(670, 4);
+            this.btnTamam.Location = new System.Drawing.Point(765, 4);
             this.btnTamam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTamam.Name = "btnTamam";
             this.btnTamam.Size = new System.Drawing.Size(105, 65);
@@ -283,7 +284,7 @@
             this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIptal.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnIptal.Appearance.Options.UseFont = true;
-            this.btnIptal.Location = new System.Drawing.Point(1050, 4);
+            this.btnIptal.Location = new System.Drawing.Point(1162, 3);
             this.btnIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(99, 65);
@@ -296,7 +297,7 @@
             this.btnSonrakiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSonrakiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.Image")));
             this.btnSonrakiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSonrakiSayfa.Location = new System.Drawing.Point(958, 4);
+            this.btnSonrakiSayfa.Location = new System.Drawing.Point(1053, 4);
             this.btnSonrakiSayfa.Name = "btnSonrakiSayfa";
             this.btnSonrakiSayfa.Size = new System.Drawing.Size(62, 65);
             this.btnSonrakiSayfa.TabIndex = 55;
@@ -307,7 +308,7 @@
             this.btnOncekiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
             this.btnOncekiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOncekiSayfa.Location = new System.Drawing.Point(891, 4);
+            this.btnOncekiSayfa.Location = new System.Drawing.Point(986, 4);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
             this.btnOncekiSayfa.Size = new System.Drawing.Size(62, 65);
             this.btnOncekiSayfa.TabIndex = 56;
@@ -320,13 +321,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcSatisHareketleri.Location = new System.Drawing.Point(10, 450);
+            this.gcSatisHareketleri.Location = new System.Drawing.Point(10, 408);
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
             this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
             this.gcSatisHareketleri.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(1139, 271);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(1251, 258);
             this.gcSatisHareketleri.TabIndex = 57;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -838,11 +839,11 @@
             // 
             // frmSatislar
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 732);
+            this.ClientSize = new System.Drawing.Size(1266, 677);
             this.ControlBox = false;
             this.Controls.Add(this.btnAyir);
             this.Controls.Add(this.btnBirlestir);

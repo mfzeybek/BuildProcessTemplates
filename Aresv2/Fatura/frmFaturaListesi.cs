@@ -73,6 +73,45 @@ namespace Aresv2.Fatura
             FaturaArama.CariKodu = txtCariKodu.Text;
             FaturaArama.Tarih1 = deTarih1.DateTime;
             FaturaArama.Tarih2 = deTarih2.DateTime;
+            switch (cmbOdeme.SelectedIndex)
+            {
+                case -1:
+                    FaturaArama.OdendiMi = clsTablolar.Fatura.csFaturaArama.OdememisMi.Hepsi;
+                    break;
+                case 0:
+                    FaturaArama.OdendiMi = clsTablolar.Fatura.csFaturaArama.OdememisMi.Hepsi;
+                    break;
+                case 1:
+                    FaturaArama.OdendiMi = clsTablolar.Fatura.csFaturaArama.OdememisMi.Odendi;
+                    break;
+                case 2:
+                    FaturaArama.OdendiMi = clsTablolar.Fatura.csFaturaArama.OdememisMi.Odenmedi;
+                    break;
+                case 3:
+                    FaturaArama.OdendiMi = clsTablolar.Fatura.csFaturaArama.OdememisMi.KismiOdeme;
+                    break;
+                default:
+                    break;
+            }
+            switch (comboBoxEdit1.SelectedIndex)
+            {
+                case -1:
+                    FaturaArama.HizliSatistaGozukecekMi = clsTablolar.Fatura.csFaturaArama.HizliSatistaGozukme.Hepsi;
+                    break;
+                case 0:
+                    FaturaArama.HizliSatistaGozukecekMi = clsTablolar.Fatura.csFaturaArama.HizliSatistaGozukme.Hepsi;
+                    break;
+                case 1:
+                    FaturaArama.HizliSatistaGozukecekMi = clsTablolar.Fatura.csFaturaArama.HizliSatistaGozukme.Gozukenler;
+                    break;
+                case 2:
+                    FaturaArama.HizliSatistaGozukecekMi = clsTablolar.Fatura.csFaturaArama.HizliSatistaGozukme.Gozukmeyenler;
+                    break;
+                default:
+                    break;
+            }
+
+
             gcFatura.DataSource = FaturaArama.FaturaAraListe(SqlConnections.GetBaglanti(), trGenel);
             gvFatura.BestFitColumns();
             GridArayuzIslemleri(enGridArayuzIslemleri.Get);
@@ -244,9 +283,11 @@ namespace Aresv2.Fatura
         {
             switch (e.KeyCode)
             {
-                case Keys.F2: btnFiltrele_Click(null, null);
+                case Keys.F2:
+                    btnFiltrele_Click(null, null);
                     break;
-                case Keys.Escape: Close();
+                case Keys.Escape:
+                    Close();
                     break;
             }
         }

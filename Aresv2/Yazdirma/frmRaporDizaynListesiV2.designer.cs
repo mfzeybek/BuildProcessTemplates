@@ -28,8 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcRaporDizayn = new DevExpress.XtraGrid.GridControl();
             this.gvRaporDizayn = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,6 +36,7 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colKagitKaynagi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYaziciAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKagitKaynagiIndex = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnAyarlar = new DevExpress.XtraEditors.SimpleButton();
             this.btnYaziciAyarlari = new DevExpress.XtraEditors.SimpleButton();
@@ -49,8 +48,6 @@
             this.btnOnizle = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnIptal = new DevExpress.XtraEditors.SimpleButton();
-            this.colKagitKaynagiIndex = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcRaporDizayn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRaporDizayn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -58,18 +55,9 @@
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gvDetail
-            // 
-            this.gvDetail.GridControl = this.gcRaporDizayn;
-            this.gvDetail.Name = "gvDetail";
-            // 
             // gcRaporDizayn
             // 
             this.gcRaporDizayn.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.gvDetail;
-            gridLevelNode1.RelationName = "Level1";
-            this.gcRaporDizayn.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.gcRaporDizayn.Location = new System.Drawing.Point(0, 0);
             this.gcRaporDizayn.MainView = this.gvRaporDizayn;
             this.gcRaporDizayn.Name = "gcRaporDizayn";
@@ -78,8 +66,7 @@
             this.gcRaporDizayn.Size = new System.Drawing.Size(959, 266);
             this.gcRaporDizayn.TabIndex = 0;
             this.gcRaporDizayn.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvRaporDizayn,
-            this.gvDetail});
+            this.gvRaporDizayn});
             this.gcRaporDizayn.Click += new System.EventHandler(this.gcRaporDizayn_Click);
             // 
             // gvRaporDizayn
@@ -102,7 +89,6 @@
             this.gvRaporDizayn.OptionsFind.FindNullPrompt = "Buraya aradığın tasarımın açıklamasını gir hamısına";
             this.gvRaporDizayn.OptionsView.ColumnAutoWidth = false;
             this.gvRaporDizayn.OptionsView.ShowGroupPanel = false;
-            this.gvRaporDizayn.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             this.gvRaporDizayn.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvRaporDizayn_CellValueChanged);
             this.gvRaporDizayn.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvRaporDizayn_CellValueChanging);
             // 
@@ -168,6 +154,13 @@
             this.colYaziciAdi.Visible = true;
             this.colYaziciAdi.VisibleIndex = 2;
             this.colYaziciAdi.Width = 161;
+            // 
+            // colKagitKaynagiIndex
+            // 
+            this.colKagitKaynagiIndex.Caption = "KagitKaynagiIndex";
+            this.colKagitKaynagiIndex.FieldName = "KagitKaynagiIndex";
+            this.colKagitKaynagiIndex.Name = "colKagitKaynagiIndex";
+            this.colKagitKaynagiIndex.OptionsColumn.AllowEdit = false;
             // 
             // panelControl1
             // 
@@ -285,13 +278,6 @@
             this.btnIptal.Text = "İptal";
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
-            // colKagitKaynagiIndex
-            // 
-            this.colKagitKaynagiIndex.Caption = "KagitKaynagiIndex";
-            this.colKagitKaynagiIndex.FieldName = "KagitKaynagiIndex";
-            this.colKagitKaynagiIndex.Name = "colKagitKaynagiIndex";
-            this.colKagitKaynagiIndex.OptionsColumn.AllowEdit = false;
-            // 
             // frmRaporDizaynListesiv2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,7 +295,6 @@
             this.Text = "Rapor Dizayn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRaporDizaynListesiv2_FormClosing);
             this.Load += new System.EventHandler(this.frmRaporDizaynListesi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcRaporDizayn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRaporDizayn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -338,7 +323,6 @@
         public DevExpress.XtraEditors.SimpleButton btnTamam;
         private DevExpress.XtraEditors.SimpleButton btnYaziciAyarlari;
         private DevExpress.XtraEditors.SimpleButton btnAyarlar;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvDetail;
         private DevExpress.XtraGrid.Columns.GridColumn colKagitKaynagi;
         private DevExpress.XtraGrid.Columns.GridColumn colYaziciAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colKagitKaynagiIndex;

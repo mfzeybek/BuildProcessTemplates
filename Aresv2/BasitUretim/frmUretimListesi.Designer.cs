@@ -52,10 +52,12 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(296, 101);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Location = new System.Drawing.Point(296, 102);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1545, 1082);
+            this.gridControl1.Size = new System.Drawing.Size(1544, 1050);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -142,14 +144,16 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(12, 80);
+            this.textEdit1.Location = new System.Drawing.Point(12, 81);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(271, 34);
+            this.textEdit1.Size = new System.Drawing.Size(272, 36);
             this.textEdit1.TabIndex = 1;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 1139);
+            this.simpleButton1.Location = new System.Drawing.Point(22, 1108);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(246, 44);
             this.simpleButton1.TabIndex = 2;
@@ -158,9 +162,10 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(484, 22);
+            this.simpleButton2.Location = new System.Drawing.Point(484, 21);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(206, 57);
+            this.simpleButton2.Size = new System.Drawing.Size(206, 58);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "simpleButton2";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -169,11 +174,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1864, 1217);
+            this.ClientSize = new System.Drawing.Size(1864, 1173);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.gridControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUretimListesi";
             this.Text = "frmUretimListesi";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

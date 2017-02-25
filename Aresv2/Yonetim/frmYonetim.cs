@@ -34,7 +34,6 @@ namespace Aresv2.Yonetim
             //fatArama.Tarih1 = DateTime.Today;
             //fatArama.Tarih2 = DateTime.Today;
 
-            fatArama.OdendiMi = 2;
 
             KasadanOdenenSatislariGetir();
         }

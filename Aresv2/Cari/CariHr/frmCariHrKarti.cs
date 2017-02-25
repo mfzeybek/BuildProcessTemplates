@@ -257,6 +257,7 @@ namespace Aresv2.Cari.CariHr
             {
                 Hareket.SilindiMi = true;
                 btnKaydet_Click(null, null);
+                this.DialogResult = DialogResult.Yes;
                 Close();
             }
         }
