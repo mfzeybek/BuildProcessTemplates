@@ -170,6 +170,7 @@
     <Compile Include="csComPorttanBarkodOku.cs" />
     <Compile Include="csFatura_Irsaliye_Teklif_Hesapla.cs" />
     <Compile Include="EvrakIliski\csEvrakIliski.cs" />
+    <Compile Include="Fatura\csFaturaBarkod.cs" />
     <Compile Include="Fatura\csFaturaHareketIDdenFaturaIDVer.cs" />
     <Compile Include="Fatura\csFaturaKisaBilgi.cs" />
     <Compile Include="Fatura\csKapaliFatura.cs" />

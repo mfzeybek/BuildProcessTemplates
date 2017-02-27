@@ -456,9 +456,8 @@ WHERE     (dbo.Fatura.FaturaID = @FaturaID) ";
         {
             if (_FaturaID == -1)
             {
-                cmdGenel = new SqlCommand(@"
 
-set @FaturaBarkod = (select [dbo].[YeniBarkodNumarasiVer]())
+                cmdGenel = new SqlCommand(@"
 
 insert into Fatura 
 ( FaturaTipi, FaturaTarihi, DuzenlemeTarihi, FaturaNo, CariID, CariKod, CariTanim, VergiDairesi, VergiNo, Adres, Il, Ilce, Vadesi,
@@ -467,18 +466,27 @@ CariIskontoToplami, StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluTopla
 values 
 ( @FaturaTipi, @FaturaTarihi, @DuzenlemeTarihi, @FaturaNo, @CariID, @CariKod, @CariTanim, @VergiDairesi, @VergiNo, @Adres, 
 @Il, @Ilce, @Vadesi, @Iptal, @SilindiMi, @Aciklama, @KaydedenID, @KayitTarihi, @DepoID, @SatisElemaniID, 
-@Toplam_Iskontosuz_Kdvsiz, @CariIskontoToplami, @StokIskontoToplami, @ToplamIndirim, @ToplamKdv, @IskontoluToplam, @FaturaTutari, @KullanilanFiyatTanimID, @FaturaGrupID, @OdendiMi, @FaturaBarkod, @HizliSatistaGozukecekMi , @HizliSatistaDegisiklikYapilmasinaIzniVarMi) 
+@Toplam_Iskontosuz_Kdvsiz, @CariIskontoToplami, @StokIskontoToplami, @ToplamIndirim, @ToplamKdv, @IskontoluToplam, @FaturaTutari, @KullanilanFiyatTanimID, @FaturaGrupID, @OdendiMi, @FaturaBarkod, @HizliSatistaGozukecekMi , @HizliSatistaDegisiklikYapilmasinaIzniVarMi)
 set @YeniID = SCOPE_IDENTITY()
 
 update BarkodAyar set BarkodAyar.SiradakiKod += 1 where BarkodAyar.BarkodunKullanildigiYer = 2
 
 ", Baglanti, Tr);
 
+                if (FaturaTipi == IslemTipi.SatisFaturasi)
+                {
+                    cmdGenel.CommandText = " set @FaturaBarkod = (select [dbo].[YeniBarkodNumarasiVer]()) " + cmdGenel.CommandText;
+                    cmdGenel.Parameters.Add("@FaturaBarkod", SqlDbType.NVarChar, 20).Direction = ParameterDirection.Output;
+                }
+                else
+                {
+                    cmdGenel.Parameters.Add("@FaturaBarkod", SqlDbType.NVarChar).Value = _FaturaBarkod;
+                }
+
                 cmdGenel.Parameters.Add("@KayitTarihi", SqlDbType.DateTime).Value = DateTime.Now;
                 cmdGenel.Parameters.Add("@KaydedenID", SqlDbType.Int).Value = _KaydedenID;
 
                 cmdGenel.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
-                cmdGenel.Parameters.Add("@FaturaBarkod", SqlDbType.NVarChar, 20).Direction = ParameterDirection.Output;
             }
             else
             {
@@ -535,7 +543,8 @@ where FaturaID = @FaturaID ", Baglanti, Tr);
                 if (_FaturaID == -1)
                 {
                     _FaturaID = Convert.ToInt32(cmdGenel.Parameters["@YeniID"].Value.ToString());
-                    _FaturaBarkod = cmdGenel.Parameters["@FaturaBarkod"].Value.ToString();
+                    if (FaturaTipi == IslemTipi.SatisFaturasi)
+                        _FaturaBarkod = cmdGenel.Parameters["@FaturaBarkod"].Value.ToString();
                 }
             }
             catch (Exception hata)

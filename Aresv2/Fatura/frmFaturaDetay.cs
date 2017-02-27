@@ -603,6 +603,10 @@ namespace Aresv2.Fatura
 
                 //int TempFaturaID = Fatura.FaturaID;
 
+                if (Fatura.FaturaID == -1)
+                {
+
+                }
                 _FaturaID = Fatura.FaturaKaydet(SqlConnections.GetBaglanti(), trGenel);
                 FaturaHareket.FaturaHareketleriniKaydet(SqlConnections.GetBaglanti(), trGenel, Fatura.FaturaID);
 
