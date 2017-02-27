@@ -391,9 +391,11 @@ and
         {
             try
             {
-                cmdKayit = new SqlCommand();
-                cmdKayit.Connection = Baglanti;
-                cmdKayit.Transaction = Tr;
+                cmdKayit = new SqlCommand()
+                {
+                    Connection = Baglanti,
+                    Transaction = Tr
+                };
                 int _FaturaID = -1;
                 if ((int)DROW["FaturaID"] == -1)
                 {
@@ -428,7 +430,7 @@ and
                 cmdKayit.Parameters.Add("@Iptal", SqlDbType.Bit).Value = 0;
                 cmdKayit.Parameters.Add("@SilindiMi", SqlDbType.Bit, 0).Value = DROW["SilindiMi"];
                 cmdKayit.Parameters.Add("@Aciklama", SqlDbType.NVarChar, 250).Value = DROW["Aciklama"]; // bu olabilir açıklama yazılması istenebilir
-                cmdKayit.Parameters.Add("@DepoID", SqlDbType.Int).Value = -1; // bu önemli hangi depodan satışın olduğu veya TeraziID den Alsın program şimdilik -1 dedim
+                cmdKayit.Parameters.Add("@DepoID", SqlDbType.Int).Value = 1; // bu önemli hangi depodan satışın olduğu veya TeraziID den Alsın program şimdilik -1 dedim
                 cmdKayit.Parameters.Add("@SatisElemaniID", SqlDbType.Int).Value = -1;
                 cmdKayit.Parameters.Add("@Toplam_Iskontosuz_Kdvsiz", SqlDbType.Decimal, 0).Value = DROW["Toplam_Iskontosuz_Kdvsiz"]; // bu önemli hamısına
                 cmdKayit.Parameters.Add("@CariIskontoToplami", SqlDbType.Decimal, 0).Value = DROW["CariIskontoToplami"]; // Iskonto yapılabilecekmi Bilmiyorum hamısına eğer yapılamayacaksa faturadan açtığımızda oradan da yapılamaması lazım

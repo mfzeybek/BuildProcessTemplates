@@ -293,6 +293,7 @@ namespace Aresv2.Fatura
                 txtFaturaBarkodu.DataBindings.Clear();
                 checkEdit1.DataBindings.Clear();
                 checkEdit2.DataBindings.Clear();
+                txtFaturaBarkod.DataBindings.Clear();
                 #endregion
 
 
@@ -342,6 +343,8 @@ namespace Aresv2.Fatura
                 txtFaturaBarkodu.DataBindings.Add("EditValue", Fatura, "FaturaBarkod", true, DataSourceUpdateMode.OnPropertyChanged);
                 checkEdit1.DataBindings.Add("Checked", Fatura, "HizliSatistaGozukecekMi", true, DataSourceUpdateMode.OnPropertyChanged);
                 checkEdit2.DataBindings.Add("Checked", Fatura, "HizliSatistaDegisiklikYapilmasinaIzniVarMi", true, DataSourceUpdateMode.OnPropertyChanged);
+
+                txtFaturaBarkod.DataBindings.Add("EditValue", Fatura, "FaturaBarkod", true, DataSourceUpdateMode.OnPropertyChanged);
             }
             catch (Exception hata)
             {
@@ -922,6 +925,12 @@ namespace Aresv2.Fatura
         /// </summary>
         private void YazdirmakicinVerileriHazirla()
         {
+            if (Fatura.FaturaID == -1)
+            {
+                MessageBox.Show("Önce Kaydı tamamlayın");
+                return;
+            }
+
             yazdir = new clsTablolar.Yazdirma.csYazdir();
 
             yazdir.dt_ekle("Fatura Ust Bilgi");

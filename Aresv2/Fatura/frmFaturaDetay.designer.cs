@@ -28,9 +28,8 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -45,7 +44,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu();
             this.frmFaturaDetayConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
@@ -140,7 +139,7 @@
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dropDownButton_Yazdir = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -178,7 +177,7 @@
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl7 = new DevExpress.XtraLayout.LayoutControl();
             this.lkpFaturaGrubu = new DevExpress.XtraEditors.LookUpEdit();
-            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager2 = new DevExpress.XtraBars.BarManager();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -230,7 +229,7 @@
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.simpleButton25 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.txtFaturaBarkod = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
             this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
             this.simpleButton27 = new DevExpress.XtraEditors.SimpleButton();
@@ -318,12 +317,12 @@
             this.barBtnYazdir = new DevExpress.XtraBars.BarButtonItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.dropDownButton2 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton3 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu();
             this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitContainerControl4 = new DevExpress.XtraEditors.SplitContainerControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
@@ -542,7 +541,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoNot.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFaturaBarkod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemeleri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemeleri)).BeginInit();
@@ -860,7 +859,7 @@
             this.frmFaturaDetayConvertedLayout.Controls.Add(this.checkEdit1);
             this.frmFaturaDetayConvertedLayout.Controls.Add(this.checkEdit2);
             this.frmFaturaDetayConvertedLayout.Controls.Add(this.simpleButton25);
-            this.frmFaturaDetayConvertedLayout.Controls.Add(this.textEdit8);
+            this.frmFaturaDetayConvertedLayout.Controls.Add(this.txtFaturaBarkod);
             this.frmFaturaDetayConvertedLayout.Controls.Add(this.simpleButton26);
             this.frmFaturaDetayConvertedLayout.Controls.Add(this.checkEdit3);
             this.frmFaturaDetayConvertedLayout.Controls.Add(this.simpleButton27);
@@ -2907,20 +2906,20 @@
             this.simpleButton25.Text = "Barkod Numarası Ver";
             this.simpleButton25.Visible = false;
             // 
-            // textEdit8
+            // txtFaturaBarkod
             // 
-            this.textEdit8.Location = new System.Drawing.Point(3, 29);
-            this.textEdit8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textEdit8.MenuManager = this.barManager2;
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
-            this.textEdit8.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.textEdit8.Properties.ReadOnly = true;
-            this.textEdit8.Size = new System.Drawing.Size(614, 20);
-            this.textEdit8.StyleController = this.frmFaturaDetayConvertedLayout;
-            this.textEdit8.TabIndex = 7;
-            this.textEdit8.Visible = false;
-            this.textEdit8.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.textDegisirse_EditValueChanged);
+            this.txtFaturaBarkod.Location = new System.Drawing.Point(3, 29);
+            this.txtFaturaBarkod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFaturaBarkod.MenuManager = this.barManager2;
+            this.txtFaturaBarkod.Name = "txtFaturaBarkod";
+            this.txtFaturaBarkod.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+            this.txtFaturaBarkod.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtFaturaBarkod.Properties.ReadOnly = true;
+            this.txtFaturaBarkod.Size = new System.Drawing.Size(614, 20);
+            this.txtFaturaBarkod.StyleController = this.frmFaturaDetayConvertedLayout;
+            this.txtFaturaBarkod.TabIndex = 7;
+            this.txtFaturaBarkod.Visible = false;
+            this.txtFaturaBarkod.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.textDegisirse_EditValueChanged);
             // 
             // simpleButton26
             // 
@@ -3657,7 +3656,7 @@
             // 
             // textEdit1item
             // 
-            this.textEdit1item.Control = this.textEdit8;
+            this.textEdit1item.Control = this.txtFaturaBarkod;
             this.textEdit1item.CustomizationFormText = "textEdit1item";
             this.textEdit1item.Location = new System.Drawing.Point(0, 0);
             this.textEdit1item.Name = "textEdit1item";
@@ -5570,7 +5569,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoNot.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFaturaBarkod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemeleri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemeleri)).EndInit();
@@ -5901,7 +5900,7 @@
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.SimpleButton simpleButton25;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.TextEdit txtFaturaBarkod;
         private DevExpress.XtraEditors.SimpleButton simpleButton26;
         private DevExpress.XtraEditors.CheckEdit checkEdit3;
         private DevExpress.XtraEditors.SimpleButton simpleButton27;

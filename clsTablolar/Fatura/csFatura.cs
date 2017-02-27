@@ -456,7 +456,11 @@ WHERE     (dbo.Fatura.FaturaID = @FaturaID) ";
         {
             if (_FaturaID == -1)
             {
-                cmdGenel = new SqlCommand(@"insert into Fatura 
+                cmdGenel = new SqlCommand(@"
+
+set @FaturaBarkod = (select [dbo].[YeniBarkodNumarasiVer]())
+
+insert into Fatura 
 ( FaturaTipi, FaturaTarihi, DuzenlemeTarihi, FaturaNo, CariID, CariKod, CariTanim, VergiDairesi, VergiNo, Adres, Il, Ilce, Vadesi,
 Iptal, SilindiMi, Aciklama, KaydedenID, KayitTarihi, DepoID, SatisElemaniID, Toplam_Iskontosuz_Kdvsiz, 
 CariIskontoToplami, StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, FaturaTutari, KullanilanFiyatTanimID, FaturaGrupID, OdendiMi, FaturaBarkod, HizliSatistaGozukecekMi , HizliSatistaDegisiklikYapilmasinaIzniVarMi)
@@ -464,12 +468,17 @@ values
 ( @FaturaTipi, @FaturaTarihi, @DuzenlemeTarihi, @FaturaNo, @CariID, @CariKod, @CariTanim, @VergiDairesi, @VergiNo, @Adres, 
 @Il, @Ilce, @Vadesi, @Iptal, @SilindiMi, @Aciklama, @KaydedenID, @KayitTarihi, @DepoID, @SatisElemaniID, 
 @Toplam_Iskontosuz_Kdvsiz, @CariIskontoToplami, @StokIskontoToplami, @ToplamIndirim, @ToplamKdv, @IskontoluToplam, @FaturaTutari, @KullanilanFiyatTanimID, @FaturaGrupID, @OdendiMi, @FaturaBarkod, @HizliSatistaGozukecekMi , @HizliSatistaDegisiklikYapilmasinaIzniVarMi) 
-set @YeniID = SCOPE_IDENTITY()", Baglanti, Tr);
+set @YeniID = SCOPE_IDENTITY()
+
+update BarkodAyar set BarkodAyar.SiradakiKod += 1 where BarkodAyar.BarkodunKullanildigiYer = 2
+
+", Baglanti, Tr);
 
                 cmdGenel.Parameters.Add("@KayitTarihi", SqlDbType.DateTime).Value = DateTime.Now;
                 cmdGenel.Parameters.Add("@KaydedenID", SqlDbType.Int).Value = _KaydedenID;
 
                 cmdGenel.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmdGenel.Parameters.Add("@FaturaBarkod", SqlDbType.NVarChar, 20).Direction = ParameterDirection.Output;
             }
             else
             {
@@ -479,7 +488,7 @@ VergiDairesi = @VergiDairesi, VergiNo = @VergiNo, Adres = @Adres, Il = @Il, Ilce
 SilindiMi = @SilindiMi, Aciklama = @Aciklama, DegistirenID = @DegistirenID,
 DegismeTarihi = @DegismeTarihi, DepoID = @DepoID, SatisElemaniID = @SatisElemaniID, Toplam_Iskontosuz_Kdvsiz = @Toplam_Iskontosuz_Kdvsiz, 
 CariIskontoToplami = @CariIskontoToplami, StokIskontoToplami = @StokIskontoToplami, ToplamIndirim = @ToplamIndirim, ToplamKdv = @ToplamKdv, 
-IskontoluToplam = @IskontoluToplam, FaturaTutari = @FaturaTutari, KullanilanFiyatTanimID = @KullanilanFiyatTanimID, FaturaGrupID = @FaturaGrupID , OdendiMi = @OdendiMi, FaturaBarkod = @FaturaBarkod, HizliSatistaGozukecekMi = @HizliSatistaGozukecekMi, HizliSatistaDegisiklikYapilmasinaIzniVarMi = @HizliSatistaDegisiklikYapilmasinaIzniVarMi
+IskontoluToplam = @IskontoluToplam, FaturaTutari = @FaturaTutari, KullanilanFiyatTanimID = @KullanilanFiyatTanimID, FaturaGrupID = @FaturaGrupID , OdendiMi = @OdendiMi, HizliSatistaGozukecekMi = @HizliSatistaGozukecekMi, HizliSatistaDegisiklikYapilmasinaIzniVarMi = @HizliSatistaDegisiklikYapilmasinaIzniVarMi
 where FaturaID = @FaturaID ", Baglanti, Tr);
 
                 cmdGenel.Parameters.Add("@DegismeTarihi", SqlDbType.DateTime).Value = DateTime.Now;
@@ -515,7 +524,7 @@ where FaturaID = @FaturaID ", Baglanti, Tr);
             cmdGenel.Parameters.Add("@KullanilanFiyatTanimID", SqlDbType.Int).Value = _KullanilanFiyatTanimID;
             cmdGenel.Parameters.Add("@FaturaGrupID", SqlDbType.Int).Value = _FaturaGrupID;
             cmdGenel.Parameters.Add("@OdendiMi", SqlDbType.Bit).Value = 0;
-            cmdGenel.Parameters.Add("@FaturaBarkod", SqlDbType.NVarChar).Value = _FaturaBarkod;
+            //cmdGenel.Parameters.Add("@FaturaBarkod", SqlDbType.NVarChar).Value = _FaturaBarkod;
             cmdGenel.Parameters.Add("@HizliSatistaGozukecekMi", SqlDbType.Bit).Value = _HizliSatistaGozukecekMi;
             cmdGenel.Parameters.Add("@HizliSatistaDegisiklikYapilmasinaIzniVarMi", SqlDbType.Bit).Value = _HizliSatistaDegisiklikYapilmasinaIzniVarMi;
 
@@ -524,7 +533,10 @@ where FaturaID = @FaturaID ", Baglanti, Tr);
             {
                 cmdGenel.ExecuteNonQuery();
                 if (_FaturaID == -1)
+                {
                     _FaturaID = Convert.ToInt32(cmdGenel.Parameters["@YeniID"].Value.ToString());
+                    _FaturaBarkod = cmdGenel.Parameters["@FaturaBarkod"].Value.ToString();
+                }
             }
             catch (Exception hata)
             {
