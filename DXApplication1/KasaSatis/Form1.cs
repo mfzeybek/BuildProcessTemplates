@@ -32,7 +32,7 @@ namespace KasaSatis
                 //SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                csOdemeKaydet.OdemeDonenBilgisi donenOdemeBilgisi = OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), Properties.Settings.Default.KasaID, "Fatura Nakit Ödeme", 0);
+                csOdemeKaydet.OdemeDonenBilgisi donenOdemeBilgisi = OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), Properties.Settings.Default.KasaID, "Fatura Nakit Ödeme", 0, _PersonelID);
 
                 TrGenel.Commit();
 
@@ -64,6 +64,7 @@ namespace KasaSatis
         public clsTablolar.csFatura_Irsaliye_Teklif_Hesapla Hesapla;
 
         clsTablolar.TeraziSatisClaslari.csStok Stok = new clsTablolar.TeraziSatisClaslari.csStok();
+        clsTablolar.TeraziSatisClaslari.csPersonel Personel = new clsTablolar.TeraziSatisClaslari.csPersonel();
 
 
         clsTablolar.TeraziSatisClaslari.csSatislarV2 Satislar;
@@ -72,6 +73,8 @@ namespace KasaSatis
         public string FaturaBarkodIcinKullanilacakOnEk = string.Empty;
 
         clsTablolar.csNumaraVer NumaraVer = new clsTablolar.csNumaraVer();
+
+        int _PersonelID = -1;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -107,6 +110,24 @@ namespace KasaSatis
             //TrGenel.Commit();
 
             gvOdemesiYapilacakSatis_FocusedRowChanged(null, null);
+
+
+            while (true)
+            {
+                using (clsTablolar.frmMiktarGir frmm = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.TamSayi))
+                {
+                    frmm.labelControl1.Text = "Personel Kartını Okutun";
+                    if (frmm.ShowDialog() == DialogResult.Yes)
+                    {
+                        txtBarkodu.EditValue = frmm.textEdit1.EditValue;
+                        btnMusteriUrunAra_Click(null, null);
+                        if (_PersonelID != -1)
+                            break;
+                        else
+                            MessageBox.Show("Hatalı Personel Kartı");
+                    }
+                }
+            }
         }
 
         void dt_threadSatislar_RowDeleted(object sender, DataRowChangeEventArgs e)
@@ -243,7 +264,28 @@ namespace KasaSatis
                 finally
                 { txtBarkodu.EditValue = string.Empty; }
             }
-            else //Müşteri barkodu değilse
+            else if (txtBarkodu.EditValue.ToString().StartsWith(clsTablolar.TeraziSatisClaslari.csTeraziAyarlari.PersonelBarkodNumarasiOnEki)) // girinlen numara personel numarası ise
+            {
+                try
+                {
+                    TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                    Personel.BardoktanPersonelGetir(SqlConnections.GetBaglanti(), TrGenel, txtBarkodu.EditValue.ToString());
+                    TrGenel.Commit();
+                    if (Personel.PersonelID == -1)
+                    {
+                        MessageBox.Show("Yok hamısına");
+                    }
+                    else
+                    {
+                        lblKasiyer.Text = Personel.PersonelAdi;
+                        _PersonelID = Personel.PersonelID;
+                    }
+                }
+                catch (Exception) { }
+                finally
+                { txtBarkodu.EditValue = string.Empty; }
+            }
+            else
                 try
                 {
                     if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
@@ -275,7 +317,6 @@ namespace KasaSatis
                     {
                         MessageBox.Show("Ürün Bulunamadı");
                     }
-
                 }
                 catch { }
                 finally
@@ -880,7 +921,7 @@ namespace KasaSatis
             //SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), 3, "Fatura Kredi KArtı İle ödeme", 0); // KAsaID 3 pos cihazı için verilen ID
+            OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), 3, "Fatura Kredi KArtı İle ödeme", 0, _PersonelID); // KAsaID 3 pos cihazı için verilen ID
             TrGenel.Commit();
 
             // bunu raşağıda yazdığın row style girdin diye yaptın.
@@ -906,7 +947,7 @@ namespace KasaSatis
                 string KismiODemeAciklama = frm.Aciklama;
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), KismiOdemeKasaID, KismiODemeAciklama, KismiOdemeTutari);
+                OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), KismiOdemeKasaID, KismiODemeAciklama, KismiOdemeTutari, _PersonelID);
                 TrGenel.Commit();
 
                 // bunu raşağıda yazdığın row style girdin diye yaptın.
@@ -923,8 +964,15 @@ namespace KasaSatis
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmKasaRaporu Rapor = new frmKasaRaporu(1007);
-            Rapor.ShowDialog();
+            if (_PersonelID == -1)
+            {
+                MessageBox.Show("Personel Tanımı Yap önce");
+                return;
+            }
+            using (frmKasaRaporu Rapor = new frmKasaRaporu(_PersonelID))
+            {
+                Rapor.ShowDialog();
+            }
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

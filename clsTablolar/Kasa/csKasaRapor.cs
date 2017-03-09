@@ -29,14 +29,16 @@ namespace clsTablolar.Kasa
         public decimal GenelToplam { get; set; }
 
         public string Aciklama { get; set; }
+        public int KasaHareketID { get; set; }
+
         public csKasaRapor()
         {
+            KasaRaporID = -1;
             KasaPersonelID = -1;
             KasaPersonelAdi = string.Empty;
             NakitBakiye = 0;
             NakitAlacak = 0;
             NakitBorc = 0;
-
             PosBakiye = 0;
             PosAlacak = 0;
             PosBorc = 0;
@@ -90,29 +92,43 @@ isnull((select top 1 KasaHareketID from KasaRaporu),-1) < CariHr.KasaHrID ", Bag
         }
 
 
+        /* 
+         Rapor kaydolurken olacaklar
+             
+             */
+
 
         public void RaporKaydet(SqlConnection Baglanti, SqlTransaction Tr)
         {
-            using (SqlCommand cmd = new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand("", Baglanti, Tr))
             {
-                if (KasaRaporID == -1) // ahanda burada kaldın
+                try
                 {
-                    cmd.CommandText = @"insert into KasaRaporu (Tarih, Aciklama, RaporuAlanPersonelID, NakitTutar, KrediKartiTutari, KasaBakiyesi, KasaHareketID) 
+                    if (KasaRaporID == -1) // ahanda burada kaldın
+                    {
+                        cmd.CommandText = @"insert into KasaRaporu (Tarih, Aciklama, RaporuAlanPersonelID, NakitTutar, KrediKartiTutari, KasaBakiyesi, KasaHareketID)
                         values
                         (@Tarih, @Aciklama, @RaporuAlanPersonelID, @NakitTutar, @KrediKartiTutari, @KasaBakiyesi, @KasaHareketID) ";
 
-                    cmd.Parameters.Add("@Tarih", SqlDbType.DateTime).Value = Tarih;
-                    cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
-                    cmd.Parameters.Add("@RaporuAlanPersonelID", SqlDbType.Int).Value = KasaPersonelID;
-                    cmd.Parameters.Add("@NakitTutar", SqlDbType.Decimal).Value = NakitAlacak;
-                    cmd.Parameters.Add("@KrediKartiTutari", SqlDbType.DateTime).Value = PosAlacak;
-                    cmd.Parameters.Add("@KasaBakiyesi", SqlDbType.DateTime).Value = NakitBakiye;
-                    cmd.Parameters.Add("@KasaHareketID", SqlDbType.DateTime).Value = Tarih;
+                        cmd.Parameters.Add("@Tarih", SqlDbType.DateTime).Value = DateTime.Now;
+                        cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
+                        cmd.Parameters.Add("@RaporuAlanPersonelID", SqlDbType.Int).Value = KasaPersonelID;
+                        cmd.Parameters.Add("@NakitTutar", SqlDbType.Decimal).Value = NakitAlacak;
+                        cmd.Parameters.Add("@KrediKartiTutari", SqlDbType.Decimal).Value = PosAlacak;
+                        cmd.Parameters.Add("@KasaBakiyesi", SqlDbType.Decimal).Value = NakitBakiye;
+                        cmd.Parameters.Add("@KasaHareketID", SqlDbType.Int).Value = KasaHareketID;
 
-                    // KasaPersonelID Gereksiz, 
-                    //KasaHareketID Neden var?? Z raporu alınınca Kasadaki paralar çıkıyor, yani öyle işte anladın sen onu hamısına
+                        cmd.ExecuteNonQuery();
 
+                        // KasaPersonelID Gereksiz, değil işte amk
+                        //KasaHareketID Neden var?? Z raporu alınınca Kasadaki paralar çıkıyor, yani öyle işte anladın sen onu hamısına
+                    }
                 }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
             }
         }
     }

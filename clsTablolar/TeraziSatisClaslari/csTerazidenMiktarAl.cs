@@ -122,7 +122,7 @@ namespace clsTablolar.TeraziSatisClaslari
                         //    sp1.Close();
 
                         while (MiktarAlmaDurumu)
-                       {
+                        {
                             try
                             {
                                 if (sp1.IsOpen)
@@ -276,16 +276,16 @@ namespace clsTablolar.TeraziSatisClaslari
         {
 
             // Get a list of serial port names.
-            
+
 
             Console.WriteLine("The following serial ports were found:");
 
             // Display each port name to the console.
             foreach (string port in ports)
             {
-                
+
             }
-            
+
         }
         public void TeraziModeliBul()
         {

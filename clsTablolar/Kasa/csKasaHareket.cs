@@ -20,6 +20,9 @@ namespace clsTablolar.Kasa
         public decimal Alacak { get; set; }
         public decimal Borc { get; set; }
         public string Aciklama { get; set; }
+        public DateTime Tarih { get; set; }
+        public bool SilindiMi { get; set; }
+        public int KaydedenPersonelID { get; set; }
 
         public csKasaHareket()
         {
@@ -28,6 +31,8 @@ namespace clsTablolar.Kasa
             this.Alacak = 0;
             this.Borc = 0;
             this.Aciklama = String.Empty;
+            this.SilindiMi = false;
+            this.Tarih = DateTime.Now;
         }
 
         public void Getir(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID)
@@ -48,17 +53,23 @@ namespace clsTablolar.Kasa
                         this.Alacak = (decimal)dr["Alacak"];
                         this.Borc = (decimal)dr["Borc"];
                         this.Aciklama = dr["Aciklama"].ToString();
+                        this.Tarih = (DateTime)dr["Tarih"];
+                        this.KaydedenPersonelID = (int)dr["KaydedenPersonelID"];
                     }
                 }
             }
         }
-        public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID, int KasaID, decimal Alacak, decimal Borc, string Aciklama)
+        public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID, int KasaID, decimal Alacak, decimal Borc, string Aciklama, DateTime Tarih, int PersonelID)
         {
             this.KasaHrID = KasaHrID;
             this.KasaID = KasaID;
             this.Alacak = Alacak;
             this.Borc = Borc;
             this.Aciklama = Aciklama;
+            this.Tarih = Tarih;
+            this.SilindiMi = false;
+            this.KaydedenPersonelID = PersonelID;
+
 
 
             return HarekeKaydet(Baglanti, Tr);

@@ -1077,7 +1077,7 @@
             this.btnSiparisiSil.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnSiparisiSil.Appearance.Options.UseFont = true;
             this.btnSiparisiSil.Location = new System.Drawing.Point(697, 604);
-            this.btnSiparisiSil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSiparisiSil.Margin = new System.Windows.Forms.Padding(2);
             this.btnSiparisiSil.Name = "btnSiparisiSil";
             this.btnSiparisiSil.Size = new System.Drawing.Size(122, 36);
             this.btnSiparisiSil.TabIndex = 37;

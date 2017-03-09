@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKasaOdeme));
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnAlisVerisiNakitOlarakKapat = new DevExpress.XtraEditors.SimpleButton();
@@ -54,7 +55,7 @@
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -62,7 +63,7 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.btnGuncelleme = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -142,6 +143,7 @@
             this.btnOncekiSayfa = new DevExpress.XtraEditors.SimpleButton();
             this.btnMusteriUrunAra = new DevExpress.XtraEditors.SimpleButton();
             this.txtBarkodu = new DevExpress.XtraEditors.TextEdit();
+            this.lblKasiyer = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemesiYapilacakSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemesiYapilacakSatis)).BeginInit();
@@ -182,7 +184,7 @@
             this.gcOdemesiYapilacakSatis.Name = "gcOdemesiYapilacakSatis";
             this.gcOdemesiYapilacakSatis.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit2});
-            this.gcOdemesiYapilacakSatis.Size = new System.Drawing.Size(925, 284);
+            this.gcOdemesiYapilacakSatis.Size = new System.Drawing.Size(1103, 284);
             this.gcOdemesiYapilacakSatis.TabIndex = 66;
             this.gcOdemesiYapilacakSatis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvOdemesiYapilacakSatis});
@@ -542,7 +544,7 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlTop.Size = new System.Drawing.Size(1136, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1314, 0);
             // 
             // barDockControlBottom
             // 
@@ -551,7 +553,7 @@
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 662);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1136, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1314, 0);
             // 
             // barDockControlLeft
             // 
@@ -566,7 +568,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1136, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1314, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(1);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 662);
@@ -669,7 +671,7 @@
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.Properties.Appearance.Options.UseFont = true;
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.Properties.AutoHeight = false;
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.Properties.Caption = "Barkodu Okutulan Satışın Ödemesini Otomatik Al";
-            this.ceBarkoduOkutulanFaturaninOdemesiniYap.Size = new System.Drawing.Size(306, 37);
+            this.ceBarkoduOkutulanFaturaninOdemesiniYap.Size = new System.Drawing.Size(306, 26);
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.TabIndex = 65;
             this.ceBarkoduOkutulanFaturaninOdemesiniYap.CheckedChanged += new System.EventHandler(this.ceBarkoduOkutulanFaturaninOdemesiniYap_CheckedChanged);
             // 
@@ -711,7 +713,7 @@
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
             this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(925, 292);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(1103, 292);
             this.gcSatisHareketleri.TabIndex = 62;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -1275,6 +1277,16 @@
             this.txtBarkodu.EditValueChanged += new System.EventHandler(this.txtBarkodu_EditValueChanged);
             this.txtBarkodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkodu_KeyDown);
             // 
+            // lblKasiyer
+            // 
+            this.lblKasiyer.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.lblKasiyer.Appearance.Options.UseFont = true;
+            this.lblKasiyer.Location = new System.Drawing.Point(1031, 15);
+            this.lblKasiyer.Name = "lblKasiyer";
+            this.lblKasiyer.Size = new System.Drawing.Size(62, 16);
+            this.lblKasiyer.TabIndex = 123;
+            this.lblKasiyer.Text = "lblKasiyer";
+            // 
             // frmKasaOdeme
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1282,7 +1294,8 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1136, 662);
+            this.ClientSize = new System.Drawing.Size(1314, 662);
+            this.Controls.Add(this.lblKasiyer);
             this.Controls.Add(this.btnMiktarGir);
             this.Controls.Add(this.btnMusteriler);
             this.Controls.Add(this.btnYenile);
@@ -1447,6 +1460,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem btnGuncelleme;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
+        private DevExpress.XtraEditors.LabelControl lblKasiyer;
     }
 }
 

@@ -57,13 +57,34 @@ namespace KasaSatis
             this.Close();
         }
 
+        void Ver()
+        {
+            KasaHareketi.Aciklama =
+KasaHareketi.Alacak
+            KasaHareketi.Borc
+            KasaHareketi.KasaHrID
+
+            KasaHareketi.KasaID
+            KasaHareketi.KaydedenPersonelID
+            KasaHareketi.SilindiMi
+                KasaHareketi.Tarih
+        }
+
         private void btnZRaporuAl_Click(object sender, EventArgs e)
         {
-
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+            KasaHareketi.Aciklama = 
+            KasaHareketi.Alacak = 0;
+            KasaHareketi.Borc =  // ahanda kasadan çıkan para buraya kaydedşlecek
+
+            KasaHareketi.KasaID = _KasaID;
+            KasaHareketi.KaydedenPersonelID = _PersonelID;
+            KasaHareketi.SilindiMi = 0;
+            KasaHareketi.Tarih
+
+
             Rapor.RaporKaydet(SqlConnections.GetBaglanti(), TrGenel);
             TrGenel.Commit();
-
         }
 
         private void memoEdit1_Click(object sender, EventArgs e)

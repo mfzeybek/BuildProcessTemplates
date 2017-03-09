@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -70,11 +69,11 @@
             this.btnSec = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.btnIslemler = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.barSubItem_KolonIslemleri = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemYerlesimiKaydet = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnExceleAktar = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -87,11 +86,11 @@
             this.barButtonItem_HepsiniSec = new DevExpress.XtraBars.BarButtonItem();
             this.btnStokHareketleri = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydiAc = new DevExpress.XtraEditors.SimpleButton();
-            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager3 = new DevExpress.XtraBars.BarManager();
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
@@ -140,7 +139,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(899, 610);
-            this.splitContainerControl1.SplitterPosition = 229;
+            this.splitContainerControl1.SplitterPosition = 406;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -151,7 +150,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(11, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(218, 300);
+            this.xtraTabControl1.Size = new System.Drawing.Size(395, 300);
             this.xtraTabControl1.TabIndex = 57;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -174,7 +173,7 @@
             this.xtraTabPage1.Controls.Add(this.labelControl5);
             this.xtraTabPage1.Controls.Add(this.labelControl4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(212, 272);
+            this.xtraTabPage1.Size = new System.Drawing.Size(389, 272);
             this.xtraTabPage1.Text = "Mamül Stok";
             // 
             // labelControl1
@@ -193,7 +192,7 @@
             this.txtUretilenStokAdi.Location = new System.Drawing.Point(67, 3);
             this.txtUretilenStokAdi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtUretilenStokAdi.Name = "txtUretilenStokAdi";
-            this.txtUretilenStokAdi.Size = new System.Drawing.Size(145, 20);
+            this.txtUretilenStokAdi.Size = new System.Drawing.Size(322, 20);
             this.txtUretilenStokAdi.TabIndex = 53;
             this.txtUretilenStokAdi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -208,7 +207,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpStokAltGrup.Properties.NullText = "";
-            this.lkpStokAltGrup.Size = new System.Drawing.Size(145, 20);
+            this.lkpStokAltGrup.Size = new System.Drawing.Size(322, 20);
             this.lkpStokAltGrup.TabIndex = 54;
             this.lkpStokAltGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpStokAltGrup_ButtonClick);
             this.lkpStokAltGrup.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
@@ -220,7 +219,7 @@
             this.txtStokKodu.Location = new System.Drawing.Point(67, 26);
             this.txtStokKodu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtStokKodu.Name = "txtStokKodu";
-            this.txtStokKodu.Size = new System.Drawing.Size(145, 20);
+            this.txtStokKodu.Size = new System.Drawing.Size(322, 20);
             this.txtStokKodu.TabIndex = 53;
             this.txtStokKodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -235,7 +234,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpStokAraGrup.Properties.NullText = "";
-            this.lkpStokAraGrup.Size = new System.Drawing.Size(145, 20);
+            this.lkpStokAraGrup.Size = new System.Drawing.Size(322, 20);
             this.lkpStokAraGrup.TabIndex = 54;
             this.lkpStokAraGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpStokAraGrup_ButtonClick);
             this.lkpStokAraGrup.EditValueChanged += new System.EventHandler(this.lkpStokAraGrup_EditValueChanged);
@@ -248,7 +247,7 @@
             this.txtAciklama.Location = new System.Drawing.Point(67, 50);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(145, 20);
+            this.txtAciklama.Size = new System.Drawing.Size(322, 20);
             this.txtAciklama.TabIndex = 53;
             this.txtAciklama.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -263,7 +262,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpStokGrup.Properties.NullText = "";
-            this.lkpStokGrup.Size = new System.Drawing.Size(145, 20);
+            this.lkpStokGrup.Size = new System.Drawing.Size(322, 20);
             this.lkpStokGrup.TabIndex = 54;
             this.lkpStokGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpStokGrup_ButtonClick);
             this.lkpStokGrup.EditValueChanged += new System.EventHandler(this.lkpStokGrup_EditValueChanged);
@@ -276,7 +275,7 @@
             this.txtStokBarkod.Location = new System.Drawing.Point(67, 73);
             this.txtStokBarkod.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtStokBarkod.Name = "txtStokBarkod";
-            this.txtStokBarkod.Size = new System.Drawing.Size(145, 20);
+            this.txtStokBarkod.Size = new System.Drawing.Size(322, 20);
             this.txtStokBarkod.TabIndex = 53;
             this.txtStokBarkod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -351,7 +350,7 @@
             this.xtraTabPage2.Controls.Add(this.labelControl13);
             this.xtraTabPage2.Controls.Add(this.labelControl14);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(212, 272);
+            this.xtraTabPage2.Size = new System.Drawing.Size(186, 272);
             this.xtraTabPage2.Text = "Hammadde Stok";
             // 
             // labelControl8
@@ -370,7 +369,7 @@
             this.txtHammaddeStokAdi.Location = new System.Drawing.Point(69, 3);
             this.txtHammaddeStokAdi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtHammaddeStokAdi.Name = "txtHammaddeStokAdi";
-            this.txtHammaddeStokAdi.Size = new System.Drawing.Size(141, 20);
+            this.txtHammaddeStokAdi.Size = new System.Drawing.Size(115, 20);
             this.txtHammaddeStokAdi.TabIndex = 62;
             this.txtHammaddeStokAdi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -386,7 +385,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpHammaddeStokAltGrubu.Properties.NullText = "";
             this.lkpHammaddeStokAltGrubu.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpHammaddeStokAltGrubu_Properties_ButtonClick);
-            this.lkpHammaddeStokAltGrubu.Size = new System.Drawing.Size(141, 20);
+            this.lkpHammaddeStokAltGrubu.Size = new System.Drawing.Size(115, 20);
             this.lkpHammaddeStokAltGrubu.TabIndex = 66;
             this.lkpHammaddeStokAltGrubu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -397,7 +396,7 @@
             this.txtHammaddeStokKodu.Location = new System.Drawing.Point(69, 26);
             this.txtHammaddeStokKodu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtHammaddeStokKodu.Name = "txtHammaddeStokKodu";
-            this.txtHammaddeStokKodu.Size = new System.Drawing.Size(141, 20);
+            this.txtHammaddeStokKodu.Size = new System.Drawing.Size(115, 20);
             this.txtHammaddeStokKodu.TabIndex = 63;
             this.txtHammaddeStokKodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -413,7 +412,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpHammaddeStokAraGrubu.Properties.NullText = "";
             this.lkpHammaddeStokAraGrubu.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpHammaddeStokAraGrubu_Properties_ButtonClick);
-            this.lkpHammaddeStokAraGrubu.Size = new System.Drawing.Size(141, 20);
+            this.lkpHammaddeStokAraGrubu.Size = new System.Drawing.Size(115, 20);
             this.lkpHammaddeStokAraGrubu.TabIndex = 67;
             this.lkpHammaddeStokAraGrubu.EditValueChanged += new System.EventHandler(this.lkpHammaddeStokAraGrubu_EditValueChanged);
             this.lkpHammaddeStokAraGrubu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
@@ -425,7 +424,7 @@
             this.txtHammaddeStokAciklama.Location = new System.Drawing.Point(69, 50);
             this.txtHammaddeStokAciklama.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtHammaddeStokAciklama.Name = "txtHammaddeStokAciklama";
-            this.txtHammaddeStokAciklama.Size = new System.Drawing.Size(141, 20);
+            this.txtHammaddeStokAciklama.Size = new System.Drawing.Size(115, 20);
             this.txtHammaddeStokAciklama.TabIndex = 64;
             this.txtHammaddeStokAciklama.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -441,7 +440,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpHammaddeStokGrubu.Properties.NullText = "";
             this.lkpHammaddeStokGrubu.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpHammaddeStokGrubu_Properties_ButtonClick);
-            this.lkpHammaddeStokGrubu.Size = new System.Drawing.Size(141, 20);
+            this.lkpHammaddeStokGrubu.Size = new System.Drawing.Size(115, 20);
             this.lkpHammaddeStokGrubu.TabIndex = 68;
             this.lkpHammaddeStokGrubu.EditValueChanged += new System.EventHandler(this.lkpHammaddeStokGrubu_EditValueChanged);
             this.lkpHammaddeStokGrubu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
@@ -453,7 +452,7 @@
             this.txtHammaddeStokBarkodu.Location = new System.Drawing.Point(69, 73);
             this.txtHammaddeStokBarkodu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtHammaddeStokBarkodu.Name = "txtHammaddeStokBarkodu";
-            this.txtHammaddeStokBarkodu.Size = new System.Drawing.Size(141, 20);
+            this.txtHammaddeStokBarkodu.Size = new System.Drawing.Size(115, 20);
             this.txtHammaddeStokBarkodu.TabIndex = 65;
             this.txtHammaddeStokBarkodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textler_KeyDown);
             // 
@@ -518,7 +517,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(7, 575);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(222, 19);
+            this.simpleButton2.Size = new System.Drawing.Size(399, 19);
             this.simpleButton2.TabIndex = 56;
             this.simpleButton2.Text = "Temizle";
             // 
@@ -529,7 +528,7 @@
             this.btnFiltrele.Location = new System.Drawing.Point(7, 550);
             this.btnFiltrele.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(222, 19);
+            this.btnFiltrele.Size = new System.Drawing.Size(399, 19);
             this.btnFiltrele.TabIndex = 52;
             this.btnFiltrele.Text = "Filtrele";
             this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
@@ -542,7 +541,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(665, 574);
+            this.gridControl1.Size = new System.Drawing.Size(488, 574);
             this.gridControl1.TabIndex = 12;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -567,14 +566,14 @@
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(665, 36);
+            this.panelControl2.Size = new System.Drawing.Size(488, 36);
             this.panelControl2.TabIndex = 51;
             // 
             // dropDownButton1
             // 
             this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
-            this.dropDownButton1.Location = new System.Drawing.Point(419, 7);
+            this.dropDownButton1.Location = new System.Drawing.Point(242, 7);
             this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(74, 23);
@@ -584,7 +583,7 @@
             // btnSec
             // 
             this.btnSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSec.Location = new System.Drawing.Point(257, 7);
+            this.btnSec.Location = new System.Drawing.Point(80, 7);
             this.btnSec.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSec.Name = "btnSec";
             this.btnSec.Size = new System.Drawing.Size(74, 23);
@@ -610,7 +609,7 @@
             this.btnIslemler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIslemler.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
             this.btnIslemler.DropDownControl = this.popupMenu1;
-            this.btnIslemler.Location = new System.Drawing.Point(809, 4);
+            this.btnIslemler.Location = new System.Drawing.Point(632, 4);
             this.btnIslemler.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnIslemler.Name = "btnIslemler";
             this.btnIslemler.Size = new System.Drawing.Size(97, 23);
@@ -741,7 +740,7 @@
             // btnStokHareketleri
             // 
             this.btnStokHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStokHareketleri.Location = new System.Drawing.Point(731, 4);
+            this.btnStokHareketleri.Location = new System.Drawing.Point(554, 4);
             this.btnStokHareketleri.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnStokHareketleri.Name = "btnStokHareketleri";
             this.btnStokHareketleri.Size = new System.Drawing.Size(74, 23);
@@ -751,7 +750,7 @@
             // btnKaydiAc
             // 
             this.btnKaydiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydiAc.Location = new System.Drawing.Point(337, 7);
+            this.btnKaydiAc.Location = new System.Drawing.Point(160, 7);
             this.btnKaydiAc.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnKaydiAc.Name = "btnKaydiAc";
             this.btnKaydiAc.Size = new System.Drawing.Size(74, 23);

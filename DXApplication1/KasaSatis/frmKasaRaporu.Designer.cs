@@ -75,10 +75,10 @@
             // 
             this.btnZRaporuAl.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.btnZRaporuAl.Appearance.Options.UseFont = true;
-            this.btnZRaporuAl.Location = new System.Drawing.Point(24, 795);
+            this.btnZRaporuAl.Location = new System.Drawing.Point(12, 741);
             this.btnZRaporuAl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnZRaporuAl.Name = "btnZRaporuAl";
-            this.btnZRaporuAl.Size = new System.Drawing.Size(943, 80);
+            this.btnZRaporuAl.Size = new System.Drawing.Size(905, 84);
             this.btnZRaporuAl.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.btnZRaporuAl.TabIndex = 2;
             this.btnZRaporuAl.Text = "Z Raporu Al";
@@ -100,12 +100,12 @@
             this.frmKasaRaporulayoutControl1ConvertedLayout.Name = "frmKasaRaporulayoutControl1ConvertedLayout";
             this.frmKasaRaporulayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(626, 222, 634, 640);
             this.frmKasaRaporulayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.frmKasaRaporulayoutControl1ConvertedLayout.Size = new System.Drawing.Size(991, 988);
+            this.frmKasaRaporulayoutControl1ConvertedLayout.Size = new System.Drawing.Size(929, 926);
             this.frmKasaRaporulayoutControl1ConvertedLayout.TabIndex = 10;
             // 
             // txtToplam
             // 
-            this.txtToplam.Location = new System.Drawing.Point(158, 324);
+            this.txtToplam.Location = new System.Drawing.Point(79, 192);
             this.txtToplam.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtToplam.Name = "txtToplam";
             this.txtToplam.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -117,13 +117,13 @@
             this.txtToplam.Properties.EditFormat.FormatString = "c2";
             this.txtToplam.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtToplam.Properties.ReadOnly = true;
-            this.txtToplam.Size = new System.Drawing.Size(809, 52);
+            this.txtToplam.Size = new System.Drawing.Size(838, 32);
             this.txtToplam.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.txtToplam.TabIndex = 9;
             // 
             // txtKredi
             // 
-            this.txtKredi.Location = new System.Drawing.Point(158, 264);
+            this.txtKredi.Location = new System.Drawing.Point(79, 156);
             this.txtKredi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKredi.Name = "txtKredi";
             this.txtKredi.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -135,13 +135,13 @@
             this.txtKredi.Properties.EditFormat.FormatString = "c2";
             this.txtKredi.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtKredi.Properties.ReadOnly = true;
-            this.txtKredi.Size = new System.Drawing.Size(809, 52);
+            this.txtKredi.Size = new System.Drawing.Size(838, 32);
             this.txtKredi.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.txtKredi.TabIndex = 8;
             // 
             // txtNakit
             // 
-            this.txtNakit.Location = new System.Drawing.Point(158, 204);
+            this.txtNakit.Location = new System.Drawing.Point(79, 120);
             this.txtNakit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtNakit.Name = "txtNakit";
             this.txtNakit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -153,14 +153,14 @@
             this.txtNakit.Properties.EditFormat.FormatString = "c2";
             this.txtNakit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtNakit.Properties.ReadOnly = true;
-            this.txtNakit.Size = new System.Drawing.Size(809, 52);
+            this.txtNakit.Size = new System.Drawing.Size(838, 32);
             this.txtNakit.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.txtNakit.TabIndex = 7;
             // 
             // txtKasiyer
             // 
             this.txtKasiyer.EditValue = "";
-            this.txtKasiyer.Location = new System.Drawing.Point(158, 24);
+            this.txtKasiyer.Location = new System.Drawing.Point(79, 12);
             this.txtKasiyer.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKasiyer.Name = "txtKasiyer";
             this.txtKasiyer.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -168,13 +168,13 @@
             this.txtKasiyer.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
             this.txtKasiyer.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtKasiyer.Properties.ReadOnly = true;
-            this.txtKasiyer.Size = new System.Drawing.Size(809, 52);
+            this.txtKasiyer.Size = new System.Drawing.Size(838, 32);
             this.txtKasiyer.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.txtKasiyer.TabIndex = 5;
             // 
             // txtGiderToplami
             // 
-            this.txtGiderToplami.Location = new System.Drawing.Point(158, 144);
+            this.txtGiderToplami.Location = new System.Drawing.Point(79, 84);
             this.txtGiderToplami.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtGiderToplami.Name = "txtGiderToplami";
             this.txtGiderToplami.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -186,13 +186,13 @@
             this.txtGiderToplami.Properties.EditFormat.FormatString = "c2";
             this.txtGiderToplami.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtGiderToplami.Properties.ReadOnly = true;
-            this.txtGiderToplami.Size = new System.Drawing.Size(809, 52);
+            this.txtGiderToplami.Size = new System.Drawing.Size(838, 32);
             this.txtGiderToplami.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.txtGiderToplami.TabIndex = 4;
             // 
             // txtKasaBakiyesi
             // 
-            this.txtKasaBakiyesi.Location = new System.Drawing.Point(158, 84);
+            this.txtKasaBakiyesi.Location = new System.Drawing.Point(79, 48);
             this.txtKasaBakiyesi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKasaBakiyesi.Name = "txtKasaBakiyesi";
             this.txtKasaBakiyesi.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -204,7 +204,7 @@
             this.txtKasaBakiyesi.Properties.EditFormat.FormatString = "c2";
             this.txtKasaBakiyesi.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtKasaBakiyesi.Properties.ReadOnly = true;
-            this.txtKasaBakiyesi.Size = new System.Drawing.Size(809, 52);
+            this.txtKasaBakiyesi.Size = new System.Drawing.Size(838, 32);
             this.txtKasaBakiyesi.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.txtKasaBakiyesi.TabIndex = 3;
             // 
@@ -212,10 +212,10 @@
             // 
             this.btnKapat.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.btnKapat.Appearance.Options.UseFont = true;
-            this.btnKapat.Location = new System.Drawing.Point(24, 883);
+            this.btnKapat.Location = new System.Drawing.Point(12, 829);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(943, 81);
+            this.btnKapat.Size = new System.Drawing.Size(905, 85);
             this.btnKapat.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
@@ -223,9 +223,9 @@
             // 
             // memoEdit1
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(158, 384);
+            this.memoEdit1.Location = new System.Drawing.Point(79, 228);
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(809, 403);
+            this.memoEdit1.Size = new System.Drawing.Size(838, 509);
             this.memoEdit1.StyleController = this.frmKasaRaporulayoutControl1ConvertedLayout;
             this.memoEdit1.TabIndex = 10;
             this.memoEdit1.Click += new System.EventHandler(this.memoEdit1_Click);
@@ -246,57 +246,57 @@
             this.layoutControlItem9});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(991, 988);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(929, 926);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtToplam;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 300);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 180);
             this.layoutControlItem1.Name = "txtToplamitem";
-            this.layoutControlItem1.Size = new System.Drawing.Size(951, 60);
+            this.layoutControlItem1.Size = new System.Drawing.Size(909, 36);
             this.layoutControlItem1.Text = "Genel Toplam";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(131, 25);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(64, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtKredi;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 240);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem2.Name = "txtKrediitem";
-            this.layoutControlItem2.Size = new System.Drawing.Size(951, 60);
+            this.layoutControlItem2.Size = new System.Drawing.Size(909, 36);
             this.layoutControlItem2.Text = "Kredi Toplamı";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(131, 25);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(64, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtNakit;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 180);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem3.Name = "txtNakititem";
-            this.layoutControlItem3.Size = new System.Drawing.Size(951, 60);
+            this.layoutControlItem3.Size = new System.Drawing.Size(909, 36);
             this.layoutControlItem3.Text = "Nakit Toplamı";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(131, 25);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(64, 13);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtKasaBakiyesi;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem6.Name = "txtKasaBakiyesiitem";
-            this.layoutControlItem6.Size = new System.Drawing.Size(951, 60);
+            this.layoutControlItem6.Size = new System.Drawing.Size(909, 36);
             this.layoutControlItem6.Text = "Kasa Bakiyesi";
             this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(131, 25);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(64, 13);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnZRaporuAl;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 771);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 729);
             this.layoutControlItem8.MaxSize = new System.Drawing.Size(0, 88);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(88, 88);
             this.layoutControlItem8.Name = "btnZRaporuAlitem";
-            this.layoutControlItem8.Size = new System.Drawing.Size(951, 88);
+            this.layoutControlItem8.Size = new System.Drawing.Size(909, 88);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -304,21 +304,21 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtGiderToplami;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "txtGiderToplamiitem";
-            this.layoutControlItem5.Size = new System.Drawing.Size(951, 60);
+            this.layoutControlItem5.Size = new System.Drawing.Size(909, 36);
             this.layoutControlItem5.Text = "Gider Toplamı";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(131, 25);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(64, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnKapat;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 859);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 817);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(0, 89);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(51, 89);
             this.layoutControlItem7.Name = "btnKapatitem";
-            this.layoutControlItem7.Size = new System.Drawing.Size(951, 89);
+            this.layoutControlItem7.Size = new System.Drawing.Size(909, 89);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -328,25 +328,25 @@
             this.layoutControlItem4.Control = this.txtKasiyer;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "txtKasiyeritem";
-            this.layoutControlItem4.Size = new System.Drawing.Size(951, 60);
+            this.layoutControlItem4.Size = new System.Drawing.Size(909, 36);
             this.layoutControlItem4.Text = "Kasiyer";
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(131, 25);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(64, 13);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.memoEdit1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 360);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 216);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(951, 411);
+            this.layoutControlItem9.Size = new System.Drawing.Size(909, 513);
             this.layoutControlItem9.Text = "Açıklama";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(131, 25);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(64, 13);
             // 
             // frmKasaRaporu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 988);
+            this.ClientSize = new System.Drawing.Size(929, 926);
             this.Controls.Add(this.frmKasaRaporulayoutControl1ConvertedLayout);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);

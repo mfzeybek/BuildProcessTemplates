@@ -37,7 +37,7 @@ namespace KasaSatis
         /// <param name="Aciklama"></param>
         /// <param name="OdemeTutari">eğer 0 verilirse kalan fatura bakiyesini öder</param>
         /// <returns></returns>
-        public OdemeDonenBilgisi FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, int KasaID, string Aciklama, decimal OdemeTutari)
+        public OdemeDonenBilgisi FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, int KasaID, string Aciklama, decimal OdemeTutari, int KasaPersoneliID)
         {
             try
             {
@@ -48,6 +48,7 @@ namespace KasaSatis
                     cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaID;
                     cmd.Parameters.Add("@OdemeTutari", SqlDbType.Decimal).Value = OdemeTutari;
                     cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
+                    cmd.Parameters.Add("@KasaPersoneliID", SqlDbType.Int).Value = KasaPersoneliID;
 
                     cmd.Parameters.Add("@RETURN_VALUE", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 

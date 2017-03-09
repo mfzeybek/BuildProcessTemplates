@@ -435,5 +435,16 @@ namespace Aresv2.BasitUretim
             frmRaporDizaynListesiv2 frm = new frmRaporDizaynListesiv2(yazdirrr, clsTablolar.csRaporDizayn.RaporModul.BasitUretimRecetesi);
             frm.ShowDialog();
         }
+
+        private void btnFiyatTanim_Click(object sender, EventArgs e)
+        {
+            //if (gridView1.RowCount == 0) return;
+            //Stok.frmStokFiyatlari frm = new Stok.frmStokFiyatlari(Stok.frmStokFiyatlari.NeFiyati.Hepsi, (int)gridView1.GetFocusedRowCellValue(colMalzemeStokID), -1);
+            //if (frm.ShowDialog() == DialogResult.Yes)
+            //{
+            //    gridView1.SetFocusedRowCellValue(colMaliyet, frm.Fiyat);
+            //    gridView1.SetFocusedRowCellValue(colMaliyetFiyatTanimID, frm.FiyatTanimID);
+            //}
+        }
     }
 }
