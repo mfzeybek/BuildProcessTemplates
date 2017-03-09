@@ -39,7 +39,7 @@ namespace Aresv2.n11
 
             //AltKategoriGetir(1);
 
-            KategorileriKaydet();
+            //KategorileriKaydet();
         }
         clsTablolar.n11.csN11Kategori kateg = new clsTablolar.n11.csN11Kategori();
         DataTable dt_Kategoriler;
@@ -214,7 +214,7 @@ namespace Aresv2.n11
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            UrunGetir(164046793);
         }
 
         SqlTransaction TrGenel;

@@ -972,7 +972,6 @@ namespace Aresv2
             FormuAc(frm);
         }
 
-
         private void barButtonItem35_ItemClick_1(object sender, ItemClickEventArgs e)
         {
 
