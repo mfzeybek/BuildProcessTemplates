@@ -60,8 +60,8 @@ namespace clsTablolar.Kasa
                 using (SqlCommand cmd = new SqlCommand(@" select SUM(PosHr.Alacak) - SUM(PosHr.Borc) as PosBakiye, SUM(PosHr.Alacak) PosAlacak,  SUM(PosHr.Borc) PosBorc
 , SUM(NakitHr.Alacak) - SUM(NakitHr.Borc) as NakitBakiye, SUM(NakitHr.Alacak) NakitAlacak,  SUM(NakitHr.Borc) NakitBorc from CariHr
 --inner join CariHr on CariHr.KasaHrID = KasaHareket.KasaHrID and CariHr.SilindiMi = 0
-left join KasaHareket PosHr on PosHr.KasaHrID = CariHr.KasaHrID and PosHr.KasaID = 3
-left join KasaHareket NakitHr on NakitHr.KasaHrID = CariHr.KasaHrID and NakitHr.KasaID = @KasaID
+left join KasaHareket PosHr on PosHr.KasaHrID = CariHr.KasaHrID and PosHr.KasaID = 3 and PosHr.SilindiMi = 0
+left join KasaHareket NakitHr on NakitHr.KasaHrID = CariHr.KasaHrID and NakitHr.KasaID = @KasaID and NakitHr.SilindiMi = 0
 where  
 isnull((select top 1 KasaHareketID from KasaRaporu),-1) < CariHr.KasaHrID ", Baglanti, Tr))
                 {

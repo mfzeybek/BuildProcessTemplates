@@ -59,28 +59,34 @@ namespace KasaSatis
 
         void Ver()
         {
-            KasaHareketi.Aciklama =
-KasaHareketi.Alacak
-            KasaHareketi.Borc
-            KasaHareketi.KasaHrID
+            KasaHareketi.Aciklama = "Kasa Z Raporu " + memoEdit1.Text;
+            KasaHareketi.Alacak = 0;
+            KasaHareketi.Borc = Convert.ToDecimal(txtKasaBakiyesi.EditValue);
+            //KasaHareketi.KasaHrID 
 
-            KasaHareketi.KasaID
-            KasaHareketi.KaydedenPersonelID
-            KasaHareketi.SilindiMi
-                KasaHareketi.Tarih
+            KasaHareketi.KasaID = _KasaID;
+            KasaHareketi.KaydedenPersonelID = _PersonelID;
+            KasaHareketi.SilindiMi = false;
+
+            KasaHareketi.Tarih = DateTime.Now;
+
+            Rapor.Aciklama = memoEdit1.Text;
+            Rapor.NakitAlacak = Convert.ToDecimal(txtNakit.EditValue);
+            Rapor.NakitBorc = Convert.ToDecimal(txtGiderToplami.EditValue);
+            Rapor.PosAlacak = Convert.ToDecimal(txtKredi.EditValue);
+            
+
+
+            //Rapor.GenelToplam = 
         }
 
         private void btnZRaporuAl_Click(object sender, EventArgs e)
         {
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            KasaHareketi.Aciklama = 
-            KasaHareketi.Alacak = 0;
-            KasaHareketi.Borc =  // ahanda kasadan çıkan para buraya kaydedşlecek
 
-            KasaHareketi.KasaID = _KasaID;
-            KasaHareketi.KaydedenPersonelID = _PersonelID;
-            KasaHareketi.SilindiMi = 0;
-            KasaHareketi.Tarih
+
+
+
 
 
             Rapor.RaporKaydet(SqlConnections.GetBaglanti(), TrGenel);
