@@ -23,6 +23,17 @@ namespace clsTablolar.Kasa
         public DateTime Tarih { get; set; }
         public bool SilindiMi { get; set; }
         public int KaydedenPersonelID { get; set; }
+        public HareketTipleri HareketTipi { get; set; }
+
+        public enum HareketTipleri
+        {
+            bos = -1,
+            ParaGirisi = 1,
+            GiderCikisi = 2,
+            Iade = 3,
+            ZRaporuAlindiktanSonraCikis = 4,
+            KasaTransfer = 5
+        }
 
         public csKasaHareket()
         {
@@ -33,6 +44,7 @@ namespace clsTablolar.Kasa
             this.Aciklama = String.Empty;
             this.SilindiMi = false;
             this.Tarih = DateTime.Now;
+            this.HareketTipi = HareketTipleri.bos;
         }
 
         public void Getir(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID)
@@ -43,7 +55,6 @@ namespace clsTablolar.Kasa
             using (SqlCommand cmd = new SqlCommand("Select * from KasaHareket where KasaHrID = @KasaHrID", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = KasaHrID;
-
                 using (SqlDataReader dr = cmd.ExecuteReader())
                 {
                     if (dr.Read())
@@ -55,11 +66,12 @@ namespace clsTablolar.Kasa
                         this.Aciklama = dr["Aciklama"].ToString();
                         this.Tarih = (DateTime)dr["Tarih"];
                         this.KaydedenPersonelID = (int)dr["KaydedenPersonelID"];
+                        this.HareketTipi = (HareketTipleri)dr["HareketTipi"];
                     }
                 }
             }
         }
-        public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID, int KasaID, decimal Alacak, decimal Borc, string Aciklama, DateTime Tarih, int PersonelID)
+        public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID, int KasaID, decimal Alacak, decimal Borc, string Aciklama, DateTime Tarih, HareketTipleri HareketTipi , int PersonelID)
         {
             this.KasaHrID = KasaHrID;
             this.KasaID = KasaID;
@@ -69,7 +81,7 @@ namespace clsTablolar.Kasa
             this.Tarih = Tarih;
             this.SilindiMi = false;
             this.KaydedenPersonelID = PersonelID;
-
+            this.HareketTipi = HareketTipi;
 
 
             return HarekeKaydet(Baglanti, Tr);
@@ -82,13 +94,13 @@ namespace clsTablolar.Kasa
                 cmd.Transaction = Tr;
                 if (KasaHrID != -1)
                 {
-                    cmd.CommandText = "update KasaHareket set KasaID = @KasaID, Alacak = @Alacak, Borc = @Borc, Aciklama = @Aciklama where KasaHrID = @KasaHrID";
+                    cmd.CommandText = "update KasaHareket set KasaID = @KasaID, Alacak = @Alacak, Borc = @Borc, Aciklama = @Aciklama , Tarih = @Tarih, HareketTipi = @HareketTipi ,SilindiMi = @SilindiMi, KaydedenPersonelID = @KaydedenPersonelID where KasaHrID = @KasaHrID ";
                     cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = KasaHrID;
                 }
                 else
                 {
-                    cmd.CommandText = @"insert into KasaHareket (KasaID, Alacak, Borc, Aciklama) values 
-(@KasaID, @Alacak, @Borc, @Aciklama) set @YeniID = SCOPE_IDENTITY() ";
+                    cmd.CommandText = @"insert into KasaHareket (KasaID, Alacak, Borc, Aciklama, Tarih, HareketTipi ,SilindiMi, KaydedenPersonelID) values 
+(@KasaID, @Alacak, @Borc, @Aciklama, @Tarih, @HareketTipi ,@SilindiMi, @KaydedenPersonelID) set @YeniID = SCOPE_IDENTITY() ";
                     cmd.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
                 }
 
@@ -96,6 +108,10 @@ namespace clsTablolar.Kasa
                 cmd.Parameters.Add("@Alacak", SqlDbType.Decimal).Value = Alacak;
                 cmd.Parameters.Add("@Borc", SqlDbType.Decimal).Value = Borc;
                 cmd.Parameters.Add("@Aciklama", SqlDbType.NVarChar).Value = Aciklama;
+                cmd.Parameters.Add("@Tarih", SqlDbType.DateTime).Value = Tarih;
+                cmd.Parameters.Add("@HareketTipi", SqlDbType.Int).Value = HareketTipi;
+                cmd.Parameters.Add("@SilindiMi", SqlDbType.Bit).Value = SilindiMi;
+                cmd.Parameters.Add("@KaydedenPersonelID", SqlDbType.Int).Value = KaydedenPersonelID;
 
                 cmd.ExecuteNonQuery();
 
@@ -123,21 +139,6 @@ namespace clsTablolar.Kasa
                 }
             }
         }
-
-
-
-        /// <summary>
-        /// Kasadaki Bütün Paraların çıkışını yapar.
-        /// </summary>
-        public void ZRaporuAl()
-        {
-            //            SqlCommand cmd = new SqlCommand();
-            //            cmd.CommandText = @"insert into ZRaporu (ZRaporuID, Tarih, Aciklama, RaporuAlanPersonelID, NakitTutar, KrediKartiTutari, KasaBakiyesi)
-            //values(@ZRaporuID, @Tarih, @Aciklama, @RaporuAlanPersonelID, @NakitTutar, @KrediKartiTutari, @KasaBakiyesi)";
-            //            cmd.Parameters.Add()
-        }
-
-
     }
 }
 

@@ -416,6 +416,7 @@ and
                     cmdKayit.Parameters.Add("@HesaplananFaturaNo", SqlDbType.NVarChar, 20).Direction = ParameterDirection.Output;
                     cmdKayit.Parameters.Add("@Barkod", SqlDbType.NVarChar, 20).Direction = ParameterDirection.Output;
                     cmdKayit.Parameters.Add("@FaturaCariTanim", SqlDbType.NVarChar, 250).Value = DROW["CariTanim"];
+                    cmdKayit.Parameters.Add("@CariKod", SqlDbType.NVarChar).Value = DROW["CariKod"];
                 }
                 else if ((int)DROW["FaturaID"] > 0)
                 {

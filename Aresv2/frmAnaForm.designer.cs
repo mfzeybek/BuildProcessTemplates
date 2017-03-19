@@ -1577,7 +1577,7 @@
             this.barButtonItem47});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbon.MaxItemId = 12;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
@@ -1602,7 +1602,7 @@
             this.rpYonetim,
             this.ribbonPage1,
             this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(2486, 282);
+            this.ribbon.Size = new System.Drawing.Size(960, 143);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -1645,17 +1645,17 @@
             // 
             // frmAnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(2486, 1410);
+            this.ClientSize = new System.Drawing.Size(960, 627);
             this.Controls.Add(this.ribbon);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAnaForm";
             this.Ribbon = this.ribbon;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

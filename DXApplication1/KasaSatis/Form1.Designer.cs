@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKasaOdeme));
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnAlisVerisiNakitOlarakKapat = new DevExpress.XtraEditors.SimpleButton();
@@ -55,7 +54,7 @@
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -63,7 +62,7 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.btnGuncelleme = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -144,6 +143,10 @@
             this.btnMusteriUrunAra = new DevExpress.XtraEditors.SimpleButton();
             this.txtBarkodu = new DevExpress.XtraEditors.TextEdit();
             this.lblKasiyer = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.lblOkcBaglanti = new DevExpress.XtraEditors.LabelControl();
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemesiYapilacakSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemesiYapilacakSatis)).BeginInit();
@@ -550,7 +553,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 662);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 671);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(1);
             this.barDockControlBottom.Size = new System.Drawing.Size(1314, 0);
@@ -562,7 +565,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 662);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 671);
             // 
             // barDockControlRight
             // 
@@ -571,7 +574,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1314, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 662);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 671);
             // 
             // barSubItem1
             // 
@@ -713,7 +716,7 @@
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
             this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(1103, 292);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(1103, 301);
             this.gcSatisHareketleri.TabIndex = 62;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -1287,6 +1290,36 @@
             this.lblKasiyer.TabIndex = 123;
             this.lblKasiyer.Text = "lblKasiyer";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(1031, 41);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 128;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_2);
+            // 
+            // lblOkcBaglanti
+            // 
+            this.lblOkcBaglanti.Location = new System.Drawing.Point(1168, 17);
+            this.lblOkcBaglanti.Name = "lblOkcBaglanti";
+            this.lblOkcBaglanti.Size = new System.Drawing.Size(66, 13);
+            this.lblOkcBaglanti.TabIndex = 129;
+            this.lblOkcBaglanti.Text = "lblOkcBaglanti";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(1159, 41);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 134;
+            this.simpleButton2.Text = "simpleButton2";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_2);
+            // 
             // frmKasaOdeme
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1294,7 +1327,10 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1314, 662);
+            this.ClientSize = new System.Drawing.Size(1314, 671);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.lblOkcBaglanti);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lblKasiyer);
             this.Controls.Add(this.btnMiktarGir);
             this.Controls.Add(this.btnMusteriler);
@@ -1461,6 +1497,10 @@
         private DevExpress.XtraBars.BarButtonItem btnGuncelleme;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
         private DevExpress.XtraEditors.LabelControl lblKasiyer;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl lblOkcBaglanti;
+        private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }
 

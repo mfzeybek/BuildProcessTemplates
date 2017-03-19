@@ -38,6 +38,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BankCommPC, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\KasaDll\BankCommPC.dll</HintPath>
+    </Reference>
+    <Reference Include="BBNetwork">
+      <HintPath>..\..\KasaDll\BBNetwork.dll</HintPath>
+    </Reference>
+    <Reference Include="BmsDllForDelphi">
+      <HintPath>..\..\KasaDll\BmsDllForDelphi.dll</HintPath>
+    </Reference>
+    <Reference Include="class_fp_PC">
+      <HintPath>..\..\KasaDll\class_fp_PC.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -46,6 +59,19 @@
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="GMP3Library, Version=3.0.1.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\KasaDll\GMP3Library.dll</HintPath>
+    </Reference>
+    <Reference Include="MessageQueueP2P">
+      <HintPath>..\..\KasaDll\MessageQueueP2P.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenNETCF.Desktop.Communication">
+      <HintPath>..\..\KasaDll\OpenNETCF.Desktop.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="Serv">
+      <HintPath>..\..\KasaDll\Serv.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
@@ -80,6 +106,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="csKasaBaglanti.cs" />
     <Compile Include="csOdemeKaydet.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -74,7 +74,8 @@ namespace KasaSatis
             Rapor.NakitAlacak = Convert.ToDecimal(txtNakit.EditValue);
             Rapor.NakitBorc = Convert.ToDecimal(txtGiderToplami.EditValue);
             Rapor.PosAlacak = Convert.ToDecimal(txtKredi.EditValue);
-            
+            Rapor.KasaPersonelID = _PersonelID;
+
 
 
             //Rapor.GenelToplam = 
@@ -82,14 +83,10 @@ namespace KasaSatis
 
         private void btnZRaporuAl_Click(object sender, EventArgs e)
         {
+            Ver();
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-
-
-
-
-
-
-            Rapor.RaporKaydet(SqlConnections.GetBaglanti(), TrGenel);
+            KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, -1, KasaSatis.Properties.Settings.Default.KasaID, 0, (decimal)txtNakit.EditValue - (decimal)txtGiderToplami.EditValue, memoEdit1.Text, DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.ZRaporuAlindiktanSonraCikis, _PersonelID);
+            Rapor.RaporKaydet(SqlConnections.GetBaglanti(), TrGenel, KasaHareketi.KasaHrID);
             TrGenel.Commit();
         }
 

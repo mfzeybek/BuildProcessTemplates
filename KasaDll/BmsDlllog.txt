@@ -1,0 +1,29 @@
+
+----------------------
+
+Banka Çağırıldı : @ 03.02.2017 17:54:37
+
+----------------------
+
+response_code==99 @ 03.02.2017 17:54:46
+
+----------------------
+
+ @ 03.02.2017 17:54:46
+
+   konum: ParkApp_demo.Bank.Pay(Decimal amount, UInt32 z_num, UInt32 rec_num, UInt32 ej_num, String inv_num, DateTime datetime) C:\Users\BMS\Desktop\NECMETTİN\Projeler\BmsDLL\BMSDLL(31.01.2017)\BmsSdkDll\Bank\Bank.cs içinde: satır 471
+   konum: BmsSdkDLL.BmsSdkLib.fb_bank_pay(Nullable`1 p) C:\Users\BMS\Desktop\NECMETTİN\Projeler\BmsDLL\BMSDLL(31.01.2017)\BmsSdkDll\BmsSdkLib.cs içinde: satır 885 @ 03.02.2017 17:54:46
+
+----------------------
+
+Amount :40 @ 03.02.2017 17:55:39
+
+----------------------
+
+Banka Çağırıldı : @ 03.02.2017 17:55:41
+
+----------------------
+
+response_code==0 @ 03.02.2017 17:56:09
+
+----------------------

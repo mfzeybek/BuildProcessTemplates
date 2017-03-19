@@ -236,7 +236,7 @@
             // colDegismeTarihi
             // 
             this.colDegismeTarihi.Caption = "DegismeTarihi";
-            this.colDegismeTarihi.FieldName = "DegismeTarihi";
+            this.colDegismeTarihi.FieldName = "FaturaTarihi";
             this.colDegismeTarihi.Name = "colDegismeTarihi";
             this.colDegismeTarihi.Visible = true;
             this.colDegismeTarihi.VisibleIndex = 0;
@@ -247,7 +247,7 @@
             this.colFaturaTarihi_saat.Caption = "Saat";
             this.colFaturaTarihi_saat.DisplayFormat.FormatString = "t";
             this.colFaturaTarihi_saat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colFaturaTarihi_saat.FieldName = "DegismeTarihi";
+            this.colFaturaTarihi_saat.FieldName = "FaturaTarihi";
             this.colFaturaTarihi_saat.Name = "colFaturaTarihi_saat";
             this.colFaturaTarihi_saat.Visible = true;
             this.colFaturaTarihi_saat.VisibleIndex = 1;

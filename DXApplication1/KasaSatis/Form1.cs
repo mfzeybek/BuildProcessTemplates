@@ -16,10 +16,14 @@ namespace KasaSatis
         //int SonOdemesiYapilanMusterinin_FaturaID = -1;
 
         clsTablolar.TeraziSatisClaslari.csBarkodtanStokArama BarkodtanStokArma;
+
+
+
         private void btnAlisVerisiNakitOlarakKapat_Click(object sender, EventArgs e)
         {
             try
             {
+
                 if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value)
                 {
                     MessageBox.Show("Satış yok veya seçili satışın daha tüm bilgileri gelmedi mk");
@@ -57,6 +61,9 @@ namespace KasaSatis
                 MessageBox.Show("Hata hamısına");
             }
         }
+
+
+
         csOdemeKaydet OdemeKay = new csOdemeKaydet();
         SqlTransaction TrGenel;
 
@@ -78,7 +85,11 @@ namespace KasaSatis
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CheckForIllegalCrossThreadCalls = false;
+            string str1 = dll.getDemoSDKVersionCSharp();
+            string str2 = dll.getDemoSDKVersion();
+            dll.getStatusLastException();
+
+            //CheckForIllegalCrossThreadCalls = false;
             //DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
             SqlConnections conn = new SqlConnections();
@@ -973,6 +984,9 @@ namespace KasaSatis
             {
                 Rapor.ShowDialog();
             }
+
+
+
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1005,6 +1019,75 @@ namespace KasaSatis
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+
+        private void simpleButton1_Click_2(object sender, EventArgs e)
+        {
+
+            if (!timer1.Enabled)
+                timer1.Enabled = true;
+            dll.setgmp(true);
+            dll.setgmp_force(true);
+            dll.connect();
+            lblOkcBaglanti.Text = "Connect";
+        }
+
+        BmsDll4Delphi.BmsDllForDelphi dll = new BmsDll4Delphi.BmsDllForDelphi();
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            string Str = "Connect";
+            if ((lblOkcBaglanti.Text.Length - Str.Length) >= 10)
+                lblOkcBaglanti.Text = Str;
+            else
+                lblOkcBaglanti.Text = lblOkcBaglanti.Text + ".";
+
+            if (dll.checkConnectGMP3Coupling())
+            {
+                lblOkcBaglanti.Text = "Connect Pos";
+                timer1.Enabled = false;
+
+                //btnDisConnect.Enabled = true;
+                //btnConnect.Enabled = false;
+            }
+        }
+
+        private void simpleButton2_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string EssizNumara = dll.GenerateNewUnqNum();
+
+                dll.setUnqNum(EssizNumara);
+                int returnValue = dll.openReceipt((int)(BmsSdkDLL.Parameters.SaleType.Sales), false);
+                //lstExecption.Items.Add("openReceipt --> " + returnValue.ToString());
+
+                //tabControlDLL.SelectedTab = tabPageSales;
+
+                for (int i = 0; i < gvSatisHareketleri.RowCount; i++)
+                {
+                    string UrunAdi = gvSatisHareketleri.GetRowCellValue(i, colFaturaHareketStokAdi).ToString();
+                    string plu = "1111";
+                    string Birimi = gvSatisHareketleri.GetRowCellValue(i, colStokAnaBirimAdi).ToString();
+                    string Fiyati = gvSatisHareketleri.GetRowCellValue(i, colKdvDahilFiyat).ToString();
+                    string Miktar = gvSatisHareketleri.GetRowCellValue(i, colAltBirimMiktar).ToString();
+                    dll.SellItem(
+UrunAdi,
+plu,
+Birimi,
+float.Parse(Fiyati),
+float.Parse(Miktar));
+
+                }
+
+                dll.closeReceipt();
+            }
+            catch (Exception ex)
+            {
+                //lstExecption.Items.Add("openReceipt --> " + ex.StackTrace.ToString());
             }
         }
     }

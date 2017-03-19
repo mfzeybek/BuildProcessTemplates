@@ -42,22 +42,22 @@ FaturaTutari, DuzenlemeTarihi, FaturaTarihi, FaturaTipi, Fatura.FaturaID
 --, TeraziFaturaID 
 from Fatura with(nolock)
 --inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID 
-where HizliSatistaGozukecekMi = 1  ", _Baglanti))
+where HizliSatistaGozukecekMi = 1 and fatura.SilindiMi = 0  ", _Baglanti))
                 {
                     if (checkButton_OdemesiTamamlanmamis.Checked == true)
                     {
-                        da.SelectCommand.CommandText += @" and [dbo].[FaturaninOdemesiTamamlanmisMi](Fatura.FaturaID) = 0 and fatura.SilindiMi = 0 ";
+                        da.SelectCommand.CommandText += @" and [dbo].[FaturaninOdemesiTamamlanmisMi](Fatura.FaturaID) = 0";
                     }
                     else if (checkButton_OdemesiTamamlanmis.Checked == true)
                     {
-                        da.SelectCommand.CommandText += @" and [dbo].[FaturaninOdemesiTamamlanmisMi](Fatura.FaturaID) = 1 and fatura.SilindiMi = 0 and DegismeTarihi > (select DATEADD(hour, -3, getdate()))";
+                        da.SelectCommand.CommandText += @" and [dbo].[FaturaninOdemesiTamamlanmisMi](Fatura.FaturaID) = 1 and FaturaTarihi > (select DATEADD(hour, -3, getdate()))";
                     }
 
                     if (checkButton1.Checked == true)
                     {
-                        da.SelectCommand.CommandText += @" and DegismeTarihi > (select DATEADD(hour, -1, getdate()))";
+                        da.SelectCommand.CommandText += @" and FaturaTarihi > (select DATEADD(hour, -1, getdate()))";
                     }
-                    da.SelectCommand.CommandText += @" order by DegismeTarihi desc ";
+                    da.SelectCommand.CommandText += @" order by FaturaTarihi desc ";
 
                     //Trgenel = _Baglanti.BeginTransaction();
 

@@ -87,12 +87,15 @@ namespace Aresv2.Cari.CariHr
                 Bakiye.BakiyeVer(SqlConnections.GetBaglanti(), TrGenel, _CariID);
 
                 VeriAlVer(GET_SET.get);
+
                 lkpKasa.Properties.DataSource = KasaHareketi.KasaListeGetir(SqlConnections.GetBaglanti(), TrGenel);
                 TrGenel.Commit();
 
+
                 lkpKasa.Properties.ValueMember = "KasaID";
                 lkpKasa.Properties.DisplayMember = "KasaAdi";
-                lkpKasa.EditValue = _KasaID;
+                lkpKasa.EditValue = 2;
+
                 if (_FaturaID != -1)
                 {
                     groupControl3.Visible = true;
@@ -154,6 +157,7 @@ namespace Aresv2.Cari.CariHr
                 _FaturaID = Hareket._FaturaID;
                 _KasaHrID = Hareket.KasaHrID;
                 _KasaID = Hareket.KasaID;
+                lkpKasa.EditValue = _KasaID;
 
                 // sadece get
                 lblBakiye.Text = Bakiye.Bakiye.ToString();
@@ -172,8 +176,10 @@ namespace Aresv2.Cari.CariHr
                 Hareket._FaturaID = _FaturaID;
                 Hareket.CariID = Cari.CariID;
 
+                _KasaID = (int)lkpKasa.EditValue;
                 Hareket.KasaHrID = _KasaHrID;
                 Hareket.KasaID = _KasaID;
+
 
             }
             ButtonEnabled(false);
@@ -201,11 +207,11 @@ namespace Aresv2.Cari.CariHr
                 VeriAlVer(GET_SET.set);
 
                 if (Hareket.AlacakMiBorcMu == clsTablolar.cari.CariHr.HareketYonu.Alacak)
-                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, Hareket.Tutar, 0, "");
+                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, Hareket.Tutar, 0, "", DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.ParaGirisi, Convert.ToInt32(frmKullaniciGiris.KullaniciID));
                 else if (Hareket.AlacakMiBorcMu == clsTablolar.cari.CariHr.HareketYonu.Borc)
-                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, 0, Hareket.Tutar, "");
+                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, 0, Hareket.Tutar, "", DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.GiderCikisi, Convert.ToInt32(frmKullaniciGiris.KullaniciID));
 
-
+                _KasaHrID = Hareket.KasaHrID;
 
                 Hareket.Kaydet(SqlConnections.GetBaglanti(), TrGenel);
 
@@ -256,6 +262,7 @@ namespace Aresv2.Cari.CariHr
             if (DialogResult.Yes == MessageBox.Show("Kayıt Silinecek Eminmisin??", "Dikkat Hamısına", MessageBoxButtons.YesNo, MessageBoxIcon.None))
             {
                 Hareket.SilindiMi = true;
+                KasaHareketi.SilindiMi = true;
                 btnKaydet_Click(null, null);
                 this.DialogResult = DialogResult.Yes;
                 Close();

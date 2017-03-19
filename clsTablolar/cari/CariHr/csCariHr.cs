@@ -220,9 +220,9 @@ end", Baglanti, Tr);
             if (_CariHrID == -1)
             {
                 using (cmd = new SqlCommand(@"insert into CariHr 
-                                    ( CariID, Tarih, AlacakMiBorcMu, Aciklama, EvrakNo, Tutar, Entegrasyon, EntegrasyonID, Devirmi, SilindiMi, FaturaID ) 
+                                    ( CariID, Tarih, AlacakMiBorcMu, Aciklama, EvrakNo, Tutar, Entegrasyon, EntegrasyonID, Devirmi, SilindiMi, FaturaID, KasaID, KasaHrID ) 
                                     values 
-                                    ( @CariID, @Tarih, @AlacakMiBorcMu, @Aciklama, @EvrakNo, @Tutar, @Entegrasyon, @EntegrasyonID, @Devirmi, @SilindiMi , @FaturaID) set @YeniID = SCOPE_IDENTITY()", Baglanti, Tr))
+                                    ( @CariID, @Tarih, @AlacakMiBorcMu, @Aciklama, @EvrakNo, @Tutar, @Entegrasyon, @EntegrasyonID, @Devirmi, @SilindiMi , @FaturaID, @KasaID, @KasaHrID ) set @YeniID = SCOPE_IDENTITY()", Baglanti, Tr))
                 {
                     cmd.Parameters.Add("@CariID", SqlDbType.Int).Value = _CariID;
                     cmd.Parameters.Add("@Tarih", SqlDbType.DateTime).Value = _Tarih;
@@ -235,6 +235,8 @@ end", Baglanti, Tr);
                     cmd.Parameters.Add("@Devirmi", SqlDbType.Bit).Value = _Devirmi;
                     cmd.Parameters.Add("@SilindiMi", SqlDbType.Bit).Value = _SilindiMi;
                     cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = _FaturaID;
+                    cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = _KasaID;
+                    cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = _KasaHrID;
 
 
                     cmd.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -249,7 +251,7 @@ end", Baglanti, Tr);
             {
                 using (cmd = new SqlCommand(@"update CariHr set 
                           CariID = @CariID, Tarih = @Tarih, AlacakMiBorcMu = @AlacakMiBorcMu, Aciklama = @Aciklama,
-                          EvrakNo = @EvrakNo, Tutar = @Tutar, Entegrasyon = @Entegrasyon, EntegrasyonID = @EntegrasyonID, Devirmi = @Devirmi, SilindiMi = @SilindiMi, FaturaID = @FaturaID where CariHrID = @CariHrID", Baglanti, Tr))
+                          EvrakNo = @EvrakNo, Tutar = @Tutar, Entegrasyon = @Entegrasyon, EntegrasyonID = @EntegrasyonID, Devirmi = @Devirmi, SilindiMi = @SilindiMi, FaturaID = @FaturaID, KasaID = @KasaID, KasaHrID = @KasaHrID  where CariHrID = @CariHrID", Baglanti, Tr))
                 {
                     cmd.Parameters.Add("@CariHrID", SqlDbType.Int).Value = _CariHrID;
 
@@ -261,10 +263,11 @@ end", Baglanti, Tr);
                     cmd.Parameters.Add("@Tutar", SqlDbType.Decimal).Value = _Tutar;
                     cmd.Parameters.Add("@Entegrasyon", SqlDbType.TinyInt).Value = Convert.ToInt32(_Entegrasyon);
                     cmd.Parameters.Add("@EntegrasyonID", SqlDbType.Int).Value = _EntegrasyonID;
+                    cmd.Parameters.Add("@Devirmi", SqlDbType.Bit).Value = _Devirmi;
                     cmd.Parameters.Add("@SilindiMi", SqlDbType.Bit).Value = _SilindiMi;
                     cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = _FaturaID;
-
-                    cmd.Parameters.Add("@Devirmi", SqlDbType.Bit).Value = _Devirmi;
+                    cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = _KasaID;
+                    cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = _KasaHrID;
 
                     cmd.ExecuteNonQuery();
                 }
