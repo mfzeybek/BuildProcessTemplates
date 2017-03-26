@@ -473,10 +473,12 @@ namespace Aresv2.n11ProductService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", OneWay=true, Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        public void UpdateProductBasic([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] UpdateProductBasicRequest UpdateProductBasicRequest) {
-            this.Invoke("UpdateProductBasic", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
+        [return: System.Xml.Serialization.XmlElementAttribute("UpdateProductBasicResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public UpdateProductBasicResponse UpdateProductBasic([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] UpdateProductBasicRequest UpdateProductBasicRequest) {
+            object[] results = this.Invoke("UpdateProductBasic", new object[] {
                         UpdateProductBasicRequest});
+            return ((UpdateProductBasicResponse)(results[0]));
         }
         
         /// <remarks/>
@@ -496,7 +498,7 @@ namespace Aresv2.n11ProductService {
         private void OnUpdateProductBasicOperationCompleted(object arg) {
             if ((this.UpdateProductBasicCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.UpdateProductBasicCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.UpdateProductBasicCompleted(this, new UpdateProductBasicCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1567,6 +1569,12 @@ namespace Aresv2.n11ProductService {
         
         private decimal oldOptionPriceField;
         
+        private string gtinField;
+        
+        private string mpnField;
+        
+        private bool bundleField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public decimal currencyAmount {
@@ -1597,6 +1605,39 @@ namespace Aresv2.n11ProductService {
             }
             set {
                 this.oldOptionPriceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string gtin {
+            get {
+                return this.gtinField;
+            }
+            set {
+                this.gtinField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string mpn {
+            get {
+                return this.mpnField;
+            }
+            set {
+                this.mpnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool bundle {
+            get {
+                return this.bundleField;
+            }
+            set {
+                this.bundleField = value;
             }
         }
     }
@@ -3776,6 +3817,41 @@ namespace Aresv2.n11ProductService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class UpdateProductBasicResponse {
+        
+        private ResultInfo resultField;
+        
+        private ProductBasic productField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ResultInfo result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductBasic product {
+            get {
+                return this.productField;
+            }
+            set {
+                this.productField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
     public partial class SearchProductsRequest {
         
         private Authentication authField;
@@ -4295,7 +4371,29 @@ namespace Aresv2.n11ProductService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void UpdateProductBasicCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void UpdateProductBasicCompletedEventHandler(object sender, UpdateProductBasicCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateProductBasicCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateProductBasicCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public UpdateProductBasicResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((UpdateProductBasicResponse)(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]

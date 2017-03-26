@@ -24,6 +24,7 @@ namespace Aresv2.n11
 
         int StokID;
         clsTablolar.n11.csN11Product Urun;
+        clsTablolar.n11.csN11Kategori Kategori;
         SqlTransaction TrGenel;
 
         private void frmN11Urun_Load(object sender, EventArgs e)
@@ -31,6 +32,8 @@ namespace Aresv2.n11
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             Urun = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
             TrGenel.Commit();
+            KategoriDoldur();
+
         }
 
         void Al()
@@ -40,10 +43,28 @@ namespace Aresv2.n11
             txtBarkod.EditValue = "";
             DetayliUrunBilgisi.DocumentText = Urun.DetayliUrunBilgisi;
             txtHazirlikSuresi.EditValue = Urun.HazirlikSuresi;
-
+        }
+        void Ver()
+        {
+            Urun.UrunBasligi = txtUrunBasligi.EditValue.ToString();
+            Urun.AltBaslik = txtAltBaslik.EditValue.ToString();
+            //Urun.txtBarkod.EditValue = "";
+            DetayliUrunBilgisi.DocumentText = Urun.DetayliUrunBilgisi;
+            txtHazirlikSuresi.EditValue = Urun.HazirlikSuresi;
         }
 
-
+        void KategoriDoldur()
+        {
+            Kategori = new clsTablolar.n11.csN11Kategori();
+            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+            treeListLookUpEdit1.Properties.DataSource = Kategori.KategoriListesi(SqlConnections.GetBaglanti(), TrGenel);
+            TrGenel.Commit();
+            treeListLookUpEdit1.Properties.TreeList.PopulateColumns();
+            treeListLookUpEdit1.Properties.TreeList.ParentFieldName = "n11UstKategoriID";
+            treeListLookUpEdit1.Properties.TreeList.KeyFieldName = "n11KategoriID";
+            treeListLookUpEdit1.Properties.DisplayMember = "KategoriAdi";
+            treeListLookUpEdit1.Properties.ValueMember = "n11KategoriID";
+        }
         private void btnAciklamaDuzenle_Click(object sender, EventArgs e)
         {
             using (frmhtmlEditor htmm = new frmhtmlEditor())

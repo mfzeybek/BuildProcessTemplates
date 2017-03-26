@@ -65,7 +65,7 @@ namespace TeraziSatis
               BindingFlags.InvokeMethod | BindingFlags.Instance, null,
               control, new object[] { 0x400000, false });
         }
-        public static string VersiyonNo = "Test - 105";
+        public static string VersiyonNo = "Test - 106";
         System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
         csTeraziLogs LogLar;
 
@@ -178,6 +178,9 @@ namespace TeraziSatis
                 cbtnTerazidekiSabitMiktariStokaAktar.Checked = false;
 
                 YazdirmaIslemiIcinHazirlik();
+
+                btnYaziciBir.Image = TeraziSatis.Properties.Resources.defaultprinter_32x32;
+                YeniMusterininFisiniYaziciBirdenOtomatikYazdir = true;
 
                 using (clsTablolar.TeraziSatisClaslari.csTeraziAyarlari AyarlariGetir = new clsTablolar.TeraziSatisClaslari.csTeraziAyarlari())
                 {
@@ -1721,6 +1724,7 @@ ne hatısı diye sorarsam hamısına hatası de
         //DevExpress.XtraReports.UI.XtraReport MusteriFisi;
         csMusteriFisBilgileri FisBilgleri;
 
+
         Thread th_Yazdir;
 
 
@@ -1782,23 +1786,12 @@ ne hatısı diye sorarsam hamısına hatası de
         {
             lock (YazdirmaThreadiIcin)
             {
-                //yazdirrr.ds = new DataSet();
 
-                //yazdirrr.dt_ekle("Fatura");
-                //yazdirrr.dtAlanEkleVeriEkle("Fatura", "FaturaBarkod", ((csMusteriFisBilgileri)FisBilgileri).Barkod, System.Type.GetType("System.String"));
-                //yazdirrr.dtAlanEkleVeriEkle("Fatura", "FaturaTarihi", ((csMusteriFisBilgileri)FisBilgileri).Tarih, System.Type.GetType("System.DateTime"));
-                //yazdirrr.dtAlanEkleVeriEkle("Fatura", "FaturaTutari", ((csMusteriFisBilgileri)FisBilgileri).Tutar, System.Type.GetType("System.Decimal"));
-
-                //BindingContext[yazdirrr.ds].EndCurrentEdit();
                 yazdirrr.ds.Tables[0].Rows[0]["FaturaBarkod"] = ((csMusteriFisBilgileri)FisBilgileri).Barkod;
                 yazdirrr.ds.Tables[0].Rows[0]["FaturaTarihi"] = ((csMusteriFisBilgileri)FisBilgileri).Tarih;
                 yazdirrr.ds.Tables[0].Rows[0]["FaturaTutari"] = ((csMusteriFisBilgileri)FisBilgileri).Tutar;
 
-
                 yazdirrr.Yazdirr(clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir, ((csMusteriFisBilgileri)FisBilgileri).YaziciAdi, 1);
-
-                //if (System.Diagnostics.Process.GetProcessesByName("TeraziSatis").Length > 0)
-                //    Application.OpenForms["TeraziSatis"].Activate();
                 this.BringToFront();
                 this.Focus();
             }
@@ -1861,11 +1854,6 @@ ne hatısı diye sorarsam hamısına hatası de
 
             //th1.Suspend();
             //th1.DisableComObjectEagerCleanup();
-        }
-
-        private void btnYenile_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void gvSatisHareketleri_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -2793,19 +2781,8 @@ ne hatısı diye sorarsam hamısına hatası de
             }
         }
 
-
         bool YeniMusterininFisiniYaziciBirdenOtomatikYazdir = false;
         bool YeniMusterininFisiniYaziciIkidenOtomatikYazdir = false;
-
-        private void btnYazici2_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void btnYaziciBir_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
 
         private void btnYaziciBir_MouseDown(object sender, MouseEventArgs e)
         {

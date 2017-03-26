@@ -38,7 +38,7 @@ namespace KasaSatis.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.2.3;Initial Catalog=ARES;User ID=sa;Password=1;Pooling=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ARES;Integrated Security=True;Pooling=True")]
         public string connstr {
             get {
                 return ((string)(this["connstr"]));
@@ -54,6 +54,18 @@ namespace KasaSatis.Properties {
             }
             set {
                 this["KasaID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ofis Fis")]
+        public string VarsayilanYaziciAdi {
+            get {
+                return ((string)(this["VarsayilanYaziciAdi"]));
+            }
+            set {
+                this["VarsayilanYaziciAdi"] = value;
             }
         }
     }

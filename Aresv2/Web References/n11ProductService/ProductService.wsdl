@@ -167,6 +167,14 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="UpdateProductBasicResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="result" type="n11:ResultInfo" />
+            <xs:element name="product" type="n11:ProductBasic" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="UpdateDiscountValueByProductIdRequest">
         <xs:complexType>
           <xs:sequence>
@@ -417,6 +425,9 @@
               <xs:element name="currencyAmount" type="xs:decimal" />
               <xs:element name="displayPrice" type="xs:decimal" />
               <xs:element name="oldOptionPrice" type="xs:decimal" />
+              <xs:element name="gtin" type="xs:string" />
+              <xs:element name="mpn" type="xs:string" />
+              <xs:element name="bundle" type="xs:boolean" />
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -786,6 +797,9 @@
   <wsdl:message name="UpdateProductPriceBySellerCodeResponse">
     <wsdl:part name="UpdateProductPriceBySellerCodeResponse" element="tns:UpdateProductPriceBySellerCodeResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateProductBasicResponse">
+    <wsdl:part name="UpdateProductBasicResponse" element="tns:UpdateProductBasicResponse" />
+  </wsdl:message>
   <wsdl:message name="SaveProductRequest">
     <wsdl:part name="SaveProductRequest" element="tns:SaveProductRequest" />
   </wsdl:message>
@@ -881,6 +895,7 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateProductBasic">
       <wsdl:input name="UpdateProductBasicRequest" message="tns:UpdateProductBasicRequest" />
+      <wsdl:output name="UpdateProductBasicResponse" message="tns:UpdateProductBasicResponse" />
     </wsdl:operation>
     <wsdl:operation name="SearchProducts">
       <wsdl:input name="SearchProductsRequest" message="tns:SearchProductsRequest" />
@@ -1001,6 +1016,9 @@
       <wsdl:input name="UpdateProductBasicRequest">
         <soap:body use="literal" />
       </wsdl:input>
+      <wsdl:output name="UpdateProductBasicResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SearchProducts">
       <soap:operation soapAction="" />

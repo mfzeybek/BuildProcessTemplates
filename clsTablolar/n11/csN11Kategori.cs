@@ -18,12 +18,9 @@ namespace clsTablolar.n11
 
         public DataTable KategoriListesi(SqlConnection Baglanti, SqlTransaction Tr)
         {
-            using (SqlDataAdapter da = new SqlDataAdapter())
+            using (SqlDataAdapter da = new SqlDataAdapter("select * from n11Kategori ", Baglanti))
             {
-                da.SelectCommand.CommandText = " select * from n11Kategori ";
-                da.SelectCommand.Connection = Baglanti;
                 da.SelectCommand.Transaction = Tr;
-
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;

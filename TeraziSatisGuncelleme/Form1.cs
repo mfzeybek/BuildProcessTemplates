@@ -17,7 +17,8 @@ namespace TeraziSatisGuncelleme
         {
             Ares = 1,
             Terazi = 2,
-            Kasa = 3
+            Kasa = 3,
+            Kavurma = 4
         }
 
         public GuncellenecekProgram AhandaGuncellenecekProgram;
@@ -29,19 +30,24 @@ namespace TeraziSatisGuncelleme
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = "3";
+            this.Text = "4";
 
-            if (AhandaGuncellenecekProgram == GuncellenecekProgram.Ares)
+            switch (AhandaGuncellenecekProgram)
             {
-                label1.Text = "Güncellenecek Program Ares";
-            }
-            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Kasa)
-            {
-                label1.Text = "Güncellenecek Program Kasa";
-            }
-            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Terazi)
-            {
-                label1.Text = "Güncellenecek Program Terazi";
+                case GuncellenecekProgram.Ares:
+                    label1.Text = "Güncellenecek Program Ares";
+                    break;
+                case GuncellenecekProgram.Terazi:
+                    label1.Text = "Güncellenecek Program Terazi";
+                    break;
+                case GuncellenecekProgram.Kasa:
+                    label1.Text = "Güncellenecek Program Kasa";
+                    break;
+                case GuncellenecekProgram.Kavurma:
+                    label1.Text = "Güncellenecek Program Kavurma Makinası";
+                    break;
+                default:
+                    break;
             }
         }
         // burada devexpressten bişi kullanma
@@ -127,14 +133,18 @@ namespace TeraziSatisGuncelleme
                         else
                         {
 
-                            if (Path.GetFileName(file) != "TeraziSatis.exe.config"
+                            if
+                            (
+                            Path.GetFileName(file) != "TeraziSatis.exe.config"
                             && Path.GetFileName(file) != "Loglar.db"
                             && Path.GetFileName(Path.GetDirectoryName(file)) != "Loglar"
                             && Path.GetFileName(Path.GetDirectoryName(file)) != "TeraziGuncelleme"
+                                                        && Path.GetFileName(Path.GetDirectoryName(file)) != "Guncelleme"
                             && Path.GetFileName(file) != "TeraziSatis.vshost.exe"
                             && Path.GetFileName(file) != "Aresv2.exe.config"
                             && Path.GetFileName(file) != "KasaSatis.exe.config"
                             && Path.GetFileName(file) != "YaziciAyarlari.sqlite"
+
                             )
                             {
                                 File.Copy(file, TargetFolderPath + Path.GetFileName(file), true);
@@ -174,6 +184,12 @@ namespace TeraziSatisGuncelleme
                 MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
                 System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatisBaslat2.exe");
             }
+            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Kavurma)
+            {
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\kAVURMA\", Directory.GetParent(Application.StartupPath).FullName, false);
+                MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
+                System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\WindowsFormsApplication2.exe");
+            }
             label1.Text = "Güncelleme Tamamlandi";
             Close();
             Application.Exit();
@@ -196,8 +212,30 @@ namespace TeraziSatisGuncelleme
 
         private void button1_Click(object sender, EventArgs e)
         {
-            File.Copy(@"\\192.168.2.8\TeraziDosyalari\Debug\TeraziSatis.exe.config", Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatis.exe.config", true);
-            File.Copy(@"\\192.168.2.8\TeraziDosyalari\Debug\TeraziSatis.vshost.exe", Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatis.vshost.exe", true);
+            switch (AhandaGuncellenecekProgram)
+            {
+                case GuncellenecekProgram.Ares:
+                    MessageBox.Show("Bu program için bir xml dosyası yok");
+                    break;
+                case GuncellenecekProgram.Terazi:
+                    File.Copy(@"\\192.168.2.8\TeraziDosyalari\Debug\TeraziSatis.exe.config", Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatis.exe.config", true);
+                    File.Copy(@"\\192.168.2.8\TeraziDosyalari\Debug\TeraziSatis.vshost.exe", Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatis.vshost.exe", true);
+                    System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\TeraziSatisBaslat2.exe");
+                    break;
+                case GuncellenecekProgram.Kasa:
+                    File.Copy(@"\\192.168.2.8\TeraziDosyalari\Kasa\Debug\KasaSatis.exe.config", Directory.GetParent(Application.StartupPath).FullName + @"\KasaSatis.exe.config", true);
+                    System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\KasaSatis.exe");
+                    break;
+                case GuncellenecekProgram.Kavurma:
+                    MessageBox.Show("Bu program için bir xml dosyası yok");
+                    break;
+                default:
+                    break;
+            }
+
+            label1.Text = "Güncelleme Tamamlandi";
+            Close();
+            Application.Exit();
         }
     }
 }

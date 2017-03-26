@@ -17,13 +17,20 @@ namespace KasaSatis
 
         clsTablolar.TeraziSatisClaslari.csBarkodtanStokArama BarkodtanStokArma;
 
+        enum OkcEntegrasyonTipi
+        {
+            TamEntegrasyon = 1, // Tam entegrasyon işte, Fiş çıkmadan satıl yapılamaz
+            EntegrasyonYok = 2, // Kasadan Fiş çıkmıyor
+            YariEntegrasyon = 3 // Isteğe bağlı olarak fiş çıkar
+        }
+
+        OkcEntegrasyonTipi OKCEntegrasyonu;
 
 
         private void btnAlisVerisiNakitOlarakKapat_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value)
                 {
                     MessageBox.Show("Satış yok veya seçili satışın daha tüm bilgileri gelmedi mk");
@@ -85,9 +92,11 @@ namespace KasaSatis
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            simpleButton1_Click_2(null, null);
             string str1 = dll.getDemoSDKVersionCSharp();
             string str2 = dll.getDemoSDKVersion();
             dll.getStatusLastException();
+            OKCEntegrasyonu = OkcEntegrasyonTipi.TamEntegrasyon;
 
             //CheckForIllegalCrossThreadCalls = false;
             //DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
@@ -139,6 +148,7 @@ namespace KasaSatis
                     }
                 }
             }
+            YazdirmaIslemiIcinHazirlik();
         }
 
         void dt_threadSatislar_RowDeleted(object sender, DataRowChangeEventArgs e)
@@ -352,6 +362,9 @@ namespace KasaSatis
                         break;
                     }
                 }
+                if (OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon)
+                    simpleButton6_Click(null, null);
+
             }
             else
             {
@@ -417,8 +430,81 @@ namespace KasaSatis
 
         private void btnYazdir_Click(object sender, EventArgs e)
         {
+            if (gvOdemesiYapilacakSatis.RowCount == 0)
+            {
+                return;
+            }
 
+            FisBilgleri.Barkod = gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaBarkod).ToString();
+            FisBilgleri.Tarih = Convert.ToDateTime(gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaTarihi));
+            FisBilgleri.Tutar = Convert.ToDecimal(gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaTutari));
+            FisBilgleri.YaziciAdi = YaziciAdi1;
+            //th_Yazdir = new Thread(new ParameterizedThreadStart(YazdirThreadi));
+
+            //th_Yazdir.Start(FisBilgleri);
+
+            YazdirThreadi(FisBilgleri);
         }
+
+        #region Yazdırma İşlemleri
+        clsTablolar.Yazdirma.csYazdir yazdirrr = new clsTablolar.Yazdirma.csYazdir();
+        DataTable dt_yazdirma = new DataTable();
+
+        string YaziciAdi1 = string.Empty;
+
+        void YazdirmaIslemiIcinHazirlik()
+        {
+            yazdirrr.dt_ekle("Fatura");
+            yazdirrr.dtAlanEkleVeriEkle("Fatura", "FaturaBarkod", string.Empty, System.Type.GetType("System.String"));
+            yazdirrr.dtAlanEkleVeriEkle("Fatura", "FaturaTarihi", DBNull.Value, System.Type.GetType("System.DateTime"));
+            yazdirrr.dtAlanEkleVeriEkle("Fatura", "FaturaTutari", DBNull.Value, System.Type.GetType("System.Decimal"));
+
+            YaziciAdi1 = KasaSatis.Properties.Settings.Default.VarsayilanYaziciAdi;
+
+
+            FisBilgleri = new csMusteriFisBilgileri();
+
+            //MusteriFisi = new DevExpress.XtraReports.UI.XtraReport();
+            //MusteriFisi.LoadLayout(Application.StartupPath + @"\Raporlar\MusteriNumarasi.repx");
+
+            yazdirrr.DosyayaiArabellegeAl(Application.StartupPath + @"\Raporlar\MusteriNumarasi.repx");
+        }
+        //DevExpress.XtraReports.UI.XtraReport MusteriFisi;
+        csMusteriFisBilgileri FisBilgleri;
+
+        public class csMusteriFisBilgileri
+        {
+            public string Barkod { get; set; }
+            public DateTime Tarih { get; set; }
+            public decimal Tutar { get; set; }
+            public string YaziciAdi { get; set; }
+            csMusteriFisBilgileri(string _Barkod, DateTime _Tarih, decimal _Tutar)
+            {
+                Barkod = _Barkod;
+                Tarih = _Tarih;
+                Tutar = _Tutar;
+            }
+            public csMusteriFisBilgileri()
+            { }
+        }
+
+
+        public void YazdirThreadi(object FisBilgileri)
+        {
+            {
+
+                yazdirrr.ds.Tables[0].Rows[0]["FaturaBarkod"] = ((csMusteriFisBilgileri)FisBilgileri).Barkod;
+                yazdirrr.ds.Tables[0].Rows[0]["FaturaTarihi"] = ((csMusteriFisBilgileri)FisBilgileri).Tarih;
+                yazdirrr.ds.Tables[0].Rows[0]["FaturaTutari"] = ((csMusteriFisBilgileri)FisBilgileri).Tutar;
+
+                yazdirrr.Yazdirr(clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir, ((csMusteriFisBilgileri)FisBilgileri).YaziciAdi, 1);
+                this.BringToFront();
+                this.Focus();
+            }
+        }
+
+
+        #endregion
 
         private void btnAktifSatisaDigerSatisinHareketleriniEkle_Click(object sender, EventArgs e)
         {
@@ -764,7 +850,7 @@ namespace KasaSatis
             //e.Appearance.Options.UseForeColor = true;
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void btnUrunButonlari_Click(object sender, EventArgs e)
         {
             if (gvOdemesiYapilacakSatis.RowCount == 0)
             {
@@ -1059,14 +1145,53 @@ namespace KasaSatis
             try
             {
 
-                string EssizNumara = dll.GenerateNewUnqNum();
 
-                dll.setUnqNum(EssizNumara);
-                int returnValue = dll.openReceipt((int)(BmsSdkDLL.Parameters.SaleType.Sales), false);
                 //lstExecption.Items.Add("openReceipt --> " + returnValue.ToString());
 
                 //tabControlDLL.SelectedTab = tabPageSales;
 
+                int aahnda;
+
+
+                aahnda = dll.closeReceipt();
+
+                if (aahnda != 0)
+                {
+                    MessageBox.Show(" ahanda");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "FP: OK; Command: Illegal.")
+                {
+                    MessageBox.Show("Ödemesi Tamamlanmayan Bir fiş yok");
+                }
+                else
+                {
+                    MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
+                }
+                //lstExecption.Items.Add("openReceipt --> " + ex.StackTrace.ToString());
+            }
+
+
+        }
+        void OkcyURunleriYazidir(bool YeniFisNoUret)
+        {
+            try
+            {
+                if (YeniFisNoUret)
+                {
+                    string EssizNumara = dll.GenerateNewUnqNum();
+
+                    dll.setUnqNum(EssizNumara);
+                    int returnValue = dll.openReceipt((int)(BmsSdkDLL.Parameters.SaleType.Sales), false);
+                    if (returnValue != 0)
+                    {
+                        MessageBox.Show("retun 0 dan farklı gelsdi");
+
+                    }
+                }
                 for (int i = 0; i < gvSatisHareketleri.RowCount; i++)
                 {
                     string UrunAdi = gvSatisHareketleri.GetRowCellValue(i, colFaturaHareketStokAdi).ToString();
@@ -1074,21 +1199,87 @@ namespace KasaSatis
                     string Birimi = gvSatisHareketleri.GetRowCellValue(i, colStokAnaBirimAdi).ToString();
                     string Fiyati = gvSatisHareketleri.GetRowCellValue(i, colKdvDahilFiyat).ToString();
                     string Miktar = gvSatisHareketleri.GetRowCellValue(i, colAltBirimMiktar).ToString();
-                    dll.SellItem(
-UrunAdi,
-plu,
-Birimi,
-float.Parse(Fiyati),
-float.Parse(Miktar));
-
+                    dll.SellItem(UrunAdi, plu, Birimi, float.Parse(Fiyati), float.Parse(Miktar));
                 }
-
-                dll.closeReceipt();
             }
             catch (Exception ex)
             {
-                //lstExecption.Items.Add("openReceipt --> " + ex.StackTrace.ToString());
+                if (ex.Message == "FP: Open fiscal receipt; Command: Illegal.")
+                {
+                    MessageBox.Show("Açıkta fiş Var, yani eşsiz numara üretilmiş zaten. Önce Ödemesini tamamla");
+                }
+                else if (ex.Message == "The Fiscal Printer is busy;t.l.")
+                {
+                    MessageBox.Show("Yazıcı Meşgul");
+                }
+                else if (ex.Message == "FP: OK; Command: Illegal.")
+                {
+                    MessageBox.Show("Yeni Eşsiz Numara Üretilmemiş");
+                }
+                else if (ex.Message == "GMP3 Error!GMP3 Initialization procedure required!")
+                {
+                    MessageBox.Show("OKC Bağlantısı Yok");
+                }
+                else
+                {
+                    MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
+                }
             }
+        }
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            OkcyURunleriYazidir(true);
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = dll.getStatus();
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int aahnda;
+                float NakitOdeme = 10;
+                aahnda = dll.payInCash(NakitOdeme);
+                if (aahnda != 0)
+                {
+                    MessageBox.Show("ahanda 1");
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "FP: OK; Command: Illegal.")
+                {
+                    MessageBox.Show("Ödemesi Tamamlanmayan Bir fiş yok");
+                }
+                else if (ex.Message == "FP: Bill payment finished; Open receipt; Command: Illegal.")
+                {
+                    MessageBox.Show("Fiş Tutarından daha fazla ödeme yapılamaz");
+                }
+                else
+                {
+                    MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
+                }
+            }
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+            OkcyURunleriYazidir(false);
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            string str = dll.getDemoSDKVersion();
+            string str1 = dll.getDemoSDKVersionCSharp();
+            string str2 = dll.getDemoSDKVersionDelphi();
+            //dll.un
         }
     }
 }

@@ -18,17 +18,20 @@ namespace clsTablolar.n11
 
 
 
-
         public int n11ProductID { get; set; }
         public string UrunBasligi { get; set; }
         public string AltBaslik { get; set; }
-
         public decimal Fiyat { get; set; }
-
         public int KategoriID { get; set; }
         public int StokID { get; set; }
         public string DetayliUrunBilgisi { get; set; }
         public int HazirlikSuresi { get; set; }
+
+        public int KullanilacakBarkodID { get; set; }
+
+        public int KullanilacakFiyatTanimID { get; set; }
+
+
 
 
         SqlDataReader dr;

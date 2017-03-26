@@ -80,9 +80,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(221, 64);
+            this.button1.Location = new System.Drawing.Point(13, 58);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 23);
+            this.button1.Size = new System.Drawing.Size(593, 48);
             this.button1.TabIndex = 7;
             this.button1.Text = "xml dosyasını indir";
             this.button1.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 483);
+            this.ClientSize = new System.Drawing.Size(624, 419);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBetaSurumKur);
             this.Controls.Add(this.btnHizliGuncelleme);
@@ -100,7 +100,7 @@
             this.Controls.Add(this.btnTamGuncelleme);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "v.2";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

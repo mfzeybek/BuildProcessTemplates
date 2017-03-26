@@ -20,7 +20,7 @@ namespace KasaSatis
 
         public csKasaBaglanti(DevExpress.XtraEditors.LabelControl BaglantiLabeli)
         {
-            this.BaglantiLabeli = BaglantiLabeli;
+            //this.BaglantiLabeli = BaglantiLabeli;
             //DevExpress.XtraWaitForm.WaitForm frm = new DevExpress.XtraWaitForm.WaitForm();
             //frm.ShowDialog();
         }

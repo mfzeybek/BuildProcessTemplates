@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKasaOdeme));
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnAlisVerisiNakitOlarakKapat = new DevExpress.XtraEditors.SimpleButton();
@@ -35,17 +36,17 @@
             this.gvOdemesiYapilacakSatis = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFaturaTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFaturaBarkod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFaturaTutari = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDegismeTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOdendiMi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKalanBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOdenenTutar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,7 +55,7 @@
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -62,7 +63,7 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.btnGuncelleme = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -73,8 +74,9 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnItemFormSecerekYazdir = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMusteriler = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUrunButonlari = new DevExpress.XtraEditors.SimpleButton();
             this.btnSeciliUrununMiktariniBirArttir = new DevExpress.XtraEditors.SimpleButton();
             this.btnMiktarGir = new DevExpress.XtraEditors.SimpleButton();
             this.ceBarkoduOkutulanFaturaninOdemesiniYap = new DevExpress.XtraEditors.CheckEdit();
@@ -145,8 +147,14 @@
             this.lblKasiyer = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.lblOkcBaglanti = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemesiYapilacakSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemesiYapilacakSatis)).BeginInit();
@@ -172,7 +180,7 @@
             this.btnAlisVerisiNakitOlarakKapat.Name = "btnAlisVerisiNakitOlarakKapat";
             this.btnAlisVerisiNakitOlarakKapat.Size = new System.Drawing.Size(190, 52);
             this.btnAlisVerisiNakitOlarakKapat.TabIndex = 5;
-            this.btnAlisVerisiNakitOlarakKapat.Text = "Kalan Bakiyeyi\r\nNakit Al";
+            this.btnAlisVerisiNakitOlarakKapat.Text = "Bakiyeyi\r\nNakit Al";
             this.btnAlisVerisiNakitOlarakKapat.Click += new System.EventHandler(this.btnAlisVerisiNakitOlarakKapat_Click);
             // 
             // gcOdemesiYapilacakSatis
@@ -187,7 +195,7 @@
             this.gcOdemesiYapilacakSatis.Name = "gcOdemesiYapilacakSatis";
             this.gcOdemesiYapilacakSatis.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit2});
-            this.gcOdemesiYapilacakSatis.Size = new System.Drawing.Size(1103, 284);
+            this.gcOdemesiYapilacakSatis.Size = new System.Drawing.Size(1229, 284);
             this.gcOdemesiYapilacakSatis.TabIndex = 66;
             this.gcOdemesiYapilacakSatis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvOdemesiYapilacakSatis});
@@ -215,17 +223,17 @@
             this.gvOdemesiYapilacakSatis.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3,
+            this.colFaturaTarihi,
+            this.gridColumn13,
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn13,
+            this.colFaturaBarkod,
+            this.colFaturaTutari,
+            this.colDegismeTarihi,
             this.colOdendiMi,
             this.colKalanBakiye,
             this.colOdenenTutar,
@@ -267,11 +275,25 @@
             this.gridColumn2.FieldName = "FaturaTipi";
             this.gridColumn2.Name = "gridColumn2";
             // 
-            // gridColumn3
+            // colFaturaTarihi
             // 
-            this.gridColumn3.Caption = "FaturaTarihi";
-            this.gridColumn3.FieldName = "FaturaTarihi";
-            this.gridColumn3.Name = "gridColumn3";
+            this.colFaturaTarihi.Caption = "FaturaTarihi";
+            this.colFaturaTarihi.FieldName = "FaturaTarihi";
+            this.colFaturaTarihi.Name = "colFaturaTarihi";
+            this.colFaturaTarihi.Visible = true;
+            this.colFaturaTarihi.VisibleIndex = 1;
+            this.colFaturaTarihi.Width = 109;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Saat";
+            this.gridColumn13.DisplayFormat.FormatString = "t";
+            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn13.FieldName = "FaturaTarihi";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 2;
+            this.gridColumn13.Width = 102;
             // 
             // gridColumn4
             // 
@@ -286,7 +308,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 45;
+            this.gridColumn5.Width = 60;
             // 
             // gridColumn6
             // 
@@ -312,47 +334,34 @@
             this.gridColumn9.FieldName = "TeraziFaturaID";
             this.gridColumn9.Name = "gridColumn9";
             // 
-            // gridColumn10
+            // colFaturaBarkod
             // 
-            this.gridColumn10.Caption = "FaturaBarkod";
-            this.gridColumn10.FieldName = "FaturaBarkod";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            this.gridColumn10.Width = 135;
+            this.colFaturaBarkod.Caption = "FaturaBarkod";
+            this.colFaturaBarkod.FieldName = "FaturaBarkod";
+            this.colFaturaBarkod.Name = "colFaturaBarkod";
+            this.colFaturaBarkod.Visible = true;
+            this.colFaturaBarkod.VisibleIndex = 3;
+            this.colFaturaBarkod.Width = 179;
             // 
-            // gridColumn11
+            // colFaturaTutari
             // 
-            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.gridColumn11.AppearanceCell.Options.UseFont = true;
-            this.gridColumn11.Caption = "FaturaTutari";
-            this.gridColumn11.DisplayFormat.FormatString = "c2";
-            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn11.FieldName = "FaturaTutari";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 4;
-            this.gridColumn11.Width = 154;
+            this.colFaturaTutari.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.colFaturaTutari.AppearanceCell.Options.UseFont = true;
+            this.colFaturaTutari.Caption = "FaturaTutari";
+            this.colFaturaTutari.DisplayFormat.FormatString = "c2";
+            this.colFaturaTutari.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colFaturaTutari.FieldName = "FaturaTutari";
+            this.colFaturaTutari.Name = "colFaturaTutari";
+            this.colFaturaTutari.Visible = true;
+            this.colFaturaTutari.VisibleIndex = 4;
+            this.colFaturaTutari.Width = 205;
             // 
-            // gridColumn12
+            // colDegismeTarihi
             // 
-            this.gridColumn12.Caption = "DegismeTarihi";
-            this.gridColumn12.FieldName = "DegismeTarihi";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 1;
-            this.gridColumn12.Width = 84;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Saat";
-            this.gridColumn13.DisplayFormat.FormatString = "t";
-            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn13.FieldName = "FaturaTarihi";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 2;
-            this.gridColumn13.Width = 77;
+            this.colDegismeTarihi.Caption = "DegismeTarihi";
+            this.colDegismeTarihi.FieldName = "DegismeTarihi";
+            this.colDegismeTarihi.Name = "colDegismeTarihi";
+            this.colDegismeTarihi.Width = 84;
             // 
             // colOdendiMi
             // 
@@ -370,7 +379,7 @@
             this.colKalanBakiye.Name = "colKalanBakiye";
             this.colKalanBakiye.Visible = true;
             this.colKalanBakiye.VisibleIndex = 5;
-            this.colKalanBakiye.Width = 101;
+            this.colKalanBakiye.Width = 134;
             // 
             // colOdenenTutar
             // 
@@ -379,7 +388,7 @@
             this.colOdenenTutar.Name = "colOdenenTutar";
             this.colOdenenTutar.Visible = true;
             this.colOdenenTutar.VisibleIndex = 6;
-            this.colOdenenTutar.Width = 101;
+            this.colOdenenTutar.Width = 134;
             // 
             // colOdemeSekli
             // 
@@ -392,7 +401,7 @@
             this.colOdemeSekli.Name = "colOdemeSekli";
             this.colOdemeSekli.Visible = true;
             this.colOdemeSekli.VisibleIndex = 7;
-            this.colOdemeSekli.Width = 117;
+            this.colOdemeSekli.Width = 162;
             // 
             // repositoryItemMemoEdit2
             // 
@@ -425,7 +434,7 @@
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(190, 52);
             this.simpleButton4.TabIndex = 118;
-            this.simpleButton4.Text = "Kalan Bakiyeyi\r\nKredi Kartı İle Al";
+            this.simpleButton4.Text = "Bakiyeyi\r\nKredi Kartı İle Al";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // dropDownButton1
@@ -537,8 +546,9 @@
             this.barButtonItem8,
             this.barButtonItem9,
             this.barButtonItem10,
-            this.btnGuncelleme});
-            this.barManager1.MaxItemId = 17;
+            this.btnGuncelleme,
+            this.barButtonItem11});
+            this.barManager1.MaxItemId = 18;
             // 
             // barDockControlTop
             // 
@@ -547,16 +557,16 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlTop.Size = new System.Drawing.Size(1314, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1440, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 671);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 785);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1314, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1440, 0);
             // 
             // barDockControlLeft
             // 
@@ -565,16 +575,16 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 671);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 785);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1314, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1440, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(1);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 671);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 785);
             // 
             // barSubItem1
             // 
@@ -614,6 +624,12 @@
             this.barBtnItemFormSecerekYazdir.Id = 9;
             this.barBtnItemFormSecerekYazdir.Name = "barBtnItemFormSecerekYazdir";
             // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "barButtonItem11";
+            this.barButtonItem11.Id = 17;
+            this.barButtonItem11.Name = "barButtonItem11";
+            // 
             // btnMusteriler
             // 
             this.btnMusteriler.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriler.Image")));
@@ -625,17 +641,17 @@
             this.btnMusteriler.TabIndex = 74;
             this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
             // 
-            // simpleButton3
+            // btnUrunButonlari
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(6, 356);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(190, 51);
-            this.simpleButton3.TabIndex = 73;
-            this.simpleButton3.Text = "Ürün Butonları";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.btnUrunButonlari.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUrunButonlari.Appearance.Options.UseFont = true;
+            this.btnUrunButonlari.Location = new System.Drawing.Point(6, 356);
+            this.btnUrunButonlari.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnUrunButonlari.Name = "btnUrunButonlari";
+            this.btnUrunButonlari.Size = new System.Drawing.Size(190, 51);
+            this.btnUrunButonlari.TabIndex = 73;
+            this.btnUrunButonlari.Text = "Ürün Butonları";
+            this.btnUrunButonlari.Click += new System.EventHandler(this.btnUrunButonlari_Click);
             // 
             // btnSeciliUrununMiktariniBirArttir
             // 
@@ -716,7 +732,7 @@
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
             this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(1103, 301);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(1229, 415);
             this.gcSatisHareketleri.TabIndex = 62;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -1301,7 +1317,7 @@
             // 
             // lblOkcBaglanti
             // 
-            this.lblOkcBaglanti.Location = new System.Drawing.Point(1168, 17);
+            this.lblOkcBaglanti.Location = new System.Drawing.Point(1112, 17);
             this.lblOkcBaglanti.Name = "lblOkcBaglanti";
             this.lblOkcBaglanti.Size = new System.Drawing.Size(66, 13);
             this.lblOkcBaglanti.TabIndex = 129;
@@ -1313,12 +1329,66 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(1159, 41);
+            this.simpleButton2.Location = new System.Drawing.Point(1112, 41);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 134;
-            this.simpleButton2.Text = "simpleButton2";
+            this.simpleButton2.Text = "Nakit Kapat";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_2);
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Location = new System.Drawing.Point(1203, 11);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton6.TabIndex = 139;
+            this.simpleButton6.Text = "Urunleri Geçir";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 11;
+            this.listBox1.Location = new System.Drawing.Point(12, 639);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(182, 92);
+            this.listBox1.TabIndex = 144;
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Location = new System.Drawing.Point(1203, 43);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton7.TabIndex = 149;
+            this.simpleButton7.Text = "Durum Getir";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
+            // 
+            // simpleButton8
+            // 
+            this.simpleButton8.Location = new System.Drawing.Point(1293, 11);
+            this.simpleButton8.Name = "simpleButton8";
+            this.simpleButton8.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton8.TabIndex = 154;
+            this.simpleButton8.Text = "10 lira ode";
+            this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
+            // 
+            // simpleButton9
+            // 
+            this.simpleButton9.Location = new System.Drawing.Point(1293, 41);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton9.TabIndex = 159;
+            this.simpleButton9.Text = "Yeni fiş açmadan geçir";
+            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(52, 737);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 164;
+            this.simpleButton3.Text = "simpleButton3";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmKasaOdeme
             // 
@@ -1327,7 +1397,13 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1314, 671);
+            this.ClientSize = new System.Drawing.Size(1440, 785);
+            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.simpleButton9);
+            this.Controls.Add(this.simpleButton8);
+            this.Controls.Add(this.simpleButton7);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.lblOkcBaglanti);
             this.Controls.Add(this.simpleButton1);
@@ -1348,7 +1424,7 @@
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.btnYeniMusteri);
             this.Controls.Add(this.txtBarkodu);
-            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.btnUrunButonlari);
             this.Controls.Add(this.btnYazdir);
             this.Controls.Add(this.btnOdemeIptal);
             this.Controls.Add(this.btnOncekiSayfa);
@@ -1399,21 +1475,21 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvOdemesiYapilacakSatis;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn colFaturaTarihi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn colFaturaBarkod;
+        private DevExpress.XtraGrid.Columns.GridColumn colFaturaTutari;
+        private DevExpress.XtraGrid.Columns.GridColumn colDegismeTarihi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn colOdendiMi;
         private DevExpress.XtraEditors.SimpleButton btnMiktarGir;
         private DevExpress.XtraEditors.SimpleButton btnSeciliUrununMiktariniBirArttir;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnUrunButonlari;
         public DevExpress.XtraGrid.Views.Grid.GridView gvSatisHareketleri;
         private DevExpress.XtraGrid.Columns.GridColumn colFaturaHareketID;
         private DevExpress.XtraGrid.Columns.GridColumn colFaturaID;
@@ -1501,6 +1577,13 @@
         private DevExpress.XtraEditors.LabelControl lblOkcBaglanti;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private System.Windows.Forms.ListBox listBox1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton8;
+        private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }
 
