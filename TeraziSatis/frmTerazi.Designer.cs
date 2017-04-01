@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTerazi));
             this.recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
             this.designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
@@ -134,13 +133,13 @@
             this.btnBirlesikUrunEkle = new DevExpress.XtraEditors.SimpleButton();
             this.cbtnTerazidekiSabitMiktariStokaAktar = new DevExpress.XtraEditors.CheckButton();
             this.btnYazici2 = new DevExpress.XtraEditors.SimpleButton();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ımageList1 = new System.Windows.Forms.ImageList();
             this.btnDaraIptal = new DevExpress.XtraEditors.SimpleButton();
             this.txtDaraMiktari = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.lblHareketSayisi = new DevExpress.XtraEditors.LabelControl();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.barBtnStokBilgileri = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnAyrintiYazdir = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
@@ -161,7 +160,7 @@
             this.barBtnSatisUstBilgisi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnTeraziAyar = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -1422,7 +1421,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkEdit2.EditValue = true;
             this.checkEdit2.Location = new System.Drawing.Point(3, 514);
-            this.checkEdit2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.checkEdit2.Margin = new System.Windows.Forms.Padding(12);
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.checkEdit2.Properties.Appearance.Options.UseFont = true;

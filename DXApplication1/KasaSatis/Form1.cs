@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 using System.Collections.Generic;
+using Tremol;
 
 namespace KasaSatis
 {
@@ -379,7 +380,7 @@ namespace KasaSatis
                 }
                 if (OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon)
                 {
-                    //btnUrunleriGecir_Click(null, null); şimdilik iptal ediyoruz.
+                    btnUrunleriGecir_Click(null, null); //şimdilik iptal ediyoruz.
                 }
 
             }
@@ -1206,7 +1207,7 @@ namespace KasaSatis
         }
 
 
-        void EssizNumaraUret()
+        string EssizNumaraUret()
         {
             try
             {
@@ -1224,7 +1225,7 @@ namespace KasaSatis
                 {
                     MessageBox.Show("retun 0 dan farklı gelsdi");
                 }
-                //return EssizNumara;
+                return EssizNumara;
             }
             catch (Exception ex)
             {
@@ -1240,7 +1241,7 @@ namespace KasaSatis
                 {
                     MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
                 }
-                //return string.Empty;
+                return string.Empty;
             }
         }
 
@@ -1255,7 +1256,14 @@ namespace KasaSatis
                 }
                 else if ((dll.getStatus() as String[])[4] == "[NonZeroDailyReport][Satis Islemi baslatildi]")
                 {
-                    EssizNumaraUret();
+                    if (string.Empty == EssizNumaraUret())
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
                 }
                 try
                 {
@@ -1289,6 +1297,49 @@ namespace KasaSatis
                     }
                 }
             }
+        }
+
+
+
+        Tremol.FP.Status DURUM;
+        string TumDurumlar;
+
+
+        void Durumlar()
+        {
+
+            DURUM = BmsSdkDLL.BmsSdkLib.fp.GetStatus();
+
+            if (DURUM.OpenFiscalReceipt)
+            {
+                TumDurumlar += "\n" + "Fiş Açık";
+            }
+            else
+            {
+                TumDurumlar += "\n" + "Fiş Kapalı";
+            }
+            if (DURUM.PrinterLowVoltage) { TumDurumlar += "\n" + "Pil Zayıf"; }
+            else
+            {
+                TumDurumlar += "\n" + "PiL Zayıf Degil";
+            }
+            if (DURUM.IncorectDate) { TumDurumlar += "\n" + "tarih yanlış"; } else { TumDurumlar += "\n" + "Tarih doğru"; }
+            if (DURUM.OpenNonFiscalReceipt) { TumDurumlar += "\n" + "Mali Olmayan Fiş Açık "; } else { TumDurumlar += "\n" + "Mali Olmayan Fiş Açık DEĞİL"; }
+            if (DURUM.ReportsAccumulationOverflowWarning24) { TumDurumlar += "\n" + " Z raporu alınmalı "; } else { TumDurumlar += "\n" + " Z raporu saati gelmedi "; }
+            MessageBox.Show(TumDurumlar);
+
+        }
+
+        void OKCSonFisNoBul()
+        {
+
+            uint rcp_num = 0;
+            uint z_num = 0;
+            uint eku_num = 0;
+            dll.getFiscalInformation(out rcp_num, out z_num, out eku_num);
+
+            MessageBox.Show(rcp_num + "  " + z_num + "  " + eku_num);
+
         }
 
         DataTable OKCdenYazdirilacaklar;
@@ -1399,6 +1450,9 @@ namespace KasaSatis
             string str1 = dll.getDemoSDKVersionCSharp();
             string str2 = dll.getDemoSDKVersionDelphi();
             //dll.un
+            OKCSonFisNoBul();
+
+            Durumlar();
         }
 
         private void simpleButton10_Click(object sender, EventArgs e)
@@ -1429,7 +1483,7 @@ namespace KasaSatis
                 frm.labelControl1.Text = dll.getDemoSDKVersion();
                 frm.labelControl2.Text = dll.getDemoSDKVersionCSharp();
                 frm.labelControl3.Text = dll.getDemoSDKVersionDelphi();
-
+                frm.labelControl4.Text = dll.getFactoryNumber();
 
                 frm.ShowDialog();
             }

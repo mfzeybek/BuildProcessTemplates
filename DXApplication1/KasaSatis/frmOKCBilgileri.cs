@@ -17,5 +17,10 @@ namespace KasaSatis
         {
             InitializeComponent();
         }
+
+        private void frmOKCBilgileri_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -66,17 +67,27 @@
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Tamam";
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(23, 113);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(63, 13);
+            this.labelControl4.TabIndex = 1;
+            this.labelControl4.Text = "labelControl2";
+            // 
             // frmOKCBilgileri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 211);
             this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "frmOKCBilgileri";
             this.Text = "frmOKCBilgileri";
+            this.Load += new System.EventHandler(this.frmOKCBilgileri_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +99,6 @@
         public DevExpress.XtraEditors.LabelControl labelControl2;
         public DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }
