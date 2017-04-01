@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKasaOdeme));
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnAlisVerisiNakitOlarakKapat = new DevExpress.XtraEditors.SimpleButton();
@@ -55,7 +54,7 @@
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -63,7 +62,8 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.btnGuncelleme = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -147,14 +147,17 @@
             this.lblKasiyer = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.lblOkcBaglanti = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.btnNakitKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUrunleriGecir = new DevExpress.XtraEditors.SimpleButton();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemesiYapilacakSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemesiYapilacakSatis)).BeginInit();
@@ -459,7 +462,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGuncelleme)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGuncelleme),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
             this.popupMenu_Islemler.Manager = this.barManager1;
             this.popupMenu_Islemler.Name = "popupMenu_Islemler";
             // 
@@ -526,6 +530,15 @@
             this.btnGuncelleme.Name = "btnGuncelleme";
             this.btnGuncelleme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "ÖKC Bilgileri";
+            this.barButtonItem12.Id = 18;
+            this.barButtonItem12.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barButtonItem12.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
+            // 
             // barManager1
             // 
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -547,8 +560,11 @@
             this.barButtonItem9,
             this.barButtonItem10,
             this.btnGuncelleme,
-            this.barButtonItem11});
-            this.barManager1.MaxItemId = 18;
+            this.barButtonItem11,
+            this.barButtonItem12,
+            this.barSubItem2,
+            this.barButtonItem13});
+            this.barManager1.MaxItemId = 21;
             // 
             // barDockControlTop
             // 
@@ -879,8 +895,6 @@
             this.colMiktar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMiktar.FieldName = "Miktar";
             this.colMiktar.Name = "colMiktar";
-            this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 3;
             this.colMiktar.Width = 89;
             // 
             // colStokAnaBirimID
@@ -931,10 +945,12 @@
             // colStokIskonto1
             // 
             this.colStokIskonto1.Caption = "StokIskonto1";
+            this.colStokIskonto1.DisplayFormat.FormatString = "n0";
+            this.colStokIskonto1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colStokIskonto1.FieldName = "StokIskonto1";
             this.colStokIskonto1.Name = "colStokIskonto1";
             this.colStokIskonto1.Visible = true;
-            this.colStokIskonto1.VisibleIndex = 7;
+            this.colStokIskonto1.VisibleIndex = 6;
             this.colStokIskonto1.Width = 89;
             // 
             // colStokIskonto1Tutari
@@ -1131,10 +1147,12 @@
             // colAltBirimMiktar
             // 
             this.colAltBirimMiktar.Caption = "AltBirimMiktar";
+            this.colAltBirimMiktar.DisplayFormat.FormatString = "f3";
+            this.colAltBirimMiktar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAltBirimMiktar.FieldName = "AltBirimMiktar";
             this.colAltBirimMiktar.Name = "colAltBirimMiktar";
             this.colAltBirimMiktar.Visible = true;
-            this.colAltBirimMiktar.VisibleIndex = 4;
+            this.colAltBirimMiktar.VisibleIndex = 3;
             this.colAltBirimMiktar.Width = 134;
             // 
             // colFireMiktari
@@ -1157,7 +1175,7 @@
             this.colKdvDahilFiyat.FieldName = "KdvDahilFiyat";
             this.colKdvDahilFiyat.Name = "colKdvDahilFiyat";
             this.colKdvDahilFiyat.Visible = true;
-            this.colKdvDahilFiyat.VisibleIndex = 5;
+            this.colKdvDahilFiyat.VisibleIndex = 4;
             this.colKdvDahilFiyat.Width = 114;
             // 
             // colKdvDahilToplam
@@ -1168,7 +1186,7 @@
             this.colKdvDahilToplam.FieldName = "KdvDahilToplam";
             this.colKdvDahilToplam.Name = "colKdvDahilToplam";
             this.colKdvDahilToplam.Visible = true;
-            this.colKdvDahilToplam.VisibleIndex = 6;
+            this.colKdvDahilToplam.VisibleIndex = 5;
             this.colKdvDahilToplam.Width = 171;
             // 
             // colFireVarMi
@@ -1286,12 +1304,12 @@
             // 
             // txtBarkodu
             // 
-            this.txtBarkodu.Location = new System.Drawing.Point(214, 11);
+            this.txtBarkodu.Location = new System.Drawing.Point(200, 11);
             this.txtBarkodu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtBarkodu.Name = "txtBarkodu";
             this.txtBarkodu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.txtBarkodu.Properties.Appearance.Options.UseFont = true;
-            this.txtBarkodu.Size = new System.Drawing.Size(151, 30);
+            this.txtBarkodu.Size = new System.Drawing.Size(165, 30);
             this.txtBarkodu.TabIndex = 7;
             this.txtBarkodu.EditValueChanged += new System.EventHandler(this.txtBarkodu_EditValueChanged);
             this.txtBarkodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkodu_KeyDown);
@@ -1300,7 +1318,7 @@
             // 
             this.lblKasiyer.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lblKasiyer.Appearance.Options.UseFont = true;
-            this.lblKasiyer.Location = new System.Drawing.Point(1031, 15);
+            this.lblKasiyer.Location = new System.Drawing.Point(1018, 12);
             this.lblKasiyer.Name = "lblKasiyer";
             this.lblKasiyer.Size = new System.Drawing.Size(62, 16);
             this.lblKasiyer.TabIndex = 123;
@@ -1308,7 +1326,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(1031, 41);
+            this.simpleButton1.Location = new System.Drawing.Point(1018, 38);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 128;
@@ -1317,7 +1335,7 @@
             // 
             // lblOkcBaglanti
             // 
-            this.lblOkcBaglanti.Location = new System.Drawing.Point(1112, 17);
+            this.lblOkcBaglanti.Location = new System.Drawing.Point(1099, 14);
             this.lblOkcBaglanti.Name = "lblOkcBaglanti";
             this.lblOkcBaglanti.Size = new System.Drawing.Size(66, 13);
             this.lblOkcBaglanti.TabIndex = 129;
@@ -1327,36 +1345,36 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // simpleButton2
+            // btnNakitKapat
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(1112, 41);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 134;
-            this.simpleButton2.Text = "Nakit Kapat";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_2);
+            this.btnNakitKapat.Location = new System.Drawing.Point(1099, 38);
+            this.btnNakitKapat.Name = "btnNakitKapat";
+            this.btnNakitKapat.Size = new System.Drawing.Size(75, 23);
+            this.btnNakitKapat.TabIndex = 134;
+            this.btnNakitKapat.Text = "Nakit Kapat";
+            this.btnNakitKapat.Click += new System.EventHandler(this.btnNakitKapat_Click);
             // 
-            // simpleButton6
+            // btnUrunleriGecir
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(1203, 11);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton6.TabIndex = 139;
-            this.simpleButton6.Text = "Urunleri Geçir";
-            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            this.btnUrunleriGecir.Location = new System.Drawing.Point(1180, 6);
+            this.btnUrunleriGecir.Name = "btnUrunleriGecir";
+            this.btnUrunleriGecir.Size = new System.Drawing.Size(75, 23);
+            this.btnUrunleriGecir.TabIndex = 139;
+            this.btnUrunleriGecir.Text = "Urunleri Geçir";
+            this.btnUrunleriGecir.Click += new System.EventHandler(this.btnUrunleriGecir_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 11;
-            this.listBox1.Location = new System.Drawing.Point(12, 639);
+            this.listBox1.Location = new System.Drawing.Point(4, 639);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(182, 92);
+            this.listBox1.Size = new System.Drawing.Size(190, 92);
             this.listBox1.TabIndex = 144;
             // 
             // simpleButton7
             // 
-            this.simpleButton7.Location = new System.Drawing.Point(1203, 43);
+            this.simpleButton7.Location = new System.Drawing.Point(1180, 38);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(75, 23);
             this.simpleButton7.TabIndex = 149;
@@ -1365,7 +1383,7 @@
             // 
             // simpleButton8
             // 
-            this.simpleButton8.Location = new System.Drawing.Point(1293, 11);
+            this.simpleButton8.Location = new System.Drawing.Point(1261, 8);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(75, 23);
             this.simpleButton8.TabIndex = 154;
@@ -1374,7 +1392,7 @@
             // 
             // simpleButton9
             // 
-            this.simpleButton9.Location = new System.Drawing.Point(1293, 41);
+            this.simpleButton9.Location = new System.Drawing.Point(1261, 38);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(75, 23);
             this.simpleButton9.TabIndex = 159;
@@ -1390,6 +1408,32 @@
             this.simpleButton3.Text = "simpleButton3";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
+            // simpleButton10
+            // 
+            this.simpleButton10.Location = new System.Drawing.Point(1342, 9);
+            this.simpleButton10.Name = "simpleButton10";
+            this.simpleButton10.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton10.TabIndex = 169;
+            this.simpleButton10.Text = "iptal";
+            this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "ÖKC Menu";
+            this.barSubItem2.Id = 19;
+            this.barSubItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barSubItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "barButtonItem13";
+            this.barButtonItem13.Id = 20;
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
             // frmKasaOdeme
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1398,13 +1442,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1440, 785);
+            this.Controls.Add(this.simpleButton10);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton9);
             this.Controls.Add(this.simpleButton8);
             this.Controls.Add(this.simpleButton7);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.simpleButton6);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnUrunleriGecir);
+            this.Controls.Add(this.btnNakitKapat);
             this.Controls.Add(this.lblOkcBaglanti);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lblKasiyer);
@@ -1576,14 +1621,18 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl lblOkcBaglanti;
         private System.Windows.Forms.Timer timer1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnNakitKapat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btnUrunleriGecir;
         private System.Windows.Forms.ListBox listBox1;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
     }
 }
 

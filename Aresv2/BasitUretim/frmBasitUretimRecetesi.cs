@@ -95,7 +95,7 @@ namespace Aresv2.BasitUretim
             //gridView1.ShowEditor();
         }
 
-        void StokEkle(int StokID, decimal Miktar)
+        public void StokEkle(int StokID, decimal Miktar)
         {
             StokClasi = new clsTablolar.Stok.csStok(SqlConnections.GetBaglanti(), TrGenel, StokID);
             Detay.dt.Rows.Add(Detay.dt.NewRow());
@@ -107,6 +107,9 @@ namespace Aresv2.BasitUretim
             Detay.dt.Rows[Detay.dt.Rows.Count - 1]["MaliyetFiyatTanimID"] = clsTablolar.Ayarlar.csAyarlar.StokAlisFiyatTanimID;
 
             Detay.dt.Rows[Detay.dt.Rows.Count - 1]["MaliyetFiyatTanimID"] = clsTablolar.Ayarlar.csAyarlar.StokAlisFiyatTanimID;
+
+            Detay.dt.Rows[Detay.dt.Rows.Count - 1]["GerekliMiktar"] = Miktar;
+
             Kaydet_Vazgec_Sil_Enable(true);
         }
         clsTablolar.csFiyatTanim FiyatTanimlari = new clsTablolar.csFiyatTanim();
@@ -203,7 +206,7 @@ namespace Aresv2.BasitUretim
             //gvSiparisHareket.ShowEditor();
         }
 
-        void UretilenStokEkle(int StokID, decimal Miktar)
+        public void UretilenStokEkle(int StokID, decimal Miktar)
         {
             Recete.UretilenStokID = StokID;
             UretilenStokID_denStokBilgileriniGetir();
@@ -214,7 +217,6 @@ namespace Aresv2.BasitUretim
             StokClasi = new clsTablolar.Stok.csStok(SqlConnections.GetBaglanti(), TrGenel, Recete.UretilenStokID);
             lblStokAdi.Text = StokClasi.StokAdi;
             lblStokKodu.Text = StokClasi.StokKodu;
-
         }
 
         void Kaydet_Vazgec_Sil_Enable(bool true_false)
@@ -445,6 +447,17 @@ namespace Aresv2.BasitUretim
             //    gridView1.SetFocusedRowCellValue(colMaliyet, frm.Fiyat);
             //    gridView1.SetFocusedRowCellValue(colMaliyetFiyatTanimID, frm.FiyatTanimID);
             //}
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmBasitUretimRecetesi frm = new frmBasitUretimRecetesi(-1);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                frm.StokEkle(Convert.ToInt32(gridView1.GetRowCellValue(i, colMalzemeStokID)), Convert.ToDecimal(gridView1.GetRowCellValue(i, colGerekliMiktar)));
+            }
         }
     }
 }

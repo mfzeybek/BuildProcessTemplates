@@ -42,7 +42,7 @@ FaturaTutari, DuzenlemeTarihi, FaturaTarihi, FaturaTipi, Fatura.FaturaID
 --, TeraziFaturaID 
 from Fatura with(nolock)
 --inner join TeraziFaturaIliski with(nolock) on TeraziFaturaIliski.FaturaID = Fatura.FaturaID 
-where HizliSatistaGozukecekMi = 1 and fatura.SilindiMi = 0  ", _Baglanti))
+where HizliSatistaGozukecekMi = 1 and Fatura.SilindiMi = 0  ", _Baglanti))
                 {
                     if (checkButton_OdemesiTamamlanmamis.Checked == true)
                     {

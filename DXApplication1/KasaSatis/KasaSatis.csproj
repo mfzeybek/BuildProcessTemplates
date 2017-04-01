@@ -144,6 +144,12 @@
     <Compile Include="frmKismiOdeme.Designer.cs">
       <DependentUpon>frmKismiOdeme.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOKCBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOKCBilgileri.Designer.cs">
+      <DependentUpon>frmOKCBilgileri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKismiOdeme.resx">
       <DependentUpon>frmKismiOdeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOKCBilgileri.resx">
+      <DependentUpon>frmOKCBilgileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
