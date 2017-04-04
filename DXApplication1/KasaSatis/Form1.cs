@@ -325,7 +325,7 @@ namespace KasaSatis
             else
                 try
                 {
-                    if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
+                    if (gvOdemesiYapilacakSatis.RowCount != 0 && OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
                     {
                         MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
                         return;
@@ -439,11 +439,6 @@ namespace KasaSatis
                 //TrGenel.Commit();
                 //BindleHamisina();
             }
-        }
-
-        private void btnUrunBilgileri_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnYazdir_Click(object sender, EventArgs e)
@@ -632,6 +627,8 @@ namespace KasaSatis
             {
                 //lock (Satislar.KilitHamisina)
                 {
+                    if (gvSatisHareketleri.RowCount == 0)
+                        return;
                     if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
                     {
                         MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
@@ -870,14 +867,16 @@ namespace KasaSatis
 
         private void btnUrunButonlari_Click(object sender, EventArgs e)
         {
-            if (gvOdemesiYapilacakSatis.RowCount == 0)
-            {
-                btnYeniMusteri_Click(null, null);
-            }
-            if (OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
+
+            // eğer hiç satış yoksa yeni müşteriye basıcak, o zaman da ödemesinin tamamlandığını kontrol etmesine gerek yok
+            if (gvOdemesiYapilacakSatis.RowCount != 0 && OdemesiTamamlanmisMi(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()))
             {
                 MessageBox.Show("Ödemesi Tamamlanan Satış Değiştilemez");
                 return;
+            }
+            if (gvOdemesiYapilacakSatis.RowCount == 0)
+            {
+                btnYeniMusteri_Click(null, null);
             }
             using (frmButonUrunler frm = new frmButonUrunler(Properties.Settings.Default.TeraziID))
             {
@@ -1151,7 +1150,7 @@ namespace KasaSatis
             lblOkcBaglanti.Text = "Connect";
         }
 
-        BmsDll4Delphi.BmsDllForDelphi dll = new BmsDll4Delphi.BmsDllForDelphi();
+        public BmsDll4Delphi.BmsDllForDelphi dll = new BmsDll4Delphi.BmsDllForDelphi();
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
@@ -1171,24 +1170,33 @@ namespace KasaSatis
             }
         }
 
+
+        Thread OKCOdemeIslemleri;
         private void btnNakitKapat_Click(object sender, EventArgs e)
+        {
+            OKCOdemeIslemleri = new Thread(new ThreadStart(OdemeyiNakitKapat));
+            OKCOdemeIslemleri.Start();
+        }
+
+        void OdemeyiNakitKapat()
         {
             try
             {
-
-
                 //lstExecption.Items.Add("openReceipt --> " + returnValue.ToString());
 
                 //tabControlDLL.SelectedTab = tabPageSales;
 
-                int aahnda;
-
-
-                aahnda = dll.closeReceipt();
-
-                if (aahnda != 0)
+                lock (lokcTaken)
                 {
-                    MessageBox.Show(" ahanda");
+
+                    int aahnda;
+
+                    aahnda = dll.closeReceipt();
+
+                    if (aahnda != 0)
+                    {
+                        MessageBox.Show(" ahanda");
+                    }
                 }
 
             }
@@ -1246,15 +1254,26 @@ namespace KasaSatis
         }
 
         object lokcTaken = new object();
-        void OkcyURunleriYazidir()
+        void OkcyUrunleriYazidir()
         {
             lock (lokcTaken)
             {
-                if ((dll.getStatus() as String[])[4] == "[OpenFiscalReceipt][Mali Fis Açik]")
+                OKCDrumlari.Getir();
+                if (OKCDrumlari.FisAcik)
                 {
-                    //MessageBox.Show("Şuan Satış var");
+                    MessageBox.Show("Şuan Satış var \rnÖdemesini Tamamlanyın Önce");
+                    return;
                 }
-                else if ((dll.getStatus() as String[])[4] == "[NonZeroDailyReport][Satis Islemi baslatildi]")
+                if (OKCDrumlari.MaliOlmayanFisAcik)
+                {
+                    MessageBox.Show("Mali olmayan fiş açık");
+                }
+
+                //if ((dll.getStatus() as String[])[4] == "[OpenFiscalReceipt][Mali Fis Açik]")
+                //{
+                //    //MessageBox.Show("Şuan Satış var");
+                //}
+                //else if ((dll.getStatus() as String[])[4] == "[NonZeroDailyReport][Satis Islemi baslatildi]")
                 {
                     if (string.Empty == EssizNumaraUret())
                     {
@@ -1301,57 +1320,61 @@ namespace KasaSatis
 
 
 
-        Tremol.FP.Status DURUM;
-        string TumDurumlar;
 
 
-        void Durumlar()
+
+        public static class OKCDrumlari
         {
+            public static Tremol.FP.Status DURUM;
 
-            DURUM = BmsSdkDLL.BmsSdkLib.fp.GetStatus();
+            public static bool FisAcik;
+            public static bool PilZayif;
+            public static bool TarihYanlis;
+            public static bool MaliOlmayanFisAcik;
+            public static bool ZRaporuAlinmali;
+            public static bool PrinterMesgul;
+            public static bool PrinterYazdiriyor;
+            public static bool KagitBitti;
 
-            if (DURUM.OpenFiscalReceipt)
-            {
-                TumDurumlar += "\n" + "Fiş Açık";
-            }
-            else
-            {
-                TumDurumlar += "\n" + "Fiş Kapalı";
-            }
-            if (DURUM.PrinterLowVoltage) { TumDurumlar += "\n" + "Pil Zayıf"; }
-            else
-            {
-                TumDurumlar += "\n" + "PiL Zayıf Degil";
-            }
-            if (DURUM.IncorectDate) { TumDurumlar += "\n" + "tarih yanlış"; } else { TumDurumlar += "\n" + "Tarih doğru"; }
-            if (DURUM.OpenNonFiscalReceipt) { TumDurumlar += "\n" + "Mali Olmayan Fiş Açık "; } else { TumDurumlar += "\n" + "Mali Olmayan Fiş Açık DEĞİL"; }
-            if (DURUM.ReportsAccumulationOverflowWarning24) { TumDurumlar += "\n" + " Z raporu alınmalı "; } else { TumDurumlar += "\n" + " Z raporu saati gelmedi "; }
-            MessageBox.Show(TumDurumlar);
 
+            public static void Getir()
+            {
+                DURUM = BmsSdkDLL.BmsSdkLib.fp.GetStatus();
+                FisAcik = DURUM.OpenFiscalReceipt;
+                PilZayif = DURUM.PrinterLowVoltage;
+                TarihYanlis = DURUM.IncorectDate;
+                MaliOlmayanFisAcik = DURUM.OpenNonFiscalReceipt;
+                ZRaporuAlinmali = DURUM.ReportsAccumulationOverflowWarning24;
+                PrinterMesgul = DURUM.PrinterBusy;
+                PrinterYazdiriyor = DURUM.PrinterPrinting;
+                KagitBitti = DURUM.PrinterNoPaper;
+
+            }
+        }
+
+        void ZRep()
+        {
+            MessageBox.Show(dll.ZRepData());
         }
 
         void OKCSonFisNoBul()
         {
-
             uint rcp_num = 0;
             uint z_num = 0;
             uint eku_num = 0;
             dll.getFiscalInformation(out rcp_num, out z_num, out eku_num);
 
             MessageBox.Show(rcp_num + "  " + z_num + "  " + eku_num);
-
         }
 
-        DataTable OKCdenYazdirilacaklar;
-
-        public class ahanda
+        public class OKCFisBilgileri
         {
             public string UrunAdi { get; set; }
             public string PLU { get; set; }
             public string Birimi { get; set; }
             public float Fiyati { get; set; }
             public float Miktari { get; set; }
-            public ahanda(string UrunAdi, string PLU, string Birimi, float Fiyati, float Miktari)
+            public OKCFisBilgileri(string UrunAdi, string PLU, string Birimi, float Fiyati, float Miktari)
             {
                 this.UrunAdi = UrunAdi;
                 this.PLU = PLU;
@@ -1364,7 +1387,7 @@ namespace KasaSatis
 
 
 
-        List<ahanda> aha;
+        List<OKCFisBilgileri> aha;
 
 
         private void btnUrunleriGecir_Click(object sender, EventArgs e)
@@ -1374,12 +1397,10 @@ namespace KasaSatis
             {
                 lock (lokcTaken)
                 {
-                    aha = new List<ahanda>();
+                    aha = new List<OKCFisBilgileri>();
                     for (int i = 0; i < gvSatisHareketleri.RowCount; i++)
                     {
-
-
-                        aha.Add(new ahanda(gvSatisHareketleri.GetRowCellValue(i, colFaturaHareketStokAdi).ToString(),
+                        aha.Add(new OKCFisBilgileri(gvSatisHareketleri.GetRowCellValue(i, colFaturaHareketStokAdi).ToString(),
                             "1111",
                             gvSatisHareketleri.GetRowCellValue(i, colStokAltBirimAdi).ToString(),
                             float.Parse(gvSatisHareketleri.GetRowCellValue(i, colKdvDahilFiyat).ToString()),
@@ -1387,10 +1408,8 @@ namespace KasaSatis
                             ));
                     }
 
-
-                    ThOkcISlemleri = new Thread(new ThreadStart(OkcyURunleriYazidir));
+                    ThOkcISlemleri = new Thread(new ThreadStart(OkcyUrunleriYazidir));
                     ThOkcISlemleri.Start();
-
                 }
             }
             catch (Exception ex)
@@ -1451,8 +1470,7 @@ namespace KasaSatis
             string str2 = dll.getDemoSDKVersionDelphi();
             //dll.un
             OKCSonFisNoBul();
-
-            Durumlar();
+            ZRep();
         }
 
         private void simpleButton10_Click(object sender, EventArgs e)
@@ -1487,6 +1505,11 @@ namespace KasaSatis
 
                 frm.ShowDialog();
             }
+        }
+
+        private void barBtnSonFisiTekrarYazdir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dll.PrintDuplicate();
         }
     }
 }
