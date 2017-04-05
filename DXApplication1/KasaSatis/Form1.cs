@@ -390,6 +390,8 @@ namespace KasaSatis
             }
         }
 
+
+
         public void StokEkle(int StokID) // ama nereye ekliyecek mevcut müşteriye mi yeni müşteriye mi
         {
             //lock (Satislar.KilitHamisina)
@@ -1150,6 +1152,45 @@ namespace KasaSatis
             lblOkcBaglanti.Text = "Connect";
         }
 
+
+
+
+
+
+
+
+
+
+
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = dll.getStatus();
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            string str = dll.getDemoSDKVersion();
+            string str1 = dll.getDemoSDKVersionCSharp();
+            string str2 = dll.getDemoSDKVersionDelphi();
+            //dll.un
+            OKCSonFisNoBul();
+            ZRep();
+        }
+
+
+        #region OKCIsleri
+
         public BmsDll4Delphi.BmsDllForDelphi dll = new BmsDll4Delphi.BmsDllForDelphi();
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -1319,10 +1360,6 @@ namespace KasaSatis
         }
 
 
-
-
-
-
         public static class OKCDrumlari
         {
             public static Tremol.FP.Status DURUM;
@@ -1367,6 +1404,24 @@ namespace KasaSatis
             MessageBox.Show(rcp_num + "  " + z_num + "  " + eku_num);
         }
 
+        private void barBtnSonFisiTekrarYazdir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dll.PrintDuplicate();
+        }
+
+        private void barbtnOkcBilgileri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (frmOKCBilgileri frm = new frmOKCBilgileri())
+            {
+                frm.labelControl1.Text = dll.getDemoSDKVersion();
+                frm.labelControl2.Text = dll.getDemoSDKVersionCSharp();
+                frm.labelControl3.Text = dll.getDemoSDKVersionDelphi();
+                frm.labelControl4.Text = dll.getFactoryNumber();
+
+                frm.ShowDialog();
+            }
+        }
+
         public class OKCFisBilgileri
         {
             public string UrunAdi { get; set; }
@@ -1388,7 +1443,6 @@ namespace KasaSatis
 
 
         List<OKCFisBilgileri> aha;
-
 
         private void btnUrunleriGecir_Click(object sender, EventArgs e)
         {
@@ -1420,17 +1474,13 @@ namespace KasaSatis
             //OkcyURunleriYazidir();
         }
 
-        private void simpleButton7_Click(object sender, EventArgs e)
-        {
-            listBox1.DataSource = dll.getStatus();
-        }
 
-        private void simpleButton8_Click(object sender, EventArgs e)
+        void OkcNakitOde(float OdemeTutari)
         {
             try
             {
                 int aahnda;
-                float NakitOdeme = 10;
+                float NakitOdeme = OdemeTutari;
                 aahnda = dll.payInCash(NakitOdeme);
                 if (aahnda != 0)
                 {
@@ -1458,22 +1508,7 @@ namespace KasaSatis
             }
         }
 
-        private void simpleButton9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            string str = dll.getDemoSDKVersion();
-            string str1 = dll.getDemoSDKVersionCSharp();
-            string str2 = dll.getDemoSDKVersionDelphi();
-            //dll.un
-            OKCSonFisNoBul();
-            ZRep();
-        }
-
-        private void simpleButton10_Click(object sender, EventArgs e)
+        private void barbtnOkcFisIptal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
@@ -1494,23 +1529,9 @@ namespace KasaSatis
             }
         }
 
-        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            using (frmOKCBilgileri frm = new frmOKCBilgileri())
-            {
-                frm.labelControl1.Text = dll.getDemoSDKVersion();
-                frm.labelControl2.Text = dll.getDemoSDKVersionCSharp();
-                frm.labelControl3.Text = dll.getDemoSDKVersionDelphi();
-                frm.labelControl4.Text = dll.getFactoryNumber();
+        #endregion
 
-                frm.ShowDialog();
-            }
-        }
 
-        private void barBtnSonFisiTekrarYazdir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            dll.PrintDuplicate();
-        }
     }
 }
 
