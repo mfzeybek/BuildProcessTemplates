@@ -64,8 +64,9 @@
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.btnGuncelleme = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnOkcBilgileri = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnOkcFisIptal = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnSonFisiTekrarYazdir = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -158,8 +159,6 @@
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
-            this.barBtnSonFisiTekrarYazdir = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemesiYapilacakSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemesiYapilacakSatis)).BeginInit();
@@ -539,27 +538,37 @@
             this.barSubItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.barSubItem2.ItemAppearance.Normal.Options.UseFont = true;
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnOkcBilgileri),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnOkcFisIptal),
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnSonFisiTekrarYazdir)});
             this.barSubItem2.Name = "barSubItem2";
             // 
-            // barButtonItem12
+            // barbtnOkcBilgileri
             // 
-            this.barButtonItem12.Caption = "ÖKC Bilgileri";
-            this.barButtonItem12.Id = 18;
-            this.barButtonItem12.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.barButtonItem12.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem12.Name = "barButtonItem12";
-            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
+            this.barbtnOkcBilgileri.Caption = "ÖKC Bilgileri";
+            this.barbtnOkcBilgileri.Id = 18;
+            this.barbtnOkcBilgileri.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barbtnOkcBilgileri.ItemAppearance.Normal.Options.UseFont = true;
+            this.barbtnOkcBilgileri.Name = "barbtnOkcBilgileri";
+            this.barbtnOkcBilgileri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnOkcBilgileri_ItemClick);
             // 
-            // barButtonItem13
+            // barbtnOkcFisIptal
             // 
-            this.barButtonItem13.Caption = "barButtonItem13";
-            this.barButtonItem13.Id = 20;
-            this.barButtonItem13.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.barButtonItem13.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.barbtnOkcFisIptal.Caption = "Fişi İptal Et";
+            this.barbtnOkcFisIptal.Id = 20;
+            this.barbtnOkcFisIptal.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barbtnOkcFisIptal.ItemAppearance.Normal.Options.UseFont = true;
+            this.barbtnOkcFisIptal.Name = "barbtnOkcFisIptal";
+            this.barbtnOkcFisIptal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnOkcFisIptal_ItemClick);
+            // 
+            // barBtnSonFisiTekrarYazdir
+            // 
+            this.barBtnSonFisiTekrarYazdir.Caption = "Son Fişi Tekrar Yazdır";
+            this.barBtnSonFisiTekrarYazdir.Id = 21;
+            this.barBtnSonFisiTekrarYazdir.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barBtnSonFisiTekrarYazdir.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.barBtnSonFisiTekrarYazdir.Name = "barBtnSonFisiTekrarYazdir";
+            this.barBtnSonFisiTekrarYazdir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSonFisiTekrarYazdir_ItemClick);
             // 
             // barManager1
             // 
@@ -583,9 +592,9 @@
             this.barButtonItem10,
             this.btnGuncelleme,
             this.barButtonItem11,
-            this.barButtonItem12,
+            this.barbtnOkcBilgileri,
             this.barSubItem2,
-            this.barButtonItem13,
+            this.barbtnOkcFisIptal,
             this.barBtnSonFisiTekrarYazdir});
             this.barManager1.MaxItemId = 22;
             // 
@@ -1431,24 +1440,6 @@
             this.simpleButton3.Text = "simpleButton3";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
-            // simpleButton10
-            // 
-            this.simpleButton10.Location = new System.Drawing.Point(1342, 9);
-            this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton10.TabIndex = 169;
-            this.simpleButton10.Text = "iptal";
-            this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
-            // 
-            // barBtnSonFisiTekrarYazdir
-            // 
-            this.barBtnSonFisiTekrarYazdir.Caption = "Son Fişi Tekrar Yazdır";
-            this.barBtnSonFisiTekrarYazdir.Id = 21;
-            this.barBtnSonFisiTekrarYazdir.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.barBtnSonFisiTekrarYazdir.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.barBtnSonFisiTekrarYazdir.Name = "barBtnSonFisiTekrarYazdir";
-            this.barBtnSonFisiTekrarYazdir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSonFisiTekrarYazdir_ItemClick);
-            // 
             // frmKasaOdeme
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1457,7 +1448,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1440, 785);
-            this.Controls.Add(this.simpleButton10);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton9);
             this.Controls.Add(this.simpleButton8);
@@ -1644,10 +1634,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem barbtnOkcBilgileri;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barbtnOkcFisIptal;
         private DevExpress.XtraBars.BarButtonItem barBtnSonFisiTekrarYazdir;
     }
 }

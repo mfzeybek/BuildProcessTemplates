@@ -583,5 +583,15 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and Fatura.FaturaID = @Fatura
             //}
         }
 
+        public void OkcFisBilgileriniKaydet(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID, int ZNo, int FisNo)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = " update Fatura set OkcZNo = @OkcZNo, OkcFisNo = @OkcFisNo where FaturaID = @FaturaID ";
+            cmd.Parameters.Add("@OkcZNo", SqlDbType.Int).Value = ZNo;
+            cmd.Parameters.Add("@OkcFisNo", SqlDbType.Int).Value = FisNo;
+            cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }
