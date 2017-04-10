@@ -236,6 +236,12 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
             }
         }
 
+
+        //private string SatisGetir(DataRow Dr)
+        //{
+
+        //}
+
         /// <summary>
         /// 
         /// </summary>
@@ -316,8 +322,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
                     //dt_threadSatislar.Load(dr, LoadOption.Upsert);
 
                     DataRow droww = dt_threadSatislar.NewRow();
-
-
+                     
                     droww["FaturaID"] = dr["FaturaID"];
                     droww["FaturaTarihi"] = dr["FaturaTarihi"];
                     droww["DuzenlemeTarihi"] = dr["DuzenlemeTarihi"];
@@ -426,7 +431,7 @@ and
                     cmdKayit.Parameters.Add("@FaturaID", SqlDbType.Int, 0).Value = DROW["FaturaID"];
                     _FaturaID = (int)DROW["FaturaID"];
                 }
-                cmdKayit.Parameters.Add("@FaturaNo", SqlDbType.NVarChar, 0).Value = DROW["FaturaNo"]; // bu artık otomatik sqldeki storeprocedurden geliyor tabi insert ederken sadece
+                //cmdKayit.Parameters.Add("@FaturaNo", SqlDbType.NVarChar, 0).Value = DROW["FaturaNo"]; // bu artık otomatik sqldeki storeprocedurden geliyor tabi insert ederken sadece
 
                 cmdKayit.Parameters.Add("@Iptal", SqlDbType.Bit).Value = 0;
                 cmdKayit.Parameters.Add("@SilindiMi", SqlDbType.Bit, 0).Value = DROW["SilindiMi"];
@@ -468,8 +473,16 @@ and
                     DROW["FaturaBarkod"] = cmdKayit.Parameters["@Barkod"].Value;
                     DROW["FaturaTarihi"] = cmdKayit.Parameters["@Tarih"].Value;
                     DROW["FaturaNo"] = cmdKayit.Parameters["@HesaplananFaturaNo"].Value;
+
+                    DROW.AcceptChanges(); // ahanda bu çok önemli bunu kaldıracağın zaman yeni müşteriden sonra tek bir hareket ekle yenileye bas bakalım doğrumu diye de kontrol et
                 }
                 DROW["DegismeTarihi"] = cmdKayit.Parameters["@DegismeTarihi"].Value;
+
+                
+                //SatisGetir(DROW, false);
+
+
+
 
                 return _FaturaID;
             }

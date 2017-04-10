@@ -42,7 +42,7 @@ namespace KasaSatis
                 //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 //OdemeKay.OdemeyiKaydet(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
                 //TrGenel.Commit();
-                gvOdemesiYapilacakSatis.SetFocusedRowCellValue("OdendiMi", true);
+                //gvOdemesiYapilacakSatis.SetFocusedRowCellValue("OdendiMi", true);
                 //SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
@@ -107,11 +107,30 @@ namespace KasaSatis
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            simpleButton1_Click_2(null, null);
-            string str1 = dll.getDemoSDKVersionCSharp();
-            string str2 = dll.getDemoSDKVersion();
-            dll.getStatusLastException();
-            OKCEntegrasyonu = OkcEntegrasyonTipi.TamEntegrasyon;
+            OKCEntegrasyonu = OkcEntegrasyonTipi.EntegrasyonYok;
+
+            if (OKCEntegrasyonu != OkcEntegrasyonTipi.EntegrasyonYok) // yani entegrasyon bir şekilde varsa
+            {
+                simpleButton1_Click_2(null, null);
+                string str1 = dll.getDemoSDKVersionCSharp();
+                string str2 = dll.getDemoSDKVersion();
+                dll.getStatusLastException();
+
+
+            }
+            if (OKCEntegrasyonu == OkcEntegrasyonTipi.EntegrasyonYok) // yani entegrasyon yoksa
+            {
+                lblOkcBaglanti.Visible = false;
+                simpleButton1.Visible = false;
+                btnNakitKapat.Visible = false;
+                simpleButton7.Visible = false;
+                simpleButton9.Visible = false;
+                simpleButton8.Visible = false;
+                btnUrunleriGecir.Visible = false;
+                barSubItem_OKCMEnu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+
+
 
             //CheckForIllegalCrossThreadCalls = false;
             //DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
@@ -222,7 +241,8 @@ namespace KasaSatis
 
                 //BindleHamisina();
 
-                kaydet();
+                // ahanda en son bunu kapattın
+                kaydet(); // bu çok önemli ama neden?? lan başka bir yerden kayıt yapılmıyor
             }
         }
 
@@ -251,6 +271,8 @@ namespace KasaSatis
                     // alt toplamları serverdan da hesaplattırarak aynı anda iki müşteriye bakıldığında bile fatura tutarının doğru olmasını sağladık
                     // Böylece aynı anda iki müşteriye bakarken fatura tutarı kasaya direk doğru olarak gidecek
                     TrGenel.Commit();
+                    gvOdemesiYapilacakSatis.RefreshData();
+
                     //if (YeniKayitMi && checkEdit1.Checked == true)
                     //    btnYazdir_Click(null, null);
                     //btnKaydet.Enabled = false;
@@ -378,7 +400,7 @@ namespace KasaSatis
                         break;
                     }
                 }
-                if (OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon)
+                if (OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon && FisiOkuturOkutmazYazdirmayaBasla)
                 {
                     btnUrunleriGecir_Click(null, null); //şimdilik iptal ediyoruz.
                 }
@@ -671,14 +693,17 @@ namespace KasaSatis
         private void btnYenile_Click(object sender, EventArgs e)
         {// sadece seçili satışı yeniler
             //lock (Satislar.KilitHamisina)
-            if (gvOdemesiYapilacakSatis.RowCount == 0)
+            if (gvOdemesiYapilacakSatis.RowCount == 0 && string.IsNullOrEmpty(gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaBarkod).ToString()))
                 return;
             {
                 gvOdemesiYapilacakSatis_FocusedRowChanged(null, null);
+
                 //gvSatisHareketleri_CellValueChanged(null, null);
                 //Satislar.FaturaIDdenFaturayiYenile(SqlConnections.GetBaglanti(), TrGenel, (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaID));
+
                 Satislar.FaturaBarkodtanSatisiGetir(SqlConnections.GetBaglanti(), TrGenel, gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaBarkod").ToString());
-                gvOdemesiYapilacakSatis.RefreshRow(gvOdemesiYapilacakSatis.FocusedRowHandle);
+
+                //gvOdemesiYapilacakSatis.RefreshRow(gvOdemesiYapilacakSatis.FocusedRowHandle);
                 //Hesapla.AltToplamlariHesapla();
             }
         }
@@ -1192,6 +1217,7 @@ namespace KasaSatis
         #region OKCIsleri
 
         public BmsDll4Delphi.BmsDllForDelphi dll = new BmsDll4Delphi.BmsDllForDelphi();
+        bool FisiOkuturOkutmazYazdirmayaBasla = false;
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {

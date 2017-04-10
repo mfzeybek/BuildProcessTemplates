@@ -66,7 +66,6 @@ where HizliSatistaGozukecekMi = 1 and Fatura.SilindiMi = 0  ", _Baglanti))
                     {
                         da.Fill(dt);
 
-
                         //Trgenel.Commit();
                         gcSatislar.DataSource = dt;
                         gvSatislar_FocusedRowChanged(null, null);

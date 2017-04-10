@@ -31,7 +31,9 @@ namespace clsTablolar.n11
 
         public int KullanilacakFiyatTanimID { get; set; }
 
+        public decimal Fiyati { get; set; } // bu stok kartından geliyor
 
+        public string Barkodu { get; set; } // bu da stok kartından geliyor
 
 
         SqlDataReader dr;
@@ -39,7 +41,7 @@ namespace clsTablolar.n11
 
         public csN11Product(SqlConnection Baglanti, SqlTransaction Tr, int stokID) // StokID buradan hiçbir zaman -1 gelmez zaten var olan stok un üzerine açılacak çünkü
         {
-            if (stokID == -1)
+            if (stokID == -1) // Stok ID nin -1 gelme ihtimali yok çünkü açılmış bir stok kartına ekliyor
             {
                 n11ProductID = -1;
                 KategoriID = -1;
@@ -64,10 +66,23 @@ namespace clsTablolar.n11
                 {
                     if (dr.Read())
                     {
-                        n11ProductID = (int)dr["n11ProductID"];
-                        KategoriID = (int)dr["KategoriID"];
-                        StokID = (int)dr["StokID"];
-                        DetayliUrunBilgisi = dr["DetayliUrunBilgisi"].ToString();
+                        this.n11ProductID = (int)dr["n11ProductID"];
+                        this.KategoriID = (int)dr["KategoriID"];
+                        this.StokID = (int)dr["StokID"];
+                        this.DetayliUrunBilgisi = dr["DetayliUrunBilgisi"].ToString();
+                        this.HazirlikSuresi = (int)dr["HazirlikSuresi"];
+                        this.KullanilacakBarkodID = (int)dr["KullanilacakBarkodID"];
+                        this.KullanilacakFiyatTanimID = (int)dr["KullanilacakFiyatTanimID"];
+                    }
+                    else // stok Id ye bağlı n11 produckt yoksa 
+                    {
+                        this.n11ProductID = -1;
+                        this.KategoriID = -1;
+                        this.StokID = -1;
+                        this.DetayliUrunBilgisi = string.Empty;
+                        this.HazirlikSuresi = -1;
+                        this.KullanilacakBarkodID = -1;
+                        this.KullanilacakFiyatTanimID = -1;
                     }
                 }
             }

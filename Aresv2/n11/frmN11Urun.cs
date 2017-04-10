@@ -18,7 +18,6 @@ namespace Aresv2.n11
         public frmN11Urun(int StokID)
         {
             this.StokID = StokID;
-
             InitializeComponent();
         }
 
@@ -33,7 +32,6 @@ namespace Aresv2.n11
             Urun = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
             TrGenel.Commit();
             KategoriDoldur();
-
         }
 
         void Al()
@@ -65,6 +63,8 @@ namespace Aresv2.n11
             treeListLookUpEdit1.Properties.DisplayMember = "KategoriAdi";
             treeListLookUpEdit1.Properties.ValueMember = "n11KategoriID";
         }
+
+
         private void btnAciklamaDuzenle_Click(object sender, EventArgs e)
         {
             using (frmhtmlEditor htmm = new frmhtmlEditor())
@@ -78,6 +78,11 @@ namespace Aresv2.n11
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit3_EditValueChanged(object sender, EventArgs e)
         {
 
         }
