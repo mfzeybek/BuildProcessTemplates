@@ -1939,7 +1939,7 @@
             // btnYukaridanKes
             // 
             this.btnYukaridanKes.Location = new System.Drawing.Point(1314, 113);
-            this.btnYukaridanKes.Margin = new System.Windows.Forms.Padding(6);
+            this.btnYukaridanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnYukaridanKes.Name = "btnYukaridanKes";
             this.btnYukaridanKes.Size = new System.Drawing.Size(260, 44);
             this.btnYukaridanKes.TabIndex = 10;
@@ -1951,7 +1951,7 @@
             this.btnSagdanKes.Appearance.Options.UseTextOptions = true;
             this.btnSagdanKes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSagdanKes.Location = new System.Drawing.Point(1788, 369);
-            this.btnSagdanKes.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSagdanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSagdanKes.Name = "btnSagdanKes";
             this.btnSagdanKes.Size = new System.Drawing.Size(46, 185);
             this.btnSagdanKes.TabIndex = 16;
@@ -1963,7 +1963,7 @@
             this.btnSoldanKes.Appearance.Options.UseTextOptions = true;
             this.btnSoldanKes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSoldanKes.Location = new System.Drawing.Point(1060, 369);
-            this.btnSoldanKes.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSoldanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSoldanKes.Name = "btnSoldanKes";
             this.btnSoldanKes.Size = new System.Drawing.Size(46, 185);
             this.btnSoldanKes.TabIndex = 10;
@@ -1973,7 +1973,7 @@
             // btnAsagidanKes
             // 
             this.btnAsagidanKes.Location = new System.Drawing.Point(1314, 779);
-            this.btnAsagidanKes.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAsagidanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAsagidanKes.Name = "btnAsagidanKes";
             this.btnAsagidanKes.Size = new System.Drawing.Size(260, 44);
             this.btnAsagidanKes.TabIndex = 10;
@@ -1985,7 +1985,7 @@
             this.simpleButton2.Appearance.Options.UseTextOptions = true;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton2.Location = new System.Drawing.Point(1852, 319);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(304, 92);
             this.simpleButton2.TabIndex = 14;
@@ -1995,7 +1995,7 @@
             // labelControl69
             // 
             this.labelControl69.Location = new System.Drawing.Point(2200, 631);
-            this.labelControl69.Margin = new System.Windows.Forms.Padding(6);
+            this.labelControl69.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl69.Name = "labelControl69";
             this.labelControl69.Size = new System.Drawing.Size(169, 25);
             this.labelControl69.TabIndex = 13;
@@ -2004,7 +2004,7 @@
             // lblFotoBilgileri
             // 
             this.lblFotoBilgileri.Location = new System.Drawing.Point(2200, 692);
-            this.lblFotoBilgileri.Margin = new System.Windows.Forms.Padding(6);
+            this.lblFotoBilgileri.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lblFotoBilgileri.Name = "lblFotoBilgileri";
             this.lblFotoBilgileri.Size = new System.Drawing.Size(133, 25);
             this.lblFotoBilgileri.TabIndex = 11;
@@ -2013,7 +2013,7 @@
             // btnBuyukFoto
             // 
             this.btnBuyukFoto.Location = new System.Drawing.Point(1852, 188);
-            this.btnBuyukFoto.Margin = new System.Windows.Forms.Padding(6);
+            this.btnBuyukFoto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnBuyukFoto.Name = "btnBuyukFoto";
             this.btnBuyukFoto.Size = new System.Drawing.Size(304, 119);
             this.btnBuyukFoto.TabIndex = 10;
@@ -2181,7 +2181,7 @@
             // btnFotoYapistir
             // 
             this.btnFotoYapistir.Location = new System.Drawing.Point(714, 6);
-            this.btnFotoYapistir.Margin = new System.Windows.Forms.Padding(6);
+            this.btnFotoYapistir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnFotoYapistir.Name = "btnFotoYapistir";
             this.btnFotoYapistir.Size = new System.Drawing.Size(150, 44);
             this.btnFotoYapistir.TabIndex = 10;

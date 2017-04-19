@@ -145,6 +145,12 @@ namespace Aresv2.Fatura
             }
             NesneleriBinleHamisina();
             KapaliFaturaHareketleriniGetir();
+
+            for (int i = 0; i < xtraTabControl1item.TabPages.Count; i++)
+            {
+                xtraTabControl1item.SelectedTabPage = xtraTabControl1item.TabPages[i];
+            }
+
             Kaydet_Vazgec_Sil_Enable(false);
         }
 

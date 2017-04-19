@@ -109,7 +109,7 @@ namespace Aresv2.Siparis
 
                 dtSiparis = SiparisArama.SiparisAraListe(SqlConnections.GetBaglanti(), trGenel);
                 gcSiparis.DataSource = dtSiparis;
-                GridArayuzIslemleri(enGridArayuzIslemleri.Get);
+                //GridArayuzIslemleri(enGridArayuzIslemleri.Get);
             }
             catch (Exception ex)
             {

@@ -34,7 +34,7 @@ namespace KasaSatis
         {
             try
             {
-                if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value)
+                if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value || (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == -1)
                 {
                     MessageBox.Show("Satış yok veya seçili satışın daha tüm bilgileri gelmedi mk");
                     return;

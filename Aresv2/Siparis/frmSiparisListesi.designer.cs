@@ -70,11 +70,11 @@
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltrele = new DevExpress.XtraEditors.SimpleButton();
+            this.recurrenceControlBase1 = new DevExpress.XtraScheduler.UI.RecurrenceControlBase();
             this.gcSiparis = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbtnFaturalandir = new System.Windows.Forms.ToolStripMenuItem();
             this.gvSiparis = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colSecim = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ceSecim = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colF = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coSiparisID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -88,7 +88,7 @@
             this.colDuzenlemeTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colToplamIndirim = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colToplamKdv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSiparisTutari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNetToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVadesi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIptal = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -106,7 +106,6 @@
             this.btnCariHareketleri = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydiAc = new DevExpress.XtraEditors.SimpleButton();
             this.btnTeslimTarihiBugun = new DevExpress.XtraEditors.SimpleButton();
-            this.recurrenceControlBase1 = new DevExpress.XtraScheduler.UI.RecurrenceControlBase();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -153,7 +152,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainerControl1.Panel2.Controls.Add(this.btnTeslimTarihiBugun);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1256, 694);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1359, 694);
             this.splitContainerControl1.SplitterPosition = 238;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -273,27 +272,31 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1256, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1359, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 694);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1256, 0);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1359, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 694);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1256, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1359, 0);
+            this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 694);
             // 
             // mbtnYazdir
@@ -420,6 +423,7 @@
             this.checkedListBox_Muhasebelenme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBox_Muhasebelenme.CheckOnClick = true;
+            this.checkedListBox_Muhasebelenme.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkedListBox_Muhasebelenme.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(((short)(1)), "Muhasebelenmedi"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(((short)(2)), "Muhasebelendi"),
@@ -550,6 +554,7 @@
             this.checkedListBoxControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBoxControl1.CheckOnClick = true;
+            this.checkedListBoxControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkedListBoxControl1.Location = new System.Drawing.Point(14, 174);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
             this.checkedListBoxControl1.Size = new System.Drawing.Size(216, 42);
@@ -567,7 +572,7 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(219, 613);
+            this.xtraTabPage2.Size = new System.Drawing.Size(232, 620);
             this.xtraTabPage2.Text = "xtraTabPage2";
             // 
             // simpleButton2
@@ -589,6 +594,15 @@
             this.btnFiltrele.Text = "Filtrele";
             this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
             // 
+            // recurrenceControlBase1
+            // 
+            this.recurrenceControlBase1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.recurrenceControlBase1.Appearance.Options.UseBackColor = true;
+            this.recurrenceControlBase1.Location = new System.Drawing.Point(596, 374);
+            this.recurrenceControlBase1.Name = "recurrenceControlBase1";
+            this.recurrenceControlBase1.Size = new System.Drawing.Size(8, 8);
+            this.recurrenceControlBase1.TabIndex = 16;
+            // 
             // gcSiparis
             // 
             this.gcSiparis.ContextMenuStrip = this.contextMenuStrip1;
@@ -598,7 +612,7 @@
             this.gcSiparis.Name = "gcSiparis";
             this.gcSiparis.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ceSecim});
-            this.gcSiparis.Size = new System.Drawing.Size(1013, 657);
+            this.gcSiparis.Size = new System.Drawing.Size(1116, 657);
             this.gcSiparis.TabIndex = 4;
             this.gcSiparis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSiparis});
@@ -621,7 +635,6 @@
             // gvSiparis
             // 
             this.gvSiparis.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSecim,
             this.colF,
             this.coSiparisID,
             this.colSiparisNo,
@@ -634,7 +647,7 @@
             this.colDuzenlemeTarihi,
             this.colToplamIndirim,
             this.colToplamKdv,
-            this.colToplam,
+            this.colSiparisTutari,
             this.colNetToplam,
             this.colVadesi,
             this.colIptal,
@@ -654,17 +667,6 @@
             this.gvSiparis.OptionsView.EnableAppearanceOddRow = true;
             this.gvSiparis.OptionsView.ShowGroupPanel = false;
             // 
-            // colSecim
-            // 
-            this.colSecim.Caption = "Secim";
-            this.colSecim.ColumnEdit = this.ceSecim;
-            this.colSecim.FieldName = "Secim";
-            this.colSecim.Name = "colSecim";
-            this.colSecim.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
-            this.colSecim.Visible = true;
-            this.colSecim.VisibleIndex = 0;
-            this.colSecim.Width = 40;
-            // 
             // ceSecim
             // 
             this.ceSecim.AutoHeight = false;
@@ -677,8 +679,6 @@
             this.colF.FieldName = "F";
             this.colF.Name = "colF";
             this.colF.OptionsColumn.AllowEdit = false;
-            this.colF.Visible = true;
-            this.colF.VisibleIndex = 1;
             // 
             // coSiparisID
             // 
@@ -686,8 +686,6 @@
             this.coSiparisID.FieldName = "SiparisID";
             this.coSiparisID.Name = "coSiparisID";
             this.coSiparisID.OptionsColumn.AllowEdit = false;
-            this.coSiparisID.Visible = true;
-            this.coSiparisID.VisibleIndex = 2;
             // 
             // colSiparisNo
             // 
@@ -696,7 +694,7 @@
             this.colSiparisNo.Name = "colSiparisNo";
             this.colSiparisNo.OptionsColumn.AllowEdit = false;
             this.colSiparisNo.Visible = true;
-            this.colSiparisNo.VisibleIndex = 3;
+            this.colSiparisNo.VisibleIndex = 0;
             // 
             // colSiparisTipi_
             // 
@@ -705,7 +703,7 @@
             this.colSiparisTipi_.Name = "colSiparisTipi_";
             this.colSiparisTipi_.OptionsColumn.AllowEdit = false;
             this.colSiparisTipi_.Visible = true;
-            this.colSiparisTipi_.VisibleIndex = 4;
+            this.colSiparisTipi_.VisibleIndex = 1;
             // 
             // colSiparisTipi
             // 
@@ -728,7 +726,7 @@
             this.colCariKod.Name = "colCariKod";
             this.colCariKod.OptionsColumn.AllowEdit = false;
             this.colCariKod.Visible = true;
-            this.colCariKod.VisibleIndex = 5;
+            this.colCariKod.VisibleIndex = 2;
             // 
             // colCariTanim
             // 
@@ -737,7 +735,7 @@
             this.colCariTanim.Name = "colCariTanim";
             this.colCariTanim.OptionsColumn.AllowEdit = false;
             this.colCariTanim.Visible = true;
-            this.colCariTanim.VisibleIndex = 6;
+            this.colCariTanim.VisibleIndex = 3;
             // 
             // colSiparisTarihi
             // 
@@ -746,7 +744,8 @@
             this.colSiparisTarihi.Name = "colSiparisTarihi";
             this.colSiparisTarihi.OptionsColumn.AllowEdit = false;
             this.colSiparisTarihi.Visible = true;
-            this.colSiparisTarihi.VisibleIndex = 7;
+            this.colSiparisTarihi.VisibleIndex = 4;
+            this.colSiparisTarihi.Width = 96;
             // 
             // colDuzenlemeTarihi
             // 
@@ -754,8 +753,6 @@
             this.colDuzenlemeTarihi.FieldName = "DuzenlemeTarihi";
             this.colDuzenlemeTarihi.Name = "colDuzenlemeTarihi";
             this.colDuzenlemeTarihi.OptionsColumn.AllowEdit = false;
-            this.colDuzenlemeTarihi.Visible = true;
-            this.colDuzenlemeTarihi.VisibleIndex = 8;
             // 
             // colToplamIndirim
             // 
@@ -763,8 +760,6 @@
             this.colToplamIndirim.FieldName = "ToplamIndirim";
             this.colToplamIndirim.Name = "colToplamIndirim";
             this.colToplamIndirim.OptionsColumn.AllowEdit = false;
-            this.colToplamIndirim.Visible = true;
-            this.colToplamIndirim.VisibleIndex = 9;
             // 
             // colToplamKdv
             // 
@@ -772,17 +767,16 @@
             this.colToplamKdv.FieldName = "ToplamKdv";
             this.colToplamKdv.Name = "colToplamKdv";
             this.colToplamKdv.OptionsColumn.AllowEdit = false;
-            this.colToplamKdv.Visible = true;
-            this.colToplamKdv.VisibleIndex = 10;
             // 
-            // colToplam
+            // colSiparisTutari
             // 
-            this.colToplam.Caption = "Toplam";
-            this.colToplam.FieldName = "Toplam";
-            this.colToplam.Name = "colToplam";
-            this.colToplam.OptionsColumn.AllowEdit = false;
-            this.colToplam.Visible = true;
-            this.colToplam.VisibleIndex = 11;
+            this.colSiparisTutari.Caption = "SiparisTutari";
+            this.colSiparisTutari.FieldName = "SiparisTutari";
+            this.colSiparisTutari.Name = "colSiparisTutari";
+            this.colSiparisTutari.OptionsColumn.AllowEdit = false;
+            this.colSiparisTutari.Visible = true;
+            this.colSiparisTutari.VisibleIndex = 5;
+            this.colSiparisTutari.Width = 95;
             // 
             // colNetToplam
             // 
@@ -790,8 +784,6 @@
             this.colNetToplam.FieldName = "NetToplam";
             this.colNetToplam.Name = "colNetToplam";
             this.colNetToplam.OptionsColumn.AllowEdit = false;
-            this.colNetToplam.Visible = true;
-            this.colNetToplam.VisibleIndex = 12;
             // 
             // colVadesi
             // 
@@ -800,7 +792,7 @@
             this.colVadesi.Name = "colVadesi";
             this.colVadesi.OptionsColumn.AllowEdit = false;
             this.colVadesi.Visible = true;
-            this.colVadesi.VisibleIndex = 13;
+            this.colVadesi.VisibleIndex = 6;
             // 
             // colIptal
             // 
@@ -808,8 +800,6 @@
             this.colIptal.FieldName = "Iptal";
             this.colIptal.Name = "colIptal";
             this.colIptal.OptionsColumn.AllowEdit = false;
-            this.colIptal.Visible = true;
-            this.colIptal.VisibleIndex = 14;
             // 
             // colSilindiMi
             // 
@@ -817,8 +807,6 @@
             this.colSilindiMi.FieldName = "SilindiMi";
             this.colSilindiMi.Name = "colSilindiMi";
             this.colSilindiMi.OptionsColumn.AllowEdit = false;
-            this.colSilindiMi.Visible = true;
-            this.colSilindiMi.VisibleIndex = 15;
             // 
             // colAciklama
             // 
@@ -826,8 +814,6 @@
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
-            this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 16;
             // 
             // colMuhasebeDurumu
             // 
@@ -835,7 +821,7 @@
             this.colMuhasebeDurumu.FieldName = "Muhasebe Durumu";
             this.colMuhasebeDurumu.Name = "colMuhasebeDurumu";
             this.colMuhasebeDurumu.Visible = true;
-            this.colMuhasebeDurumu.VisibleIndex = 17;
+            this.colMuhasebeDurumu.VisibleIndex = 7;
             // 
             // colSiparisDurumTanimAdi
             // 
@@ -843,7 +829,7 @@
             this.colSiparisDurumTanimAdi.FieldName = "SiparisDurumTanimAdi";
             this.colSiparisDurumTanimAdi.Name = "colSiparisDurumTanimAdi";
             this.colSiparisDurumTanimAdi.Visible = true;
-            this.colSiparisDurumTanimAdi.VisibleIndex = 18;
+            this.colSiparisDurumTanimAdi.VisibleIndex = 8;
             // 
             // colTeslimTarihi
             // 
@@ -851,7 +837,7 @@
             this.colTeslimTarihi.FieldName = "TeslimTarihi";
             this.colTeslimTarihi.Name = "colTeslimTarihi";
             this.colTeslimTarihi.Visible = true;
-            this.colTeslimTarihi.VisibleIndex = 19;
+            this.colTeslimTarihi.VisibleIndex = 9;
             // 
             // panelControl1
             // 
@@ -865,12 +851,12 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1013, 37);
+            this.panelControl1.Size = new System.Drawing.Size(1116, 37);
             this.panelControl1.TabIndex = 3;
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(135, 7);
+            this.btnYazdir.Location = new System.Drawing.Point(176, 7);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(75, 23);
             this.btnYazdir.TabIndex = 12;
@@ -880,7 +866,7 @@
             // btnSil
             // 
             this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSil.Location = new System.Drawing.Point(316, 7);
+            this.btnSil.Location = new System.Drawing.Point(419, 7);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 23);
             this.btnSil.TabIndex = 11;
@@ -891,7 +877,7 @@
             this.btnIslemler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIslemler.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
             this.btnIslemler.DropDownControl = this.popupMenu1;
-            this.btnIslemler.Location = new System.Drawing.Point(838, 7);
+            this.btnIslemler.Location = new System.Drawing.Point(941, 7);
             this.btnIslemler.Name = "btnIslemler";
             this.btnIslemler.Size = new System.Drawing.Size(103, 23);
             this.btnIslemler.TabIndex = 5;
@@ -910,6 +896,8 @@
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseForeColor = true;
             this.labelControl15.Location = new System.Drawing.Point(9, 12);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(127, 24);
@@ -919,7 +907,7 @@
             // btnCariHareketleri
             // 
             this.btnCariHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCariHareketleri.Location = new System.Drawing.Point(946, 7);
+            this.btnCariHareketleri.Location = new System.Drawing.Point(1049, 7);
             this.btnCariHareketleri.Name = "btnCariHareketleri";
             this.btnCariHareketleri.Size = new System.Drawing.Size(75, 23);
             this.btnCariHareketleri.TabIndex = 3;
@@ -928,7 +916,7 @@
             // btnKaydiAc
             // 
             this.btnKaydiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydiAc.Location = new System.Drawing.Point(596, 7);
+            this.btnKaydiAc.Location = new System.Drawing.Point(516, 7);
             this.btnKaydiAc.Name = "btnKaydiAc";
             this.btnKaydiAc.Size = new System.Drawing.Size(75, 23);
             this.btnKaydiAc.TabIndex = 3;
@@ -945,20 +933,11 @@
             this.btnTeslimTarihiBugun.Text = "Bugün";
             this.btnTeslimTarihiBugun.Click += new System.EventHandler(this.btnTeslimTarihiBugun_Click);
             // 
-            // recurrenceControlBase1
-            // 
-            this.recurrenceControlBase1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.recurrenceControlBase1.Appearance.Options.UseBackColor = true;
-            this.recurrenceControlBase1.Location = new System.Drawing.Point(596, 374);
-            this.recurrenceControlBase1.Name = "recurrenceControlBase1";
-            this.recurrenceControlBase1.Size = new System.Drawing.Size(8, 8);
-            this.recurrenceControlBase1.TabIndex = 16;
-            // 
             // frmSiparisListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 694);
+            this.ClientSize = new System.Drawing.Size(1359, 694);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1033,7 +1012,6 @@
 		private DevExpress.XtraEditors.SimpleButton btnYazdir;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem cbtnFaturalandir;
-		private DevExpress.XtraGrid.Columns.GridColumn colSecim;
 		private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ceSecim;
 		private DevExpress.XtraGrid.Columns.GridColumn colF;
 		private DevExpress.XtraGrid.Columns.GridColumn coSiparisID;
@@ -1047,7 +1025,7 @@
 		private DevExpress.XtraGrid.Columns.GridColumn colDuzenlemeTarihi;
 		private DevExpress.XtraGrid.Columns.GridColumn colToplamIndirim;
 		private DevExpress.XtraGrid.Columns.GridColumn colToplamKdv;
-		private DevExpress.XtraGrid.Columns.GridColumn colToplam;
+		private DevExpress.XtraGrid.Columns.GridColumn colSiparisTutari;
 		private DevExpress.XtraGrid.Columns.GridColumn colNetToplam;
 		private DevExpress.XtraGrid.Columns.GridColumn colVadesi;
 		private DevExpress.XtraGrid.Columns.GridColumn colIptal;
