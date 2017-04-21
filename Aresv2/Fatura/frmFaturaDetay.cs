@@ -591,10 +591,13 @@ namespace Aresv2.Fatura
 
                 #region Fatura No daha önce kaydedilmiş mi kontrolü yapılıyor.
                 bool cevap = false;
-                using (SqlCommand cmd = new SqlCommand("Select  FaturaID From Fatura Where FaturaNo=@FaturaNo AND FaturaID<>@FaturaID", SqlConnections.GetBaglanti(), trGenel))
+                using (SqlCommand cmd = new SqlCommand("Select  FaturaID From Fatura Where FaturaNo = @FaturaNo AND FaturaID <> @FaturaID and FaturaTipi = @FaturaTipi and CariID = @CariID", SqlConnections.GetBaglanti(), trGenel))
                 {
                     cmd.Parameters.Add("@FaturaNo", SqlDbType.NVarChar).Value = txtFaturaNo.Text;
                     cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = Fatura.FaturaID;
+                    cmd.Parameters.Add("@FaturaTipi", SqlDbType.Int).Value = Fatura.FaturaTipi;
+                    cmd.Parameters.Add("@CariID", SqlDbType.Int).Value = Fatura.CariID;
+                    
                     using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
                         cevap = dr.Read();
                 }
