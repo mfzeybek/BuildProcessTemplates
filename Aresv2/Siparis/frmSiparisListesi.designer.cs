@@ -75,7 +75,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbtnFaturalandir = new System.Windows.Forms.ToolStripMenuItem();
             this.gvSiparis = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ceSecim = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colF = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coSiparisID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSiparisNo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -97,6 +96,7 @@
             this.colMuhasebeDurumu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSiparisDurumTanimAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTeslimTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ceSecim = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -152,7 +152,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainerControl1.Panel2.Controls.Add(this.btnTeslimTarihiBugun);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1359, 694);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1061, 716);
             this.splitContainerControl1.SplitterPosition = 238;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -163,7 +163,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(238, 648);
+            this.xtraTabControl1.Size = new System.Drawing.Size(238, 670);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -198,7 +198,7 @@
             this.xtraTabPage1.Controls.Add(this.checkedListBoxControl1);
             this.xtraTabPage1.Controls.Add(this.labelControl9);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(232, 620);
+            this.xtraTabPage1.Size = new System.Drawing.Size(232, 642);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // btnSiparisTarihiBugun
@@ -273,15 +273,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1359, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1061, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 694);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 716);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1359, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1061, 0);
             // 
             // barDockControlLeft
             // 
@@ -289,15 +289,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 694);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 716);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1359, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1061, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 694);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 716);
             // 
             // mbtnYazdir
             // 
@@ -572,13 +572,13 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(232, 620);
+            this.xtraTabPage2.Size = new System.Drawing.Size(232, 574);
             this.xtraTabPage2.Text = "xtraTabPage2";
             // 
             // simpleButton2
             // 
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton2.Location = new System.Drawing.Point(0, 648);
+            this.simpleButton2.Location = new System.Drawing.Point(0, 670);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(238, 23);
             this.simpleButton2.TabIndex = 2;
@@ -587,7 +587,7 @@
             // btnFiltrele
             // 
             this.btnFiltrele.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnFiltrele.Location = new System.Drawing.Point(0, 671);
+            this.btnFiltrele.Location = new System.Drawing.Point(0, 693);
             this.btnFiltrele.Name = "btnFiltrele";
             this.btnFiltrele.Size = new System.Drawing.Size(238, 23);
             this.btnFiltrele.TabIndex = 1;
@@ -612,7 +612,7 @@
             this.gcSiparis.Name = "gcSiparis";
             this.gcSiparis.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ceSecim});
-            this.gcSiparis.Size = new System.Drawing.Size(1116, 657);
+            this.gcSiparis.Size = new System.Drawing.Size(818, 679);
             this.gcSiparis.TabIndex = 4;
             this.gcSiparis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSiparis});
@@ -666,12 +666,6 @@
             this.gvSiparis.OptionsView.EnableAppearanceEvenRow = true;
             this.gvSiparis.OptionsView.EnableAppearanceOddRow = true;
             this.gvSiparis.OptionsView.ShowGroupPanel = false;
-            // 
-            // ceSecim
-            // 
-            this.ceSecim.AutoHeight = false;
-            this.ceSecim.Caption = "Check";
-            this.ceSecim.Name = "ceSecim";
             // 
             // colF
             // 
@@ -839,6 +833,12 @@
             this.colTeslimTarihi.Visible = true;
             this.colTeslimTarihi.VisibleIndex = 9;
             // 
+            // ceSecim
+            // 
+            this.ceSecim.AutoHeight = false;
+            this.ceSecim.Caption = "Check";
+            this.ceSecim.Name = "ceSecim";
+            // 
             // panelControl1
             // 
             this.panelControl1.AllowTouchScroll = true;
@@ -851,12 +851,12 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1116, 37);
+            this.panelControl1.Size = new System.Drawing.Size(818, 37);
             this.panelControl1.TabIndex = 3;
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(176, 7);
+            this.btnYazdir.Location = new System.Drawing.Point(345, 7);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(75, 23);
             this.btnYazdir.TabIndex = 12;
@@ -865,8 +865,7 @@
             // 
             // btnSil
             // 
-            this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSil.Location = new System.Drawing.Point(419, 7);
+            this.btnSil.Location = new System.Drawing.Point(167, 7);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 23);
             this.btnSil.TabIndex = 11;
@@ -874,10 +873,9 @@
             // 
             // btnIslemler
             // 
-            this.btnIslemler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIslemler.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
             this.btnIslemler.DropDownControl = this.popupMenu1;
-            this.btnIslemler.Location = new System.Drawing.Point(941, 7);
+            this.btnIslemler.Location = new System.Drawing.Point(426, 7);
             this.btnIslemler.Name = "btnIslemler";
             this.btnIslemler.Size = new System.Drawing.Size(103, 23);
             this.btnIslemler.TabIndex = 5;
@@ -906,8 +904,7 @@
             // 
             // btnCariHareketleri
             // 
-            this.btnCariHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCariHareketleri.Location = new System.Drawing.Point(1049, 7);
+            this.btnCariHareketleri.Location = new System.Drawing.Point(534, 7);
             this.btnCariHareketleri.Name = "btnCariHareketleri";
             this.btnCariHareketleri.Size = new System.Drawing.Size(75, 23);
             this.btnCariHareketleri.TabIndex = 3;
@@ -915,8 +912,7 @@
             // 
             // btnKaydiAc
             // 
-            this.btnKaydiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydiAc.Location = new System.Drawing.Point(516, 7);
+            this.btnKaydiAc.Location = new System.Drawing.Point(264, 7);
             this.btnKaydiAc.Name = "btnKaydiAc";
             this.btnKaydiAc.Size = new System.Drawing.Size(75, 23);
             this.btnKaydiAc.TabIndex = 3;
@@ -937,7 +933,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 694);
+            this.ClientSize = new System.Drawing.Size(1061, 716);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

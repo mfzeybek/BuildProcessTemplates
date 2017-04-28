@@ -255,8 +255,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabControl1item = new DevExpress.XtraLayout.TabbedControlGroup();
-            this.layoutControlGroup28 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.memoNotitem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup29 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.checkEdit3item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.checkEdit2item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButton1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textEdit1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup23 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.gcFaturaConvertedLayoutitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl1ConvertedLayoutitem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -291,11 +294,8 @@
             this.btnSiparisAcitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup27 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.label1item = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup29 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.checkEdit3item = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkEdit2item = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1item = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup28 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.memoNotitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup30 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.haymina = new DevExpress.XtraLayout.LayoutControlItem();
             this.checkEdit1item = new DevExpress.XtraLayout.LayoutControlItem();
@@ -554,8 +554,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNotitem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFaturaConvertedLayoutitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1ConvertedLayoutitem)).BeginInit();
@@ -590,11 +593,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSiparisAcitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.label1item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoNotitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.haymina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1item)).BeginInit();
@@ -3218,26 +3218,59 @@
             this.layoutControlGroup29,
             this.layoutControlGroup30});
             // 
-            // layoutControlGroup28
+            // layoutControlGroup29
             // 
-            this.layoutControlGroup28.CustomizationFormText = "Not";
-            this.layoutControlGroup28.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.memoNotitem});
-            this.layoutControlGroup28.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup28.Name = "layoutControlGroup28";
-            this.layoutControlGroup28.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup28.Size = new System.Drawing.Size(1234, 126);
-            this.layoutControlGroup28.Text = "Not";
+            this.layoutControlGroup29.CustomizationFormText = "Diğer";
+            this.layoutControlGroup29.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.checkEdit3item,
+            this.checkEdit2item,
+            this.simpleButton1item,
+            this.textEdit1item});
+            this.layoutControlGroup29.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup29.Name = "layoutControlGroup29";
+            this.layoutControlGroup29.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup29.Size = new System.Drawing.Size(1234, 126);
+            this.layoutControlGroup29.Text = "Diğer";
             // 
-            // memoNotitem
+            // checkEdit3item
             // 
-            this.memoNotitem.Control = this.memoNot;
-            this.memoNotitem.CustomizationFormText = "memoNotitem";
-            this.memoNotitem.Location = new System.Drawing.Point(0, 0);
-            this.memoNotitem.Name = "memoNotitem";
-            this.memoNotitem.Size = new System.Drawing.Size(1234, 126);
-            this.memoNotitem.TextSize = new System.Drawing.Size(0, 0);
-            this.memoNotitem.TextVisible = false;
+            this.checkEdit3item.Control = this.checkEdit1;
+            this.checkEdit3item.CustomizationFormText = "checkEdit3item";
+            this.checkEdit3item.Location = new System.Drawing.Point(0, 73);
+            this.checkEdit3item.Name = "checkEdit3item";
+            this.checkEdit3item.Size = new System.Drawing.Size(1234, 53);
+            this.checkEdit3item.TextSize = new System.Drawing.Size(0, 0);
+            this.checkEdit3item.TextVisible = false;
+            // 
+            // checkEdit2item
+            // 
+            this.checkEdit2item.Control = this.checkEdit2;
+            this.checkEdit2item.CustomizationFormText = "checkEdit2item";
+            this.checkEdit2item.Location = new System.Drawing.Point(0, 26);
+            this.checkEdit2item.Name = "checkEdit2item";
+            this.checkEdit2item.Size = new System.Drawing.Size(1234, 47);
+            this.checkEdit2item.TextSize = new System.Drawing.Size(0, 0);
+            this.checkEdit2item.TextVisible = false;
+            // 
+            // simpleButton1item
+            // 
+            this.simpleButton1item.Control = this.simpleButton25;
+            this.simpleButton1item.CustomizationFormText = "simpleButton1item";
+            this.simpleButton1item.Location = new System.Drawing.Point(618, 0);
+            this.simpleButton1item.Name = "simpleButton1item";
+            this.simpleButton1item.Size = new System.Drawing.Size(616, 26);
+            this.simpleButton1item.TextSize = new System.Drawing.Size(0, 0);
+            this.simpleButton1item.TextVisible = false;
+            // 
+            // textEdit1item
+            // 
+            this.textEdit1item.Control = this.txtFaturaBarkod;
+            this.textEdit1item.CustomizationFormText = "textEdit1item";
+            this.textEdit1item.Location = new System.Drawing.Point(0, 0);
+            this.textEdit1item.Name = "textEdit1item";
+            this.textEdit1item.Size = new System.Drawing.Size(618, 26);
+            this.textEdit1item.TextSize = new System.Drawing.Size(0, 0);
+            this.textEdit1item.TextVisible = false;
             // 
             // layoutControlGroup23
             // 
@@ -3611,59 +3644,26 @@
             this.label1item.TextSize = new System.Drawing.Size(0, 0);
             this.label1item.TextVisible = false;
             // 
-            // layoutControlGroup29
+            // layoutControlGroup28
             // 
-            this.layoutControlGroup29.CustomizationFormText = "Diğer";
-            this.layoutControlGroup29.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.checkEdit3item,
-            this.checkEdit2item,
-            this.simpleButton1item,
-            this.textEdit1item});
-            this.layoutControlGroup29.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup29.Name = "layoutControlGroup29";
-            this.layoutControlGroup29.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup29.Size = new System.Drawing.Size(1234, 126);
-            this.layoutControlGroup29.Text = "Diğer";
+            this.layoutControlGroup28.CustomizationFormText = "Not";
+            this.layoutControlGroup28.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.memoNotitem});
+            this.layoutControlGroup28.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup28.Name = "layoutControlGroup28";
+            this.layoutControlGroup28.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup28.Size = new System.Drawing.Size(1234, 126);
+            this.layoutControlGroup28.Text = "Not";
             // 
-            // checkEdit3item
+            // memoNotitem
             // 
-            this.checkEdit3item.Control = this.checkEdit1;
-            this.checkEdit3item.CustomizationFormText = "checkEdit3item";
-            this.checkEdit3item.Location = new System.Drawing.Point(0, 73);
-            this.checkEdit3item.Name = "checkEdit3item";
-            this.checkEdit3item.Size = new System.Drawing.Size(1234, 53);
-            this.checkEdit3item.TextSize = new System.Drawing.Size(0, 0);
-            this.checkEdit3item.TextVisible = false;
-            // 
-            // checkEdit2item
-            // 
-            this.checkEdit2item.Control = this.checkEdit2;
-            this.checkEdit2item.CustomizationFormText = "checkEdit2item";
-            this.checkEdit2item.Location = new System.Drawing.Point(0, 26);
-            this.checkEdit2item.Name = "checkEdit2item";
-            this.checkEdit2item.Size = new System.Drawing.Size(1234, 47);
-            this.checkEdit2item.TextSize = new System.Drawing.Size(0, 0);
-            this.checkEdit2item.TextVisible = false;
-            // 
-            // simpleButton1item
-            // 
-            this.simpleButton1item.Control = this.simpleButton25;
-            this.simpleButton1item.CustomizationFormText = "simpleButton1item";
-            this.simpleButton1item.Location = new System.Drawing.Point(618, 0);
-            this.simpleButton1item.Name = "simpleButton1item";
-            this.simpleButton1item.Size = new System.Drawing.Size(616, 26);
-            this.simpleButton1item.TextSize = new System.Drawing.Size(0, 0);
-            this.simpleButton1item.TextVisible = false;
-            // 
-            // textEdit1item
-            // 
-            this.textEdit1item.Control = this.txtFaturaBarkod;
-            this.textEdit1item.CustomizationFormText = "textEdit1item";
-            this.textEdit1item.Location = new System.Drawing.Point(0, 0);
-            this.textEdit1item.Name = "textEdit1item";
-            this.textEdit1item.Size = new System.Drawing.Size(618, 26);
-            this.textEdit1item.TextSize = new System.Drawing.Size(0, 0);
-            this.textEdit1item.TextVisible = false;
+            this.memoNotitem.Control = this.memoNot;
+            this.memoNotitem.CustomizationFormText = "memoNotitem";
+            this.memoNotitem.Location = new System.Drawing.Point(0, 0);
+            this.memoNotitem.Name = "memoNotitem";
+            this.memoNotitem.Size = new System.Drawing.Size(1234, 126);
+            this.memoNotitem.TextSize = new System.Drawing.Size(0, 0);
+            this.memoNotitem.TextVisible = false;
             // 
             // layoutControlGroup30
             // 
@@ -5582,8 +5582,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNotitem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFaturaConvertedLayoutitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1ConvertedLayoutitem)).EndInit();
@@ -5618,11 +5621,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSiparisAcitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.label1item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoNotitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.haymina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1item)).EndInit();

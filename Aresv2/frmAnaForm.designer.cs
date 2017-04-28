@@ -28,15 +28,16 @@
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnaForm));
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.ımageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.ımageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup31 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
@@ -1602,7 +1603,7 @@
             this.rpYonetim,
             this.ribbonPage1,
             this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(960, 143);
+            this.ribbon.Size = new System.Drawing.Size(1337, 143);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -1649,7 +1650,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(960, 627);
+            this.ClientSize = new System.Drawing.Size(1337, 627);
             this.Controls.Add(this.ribbon);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

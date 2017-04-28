@@ -277,7 +277,7 @@ end", Baglanti, Tr);
 
         public DataTable FaturaninOdemeleriniGetir(SqlConnection Baglanti, SqlTransaction Tr, int FaturaninIDsi)
         {
-            using (SqlDataAdapter da = new SqlDataAdapter("select * from CariHr where FaturaID = @FaturaID ", Baglanti))
+            using (SqlDataAdapter da = new SqlDataAdapter(" select * from CariHr where FaturaID = @FaturaID and CariHr.SilindiMi = 0 ", Baglanti))
             {
                 da.SelectCommand.Transaction = Tr;
                 da.SelectCommand.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaninIDsi;
