@@ -126,7 +126,7 @@ namespace clsTablolar.EvrakIliski
         public void SiparistenEvrakIliskiGetir(SqlConnection Baglanti, SqlTransaction Tr, int SiparisID)
         {
             using (da = new SqlDataAdapter(@"SELECT EvrakIsliski.*, Fatura.CariTanim, FaturaTarihi, FaturaTutari FROM EvrakIsliski
-left join Fatura on fatura.FaturaID = EvrakIsliski.FaturaID and Fatura.SilindiMi = 0
+inner join Fatura on fatura.FaturaID = EvrakIsliski.FaturaID and Fatura.SilindiMi = 0
 where EvrakIsliski.SiparisID = @SiparisID", Baglanti))
             {
                 da.SelectCommand.Transaction = Tr;

@@ -209,6 +209,7 @@ end", Baglanti, Tr);
                         _Entegrasyon = (CariHrEntegrasyon)Convert.ToInt32(dr["Entegrasyon"]);
                         _EntegrasyonID = Convert.ToInt32(dr["EntegrasyonID"]); // Eğer CariKart Hareketi ise bu aslında bi entegrasyon değildir.
                         _Devirmi = Convert.ToBoolean(dr["Devirmi"]);
+                        _KasaID = Convert.ToInt32(dr["KasaID"]);
                     }
                 }
 
@@ -237,8 +238,6 @@ end", Baglanti, Tr);
                     cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = _FaturaID;
                     cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = _KasaID;
                     cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = _KasaHrID;
-
-
                     cmd.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
 
 

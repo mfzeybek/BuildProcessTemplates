@@ -262,7 +262,7 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
                 {
                     if (Convert.ToInt16(item) == 1) // muhasebelenmedi
                     {
-                        WhereCumlesi += @" and dbo.SiparisMuhasebelendiMi(siparis.SiparisID) = 2";
+                        WhereCumlesi += @" and dbo.SiparisMuhasebelendiMi(siparis.SiparisID) = 2 ";
 
                         //                        WhereCumlesi += @" and (select Top 1 EvrakIsliski.IrsaliyeID from EvrakIsliski where SiparisID = Siparis.SiparisID) is null 
                         //                             and 
@@ -270,7 +270,7 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
                     }
                     if (Convert.ToInt16(item) == 2)// muhasebelendi (4 gelirse hem muhasebelenenler hem kısmi muahsebelenenler)
                     {
-                        WhereCumlesi += @" and dbo.SiparisMuhasebelendiMi(siparis.SiparisID) = 1 ";
+                        WhereCumlesi += @" and dbo.SiparisMuhasebelendiMi(siparis.SiparisID) in (1, 4)  ";
                     }
                     if (Convert.ToInt16(item) == 3) // kısmi muhasebelendi (4 gelirse hem muhasebelenenler hem kısmi muahsebelenenler)
                     {
@@ -279,7 +279,7 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
 
                     if (Convert.ToInt16(item) == 4) // kısmi faturalandı veya faturalandı ise
                     { 
-                        WhereCumlesi += @" and dbo.SiparisMuhasebelendiMi(siparis.SiparisID) = 1 "; // burası düzeltilecek vertabanındaki fonksiyona kısmi faturandı sonucu eklenmesi lazım ("SiparisMuhasebelendiMi" bu fonkdiyon da kısmi faturalandı sonucu eklenecek)
+                        WhereCumlesi += @" and dbo.SiparisMuhasebelendiMi(siparis.SiparisID) = 4 "; // burası düzeltilecek vertabanındaki fonksiyona kısmi faturandı sonucu eklenmesi lazım ("SiparisMuhasebelendiMi" bu fonkdiyon da kısmi faturalandı sonucu eklenecek)
                     }
             
                 }

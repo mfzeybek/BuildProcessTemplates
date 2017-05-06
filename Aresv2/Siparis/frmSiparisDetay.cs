@@ -1009,13 +1009,12 @@ namespace Aresv2.Siparis
 
         private void btnIlgiliFaturayiAc_Click(object sender, EventArgs e)
         {
-            if (gvEvrakIliski.RowCount != 0)
-                if (gvEvrakIliski.GetFocusedRowCellValue("FaturaID") != DBNull.Value)
-                {
-                    Aresv2.Fatura.frmFaturaDetay IlgiliFatura = new Aresv2.Fatura.frmFaturaDetay(Convert.ToInt32(gvEvrakIliski.GetFocusedRowCellValue("FaturaID")));
-                    IlgiliFatura.MdiParent = this.MdiParent;
-                    IlgiliFatura.Show();
-                }
+            if (gvEvrakIliski.RowCount != 0 || gvEvrakIliski.GetFocusedRowCellValue(colEiFaturaID) != DBNull.Value)
+            {
+                Aresv2.Fatura.frmFaturaDetay IlgiliFatura = new Aresv2.Fatura.frmFaturaDetay(Convert.ToInt32(gvEvrakIliski.GetFocusedRowCellValue(colEiFaturaID)));
+                IlgiliFatura.MdiParent = this.MdiParent;
+                IlgiliFatura.Show();
+            }
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)

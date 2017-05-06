@@ -86,7 +86,7 @@ namespace Aresv2.Cari.CariHr
 
                 Bakiye.BakiyeVer(SqlConnections.GetBaglanti(), TrGenel, _CariID);
 
-                VeriAlVer(GET_SET.get);
+
 
                 lkpKasa.Properties.DataSource = KasaHareketi.KasaListeGetir(SqlConnections.GetBaglanti(), TrGenel);
                 TrGenel.Commit();
@@ -95,6 +95,8 @@ namespace Aresv2.Cari.CariHr
                 lkpKasa.Properties.ValueMember = "KasaID";
                 lkpKasa.Properties.DisplayMember = "KasaAdi";
                 lkpKasa.EditValue = 2;
+
+                VeriAlVer(GET_SET.get);
 
                 if (_FaturaID != -1)
                 {
