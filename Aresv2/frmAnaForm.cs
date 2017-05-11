@@ -326,7 +326,6 @@ namespace Aresv2
                                 GrupGozukecekmi = true;
                                 c = ribbon.Pages[a].Groups[b].ItemLinks.Count;
                             }
-
                         }
                         if (GrupGozukecekmi == false)
                             ribbon.Pages[a].Groups[b].Visible = false;
@@ -363,7 +362,7 @@ namespace Aresv2
                 }
 
 
-                this.Text = SqlConnections._DB + " - " + " Versiyon = Beta 22 - " + SqlConnections._Server;
+                this.Text = SqlConnections._DB + " - " + " Versiyon = Beta 23 - " + SqlConnections._Server;
 
                 if (clsTablolar.Ayarlar.csYetkiler.AjandaGorme == true)
                 {
@@ -1033,6 +1032,12 @@ namespace Aresv2
             {
                 throw;
             }
+        }
+
+        private void frmFotoKatalog_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Stok.frmFotoKatalog frm = new Stok.frmFotoKatalog();
+            FormuAc2(frm);
         }
     }
 }

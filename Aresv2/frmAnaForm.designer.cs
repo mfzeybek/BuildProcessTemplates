@@ -191,6 +191,7 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.frmFotoKatalog = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ımageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -485,6 +486,7 @@
             // ribbonPageGroup34
             // 
             this.ribbonPageGroup34.ItemLinks.Add(this.barButtonItem47);
+            this.ribbonPageGroup34.ItemLinks.Add(this.frmFotoKatalog);
             this.ribbonPageGroup34.Name = "ribbonPageGroup34";
             this.ribbonPageGroup34.Text = "Güncelleme";
             // 
@@ -1575,11 +1577,12 @@
             this.skinRibbonGalleryBarItem1,
             this.barButtonItem45,
             this.barButtonItem46,
-            this.barButtonItem47});
+            this.barButtonItem47,
+            this.frmFotoKatalog});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 12;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.ribbon.MaxItemId = 13;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.OptionsTouch.ShowTouchUISelectorInQAT = true;
@@ -1603,7 +1606,7 @@
             this.rpYonetim,
             this.ribbonPage1,
             this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(1337, 143);
+            this.ribbon.Size = new System.Drawing.Size(2674, 282);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -1644,19 +1647,26 @@
             this.ribbonPage8.Name = "ribbonPage8";
             this.ribbonPage8.Text = "ribbonPage8";
             // 
+            // frmFotoKatalog
+            // 
+            this.frmFotoKatalog.Caption = "barButtonItem48";
+            this.frmFotoKatalog.Id = 12;
+            this.frmFotoKatalog.Name = "frmFotoKatalog";
+            this.frmFotoKatalog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.frmFotoKatalog_ItemClick);
+            // 
             // frmAnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1337, 627);
+            this.ClientSize = new System.Drawing.Size(2674, 1206);
             this.Controls.Add(this.ribbon);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "frmAnaForm";
             this.Ribbon = this.ribbon;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -1835,5 +1845,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem46;
         private DevExpress.XtraBars.BarButtonItem barButtonItem47;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup34;
+        private DevExpress.XtraBars.BarButtonItem frmFotoKatalog;
     }
 }

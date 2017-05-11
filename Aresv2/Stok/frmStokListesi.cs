@@ -297,15 +297,35 @@ namespace Aresv2.Stok
                 else
                 { StokArama.N11Entegrasyonu = -1; }
 
-                gvStokListesi.Columns.Clear();
-                trGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                gcStokListesi.DataSource = StokArama.StokListeGetir(SqlConnections.GetBaglanti(), trGenel);
+
+
                 //= StokArama.dt_StokListesi;
 
+                if (cedit_FotoKatolog.Checked)
+                {
+                    gcStokListesi.MainView = layoutView1;
+                    //layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
+                    StokArama.TumFotograflariYukle = true;
+                }
+                else
+                {
+                    gcStokListesi.MainView = gvStokListesi;
+                    StokArama.TumFotograflariYukle = false;
+                }
+
+                gvStokListesi.Columns.Clear();
+                //layoutView1.Columns.Clear();
+                trGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                gcStokListesi.DataSource = StokArama.StokListeGetir(SqlConnections.GetBaglanti(), trGenel);
                 trGenel.Commit();
-                GridArayuzIslemleri(enGridArayuzIslemleri.Get);
+
+
+                if (cedit_FotoKatolog.Checked == false)
+                    GridArayuzIslemleri(enGridArayuzIslemleri.Get);
 
                 MiktarliBarkod = txtBarkodu.Text; // bunu neden buna eşitlemiştik
+
+                KacSatirVar();
             }
             catch (Exception hata)
             {
@@ -317,10 +337,23 @@ namespace Aresv2.Stok
 
         private void btnKaydiAc_Click(object sender, EventArgs e)
         {
-            if (gvStokListesi.FocusedRowHandle < 0) return;
-            if (this.Text == "Stok Listesi")
+            if (gvStokListesi.FocusedRowHandle < 0 && layoutView1.FocusedRowHandle < 0) return;
+
+
+            int StokID = -1;
+
+            if (gcStokListesi.MainView == layoutView1)
             {
-                frmStokDetay StokKarti = new frmStokDetay(Convert.ToInt32(gvStokListesi.GetFocusedRowCellValue("StokID").ToString()));
+                StokID = (int)layoutView1.GetFocusedRowCellValue("StokID");
+            }
+            else
+            {
+                StokID = Convert.ToInt32(gvStokListesi.GetFocusedRowCellValue("StokID"));
+            }
+
+            if (this.Text == "Stok Listesi" && StokID != -1)
+            {
+                frmStokDetay StokKarti = new frmStokDetay(StokID);
                 StokKarti.MdiParent = this.MdiParent;
                 StokKarti.Show();
             }
@@ -388,10 +421,10 @@ namespace Aresv2.Stok
                     {
                         Miktarr = Convert.ToDecimal(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "SayimMiktari"));
                     }
-                    
-                    
-                        Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
-                    
+
+
+                    Stok_Sec((int)(gvStokListesi.GetRowCellValue(gvStokListesi.GetSelectedRows()[i], "StokID")), Miktarr);
+
                 }
             }
             else
@@ -891,7 +924,23 @@ namespace Aresv2.Stok
 
         private void gvStokListesi_RowCountChanged(object sender, EventArgs e)
         {
-            lblListelenenSayisi.Text = gvStokListesi.RowCount.ToString();
+
+
+
+
+
+        }
+
+        void KacSatirVar()
+        {
+            if (gcStokListesi.MainView == gvStokListesi)
+            {
+                lblListelenenSayisi.Text = gvStokListesi.RowCount.ToString();
+            }
+            else
+            {
+                lblListelenenSayisi.Text = layoutView1.RowCount.ToString();
+            }
         }
 
         private void gvStokListesi_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)

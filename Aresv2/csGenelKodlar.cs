@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
+using System.Text;
 
 namespace Aresv2
 {
-  class csGenelKodlar
+    class csGenelKodlar
   {
     // Burada Kullanıcı ID (bunu sonra yapıcan), Grid Adi
 

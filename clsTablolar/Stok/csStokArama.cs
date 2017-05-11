@@ -75,6 +75,8 @@ namespace clsTablolar.Stok
         private int _SayimID;
         private Int16 _N11Entegrasyonu;
 
+        private bool _TumFotograflariYukle;
+
 
         public bool SadeceFiyatiOlanlar
         {
@@ -313,6 +315,8 @@ namespace clsTablolar.Stok
             }
         }
 
+        public bool TumFotograflariYukle { get => _TumFotograflariYukle; set => _TumFotograflariYukle = value; }
+
 
         #endregion
 
@@ -353,6 +357,7 @@ namespace clsTablolar.Stok
             _OlmasiGerekenMiktardanAzOlanlar = false;
             _StokTipi = -1;
             _SayimID = -1;
+            _TumFotograflariYukle = false;
         }
 
         public enum enumFotoOzellikleri
@@ -385,7 +390,11 @@ s.HemenAlID, s.HemenAlSira, s.StokSayimGrubuID, s.OlmasiGerekenMiktar, s.StokTip
 
             if (_SayimID != -1)
             {
-                da.SelectCommand.CommandText += ", (select Miktar1 from SayimDetay where SayimDetay.StokID = s.StokID and SayimDetay.SayimID = @SayimID) as SayimMiktari";
+                da.SelectCommand.CommandText += ", (select Miktar1 from SayimDetay where SayimDetay.StokID = s.StokID and SayimDetay.SayimID = @SayimID) as SayimMiktari ";
+            }
+            if (_TumFotograflariYukle == true)
+            {
+                da.SelectCommand.CommandText += ", ( select top 1 Resim from StokResim as res where res.Varsayilan = 1 and res.StokID = s.StokID ) as Foto ";
             }
 
             //for (int i = 0; i < FiyatTanimlariID().Count(); i++)

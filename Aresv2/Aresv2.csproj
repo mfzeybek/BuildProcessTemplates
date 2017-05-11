@@ -834,6 +834,12 @@
     <Compile Include="StokFiyat\frmStokFiyatKarsilastirma.Designer.cs">
       <DependentUpon>frmStokFiyatKarsilastirma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stok\frmFotoKatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmFotoKatalog.Designer.cs">
+      <DependentUpon>frmFotoKatalog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\frmOzelEtiket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1390,6 +1396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StokFiyat\frmStokFiyatKarsilastirma.resx">
       <DependentUpon>frmStokFiyatKarsilastirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmFotoKatalog.resx">
+      <DependentUpon>frmFotoKatalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\frmOzelEtiket.resx">
       <DependentUpon>frmOzelEtiket.cs</DependentUpon>
