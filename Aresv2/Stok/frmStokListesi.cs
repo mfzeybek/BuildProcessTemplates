@@ -306,6 +306,9 @@ namespace Aresv2.Stok
                     gcStokListesi.MainView = layoutView1;
                     //layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
                     StokArama.TumFotograflariYukle = true;
+                    //layoutView1.Columns["StokAdi"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+                    lvcolStokAdi.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+                    //lvcolStokID.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
                 }
                 else
                 {
@@ -1046,7 +1049,10 @@ namespace Aresv2.Stok
 
         }
 
+        private void gcStokListesi_Click(object sender, EventArgs e)
+        {
 
+        }
 
         bool KontrolNumarasiTutuyorMU(string BarkodNumarasiOlmaIhtimaliOlanNumara) //şimdilik sadece ean 13 ve ean 8 de kontrol etsin hatta her ihtimale karşı bu kontrolü kapatmada olsun
         {

@@ -42,14 +42,9 @@
             DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
-            this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
-            this.lvcolStokID = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.lvcolStokAdi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.lvcolFotografi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.gcStokListesi = new DevExpress.XtraGrid.GridControl();
             this.gvStokListesi = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -169,15 +164,17 @@
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu_yazdirma = new DevExpress.XtraBars.PopupMenu(this.components);
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            this.lvcolStokID = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.lvcolStokAdi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.lvcolFotografi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
-            this.layoutViewField_layoutViewColumn2 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_layoutViewColumn3 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_layoutViewColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
+            this.layoutViewField_lvcolStokAdi = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_lvcolFotografi = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_lvcolStokID = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcStokListesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvStokListesi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -243,61 +240,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.cedit_FotoKatolog.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu_yazdirma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolStokAdi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolFotografi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolStokID)).BeginInit();
             this.SuspendLayout();
-            // 
-            // layoutView1
-            // 
-            this.layoutView1.CardHorzInterval = 0;
-            this.layoutView1.CardMinSize = new System.Drawing.Size(312, 255);
-            this.layoutView1.CardVertInterval = 0;
-            this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
-            this.lvcolStokID,
-            this.lvcolStokAdi,
-            this.lvcolFotografi});
-            this.layoutView1.GridControl = this.gcStokListesi;
-            this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_layoutViewColumn1});
-            this.layoutView1.Name = "layoutView1";
-            this.layoutView1.OptionsBehavior.Editable = false;
-            this.layoutView1.OptionsBehavior.ReadOnly = true;
-            this.layoutView1.OptionsItemText.AlignMode = DevExpress.XtraGrid.Views.Layout.FieldTextAlignMode.AutoSize;
-            this.layoutView1.OptionsItemText.TextToControlDistance = 6;
-            this.layoutView1.OptionsView.AllowHotTrackFields = false;
-            this.layoutView1.OptionsView.ShowCardCaption = false;
-            this.layoutView1.OptionsView.ShowHeaderPanel = false;
-            this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
-            this.layoutView1.TemplateCard = this.layoutViewCard1;
-            this.layoutView1.DoubleClick += new System.EventHandler(this.gvStokListesi_DoubleClick);
-            // 
-            // lvcolStokID
-            // 
-            this.lvcolStokID.Caption = "stokID";
-            this.lvcolStokID.FieldName = "stokID";
-            this.lvcolStokID.LayoutViewField = this.layoutViewField_layoutViewColumn1;
-            this.lvcolStokID.Name = "lvcolStokID";
-            // 
-            // lvcolStokAdi
-            // 
-            this.lvcolStokAdi.Caption = "StokAdi";
-            this.lvcolStokAdi.FieldName = "StokAdi";
-            this.lvcolStokAdi.LayoutViewField = this.layoutViewField_layoutViewColumn2;
-            this.lvcolStokAdi.Name = "lvcolStokAdi";
-            // 
-            // lvcolFotografi
-            // 
-            this.lvcolFotografi.Caption = "foto";
-            this.lvcolFotografi.ColumnEdit = this.repositoryItemPictureEdit1;
-            this.lvcolFotografi.FieldName = "Foto";
-            this.lvcolFotografi.LayoutViewField = this.layoutViewField_layoutViewColumn3;
-            this.lvcolFotografi.Name = "lvcolFotografi";
             // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            this.repositoryItemPictureEdit1.NullText = "Fotoğrafı yok";
             this.repositoryItemPictureEdit1.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.repositoryItemPictureEdit1.ZoomAccelerationFactor = 1D;
             // 
@@ -315,12 +268,12 @@
             this.gcStokListesi.Name = "gcStokListesi";
             this.gcStokListesi.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gcStokListesi.Size = new System.Drawing.Size(919, 645);
+            this.gcStokListesi.Size = new System.Drawing.Size(751, 591);
             this.gcStokListesi.TabIndex = 1;
             this.gcStokListesi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvStokListesi,
-            this.gridView1,
             this.layoutView1});
+            this.gcStokListesi.Click += new System.EventHandler(this.gcStokListesi_Click);
             // 
             // gvStokListesi
             // 
@@ -343,23 +296,6 @@
             this.gvStokListesi.DoubleClick += new System.EventHandler(this.gvStokListesi_DoubleClick);
             this.gvStokListesi.RowCountChanged += new System.EventHandler(this.gvStokListesi_RowCountChanged);
             // 
-            // gridView1
-            // 
-            this.gridView1.ChildGridLevelName = "ok";
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.GridControl = this.gcStokListesi;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedRow = false;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -378,8 +314,8 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl2);
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1300, 730);
-            this.splitContainerControl1.SplitterPosition = 372;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1042, 676);
+            this.splitContainerControl1.SplitterPosition = 282;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -392,7 +328,7 @@
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(368, 542);
+            this.xtraTabControl1.Size = new System.Drawing.Size(279, 489);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -435,7 +371,7 @@
             this.xtraTabPage1.Controls.Add(this.txtRafYeriAciklama);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(362, 514);
+            this.xtraTabPage1.Size = new System.Drawing.Size(273, 461);
             this.xtraTabPage1.Text = "Genel";
             // 
             // checkEdit_OlmasiGerekenMiktardanAzOlanlar
@@ -448,7 +384,7 @@
             this.checkEdit_OlmasiGerekenMiktardanAzOlanlar.Name = "checkEdit_OlmasiGerekenMiktardanAzOlanlar";
             this.checkEdit_OlmasiGerekenMiktardanAzOlanlar.Properties.Caption = "Ol. Gerek. Mik. Az.";
             this.checkEdit_OlmasiGerekenMiktardanAzOlanlar.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.checkEdit_OlmasiGerekenMiktardanAzOlanlar.Size = new System.Drawing.Size(240, 19);
+            this.checkEdit_OlmasiGerekenMiktardanAzOlanlar.Size = new System.Drawing.Size(151, 19);
             toolTipTitleItem1.Text = "Olması gerekenden az stok miktari kalanlar";
             superToolTip1.Items.Add(toolTipTitleItem1);
             this.checkEdit_OlmasiGerekenMiktardanAzOlanlar.SuperTip = superToolTip1;
@@ -480,16 +416,16 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlTop.Size = new System.Drawing.Size(1300, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1042, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 730);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 676);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1300, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1042, 0);
             // 
             // barDockControlLeft
             // 
@@ -498,16 +434,16 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 730);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 676);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1300, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1042, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 730);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 676);
             // 
             // barButtonItem_KolonIslemleri
             // 
@@ -580,7 +516,7 @@
             this.checkBox_MinMikAltındaolanlar.Location = new System.Drawing.Point(7, 367);
             this.checkBox_MinMikAltındaolanlar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.checkBox_MinMikAltındaolanlar.Name = "checkBox_MinMikAltındaolanlar";
-            this.checkBox_MinMikAltındaolanlar.Size = new System.Drawing.Size(244, 20);
+            this.checkBox_MinMikAltındaolanlar.Size = new System.Drawing.Size(155, 20);
             this.checkBox_MinMikAltındaolanlar.TabIndex = 16;
             this.checkBox_MinMikAltındaolanlar.Text = "Min. Mik. Alt.";
             this.checkBox_MinMikAltındaolanlar.UseVisualStyleBackColor = true;
@@ -607,7 +543,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpAltGrup.Properties.NullText = "";
-            this.lkpAltGrup.Size = new System.Drawing.Size(271, 20);
+            this.lkpAltGrup.Size = new System.Drawing.Size(182, 20);
             this.lkpAltGrup.TabIndex = 7;
             this.lkpAltGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpAltGrup_ButtonClick);
             this.lkpAltGrup.Enter += new System.EventHandler(this.ButunTextler_Enter);
@@ -624,7 +560,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpAraGrup.Properties.NullText = "";
-            this.lkpAraGrup.Size = new System.Drawing.Size(271, 20);
+            this.lkpAraGrup.Size = new System.Drawing.Size(182, 20);
             this.lkpAraGrup.TabIndex = 6;
             this.lkpAraGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpAraGrup_ButtonClick);
             this.lkpAraGrup.Enter += new System.EventHandler(this.ButunTextler_Enter);
@@ -646,7 +582,7 @@
             this.lkpGrup.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Value;
             this.lkpGrup.Properties.NullText = "";
             this.lkpGrup.Properties.NullValuePrompt = "-1";
-            this.lkpGrup.Size = new System.Drawing.Size(271, 20);
+            this.lkpGrup.Size = new System.Drawing.Size(182, 20);
             this.lkpGrup.TabIndex = 5;
             this.lkpGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkpGrup_ButtonClick);
             this.lkpGrup.Enter += new System.EventHandler(this.ButunTextler_Enter);
@@ -666,7 +602,7 @@
             this.cmbAktifmi.Properties.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.cmbAktifmi.Size = new System.Drawing.Size(271, 20);
+            this.cmbAktifmi.Size = new System.Drawing.Size(182, 20);
             this.cmbAktifmi.TabIndex = 8;
             this.cmbAktifmi.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -694,7 +630,7 @@
             "Hepsi",
             "Evet",
             "Hayır"});
-            this.cmbMiktarGetir.Size = new System.Drawing.Size(271, 20);
+            this.cmbMiktarGetir.Size = new System.Drawing.Size(182, 20);
             this.cmbMiktarGetir.TabIndex = 14;
             this.cmbMiktarGetir.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -713,7 +649,7 @@
             "Hepsi",
             "Evet",
             "Hayır"});
-            this.cmbUrunTanitim.Size = new System.Drawing.Size(271, 20);
+            this.cmbUrunTanitim.Size = new System.Drawing.Size(182, 20);
             this.cmbUrunTanitim.TabIndex = 14;
             this.cmbUrunTanitim.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmbUrunTanitim_ButtonClick);
             this.cmbUrunTanitim.Enter += new System.EventHandler(this.ButunTextler_Enter);
@@ -770,7 +706,7 @@
             this.txtStokKodu.Location = new System.Drawing.Point(89, 9);
             this.txtStokKodu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtStokKodu.Name = "txtStokKodu";
-            this.txtStokKodu.Size = new System.Drawing.Size(271, 20);
+            this.txtStokKodu.Size = new System.Drawing.Size(182, 20);
             this.txtStokKodu.TabIndex = 0;
             this.txtStokKodu.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -790,7 +726,7 @@
             this.txtStokAdi.Location = new System.Drawing.Point(89, 35);
             this.txtStokAdi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtStokAdi.Name = "txtStokAdi";
-            this.txtStokAdi.Size = new System.Drawing.Size(271, 20);
+            this.txtStokAdi.Size = new System.Drawing.Size(182, 20);
             this.txtStokAdi.TabIndex = 1;
             this.txtStokAdi.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -810,7 +746,7 @@
             this.txtOzelKodu1.Location = new System.Drawing.Point(89, 217);
             this.txtOzelKodu1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOzelKodu1.Name = "txtOzelKodu1";
-            this.txtOzelKodu1.Size = new System.Drawing.Size(271, 20);
+            this.txtOzelKodu1.Size = new System.Drawing.Size(182, 20);
             this.txtOzelKodu1.TabIndex = 9;
             this.txtOzelKodu1.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -830,7 +766,7 @@
             this.txtAciklama.Location = new System.Drawing.Point(89, 61);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(271, 20);
+            this.txtAciklama.Size = new System.Drawing.Size(182, 20);
             this.txtAciklama.TabIndex = 3;
             this.txtAciklama.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -850,7 +786,7 @@
             this.txtOzelKodu2.Location = new System.Drawing.Point(89, 243);
             this.txtOzelKodu2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOzelKodu2.Name = "txtOzelKodu2";
-            this.txtOzelKodu2.Size = new System.Drawing.Size(271, 20);
+            this.txtOzelKodu2.Size = new System.Drawing.Size(182, 20);
             this.txtOzelKodu2.TabIndex = 10;
             this.txtOzelKodu2.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -870,7 +806,7 @@
             this.txtBarkodu.Location = new System.Drawing.Point(89, 87);
             this.txtBarkodu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtBarkodu.Name = "txtBarkodu";
-            this.txtBarkodu.Size = new System.Drawing.Size(271, 20);
+            this.txtBarkodu.Size = new System.Drawing.Size(182, 20);
             this.txtBarkodu.TabIndex = 4;
             this.txtBarkodu.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -890,7 +826,7 @@
             this.txtOzelKodu3.Location = new System.Drawing.Point(89, 269);
             this.txtOzelKodu3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOzelKodu3.Name = "txtOzelKodu3";
-            this.txtOzelKodu3.Size = new System.Drawing.Size(271, 20);
+            this.txtOzelKodu3.Size = new System.Drawing.Size(182, 20);
             this.txtOzelKodu3.TabIndex = 11;
             this.txtOzelKodu3.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -910,7 +846,7 @@
             this.txtRafYeriAciklama.Location = new System.Drawing.Point(89, 293);
             this.txtRafYeriAciklama.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRafYeriAciklama.Name = "txtRafYeriAciklama";
-            this.txtRafYeriAciklama.Size = new System.Drawing.Size(271, 20);
+            this.txtRafYeriAciklama.Size = new System.Drawing.Size(182, 20);
             this.txtRafYeriAciklama.TabIndex = 13;
             this.txtRafYeriAciklama.Enter += new System.EventHandler(this.ButunTextler_Enter);
             // 
@@ -941,7 +877,7 @@
             this.xtraTabPage2.Controls.Add(this.lkpHemanAlDurum);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(362, 514);
+            this.xtraTabPage2.Size = new System.Drawing.Size(273, 461);
             this.xtraTabPage2.Text = "Hemen Al";
             // 
             // cmbN11
@@ -1209,7 +1145,7 @@
             this.xtraTabPage3.Controls.Add(this.labelControl26);
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(362, 514);
+            this.xtraTabPage3.Size = new System.Drawing.Size(273, 461);
             this.xtraTabPage3.Text = "Diger";
             this.xtraTabPage3.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage3_Paint);
             // 
@@ -1365,7 +1301,7 @@
             this.xtraTabPage4.Controls.Add(this.deGirisHareketTarihiIlk);
             this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(362, 514);
+            this.xtraTabPage4.Size = new System.Drawing.Size(273, 461);
             this.xtraTabPage4.Text = "Hareketleri";
             // 
             // dropDownButton3
@@ -1498,10 +1434,10 @@
             this.panelControl3.Controls.Add(this.ceBarkoddanMiktarAl);
             this.panelControl3.Controls.Add(this.checkButton_fotoGoster);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 540);
+            this.panelControl3.Location = new System.Drawing.Point(0, 486);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(368, 136);
+            this.panelControl3.Size = new System.Drawing.Size(278, 136);
             this.panelControl3.TabIndex = 55;
             // 
             // ceMiktariElleGir
@@ -1516,7 +1452,7 @@
             this.ceMiktariElleGir.Properties.AutoHeight = false;
             this.ceMiktariElleGir.Properties.Caption = "Miktarı Elle Gir (F8)";
             this.ceMiktariElleGir.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceMiktariElleGir.Size = new System.Drawing.Size(364, 32);
+            this.ceMiktariElleGir.Size = new System.Drawing.Size(274, 32);
             toolTipItem1.Text = "Miktarı Elle Gir";
             superToolTip2.Items.Add(toolTipItem1);
             this.ceMiktariElleGir.SuperTip = superToolTip2;
@@ -1535,7 +1471,7 @@
             this.ceArdArdaEkle.Properties.AutoHeight = false;
             this.ceArdArdaEkle.Properties.Caption = "Ard arda ekle (F9)";
             this.ceArdArdaEkle.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceArdArdaEkle.Size = new System.Drawing.Size(364, 32);
+            this.ceArdArdaEkle.Size = new System.Drawing.Size(274, 32);
             toolTipTitleItem2.Text = "Kullanımı";
             toolTipItem2.LeftIndent = 6;
             toolTipItem2.Text = "Eğer varsa miktarı barkodundan al";
@@ -1557,7 +1493,7 @@
             this.ceCokluSecim.Properties.AutoHeight = false;
             this.ceCokluSecim.Properties.Caption = "Çoklu Seçim";
             this.ceCokluSecim.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceCokluSecim.Size = new System.Drawing.Size(364, 32);
+            this.ceCokluSecim.Size = new System.Drawing.Size(274, 32);
             toolTipItem3.Text = "Miktarı Elle Gir";
             superToolTip4.Items.Add(toolTipItem3);
             this.ceCokluSecim.SuperTip = superToolTip4;
@@ -1577,7 +1513,7 @@
             this.ceBarkoddanMiktarAl.Properties.AutoHeight = false;
             this.ceBarkoddanMiktarAl.Properties.Caption = "Eğer varsa miktarı barkodundan al (F10)";
             this.ceBarkoddanMiktarAl.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceBarkoddanMiktarAl.Size = new System.Drawing.Size(364, 32);
+            this.ceBarkoddanMiktarAl.Size = new System.Drawing.Size(274, 32);
             toolTipTitleItem3.Text = "Kullanımı";
             toolTipItem4.LeftIndent = 6;
             toolTipItem4.Text = "Eğer varsa miktarı barkodundan al";
@@ -1594,7 +1530,7 @@
             this.checkButton_fotoGoster.Location = new System.Drawing.Point(2, 2);
             this.checkButton_fotoGoster.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.checkButton_fotoGoster.Name = "checkButton_fotoGoster";
-            this.checkButton_fotoGoster.Size = new System.Drawing.Size(364, 22);
+            this.checkButton_fotoGoster.Size = new System.Drawing.Size(274, 22);
             this.checkButton_fotoGoster.TabIndex = 52;
             this.checkButton_fotoGoster.Text = "Foto Göster";
             this.checkButton_fotoGoster.CheckedChanged += new System.EventHandler(this.checkButton_fotoGoster_CheckedChanged);
@@ -1602,10 +1538,10 @@
             // btnFiltrele
             // 
             this.btnFiltrele.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnFiltrele.Location = new System.Drawing.Point(0, 676);
+            this.btnFiltrele.Location = new System.Drawing.Point(0, 622);
             this.btnFiltrele.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(368, 25);
+            this.btnFiltrele.Size = new System.Drawing.Size(278, 25);
             this.btnFiltrele.TabIndex = 13;
             this.btnFiltrele.Text = "Filtrele (F2)";
             this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
@@ -1613,10 +1549,10 @@
             // btnTemizle
             // 
             this.btnTemizle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnTemizle.Location = new System.Drawing.Point(0, 701);
+            this.btnTemizle.Location = new System.Drawing.Point(0, 647);
             this.btnTemizle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(368, 25);
+            this.btnTemizle.Size = new System.Drawing.Size(278, 25);
             this.btnTemizle.TabIndex = 14;
             this.btnTemizle.Text = "Temizle (F3)";
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
@@ -1645,10 +1581,10 @@
             this.panelControl2.Controls.Add(this.labelControl28);
             this.panelControl2.Controls.Add(this.lblListelenenSayisi);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 681);
+            this.panelControl2.Location = new System.Drawing.Point(0, 627);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(919, 45);
+            this.panelControl2.Size = new System.Drawing.Size(751, 45);
             this.panelControl2.TabIndex = 51;
             // 
             // lblAciklama
@@ -1661,7 +1597,7 @@
             this.lblAciklama.Location = new System.Drawing.Point(431, 7);
             this.lblAciklama.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.lblAciklama.Name = "lblAciklama";
-            this.lblAciklama.Size = new System.Drawing.Size(353, 30);
+            this.lblAciklama.Size = new System.Drawing.Size(316, 30);
             this.lblAciklama.TabIndex = 1;
             this.lblAciklama.Text = "Açıklama";
             // 
@@ -1710,7 +1646,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(919, 36);
+            this.panelControl1.Size = new System.Drawing.Size(751, 36);
             this.panelControl1.TabIndex = 50;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -1722,14 +1658,14 @@
             this.panelControl4.Controls.Add(this.btnKaydiAc);
             this.panelControl4.Controls.Add(this.btnStokHareketleri);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl4.Location = new System.Drawing.Point(192, 2);
+            this.panelControl4.Location = new System.Drawing.Point(257, 2);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(725, 32);
+            this.panelControl4.Size = new System.Drawing.Size(492, 32);
             this.panelControl4.TabIndex = 12;
             // 
             // cedit_FotoKatolog
             // 
-            this.cedit_FotoKatolog.Location = new System.Drawing.Point(0, 0);
+            this.cedit_FotoKatolog.Location = new System.Drawing.Point(4, 6);
             this.cedit_FotoKatolog.MenuManager = this.barManager1;
             this.cedit_FotoKatolog.Name = "cedit_FotoKatolog";
             this.cedit_FotoKatolog.Properties.Caption = "FotoKatolog";
@@ -1741,7 +1677,7 @@
             this.btnIslemler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIslemler.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
             this.btnIslemler.DropDownControl = this.popupMenu1;
-            this.btnIslemler.Location = new System.Drawing.Point(624, 3);
+            this.btnIslemler.Location = new System.Drawing.Point(390, 3);
             this.btnIslemler.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnIslemler.Name = "btnIslemler";
             this.btnIslemler.Size = new System.Drawing.Size(97, 23);
@@ -1763,7 +1699,7 @@
             // btnSec
             // 
             this.btnSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSec.Location = new System.Drawing.Point(390, 3);
+            this.btnSec.Location = new System.Drawing.Point(156, 3);
             this.btnSec.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSec.Name = "btnSec";
             this.btnSec.Size = new System.Drawing.Size(74, 23);
@@ -1774,7 +1710,7 @@
             // btnKaydiAc
             // 
             this.btnKaydiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydiAc.Location = new System.Drawing.Point(468, 3);
+            this.btnKaydiAc.Location = new System.Drawing.Point(234, 3);
             this.btnKaydiAc.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnKaydiAc.Name = "btnKaydiAc";
             this.btnKaydiAc.Size = new System.Drawing.Size(74, 23);
@@ -1785,7 +1721,7 @@
             // btnStokHareketleri
             // 
             this.btnStokHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStokHareketleri.Location = new System.Drawing.Point(546, 3);
+            this.btnStokHareketleri.Location = new System.Drawing.Point(312, 3);
             this.btnStokHareketleri.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnStokHareketleri.Name = "btnStokHareketleri";
             this.btnStokHareketleri.Size = new System.Drawing.Size(74, 23);
@@ -1798,7 +1734,7 @@
             this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
             this.dropDownButton1.DropDownControl = this.popupMenu_yazdirma;
-            this.dropDownButton1.Location = new System.Drawing.Point(1221, 8);
+            this.dropDownButton1.Location = new System.Drawing.Point(1057, 8);
             this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dropDownButton1.MenuManager = this.barManager1;
             this.dropDownButton1.Name = "dropDownButton1";
@@ -1824,55 +1760,105 @@
             this.labelControl15.TabIndex = 9;
             this.labelControl15.Text = "Stok Listesi";
             // 
+            // layoutView1
+            // 
+            this.layoutView1.CardHorzInterval = 0;
+            this.layoutView1.CardMinSize = new System.Drawing.Size(264, 216);
+            this.layoutView1.CardVertInterval = 0;
+            this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
+            this.lvcolStokID,
+            this.lvcolStokAdi,
+            this.lvcolFotografi});
+            this.layoutView1.GridControl = this.gcStokListesi;
+            this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_lvcolStokID});
+            this.layoutView1.Name = "layoutView1";
+            this.layoutView1.OptionsBehavior.Editable = false;
+            this.layoutView1.OptionsBehavior.ReadOnly = true;
+            this.layoutView1.OptionsItemText.TextToControlDistance = 0;
+            this.layoutView1.OptionsView.AllowHotTrackFields = false;
+            this.layoutView1.OptionsView.ShowCardCaption = false;
+            this.layoutView1.OptionsView.ShowCardExpandButton = false;
+            this.layoutView1.OptionsView.ShowFieldHints = false;
+            this.layoutView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.layoutView1.OptionsView.ShowHeaderPanel = false;
+            this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiRow;
+            this.layoutView1.TemplateCard = this.layoutViewCard1;
+            this.layoutView1.DoubleClick += new System.EventHandler(this.gvStokListesi_DoubleClick);
+            // 
+            // lvcolStokID
+            // 
+            this.lvcolStokID.Caption = "StokID";
+            this.lvcolStokID.FieldName = "StokID";
+            this.lvcolStokID.LayoutViewField = this.layoutViewField_lvcolStokID;
+            this.lvcolStokID.Name = "lvcolStokID";
+            // 
+            // lvcolStokAdi
+            // 
+            this.lvcolStokAdi.Caption = "StokAdi";
+            this.lvcolStokAdi.FieldName = "StokAdi";
+            this.lvcolStokAdi.LayoutViewField = this.layoutViewField_lvcolStokAdi;
+            this.lvcolStokAdi.Name = "lvcolStokAdi";
+            // 
+            // lvcolFotografi
+            // 
+            this.lvcolFotografi.Caption = "foto";
+            this.lvcolFotografi.ColumnEdit = this.repositoryItemPictureEdit1;
+            this.lvcolFotografi.FieldName = "Foto";
+            this.lvcolFotografi.LayoutViewField = this.layoutViewField_lvcolFotografi;
+            this.lvcolFotografi.Name = "lvcolFotografi";
+            // 
             // layoutViewCard1
             // 
             this.layoutViewCard1.CustomizationFormText = "TemplateCard";
             this.layoutViewCard1.GroupBordersVisible = false;
             this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_layoutViewColumn2,
-            this.layoutViewField_layoutViewColumn3});
+            this.layoutViewField_lvcolStokAdi,
+            this.layoutViewField_lvcolFotografi});
             this.layoutViewCard1.Name = "layoutViewCard1";
-            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 6;
-            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 0;
+            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutViewCard1.Text = "TemplateCard";
             // 
-            // layoutViewField_layoutViewColumn2
+            // layoutViewField_lvcolStokAdi
             // 
-            this.layoutViewField_layoutViewColumn2.EditorPreferredWidth = 254;
-            this.layoutViewField_layoutViewColumn2.Location = new System.Drawing.Point(0, 219);
-            this.layoutViewField_layoutViewColumn2.Name = "layoutViewField_layoutViewColumn2";
-            this.layoutViewField_layoutViewColumn2.Size = new System.Drawing.Size(308, 32);
-            this.layoutViewField_layoutViewColumn2.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutViewField_layoutViewColumn2.TextSize = new System.Drawing.Size(40, 13);
+            this.layoutViewField_lvcolStokAdi.EditorPreferredWidth = 225;
+            this.layoutViewField_lvcolStokAdi.Location = new System.Drawing.Point(0, 196);
+            this.layoutViewField_lvcolStokAdi.Name = "layoutViewField_lvcolStokAdi";
+            this.layoutViewField_lvcolStokAdi.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_lvcolStokAdi.Size = new System.Drawing.Size(265, 20);
+            this.layoutViewField_lvcolStokAdi.TextSize = new System.Drawing.Size(40, 13);
             // 
-            // layoutViewField_layoutViewColumn3
+            // layoutViewField_lvcolFotografi
             // 
-            this.layoutViewField_layoutViewColumn3.EditorPreferredWidth = 300;
-            this.layoutViewField_layoutViewColumn3.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_layoutViewColumn3.MaxSize = new System.Drawing.Size(291, 219);
-            this.layoutViewField_layoutViewColumn3.MinSize = new System.Drawing.Size(291, 219);
-            this.layoutViewField_layoutViewColumn3.Name = "layoutViewField_layoutViewColumn3";
-            this.layoutViewField_layoutViewColumn3.Size = new System.Drawing.Size(308, 219);
-            this.layoutViewField_layoutViewColumn3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutViewField_layoutViewColumn3.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutViewField_layoutViewColumn3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutViewField_layoutViewColumn3.TextVisible = false;
+            this.layoutViewField_lvcolFotografi.EditorPreferredWidth = 265;
+            this.layoutViewField_lvcolFotografi.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.layoutViewField_lvcolFotografi.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_lvcolFotografi.MaxSize = new System.Drawing.Size(264, 196);
+            this.layoutViewField_lvcolFotografi.MinSize = new System.Drawing.Size(264, 196);
+            this.layoutViewField_lvcolFotografi.Name = "layoutViewField_lvcolFotografi";
+            this.layoutViewField_lvcolFotografi.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_lvcolFotografi.Size = new System.Drawing.Size(265, 196);
+            this.layoutViewField_lvcolFotografi.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutViewField_lvcolFotografi.StartNewLine = true;
+            this.layoutViewField_lvcolFotografi.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_lvcolFotografi.TextVisible = false;
             // 
-            // layoutViewField_layoutViewColumn1
+            // layoutViewField_lvcolStokID
             // 
-            this.layoutViewField_layoutViewColumn1.EditorPreferredWidth = 10;
-            this.layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
-            this.layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size(308, 251);
-            this.layoutViewField_layoutViewColumn1.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutViewField_layoutViewColumn1.TextSize = new System.Drawing.Size(40, 13);
+            this.layoutViewField_lvcolStokID.EditorPreferredWidth = 20;
+            this.layoutViewField_lvcolStokID.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_lvcolStokID.Name = "layoutViewField_lvcolStokID";
+            this.layoutViewField_lvcolStokID.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_lvcolStokID.Size = new System.Drawing.Size(265, 216);
+            this.layoutViewField_lvcolStokID.TextSize = new System.Drawing.Size(40, 13);
             // 
             // frmStokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 730);
+            this.ClientSize = new System.Drawing.Size(1042, 676);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1888,11 +1874,9 @@
             this.Load += new System.EventHandler(this.frmStokListesi_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmStokListesi_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmStokListesi_KeyPress);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcStokListesi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvStokListesi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -1964,10 +1948,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cedit_FotoKatolog.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu_yazdirma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolStokAdi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolFotografi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolStokID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2053,7 +2038,6 @@
     public DevExpress.XtraEditors.CheckEdit ceMiktariElleGir;
     private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     private DevExpress.XtraEditors.CheckButton checkButton_fotoGoster;
-    private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     public DevExpress.XtraGrid.Views.Grid.GridView gvStokListesi;
     private DevExpress.XtraEditors.ComboBoxEdit cmbMiktarGetir;
     private DevExpress.XtraEditors.LabelControl labelControl25;
@@ -2096,15 +2080,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl35;
         private DevExpress.XtraEditors.ComboBoxEdit cmbN11;
         private DevExpress.XtraEditors.LabelControl labelControl36;
+        private DevExpress.XtraEditors.CheckEdit cedit_FotoKatolog;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn lvcolStokID;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn lvcolStokAdi;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn lvcolFotografi;
-        private DevExpress.XtraEditors.CheckEdit cedit_FotoKatolog;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn2;
-        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn3;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_lvcolStokID;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_lvcolStokAdi;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_lvcolFotografi;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
         //private DevExpress.XtraBars.BarDockControl barDockControlTop;
         //private DevExpress.XtraBars.BarDockControl barDockControlBottom;
