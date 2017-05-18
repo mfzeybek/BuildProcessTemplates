@@ -894,12 +894,14 @@ namespace Aresv2.Stok
                 gvStokListesi.OptionsSelection.MultiSelect = true;
                 gvStokListesi.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
                 barButtonItem_HepsiniSec.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                layoutView1.OptionsSelection.MultiSelect = true;
             }
             else
             {
                 gvStokListesi.OptionsSelection.MultiSelect = false;
                 barButtonItem_HepsiniSec.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 //gvStokListesi.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.RowSelect;
+                layoutView1.OptionsSelection.MultiSelect = false;
             }
         }
 

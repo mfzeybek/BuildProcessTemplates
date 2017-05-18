@@ -307,5 +307,13 @@ namespace Aresv2.Stok
                     break;
             }
         }
+
+        private void barBtnExceleAktar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (frmExceleAktar frm = new frmExceleAktar(gridControl1))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

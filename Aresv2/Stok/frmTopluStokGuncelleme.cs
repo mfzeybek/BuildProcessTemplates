@@ -14,67 +14,113 @@ namespace Aresv2.Stok
     {
         public frmTopluStokGuncelleme(frmStokListesi StokListesi)
         {
+
+
             Liste = StokListesi;
             InitializeComponent();
         }
 
         frmStokListesi Liste;
 
+        //seçili satırları toplu olarak günceller
 
 
         SqlTransaction Trgenel;
+        clsTablolar.Stok.csStok StokBilgileri;
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Dikkat değişiklikler Uygulanacak", "!!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            if (DialogResult.No == MessageBox.Show("Dikkat değişiklikler Uygulanacak", "!!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
-                if (DialogResult.Yes == MessageBox.Show(@"Dikkat değişiklikler Uygulanacak", "!!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-                    try
-                    {
-                        Trgenel = SqlConnections.GetBaglanti().BeginTransaction();
-                        clsTablolar.Stok.csStok StokBilgileri = new clsTablolar.Stok.csStok(SqlConnections.GetBaglanti(), Trgenel, -1);
-                        for (int i = 0; i < Liste.gvStokListesi.RowCount; i++)
-                        {
-                            StokBilgileri.StokGetir(SqlConnections.GetBaglanti(), Trgenel, Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(i, "StokID"))); // stok listesindeki stoku getirdik
-                            if (checkEdit_TanitimAlani.CheckState == CheckState.Checked)
-                                StokBilgileri.UrunTanitimdaGoster = Convert.ToBoolean(checkEdit_UrunTanitimdaGosterilsinMi.EditValue);
-                            if (checkEdit_GrubuAlani.CheckState == CheckState.Checked)
-                                StokBilgileri.StokGrupID = Convert.ToInt32(lkpGrubu.EditValue);
-                            if (checkEdit_AlisKdvAlani.CheckState == CheckState.Checked)
-                                StokBilgileri.AlisKdv = Convert.ToDecimal(txtAlisKdv.EditValue);
-                            if (checkEdit_SatisKdvAlani.CheckState == CheckState.Checked)
-                                StokBilgileri.SatisKdv = Convert.ToDecimal(txtSatisKdv.EditValue);
-                            if (checkEdit_WebteGosterilsin.CheckState == CheckState.Checked)
-                                StokBilgileri.EMagazaErisimi = Convert.ToBoolean(checkEdit_WebteGosterilsinAlani.EditValue);
-                            if (checkEdit_webKategoriDegistir.CheckState == CheckState.Checked)
-                                StokBilgileri.HemenAlKategoriID = Convert.ToInt32(lkpWebKategori.EditValue);
-                            if (checkEdit_AnahtarKelime.CheckState == CheckState.Checked)
-                                StokBilgileri.HemenAlAnahtarKelime = memoEdit_anahtarKelime.EditValue.ToString();
-                            if (checkEdit_RafYeriAciklama.CheckState == CheckState.Checked)
-                                StokBilgileri.RafYeriAciklama = txtRafYeriAcikalama.EditValue.ToString();
-                            if (checkEdit_ETicaretStokVarsaDurumu.CheckState == CheckState.Checked)
-                                StokBilgileri.EticaretStokDurumID_StoktaVarsa = Convert.ToInt32(lkpEticaretStoktaVarsaDurumTanimi.EditValue);
-                            if (checkEdit_ETicaretStokYoksaDurumu.CheckState == CheckState.Checked)
-                                StokBilgileri.EticaretStokDurumID_StoktaYoksa = Convert.ToInt32(lkpEticaretStoktaYoksaDurumTanimi.EditValue);
-                            if (checkEdit_HemenalSiraNu.CheckState == CheckState.Checked)
-                                StokBilgileri.HemenAlSira = Convert.ToInt32(txtHemeAlSiraNu.EditValue);
-
-                            StokBilgileri.StokGuncelle(SqlConnections.GetBaglanti(), Trgenel);
-                            //Stok.StokUrunTanitimGuncelle(SqlConnections.GetBaglanti(), Trgenel, Convert.ToBoolean(checkEdit_UrunTanitimdaGosterilsinMi.EditValue), Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(i, "StokID")));
-                        }
-                        Trgenel.Commit();
-                    }
-                    catch (Exception hata)
-                    {
-                        Trgenel.Rollback();
-                        frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
-                        frmHataBildir.ShowDialog();
-                    }
+                return;
             }
+            if (DialogResult.No == MessageBox.Show(@"Dikkat değişiklikler Uygulanacak", "!!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            {
+                return;
+            }
+
+            try
+            {
+                Trgenel = SqlConnections.GetBaglanti().BeginTransaction();
+                StokBilgileri = new clsTablolar.Stok.csStok(SqlConnections.GetBaglanti(), Trgenel, -1);
+
+                if (Liste.gcStokListesi.MainView == Liste.gvStokListesi)
+                {
+                    for (int i = 0; i < Liste.gvStokListesi.SelectedRowsCount; i++)
+                    {
+                        StokYenile(Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(Liste.gvStokListesi.GetSelectedRows()[i], "StokID")));
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < Liste.layoutView1.SelectedRowsCount; i++)
+                    {
+                        StokYenile(Convert.ToInt32(Liste.layoutView1.GetRowCellValue(Liste.layoutView1.GetSelectedRows()[i], "StokID")));
+                    }
+                }
+                Trgenel.Commit();
+            }
+            catch (Exception hata)
+            {
+                Trgenel.Rollback();
+                frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
+                frmHataBildir.ShowDialog();
+            }
+        }
+
+
+        void StokYenile(int StokID)
+        {
+            StokBilgileri.StokGetir(SqlConnections.GetBaglanti(), Trgenel, StokID);
+            if (checkEdit_TanitimAlani.CheckState == CheckState.Checked)
+                StokBilgileri.UrunTanitimdaGoster = Convert.ToBoolean(checkEdit_UrunTanitimdaGosterilsinMi.EditValue);
+            if (checkEdit_GrubuAlani.CheckState == CheckState.Checked)
+                StokBilgileri.StokGrupID = Convert.ToInt32(lkpGrubu.EditValue);
+            if (checkEdit_AlisKdvAlani.CheckState == CheckState.Checked)
+                StokBilgileri.AlisKdv = Convert.ToDecimal(txtAlisKdv.EditValue);
+            if (checkEdit_SatisKdvAlani.CheckState == CheckState.Checked)
+                StokBilgileri.SatisKdv = Convert.ToDecimal(txtSatisKdv.EditValue);
+            if (checkEdit_WebteGosterilsin.CheckState == CheckState.Checked)
+                StokBilgileri.EMagazaErisimi = Convert.ToBoolean(checkEdit_WebteGosterilsinAlani.EditValue);
+            if (checkEdit_webKategoriDegistir.CheckState == CheckState.Checked)
+                StokBilgileri.HemenAlKategoriID = Convert.ToInt32(lkpWebKategori.EditValue);
+            if (checkEdit_AnahtarKelime.CheckState == CheckState.Checked)
+                StokBilgileri.HemenAlAnahtarKelime = memoEdit_anahtarKelime.EditValue.ToString();
+            if (checkEdit_RafYeriAciklama.CheckState == CheckState.Checked)
+                StokBilgileri.RafYeriAciklama = txtRafYeriAcikalama.EditValue.ToString();
+            if (checkEdit_ETicaretStokVarsaDurumu.CheckState == CheckState.Checked)
+                StokBilgileri.EticaretStokDurumID_StoktaVarsa = Convert.ToInt32(lkpEticaretStoktaVarsaDurumTanimi.EditValue);
+            if (checkEdit_ETicaretStokYoksaDurumu.CheckState == CheckState.Checked)
+                StokBilgileri.EticaretStokDurumID_StoktaYoksa = Convert.ToInt32(lkpEticaretStoktaYoksaDurumTanimi.EditValue);
+            if (checkEdit_HemenalSiraNu.CheckState == CheckState.Checked)
+                StokBilgileri.HemenAlSira = Convert.ToInt32(txtHemeAlSiraNu.EditValue);
+
+            StokBilgileri.StokGuncelle(SqlConnections.GetBaglanti(), Trgenel);
+            //Stok.StokUrunTanitimGuncelle(SqlConnections.GetBaglanti(), Trgenel, Convert.ToBoolean(checkEdit_UrunTanitimdaGosterilsinMi.EditValue), Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(i, "StokID")));
         }
 
         clsTablolar.Stok.csStokGrup StokGrup;
         private void frmTopluStokGuncelleme_Load(object sender, EventArgs e)
         {
+            if (Liste.gcStokListesi.MainView == Liste.gvStokListesi)
+            {
+                if (Liste.gvStokListesi.SelectedRowsCount < 2)
+                {
+                    XtraMessageBox.Show("çoklu seçim ile en az 2 öğe seçilmeli");
+                    this.Close();
+                }
+            }
+            else
+            {
+                if (Liste.layoutView1.SelectedRowsCount < 2)
+                {
+                    XtraMessageBox.Show("çoklu seçim ile en az 2 öğe seçilmeli");
+                    this.Close();
+                }
+            }
+
+
+
             Trgenel = SqlConnections.GetBaglanti().BeginTransaction();
             StokGrup = new clsTablolar.Stok.csStokGrup(SqlConnections.GetBaglanti(), Trgenel, -1);
             lkpGrubu.Properties.DataSource = StokGrup.StokGrupDoldur(SqlConnections.GetBaglanti(), Trgenel);

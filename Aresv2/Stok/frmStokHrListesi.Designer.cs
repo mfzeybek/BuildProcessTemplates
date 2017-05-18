@@ -174,14 +174,14 @@
             this.lkpAltGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lkpAltGrup.EditValue = -1;
-            this.lkpAltGrup.Location = new System.Drawing.Point(92, 284);
-            this.lkpAltGrup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.lkpAltGrup.Location = new System.Drawing.Point(172, 503);
+            this.lkpAltGrup.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpAltGrup.Name = "lkpAltGrup";
             this.lkpAltGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpAltGrup.Properties.NullText = "";
-            this.lkpAltGrup.Size = new System.Drawing.Size(105, 20);
+            this.lkpAltGrup.Size = new System.Drawing.Size(231, 34);
             this.lkpAltGrup.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.lkpAltGrup.TabIndex = 18;
             // 
@@ -211,25 +211,27 @@
             this.tabbedControlGroup1,
             this.layoutControlItem12});
             this.frmStokHrListesilayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
-            this.frmStokHrListesilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.frmStokHrListesilayoutControl1ConvertedLayout.Name = "frmStokHrListesilayoutControl1ConvertedLayout";
             this.frmStokHrListesilayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(512, 60, 1401, 1148);
             this.frmStokHrListesilayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.frmStokHrListesilayoutControl1ConvertedLayout.Size = new System.Drawing.Size(959, 610);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Size = new System.Drawing.Size(1918, 1173);
             this.frmStokHrListesilayoutControl1ConvertedLayout.TabIndex = 6;
             // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(145, 576);
+            this.btnTemizle.Location = new System.Drawing.Point(356, 1131);
+            this.btnTemizle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(62, 22);
+            this.btnTemizle.Size = new System.Drawing.Size(58, 18);
             this.btnTemizle.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.btnTemizle.TabIndex = 21;
             this.btnTemizle.Text = "Temizle";
             // 
             // cmbHizliTarih
             // 
-            this.cmbHizliTarih.Location = new System.Drawing.Point(92, 188);
+            this.cmbHizliTarih.Location = new System.Drawing.Point(172, 335);
+            this.cmbHizliTarih.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmbHizliTarih.MenuManager = this.barManager1;
             this.cmbHizliTarih.Name = "cmbHizliTarih";
             this.cmbHizliTarih.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -239,7 +241,7 @@
             "Dün",
             "Bu hafta",
             "Bu ay"});
-            this.cmbHizliTarih.Size = new System.Drawing.Size(105, 20);
+            this.cmbHizliTarih.Size = new System.Drawing.Size(231, 34);
             this.cmbHizliTarih.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.cmbHizliTarih.TabIndex = 20;
             this.cmbHizliTarih.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit2_SelectedIndexChanged);
@@ -275,17 +277,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlTop.Size = new System.Drawing.Size(959, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlTop.Size = new System.Drawing.Size(1918, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 610);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1173);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlBottom.Size = new System.Drawing.Size(959, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1918, 0);
             // 
             // barDockControlLeft
             // 
@@ -293,17 +295,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 610);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1173);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(959, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1918, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 610);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1173);
             // 
             // barButtonItem_KolonIslemleri
             // 
@@ -329,6 +331,7 @@
             this.barBtnExceleAktar.Caption = "Excel e aktar";
             this.barBtnExceleAktar.Id = 4;
             this.barBtnExceleAktar.Name = "barBtnExceleAktar";
+            this.barBtnExceleAktar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnExceleAktar_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -403,34 +406,34 @@
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(92, 68);
-            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(172, 125);
+            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxEdit1.MenuManager = this.barManager1;
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(105, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(231, 34);
             this.comboBoxEdit1.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.comboBoxEdit1.TabIndex = 19;
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(19, 92);
-            this.checkEdit1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkEdit1.Location = new System.Drawing.Point(34, 167);
+            this.checkEdit1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkEdit1.MenuManager = this.barManager1;
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "Maliyet Fiyatı Gelsin Mi";
-            this.checkEdit1.Size = new System.Drawing.Size(178, 19);
+            this.checkEdit1.Size = new System.Drawing.Size(369, 34);
             this.checkEdit1.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.checkEdit1.TabIndex = 11;
             // 
             // btnHareketiAc
             // 
             this.btnHareketiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHareketiAc.Location = new System.Drawing.Point(281, 12);
-            this.btnHareketiAc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHareketiAc.Location = new System.Drawing.Point(562, 24);
+            this.btnHareketiAc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHareketiAc.Name = "btnHareketiAc";
-            this.btnHareketiAc.Size = new System.Drawing.Size(331, 22);
+            this.btnHareketiAc.Size = new System.Drawing.Size(662, 42);
             this.btnHareketiAc.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.btnHareketiAc.TabIndex = 4;
             this.btnHareketiAc.Text = "Hareketi Aç";
@@ -442,10 +445,10 @@
             this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
             this.dropDownButton1.DropDownControl = this.popupMenu1;
-            this.dropDownButton1.Location = new System.Drawing.Point(616, 12);
-            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.dropDownButton1.Location = new System.Drawing.Point(1232, 24);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(331, 22);
+            this.dropDownButton1.Size = new System.Drawing.Size(662, 42);
             this.dropDownButton1.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.dropDownButton1.TabIndex = 5;
             this.dropDownButton1.Text = "dropDownButton1";
@@ -465,10 +468,10 @@
             // btnStokKartiniAc
             // 
             this.btnStokKartiniAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStokKartiniAc.Location = new System.Drawing.Point(12, 12);
-            this.btnStokKartiniAc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStokKartiniAc.Location = new System.Drawing.Point(24, 24);
+            this.btnStokKartiniAc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStokKartiniAc.Name = "btnStokKartiniAc";
-            this.btnStokKartiniAc.Size = new System.Drawing.Size(265, 22);
+            this.btnStokKartiniAc.Size = new System.Drawing.Size(530, 42);
             this.btnStokKartiniAc.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.btnStokKartiniAc.TabIndex = 4;
             this.btnStokKartiniAc.Text = "Stok Kartını Aç";
@@ -479,14 +482,14 @@
             this.lkpAraGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lkpAraGrup.EditValue = -1;
-            this.lkpAraGrup.Location = new System.Drawing.Point(92, 212);
-            this.lkpAraGrup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.lkpAraGrup.Location = new System.Drawing.Point(172, 377);
+            this.lkpAraGrup.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpAraGrup.Name = "lkpAraGrup";
             this.lkpAraGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.lkpAraGrup.Properties.NullText = "";
-            this.lkpAraGrup.Size = new System.Drawing.Size(105, 20);
+            this.lkpAraGrup.Size = new System.Drawing.Size(231, 34);
             this.lkpAraGrup.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.lkpAraGrup.TabIndex = 17;
             this.lkpAraGrup.EditValueChanged += new System.EventHandler(this.lkpAraGrup_EditValueChanged);
@@ -496,8 +499,8 @@
             this.lkpGrup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lkpGrup.EditValue = -1;
-            this.lkpGrup.Location = new System.Drawing.Point(92, 260);
-            this.lkpGrup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.lkpGrup.Location = new System.Drawing.Point(172, 461);
+            this.lkpGrup.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpGrup.Name = "lkpGrup";
             this.lkpGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
@@ -508,7 +511,7 @@
             this.lkpGrup.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Value;
             this.lkpGrup.Properties.NullText = "";
             this.lkpGrup.Properties.NullValuePrompt = "-1";
-            this.lkpGrup.Size = new System.Drawing.Size(105, 20);
+            this.lkpGrup.Size = new System.Drawing.Size(231, 34);
             this.lkpGrup.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.lkpGrup.TabIndex = 16;
             this.lkpGrup.EditValueChanged += new System.EventHandler(this.lkpGrup_EditValueChanged);
@@ -517,8 +520,8 @@
             // 
             this.N.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.N.Location = new System.Drawing.Point(92, 116);
-            this.N.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.N.Location = new System.Drawing.Point(172, 209);
+            this.N.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.N.MenuManager = this.barManager1;
             this.N.Name = "N";
             this.N.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -527,7 +530,7 @@
             "Hepsi",
             "Giriş",
             "Çıkış"});
-            this.N.Size = new System.Drawing.Size(105, 20);
+            this.N.Size = new System.Drawing.Size(231, 34);
             this.N.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.N.TabIndex = 6;
             this.N.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
@@ -536,11 +539,11 @@
             // 
             this.txtCariAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCariAdi.Location = new System.Drawing.Point(92, 236);
-            this.txtCariAdi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtCariAdi.Location = new System.Drawing.Point(172, 419);
+            this.txtCariAdi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtCariAdi.MenuManager = this.barManager1;
             this.txtCariAdi.Name = "txtCariAdi";
-            this.txtCariAdi.Size = new System.Drawing.Size(105, 20);
+            this.txtCariAdi.Size = new System.Drawing.Size(231, 34);
             this.txtCariAdi.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.txtCariAdi.TabIndex = 6;
             // 
@@ -548,10 +551,10 @@
             // 
             this.txtStokKodu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStokKodu.Location = new System.Drawing.Point(92, 92);
-            this.txtStokKodu.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStokKodu.Location = new System.Drawing.Point(172, 167);
+            this.txtStokKodu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStokKodu.Name = "txtStokKodu";
-            this.txtStokKodu.Size = new System.Drawing.Size(105, 20);
+            this.txtStokKodu.Size = new System.Drawing.Size(231, 34);
             this.txtStokKodu.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.txtStokKodu.TabIndex = 4;
             // 
@@ -560,15 +563,15 @@
             this.deTarih1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deTarih1.EditValue = null;
-            this.deTarih1.Location = new System.Drawing.Point(92, 140);
-            this.deTarih1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.deTarih1.Location = new System.Drawing.Point(172, 251);
+            this.deTarih1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deTarih1.Name = "deTarih1";
             this.deTarih1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih1.Properties.NullDate = new System.DateTime(((long)(0)));
-            this.deTarih1.Size = new System.Drawing.Size(105, 20);
+            this.deTarih1.Size = new System.Drawing.Size(231, 34);
             this.deTarih1.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.deTarih1.TabIndex = 12;
             // 
@@ -576,11 +579,11 @@
             // 
             this.txtStokAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStokAdi.Location = new System.Drawing.Point(92, 68);
-            this.txtStokAdi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStokAdi.Location = new System.Drawing.Point(172, 125);
+            this.txtStokAdi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStokAdi.MenuManager = this.barManager1;
             this.txtStokAdi.Name = "txtStokAdi";
-            this.txtStokAdi.Size = new System.Drawing.Size(105, 20);
+            this.txtStokAdi.Size = new System.Drawing.Size(231, 34);
             this.txtStokAdi.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.txtStokAdi.TabIndex = 4;
             // 
@@ -589,24 +592,24 @@
             this.deTarih2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deTarih2.EditValue = null;
-            this.deTarih2.Location = new System.Drawing.Point(92, 164);
-            this.deTarih2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.deTarih2.Location = new System.Drawing.Point(172, 293);
+            this.deTarih2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deTarih2.Name = "deTarih2";
             this.deTarih2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTarih2.Properties.NullDate = new System.DateTime(((long)(0)));
-            this.deTarih2.Size = new System.Drawing.Size(105, 20);
+            this.deTarih2.Size = new System.Drawing.Size(231, 34);
             this.deTarih2.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.deTarih2.TabIndex = 11;
             // 
             // btnFiltrele
             // 
-            this.btnFiltrele.Location = new System.Drawing.Point(12, 576);
-            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiltrele.Location = new System.Drawing.Point(24, 1131);
+            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(129, 22);
+            this.btnFiltrele.Size = new System.Drawing.Size(324, 18);
             this.btnFiltrele.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.btnFiltrele.TabIndex = 3;
             this.btnFiltrele.Text = "Filtrele";
@@ -616,10 +619,10 @@
             // 
             this.btnBugun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBugun.Location = new System.Drawing.Point(12, 174);
-            this.btnBugun.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnBugun.Location = new System.Drawing.Point(24, 335);
+            this.btnBugun.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBugun.Name = "btnBugun";
-            this.btnBugun.Size = new System.Drawing.Size(270, 22);
+            this.btnBugun.Size = new System.Drawing.Size(540, 42);
             this.btnBugun.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
             this.btnBugun.TabIndex = 15;
             this.btnBugun.Text = "Bugün";
@@ -627,12 +630,12 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.gridControl1.Location = new System.Drawing.Point(216, 38);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Location = new System.Drawing.Point(432, 74);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(731, 560);
+            this.gridControl1.Size = new System.Drawing.Size(1462, 1075);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -866,7 +869,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(959, 610);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1918, 1173);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -876,10 +879,10 @@
             this.layoutControlGroup3,
             this.splitterItem1,
             this.layoutControlItem13});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 50);
             this.layoutControlGroup2.Name = "splitContainerControl1item";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(939, 564);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1878, 1083);
             this.layoutControlGroup2.Text = "splitContainerControl1";
             // 
             // layoutControlGroup3
@@ -893,16 +896,16 @@
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "Panel1item";
             this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup3.Size = new System.Drawing.Size(199, 564);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(398, 1083);
             this.layoutControlGroup3.Text = "Panel1";
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnFiltrele;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 538);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 1057);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(45, 26);
             this.layoutControlItem11.Name = "btnFiltreleitem";
-            this.layoutControlItem11.Size = new System.Drawing.Size(133, 26);
+            this.layoutControlItem11.Size = new System.Drawing.Size(332, 26);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
@@ -914,7 +917,7 @@
             this.tabbedControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
             this.tabbedControlGroup2.SelectedTabPage = this.layoutControlGroup4;
             this.tabbedControlGroup2.SelectedTabPageIndex = 0;
-            this.tabbedControlGroup2.Size = new System.Drawing.Size(199, 280);
+            this.tabbedControlGroup2.Size = new System.Drawing.Size(398, 482);
             this.tabbedControlGroup2.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup4,
             this.layoutControlGroup5});
@@ -935,7 +938,7 @@
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup4.Size = new System.Drawing.Size(182, 240);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(377, 420);
             this.layoutControlGroup4.Text = "Arama Kriterleri";
             // 
             // txtStokAdiitem
@@ -943,99 +946,99 @@
             this.txtStokAdiitem.Control = this.txtStokAdi;
             this.txtStokAdiitem.Location = new System.Drawing.Point(0, 0);
             this.txtStokAdiitem.Name = "txtStokAdiitem";
-            this.txtStokAdiitem.Size = new System.Drawing.Size(182, 24);
+            this.txtStokAdiitem.Size = new System.Drawing.Size(377, 42);
             this.txtStokAdiitem.Text = "Stok Adi";
             this.txtStokAdiitem.TextLocation = DevExpress.Utils.Locations.Left;
-            this.txtStokAdiitem.TextSize = new System.Drawing.Size(67, 13);
+            this.txtStokAdiitem.TextSize = new System.Drawing.Size(132, 25);
             // 
             // txtStokKoduitem
             // 
             this.txtStokKoduitem.Control = this.txtStokKodu;
-            this.txtStokKoduitem.Location = new System.Drawing.Point(0, 24);
+            this.txtStokKoduitem.Location = new System.Drawing.Point(0, 42);
             this.txtStokKoduitem.Name = "txtStokKoduitem";
-            this.txtStokKoduitem.Size = new System.Drawing.Size(182, 24);
+            this.txtStokKoduitem.Size = new System.Drawing.Size(377, 42);
             this.txtStokKoduitem.Text = "Stok Kodu";
             this.txtStokKoduitem.TextLocation = DevExpress.Utils.Locations.Left;
-            this.txtStokKoduitem.TextSize = new System.Drawing.Size(67, 13);
+            this.txtStokKoduitem.TextSize = new System.Drawing.Size(132, 25);
             // 
             // comboBoxEdit1item
             // 
             this.comboBoxEdit1item.Control = this.N;
-            this.comboBoxEdit1item.Location = new System.Drawing.Point(0, 48);
+            this.comboBoxEdit1item.Location = new System.Drawing.Point(0, 84);
             this.comboBoxEdit1item.Name = "comboBoxEdit1item";
-            this.comboBoxEdit1item.Size = new System.Drawing.Size(182, 24);
+            this.comboBoxEdit1item.Size = new System.Drawing.Size(377, 42);
             this.comboBoxEdit1item.Text = "Giriş / Çıkış";
             this.comboBoxEdit1item.TextLocation = DevExpress.Utils.Locations.Left;
-            this.comboBoxEdit1item.TextSize = new System.Drawing.Size(67, 13);
+            this.comboBoxEdit1item.TextSize = new System.Drawing.Size(132, 25);
             // 
             // textEdit1item
             // 
             this.textEdit1item.Control = this.txtCariAdi;
-            this.textEdit1item.Location = new System.Drawing.Point(0, 168);
+            this.textEdit1item.Location = new System.Drawing.Point(0, 294);
             this.textEdit1item.Name = "textEdit1item";
-            this.textEdit1item.Size = new System.Drawing.Size(182, 24);
+            this.textEdit1item.Size = new System.Drawing.Size(377, 42);
             this.textEdit1item.Text = "Cari Kodu";
             this.textEdit1item.TextLocation = DevExpress.Utils.Locations.Left;
-            this.textEdit1item.TextSize = new System.Drawing.Size(67, 13);
+            this.textEdit1item.TextSize = new System.Drawing.Size(132, 25);
             // 
             // lkpGrupitem
             // 
             this.lkpGrupitem.Control = this.lkpGrup;
-            this.lkpGrupitem.Location = new System.Drawing.Point(0, 192);
+            this.lkpGrupitem.Location = new System.Drawing.Point(0, 336);
             this.lkpGrupitem.Name = "lkpGrupitem";
-            this.lkpGrupitem.Size = new System.Drawing.Size(182, 24);
+            this.lkpGrupitem.Size = new System.Drawing.Size(377, 42);
             this.lkpGrupitem.Text = "Stok Grup";
             this.lkpGrupitem.TextLocation = DevExpress.Utils.Locations.Left;
-            this.lkpGrupitem.TextSize = new System.Drawing.Size(67, 13);
+            this.lkpGrupitem.TextSize = new System.Drawing.Size(132, 25);
             // 
             // lkpAraGrupitem
             // 
             this.lkpAraGrupitem.Control = this.lkpAraGrup;
-            this.lkpAraGrupitem.Location = new System.Drawing.Point(0, 144);
+            this.lkpAraGrupitem.Location = new System.Drawing.Point(0, 252);
             this.lkpAraGrupitem.Name = "lkpAraGrupitem";
-            this.lkpAraGrupitem.Size = new System.Drawing.Size(182, 24);
+            this.lkpAraGrupitem.Size = new System.Drawing.Size(377, 42);
             this.lkpAraGrupitem.Text = "Stok Ara Grup";
             this.lkpAraGrupitem.TextLocation = DevExpress.Utils.Locations.Left;
-            this.lkpAraGrupitem.TextSize = new System.Drawing.Size(67, 13);
+            this.lkpAraGrupitem.TextSize = new System.Drawing.Size(132, 25);
             // 
             // lkpAltGrupitem
             // 
             this.lkpAltGrupitem.Control = this.lkpAltGrup;
-            this.lkpAltGrupitem.Location = new System.Drawing.Point(0, 216);
+            this.lkpAltGrupitem.Location = new System.Drawing.Point(0, 378);
             this.lkpAltGrupitem.Name = "lkpAltGrupitem";
-            this.lkpAltGrupitem.Size = new System.Drawing.Size(182, 24);
+            this.lkpAltGrupitem.Size = new System.Drawing.Size(377, 42);
             this.lkpAltGrupitem.Text = "Stok Alt Grup";
             this.lkpAltGrupitem.TextLocation = DevExpress.Utils.Locations.Left;
-            this.lkpAltGrupitem.TextSize = new System.Drawing.Size(67, 13);
+            this.lkpAltGrupitem.TextSize = new System.Drawing.Size(132, 25);
             // 
             // deTarih1item
             // 
             this.deTarih1item.Control = this.deTarih1;
-            this.deTarih1item.Location = new System.Drawing.Point(0, 72);
+            this.deTarih1item.Location = new System.Drawing.Point(0, 126);
             this.deTarih1item.Name = "deTarih1item";
-            this.deTarih1item.Size = new System.Drawing.Size(182, 24);
+            this.deTarih1item.Size = new System.Drawing.Size(377, 42);
             this.deTarih1item.Text = "Tarih 1";
             this.deTarih1item.TextLocation = DevExpress.Utils.Locations.Left;
-            this.deTarih1item.TextSize = new System.Drawing.Size(67, 13);
+            this.deTarih1item.TextSize = new System.Drawing.Size(132, 25);
             // 
             // deTarih2item
             // 
             this.deTarih2item.Control = this.deTarih2;
-            this.deTarih2item.Location = new System.Drawing.Point(0, 96);
+            this.deTarih2item.Location = new System.Drawing.Point(0, 168);
             this.deTarih2item.Name = "deTarih2item";
-            this.deTarih2item.Size = new System.Drawing.Size(182, 24);
+            this.deTarih2item.Size = new System.Drawing.Size(377, 42);
             this.deTarih2item.Text = "Tarih 2";
             this.deTarih2item.TextLocation = DevExpress.Utils.Locations.Left;
-            this.deTarih2item.TextSize = new System.Drawing.Size(67, 13);
+            this.deTarih2item.TextSize = new System.Drawing.Size(132, 25);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.cmbHizliTarih;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 210);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(182, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(377, 42);
             this.layoutControlItem4.Text = "Tarih Seç";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(67, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(132, 25);
             // 
             // layoutControlGroup5
             // 
@@ -1045,15 +1048,15 @@
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup5.Size = new System.Drawing.Size(182, 240);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(377, 420);
             this.layoutControlGroup5.Text = "Kolonlar";
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.checkEdit1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 42);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(182, 216);
+            this.layoutControlItem2.Size = new System.Drawing.Size(377, 378);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -1062,22 +1065,22 @@
             this.layoutControlItem3.Control = this.comboBoxEdit1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(182, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(377, 42);
             this.layoutControlItem3.Text = "Özel Kolonlar";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(67, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(132, 25);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 280);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 482);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(199, 258);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(398, 575);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnTemizle;
-            this.layoutControlItem1.Location = new System.Drawing.Point(133, 538);
+            this.layoutControlItem1.Location = new System.Drawing.Point(332, 1057);
             this.layoutControlItem1.MaxSize = new System.Drawing.Size(66, 26);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(66, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -1089,16 +1092,16 @@
             // splitterItem1
             // 
             this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(199, 0);
+            this.splitterItem1.Location = new System.Drawing.Point(398, 0);
             this.splitterItem1.Name = "splitterItem1";
-            this.splitterItem1.Size = new System.Drawing.Size(5, 564);
+            this.splitterItem1.Size = new System.Drawing.Size(10, 1083);
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.gridControl1;
-            this.layoutControlItem13.Location = new System.Drawing.Point(204, 0);
+            this.layoutControlItem13.Location = new System.Drawing.Point(408, 0);
             this.layoutControlItem13.Name = "gridControl1item";
-            this.layoutControlItem13.Size = new System.Drawing.Size(735, 564);
+            this.layoutControlItem13.Size = new System.Drawing.Size(1470, 1083);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
@@ -1107,7 +1110,7 @@
             this.layoutControlItem15.Control = this.btnStokKartiniAc;
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(269, 26);
+            this.layoutControlItem15.Size = new System.Drawing.Size(538, 50);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
@@ -1115,9 +1118,9 @@
             // 
             this.layoutControlItem14.Control = this.btnHareketiAc;
             this.layoutControlItem14.ImageAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.layoutControlItem14.Location = new System.Drawing.Point(269, 0);
+            this.layoutControlItem14.Location = new System.Drawing.Point(538, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(335, 26);
+            this.layoutControlItem14.Size = new System.Drawing.Size(670, 50);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
@@ -1126,23 +1129,23 @@
             this.layoutControlItem16.BestFitWeight = 50;
             this.layoutControlItem16.Control = this.dropDownButton1;
             this.layoutControlItem16.FillControlToClientArea = false;
-            this.layoutControlItem16.Location = new System.Drawing.Point(604, 0);
+            this.layoutControlItem16.Location = new System.Drawing.Point(1208, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(335, 26);
+            this.layoutControlItem16.Size = new System.Drawing.Size(670, 50);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
             // frmStokHrListesi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 610);
+            this.ClientSize = new System.Drawing.Size(1918, 1173);
             this.Controls.Add(this.frmStokHrListesilayoutControl1ConvertedLayout);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmStokHrListesi";
             this.Text = "Stok Hareketleri";
             this.Load += new System.EventHandler(this.frmStokHrListesi_Load);

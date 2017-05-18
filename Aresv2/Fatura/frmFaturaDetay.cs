@@ -150,6 +150,7 @@ namespace Aresv2.Fatura
             {
                 xtraTabControl1item.SelectedTabPage = xtraTabControl1item.TabPages[i];
             }
+            xtraTabControl1item.SelectedTabPage = xtraTabControl1item.TabPages[0];
 
             Kaydet_Vazgec_Sil_Enable(false);
         }
@@ -361,8 +362,9 @@ namespace Aresv2.Fatura
 
         private void EvrakiliskileriniGetir()
         {
-            EvrakIliskileri.FaturadanEvrakIliskiGetir(SqlConnections.GetBaglanti(), trGenel, Fatura.FaturaID);
+            if (Fatura.FaturaID == -1) return;
 
+            EvrakIliskileri.FaturadanEvrakIliskiGetir(SqlConnections.GetBaglanti(), trGenel, Fatura.FaturaID);
             gcEvrakIiski.DataSource = EvrakIliskileri.dt;
         }
 
@@ -597,7 +599,7 @@ namespace Aresv2.Fatura
                     cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = Fatura.FaturaID;
                     cmd.Parameters.Add("@FaturaTipi", SqlDbType.Int).Value = Fatura.FaturaTipi;
                     cmd.Parameters.Add("@CariID", SqlDbType.Int).Value = Fatura.CariID;
-                    
+
                     using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
                         cevap = dr.Read();
                 }
@@ -1187,6 +1189,7 @@ namespace Aresv2.Fatura
 
         void KapaliFaturaHareketleriniGetir()
         {
+            if (Fatura.FaturaID == -1) return;
             try
             {
                 trGenel = SqlConnections.GetBaglanti().BeginTransaction();
