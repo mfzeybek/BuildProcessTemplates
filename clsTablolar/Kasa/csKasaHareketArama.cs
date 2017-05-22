@@ -51,7 +51,7 @@ where 1 = 1 ", Baglanti);
 
             if (SonZRaporundanSonraMi)
             {
-                da.SelectCommand.CommandText = da.SelectCommand.CommandText + " and isnull((select top 1 KasaRaporu.KasaHareketID from KasaRaporu),-1) < KasaHareket.KasaHrID ";
+                da.SelectCommand.CommandText = da.SelectCommand.CommandText + " and isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID desc),-1) < KasaHareket.KasaHrID ";
             }
             if (KasaID != -1)
             {

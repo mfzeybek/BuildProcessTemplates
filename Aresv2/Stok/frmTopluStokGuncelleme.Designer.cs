@@ -56,6 +56,8 @@
             this.checkEdit_HemenalSiraNu = new DevExpress.XtraEditors.CheckEdit();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.cmbStokTipi = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ceStokTipi = new DevExpress.XtraEditors.CheckEdit();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit_TanitimAlani.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit_UrunTanitimdaGosterilsinMi.Properties)).BeginInit();
@@ -82,13 +84,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStokTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceStokTipi.Properties)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkEdit_TanitimAlani
             // 
             this.checkEdit_TanitimAlani.Location = new System.Drawing.Point(1272, 135);
-            this.checkEdit_TanitimAlani.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_TanitimAlani.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_TanitimAlani.Name = "checkEdit_TanitimAlani";
             this.checkEdit_TanitimAlani.Properties.Caption = "Urun Tanıtımda Göstrrilsin mi Değiştir";
             this.checkEdit_TanitimAlani.Size = new System.Drawing.Size(398, 34);
@@ -99,20 +103,20 @@
             // 
             this.checkEdit_UrunTanitimdaGosterilsinMi.Enabled = false;
             this.checkEdit_UrunTanitimdaGosterilsinMi.Location = new System.Drawing.Point(918, 135);
-            this.checkEdit_UrunTanitimdaGosterilsinMi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_UrunTanitimdaGosterilsinMi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_UrunTanitimdaGosterilsinMi.Name = "checkEdit_UrunTanitimdaGosterilsinMi";
             this.checkEdit_UrunTanitimdaGosterilsinMi.Properties.Caption = "Urun Tanıtımda Göstrrilsin mi";
-            this.checkEdit_UrunTanitimdaGosterilsinMi.Size = new System.Drawing.Size(345, 34);
+            this.checkEdit_UrunTanitimdaGosterilsinMi.Size = new System.Drawing.Size(344, 34);
             this.checkEdit_UrunTanitimdaGosterilsinMi.TabIndex = 0;
             this.checkEdit_UrunTanitimdaGosterilsinMi.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
             // simpleButton1
             // 
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton1.Location = new System.Drawing.Point(0, 583);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.simpleButton1.Location = new System.Drawing.Point(0, 784);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(1823, 90);
+            this.simpleButton1.Size = new System.Drawing.Size(1812, 90);
             this.simpleButton1.TabIndex = 1;
             this.simpleButton1.Text = "Kaydet";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -120,14 +124,16 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(1823, 76);
+            this.labelControl1.Size = new System.Drawing.Size(1812, 248);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Stok Listesindeki Listelenen Ürünleri toplu olarak günceller";
             // 
@@ -135,17 +141,17 @@
             // 
             this.lkpGrubu.Enabled = false;
             this.lkpGrubu.Location = new System.Drawing.Point(20, 15);
-            this.lkpGrubu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lkpGrubu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpGrubu.Name = "lkpGrubu";
             this.lkpGrubu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkpGrubu.Size = new System.Drawing.Size(317, 34);
+            this.lkpGrubu.Size = new System.Drawing.Size(316, 34);
             this.lkpGrubu.TabIndex = 3;
             // 
             // checkEdit_GrubuAlani
             // 
-            this.checkEdit_GrubuAlani.Location = new System.Drawing.Point(381, 15);
-            this.checkEdit_GrubuAlani.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_GrubuAlani.Location = new System.Drawing.Point(380, 15);
+            this.checkEdit_GrubuAlani.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_GrubuAlani.Name = "checkEdit_GrubuAlani";
             this.checkEdit_GrubuAlani.Properties.Caption = "Grubunu Değiştir";
             this.checkEdit_GrubuAlani.Size = new System.Drawing.Size(398, 34);
@@ -161,9 +167,9 @@
             0});
             this.txtSatisKdv.Enabled = false;
             this.txtSatisKdv.Location = new System.Drawing.Point(172, 108);
-            this.txtSatisKdv.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtSatisKdv.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSatisKdv.Name = "txtSatisKdv";
-            this.txtSatisKdv.Size = new System.Drawing.Size(183, 34);
+            this.txtSatisKdv.Size = new System.Drawing.Size(184, 34);
             this.txtSatisKdv.TabIndex = 4;
             // 
             // txtAlisKdv
@@ -174,16 +180,16 @@
             0,
             0});
             this.txtAlisKdv.Enabled = false;
-            this.txtAlisKdv.Location = new System.Drawing.Point(172, 59);
-            this.txtAlisKdv.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtAlisKdv.Location = new System.Drawing.Point(172, 60);
+            this.txtAlisKdv.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtAlisKdv.Name = "txtAlisKdv";
-            this.txtAlisKdv.Size = new System.Drawing.Size(183, 34);
+            this.txtAlisKdv.Size = new System.Drawing.Size(184, 34);
             this.txtAlisKdv.TabIndex = 4;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(38, 111);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.labelControl2.Location = new System.Drawing.Point(38, 112);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(90, 25);
             this.labelControl2.TabIndex = 5;
@@ -192,7 +198,7 @@
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(38, 62);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(78, 25);
             this.labelControl3.TabIndex = 5;
@@ -200,8 +206,8 @@
             // 
             // checkEdit_AlisKdvAlani
             // 
-            this.checkEdit_AlisKdvAlani.Location = new System.Drawing.Point(381, 59);
-            this.checkEdit_AlisKdvAlani.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_AlisKdvAlani.Location = new System.Drawing.Point(380, 60);
+            this.checkEdit_AlisKdvAlani.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_AlisKdvAlani.Name = "checkEdit_AlisKdvAlani";
             this.checkEdit_AlisKdvAlani.Properties.Caption = "Alış Kdv Değiştir";
             this.checkEdit_AlisKdvAlani.Size = new System.Drawing.Size(398, 34);
@@ -210,8 +216,8 @@
             // 
             // checkEdit_SatisKdvAlani
             // 
-            this.checkEdit_SatisKdvAlani.Location = new System.Drawing.Point(381, 108);
-            this.checkEdit_SatisKdvAlani.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_SatisKdvAlani.Location = new System.Drawing.Point(380, 108);
+            this.checkEdit_SatisKdvAlani.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_SatisKdvAlani.Name = "checkEdit_SatisKdvAlani";
             this.checkEdit_SatisKdvAlani.Properties.Caption = "Satış KDV Değiştir";
             this.checkEdit_SatisKdvAlani.Size = new System.Drawing.Size(398, 34);
@@ -220,8 +226,8 @@
             // 
             // checkEdit_WebteGosterilsinAlani
             // 
-            this.checkEdit_WebteGosterilsinAlani.Location = new System.Drawing.Point(1272, 176);
-            this.checkEdit_WebteGosterilsinAlani.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_WebteGosterilsinAlani.Location = new System.Drawing.Point(1272, 177);
+            this.checkEdit_WebteGosterilsinAlani.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_WebteGosterilsinAlani.Name = "checkEdit_WebteGosterilsinAlani";
             this.checkEdit_WebteGosterilsinAlani.Properties.Caption = "Webte Gösterilsin Değiştir";
             this.checkEdit_WebteGosterilsinAlani.Size = new System.Drawing.Size(398, 34);
@@ -232,16 +238,16 @@
             // 
             this.checkEdit_WebteGosterilsin.Enabled = false;
             this.checkEdit_WebteGosterilsin.Location = new System.Drawing.Point(918, 179);
-            this.checkEdit_WebteGosterilsin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_WebteGosterilsin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_WebteGosterilsin.Name = "checkEdit_WebteGosterilsin";
             this.checkEdit_WebteGosterilsin.Properties.Caption = "Webte Gösterilsin";
-            this.checkEdit_WebteGosterilsin.Size = new System.Drawing.Size(345, 34);
+            this.checkEdit_WebteGosterilsin.Size = new System.Drawing.Size(344, 34);
             this.checkEdit_WebteGosterilsin.TabIndex = 6;
             // 
             // lkpWebKategori
             // 
-            this.lkpWebKategori.Location = new System.Drawing.Point(73, 27);
-            this.lkpWebKategori.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lkpWebKategori.Location = new System.Drawing.Point(72, 27);
+            this.lkpWebKategori.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpWebKategori.Name = "lkpWebKategori";
             this.lkpWebKategori.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -250,8 +256,8 @@
             // 
             // checkEdit_webKategoriDegistir
             // 
-            this.checkEdit_webKategoriDegistir.Location = new System.Drawing.Point(568, 26);
-            this.checkEdit_webKategoriDegistir.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_webKategoriDegistir.Location = new System.Drawing.Point(568, 27);
+            this.checkEdit_webKategoriDegistir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_webKategoriDegistir.Name = "checkEdit_webKategoriDegistir";
             this.checkEdit_webKategoriDegistir.Properties.Caption = "Web Kategori Değiştir";
             this.checkEdit_webKategoriDegistir.Size = new System.Drawing.Size(398, 34);
@@ -261,16 +267,16 @@
             // memoEdit_anahtarKelime
             // 
             this.memoEdit_anahtarKelime.Enabled = false;
-            this.memoEdit_anahtarKelime.Location = new System.Drawing.Point(73, 71);
-            this.memoEdit_anahtarKelime.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.memoEdit_anahtarKelime.Location = new System.Drawing.Point(72, 71);
+            this.memoEdit_anahtarKelime.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.memoEdit_anahtarKelime.Name = "memoEdit_anahtarKelime";
-            this.memoEdit_anahtarKelime.Size = new System.Drawing.Size(470, 103);
+            this.memoEdit_anahtarKelime.Size = new System.Drawing.Size(470, 104);
             this.memoEdit_anahtarKelime.TabIndex = 8;
             // 
             // checkEdit_AnahtarKelime
             // 
-            this.checkEdit_AnahtarKelime.Location = new System.Drawing.Point(568, 68);
-            this.checkEdit_AnahtarKelime.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_AnahtarKelime.Location = new System.Drawing.Point(568, 67);
+            this.checkEdit_AnahtarKelime.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_AnahtarKelime.Name = "checkEdit_AnahtarKelime";
             this.checkEdit_AnahtarKelime.Properties.Caption = "Anahtar Kelime Değiştir";
             this.checkEdit_AnahtarKelime.Size = new System.Drawing.Size(398, 34);
@@ -280,8 +286,8 @@
             // txtRafYeriAcikalama
             // 
             this.txtRafYeriAcikalama.Enabled = false;
-            this.txtRafYeriAcikalama.Location = new System.Drawing.Point(811, 28);
-            this.txtRafYeriAcikalama.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtRafYeriAcikalama.Location = new System.Drawing.Point(812, 29);
+            this.txtRafYeriAcikalama.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtRafYeriAcikalama.Name = "txtRafYeriAcikalama";
             this.txtRafYeriAcikalama.Size = new System.Drawing.Size(470, 34);
             this.txtRafYeriAcikalama.TabIndex = 9;
@@ -289,7 +295,7 @@
             // checkEdit_RafYeriAciklama
             // 
             this.checkEdit_RafYeriAciklama.Location = new System.Drawing.Point(1306, 29);
-            this.checkEdit_RafYeriAciklama.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_RafYeriAciklama.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_RafYeriAciklama.Name = "checkEdit_RafYeriAciklama";
             this.checkEdit_RafYeriAciklama.Properties.Caption = "Raf Yeri Açıklama";
             this.checkEdit_RafYeriAciklama.Size = new System.Drawing.Size(398, 34);
@@ -299,8 +305,8 @@
             // lkpEticaretStoktaVarsaDurumTanimi
             // 
             this.lkpEticaretStoktaVarsaDurumTanimi.Enabled = false;
-            this.lkpEticaretStoktaVarsaDurumTanimi.Location = new System.Drawing.Point(73, 309);
-            this.lkpEticaretStoktaVarsaDurumTanimi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lkpEticaretStoktaVarsaDurumTanimi.Location = new System.Drawing.Point(72, 310);
+            this.lkpEticaretStoktaVarsaDurumTanimi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpEticaretStoktaVarsaDurumTanimi.Name = "lkpEticaretStoktaVarsaDurumTanimi";
             this.lkpEticaretStoktaVarsaDurumTanimi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -310,8 +316,8 @@
             // lkpEticaretStoktaYoksaDurumTanimi
             // 
             this.lkpEticaretStoktaYoksaDurumTanimi.Enabled = false;
-            this.lkpEticaretStoktaYoksaDurumTanimi.Location = new System.Drawing.Point(73, 352);
-            this.lkpEticaretStoktaYoksaDurumTanimi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lkpEticaretStoktaYoksaDurumTanimi.Location = new System.Drawing.Point(72, 352);
+            this.lkpEticaretStoktaYoksaDurumTanimi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lkpEticaretStoktaYoksaDurumTanimi.Name = "lkpEticaretStoktaYoksaDurumTanimi";
             this.lkpEticaretStoktaYoksaDurumTanimi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -321,7 +327,7 @@
             // checkEdit_ETicaretStokVarsaDurumu
             // 
             this.checkEdit_ETicaretStokVarsaDurumu.Location = new System.Drawing.Point(568, 308);
-            this.checkEdit_ETicaretStokVarsaDurumu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_ETicaretStokVarsaDurumu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_ETicaretStokVarsaDurumu.Name = "checkEdit_ETicaretStokVarsaDurumu";
             this.checkEdit_ETicaretStokVarsaDurumu.Properties.Caption = "E Ticaret Stok Varsa Durumu";
             this.checkEdit_ETicaretStokVarsaDurumu.Size = new System.Drawing.Size(398, 34);
@@ -330,8 +336,8 @@
             // 
             // checkEdit_ETicaretStokYoksaDurumu
             // 
-            this.checkEdit_ETicaretStokYoksaDurumu.Location = new System.Drawing.Point(568, 351);
-            this.checkEdit_ETicaretStokYoksaDurumu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_ETicaretStokYoksaDurumu.Location = new System.Drawing.Point(568, 352);
+            this.checkEdit_ETicaretStokYoksaDurumu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_ETicaretStokYoksaDurumu.Name = "checkEdit_ETicaretStokYoksaDurumu";
             this.checkEdit_ETicaretStokYoksaDurumu.Properties.Caption = "E Ticaret Stok Yoksa Durumu";
             this.checkEdit_ETicaretStokYoksaDurumu.Size = new System.Drawing.Size(398, 34);
@@ -341,15 +347,15 @@
             // txtHemeAlSiraNu
             // 
             this.txtHemeAlSiraNu.Location = new System.Drawing.Point(918, 27);
-            this.txtHemeAlSiraNu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtHemeAlSiraNu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtHemeAlSiraNu.Name = "txtHemeAlSiraNu";
-            this.txtHemeAlSiraNu.Size = new System.Drawing.Size(277, 34);
+            this.txtHemeAlSiraNu.Size = new System.Drawing.Size(276, 34);
             this.txtHemeAlSiraNu.TabIndex = 11;
             // 
             // checkEdit_HemenalSiraNu
             // 
             this.checkEdit_HemenalSiraNu.Location = new System.Drawing.Point(1272, 27);
-            this.checkEdit_HemenalSiraNu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkEdit_HemenalSiraNu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.checkEdit_HemenalSiraNu.Name = "checkEdit_HemenalSiraNu";
             this.checkEdit_HemenalSiraNu.Properties.AutoWidth = true;
             this.checkEdit_HemenalSiraNu.Properties.Caption = "Sira Numarasını Güncelle";
@@ -361,21 +367,22 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 76);
+            this.tabPane1.Location = new System.Drawing.Point(0, 248);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1823, 507);
-            this.tabPane1.SelectedPage = this.tabNavigationPage2;
-            this.tabPane1.SelectedPageIndex = 1;
-            this.tabPane1.Size = new System.Drawing.Size(1823, 507);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1812, 536);
+            this.tabPane1.SelectedPage = this.tabNavigationPage1;
+            this.tabPane1.Size = new System.Drawing.Size(1812, 536);
             this.tabPane1.TabIndex = 13;
             this.tabPane1.Text = "tabPane1";
             // 
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Genel";
+            this.tabNavigationPage1.Controls.Add(this.cmbStokTipi);
             this.tabNavigationPage1.Controls.Add(this.lkpGrubu);
             this.tabNavigationPage1.Controls.Add(this.checkEdit_GrubuAlani);
             this.tabNavigationPage1.Controls.Add(this.txtAlisKdv);
@@ -384,10 +391,37 @@
             this.tabNavigationPage1.Controls.Add(this.txtRafYeriAcikalama);
             this.tabNavigationPage1.Controls.Add(this.txtSatisKdv);
             this.tabNavigationPage1.Controls.Add(this.labelControl2);
+            this.tabNavigationPage1.Controls.Add(this.ceStokTipi);
             this.tabNavigationPage1.Controls.Add(this.labelControl3);
             this.tabNavigationPage1.Controls.Add(this.checkEdit_RafYeriAciklama);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1789, 418);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1778, 447);
+            // 
+            // cmbStokTipi
+            // 
+            this.cmbStokTipi.Enabled = false;
+            this.cmbStokTipi.Location = new System.Drawing.Point(812, 108);
+            this.cmbStokTipi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.cmbStokTipi.Name = "cmbStokTipi";
+            this.cmbStokTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbStokTipi.Properties.Items.AddRange(new object[] {
+            "Hazır Stok (Hazır alınıp satılıyor)",
+            "Mamül (Üretilen Stok Neredeyse Sadece Üretilen Stok)",
+            "Hammade (Mamül üretirken Kullanılıyor)"});
+            this.cmbStokTipi.Size = new System.Drawing.Size(470, 34);
+            this.cmbStokTipi.TabIndex = 18;
+            // 
+            // ceStokTipi
+            // 
+            this.ceStokTipi.Location = new System.Drawing.Point(1306, 108);
+            this.ceStokTipi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ceStokTipi.Name = "ceStokTipi";
+            this.ceStokTipi.Properties.Caption = "Stok Tipi";
+            this.ceStokTipi.Size = new System.Drawing.Size(398, 34);
+            this.ceStokTipi.TabIndex = 0;
+            this.ceStokTipi.CheckedChanged += new System.EventHandler(this.ceStokTipi_CheckedChanged);
             // 
             // tabNavigationPage2
             // 
@@ -406,18 +440,19 @@
             this.tabNavigationPage2.Controls.Add(this.lkpEticaretStoktaVarsaDurumTanimi);
             this.tabNavigationPage2.Controls.Add(this.checkEdit_ETicaretStokYoksaDurumu);
             this.tabNavigationPage2.Controls.Add(this.memoEdit_anahtarKelime);
+            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1789, 418);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1782, 233);
             // 
             // frmTopluStokGuncelleme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1823, 673);
+            this.ClientSize = new System.Drawing.Size(1812, 874);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.simpleButton1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "frmTopluStokGuncelleme";
             this.Text = "Toplu Stok Güncelleme";
             this.Load += new System.EventHandler(this.frmTopluStokGuncelleme_Load);
@@ -447,6 +482,8 @@
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStokTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceStokTipi.Properties)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -483,5 +520,7 @@
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraEditors.CheckEdit ceStokTipi;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbStokTipi;
     }
 }

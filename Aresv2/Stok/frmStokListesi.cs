@@ -309,6 +309,7 @@ namespace Aresv2.Stok
                     //layoutView1.Columns["StokAdi"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
                     lvcolStokAdi.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
                     //lvcolStokID.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+                    layoutView1.OptionsMultiRecordMode.MultiColumnScrollBarOrientation = DevExpress.XtraGrid.Views.Layout.ScrollBarOrientation.Vertical;
                 }
                 else
                 {
@@ -876,10 +877,41 @@ namespace Aresv2.Stok
 
         }
 
+
+        // Toplu Stok güncellmedeki olay şu: Seçili öğeleri toplu olarak güncelleyecek
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmTopluStokGuncelleme frm = new frmTopluStokGuncelleme(this);
-            frm.ShowDialog();
+            if (gcStokListesi.MainView == gvStokListesi)
+            {
+                if (gvStokListesi.IsMultiSelect)
+                {
+                    frmTopluStokGuncelleme frm = new frmTopluStokGuncelleme(this);
+                    frm.ShowDialog();
+                    ceCokluSecim.Checked = false;
+                    barButtonItem2.Caption = "Stok seç ve toplu güncelle";
+                }
+                else
+                {
+                    ceCokluSecim.Checked = true;
+                    barButtonItem2.Caption = "Seçili stokları toplu güncelle";
+                }
+            }
+            else
+                if (gcStokListesi.MainView == layoutView1)
+            {
+                if (layoutView1.IsMultiSelect)
+                {
+                    frmTopluStokGuncelleme frm = new frmTopluStokGuncelleme(this);
+                    frm.ShowDialog();
+                    ceCokluSecim.Checked = false;
+                    barButtonItem2.Caption = "Stok seç ve toplu güncelle";
+                }
+                else
+                {
+                    ceCokluSecim.Checked = true;
+                    barButtonItem2.Caption = "Seçili stokları toplu güncelle";
+                }
+            }
         }
 
         private void xtraTabPage3_Paint(object sender, PaintEventArgs e)

@@ -590,7 +590,7 @@
             // 
             // barButtonItem2
             // 
-            this.barButtonItem2.Caption = "Listelenen Ürünleri Top Güncelle";
+            this.barButtonItem2.Caption = "Stok seç ve toplu güncelle";
             this.barButtonItem2.Id = 13;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
@@ -971,7 +971,7 @@
             this.xtraTabPage2.Controls.Add(this.lkpHemanAlDurum);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(270, 893);
+            this.xtraTabPage2.Size = new System.Drawing.Size(373, 893);
             this.xtraTabPage2.Text = "Hemen Al";
             // 
             // cmbN11
@@ -1239,7 +1239,7 @@
             this.xtraTabPage3.Controls.Add(this.labelControl26);
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(270, 893);
+            this.xtraTabPage3.Size = new System.Drawing.Size(373, 893);
             this.xtraTabPage3.Text = "Diger";
             this.xtraTabPage3.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage3_Paint);
             // 
@@ -1396,7 +1396,7 @@
             this.xtraTabPage4.Controls.Add(this.deGirisHareketTarihiIlk);
             this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(270, 893);
+            this.xtraTabPage4.Size = new System.Drawing.Size(373, 893);
             this.xtraTabPage4.Text = "Hareketleri";
             // 
             // dropDownButton3

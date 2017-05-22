@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -62,9 +58,10 @@ namespace clsTablolar.Kasa
 , ISnull(SUM(NakitHr.Alacak), 0) - ISnull( SUM(NakitHr.Borc), 0) as NakitBakiye, ISnull( SUM(NakitHr.Alacak),0) as NakitAlacak,  ISnull( SUM(NakitHr.Borc), 0) as NakitBorc from CariHr
 --inner join CariHr on CariHr.KasaHrID = KasaHareket.KasaHrID and CariHr.SilindiMi = 0
 left join KasaHareket PosHr on PosHr.KasaHrID = CariHr.KasaHrID and PosHr.KasaID = 3 and PosHr.SilindiMi = 0
-left join KasaHareket NakitHr on NakitHr.KasaHrID = CariHr.KasaHrID and NakitHr.KasaID = @KasaID and NakitHr.SilindiMi = 0
+left join KasaHareket NakitHr on NakitHr.KasaHrID = CariHr.KasaHrID and NakitHr.KasaID = 1 and NakitHr.SilindiMi = 0
 where  
-isnull((select top 1 KasaHareketID from KasaRaporu),-1) < CariHr.KasaHrID ", Baglanti, Tr))
+isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID desc),-1) < PosHr.KasaHrID
+and isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID desc),-1) < NakitHr.KasaHrID ", Baglanti, Tr))
                 {
                     cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaID;
 
@@ -99,7 +96,7 @@ isnull((select top 1 KasaHareketID from KasaRaporu),-1) < CariHr.KasaHrID ", Bag
              */
 
 
-        public void RaporKaydet(SqlConnection Baglanti, SqlTransaction Tr,int KasaHareketID)
+        public void RaporKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHareketID)
         {
             using (SqlCommand cmd = new SqlCommand("", Baglanti, Tr))
             {

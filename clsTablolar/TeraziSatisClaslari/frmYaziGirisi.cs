@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Management;
-using System.Linq;
 
 
 namespace clsTablolar.TeraziSatisClaslari
@@ -75,11 +73,9 @@ namespace clsTablolar.TeraziSatisClaslari
         {
             if (Environment.OSVersion.VersionString != "")
             {
-
                 //labelControl1.Text = ;
-
-                System.OperatingSystem osInfo = System.Environment.OSVersion;
-                labelControl1.Text = osInfo.Platform.ToString();
+                //System.OperatingSystem osInfo = System.Environment.OSVersion;
+                //labelControl1.Text = osInfo.Platform.ToString();
             }
 
             var trayWnd = FindWindow("Shell_TrayWnd", null);

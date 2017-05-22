@@ -1111,8 +1111,8 @@ namespace KasaSatis
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmGiderCikisi frm = new frmGiderCikisi();
-            frm.ShowDialog();
+            using (frmGiderCikisi frm = new frmGiderCikisi(_PersonelID))
+                frm.ShowDialog();
         }
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

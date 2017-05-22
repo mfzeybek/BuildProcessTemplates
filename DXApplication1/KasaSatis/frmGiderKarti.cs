@@ -1,25 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace KasaSatis
 {
     public partial class frmGiderKarti : Form
     {
-        public frmGiderKarti(int KasaHrID)
+        public frmGiderKarti(int KasaHrID, int PersonelID)
         {
             this.KasaHrID = KasaHrID;
+            this.PersonelID = PersonelID;
             InitializeComponent();
         }
 
         int KasaHrID;
+        int PersonelID;
         SqlTransaction TrGenel;
 
         clsTablolar.Kasa.csKasaHareket hareket = new clsTablolar.Kasa.csKasaHareket();
@@ -41,7 +36,8 @@ namespace KasaSatis
             hareket.Aciklama = memoEdit1.Text;
             hareket.Borc = Convert.ToDecimal(textEdit1.EditValue);
             hareket.KasaID = KasaSatis.Properties.Settings.Default.KasaID;
-            //hareket.Alacak
+            hareket.HareketTipi = clsTablolar.Kasa.csKasaHareket.HareketTipleri.GiderCikisi;
+            hareket.KaydedenPersonelID = PersonelID;
 
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             hareket.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel);

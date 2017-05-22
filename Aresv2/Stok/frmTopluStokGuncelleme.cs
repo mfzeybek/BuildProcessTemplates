@@ -94,6 +94,8 @@ namespace Aresv2.Stok
                 StokBilgileri.EticaretStokDurumID_StoktaYoksa = Convert.ToInt32(lkpEticaretStoktaYoksaDurumTanimi.EditValue);
             if (checkEdit_HemenalSiraNu.CheckState == CheckState.Checked)
                 StokBilgileri.HemenAlSira = Convert.ToInt32(txtHemeAlSiraNu.EditValue);
+            if (ceStokTipi.CheckState == CheckState.Checked)
+                StokBilgileri.StokTipi = cmbStokTipi.SelectedIndex;
 
             StokBilgileri.StokGuncelle(SqlConnections.GetBaglanti(), Trgenel);
             //Stok.StokUrunTanitimGuncelle(SqlConnections.GetBaglanti(), Trgenel, Convert.ToBoolean(checkEdit_UrunTanitimdaGosterilsinMi.EditValue), Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(i, "StokID")));
@@ -109,6 +111,11 @@ namespace Aresv2.Stok
                     XtraMessageBox.Show("çoklu seçim ile en az 2 öğe seçilmeli");
                     this.Close();
                 }
+                else
+                {
+                    labelControl1.Text = Liste.gvStokListesi.SelectedRowsCount + " adet Stok Güncellenecek";
+
+                }
             }
             else
             {
@@ -117,8 +124,12 @@ namespace Aresv2.Stok
                     XtraMessageBox.Show("çoklu seçim ile en az 2 öğe seçilmeli");
                     this.Close();
                 }
-            }
+                else
 
+                {
+                    labelControl1.Text = Liste.layoutView1.SelectedRowsCount + " adet Stok Güncellenecek";
+                }
+            }
 
 
             Trgenel = SqlConnections.GetBaglanti().BeginTransaction();
@@ -216,9 +227,9 @@ namespace Aresv2.Stok
         private void checkEdit_RafYeriAciklama_CheckedChanged(object sender, EventArgs e)
         {
             if (checkEdit_RafYeriAciklama.CheckState == CheckState.Checked)
-                memoEdit_anahtarKelime.Enabled = true;
+                txtRafYeriAcikalama.Enabled = true;
             else
-                memoEdit_anahtarKelime.Enabled = false;
+                txtRafYeriAcikalama.Enabled = false;
         }
 
         private void checkEdit1_CheckedChanged_1(object sender, EventArgs e)
@@ -237,6 +248,12 @@ namespace Aresv2.Stok
                 lkpEticaretStoktaYoksaDurumTanimi.Enabled = false;
         }
 
-
+        private void ceStokTipi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ceStokTipi.CheckState == CheckState.Checked)
+                cmbStokTipi.Enabled = true;
+            else
+                cmbStokTipi.Enabled = false;
+        }
     }
 }

@@ -14,11 +14,13 @@ namespace KasaSatis
 {
     public partial class frmGiderCikisi : Form
     {
-        public frmGiderCikisi()
+        public frmGiderCikisi(int PersonelID)
         {
+            this.PersonelID = PersonelID;
             InitializeComponent();
         }
 
+        int PersonelID = -1;
 
         clsTablolar.Kasa.csKasaHareketArama GiderHareketi = new clsTablolar.Kasa.csKasaHareketArama();
         SqlTransaction TrGenel;
@@ -61,7 +63,7 @@ namespace KasaSatis
 
         private void btnEkle_Click_1(object sender, EventArgs e)
         {
-            using (frmGiderKarti frm = new frmGiderKarti(-1))
+            using (frmGiderKarti frm = new frmGiderKarti(-1, PersonelID))
             {
                 if (frm.ShowDialog() == DialogResult.Yes)
                 {
@@ -72,7 +74,9 @@ namespace KasaSatis
 
         private void btnDuzelt_Click(object sender, EventArgs e)
         {
-            using (frmGiderKarti frm = new frmGiderKarti(Convert.ToInt32(gridView1.GetFocusedRowCellValue("KasaHrID"))))
+            if (gridView1.RowCount == 0) return;
+
+            using (frmGiderKarti frm = new frmGiderKarti(Convert.ToInt32(gridView1.GetFocusedRowCellValue("KasaHrID")), PersonelID))
             {
                 if (frm.ShowDialog() == DialogResult.Yes)
                 {
