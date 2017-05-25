@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -52,7 +48,7 @@ namespace clsTablolar.Kasa
             if (KasaHrID == -1)
                 return;
 
-            using (SqlCommand cmd = new SqlCommand("Select * from KasaHareket where KasaHrID = @KasaHrID", Baglanti, Tr))
+            using (SqlCommand cmd = new SqlCommand("Select * from KasaHareket where SilindiMi = 0 and KasaHrID = @KasaHrID", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = KasaHrID;
                 using (SqlDataReader dr = cmd.ExecuteReader())
@@ -66,12 +62,12 @@ namespace clsTablolar.Kasa
                         this.Aciklama = dr["Aciklama"].ToString();
                         this.Tarih = (DateTime)dr["Tarih"];
                         this.KaydedenPersonelID = (int)dr["KaydedenPersonelID"];
-                        this.HareketTipi = (HareketTipleri)dr["HareketTipi"];
+                        this.HareketTipi = (HareketTipleri)(Convert.ToInt32(dr["HareketTipi"]));
                     }
                 }
             }
         }
-        public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID, int KasaID, decimal Alacak, decimal Borc, string Aciklama, DateTime Tarih, HareketTipleri HareketTipi , int PersonelID)
+        public int HarekeKaydet(SqlConnection Baglanti, SqlTransaction Tr, int KasaHrID, int KasaID, decimal Alacak, decimal Borc, string Aciklama, DateTime Tarih, HareketTipleri HareketTipi, int PersonelID, bool SilinniMi)
         {
             this.KasaHrID = KasaHrID;
             this.KasaID = KasaID;
@@ -79,10 +75,9 @@ namespace clsTablolar.Kasa
             this.Borc = Borc;
             this.Aciklama = Aciklama;
             this.Tarih = Tarih;
-            this.SilindiMi = false;
+            this.SilindiMi = SilindiMi;
             this.KaydedenPersonelID = PersonelID;
             this.HareketTipi = HareketTipi;
-
 
             return HarekeKaydet(Baglanti, Tr);
         }
@@ -137,6 +132,15 @@ namespace clsTablolar.Kasa
                     da.Fill(dt);
                     return dt;
                 }
+            }
+        }
+
+        public void HareketiSil(SqlConnection Baglanti, int HareketID)
+        {
+            using (SqlCommand cmd = new SqlCommand("update KasaHareket set SilindiMi = 1 where KasaHrID = @KasaHrID", Baglanti))
+            {
+                cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = HareketID;
+                int ads = cmd.ExecuteNonQuery();
             }
         }
     }

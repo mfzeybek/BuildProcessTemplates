@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace KasaSatis
@@ -83,6 +76,23 @@ namespace KasaSatis
                     Getir();
                 }
             }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seçili Gideri Silmek İstediğine Emin misin??", "", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+
+            try
+            {
+                Hareket.HareketiSil(SqlConnections.GetBaglanti(), Convert.ToInt32(gridView1.GetFocusedRowCellValue("KasaHrID")));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Silme İşleminde Hata");
+            }
+            Getir();
         }
     }
 }

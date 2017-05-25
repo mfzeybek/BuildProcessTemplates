@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -37,14 +33,12 @@ namespace clsTablolar.Kasa
             this.Yonu = hareketYonu.Hepsi;
             this.KasaID = -1;
             this.SonZRaporundanSonraMi = false;
-
-
         }
 
         public DataTable KasaHareketListe(SqlConnection Baglanti, SqlTransaction Tr, int KasaID)
         {
             da = new SqlDataAdapter(@"select kasahareket.KasaHrID, Aciklama ,Borc from kasahareket
-where 1 = 1 ", Baglanti);
+where SilindiMi = 0 ", Baglanti);
             da.SelectCommand.Transaction = Tr;
             //            da.SelectCommand.CommandText = @"select SUM(Borc) from kasahareket 
             //where 1 = 1 ";

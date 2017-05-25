@@ -54,7 +54,7 @@
             // simpleButton1
             // 
             this.simpleButton1.Location = new System.Drawing.Point(12, 298);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(306, 64);
             this.simpleButton1.StyleController = this.frmGiderKartilayoutControl1ConvertedLayout;
@@ -70,7 +70,7 @@
             this.frmGiderKartilayoutControl1ConvertedLayout.Controls.Add(this.simpleButton1);
             this.frmGiderKartilayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmGiderKartilayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
-            this.frmGiderKartilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.frmGiderKartilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2);
             this.frmGiderKartilayoutControl1ConvertedLayout.Name = "frmGiderKartilayoutControl1ConvertedLayout";
             this.frmGiderKartilayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1565, 453, 900, 800);
             this.frmGiderKartilayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
@@ -104,7 +104,7 @@
             // simpleButton2
             // 
             this.simpleButton2.Location = new System.Drawing.Point(322, 298);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(2);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(307, 64);
             this.simpleButton2.StyleController = this.frmGiderKartilayoutControl1ConvertedLayout;
@@ -179,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 374);
             this.Controls.Add(this.frmGiderKartilayoutControl1ConvertedLayout);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmGiderKarti";
             this.Text = "frmGiderKarti";
             this.Load += new System.EventHandler(this.frmGiderKarti_Load);

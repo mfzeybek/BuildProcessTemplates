@@ -45,7 +45,6 @@ namespace KasaSatis
 
             this.DialogResult = DialogResult.Yes;
             this.Close();
-
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

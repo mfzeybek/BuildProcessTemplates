@@ -322,7 +322,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
                     //dt_threadSatislar.Load(dr, LoadOption.Upsert);
 
                     DataRow droww = dt_threadSatislar.NewRow();
-                     
+
                     droww["FaturaID"] = dr["FaturaID"];
                     droww["FaturaTarihi"] = dr["FaturaTarihi"];
                     droww["DuzenlemeTarihi"] = dr["DuzenlemeTarihi"];
@@ -478,7 +478,7 @@ and
                 }
                 DROW["DegismeTarihi"] = cmdKayit.Parameters["@DegismeTarihi"].Value;
 
-                
+
                 //SatisGetir(DROW, false);
 
 

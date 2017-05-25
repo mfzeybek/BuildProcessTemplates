@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace KasaSatis
 {
@@ -29,14 +22,17 @@ namespace KasaSatis
         int _PosID = 3;//şimdilik tek pos var Onun ID si 3
         int _PersonelID = -1;
 
-
+        clsTablolar.Kasa.csKasaHareketArama GiderHareketi = new clsTablolar.Kasa.csKasaHareketArama();
 
         private void frmKasaRaporu_Load(object sender, EventArgs e)
         {
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
 
-
             Rapor.YeniAlinacakRaporBilgileriniGetir(SqlConnections.GetBaglanti(), TrGenel, _KasaID, _PosID, _PersonelID);
+            GiderHareketi.SonZRaporundanSonraMi = true;
+            GiderHareketi.KasaID = KasaSatis.Properties.Settings.Default.KasaID;
+            GiderHareketi.Yonu = clsTablolar.Kasa.csKasaHareketArama.hareketYonu.Borc;
+            gridControl1.DataSource = GiderHareketi.KasaHareketListe(SqlConnections.GetBaglanti(), TrGenel, KasaSatis.Properties.Settings.Default.KasaID);
 
             TrGenel.Commit();
 
@@ -51,6 +47,8 @@ namespace KasaSatis
 
             //TrGenel.Commit();
         }
+
+
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -85,10 +83,48 @@ namespace KasaSatis
         {
             Ver();
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, -1, KasaSatis.Properties.Settings.Default.KasaID, 0, (decimal)txtNakit.EditValue - (decimal)txtGiderToplami.EditValue, memoEdit1.Text, DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.ZRaporuAlindiktanSonraCikis, _PersonelID);
+            KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, -1, KasaSatis.Properties.Settings.Default.KasaID, 0, (decimal)txtNakit.EditValue - (decimal)txtGiderToplami.EditValue, memoEdit1.Text, DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.ZRaporuAlindiktanSonraCikis, _PersonelID, false);
             Rapor.RaporKaydet(SqlConnections.GetBaglanti(), TrGenel, KasaHareketi.KasaHrID);
             TrGenel.Commit();
+            Yazdir();
+            Close();
         }
+
+
+        #region Yazdırma
+
+
+        void Yazdir()
+        {
+            using (clsTablolar.Yazdirma.csYazdir yazdirrr = new clsTablolar.Yazdirma.csYazdir())
+            {
+                yazdirrr.dt_ekle("Rapor");
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "Kasiyer", txtKasiyer.Text, System.Type.GetType("System.String"));
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "Tarih", DateTime.Now, System.Type.GetType("System.DateTime"));
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "KasaBakiyesi", Convert.ToDecimal(txtKasaBakiyesi.EditValue), System.Type.GetType("System.Decimal"));
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "GiderToplami", Convert.ToDecimal(txtGiderToplami.EditValue), System.Type.GetType("System.Decimal"));
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "NakitToplami", Convert.ToDecimal(txtNakit.EditValue), System.Type.GetType("System.Decimal"));
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "KrediToplami", Convert.ToDecimal(txtKredi.EditValue), System.Type.GetType("System.Decimal"));
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "GenelToplam", Convert.ToDecimal(txtToplam.EditValue), System.Type.GetType("System.Decimal"));
+                yazdirrr.dtAlanEkleVeriEkle("Rapor", "Aciklama", memoEdit1.Text, System.Type.GetType("System.String"));
+
+                yazdirrr.dt_ekle("Giderler");
+                yazdirrr.dt_yeAlanEkle("Giderler", "Aciklama", System.Type.GetType("System.String"));
+                yazdirrr.dt_yeAlanEkle("Giderler", "Tutar", System.Type.GetType("System.Decimal"));
+
+                for (int i = 0; i < gridView1.RowCount; i++)
+                {
+                    yazdirrr.DtyaYeniSatirEkle_VeriEkle("Giderler", "Aciklama", gridView1.GetRowCellValue(i, colAciklama));
+                    yazdirrr.DtyaYeniSatirEkle_VeriEkle("Giderler", "Tutar", gridView1.GetRowCellValue(i, colBorc));
+                }
+
+                yazdirrr.Yazdirr(Application.StartupPath + "\\Raporlar\\KasaRaporu.repx", clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir, KasaSatis.Properties.Settings.Default.VarsayilanYaziciAdi);
+            }
+            this.BringToFront();
+            this.Focus();
+        }
+
+        #endregion
 
         private void memoEdit1_Click(object sender, EventArgs e)
         {

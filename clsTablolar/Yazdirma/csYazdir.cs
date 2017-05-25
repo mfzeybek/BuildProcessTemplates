@@ -59,17 +59,6 @@ namespace clsTablolar.Yazdirma
                     break;
             }
         }
-        void hazirla()
-        {
-
-        }
-
-        public void YaziciSecimi()
-        {
-
-
-
-        }
 
         public void Yazdirr(string DosyaAdi, Nasil NasilAcsin)
         {
@@ -317,6 +306,12 @@ namespace clsTablolar.Yazdirma
         {
             ds.Tables[tableAdi].Rows.Add(ds.Tables[tableAdi].NewRow());
         }
+        public void DtyaYeniSatirEkle_VeriEkle(string tableAdi,string Kolonadi , object Deger)
+        {
+            ds.Tables[tableAdi].Rows.Add(ds.Tables[tableAdi].NewRow());
+            
+            ds.Tables[tableAdi].Rows[ds.Tables[tableAdi].Rows.Count - 1][Kolonadi] = Deger;
+        }
 
 
         /// <summary>
@@ -365,8 +360,6 @@ namespace clsTablolar.Yazdirma
         {
             //Rapor.PrintDialog();
             Rapor.ShowPageSetupDialog();
-
-
             //PrintDocument prnter = new PrintDocument();
             //prnter.PrinterSettings.PaperSources
         }

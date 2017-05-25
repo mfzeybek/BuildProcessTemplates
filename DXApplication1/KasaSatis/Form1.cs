@@ -485,7 +485,7 @@ namespace KasaSatis
 
         #region Yazdırma İşlemleri
         clsTablolar.Yazdirma.csYazdir yazdirrr = new clsTablolar.Yazdirma.csYazdir();
-        DataTable dt_yazdirma = new DataTable();
+        //DataTable dt_yazdirma = new DataTable();
 
         string YaziciAdi1 = string.Empty;
 

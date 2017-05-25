@@ -209,9 +209,9 @@ namespace Aresv2.Cari.CariHr
                 VeriAlVer(GET_SET.set);
 
                 if (Hareket.AlacakMiBorcMu == clsTablolar.cari.CariHr.HareketYonu.Alacak)
-                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, Hareket.Tutar, 0, "", DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.ParaGirisi, Convert.ToInt32(frmKullaniciGiris.KullaniciID));
+                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, Hareket.Tutar, 0, "", DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.ParaGirisi, Convert.ToInt32(frmKullaniciGiris.KullaniciID), false);
                 else if (Hareket.AlacakMiBorcMu == clsTablolar.cari.CariHr.HareketYonu.Borc)
-                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, 0, Hareket.Tutar, "", DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.GiderCikisi, Convert.ToInt32(frmKullaniciGiris.KullaniciID));
+                    Hareket.KasaHrID = KasaHareketi.HarekeKaydet(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID, Hareket.KasaID, 0, Hareket.Tutar, "", DateTime.Now, clsTablolar.Kasa.csKasaHareket.HareketTipleri.GiderCikisi, Convert.ToInt32(frmKullaniciGiris.KullaniciID), false);
 
                 _KasaHrID = Hareket.KasaHrID;
 

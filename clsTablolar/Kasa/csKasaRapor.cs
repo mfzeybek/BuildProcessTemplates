@@ -55,13 +55,13 @@ namespace clsTablolar.Kasa
             try
             {
                 using (SqlCommand cmd = new SqlCommand(@" select  Isnull(SUM(PosHr.Alacak) - SUM(PosHr.Borc), 0) as PosBakiye, Isnull (SUM(PosHr.Alacak), 0) as PosAlacak ,  ISnull( SUM(PosHr.Borc), 0) as PosBorc
-, ISnull(SUM(NakitHr.Alacak), 0) - ISnull( SUM(NakitHr.Borc), 0) as NakitBakiye, ISnull( SUM(NakitHr.Alacak),0) as NakitAlacak,  ISnull( SUM(NakitHr.Borc), 0) as NakitBorc from CariHr
+, ISnull(SUM(NakitHr.Alacak), 0) - ISnull( SUM(NakitHr.Borc), 0) as NakitBakiye, ISnull( SUM(NakitHr.Alacak),0) as NakitAlacak,  ISnull( SUM(NakitHr.Borc), 0) as NakitBorc from KasaHareket-- as NakitHr
 --inner join CariHr on CariHr.KasaHrID = KasaHareket.KasaHrID and CariHr.SilindiMi = 0
-left join KasaHareket PosHr on PosHr.KasaHrID = CariHr.KasaHrID and PosHr.KasaID = 3 and PosHr.SilindiMi = 0
-left join KasaHareket NakitHr on NakitHr.KasaHrID = CariHr.KasaHrID and NakitHr.KasaID = 1 and NakitHr.SilindiMi = 0
+left join KasaHareket PosHr on PosHr.KasaHrID = KasaHareket.KasaHrID and PosHr.KasaID = 3 and PosHr.SilindiMi = 0
+left join KasaHareket NakitHr on NakitHr.KasaHrID = KasaHareket.KasaHrID and NakitHr.KasaID = @KasaID and NakitHr.SilindiMi = 0
 where  
-isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID desc),-1) < PosHr.KasaHrID
-and isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID desc),-1) < NakitHr.KasaHrID ", Baglanti, Tr))
+(isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID desc),-1) < NakitHr.KasaHrID 
+or isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID desc),-1) < PosHr.KasaHrID)", Baglanti, Tr))
                 {
                     cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value = KasaID;
 
@@ -75,6 +75,7 @@ and isnull((select top 1 KasaHareketID from KasaRaporu order by KasaHareketID de
                             PosBakiye = (decimal)dr["PosBakiye"];
                             PosAlacak = (decimal)dr["PosAlacak"];
                             PosBorc = (decimal)dr["PosBorc"];
+                            GenelToplam = (decimal)dr["NakitAlacak"] + (decimal)dr["PosAlacak"];
                         }
                     }
                 }
