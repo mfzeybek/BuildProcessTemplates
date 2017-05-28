@@ -215,6 +215,10 @@ namespace Aresv2.Cari.CariHr
 
                 _KasaHrID = Hareket.KasaHrID;
 
+                if (Hareket.SilindiMi) // eğer CariHareketi (sql tablosunda CariHr) siliyorsak, KasaHr tini de silmemiz gerekiyor
+                {
+                    KasaHareketi.HareketiSil(SqlConnections.GetBaglanti(), TrGenel, Hareket.KasaHrID);
+                }
                 Hareket.Kaydet(SqlConnections.GetBaglanti(), TrGenel);
 
 

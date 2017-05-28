@@ -224,35 +224,69 @@ namespace Aresv2.BasitUretim
         private void btnFiyatTanim_Click(object sender, EventArgs e)
         {
             if (gridView1.RowCount == 0) return;
-            Stok.frmStokFiyatlari frm = new Stok.frmStokFiyatlari(Stok.frmStokFiyatlari.NeFiyati.Hepsi, (int)gridView1.GetFocusedRowCellValue(colMalzemeStokID), -1);
-            if (frm.ShowDialog() == DialogResult.Yes)
-            {
-                gridView1.SetFocusedRowCellValue(colMaliyet, frm.Fiyat);
-                gridView1.SetFocusedRowCellValue(colMaliyetFiyatTanimID, frm.FiyatTanimID);
-            }
+            using (Stok.frmStokFiyatlari frm = new Stok.frmStokFiyatlari(Stok.frmStokFiyatlari.NeFiyati.Hepsi, (int)gridView1.GetFocusedRowCellValue(colMalzemeStokID), -1))
+                if (frm.ShowDialog() == DialogResult.Yes)
+                {
+                    gridView1.SetFocusedRowCellValue(colMaliyet, frm.Fiyat);
+                    gridView1.SetFocusedRowCellValue(colMaliyetFiyatTanimID, frm.FiyatTanimID);
+                }
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column == colMaliyet || e.Column == colGerekliMiktar)
             {
-                decimal Maliyet = Convert.ToDecimal(gridView1.GetRowCellValue(e.RowHandle, colMaliyet));
-                decimal GerekliMiktar = Convert.ToDecimal(gridView1.GetRowCellValue(e.RowHandle, colGerekliMiktar));
-                decimal MAliyetTutari = Maliyet * GerekliMiktar;
-                gridView1.SetRowCellValue(e.RowHandle, colMaliyetTutari, MAliyetTutari);
+                //decimal Maliyet = Convert.ToDecimal(gridView1.GetRowCellValue(e.RowHandle, colMaliyet));
+                //decimal GerekliMiktar = Convert.ToDecimal(gridView1.GetRowCellValue(e.RowHandle, colGerekliMiktar));
+                //decimal MAliyetTutari = Maliyet * GerekliMiktar;
+                //gridView1.SetRowCellValue(e.RowHandle, colMaliyetTutari, MAliyetTutari);
+
+                //MaliyetTutariHesapla();
             }
+        }
+
+        decimal DecimalaCevir(object Deger)
+        {
+            if (Deger is null || Deger == "" || Deger == DBNull.Value)
+            {
+                return 0;
+            }
+            return Convert.ToDecimal(Deger);
+        }
+
+        void SatirHesapla(DevExpress.XtraGrid.Columns.GridColumn kolon, int _rowHandle ,decimal Deger)
+        {
+
+
+
+
         }
 
         private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            decimal Maliyet;
+            decimal GerekliMiktar;
+            int Maliyetkolon = colMaliyet.ColumnHandle;
+
             if (e.Column == colMaliyet)
             {
-                //e.Value
                 gridView1.SetFocusedRowCellValue(colMaliyetFiyatTanimID, -2);
+                Maliyet = DecimalaCevir(e.Value);
+            }
+            else
+                Maliyet = DecimalaCevir(gridView1.GetRowCellValue(e.RowHandle, colMaliyet));
 
-                //gridView1.SetFocusedRowCellValue(colMaliyet, e.Value);
-                //gridView1.InvalidateRowCell(e.RowHandle, e.Column);
-                //gridView1.
+            if (e.Column == colGerekliMiktar)
+                GerekliMiktar = DecimalaCevir(e.Value);
+            else
+                GerekliMiktar = DecimalaCevir(gridView1.GetRowCellValue(e.RowHandle, colGerekliMiktar));
+
+
+            if (e.Column == colMaliyet || e.Column == colGerekliMiktar)
+            {
+                decimal MaliyetTutari = Maliyet * GerekliMiktar;
+                gridView1.SetRowCellValue(e.RowHandle, colMaliyetTutari, MaliyetTutari);
+                MaliyetTutariHesapla();
             }
             //if (gridView1.FocusedRowModified)
 
@@ -297,6 +331,30 @@ namespace Aresv2.BasitUretim
             //if (gridView1.FocusedRowModified)
             //    gridView1.UpdateCurrentRow();
 
+        }
+
+        void MaliyetTutariHesapla()
+        {
+            decimal Toplam = 0;
+
+            foreach (var item in UretimDetay.dt.AsEnumerable().Where(s => s.RowState != DataRowState.Deleted))
+            {
+                if (!item.IsNull(colMaliyetTutari.FieldName))
+                    Toplam += Convert.ToDecimal(item[colMaliyetTutari.FieldName]);
+            }
+            txtToplamMaliyet.EditValue = Toplam;
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (lkpKullanilanFiyatTanimi.EditValue is null) return;
+
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+
+                gridView1.SetRowCellValue(i, colMaliyet, FiyatTanimlari.FiyatTanimIDveStokIDdenFiyatiniGetir(SqlConnections.GetBaglanti(), TrGenel, (int)lkpKullanilanFiyatTanimi.EditValue, (int)gridView1.GetRowCellValue(i, colMalzemeStokID)));
+                gridView1.SetRowCellValue(i, colMaliyetFiyatTanimID, (int)lkpKullanilanFiyatTanimi.EditValue);
+            }
         }
     }
 }

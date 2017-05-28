@@ -1123,58 +1123,58 @@
     <Compile Include="Stok\frmStokListesi.designer.cs">
       <DependentUpon>frmStokListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmRDCikti.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRDCikti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmRDCikti.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRDCikti.Designer.cs">
       <DependentUpon>frmRDCikti.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmRDHammadde.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRDHammadde.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmRDHammadde.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRDHammadde.Designer.cs">
       <DependentUpon>frmRDHammadde.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmRDYariMamul.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRDYariMamul.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmRDYariMamul.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRDYariMamul.Designer.cs">
       <DependentUpon>frmRDYariMamul.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmRecete.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRecete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmRecete.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmRecete.Designer.cs">
       <DependentUpon>frmRecete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmReceteDetay.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmReceteDetay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmReceteDetay.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmReceteDetay.Designer.cs">
       <DependentUpon>frmReceteDetay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmReceteDetayCikti.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmReceteDetayCikti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmReceteDetayCikti.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmReceteDetayCikti.Designer.cs">
       <DependentUpon>frmReceteDetayCikti.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmReceteListesi.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmReceteListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmReceteListesi.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmReceteListesi.Designer.cs">
       <DependentUpon>frmReceteListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmUretimEmri.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmUretimEmri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmUretimEmri.Designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmUretimEmri.Designer.cs">
       <DependentUpon>frmUretimEmri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uretim\frmUretimEmriDetay.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmUretimEmriDetay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uretim\frmUretimEmriDetay.designer.cs">
+    <Compile Include="Uretim%28bunu kullanmiyorsun%29\frmUretimEmriDetay.designer.cs">
       <DependentUpon>frmUretimEmriDetay.cs</DependentUpon>
     </Compile>
     <Compile Include="frmhtmlEditor.cs">
@@ -1547,31 +1547,31 @@
     <EmbeddedResource Include="Stok\frmStokListesi.resx">
       <DependentUpon>frmStokListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmRDCikti.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmRDCikti.resx">
       <DependentUpon>frmRDCikti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmRDHammadde.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmRDHammadde.resx">
       <DependentUpon>frmRDHammadde.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmRDYariMamul.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmRDYariMamul.resx">
       <DependentUpon>frmRDYariMamul.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmRecete.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmRecete.resx">
       <DependentUpon>frmRecete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmReceteDetay.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmReceteDetay.resx">
       <DependentUpon>frmReceteDetay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmReceteDetayCikti.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmReceteDetayCikti.resx">
       <DependentUpon>frmReceteDetayCikti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmReceteListesi.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmReceteListesi.resx">
       <DependentUpon>frmReceteListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmUretimEmri.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmUretimEmri.resx">
       <DependentUpon>frmUretimEmri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uretim\frmUretimEmriDetay.resx">
+    <EmbeddedResource Include="Uretim%28bunu kullanmiyorsun%29\frmUretimEmriDetay.resx">
       <DependentUpon>frmUretimEmriDetay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmhtmlEditor.resx">

@@ -581,8 +581,8 @@ namespace Aresv2.Fatura
                 }
                 #endregion
 
-                trGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 this.BindingContext[gcFaturaHareket.DataSource].EndCurrentEdit();
+                trGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 #region FATURA TABLOSUNA KAYDEDİLİYOR.
 
                 if (Fatura.FaturaID == -1 && Fatura.FaturaNo == "")
@@ -1337,6 +1337,26 @@ order by fatura.FaturaTarihi desc", SqlConnections.GetBaglanti()))
                 if (frm.ShowDialog() == DialogResult.Yes)
                     KapaliFaturaHareketleriniGetir();
             }
+        }
+
+        private void gvFaturaHareket_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column == colAnaBirimFiyat)
+            {
+                if (e.Value == DBNull.Value || e.Value.ToString() == "")
+                {
+                    gvFaturaHareket.SetFocusedRowCellValue(e.Column, 0);
+
+                }
+
+                //gvFaturaHareket.SetFocusedRowCellValue(e.Column, e.Value);
+                gvFaturaHareket.PostEditor();
+            }
+        }
+
+        private void gvFaturaHareket_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+
         }
     }
 }

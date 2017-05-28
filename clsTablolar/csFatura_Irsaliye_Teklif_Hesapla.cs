@@ -499,7 +499,7 @@ namespace clsTablolar
         private decimal KolonVerTopliyim(string KolonAdi) // alt toplamları hesaplarken buradan faydalandım
         {
             decimal Toplam = 0;
-            if (_dt_HareketDetay.Columns.Contains("BirlesikUrunHareketID")) // eğer 
+            if (_dt_HareketDetay.Columns.Contains("BirlesikUrunHareketID")) // eğer  // birleşik ürün diye bişiler uydurmuştum zamanında artık yok
             {
                 foreach (var item in _dt_HareketDetay.AsEnumerable().Where(s => s.RowState != DataRowState.Deleted))
                 {

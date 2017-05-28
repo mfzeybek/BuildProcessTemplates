@@ -83,10 +83,11 @@ namespace KasaSatis
             if (MessageBox.Show("Seçili Gideri Silmek İstediğine Emin misin??", "", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-
             try
             {
-                Hareket.HareketiSil(SqlConnections.GetBaglanti(), Convert.ToInt32(gridView1.GetFocusedRowCellValue("KasaHrID")));
+                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                Hareket.HareketiSil(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gridView1.GetFocusedRowCellValue("KasaHrID")));
+                TrGenel.Commit();
             }
             catch (Exception)
             {

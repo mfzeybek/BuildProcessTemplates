@@ -135,9 +135,9 @@ namespace clsTablolar.Kasa
             }
         }
 
-        public void HareketiSil(SqlConnection Baglanti, int HareketID)
+        public void HareketiSil(SqlConnection Baglanti, SqlTransaction Tr, int HareketID)
         {
-            using (SqlCommand cmd = new SqlCommand("update KasaHareket set SilindiMi = 1 where KasaHrID = @KasaHrID", Baglanti))
+            using (SqlCommand cmd = new SqlCommand("update KasaHareket set SilindiMi = 1 where KasaHrID = @KasaHrID", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@KasaHrID", SqlDbType.Int).Value = HareketID;
                 int ads = cmd.ExecuteNonQuery();
