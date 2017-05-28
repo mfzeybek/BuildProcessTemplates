@@ -688,10 +688,12 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1066, 766);
             this.Controls.Add(this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmStokFiyatKarsilastirma";
             this.Text = "frmStokFiyatKarsilastirma";
             this.Load += new System.EventHandler(this.frmStokFiyatKarsilastirma_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmStokFiyatKarsilastirma_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.lkpStokFiyat1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout)).EndInit();
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.ResumeLayout(false);

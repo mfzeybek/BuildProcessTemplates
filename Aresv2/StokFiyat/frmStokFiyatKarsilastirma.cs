@@ -75,6 +75,8 @@ namespace Aresv2.Stok
 
         decimal YuzdedenFiyat2Ver(decimal Fiyat1, decimal Fiyat2, decimal Yuzde) // buradada Fiyat 2 olmasının bir anlamı yok
         {
+            if (Yuzde == 0)
+                return Fiyat2 = 0;
             Fiyat2 = Fiyat1 + ((Yuzde * Fiyat1) / 100);
             return Fiyat2;
         }
@@ -202,12 +204,28 @@ namespace Aresv2.Stok
 
             if (e.Column == gridView1.Columns["Yuzde"])
             {
-                Yuzde = Convert.ToDecimal(e.Value);
+                if (e.Value == DBNull.Value || string.IsNullOrEmpty(e.Value.ToString()))
+                {
+                    gridView1.SetRowCellValue(e.RowHandle, colYuzde, 0);
+                    Yuzde = 0;
+                }
+                else
+                {
+                    Yuzde = Convert.ToDecimal(e.Value);
+                }
                 gridView1.SetRowCellValue(e.RowHandle, colFiyat2, YuzdedenFiyat2Ver(Fiyat1, Fiyat2, Yuzde));
             }
             if (e.Column == gridView1.Columns["Fiyat2"])
             {
-                Fiyat2 = Convert.ToDecimal(e.Value);
+                if (e.Value == DBNull.Value || string.IsNullOrEmpty(e.Value.ToString()))
+                {
+                    gridView1.SetRowCellValue(e.RowHandle, colFiyat2, 0);
+                    Fiyat2 = 0;
+                }
+                else
+                {
+                    Fiyat2 = Convert.ToDecimal(e.Value);
+                }
                 gridView1.SetRowCellValue(e.RowHandle, colYuzde, FiyattanYuzdeVer(Fiyat1, Fiyat2, Yuzde));
             }
         }
@@ -342,6 +360,14 @@ namespace Aresv2.Stok
 
 
 
+        }
+
+        private void frmStokFiyatKarsilastirma_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F6)
+            {
+                btnStokEkle_Click(null, null);
+            }
         }
     }
 }

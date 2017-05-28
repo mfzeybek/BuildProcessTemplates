@@ -1340,16 +1340,14 @@ order by fatura.FaturaTarihi desc", SqlConnections.GetBaglanti()))
         }
 
         private void gvFaturaHareket_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            if (e.Column == colAnaBirimFiyat)
+        { // CellValueChanging Burası cell değişirken tetiklenir  eğer 
+            if (e.Column == colAnaBirimFiyat  || e.Column == colAltBirimMiktar)
             {
                 if (e.Value == DBNull.Value || e.Value.ToString() == "")
                 {
                     gvFaturaHareket.SetFocusedRowCellValue(e.Column, 0);
-
                 }
-
-                //gvFaturaHareket.SetFocusedRowCellValue(e.Column, e.Value);
+                gvFaturaHareket.SetFocusedRowCellValue(e.Column, e.Value);
                 gvFaturaHareket.PostEditor();
             }
         }
