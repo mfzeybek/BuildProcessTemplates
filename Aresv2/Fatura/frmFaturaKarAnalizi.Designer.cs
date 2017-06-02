@@ -60,7 +60,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1013, 752);
+            this.gridControl1.Size = new System.Drawing.Size(958, 559);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -165,7 +165,7 @@
             // btnFaturadanSec
             // 
             this.btnFaturadanSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnFaturadanSec.Location = new System.Drawing.Point(9, 753);
+            this.btnFaturadanSec.Location = new System.Drawing.Point(9, 843);
             this.btnFaturadanSec.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnFaturadanSec.Name = "btnFaturadanSec";
             this.btnFaturadanSec.Size = new System.Drawing.Size(85, 45);
@@ -201,7 +201,7 @@
             this.btnStokHarekettenSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnStokHarekettenSec.Appearance.Options.UseTextOptions = true;
             this.btnStokHarekettenSec.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnStokHarekettenSec.Location = new System.Drawing.Point(9, 703);
+            this.btnStokHarekettenSec.Location = new System.Drawing.Point(9, 793);
             this.btnStokHarekettenSec.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnStokHarekettenSec.Name = "btnStokHarekettenSec";
             this.btnStokHarekettenSec.Size = new System.Drawing.Size(85, 45);
@@ -232,7 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 610);
+            this.ClientSize = new System.Drawing.Size(1068, 700);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnStokKartiniAc);
             this.Controls.Add(this.btnStokHarekettenSec);

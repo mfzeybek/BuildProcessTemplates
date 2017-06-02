@@ -27,23 +27,28 @@ namespace KasaSatis
             YariEntegrasyon = 3 // Isteğe bağlı olarak fiş çıkar
         }
 
+
+
+
         OkcEntegrasyonTipi OKCEntegrasyonu;
 
+        csMikroSarayOKC MikroSarayOKC = new csMikroSarayOKC();
 
         private void btnAlisVerisiNakitOlarakKapat_Click(object sender, EventArgs e)
         {
             try
             {
+                if (OKCEntegrasyonu != OkcEntegrasyonTipi.EntegrasyonYok && MikroSarayOKC.BaglantiVarMi != csMikroSarayOKC.BaglantiDurumu.Var)
+                {
+                    MessageBox.Show("OKC baglantısı daha tamamlanmadı biraz bekleyin");
+                    return;
+                }
+
                 if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value || (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == -1)
                 {
                     MessageBox.Show("Satış yok veya seçili satışın daha tüm bilgileri gelmedi mk");
                     return;
                 }
-                //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                //OdemeKay.OdemeyiKaydet(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
-                //TrGenel.Commit();
-                //gvOdemesiYapilacakSatis.SetFocusedRowCellValue("OdendiMi", true);
-                //SonOdemesiYapilanMusterinin_FaturaID = (int)gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID"); // bu nerde kullanıyor hamısına
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 csOdemeKaydet.OdemeDonenBilgisi donenOdemeBilgisi = OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), Properties.Settings.Default.KasaID, "Fatura Nakit Ödeme", 0, _PersonelID);
@@ -53,18 +58,16 @@ namespace KasaSatis
                 if (csOdemeKaydet.OdemeDonenBilgisi.OncedenOdemesiTamamlanmis == donenOdemeBilgisi)
                 {
                     MessageBox.Show("Ödemesi önceden tamamlanmış hamısına");
+                    //TODO: buraya bir kontrol daha eklenip ödemesi tamamlanmış ama fiş yazdırılmamışsa fiş yazdırması için sor istenirse fiş yazdırsın. yazdırmışsa da aynı fişi tekrar yazdırsın ama sanırım sadece son fişi tekrar yazdırabiliyor.
                 }
                 else if (donenOdemeBilgisi == csOdemeKaydet.OdemeDonenBilgisi.OdemesiTamamlandi && OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon)
                 {
-                    if ((dll.getStatus() as String[])[4] == "[OpenFiscalReceipt][Mali Fis Açik]")
-                    {
-                        MessageBox.Show("Şuan Satış var");
-                    }
-                    else if ((dll.getStatus() as String[])[4] == "[NonZeroDailyReport][Satis Islemi baslatildi]")
-                    {
-                        btnUrunleriGecir_Click(null, null);
-                    }
-                    btnNakitKapat_Click(null, null);
+                    UrunleriGecir();
+                    MikroSarayOKC.OKCFisiNakitKapat(Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")));
+
+
+                    //ZnoVeFisNoyuFaturayaKaydet(Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), (int)MikroSarayOKC.z_num, (int)MikroSarayOKC.rcp_num);
+                    //MessageBox.Show("z numarası " + (int)MikroSarayOKC.z_num + "\rn Fiş numarası " + (int)MikroSarayOKC.rcp_num);
                 }
 
                 // bunu raşağıda yazdığın row style girdin diye yaptın.
@@ -105,28 +108,36 @@ namespace KasaSatis
 
         int _PersonelID = -1;
 
+        void Baglanti(csMikroSarayOKC.BaglantiDurumu Baglanti)
+        {
+            switch (Baglanti)
+            {
+                case csMikroSarayOKC.BaglantiDurumu.Var:
+                    listBoxControl1.Items.Add("Baglanti Kuruldu");
+                    break;
+                case csMikroSarayOKC.BaglantiDurumu.yok:
+                    listBoxControl1.Items.Add("Baglanti Kuruluyor.");
+                    break;
+                case csMikroSarayOKC.BaglantiDurumu.BaglantiKayboldu:
+                    listBoxControl1.Items.Add("BaglantiKoptu");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            OKCEntegrasyonu = OkcEntegrasyonTipi.EntegrasyonYok;
+            OKCEntegrasyonu = OkcEntegrasyonTipi.TamEntegrasyon;
 
             if (OKCEntegrasyonu != OkcEntegrasyonTipi.EntegrasyonYok) // yani entegrasyon bir şekilde varsa
             {
-                simpleButton1_Click_2(null, null);
-                string str1 = dll.getDemoSDKVersionCSharp();
-                string str2 = dll.getDemoSDKVersion();
-                dll.getStatusLastException();
-
-
+                MikroSarayOKC.BaglantDurumu = Baglanti;
+                MikroSarayOKC.BaglantiKur();
             }
-            if (OKCEntegrasyonu == OkcEntegrasyonTipi.EntegrasyonYok) // yani entegrasyon yoksa
+            else if (OKCEntegrasyonu == OkcEntegrasyonTipi.EntegrasyonYok) // yani entegrasyon yoksa
             {
-                lblOkcBaglanti.Visible = false;
-                simpleButton1.Visible = false;
-                btnNakitKapat.Visible = false;
-                simpleButton7.Visible = false;
-                simpleButton9.Visible = false;
-                simpleButton8.Visible = false;
-                btnUrunleriGecir.Visible = false;
                 barSubItem_OKCMEnu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
 
@@ -153,7 +164,9 @@ namespace KasaSatis
 
             Hesapla = new clsTablolar.csFatura_Irsaliye_Teklif_Hesapla(Hareketler.dt_FaturaHareketleri, gvSatisHareketleri);
             Hesapla.AltToplamlarDegisti = AltToplamHesaplamalariniAl;
-            dt_Odenecekler = Satislar.dt_threadSatislar.Clone();
+
+            // bu kullanılmıyor sanırım artık
+            //dt_Odenecekler = Satislar.dt_threadSatislar.Clone();
 
 
             //txtFaturaTutari.DataBindings.Add("EditValue", gcSatislar.DataSource, "FaturaTutari");
@@ -402,7 +415,7 @@ namespace KasaSatis
                 }
                 if (OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon && FisiOkuturOkutmazYazdirmayaBasla)
                 {
-                    btnUrunleriGecir_Click(null, null); //şimdilik iptal ediyoruz.
+                    UrunleriGecir();
                 }
 
             }
@@ -529,7 +542,6 @@ namespace KasaSatis
         public void YazdirThreadi(object FisBilgileri)
         {
             {
-
                 yazdirrr.ds.Tables[0].Rows[0]["FaturaBarkod"] = ((csMusteriFisBilgileri)FisBilgileri).Barkod;
                 yazdirrr.ds.Tables[0].Rows[0]["FaturaTarihi"] = ((csMusteriFisBilgileri)FisBilgileri).Tarih;
                 yazdirrr.ds.Tables[0].Rows[0]["FaturaTutari"] = ((csMusteriFisBilgileri)FisBilgileri).Tutar;
@@ -826,21 +838,6 @@ namespace KasaSatis
             }
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void gcOdemesiYapilacakSatis_Click(object sender, EventArgs e)
         {
 
@@ -970,10 +967,6 @@ namespace KasaSatis
             }
         }
 
-        private void labelControl3_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void chckbtnIskontoIslemleri_CheckedChanged(object sender, EventArgs e)
         { /*
@@ -1012,18 +1005,6 @@ namespace KasaSatis
             }*/
         }
 
-        private void btnSatisiSil_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton1_Click_1(object sender, EventArgs e)
-        {
-            for (int i = 0; i < gvOdemesiYapilacakSatis.RowCount; i++)
-            {
-                //gvOdemesiYapilacakSatis.GetFocusedDataRow
-            }
-        }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -1048,11 +1029,17 @@ namespace KasaSatis
             }
         }
 
-        private void simpleButton4_Click(object sender, EventArgs e)
+        private void btnBakiyeyiKrediKartiIleAl_Click(object sender, EventArgs e)
         {
+
             if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value)
             {
                 MessageBox.Show("Satış yok veya seçili satışın daha tüm bilgileri gelmedi mk");
+                return;
+            }
+            if (OKCEntegrasyonu != OkcEntegrasyonTipi.EntegrasyonYok && MikroSarayOKC.BaglantiVarMi != csMikroSarayOKC.BaglantiDurumu.Var)
+            {
+                MessageBox.Show("OKC baglantısı daha tamamlanmadı biraz bekleyin");
                 return;
             }
             //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
@@ -1072,8 +1059,8 @@ namespace KasaSatis
             }
             else if (donenOdemeBilgisi == csOdemeKaydet.OdemeDonenBilgisi.OdemesiTamamlandi && OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon)
             {
-                btnUrunleriGecir_Click(null, null);
-                int aha = dll.payWithBankCard(float.Parse(gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaTutari).ToString()));
+                UrunleriGecir();
+                MikroSarayOKC.KrediKartiIleOde(float.Parse(gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaTutari).ToString()));
             }
 
 
@@ -1082,7 +1069,7 @@ namespace KasaSatis
             gvOdemesiYapilacakSatis.RefreshRow(gvOdemesiYapilacakSatis.GetRowHandle(gvOdemesiYapilacakSatis.GetFocusedDataSourceRowIndex()));
         }
 
-        private void simpleButton5_Click(object sender, EventArgs e)
+        private void btnKismiOdeme_Click(object sender, EventArgs e)
         {
             if (gvOdemesiYapilacakSatis.RowCount == 0 || gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID") == DBNull.Value)
             {
@@ -1098,6 +1085,11 @@ namespace KasaSatis
                 int KismiOdemeKasaID = frm.KismiOdemesiYapilanKasaID;
                 decimal KismiOdemeTutari = frm.Tutar;
                 string KismiODemeAciklama = frm.Aciklama;
+
+                if (OKCEntegrasyonu == OkcEntegrasyonTipi.TamEntegrasyon)
+                {
+                    MikroSarayOKC.OKCNakitOde2((float)KismiOdemeTutari);
+                }
 
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 OdemeKay.FaturaninBakiyesininKalaniniNakitTahsilEt(SqlConnections.GetBaglanti(), TrGenel, Convert.ToInt32(gvOdemesiYapilacakSatis.GetFocusedRowCellValue("FaturaID")), KismiOdemeKasaID, KismiODemeAciklama, KismiOdemeTutari, _PersonelID);
@@ -1167,320 +1159,49 @@ namespace KasaSatis
 
         Thread ThOkcISlemleri;
 
-        private void simpleButton1_Click_2(object sender, EventArgs e)
-        {
-            if (!timer1.Enabled)
-                timer1.Enabled = true;
-            dll.setgmp(true);
-            dll.setgmp_force(true);
-            dll.connect();
-            lblOkcBaglanti.Text = "Connect";
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-        private void simpleButton7_Click(object sender, EventArgs e)
-        {
-            listBox1.DataSource = dll.getStatus();
-        }
-
-        private void simpleButton8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            string str = dll.getDemoSDKVersion();
-            string str1 = dll.getDemoSDKVersionCSharp();
-            string str2 = dll.getDemoSDKVersionDelphi();
-            //dll.un
-            OKCSonFisNoBul();
-            ZRep();
-        }
 
 
         #region OKCIsleri
 
-        public BmsDll4Delphi.BmsDllForDelphi dll = new BmsDll4Delphi.BmsDllForDelphi();
+
         bool FisiOkuturOkutmazYazdirmayaBasla = false;
 
-        private void timer1_Tick_1(object sender, EventArgs e)
-        {
-            string Str = "Connect";
-            if ((lblOkcBaglanti.Text.Length - Str.Length) >= 10)
-                lblOkcBaglanti.Text = Str;
-            else
-                lblOkcBaglanti.Text = lblOkcBaglanti.Text + ".";
 
-            if (dll.checkConnectGMP3Coupling())
-            {
-                lblOkcBaglanti.Text = "Connect Pos";
-                timer1.Enabled = false;
+        //public object lokcTaken = new object();
 
-                //btnDisConnect.Enabled = true;
-                //btnConnect.Enabled = false;
-            }
-        }
-
-
-        Thread OKCOdemeIslemleri;
-        private void btnNakitKapat_Click(object sender, EventArgs e)
-        {
-            OKCOdemeIslemleri = new Thread(new ThreadStart(OdemeyiNakitKapat));
-            OKCOdemeIslemleri.Start();
-        }
-
-        void OdemeyiNakitKapat()
-        {
-            try
-            {
-                //lstExecption.Items.Add("openReceipt --> " + returnValue.ToString());
-
-                //tabControlDLL.SelectedTab = tabPageSales;
-
-                lock (lokcTaken)
-                {
-
-                    int aahnda;
-
-                    aahnda = dll.closeReceipt();
-
-                    if (aahnda != 0)
-                    {
-                        MessageBox.Show(" ahanda");
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                if (ex.Message == "FP: OK; Command: Illegal.")
-                {
-                    MessageBox.Show("Ödemesi Tamamlanmayan Bir fiş yok");
-                }
-                else
-                {
-                    MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
-                }
-                //lstExecption.Items.Add("openReceipt --> " + ex.StackTrace.ToString());
-            }
-        }
-
-
-        string EssizNumaraUret()
-        {
-            try
-            {
-                string EssizNumara = dll.GenerateNewUnqNum();
-
-                bool DonenBool = dll.setUnqNum(EssizNumara);
-                if (DonenBool == false)
-                {
-                    MessageBox.Show("false döndü");
-                }
-                int returnValue = 0;
-                //ThOkcISlemleri = new Thread(new ThreadStart(dll.openReceipt((int)(BmsSdkDLL.Parameters.SaleType.Sales), false)))
-                returnValue = dll.openReceipt((int)(BmsSdkDLL.Parameters.SaleType.Sales), false);
-                if (returnValue != 0)
-                {
-                    MessageBox.Show("retun 0 dan farklı gelsdi");
-                }
-                return EssizNumara;
-            }
-            catch (Exception ex)
-            {
-                if (ex.Message == "FP: Open fiscal receipt; Command: Illegal.")
-                {
-                    MessageBox.Show("Açıkta fiş Var, yani eşsiz numara üretilmiş zaten. Önce Ödemesini tamamla");
-                }
-                else if (ex.Message == "GMP3 Error!GMP3 Initialization procedure required!")
-                {
-                    MessageBox.Show("OKC Bağlantısı Yok");
-                }
-                else
-                {
-                    MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
-                }
-                return string.Empty;
-            }
-        }
-
-        object lokcTaken = new object();
-        void OkcyUrunleriYazidir()
-        {
-            lock (lokcTaken)
-            {
-                OKCDrumlari.Getir();
-                if (OKCDrumlari.FisAcik)
-                {
-                    MessageBox.Show("Şuan Satış var \rnÖdemesini Tamamlanyın Önce");
-                    return;
-                }
-                if (OKCDrumlari.MaliOlmayanFisAcik)
-                {
-                    MessageBox.Show("Mali olmayan fiş açık");
-                }
-
-                //if ((dll.getStatus() as String[])[4] == "[OpenFiscalReceipt][Mali Fis Açik]")
-                //{
-                //    //MessageBox.Show("Şuan Satış var");
-                //}
-                //else if ((dll.getStatus() as String[])[4] == "[NonZeroDailyReport][Satis Islemi baslatildi]")
-                {
-                    if (string.Empty == EssizNumaraUret())
-                    {
-
-                    }
-                    else
-                    {
-
-                    }
-                }
-                try
-                {
-                    for (int i = 0; i < aha.Count; i++)
-                    {
-                        // geri dönene şey her satışta fişteki tutar
-                        decimal ahandaa = dll.SellItem(aha[i].UrunAdi, aha[i].PLU, aha[i].Birimi, aha[i].Fiyati, aha[i].Miktari);
-                        if (ahandaa != 0)
-                        {
-                            //MessageBox.Show("1   - " + ahandaa.ToString());
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    if (ex.Message == "The Fiscal Printer is busy;t.l.")
-                    {
-                        MessageBox.Show("Yazıcı Meşgul");
-                    }
-                    else if (ex.Message == "FP: OK; Command: Illegal.")
-                    {
-                        MessageBox.Show("Yeni Eşsiz Numara Üretilmemiş");
-                    }
-                    else if (ex.Message == "GMP3 Error!GMP3 Initialization procedure required!")
-                    {
-                        MessageBox.Show("OKC Bağlantısı Yok");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
-                    }
-                }
-            }
-        }
-
-
-        public static class OKCDrumlari
-        {
-            public static Tremol.FP.Status DURUM;
-
-            public static bool FisAcik;
-            public static bool PilZayif;
-            public static bool TarihYanlis;
-            public static bool MaliOlmayanFisAcik;
-            public static bool ZRaporuAlinmali;
-            public static bool PrinterMesgul;
-            public static bool PrinterYazdiriyor;
-            public static bool KagitBitti;
-
-
-            public static void Getir()
-            {
-                DURUM = BmsSdkDLL.BmsSdkLib.fp.GetStatus();
-                FisAcik = DURUM.OpenFiscalReceipt;
-                PilZayif = DURUM.PrinterLowVoltage;
-                TarihYanlis = DURUM.IncorectDate;
-                MaliOlmayanFisAcik = DURUM.OpenNonFiscalReceipt;
-                ZRaporuAlinmali = DURUM.ReportsAccumulationOverflowWarning24;
-                PrinterMesgul = DURUM.PrinterBusy;
-                PrinterYazdiriyor = DURUM.PrinterPrinting;
-                KagitBitti = DURUM.PrinterNoPaper;
-
-            }
-        }
-
-        void ZRep()
-        {
-            MessageBox.Show(dll.ZRepData());
-        }
-
-        void OKCSonFisNoBul()
-        {
-            uint rcp_num = 0;
-            uint z_num = 0;
-            uint eku_num = 0;
-            dll.getFiscalInformation(out rcp_num, out z_num, out eku_num);
-
-            MessageBox.Show(rcp_num + "  " + z_num + "  " + eku_num);
-        }
 
         private void barBtnSonFisiTekrarYazdir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            dll.PrintDuplicate();
+            MikroSarayOKC.SonFisiTekrarYazdir();
         }
 
         private void barbtnOkcBilgileri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             using (frmOKCBilgileri frm = new frmOKCBilgileri())
             {
-                frm.labelControl1.Text = dll.getDemoSDKVersion();
-                frm.labelControl2.Text = dll.getDemoSDKVersionCSharp();
-                frm.labelControl3.Text = dll.getDemoSDKVersionDelphi();
-                frm.labelControl4.Text = dll.getFactoryNumber();
+                //TODO: Buraya Okc bilgileri gelecek yeni oluşturduğun clastan
+
+                //frm.labelControl1.Text = dll.getDemoSDKVersion();
+                //frm.labelControl2.Text = dll.getDemoSDKVersionCSharp();
+                //frm.labelControl3.Text = dll.getDemoSDKVersionDelphi();
+                //frm.labelControl4.Text = dll.getFactoryNumber();
 
                 frm.ShowDialog();
             }
         }
 
-        public class OKCFisBilgileri
+
+
+        void UrunleriGecir()
         {
-            public string UrunAdi { get; set; }
-            public string PLU { get; set; }
-            public string Birimi { get; set; }
-            public float Fiyati { get; set; }
-            public float Miktari { get; set; }
-            public OKCFisBilgileri(string UrunAdi, string PLU, string Birimi, float Fiyati, float Miktari)
-            {
-                this.UrunAdi = UrunAdi;
-                this.PLU = PLU;
-                this.Birimi = Birimi;
-                this.Fiyati = Fiyati;
-                this.Miktari = Miktari;
-            }
-        }
-
-
-
-
-        List<OKCFisBilgileri> aha;
-
-        private void btnUrunleriGecir_Click(object sender, EventArgs e)
-        {
-
             try
             {
-                lock (lokcTaken)
+                lock (MikroSarayOKC.lokcTaken) // bu lock un burada olması çok önemli çünkü oluşturulan list yazdırılmadan yenisi oluşturulmadan başka bir yerde kulllanılmamalı
                 {
-                    aha = new List<OKCFisBilgileri>();
+                    MikroSarayOKC.YazdirilacakFisBilgileri = new List<csMikroSarayOKC.OKCFisBilgileri>();
                     for (int i = 0; i < gvSatisHareketleri.RowCount; i++)
                     {
-                        aha.Add(new OKCFisBilgileri(gvSatisHareketleri.GetRowCellValue(i, colFaturaHareketStokAdi).ToString(),
+                        MikroSarayOKC.YazdirilacakFisBilgileri.Add(new csMikroSarayOKC.OKCFisBilgileri(gvSatisHareketleri.GetRowCellValue(i, colFaturaHareketStokAdi).ToString(),
                             "1111",
                             gvSatisHareketleri.GetRowCellValue(i, colStokAltBirimAdi).ToString(),
                             float.Parse(gvSatisHareketleri.GetRowCellValue(i, colKdvDahilFiyat).ToString()),
@@ -1488,63 +1209,29 @@ namespace KasaSatis
                             ));
                     }
 
-                    ThOkcISlemleri = new Thread(new ThreadStart(OkcyUrunleriYazidir));
+
+                    ThOkcISlemleri = new Thread(new ThreadStart(MikroSarayOKC.OkcyUrunleriYazidir));
                     ThOkcISlemleri.Start();
                 }
             }
             catch (Exception ex)
             {
-
+                DevExpress.XtraEditors.XtraMessageBox.Show("ahanda hata");
             }
             //if (!string.IsNullOrEmpty(EssizNumaraUret())) // empty gelmezse yeni eşsiz numara üretilmiş demektir.
             //OkcyURunleriYazidir();
         }
 
 
-        void OkcNakitOde(float OdemeTutari)
-        {
-            try
-            {
-                int aahnda;
-                float NakitOdeme = OdemeTutari;
-                aahnda = dll.payInCash(NakitOdeme);
-                if (aahnda != 0)
-                {
-                    MessageBox.Show("ahanda 1");
-                }
-                else
-                {
 
-                }
-            }
-            catch (Exception ex)
-            {
-                if (ex.Message == "FP: OK; Command: Illegal.")
-                {
-                    MessageBox.Show("Ödemesi Tamamlanmayan Bir fiş yok");
-                }
-                else if (ex.Message == "FP: Bill payment finished; Open receipt; Command: Illegal.")
-                {
-                    MessageBox.Show("Fiş Tutarından daha fazla ödeme yapılamaz");
-                }
-                else
-                {
-                    MessageBox.Show("Başka bir hata" + Environment.NewLine + ex.Message);
-                }
-            }
-        }
+
+
 
         private void barbtnOkcFisIptal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
-
-                int ahahanda = dll.cancelFR();
-                if (ahahanda != 0)
-                {
-                    MessageBox.Show("2 buradan 0 dönmedi");
-                }
-
+                MikroSarayOKC.FisiIptalEt();
             }
             catch (Exception ex)
             {

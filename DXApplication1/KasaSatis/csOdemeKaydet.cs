@@ -11,22 +11,11 @@ namespace KasaSatis
             GC.SuppressFinalize(this);
         }
 
-        public void OdemeyiKaydet(SqlConnection Baglanti, SqlTransaction Tr, int FaturaID)
-        {
-            using (SqlCommand cmd = new SqlCommand("OdemeyiKaydet", Baglanti, Tr))
-            //using (SqlCommand cmd = new SqlCommand("update Fatura set OdendiMi = @OdendiMi, DegismeTarihi = GETDATE() where Fatura.SilindiMi = 0 and Fatura.OdendiMi = 0 and FaturaID = @FaturaID", Baglanti, Tr))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
-                //cmd.Parameters.Add("@OdendiMi", SqlDbType.Bit).Value = 1;
-                cmd.ExecuteNonQuery();
-            }
-        }
-
         public enum OdemeDonenBilgisi
         {
             OdemesiTamamlandi = 1,
-            OncedenOdemesiTamamlanmis = 0
+            OncedenOdemesiTamamlanmis = 0,
+            OdemesiTamamlanmisFisYazdirilmamis = 2
         }
         /// <summary>
         /// 

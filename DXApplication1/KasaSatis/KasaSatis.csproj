@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="csKasaBaglanti.cs" />
+    <Compile Include="csMikroSarayOKC.cs" />
     <Compile Include="csOdemeKaydet.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

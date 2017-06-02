@@ -165,7 +165,9 @@ WHEN FaturaTipi = 9 THEN 'ALIŞ İADE İRSALİYESİ'
 END AS FaturaTipi, dbo.Fatura.CariID, dbo.Cari.CariKod, dbo.Cari.CariTanim, dbo.Fatura.FaturaTarihi, dbo.Fatura.DuzenlemeTarihi, dbo.Fatura.ToplamIndirim, fatura.FaturaTutari,
 dbo.Fatura.ToplamKdv, dbo.Fatura.Vadesi, fatura.CariTanim as FaturaCariTanim, 
 CASE WHEN dbo.Fatura.Iptal =1 THEN 'İPTAL EDİLDİ' ELSE '' end AS Iptal , CASE WHEN dbo.Fatura.SilindiMi =1 THEN 'SİLİNDİ' ELSE '' END AS SilindiMi, dbo.Fatura.Aciklama
-FROM         dbo.Fatura INNER JOIN dbo.Cari ON dbo.Fatura.CariID = dbo.Cari.CariID
+, OkcZNo, OkcFisNo
+FROM         dbo.Fatura 
+INNER JOIN dbo.Cari ON dbo.Fatura.CariID = dbo.Cari.CariID
 WHERE     (1 = 1 and Fatura.SilindiMi = 0)
 ";
 

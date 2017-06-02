@@ -8,6 +8,9 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Timers;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace KasaSatis
 {
@@ -18,10 +21,11 @@ namespace KasaSatis
             GC.SuppressFinalize(this);
         }
 
+        OKCDrumlari okcDurumlari = new OKCDrumlari();
 
+        private BaglantiDurumu _BaglantiVarMi;
 
-        private bool BaglantiVarMi;
-
+        public BaglantiDurumu BaglantiVarMi { get => _BaglantiVarMi; }
 
         public csMikroSarayOKC()
         {
@@ -29,60 +33,90 @@ namespace KasaSatis
 
         }
 
-        public bool BaglantiKur()
-        {
+        public delegate void dlg_OKCBaglantiDurumu(BaglantiDurumu BaflantiDurumu);
+        public dlg_OKCBaglantiDurumu BaglantDurumu;
 
+        public void BaglantiKur()
+        {
             OKCOdemeIslemleri = new Thread(new ThreadStart(Baglan));
             OKCOdemeIslemleri.Start();
+        }
 
-            return BaglantiVarMi;
+        public enum BaglantiDurumu
+        {
+            Var = 1,
+            yok = 2,
+            BaglantiKayboldu = 3
         }
 
         private void Baglan()
         {
-            lock (lokcTaken)
+            //lock (lokcTaken)
             {
                 dll.setgmp(true);
                 dll.setgmp_force(true);
                 dll.connect();
-
+                _BaglantiVarMi = BaglantiDurumu.yok;
+                BaglantDurumu(_BaglantiVarMi); // buradan bağlantı kuruluyor yazıcak
                 while (true) // bu zaten şuan  ayrı bir threadte
                 {
                     if (dll.checkConnectGMP3Coupling())
                     {
-                        BaglantiVarMi = true;
-                        break;
+                        if (_BaglantiVarMi == BaglantiDurumu.yok) //Bağlantı zaten varken bağlantının olduğu doğrulanırsa bişi yapmasın;
+                        {
+                            _BaglantiVarMi = BaglantiDurumu.Var;
+                            BaglantDurumu(_BaglantiVarMi);
+                        }
+                        else if (_BaglantiVarMi == BaglantiDurumu.BaglantiKayboldu) // bağlantı önceden kaybolmuş ama gelmişse
+                        {
+                            _BaglantiVarMi = BaglantiDurumu.Var;
+                            BaglantDurumu(_BaglantiVarMi);
+                        }
                     }
-                    else
+                    else // yani bağlantı yoksa
                     {
-                        BaglantiVarMi = false;
+                        if (_BaglantiVarMi == BaglantiDurumu.Var) //Bağlantı varken bağlantının olmazsa, yani bağlantı düşerse bağlantı yok olsun
+                        {
+                            _BaglantiVarMi = BaglantiDurumu.BaglantiKayboldu;
+                            BaglantDurumu(this._BaglantiVarMi);
+                            dll.connect(); // bağlantı kaybolduğu için yeniden bağlanmaya çalışalım
+                        }
+                        //else if (_BaglantiVarMi == BaglantiDurumu.BaglantiKayboldu || _BaglantiVarMi == BaglantiDurumu.BaglantiKayboldu)
+                        //{
+
+                        //}
                     }
-                    Thread.Sleep(100);
+                    Thread.Sleep(1500);
                 }
             }
         }
 
 
-        object lokcTaken = new object();
+
+        public object lokcTaken = new object();
 
 
 
 
-        public static class OKCDrumlari
+        public class OKCDrumlari : IDisposable
         {
             public static Tremol.FP.Status DURUM;
 
-            public static bool FisAcik;
-            public static bool PilZayif;
-            public static bool TarihYanlis;
-            public static bool MaliOlmayanFisAcik;
-            public static bool ZRaporuAlinmali;
-            public static bool PrinterMesgul;
-            public static bool PrinterYazdiriyor;
-            public static bool KagitBitti;
+            public bool FisAcik;
+            public bool PilZayif;
+            public bool TarihYanlis;
+            public bool MaliOlmayanFisAcik;
+            public bool ZRaporuAlinmali;
+            public bool PrinterMesgul;
+            public bool PrinterYazdiriyor;
+            public bool KagitBitti;
 
+            public void Dispose()
+            {
+                GC.SuppressFinalize(this);
+            }
 
-            public static void Getir()
+            public void Getir()
             {
                 try
                 {
@@ -103,7 +137,7 @@ namespace KasaSatis
             }
         }
 
-        public class OKCFisBilgileri
+        public class OKCFisBilgileri : IDisposable
         {
             public string UrunAdi { get; set; }
             public string PLU { get; set; }
@@ -120,6 +154,11 @@ namespace KasaSatis
                 this.Fiyati = Fiyati;
                 this.Miktari = Miktari;
             }
+
+            public void Dispose()
+            {
+                GC.SuppressFinalize(this);
+            }
         }
 
         public List<OKCFisBilgileri> YazdirilacakFisBilgileri;
@@ -130,13 +169,13 @@ namespace KasaSatis
             lock (lokcTaken)
             {
 
-                OKCDrumlari.Getir();
-                if (OKCDrumlari.FisAcik)
+                okcDurumlari.Getir();
+                if (okcDurumlari.FisAcik)
                 {
                     MessageBox.Show("Şuan Satış var \rnÖdemesini Tamamlanyın Önce");
                     return;
                 }
-                if (OKCDrumlari.MaliOlmayanFisAcik)
+                if (okcDurumlari.MaliOlmayanFisAcik)
                 {
                     MessageBox.Show("Mali olmayan fiş açık");
                 }
@@ -238,12 +277,17 @@ namespace KasaSatis
             dll.getStatusLastException();
         }
 
+        public void OKCFisiNakitKapat(int FaturaID)
+        {
+            OKCOdemeIslemleri = new Thread(new ParameterizedThreadStart(OKCNakitKapat));
+            OKCOdemeIslemleri.Start(FaturaID);
+        }
 
         /// <summary>
         /// Eğer ödeme tutarı Fatura tutarı ile aynı ise
         /// </summary>
         /// <param name="OdemeTutari"></param>
-        void OKCNakitOde()
+        void OKCNakitKapat(object FaturaID)
         {
             try
             {
@@ -251,12 +295,16 @@ namespace KasaSatis
                 //tabControlDLL.SelectedTab = tabPageSales;
                 lock (lokcTaken)
                 {
+                    OKCSonFisNoBul(); // burada sıradaki fiş bilgilerini buluyoruz
                     int aahnda;
                     aahnda = dll.closeReceipt();
                     if (aahnda != 0)
                     {
                         MessageBox.Show(" ahanda");
                     }
+
+                    ZnoVeFisNoyuFaturayaKaydet((int)FaturaID, (int)z_num, (int)rcp_num); // burada bulunan fiş bilgilerini Fatura Tablosuna kaydediyoruz.
+                    ZRep();
                 }
             }
             catch (Exception ex)
@@ -274,21 +322,57 @@ namespace KasaSatis
         }
         Thread OKCOdemeIslemleri;
 
-        public void OKCFisiNakitKapat()
-        {
-            OKCOdemeIslemleri = new Thread(new ThreadStart(OKCNakitOde));
-            OKCOdemeIslemleri.Start();
-        }
+
+
 
         public BmsDll4Delphi.BmsDllForDelphi dll = new BmsDll4Delphi.BmsDllForDelphi();
 
+
+
+        public uint rcp_num = 0;
+        public uint z_num = 0;
+        public uint eku_num = 0;
+
         public void OKCSonFisNoBul()
         {
-            uint rcp_num = 0;
-            uint z_num = 0;
-            uint eku_num = 0;
-            dll.getFiscalInformation(out rcp_num, out z_num, out eku_num);
-            MessageBox.Show(rcp_num + "  " + z_num + "  " + eku_num);
+            try
+            {
+                lock (lokcTaken)
+                {
+                    //dll.ZRepData();
+                    uint rcp_num = 0;
+                    uint z_num = 0;
+                    uint eku_num = 0;
+                    dll.getFiscalInformation(out rcp_num, out z_num, out eku_num);
+
+                    this.rcp_num = rcp_num;
+                    this.z_num = z_num;
+                    this.eku_num = eku_num;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        void ZnoVeFisNoyuFaturayaKaydet(int FaturaID, int Zno, int FisNo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("update Fatura set OkcZNo = @OkcZNo, OkcFisNo = @OkcFisNo where FaturaID = @FaturaID", SqlConnections.GetBaglanti()))
+                {
+                    cmd.Parameters.Add("@FaturaID", SqlDbType.Int).Value = FaturaID;
+                    cmd.Parameters.Add("@OkcZNo", SqlDbType.Int).Value = Zno;
+                    cmd.Parameters.Add("@OkcFisNo", SqlDbType.Int).Value = FisNo;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fiş Bilgilerini Fatura Tablosuna yazarken hata");
+            }
         }
 
         public void ZRep()
@@ -306,14 +390,16 @@ namespace KasaSatis
             {
                 lock (lokcTaken)
                 {
+
                     int aha = dll.payWithBankCard(OdemeTutari);
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Ahanda hata");
             }
         }
+
 
         public void FisiIptalEt()
         {
@@ -337,7 +423,7 @@ namespace KasaSatis
         }
 
 
-        public void OKCNakitOde(float OdemeTutari)
+        public void OKCNakitOde2(float OdemeTutari)
         {
             try
             {

@@ -599,14 +599,14 @@ namespace Aresv2.Stok
         #region TextColorChange
         private void PasifTextBackColorChange(object sender, EventArgs e)
         {
-            DevExpress.XtraEditors.TextEdit AktifText = (TextEdit)sender;
-            AktifText.BackColor = Color.White;
+            //DevExpress.XtraEditors.TextEdit AktifText = (TextEdit)sender;
+            //AktifText.BackColor = Color.White;
         }
-
+         
         private void AktifTextBackColorChange(object sender, EventArgs e)
         {
-            DevExpress.XtraEditors.TextEdit AktifText = (TextEdit)sender;
-            AktifText.BackColor = Color.AntiqueWhite;
+            //DevExpress.XtraEditors.TextEdit AktifText = (TextEdit)sender;
+            //AktifText.BackColor = Color.AntiqueWhite;
         }
 
         #endregion
