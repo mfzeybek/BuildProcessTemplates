@@ -155,8 +155,8 @@
   <data name="deSayimTarih.Properties.AutoHeight" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="DevExpress.XtraEditors.v16.2" name="DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="deSayimTarih.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v16.2">
+  <assembly alias="DevExpress.XtraEditors.v17.1" name="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="deSayimTarih.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v17.1">
     <value>Default</value>
   </data>
   <data name="deSayimTarih.Properties.Mask.BeepOnError" type="System.Boolean, mscorlib">
@@ -168,7 +168,7 @@
   <data name="deSayimTarih.Properties.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="deSayimTarih.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v16.2">
+  <data name="deSayimTarih.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v17.1">
     <value>DateTime</value>
   </data>
   <data name="deSayimTarih.Properties.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
@@ -198,7 +198,7 @@
   <data name="deSayimTarih.Properties.VistaTimeProperties.AutoHeight" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="deSayimTarih.Properties.VistaTimeProperties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v16.2">
+  <data name="deSayimTarih.Properties.VistaTimeProperties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v17.1">
     <value>Default</value>
   </data>
   <data name="deSayimTarih.Properties.VistaTimeProperties.Mask.BeepOnError" type="System.Boolean, mscorlib">
@@ -210,7 +210,7 @@
   <data name="deSayimTarih.Properties.VistaTimeProperties.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="deSayimTarih.Properties.VistaTimeProperties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v16.2">
+  <data name="deSayimTarih.Properties.VistaTimeProperties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v17.1">
     <value>DateTime</value>
   </data>
   <data name="deSayimTarih.Properties.VistaTimeProperties.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
@@ -240,7 +240,7 @@
   <data name="txtSayimKodu.Properties.AutoHeight" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtSayimKodu.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v16.2">
+  <data name="txtSayimKodu.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v17.1">
     <value>Default</value>
   </data>
   <data name="txtSayimKodu.Properties.Mask.BeepOnError" type="System.Boolean, mscorlib">
@@ -252,7 +252,7 @@
   <data name="txtSayimKodu.Properties.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtSayimKodu.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v16.2">
+  <data name="txtSayimKodu.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v17.1">
     <value>None</value>
   </data>
   <data name="txtSayimKodu.Properties.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
@@ -279,8 +279,8 @@
   <data name="gcSayim.EmbeddedNavigator.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <assembly alias="DevExpress.Data.v16.2" name="DevExpress.Data.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="gcSayim.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v16.2">
+  <assembly alias="DevExpress.Data.v17.1" name="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="gcSayim.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v17.1">
     <value>Default</value>
   </data>
   <data name="gcSayim.EmbeddedNavigator.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -299,20 +299,20 @@
   <data name="gcSayim.EmbeddedNavigator.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="gcSayim.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v16.2">
+  <data name="gcSayim.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v17.1">
     <value>Center</value>
   </data>
   <data name="gcSayim.EmbeddedNavigator.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <assembly alias="DevExpress.Utils.v16.2" name="DevExpress.Utils.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="gcSayim.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v16.2">
+  <assembly alias="DevExpress.Utils.v17.1" name="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="gcSayim.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v17.1">
     <value>None</value>
   </data>
   <data name="gcSayim.EmbeddedNavigator.ToolTipTitle" xml:space="preserve">
     <value />
   </data>
-  <data name="txtStok.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v16.2">
+  <data name="txtStok.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v17.1">
     <value>Default</value>
   </data>
   <data name="txtStok.Mask.BeepOnError" type="System.Boolean, mscorlib">
@@ -324,7 +324,7 @@
   <data name="txtStok.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtStok.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v16.2">
+  <data name="txtStok.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v17.1">
     <value>None</value>
   </data>
   <data name="txtStok.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
@@ -339,7 +339,7 @@
   <data name="txtStok.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="txtBirim2.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v16.2">
+  <data name="txtBirim2.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v17.1">
     <value>Default</value>
   </data>
   <data name="txtBirim2.Mask.BeepOnError" type="System.Boolean, mscorlib">
@@ -351,7 +351,7 @@
   <data name="txtBirim2.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtBirim2.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v16.2">
+  <data name="txtBirim2.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v17.1">
     <value>None</value>
   </data>
   <data name="txtBirim2.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
@@ -375,7 +375,7 @@
   <data name="gridControl1.EmbeddedNavigator.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="gridControl1.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v16.2">
+  <data name="gridControl1.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v17.1">
     <value>Default</value>
   </data>
   <data name="gridControl1.EmbeddedNavigator.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -393,13 +393,13 @@
   <data name="gridControl1.EmbeddedNavigator.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="gridControl1.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v16.2">
+  <data name="gridControl1.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v17.1">
     <value>Center</value>
   </data>
   <data name="gridControl1.EmbeddedNavigator.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gridControl1.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v16.2">
+  <data name="gridControl1.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v17.1">
     <value>None</value>
   </data>
   <data name="gridControl1.EmbeddedNavigator.ToolTipTitle" xml:space="preserve">
@@ -450,7 +450,7 @@
   <data name="gridControl2.EmbeddedNavigator.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="gridControl2.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v16.2">
+  <data name="gridControl2.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v17.1">
     <value>Default</value>
   </data>
   <data name="gridControl2.EmbeddedNavigator.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -468,13 +468,13 @@
   <data name="gridControl2.EmbeddedNavigator.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="gridControl2.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v16.2">
+  <data name="gridControl2.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v17.1">
     <value>Center</value>
   </data>
   <data name="gridControl2.EmbeddedNavigator.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gridControl2.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v16.2">
+  <data name="gridControl2.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v17.1">
     <value>None</value>
   </data>
   <data name="gridControl2.EmbeddedNavigator.ToolTipTitle" xml:space="preserve">
@@ -486,7 +486,7 @@
   <data name="gridControl3.EmbeddedNavigator.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="gridControl3.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v16.2">
+  <data name="gridControl3.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v17.1">
     <value>Default</value>
   </data>
   <data name="gridControl3.EmbeddedNavigator.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -504,13 +504,13 @@
   <data name="gridControl3.EmbeddedNavigator.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="gridControl3.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v16.2">
+  <data name="gridControl3.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v17.1">
     <value>Center</value>
   </data>
   <data name="gridControl3.EmbeddedNavigator.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gridControl3.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v16.2">
+  <data name="gridControl3.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v17.1">
     <value>None</value>
   </data>
   <data name="gridControl3.EmbeddedNavigator.ToolTipTitle" xml:space="preserve">

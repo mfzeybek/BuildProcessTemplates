@@ -65,7 +65,7 @@ namespace TeraziSatis
               BindingFlags.InvokeMethod | BindingFlags.Instance, null,
               control, new object[] { 0x400000, false });
         }
-        public static string VersiyonNo = "Test - 106";
+        public static string VersiyonNo = "Test - 108";
         System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
         csTeraziLogs LogLar;
 
@@ -94,13 +94,15 @@ namespace TeraziSatis
                         proc.Kill();
                     }
                 }
-                if (System.Diagnostics.Process.GetProcessesByName("TeraziSatisBaslat2").Length == 0)
-                {
-                    if (File.Exists(Application.StartupPath + @"\TeraziSatisBaslat2.exe") == true)
-                        System.Diagnostics.Process.Start(Application.StartupPath + @"\TeraziSatisBaslat2.exe");
-                    else
-                    { MesajGoster("Terazi Satis Başlat yüklenmemiş sistem yöneticisine haber ver."); }
-                }
+
+                // bunuları sonra devreye sok
+                //if (System.Diagnostics.Process.GetProcessesByName("TeraziSatisBaslat2").Length == 0)
+                //{
+                //    if (File.Exists(Application.StartupPath + @"\TeraziSatisBaslat2.exe") == true)
+                //        System.Diagnostics.Process.Start(Application.StartupPath + @"\TeraziSatisBaslat2.exe");
+                //    else
+                //    { MesajGoster("Terazi Satis Başlat yüklenmemiş sistem yöneticisine haber ver."); }
+                //}
 
 
                 #endregion
@@ -932,7 +934,6 @@ namespace TeraziSatis
 
         private bool TerazidenSabitMiktariAl(decimal TerazidenGelenSabitMiktar)
         {
-
             try
             {
                 TerazidenGelenSabitMiktar = TerazidenGelenSabitMiktar - DaraMiktari;
@@ -1010,8 +1011,7 @@ namespace TeraziSatis
             }
             finally
             {
-                textBox1.Text = txtTerazidekiMiktari.EditValue.ToString();
-
+                textBox1.Text = txtTerazidekiMiktari.EditValue.ToString(); // bu boşta bir text sanırım artık kullanılmıyor
             }
         }
 
@@ -1046,6 +1046,7 @@ namespace TeraziSatis
                 {
                     csTeraziLogs.LogYaz(csTeraziLogs.Grup.Grupsuz, "Hemen sonraki lock a da girdi");
                     gvSatislar.UpdateCurrentRow();
+                    csTeraziLogs.LogYaz(csTeraziLogs.Grup.Grupsuz, "burası da sorunsuz mu?");
                     //thKaydet = new Thread(() => { Kaydet(gvSatislar.GetFocusedDataRow(), Hareketler.dt_FaturaHareketleri); });
                     //thKaydet.Start();
                     Kaydet(gvSatislar.GetFocusedDataRow(), Hareketler.dt_FaturaHareketleri);
@@ -2839,6 +2840,14 @@ ne hatısı diye sorarsam hamısına hatası de
         private void labelControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TeraziSatis.Properties.Settings.Default.TeraziModel == 5)
+            {
+                MiktarAl.TeraziyiSifirla();
+            }
         }
     }
 }

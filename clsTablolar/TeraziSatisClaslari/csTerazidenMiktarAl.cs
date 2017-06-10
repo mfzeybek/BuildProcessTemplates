@@ -21,6 +21,12 @@ namespace clsTablolar.TeraziSatisClaslari
         public decimal OkunanSabitMiktar = 0;
         private decimal OkunanAnlikMiktarOnceki = 0;
 
+        private UInt16 ArdArdaAyniOkunanAnlikMiktarSayisi = 0; // bu sayı belli bir rakama ulaştığında anlaşılacak ki, terazideki miktar sabit. Sabit olduğunu kendi veremeyen transmitter lar için
+
+        decimal SifirOlmasiIcinGerekliAralik = (decimal)0.002;
+
+        //int ArdArdaOkunanAyniDegerSayisi = 0;// Böylece ne kadar sürede sabit miktarı vereceğine bakıcak
+
         // TeraziTipi
 
         // 1 se Cas TErazi
@@ -28,10 +34,26 @@ namespace clsTablolar.TeraziSatisClaslari
         // 3 ise Wtm 500 (örnek gelen değerer "ST,GS,   0.000kg", tabi bu format cihazdan değiştirilebiliyor 3 farklı format var)  
         // 4 ise Wtm 500 (örnek gelen değerer "S  0.284kg\r", tabi bu format cihazdan değiştirilebiliyor 3 farklı format var)  
 
+        // 5 bunu yeni yapıyorsun sparkfun ın OpenScale Ağırlık Sensörü Kartı nı kullanarak yapıyorsun. sadece ağırlık bilgisini veriyor. sabit mi değilmi bakmıyor.
+
 
 
         int TeraziTipi = 2;
 
+        decimal ahandaaa(string str)
+        {
+            if (Convert.ToDecimal(str) > (decimal)(-0.003) && Convert.ToDecimal(str) < (decimal)(0.003))
+                return (decimal)0.000;
+
+            if (OkunanAnlikMiktarOnceki == Convert.ToDecimal(str) + (decimal)(0.001) || OkunanAnlikMiktarOnceki == Convert.ToDecimal(str) - (decimal)(0.001)) // || OkunanAnlikMiktarOnceki == Convert.ToDecimal(str))
+            {
+                return OkunanAnlikMiktarOnceki;
+            }
+            else
+            {
+                return Convert.ToDecimal(str);
+            }
+        }
 
 
         // Teraziden Mitkarı sürekli oku
@@ -71,7 +93,7 @@ namespace clsTablolar.TeraziSatisClaslari
                 TeraziTipi = TeraziModel;
                 MiktarAlmaDurumu = true;
                 BaglantiNoktasi = BagNok;
-                if (TeraziModel == 1 || TeraziTipi == 3 || TeraziTipi == 4)
+                if (TeraziModel == 1 || TeraziTipi == 3 || TeraziTipi == 4 || TeraziTipi == 5)
                     th1 = new Thread(new ThreadStart(TerazidenMiktarAl));
                 else if (TeraziModel == 2)
                     th1 = new Thread(new ThreadStart(TerazidenMiktarAl2));
@@ -85,6 +107,48 @@ namespace clsTablolar.TeraziSatisClaslari
                 MesajGonder(hh.StackTrace);
             }
         }
+
+        public void TeraziyiSifirla()
+        {
+            if (TeraziTipi == 5)
+            {
+                TerazidekiMiktarAl(9999);
+                Thread.Sleep(1000);
+                TerazidekiMiktarAl(8888);
+                Thread.Sleep(1000);
+                //string gg = sp1.ReadExisting();
+
+                sp1.WriteLine("x"); // Sparkfun open scale menüye giriş
+                //gg = sp1.ReadExisting();
+                //sp1.Write("x");
+                TerazidekiMiktarAl(7777);
+                Thread.Sleep(1000);
+                TerazidekiMiktarAl(6666);
+                Thread.Sleep(1000);
+
+                sp1.WriteLine("1"); // teraziyi 0 olarak ayarladık
+                TerazidekiMiktarAl(5555);
+                Thread.Sleep(1000);
+                TerazidekiMiktarAl(4444);
+                Thread.Sleep(1000);
+                //gg = sp1.ReadExisting();
+                sp1.WriteLine("x"); // Sparkfun open scale menüye çıkış
+                TerazidekiMiktarAl(3333);
+                Thread.Sleep(1000);
+                TerazidekiMiktarAl(2222);
+                Thread.Sleep(1000);
+                //string gg = sp1.ReadExisting();
+                if (sp1.ReadExisting().EndsWith(@""))
+                {
+                    sp1.WriteLine("x"); // Sparkfun open scale menüye çıkış
+                }
+                TerazidekiMiktarAl(1111);
+                OkunanAnlikMiktarOnceki = 1111;
+                //gg = sp1.ReadExisting();
+            }
+
+        }
+
 
 
         SerialPort sp1;
@@ -101,11 +165,28 @@ namespace clsTablolar.TeraziSatisClaslari
                     sp1.BaudRate = 9600;
                 else if (TeraziTipi == 3)
                     sp1.BaudRate = 9600;
+                else if (TeraziTipi == 5)
+                {
+                    sp1.BaudRate = 19200;
+                    sp1.ReadTimeout = 1000;
+                    sp1.DataBits = 8;
+                    sp1.Parity = Parity.None;
+                    sp1.StopBits = StopBits.One;
+                    sp1.Handshake = Handshake.None;
+                    sp1.DtrEnable = true;
+                }
 
                 try
                 {
                     if (!sp1.IsOpen) // comport u açık değilse açıyoruz
                         sp1.Open();
+                    if (sp1.IsOpen) // comport u açık değilse açıyoruz
+                    {
+                        if (TeraziTipi == 5)
+                        {
+                            TeraziyiSifirla();
+                        }
+                    }
                 }
                 catch (Exception)
                 {
@@ -130,6 +211,9 @@ namespace clsTablolar.TeraziSatisClaslari
                                     //sp1.WriteLine("A");
 
                                     //char[] buuf = {'f', 'f'};
+
+                                    //OkunanMiktar = sp1.ReadLine();
+
                                     sp1.DiscardInBuffer();
                                     //sp1.DiscardNull = true ;
                                     //sp1.WriteLine("RW");
@@ -152,25 +236,52 @@ namespace clsTablolar.TeraziSatisClaslari
 
                                     //if (Monitor.TryEnter(MiktarAlmayiKilitle, 10))
 
-                                    if (TeraziTipi == 3)
-                                        OkunanAnlikMiktar = Convert.ToDecimal(OkunanMiktar.Substring(OkunanMiktar.Length - 10, OkunanMiktar.Length - 10).Replace('.', ','));
-                                    else if (TeraziTipi == 1)
-                                        OkunanAnlikMiktar = Convert.ToDecimal(OkunanMiktar.Substring((OkunanMiktar.Length - 9), OkunanMiktar.Length - 5).Replace('.', ','));
-                                    else if (TeraziTipi == 4)
-                                        OkunanAnlikMiktar = Convert.ToDecimal(OkunanMiktar.Substring((OkunanMiktar.Length - 10), OkunanMiktar.Length - 15).Replace('.', ','));
+                                    switch (TeraziTipi)
+                                    {
+                                        case 3:
+                                            OkunanAnlikMiktar = Convert.ToDecimal(OkunanMiktar.Substring(OkunanMiktar.Length - 10, OkunanMiktar.Length - 10).Replace('.', ','));
+                                            break;
+                                        case 1:
+                                            OkunanAnlikMiktar = Convert.ToDecimal(OkunanMiktar.Substring((OkunanMiktar.Length - 9), OkunanMiktar.Length - 5).Replace('.', ','));
+                                            break;
+                                        case 4:
+                                            OkunanAnlikMiktar = Convert.ToDecimal(OkunanMiktar.Substring((OkunanMiktar.Length - 10), OkunanMiktar.Length - 15).Replace('.', ','));
+                                            break;
+                                        case 5:
+                                            OkunanAnlikMiktar = ahandaaa(OkunanMiktar.Replace('.', ',').Substring(0, OkunanMiktar.Length - 5));
+                                            break;
+                                        default:
+                                            break;
+                                    }
 
 
 
+                                    decimal SabitMiktarIcinOkunanOncekiMiktar = 0;
 
                                     if (OkunanAnlikMiktarOnceki != OkunanAnlikMiktar)
                                     {
                                         OkunanAnlikMiktarOnceki = OkunanAnlikMiktar;
+                                        SabitMiktarIcinOkunanOncekiMiktar = OkunanAnlikMiktar;
                                         TerazidekiMiktarAl(OkunanAnlikMiktar);
+                                        ArdArdaAyniOkunanAnlikMiktarSayisi = 0;
+                                    }
+                                    else if (TeraziTipi == 5)
+                                    {
+                                        if (ArdArdaAyniOkunanAnlikMiktarSayisi == 4 && OkunanSabitMiktar != OkunanAnlikMiktar)
+                                        {
+                                            ArdArdaAyniOkunanAnlikMiktarSayisi = 0;
+                                            SabitMiktarAl(OkunanAnlikMiktar);
+                                            OkunanSabitMiktar = OkunanAnlikMiktar;
+                                        }
+                                        else if (ArdArdaAyniOkunanAnlikMiktarSayisi < 4)
+                                        { ArdArdaAyniOkunanAnlikMiktarSayisi++; }
+                                        else
+                                        { ArdArdaAyniOkunanAnlikMiktarSayisi++; }
                                     }
 
-                                    if (OkunanMiktar.StartsWith("S") && OkunanSabitMiktar != OkunanAnlikMiktar) // TERAZİDEN GELEN VERİ S İLE BAŞLIYORSA SABİT ANLAMINDA DIR
+                                    if (TeraziTipi != 5 && OkunanMiktar.StartsWith("S") && OkunanSabitMiktar != OkunanAnlikMiktar) // TERAZİDEN GELEN VERİ S İLE BAŞLIYORSA SABİT ANLAMINDA DIR
                                     { // s ile başlıyorsa okunan anlık miktar okunan sabit miktar olabilir
-                                        // okunan anlık miktar ve okunan sabit miktar aynı ise alma ama neden ??
+                                      // okunan anlık miktar ve okunan sabit miktar aynı ise alma ama neden ??
 
                                         //if (SabitMiktarAl(OkunanAnlikMiktar))
                                         {
@@ -179,6 +290,7 @@ namespace clsTablolar.TeraziSatisClaslari
                                         }
                                         //lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit) // terazideki kilite bağlıydı önceki sürümde
                                     }
+
 
                                     //lock (MiktarAlmayiKilitle)
 
@@ -191,12 +303,12 @@ namespace clsTablolar.TeraziSatisClaslari
                                     }
                                     else
                                         BaglantiSayisi++;
-                                    Thread.Sleep(10);
+                                    Thread.Sleep(50);
                                     //sp1.DiscardInBuffer();
                                 }
                                 else
                                 {
-                                    Thread.Sleep(10);
+                                    Thread.Sleep(50);
 
                                     try { sp1.Open(); }
                                     catch (TimeoutException)
@@ -215,6 +327,12 @@ namespace clsTablolar.TeraziSatisClaslari
                             }
                             catch (TimeoutException ex2)
                             {
+                                if (TeraziTipi == 5)
+                                {
+                                    string gg = sp1.ReadExisting();
+                                    if (gg.EndsWith(@""))
+                                        sp1.WriteLine("x");
+                                }
                                 //MesajGonder("TimeoutEXception \n" + OkunanMiktar);
                             }
                             catch (FormatException)
@@ -348,6 +466,8 @@ namespace clsTablolar.TeraziSatisClaslari
                                         sp1.WriteLine("A");
                                     }
 
+
+
                                     if (OkunanMiktar.StartsWith("S")) // TERAZİDEN GELEN VERİ S İLE BAŞLIYORSA SABİT ANLAMINDA DIR
                                     { // s ile başlıyorsa okunan anlık miktar okunan sabit miktar olabilir
                                         if (OkunanSabitMiktar != OkunanAnlikMiktar)  // okunan anlık miktar ve okunan sabit miktar aynı ise alma ama neden ??
@@ -358,6 +478,7 @@ namespace clsTablolar.TeraziSatisClaslari
                                                 SabitMiktarAl(OkunanSabitMiktar);
                                         }
                                     }
+
 
                                     TerazidekiMiktarAl(OkunanAnlikMiktar);
                                     TerazininBaglantisiKoptu_MesajiGonderildiMi = false;

@@ -13,8 +13,8 @@ namespace TeraziSatis
         {
             GC.SuppressFinalize(this);
         }
-        SQLiteConnection sqlConnect;
-        SQLiteCommand sqliteCommand_Insert;
+        static SQLiteConnection sqlConnect;
+        static SQLiteCommand sqliteCommand_Insert;
         private void VeriTabaniniOlustur()
         {
             if (!Directory.Exists(Application.StartupPath + @"\Loglar"))
@@ -34,13 +34,15 @@ namespace TeraziSatis
 
             //string dataFile = @"D:\temp\Linq_ve_sqlitetest.db";
             //System.Data.SQLite.SQLiteConnection con = new System.Data.SQLite.SQLiteConnection(@"Data Source=" + DbDosya + ";Version=3;");
-            dt = new DataTable();
-            dt.Columns.Add("Aciklama");
-            dt.Columns.Add("ThreadName");
-            dt.Columns.Add("Zaman");
-            dt.Columns.Add("Grup");
-            dt.Columns.Add("VersiyonNu");
-            dt.Columns.Add("BilgisayarAdi");
+
+
+            //dt = new DataTable();
+            //dt.Columns.Add("Aciklama");
+            //dt.Columns.Add("ThreadName");
+            //dt.Columns.Add("Zaman");
+            //dt.Columns.Add("Grup");
+            //dt.Columns.Add("VersiyonNu");
+            //dt.Columns.Add("BilgisayarAdi");
 
             try
             {
@@ -106,13 +108,11 @@ BilgisayarAdi        nvarchar(100)
         {
             VeriTabaniniOlustur();
 
+            //THLlogYaz = new Thread(() => { LogYazz(); });
+            //THLlogYaz.Name = "logthredi" + i.ToString();
+            //i++;
 
-
-            THLlogYaz = new Thread(() => { LogYazz(); });
-            THLlogYaz.Name = "logthredi" + i.ToString();
-            i++;
-
-            THLlogYaz.Start();
+            //THLlogYaz.Start();
         }
         public enum Grup
         {
@@ -120,70 +120,81 @@ BilgisayarAdi        nvarchar(100)
             ThreadKilit,
             Hata
         }
-        static Thread[] treads;
-        static WaitCallback ekle;
+        //static Thread[] treads;
+        //static WaitCallback ekle;
 
-        private static DataTable dt;
+        //private static DataTable dt;
 
-        Thread THLlogYaz;
+        static Thread THLlogYaz;
         int i = 0;
 
         public static object BuradaBilenekKilit = new object();
 
 
-        public static void LogYaz(Grup Grup, string Aciklama)
+
+
+        class LogDetayi : IDisposable
         {
-            DataRow row = dt.NewRow();
-            row["Aciklama"] = Aciklama;
-            row["Grup"] = Grup.ToString();
-            lock (BuradaBilenekKilit)
-                dt.Rows.Add(row);
+            public string Aciklama { get; set; }
+            public string Grup { get; set; }
+
+
+
+            public void Dispose()
+            {
+                GC.SuppressFinalize(this);
+            }
         }
 
-        private void LogYazz()
+        public static void LogYaz(Grup Grup, string Aciklama)
         {
-            while (true)
+            using (LogDetayi detay = new LogDetayi())
             {
-                if (dt.Rows.Count > 0)
-                    //string Threadname = Thread.CurrentThread.Name;
-                    lock (this)
-                        try
-                        {
-
-                            if (sqlConnect.State == System.Data.ConnectionState.Closed)
-                                sqlConnect.Open();
-
-                            using (SQLiteTransaction trans =
-                            sqlConnect.BeginTransaction())
-                            {
-                                // Tablo bilgilerinin silinmesi
-                                //sqlCommand.CommandText = "Delete From KutuKesit;";
-                                //sqlCommand.ExecuteNonQuery();
-                                // Tabloya veri eklenmesi
-                                sqliteCommand_Insert.Parameters.Add("@Aciklama", System.Data.DbType.String).Value = dt.Rows[0]["Aciklama"].ToString();
-                                sqliteCommand_Insert.Parameters.Add("@ThreadName", System.Data.DbType.String).Value = Thread.CurrentThread.Name;
-                                sqliteCommand_Insert.Parameters.Add("@Zaman", System.Data.DbType.DateTime).Value = DateTime.Now;
-                                sqliteCommand_Insert.Parameters.Add("@Grup", System.Data.DbType.String).Value = dt.Rows[0]["Grup"].ToString();
-                                sqliteCommand_Insert.Parameters.Add("@VersiyonNu", System.Data.DbType.String).Value = frmTerazi.VersiyonNo;
-                                sqliteCommand_Insert.Parameters.Add("@BilgisayarAdi", System.Data.DbType.String).Value = SystemInformation.ComputerName;
-
-                                sqliteCommand_Insert.ExecuteNonQuery();
-                                trans.Commit();
-                                lock (BuradaBilenekKilit)
-                                {
-                                    dt.Rows[0].Delete();
-                                    if (dt.Rows.Count == 0)
-                                        dt.Clear();
-                                }
-                            }
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Log Kaydında Hata");
-                        }
-                Thread.Sleep(1000);
+                detay.Aciklama = Aciklama;
+                detay.Grup = Grup.ToString();
+                THLlogYaz = new Thread(new ParameterizedThreadStart(LogYazz));
+                THLlogYaz.Start(detay);
             }
+        }
+
+
+        private static void LogYazz(object ahanda)
+        {
+            //if (dt.Rows.Count > 0)
+
+            //string Threadname = Thread.CurrentThread.Name;
+            lock (BuradaBilenekKilit)
+                try
+                {
+
+                    if (sqlConnect.State == System.Data.ConnectionState.Closed)
+                        sqlConnect.Open();
+
+                    using (SQLiteTransaction trans =
+                    sqlConnect.BeginTransaction())
+                    {
+                        // Tablo bilgilerinin silinmesi
+                        //sqlCommand.CommandText = "Delete From KutuKesit;";
+                        //sqlCommand.ExecuteNonQuery();
+                        // Tabloya veri eklenmesi
+                        sqliteCommand_Insert.Parameters.Add("@Aciklama", System.Data.DbType.String).Value = ((LogDetayi)ahanda).Aciklama;
+                        sqliteCommand_Insert.Parameters.Add("@ThreadName", System.Data.DbType.String).Value = Thread.CurrentThread.Name;
+                        sqliteCommand_Insert.Parameters.Add("@Zaman", System.Data.DbType.DateTime).Value = DateTime.Now;
+                        sqliteCommand_Insert.Parameters.Add("@Grup", System.Data.DbType.String).Value = ((LogDetayi)ahanda).Grup;
+                        sqliteCommand_Insert.Parameters.Add("@VersiyonNu", System.Data.DbType.String).Value = frmTerazi.VersiyonNo;
+                        sqliteCommand_Insert.Parameters.Add("@BilgisayarAdi", System.Data.DbType.String).Value = SystemInformation.ComputerName;
+
+                        sqliteCommand_Insert.ExecuteNonQuery();
+                        trans.Commit();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Log Kaydında Hata");
+                }
+            Thread.Sleep(1500);
         }
     }
 }
+
 
