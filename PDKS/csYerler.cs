@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -20,7 +16,7 @@ namespace PDKS
 
         public void YerleriGetir(SqlConnection Baglanti, SqlTransaction Tr)
         {
-            using (da = new SqlDataAdapter("select * from yerler", Baglanti))
+            using (da = new SqlDataAdapter("select * from yerler where aktif = 1", Baglanti))
             {
                 da.SelectCommand.Transaction = Tr;
 
