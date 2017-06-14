@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using System.Threading;
+
+
 
 namespace Aresv2.Yonetim
 {
@@ -18,43 +21,78 @@ namespace Aresv2.Yonetim
         {
             InitializeComponent();
         }
-        clsTablolar.Siparis.csSiparisArama SiparisArama;
+        clsTablolar.Siparis.csSiparisArama SiparisArama = new clsTablolar.Siparis.csSiparisArama();
         clsTablolar.TeraziSatisClaslari.csSatislarV2 Satislar;
 
         clsTablolar.Fatura.csFaturaArama fatArama;
+
+        clsTablolar.Personel.csDisaridakiPersonel disardakiler = new clsTablolar.Personel.csDisaridakiPersonel();
+        PDKSSqlconnection connn = new PDKSSqlconnection();
+
+
+
+        Thread ahanda;
 
         SqlTransaction TrGenel;
 
         private void frmYonetim_Load(object sender, EventArgs e)
         {
-            //
+
+            CheckForIllegalCrossThreadCalls = false;
             //SiparisArama.
 
-            fatArama = new clsTablolar.Fatura.csFaturaArama(SqlConnections.GetBaglanti(), TrGenel, -1);
+            //fatArama = new clsTablolar.Fatura.csFaturaArama(SqlConnections.GetBaglanti(), TrGenel, -1);
             //fatArama.Tarih1 = DateTime.Today;
             //fatArama.Tarih2 = DateTime.Today;
 
 
-            KasadanOdenenSatislariGetir();
+            //KasadanOdenenSatislariGetir();
+            //GirisCikislariGetir();
+            ahanda = new Thread(new ThreadStart(GuncellenecekBilgiler));
+            ahanda.Start();
         }
 
-        void KasadanOdenenSatislariGetir()
+        //void KasadanOdenenSatislariGetir()
+        //{
+        //    //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+        //    //gridControl2.DataSource = fatArama.FaturaAraListe(SqlConnections.GetBaglanti(), TrGenel);
+        //    //TrGenel.Commit();
+        //}
+
+        //void SatislariGetir()
+        //{
+        //    TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+        //    Satislar = new clsTablolar.TeraziSatisClaslari.csSatislarV2(SqlConnections.GetBaglanti(), TrGenel, -1);
+        //    TrGenel.Commit();
+        //}
+
+
+
+        void GuncellenecekBilgiler()
         {
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            gridControl2.DataSource = fatArama.FaturaAraListe(SqlConnections.GetBaglanti(), TrGenel);
-            TrGenel.Commit();
+            while (true)
+            {
+                GirisCikislariGetir();
+
+                Thread.Sleep(5000);
+            }
         }
 
-        void SatislariGetir()
+
+
+
+        void GirisCikislariGetir()
         {
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            Satislar = new clsTablolar.TeraziSatisClaslari.csSatislarV2(SqlConnections.GetBaglanti(), TrGenel, -1);
-            TrGenel.Commit();
+            disardakiler.Getir2(PDKSSqlconnection.GetBaglanti());
+            gridControl1.DataSource = disardakiler.dt;
         }
-
-        private void labelControl1_Click(object sender, EventArgs e)
+        void AlinanSiparisleri()
         {
+            SiparisArama.HizliSatistaGozukecekMi = 1;
+            SiparisArama.MuhasebelenmeDrumu = new object[1] { 4 };
 
+            SiparisArama.SiparisAraListe(SqlConnections.GetBaglanti(), TrGenel);
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -77,6 +115,23 @@ namespace Aresv2.Yonetim
             //view.LayoutChanged();
 
 
+        }
+
+        private void dockPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmYonetim_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                ahanda.Abort();
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

@@ -52,7 +52,7 @@ namespace PDKS
 
         public bool PersonelGetir(SqlConnection Baglanti, SqlTransaction Tr, string Sifre)
         {
-            using (cmd = new SqlCommand("select * from Personel where PersonelSifre = @PersonelSifre", Baglanti, Tr))
+            using (cmd = new SqlCommand("select * from Personel where PersonelSifre = @PersonelSifre and PersonelAktif = 1", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@PersonelSifre", SqlDbType.NVarChar).Value = Sifre;
 

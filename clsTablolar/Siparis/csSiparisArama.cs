@@ -161,6 +161,9 @@ namespace clsTablolar.Siparis
             }
         }
 
+        public csSiparisArama()
+        { }
+
         string MuhasebelendimiSorgusu;
 
         public DataTable SiparisAraListe(SqlConnection Baglanti, SqlTransaction Tr)
@@ -278,10 +281,10 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
                     }
 
                     if (Convert.ToInt16(item) == 4) // kısmi faturalandı veya faturalandı ise
-                    { 
+                    {
                         WhereCumlesi += @" and dbo.SiparisMuhasebelendiMi(siparis.SiparisID) = 4 "; // burası düzeltilecek vertabanındaki fonksiyona kısmi faturandı sonucu eklenmesi lazım ("SiparisMuhasebelendiMi" bu fonkdiyon da kısmi faturalandı sonucu eklenecek)
                     }
-            
+
                 }
 
                 if (_SiparisTarihiIlk != DateTime.MinValue)

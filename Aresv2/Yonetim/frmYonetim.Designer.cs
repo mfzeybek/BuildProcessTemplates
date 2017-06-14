@@ -31,74 +31,142 @@
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colZaman = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYerAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel2.SuspendLayout();
+            this.dockPanel1.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.gridControl1.Location = new System.Drawing.Point(16, 25);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(1);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(404, 359);
+            this.gridControl1.Size = new System.Drawing.Size(1832, 386);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPersonelAdi,
+            this.colZaman,
+            this.colYerAdi});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // labelControl1
+            // colPersonelAdi
             // 
-            this.labelControl1.Location = new System.Drawing.Point(16, 10);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(1);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(43, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Siparişler";
-            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
+            this.colPersonelAdi.Caption = "PersonelAdi";
+            this.colPersonelAdi.FieldName = "PersonelAdi";
+            this.colPersonelAdi.Name = "colPersonelAdi";
+            this.colPersonelAdi.Visible = true;
+            this.colPersonelAdi.VisibleIndex = 0;
             // 
-            // labelControl2
+            // colZaman
             // 
-            this.labelControl2.Location = new System.Drawing.Point(474, 10);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(1);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(23, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Kasa";
+            this.colZaman.Caption = "Zaman";
+            this.colZaman.DisplayFormat.FormatString = "T";
+            this.colZaman.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colZaman.FieldName = "Zaman";
+            this.colZaman.Name = "colZaman";
+            this.colZaman.Visible = true;
+            this.colZaman.VisibleIndex = 1;
+            // 
+            // colYerAdi
+            // 
+            this.colYerAdi.Caption = "colYerAdi";
+            this.colYerAdi.FieldName = "YerAdi";
+            this.colYerAdi.Name = "colYerAdi";
+            this.colYerAdi.Visible = true;
+            this.colYerAdi.VisibleIndex = 2;
+            // 
+            // dockManager1
+            // 
+            this.dockManager1.Form = this;
+            this.dockManager1.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel2});
+            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel1});
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl",
+            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
+            "DevExpress.XtraBars.Navigation.TileNavPane",
+            "DevExpress.XtraBars.TabFormControl"});
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Float;
+            this.dockPanel2.FloatLocation = new System.Drawing.Point(414, 152);
+            this.dockPanel2.FloatSize = new System.Drawing.Size(51, 30);
+            this.dockPanel2.ID = new System.Guid("8be2d8c5-d3ce-4645-9429-ead55b377460");
+            this.dockPanel2.Location = new System.Drawing.Point(-32768, -32768);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel2.SavedIndex = 1;
+            this.dockPanel2.Size = new System.Drawing.Size(51, 30);
+            this.dockPanel2.Text = "dockPanel2";
+            this.dockPanel2.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+            this.dockPanel2.Click += new System.EventHandler(this.dockPanel2_Click);
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Location = new System.Drawing.Point(8, 30);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(35, 0);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
+            this.dockPanel1.FloatSize = new System.Drawing.Size(355, 365);
+            this.dockPanel1.FloatVertical = true;
+            this.dockPanel1.ID = new System.Guid("5950e414-0315-4cc6-b5fe-4f9195917b4b");
+            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 445);
+            this.dockPanel1.Size = new System.Drawing.Size(1848, 445);
+            this.dockPanel1.Text = "dockPanel1";
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.gridControl1);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(8, 46);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(1832, 386);
+            this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl2
             // 
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.gridControl2.Location = new System.Drawing.Point(449, 489);
+            this.gridControl2.Location = new System.Drawing.Point(278, 473);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(1);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(437, 359);
-            this.gridControl2.TabIndex = 1;
+            this.gridControl2.Size = new System.Drawing.Size(1084, 381);
+            this.gridControl2.TabIndex = 2;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -107,121 +175,42 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             // 
-            // gridControl3
-            // 
-            this.gridControl3.Location = new System.Drawing.Point(16, 414);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(404, 329);
-            this.gridControl3.TabIndex = 3;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 397);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(1);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(68, 13);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Satılan Stoklar";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(484, 439);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(1);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(350, 13);
-            this.labelControl4.TabIndex = 2;
-            this.labelControl4.Text = "Özellikle satışını takip etmek istediğin bir stok varsa burada bildirebilmelisin";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(599, 228);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(1);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(157, 13);
-            this.labelControl5.TabIndex = 2;
-            this.labelControl5.Text = "Otomatik olarak güncellenebilmeli";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(484, 547);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(1);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(244, 13);
-            this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "Aynı zamanda kritik stok a düşenleride buradan gör";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(745, 462);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "simpleButton1";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // documentManager1
-            // 
-            this.documentManager1.ContainerControl = this;
-            this.documentManager1.View = this.tabbedView1;
-            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
-            this.tabbedView1});
-            // 
             // frmYonetim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 744);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.gridControl3);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
+            this.ClientSize = new System.Drawing.Size(1848, 1431);
             this.Controls.Add(this.gridControl2);
-            this.Controls.Add(this.gridControl1);
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Controls.Add(this.dockPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmYonetim";
             this.Text = "frmYonetim";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmYonetim_FormClosing);
             this.Load += new System.EventHandler(this.frmYonetim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel1.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonelAdi;
+        private DevExpress.XtraGrid.Columns.GridColumn colZaman;
+        private DevExpress.XtraGrid.Columns.GridColumn colYerAdi;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.GridControl gridControl3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
-        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
     }
 }
