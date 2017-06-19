@@ -129,7 +129,7 @@ namespace KasaSatis
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            OKCEntegrasyonu = OkcEntegrasyonTipi.TamEntegrasyon;
+            OKCEntegrasyonu = OkcEntegrasyonTipi.EntegrasyonYok;
 
             if (OKCEntegrasyonu != OkcEntegrasyonTipi.EntegrasyonYok) // yani entegrasyon bir şekilde varsa
             {
@@ -171,6 +171,11 @@ namespace KasaSatis
 
             //txtFaturaTutari.DataBindings.Add("EditValue", gcSatislar.DataSource, "FaturaTutari");
             Satislar.dt_threadSatislar.RowDeleted += dt_threadSatislar_RowDeleted;
+
+            BirimleriGetir();
+            repositoryItemLookUpEdit_AltBirim.DataSource = dtBirimler;
+            repositoryItemLookUpEdit_AltBirim.DisplayMember = "BirimAdi";
+            repositoryItemLookUpEdit_AltBirim.ValueMember = "BirimID";
 
             //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             //Satislar.OdemesiAlinanSonKirkSatis(SqlConnections.GetBaglanti(), TrGenel);
@@ -312,6 +317,7 @@ namespace KasaSatis
 
         private void frmKasaOdeme_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
         {
+
             //Satislar.ThreadiKApat();
             Application.Exit();
             Application.ExitThread();
@@ -319,7 +325,13 @@ namespace KasaSatis
 
         private void frmKasaOdeme_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            try
+            {
+                ThOkcISlemleri.Abort();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void btnMusteriUrunAra_Click(object sender, EventArgs e)
@@ -426,6 +438,28 @@ namespace KasaSatis
         }
 
 
+        DataTable dtBirimler;
+        public void BirimleriGetir()
+        {
+
+            try
+            {
+                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                clsTablolar.Stok.csStokBirimTanimlari BirimTanimlari = new clsTablolar.Stok.csStokBirimTanimlari();
+                BirimTanimlari.BirimDoldur(SqlConnections.GetBaglanti(), TrGenel);
+                dtBirimler = BirimTanimlari.dt;
+                TrGenel.Commit();
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    TrGenel.Rollback();
+                }
+                catch (Exception) { }
+            }
+
+        }
 
         public void StokEkle(int StokID) // ama nereye ekliyecek mevcut müşteriye mi yeni müşteriye mi
         {
@@ -786,7 +820,8 @@ namespace KasaSatis
                 frm.labelControl1.Text = "Seçili Ürün İçin Miktar Girin";
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
                 {
-                    gvSatisHareketleri.SetFocusedRowCellValue(colMiktar, Convert.ToDecimal(frm.textEdit1.EditValue));
+                    decimal KatSayi = (decimal)gvSatisHareketleri.GetFocusedRowCellValue(colKatSayi);
+                    gvSatisHareketleri.SetFocusedRowCellValue(colMiktar, KatSayi * Convert.ToDecimal(frm.textEdit1.EditValue));
                 }
             }
         }
@@ -829,7 +864,13 @@ namespace KasaSatis
                     MessageBox.Show("Bu ürünün Miktarı Değiştirilemez");
                     return;
                 }
-                gvSatisHareketleri.SetFocusedRowCellValue(colAltBirimMiktar, (decimal)gvSatisHareketleri.GetFocusedRowCellValue(colAltBirimMiktar) + 1);
+
+                decimal KatSayi = (decimal)gvSatisHareketleri.GetFocusedRowCellValue(colKatSayi);
+                //decimal 
+
+                gvSatisHareketleri.SetFocusedRowCellValue(colMiktar, KatSayi * ((decimal)gvSatisHareketleri.GetFocusedRowCellValue(colAltBirimMiktar) + 1));
+
+
             }
             catch (Exception exx)
             {

@@ -191,5 +191,46 @@ where HizliSatistaGozukecekMi = 1 and Fatura.SilindiMi = 0  ", _Baglanti))
             else
             { checkButton1.Image = clsTablolar.Properties.Resources.cancel_32x32; }
         }
+
+        private void btnAyir_Click(object sender, EventArgs e)
+        {
+            // Ayırma işlemi hareketleri
+
+            if (!gvSatisHareketleri.IsMultiSelect)
+            {
+                gvSatisHareketleri.OptionsSelection.MultiSelect = true;
+                gvSatisHareketleri.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+                //barButtonItem_HepsiniSec.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //layoutView1.OptionsSelection.MultiSelect = true;
+            }
+            else
+            {
+                ahandaYeniSatis();
+
+                decimal Miktar = 0;
+                decimal Fiyat = 0;
+                decimal StokIsk1 = 0;
+                foreach (int item in gvSatisHareketleri.GetSelectedRows())
+                {
+
+                    Miktar = (decimal)gvSatisHareketleri.GetRowCellValue(item, colMiktar);
+                    Fiyat = (decimal)gvSatisHareketleri.GetRowCellValue(item, colAnaBirimFiyat);
+                    StokIsk1 = (decimal)gvSatisHareketleri.GetRowCellValue(item, colStokIskonto1);
+
+                    StokEkle((int)gvSatisHareketleri.GetFocusedRowCellValue(colStokID), Miktar, Fiyat, StokIsk1);
+                }
+
+                gvSatisHareketleri.OptionsSelection.MultiSelect = false;
+                //barButtonItem_HepsiniSec.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //gvStokListesi.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.RowSelect;
+                //layoutView1.OptionsSelection.MultiSelect = false;
+            }
+        }
+        public delegate bool ahandaStokEkle(int StokID, decimal Miktar, decimal KdvDahilStokFiyat, decimal StokIsk1Yuzde);
+        public ahandaStokEkle StokEkle;
+
+        public delegate void YeniSatis();
+        public YeniSatis ahandaYeniSatis;
+
     }
 }

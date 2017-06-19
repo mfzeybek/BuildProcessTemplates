@@ -13,7 +13,6 @@ namespace Aresv2
         [STAThread]
         static void Main()
         {
-
             DevExpress.UserSkins.BonusSkins.Register();
             DevExpress.Skins.SkinManager.EnableFormSkins();
             Application.EnableVisualStyles();

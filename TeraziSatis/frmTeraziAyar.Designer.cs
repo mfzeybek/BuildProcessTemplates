@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtTeraziModeli = new DevExpress.XtraEditors.TextEdit();
             this.frmTeraziAyarlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
@@ -50,7 +49,7 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
             ((System.ComponentModel.ISupportInitialize)(this.txtTeraziModeli.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmTeraziAyarlayoutControl1ConvertedLayout)).BeginInit();
             this.frmTeraziAyarlayoutControl1ConvertedLayout.SuspendLayout();
@@ -74,10 +73,10 @@
             // 
             // txtTeraziModeli
             // 
-            this.txtTeraziModeli.Location = new System.Drawing.Point(228, 48);
-            this.txtTeraziModeli.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTeraziModeli.Location = new System.Drawing.Point(123, 36);
+            this.txtTeraziModeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTeraziModeli.Name = "txtTeraziModeli";
-            this.txtTeraziModeli.Size = new System.Drawing.Size(498, 32);
+            this.txtTeraziModeli.Size = new System.Drawing.Size(234, 20);
             this.txtTeraziModeli.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.txtTeraziModeli.TabIndex = 0;
             // 
@@ -94,80 +93,77 @@
             this.frmTeraziAyarlayoutControl1ConvertedLayout.Controls.Add(this.btnKaydet);
             this.frmTeraziAyarlayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmTeraziAyarlayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
-            this.frmTeraziAyarlayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(4);
+            this.frmTeraziAyarlayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.frmTeraziAyarlayoutControl1ConvertedLayout.Name = "frmTeraziAyarlayoutControl1ConvertedLayout";
             this.frmTeraziAyarlayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(793, 232, 574, 630);
             this.frmTeraziAyarlayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.frmTeraziAyarlayoutControl1ConvertedLayout.Size = new System.Drawing.Size(738, 696);
+            this.frmTeraziAyarlayoutControl1ConvertedLayout.Size = new System.Drawing.Size(369, 362);
             this.frmTeraziAyarlayoutControl1ConvertedLayout.TabIndex = 8;
             // 
             // lookUpEdit1
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(228, 12);
-            this.lookUpEdit1.Margin = new System.Windows.Forms.Padding(4);
+            this.lookUpEdit1.Location = new System.Drawing.Point(123, 12);
+            this.lookUpEdit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(498, 32);
+            this.lookUpEdit1.Size = new System.Drawing.Size(234, 20);
             this.lookUpEdit1.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.lookUpEdit1.TabIndex = 9;
             // 
             // comboBoxEdit2
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(228, 192);
-            this.comboBoxEdit2.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxEdit2.Location = new System.Drawing.Point(123, 132);
             this.comboBoxEdit2.Name = "comboBoxEdit2";
             this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(498, 32);
+            this.comboBoxEdit2.Size = new System.Drawing.Size(234, 20);
             this.comboBoxEdit2.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.comboBoxEdit2.TabIndex = 6;
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(228, 156);
-            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(123, 108);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(498, 32);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(234, 20);
             this.comboBoxEdit1.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.comboBoxEdit1.TabIndex = 6;
             // 
             // txtTeraziBaglantiNok
             // 
-            this.txtTeraziBaglantiNok.Location = new System.Drawing.Point(228, 84);
-            this.txtTeraziBaglantiNok.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTeraziBaglantiNok.Location = new System.Drawing.Point(123, 60);
+            this.txtTeraziBaglantiNok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTeraziBaglantiNok.Name = "txtTeraziBaglantiNok";
-            this.txtTeraziBaglantiNok.Size = new System.Drawing.Size(498, 32);
+            this.txtTeraziBaglantiNok.Size = new System.Drawing.Size(234, 20);
             this.txtTeraziBaglantiNok.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.txtTeraziBaglantiNok.TabIndex = 0;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 356);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 211);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(714, 89);
+            this.simpleButton1.Size = new System.Drawing.Size(345, 36);
             this.simpleButton1.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Klavye";
             // 
             // txtConnStr
             // 
-            this.txtConnStr.Location = new System.Drawing.Point(12, 120);
-            this.txtConnStr.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConnStr.Location = new System.Drawing.Point(12, 84);
+            this.txtConnStr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtConnStr.Name = "txtConnStr";
-            this.txtConnStr.Size = new System.Drawing.Size(714, 32);
+            this.txtConnStr.Size = new System.Drawing.Size(345, 20);
             this.txtConnStr.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.txtConnStr.TabIndex = 5;
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(12, 449);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton2.Location = new System.Drawing.Point(12, 251);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(714, 79);
+            this.simpleButton2.Size = new System.Drawing.Size(345, 32);
             this.simpleButton2.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.simpleButton2.TabIndex = 2;
             this.simpleButton2.Text = "Kapat";
@@ -175,10 +171,10 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(12, 532);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4);
+            this.btnKaydet.Location = new System.Drawing.Point(12, 287);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(714, 152);
+            this.btnKaydet.Size = new System.Drawing.Size(345, 63);
             this.btnKaydet.StyleController = this.frmTeraziAyarlayoutControl1ConvertedLayout;
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
@@ -201,65 +197,65 @@
             this.emptySpaceItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(738, 696);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(369, 362);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.comboBoxEdit2;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 180);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem1.Name = "comboBoxEdit2item";
-            this.layoutControlItem1.Size = new System.Drawing.Size(718, 36);
+            this.layoutControlItem1.Size = new System.Drawing.Size(349, 24);
             this.layoutControlItem1.Text = "Yazıcı 2";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(213, 25);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(108, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.comboBoxEdit1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem2.Name = "comboBoxEdit1item";
-            this.layoutControlItem2.Size = new System.Drawing.Size(718, 36);
+            this.layoutControlItem2.Size = new System.Drawing.Size(349, 24);
             this.layoutControlItem2.Text = "Yazici 1";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(213, 25);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(108, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtTeraziBaglantiNok;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "txtTeraziBaglantiNokitem";
-            this.layoutControlItem4.Size = new System.Drawing.Size(718, 36);
+            this.layoutControlItem4.Size = new System.Drawing.Size(349, 24);
             this.layoutControlItem4.Text = "Terazi Baglanti Noktası";
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(213, 25);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(108, 13);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtTeraziModeli;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem5.Name = "txtTeraziModeliitem";
-            this.layoutControlItem5.Size = new System.Drawing.Size(718, 36);
+            this.layoutControlItem5.Size = new System.Drawing.Size(349, 24);
             this.layoutControlItem5.Text = "Terazi Modeli";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(213, 25);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(108, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.txtConnStr;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem7.Name = "txtConnStritem";
-            this.layoutControlItem7.Size = new System.Drawing.Size(718, 36);
+            this.layoutControlItem7.Size = new System.Drawing.Size(349, 24);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.simpleButton2;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 437);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 239);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(66, 36);
             this.layoutControlItem8.Name = "simpleButton2item";
-            this.layoutControlItem8.Size = new System.Drawing.Size(718, 83);
+            this.layoutControlItem8.Size = new System.Drawing.Size(349, 36);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -267,10 +263,10 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnKaydet;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 520);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 275);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(76, 36);
             this.layoutControlItem9.Name = "btnKaydetitem";
-            this.layoutControlItem9.Size = new System.Drawing.Size(718, 156);
+            this.layoutControlItem9.Size = new System.Drawing.Size(349, 67);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
@@ -278,10 +274,10 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButton1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 344);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 199);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(72, 36);
             this.layoutControlItem6.Name = "simpleButton1item";
-            this.layoutControlItem6.Size = new System.Drawing.Size(718, 93);
+            this.layoutControlItem6.Size = new System.Drawing.Size(349, 40);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
@@ -291,27 +287,27 @@
             this.layoutControlItem3.Control = this.lookUpEdit1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(718, 36);
+            this.layoutControlItem3.Size = new System.Drawing.Size(349, 24);
             this.layoutControlItem3.Text = "Terizi No";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(213, 25);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(108, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 216);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 144);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(718, 128);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(349, 55);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmTeraziAyar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 696);
+            this.ClientSize = new System.Drawing.Size(369, 362);
             this.Controls.Add(this.frmTeraziAyarlayoutControl1ConvertedLayout);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmTeraziAyar";
             this.Text = "frmTeraziAyar";
             this.Load += new System.EventHandler(this.frmTeraziAyar_Load);

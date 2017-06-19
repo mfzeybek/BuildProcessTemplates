@@ -142,27 +142,34 @@ namespace clsTablolar.Siparis
         {
             if (SiparisAramaID == -1)
             {
-                _CariTanimi = string.Empty; // string alanlar için "" (boş) gelmişse oralarda arama yapmayacak
-                _GrubuID = -1; // int için olan alanlar yani ID gerektiren alanlarda -1 gelmişse oralarda arama yapmaycak
-                _SiparisTipi = -1;
-                _HizliSatistaDegisiklikYapmaIzniVarMi = -1;
-                _HizliSatistaGozukecekMi = -1;
-                //_SiparisDurumTanimID = ;
-                _SiparisBarkodNu = string.Empty;
-                _MuhasebelenmeDrumu = new object[0];
-                _IlkFaturaTarihi = DateTime.MinValue;
-                _SiparisDurumTanimID = null;
-                _SiparisTarihiIlk = DateTime.MinValue;
-                _SiparisTarihiIkinci = DateTime.MinValue;
-                _TeslimTarihiIlk = DateTime.MinValue;
-                _TeslimTarihiIkinci = DateTime.MinValue;
-
-                dt_SiparisListesi = new DataTable();
+                ahanda();
             }
         }
 
+        void ahanda()
+        {
+            _CariTanimi = string.Empty; // string alanlar için "" (boş) gelmişse oralarda arama yapmayacak
+            _GrubuID = -1; // int için olan alanlar yani ID gerektiren alanlarda -1 gelmişse oralarda arama yapmaycak
+            _SiparisTipi = -1;
+            _HizliSatistaDegisiklikYapmaIzniVarMi = -1;
+            _HizliSatistaGozukecekMi = -1;
+            //_SiparisDurumTanimID = ;
+            _SiparisBarkodNu = string.Empty;
+            _MuhasebelenmeDrumu = new object[0];
+            _IlkFaturaTarihi = DateTime.MinValue;
+            _SiparisDurumTanimID = null;
+            _SiparisTarihiIlk = DateTime.MinValue;
+            _SiparisTarihiIkinci = DateTime.MinValue;
+            _TeslimTarihiIlk = DateTime.MinValue;
+            _TeslimTarihiIkinci = DateTime.MinValue;
+
+            dt_SiparisListesi = new DataTable();
+        }
+
         public csSiparisArama()
-        { }
+        {
+            ahanda();
+        }
 
         string MuhasebelendimiSorgusu;
 

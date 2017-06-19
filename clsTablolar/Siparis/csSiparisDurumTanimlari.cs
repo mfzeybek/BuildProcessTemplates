@@ -24,6 +24,8 @@ namespace clsTablolar.Siparis
                 }
             }
         }
+
+        //Hepsi Satırı filtreleme yaparken belli tanıma göre değil hepsi diye bir satır ile getiriyor
         public DataTable Dt_Getir_HepsiSatiriIleBirlikte(SqlConnection Baglanti, SqlTransaction Tr)
         {
             dt_Getir(Baglanti, Tr);

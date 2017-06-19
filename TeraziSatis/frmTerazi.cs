@@ -255,102 +255,117 @@ namespace TeraziSatis
             }
             Exception exxx = new Exception();
         }
-
+        clsTablolar.EvrakIliski.csEvrakIliski evrakIliski;
         public void SiparisiSatisaAktarma(int SiparisID)
         {
-            clsTablolar.EvrakIliski.csEvrakIliski evrakIliski = new clsTablolar.EvrakIliski.csEvrakIliski();
-
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            if (evrakIliski.SiparisFaturayaAktarilmisMi(SqlConnections.GetBaglanti(), TrGenel, SiparisID) == clsTablolar.EvrakIliski.csEvrakIliski.SiparisinFaturayaAktarilmaDurumu.Faturalandi)
-            {
-                TrGenel.Commit();
-                MesajGoster("Daha Önce Satışa Aktarılmış");
-                return;
-            }
-            else
-                TrGenel.Commit();
+            if (Satislarv2.SiparisiSatisaAktarma(SiparisID, SqlConnections.GetBaglanti(), TrGenel, CariKart, Hareketler) == clsTablolar.TeraziSatisClaslari.csSatislarV2.SiparisDonenBilgi.SiparisDahaOnceSatisaAktarilmis)
+                MessageBox.Show("Sipariş Daha önce aktarılmış");
 
-            lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
-            {
-                using (clsTablolar.Siparis.csSiparis Siparis = new clsTablolar.Siparis.csSiparis(SqlConnections.GetBaglanti(), TrGenel, SiparisID))
-                {
+            TrGenel.Commit();
 
-                    //CariGetir(Siparis.CariID);
-                    Satislarv2.YeniKayitAc(CariKart);
+            gvSatislar.MoveLast();
+            gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
 
-                    gvSatislar.MoveLast();
-                    gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
+            #region bunlar eski şimdi bunları saitsarv2 nin içine aldım
 
-                    int SonIndexNo = Satislarv2.dt_threadSatislar.Rows.Count - 1;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariID"] = Siparis.CariID;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariKod"] = Siparis.CariKod;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariTanim"] = Siparis.CariTanim;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["VergiDairesi"] = Siparis.VergiDairesi;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["VergiNo"] = Siparis.VergiNo;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Adres"] = Siparis.Adres;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Il"] = Siparis.Il;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Ilce"] = Siparis.Ilce;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
+            //evrakIliski = new clsTablolar.EvrakIliski.csEvrakIliski();
 
+            //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+            //if (evrakIliski.SiparisFaturayaAktarilmisMi(SqlConnections.GetBaglanti(), TrGenel, SiparisID) == clsTablolar.EvrakIliski.csEvrakIliski.SiparisinFaturayaAktarilmaDurumu.Faturalandi)
+            //{
+            //    TrGenel.Commit();
+            //    MesajGoster("Daha Önce Satışa Aktarılmış");
+            //    return;
+            //}
+            //else
+            //    TrGenel.Commit();
 
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["SatisElemaniID"] = Siparis.SatisElemaniID;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Toplam_Iskontosuz_Kdvsiz"] = Siparis.Toplam_Iskontosuz_Kdvsiz;
+            //lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
+            //{
+            //    using (clsTablolar.Siparis.csSiparis Siparis = new clsTablolar.Siparis.csSiparis(SqlConnections.GetBaglanti(), TrGenel, SiparisID))
+            //    {
 
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariIskontoToplami"] = Siparis.CariIskontoToplami;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["StokIskontoToplami"] = Siparis.StokIskontoToplami;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["ToplamIndirim"] = Siparis.ToplamIndirim;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["ToplamKdv"] = Siparis.ToplamKdv;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["IskontoluToplam"] = Siparis.IskontoluToplam;
-                    Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaTutari"] = Siparis.SiparisTutari;
+            //        //CariGetir(Siparis.CariID);
+            //        Satislarv2.YeniKayitAc(CariKart);
 
-                    clsTablolar.Siparis.csSiparisHareket SiparisHareketi = new clsTablolar.Siparis.csSiparisHareket(SqlConnections.GetBaglanti(), TrGenel, SiparisID);
-                    for (int i = 0; i < SiparisHareketi.dt_SiparisHareketleri.Rows.Count; i++)
-                    {
-                        if (StokEkle((int)SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokID"]))
-                        {
-                            int HareketSonIndexNo = Hareketler.dt_FaturaHareketleri.Rows.Count - 1;
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FaturaHareketStokAdi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SiparisHareketStokAdi"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Miktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Miktar"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokAnaBirimID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokAnaBirimID"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AnaBirimFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AnaBirimFiyat"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2ID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2ID"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KatSayi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KatSayi"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2Fiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2Fiyat"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Kdv"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Kdv"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Toplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Toplam"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto1"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto2"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto3"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto1"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto2"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto3"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["IskontoluFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["IskontoluFiyat"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirIndirimliToplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirIndirimliToplam"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirAciklama"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirAciklama"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["DepoID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["DepoID"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariToplamIskonto"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokToplamIskonto"];
+            //        gvSatislar.MoveLast();
+            //        gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
+
+            //        int SonIndexNo = Satislarv2.dt_threadSatislar.Rows.Count - 1;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariID"] = Siparis.CariID;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariKod"] = Siparis.CariKod;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariTanim"] = Siparis.CariTanim;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["VergiDairesi"] = Siparis.VergiDairesi;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["VergiNo"] = Siparis.VergiNo;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Adres"] = Siparis.Adres;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Il"] = Siparis.Il;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Ilce"] = Siparis.Ilce;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
 
 
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["ToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["ToplamIskonto"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KdvTutari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KdvTutari"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AltBirimMiktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AltBirimMiktar"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FireMiktari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["FireMiktari"];
-                            Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["BirlesikUrunHareketID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["BirlesikUrunHareketID"];
-                        }
-                    }
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["SatisElemaniID"] = Siparis.SatisElemaniID;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["Toplam_Iskontosuz_Kdvsiz"] = Siparis.Toplam_Iskontosuz_Kdvsiz;
 
-                    Hesapla.AltToplamlariHesapla();
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["CariIskontoToplami"] = Siparis.CariIskontoToplami;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["StokIskontoToplami"] = Siparis.StokIskontoToplami;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["ToplamIndirim"] = Siparis.ToplamIndirim;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["ToplamKdv"] = Siparis.ToplamKdv;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["IskontoluToplam"] = Siparis.IskontoluToplam;
+            //        Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaTutari"] = Siparis.SiparisTutari;
 
-                    evrakIliski.FaturaEvrakIlıski_BosSatirEkle();
-                    //evrakIliski.dt.Rows[0][""] = 
-                    //evrakIliski.FaturadanEvrakIliskiGetir(SqlConnections.GetBaglanti(), TrGenel, (int)Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
-                    evrakIliski.dt.Rows[0]["SiparisID"] = SiparisID;
-                    evrakIliski.FaturaIcinEvrakIliskiKaydet(SqlConnections.GetBaglanti(), TrGenel, (int)Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
-                }
-                cbtnTerazidekiSabitMiktariStokaAktar.Checked = false;
-            }
+            //        clsTablolar.Siparis.csSiparisHareket SiparisHareketi = new clsTablolar.Siparis.csSiparisHareket(SqlConnections.GetBaglanti(), TrGenel, SiparisID);
+            //        for (int i = 0; i < SiparisHareketi.dt_SiparisHareketleri.Rows.Count; i++)
+            //        {
+            //            if (StokEkle((int)SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokID"]))
+            //            {
+            //                int HareketSonIndexNo = Hareketler.dt_FaturaHareketleri.Rows.Count - 1;
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FaturaHareketStokAdi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SiparisHareketStokAdi"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Miktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Miktar"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokAnaBirimID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokAnaBirimID"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AnaBirimFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AnaBirimFiyat"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2ID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2ID"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KatSayi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KatSayi"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2Fiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2Fiyat"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Kdv"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Kdv"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Toplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Toplam"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto1"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto2"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto3"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto1"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto2"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto3"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["IskontoluFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["IskontoluFiyat"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirIndirimliToplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirIndirimliToplam"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirAciklama"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirAciklama"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["DepoID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["DepoID"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariToplamIskonto"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokToplamIskonto"];
+
+
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["ToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["ToplamIskonto"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KdvTutari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KdvTutari"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AltBirimMiktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AltBirimMiktar"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FireMiktari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["FireMiktari"];
+            //                Hareketler.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["BirlesikUrunHareketID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["BirlesikUrunHareketID"];
+            //            }
+            //        }
+
+
+
+            //        evrakIliski.FaturaEvrakIlıski_BosSatirEkle();
+            //        //evrakIliski.dt.Rows[0][""] = 
+            //        //evrakIliski.FaturadanEvrakIliskiGetir(SqlConnections.GetBaglanti(), TrGenel, (int)Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
+            //        evrakIliski.dt.Rows[0]["SiparisID"] = SiparisID;
+            //        evrakIliski.FaturaIcinEvrakIliskiKaydet(SqlConnections.GetBaglanti(), TrGenel, (int)Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
+            //    }
+
+            //}
+            #endregion
+
+            Hesapla.AltToplamlariHesapla();
+            cbtnTerazidekiSabitMiktariStokaAktar.Checked = false;
         }
 
         DataTable dtBirimler;
@@ -504,6 +519,28 @@ namespace TeraziSatis
 
         #region Stok Ekleme vb İşlemleri
 
+        public bool StokEkleAyrinti(int StokID, decimal Miktar, decimal AnaBirimFiyat, decimal StokIsk1Yuzde) // ama nereye ekliyecek mevcut müşteriye mi yeni müşteriye mi
+        {
+            try
+            {
+                StokEkle(StokID);
+
+
+                Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1][colAnaBirimFiyat.FieldName] = AnaBirimFiyat;
+                //Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1][colMiktar.FieldName] = Miktar;
+                Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1][colStokIskonto1.FieldName] = StokIsk1Yuzde;
+
+
+                gvSatisHareketleri.SetFocusedRowCellValue("Miktar", Miktar); // Bu AltBirim Aslında
+                return true;
+            }
+            catch (Exception exx)
+            {
+                csTeraziLogs.LogYaz(csTeraziLogs.Grup.Grupsuz, "Ürün bulunamadı\nVeya fiyatı yok");
+                MesajGoster("Ürün bulunamadı\nVeya fiyatı yok");
+                return false;
+            }
+        }
 
         public bool StokEkle(int StokID) // ama nereye ekliyecek mevcut müşteriye mi yeni müşteriye mi
         {
@@ -567,7 +604,7 @@ namespace TeraziSatis
                         Hareketler.dt_FaturaHareketleri.Rows[SonSatirIndex]["BirlesikUrunHareketID"] = -2; // -2 verildiği zaman ne birleşik ürün veya birleşik ürünün alt ürünleri değil manasına gelsin
 
 
-                        if (Stok.AnaBirimID == 2)
+                        if (Stok.AnaBirimID == 2) // he bu eğer ana birimi kg teraziden tartılarak alınabilsin gibi birşey, var ancak. Alt birime göre teraziden tartılabilmesi gerekiyor.
                         {
                             //lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
                             gvSatisHareketleri.SetRowCellValue(SonSatirRowHandle, colAltBirimMiktar, 0);
@@ -632,6 +669,10 @@ namespace TeraziSatis
 
         private void btnYeniMusteri_Click(object sender, EventArgs e)
         {// yeni satış demek yeni müşteri demek yeni fatura demek yeni fatura hareketi demek
+            YeniSatis();
+        }
+        public void YeniSatis()
+        {
             csTeraziLogs.LogYaz(csTeraziLogs.Grup.Grupsuz, "Yeni Müşteri Ye Tıklatıldı");
             lock (Satislarv2.SadeceSatislariGetirmeyiDurdurmakIstediginde_Kilitle)
             {
@@ -839,10 +880,10 @@ namespace TeraziSatis
                                 //    Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1]["FireVarMi"] = 1;
                                 //}
 
+
                                 Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1]["KatSayi"] = IdveMiktar.Katsayi;
                                 Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1]["Birim2ID"] = IdveMiktar.AltBirimID;
                                 gvSatisHareketleri.SetFocusedRowCellValue("Miktar", IdveMiktar.Miktar); // Bu AltBirim Aslında
-
                             }
                             catch (Exception hata)
                             {
@@ -1519,7 +1560,7 @@ ne hatısı diye sorarsam hamısına hatası de
                 {
                     if (DialogResult.Yes == MessageBox.Show(this, "Seçili ürünü silmek istediğinden emin misin hamısna", "Dikkat Hamısına", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
                     {
-                        gvSatisHareketleri.DeleteSelectedRows();
+                        SeciliHareketiSil();
                         Hesapla.AltToplamlariHesapla();
                     }
                 }
@@ -1533,6 +1574,11 @@ ne hatısı diye sorarsam hamısına hatası de
                 KaydedileBilirMi = true;
                 btnKaydet_Click(null, null);
             }
+        }
+
+        public void SeciliHareketiSil()
+        {
+            gvSatisHareketleri.DeleteSelectedRows();
         }
 
         private void gcSatisHareketleri_DoubleClick(object sender, EventArgs e)
@@ -2227,6 +2273,9 @@ ne hatısı diye sorarsam hamısına hatası de
 
                         formState.Maximize(frmSatislar);
                         frmSatislar.WindowState = FormWindowState.Maximized;
+                        frmSatislar.StokEkle = StokEkleAyrinti;
+                        frmSatislar.ahandaYeniSatis = YeniSatis;
+
                         if (frmSatislar.ShowDialog(this) == System.Windows.Forms.DialogResult.Yes)
                         {
                             KaydedileBilirMi = false;

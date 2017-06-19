@@ -295,8 +295,8 @@
             // btnSonrakiSayfa
             // 
             this.btnSonrakiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSonrakiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.Image")));
-            this.btnSonrakiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnSonrakiSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.ImageOptions.Image")));
+            this.btnSonrakiSayfa.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnSonrakiSayfa.Location = new System.Drawing.Point(1053, 4);
             this.btnSonrakiSayfa.Name = "btnSonrakiSayfa";
             this.btnSonrakiSayfa.Size = new System.Drawing.Size(62, 65);
@@ -306,8 +306,8 @@
             // btnOncekiSayfa
             // 
             this.btnOncekiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
-            this.btnOncekiSayfa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnOncekiSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.ImageOptions.Image")));
+            this.btnOncekiSayfa.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnOncekiSayfa.Location = new System.Drawing.Point(986, 4);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
             this.btnOncekiSayfa.Size = new System.Drawing.Size(62, 65);
@@ -777,8 +777,8 @@
             this.checkButton_OdemesiTamamlanmis.Appearance.Options.UseFont = true;
             this.checkButton_OdemesiTamamlanmis.Appearance.Options.UseTextOptions = true;
             this.checkButton_OdemesiTamamlanmis.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.checkButton_OdemesiTamamlanmis.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
-            this.checkButton_OdemesiTamamlanmis.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.checkButton_OdemesiTamamlanmis.ImageOptions.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
+            this.checkButton_OdemesiTamamlanmis.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.checkButton_OdemesiTamamlanmis.Location = new System.Drawing.Point(10, 2);
             this.checkButton_OdemesiTamamlanmis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkButton_OdemesiTamamlanmis.Name = "checkButton_OdemesiTamamlanmis";
@@ -793,7 +793,7 @@
             this.checkButton_OdemesiTamamlanmamis.Appearance.Options.UseFont = true;
             this.checkButton_OdemesiTamamlanmamis.Appearance.Options.UseTextOptions = true;
             this.checkButton_OdemesiTamamlanmamis.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.checkButton_OdemesiTamamlanmamis.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
+            this.checkButton_OdemesiTamamlanmamis.ImageOptions.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
             this.checkButton_OdemesiTamamlanmamis.Location = new System.Drawing.Point(157, 2);
             this.checkButton_OdemesiTamamlanmamis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkButton_OdemesiTamamlanmamis.Name = "checkButton_OdemesiTamamlanmamis";
@@ -820,6 +820,7 @@
             this.btnAyir.Size = new System.Drawing.Size(124, 28);
             this.btnAyir.TabIndex = 60;
             this.btnAyir.Text = "Ayır";
+            this.btnAyir.Click += new System.EventHandler(this.btnAyir_Click);
             // 
             // checkButton1
             // 
@@ -827,8 +828,8 @@
             this.checkButton1.Appearance.Options.UseFont = true;
             this.checkButton1.Appearance.Options.UseTextOptions = true;
             this.checkButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.checkButton1.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
-            this.checkButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.checkButton1.ImageOptions.Image = global::clsTablolar.Properties.Resources.cancel_32x32;
+            this.checkButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.checkButton1.Location = new System.Drawing.Point(438, 4);
             this.checkButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkButton1.Name = "checkButton1";

@@ -158,8 +158,15 @@ namespace Aresv2.Siparis
                 lkpSiparisGrup.Properties.DisplayMember = "SiparisGrupAdi";
                 lkpSiparisGrup.Properties.ValueMember = "SiparisGrupID";
 
+                clsTablolar.Siparis.csSiparisDurumTanimlari DurumTanimlari = new clsTablolar.Siparis.csSiparisDurumTanimlari();
+                lkpSiparisDurumu.Properties.DataSource = DurumTanimlari.dt_Getir(SqlConnections.GetBaglanti(), trGenel);
+
                 trGenel.Commit();
                 SatisElemaniDoldur();
+
+
+                lkpSiparisDurumu.Properties.DisplayMember = "SiparisDurumTanimAdi";
+                lkpSiparisDurumu.Properties.ValueMember = "SiparisDurumTanimID";
 
                 trGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 EvrakIliski.SiparistenEvrakIliskiGetir(SqlConnections.GetBaglanti(), trGenel, Siparis.SiparisID);
@@ -203,6 +210,8 @@ namespace Aresv2.Siparis
             Siparis.Aciklama = memoNot.EditValue.ToString();
             Siparis.DepoID = Convert.ToInt32(lkpDepo.EditValue);
             Siparis.KullanilanFiyatTanimID = Convert.ToInt32(lkpKullanilanFiyatTanimi.EditValue);
+            Siparis.SiparisDurumTanimID = Convert.ToInt32(lkpSiparisDurumu.EditValue);
+
 
             #region Alt Toplamlar
 
@@ -247,6 +256,7 @@ namespace Aresv2.Siparis
             cEditSiparisTerazideGozuksun.Checked = Siparis.HizliSatistaGozukecekMi;
 
             lkpSatisElemani.EditValue = Siparis.SatisElemaniID;
+            lkpSiparisDurumu.EditValue = Siparis.SiparisDurumTanimID;
 
             #region Alt Toplamlar
 
@@ -264,6 +274,7 @@ namespace Aresv2.Siparis
 
             #endregion
         }
+
 
 
         private void DepoDoldur()
@@ -969,6 +980,10 @@ namespace Aresv2.Siparis
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (gvEvrakIliski.RowCount != 0)
+            {
+                XtraMessageBox.Show("Faturaya Aktarılmış Sipariş Silinemez.");
+            }
             if (MessageBox.Show("Kayıt Silinecek Eminmisiniz??", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
             {
                 try
@@ -1023,6 +1038,11 @@ namespace Aresv2.Siparis
         }
 
         private void xtraTabPage1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cEditSiparisTerazidenDegistirilebilsin_CheckedChanged(object sender, EventArgs e)
         {
 
         }

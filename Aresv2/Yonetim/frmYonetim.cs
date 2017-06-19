@@ -21,6 +21,10 @@ namespace Aresv2.Yonetim
         {
             InitializeComponent();
         }
+
+        bool AktifSayfa = false; // Bu sayfa aktif ise
+
+
         clsTablolar.Siparis.csSiparisArama SiparisArama = new clsTablolar.Siparis.csSiparisArama();
         clsTablolar.TeraziSatisClaslari.csSatislarV2 Satislar;
 
@@ -38,7 +42,9 @@ namespace Aresv2.Yonetim
         private void frmYonetim_Load(object sender, EventArgs e)
         {
 
+
             CheckForIllegalCrossThreadCalls = false;
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             //SiparisArama.
 
             //fatArama = new clsTablolar.Fatura.csFaturaArama(SqlConnections.GetBaglanti(), TrGenel, -1);
@@ -72,8 +78,11 @@ namespace Aresv2.Yonetim
         {
             while (true)
             {
-                GirisCikislariGetir();
-
+                if (this.IsActive)
+                {
+                    GirisCikislariGetir();
+                    AlinanSiparisleri();
+                }
                 Thread.Sleep(5000);
             }
         }
@@ -86,13 +95,13 @@ namespace Aresv2.Yonetim
             disardakiler.Getir2(PDKSSqlconnection.GetBaglanti());
             gridControl1.DataSource = disardakiler.dt;
         }
+
         void AlinanSiparisleri()
         {
             SiparisArama.HizliSatistaGozukecekMi = 1;
-            SiparisArama.MuhasebelenmeDrumu = new object[1] { 4 };
+            //SiparisArama.MuhasebelenmeDrumu = new object[1] { 4 };
 
-            SiparisArama.SiparisAraListe(SqlConnections.GetBaglanti(), TrGenel);
-            
+            gridControl2.DataSource = SiparisArama.SiparisAraListe(SqlConnections.GetBaglanti(), TrGenel);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
