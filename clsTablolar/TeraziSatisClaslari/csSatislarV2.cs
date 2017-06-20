@@ -162,7 +162,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
                     g++;
                 }
 
-                cmmd.Parameters.Add("@TeraziID", SqlDbType.Int).Value = _TeraziID;
+                //cmmd.Parameters.Add("@TeraziID", SqlDbType.Int).Value = _TeraziID;
 
                 #region
                 //cmmd.Parameters.Add("@FaturaID1", SqlDbType.Int).Value = dt_threadSatislar.Rows[0]["FaturaID"];

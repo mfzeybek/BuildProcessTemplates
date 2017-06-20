@@ -215,6 +215,13 @@ namespace TeraziSatis
 
                 //TerazidenSabitMiktariAl(MiktarAl.OkunanSabitMiktar);
                 csTeraziLogs.LogYaz(csTeraziLogs.Grup.Grupsuz, "Program Düzgün Bi şekilde Açıldı");
+
+
+                for (int i = 0; i < Panel1layoutControl1ConvertedLayout.Controls.Count; i++)
+                {
+                    Panel1layoutControl1ConvertedLayout.Controls[i].MinimumSize = new System.Drawing.Size(0, 0);
+                }
+                Panel1layoutControl1ConvertedLayout.BestFit();
             }
             catch (SqlException hata2)
             {
@@ -234,6 +241,7 @@ namespace TeraziSatis
                 {
                     MesajGoster("vay mk");
                 }
+
             }
         }
 
@@ -753,6 +761,7 @@ namespace TeraziSatis
 
         public void btnUrunMusteriAra_Click(object sender, EventArgs e)
         {
+            Panel1layoutControl1ConvertedLayout.BestFit();
             if (string.IsNullOrEmpty(txtBarkodu.Text)) // barkoda bişi yazılı değilse yazması için düğmeleri çıkar
             {
                 clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.Yazi);
@@ -2262,6 +2271,7 @@ ne hatısı diye sorarsam hamısına hatası de
 
         private void btnMusteriler_Click(object sender, EventArgs e)
         {
+            Panel1layoutControl1ConvertedLayout.BestFit();
             MiktarAl.MiktarAlmaDurumu = false;
             lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit) // burada hepsini kilitleyebiliriz hem teraziyi hem satışların gelmesini
             {
@@ -2519,6 +2529,10 @@ ne hatısı diye sorarsam hamısına hatası de
             if (gvSatislar.RowCount == 0)
             {
                 HareketleriGetir(-1);
+            }
+            if (gvSatislar.RowCount > 10)
+            {
+                gvSatislar.DeleteRow(0);
             }
         }
 

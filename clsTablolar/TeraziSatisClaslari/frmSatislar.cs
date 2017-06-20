@@ -218,6 +218,12 @@ where HizliSatistaGozukecekMi = 1 and Fatura.SilindiMi = 0  ", _Baglanti))
                     StokIsk1 = (decimal)gvSatisHareketleri.GetRowCellValue(item, colStokIskonto1);
 
                     StokEkle((int)gvSatisHareketleri.GetFocusedRowCellValue(colStokID), Miktar, Fiyat, StokIsk1);
+
+                    
+                }
+                foreach (int item in gvSatisHareketleri.GetSelectedRows())
+                {
+                    //HareketSil();
                 }
 
                 gvSatisHareketleri.OptionsSelection.MultiSelect = false;
@@ -232,5 +238,7 @@ where HizliSatistaGozukecekMi = 1 and Fatura.SilindiMi = 0  ", _Baglanti))
         public delegate void YeniSatis();
         public YeniSatis ahandaYeniSatis;
 
+        public delegate void _HareketSil();
+        public _HareketSil HareketSil;
     }
 }

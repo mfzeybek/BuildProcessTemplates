@@ -347,6 +347,18 @@
     <Compile Include="TeraziSatisClaslari\frmSatislariBirlestir.Designer.cs">
       <DependentUpon>frmSatislariBirlestir.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeraziSatisClaslari\frmSiparis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmSiparis.Designer.cs">
+      <DependentUpon>frmSiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmSiparisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmSiparisListesi.Designer.cs">
+      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeraziSatisClaslari\StokButonGrupVeStokButonlari.cs">
       <SubType>UserControl</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -415,6 +427,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeraziSatisClaslari\frmSatislariBirlestir.resx">
       <DependentUpon>frmSatislariBirlestir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeraziSatisClaslari\frmSiparis.resx">
+      <DependentUpon>frmSiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeraziSatisClaslari\frmSiparisListesi.resx">
+      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeraziSatisClaslari\StokButonGrupVeStokButonlari.resx">
       <DependentUpon>StokButonGrupVeStokButonlari.cs</DependentUpon>

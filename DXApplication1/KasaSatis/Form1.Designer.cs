@@ -442,7 +442,7 @@
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
             this.dropDownButton1.DropDownControl = this.popupMenu_Islemler;
             this.dropDownButton1.Location = new System.Drawing.Point(6, 12);
-            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(1);
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(190, 52);
             this.dropDownButton1.TabIndex = 117;
@@ -598,7 +598,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(1);
             this.barDockControlTop.Size = new System.Drawing.Size(1273, 0);
             // 
             // barDockControlBottom
@@ -607,7 +607,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 727);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(1);
             this.barDockControlBottom.Size = new System.Drawing.Size(1273, 0);
             // 
             // barDockControlLeft
@@ -616,7 +616,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(1);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 727);
             // 
             // barDockControlRight
@@ -625,7 +625,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1273, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(1);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 727);
             // 
             // barSubItem1
@@ -1411,7 +1411,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Tahoma", 7F);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmKasaOdeme";
             this.Text = "Ödeme Ekranı v3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
