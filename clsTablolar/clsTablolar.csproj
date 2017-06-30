@@ -359,6 +359,12 @@
     <Compile Include="TeraziSatisClaslari\frmSiparisListesi.Designer.cs">
       <DependentUpon>frmSiparisListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeraziSatisClaslari\frmTarihSaat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmTarihSaat.Designer.cs">
+      <DependentUpon>frmTarihSaat.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeraziSatisClaslari\StokButonGrupVeStokButonlari.cs">
       <SubType>UserControl</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -433,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeraziSatisClaslari\frmSiparisListesi.resx">
       <DependentUpon>frmSiparisListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeraziSatisClaslari\frmTarihSaat.resx">
+      <DependentUpon>frmTarihSaat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeraziSatisClaslari\StokButonGrupVeStokButonlari.resx">
       <DependentUpon>StokButonGrupVeStokButonlari.cs</DependentUpon>
