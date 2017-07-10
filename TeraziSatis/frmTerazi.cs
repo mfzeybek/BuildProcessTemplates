@@ -138,10 +138,10 @@ namespace TeraziSatis
 
                 //GrupButonlariniLayoutaYukle();
 
-                stokButonGrupVeStokButonlari1.AhandaBudur(SqlConnections.GetBaglanti(), TrGenel, Properties.Settings.Default.TeraziID);
-                stokButonGrupVeStokButonlari1.StokButonuTikildatiginda = StokButonuTiklandiginda;
+                stokButonGrupVeStokButonlari2.AhandaBudur(SqlConnections.GetBaglanti(), TrGenel, Properties.Settings.Default.TeraziID);
+                stokButonGrupVeStokButonlari2.StokButonuTikildatiginda = StokButonuTiklandiginda;
 
-                stokButonGrupVeStokButonlari1.StokButonuSagClick = StokButonuSagCliccc;
+                stokButonGrupVeStokButonlari2.StokButonuSagClick = StokButonuSagCliccc;
 
                 TrGenel.Commit();
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();

@@ -207,8 +207,6 @@
             this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pcontrol_IskontoAyrintilari = new DevExpress.XtraEditors.PanelControl();
             this.txtIndirimsizSatisTutari = new DevExpress.XtraEditors.TextEdit();
@@ -220,6 +218,8 @@
             this.chckbtnIskontoIslemleri = new DevExpress.XtraEditors.CheckButton();
             this.checkButton1 = new DevExpress.XtraEditors.CheckButton();
             this.btnYaziciBir = new DevExpress.XtraEditors.SimpleButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.btnSatislariYenile = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -229,6 +229,7 @@
             this.btnCikis = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
+            this.stokButonGrupVeStokButonlari2 = new clsTablolar.TeraziSatisClaslari.StokButonGrupVeStokButonlari();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKdvDahilFiyati.Properties)).BeginInit();
@@ -2325,6 +2326,7 @@
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.stokButonGrupVeStokButonlari2);
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.panelControl1);
             this.splitContainerControl2.Panel2.Text = "Panel2";
@@ -2332,31 +2334,6 @@
             this.splitContainerControl2.SplitterPosition = 870;
             this.splitContainerControl2.TabIndex = 117;
             this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(112, 892);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 33);
-            this.textBox1.TabIndex = 110;
-            this.textBox1.Visible = false;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Appearance.Options.UseTextOptions = true;
-            this.labelControl10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl10.AutoEllipsis = true;
-            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Location = new System.Drawing.Point(164, 812);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(6);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(396, 62);
-            this.labelControl10.TabIndex = 4;
-            this.labelControl10.Text = "Aktif Satış Kodu";
-            this.labelControl10.Visible = false;
             // 
             // panelControl1
             // 
@@ -2562,6 +2539,31 @@
             this.btnYaziciBir.Click += new System.EventHandler(this.btnYaziciBir_Click);
             this.btnYaziciBir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnYaziciBir_MouseDown);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(112, 892);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(432, 31);
+            this.textBox1.TabIndex = 110;
+            this.textBox1.Visible = false;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl10.AutoEllipsis = true;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.Location = new System.Drawing.Point(164, 812);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(6);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(396, 62);
+            this.labelControl10.TabIndex = 4;
+            this.labelControl10.Text = "Aktif Satış Kodu";
+            this.labelControl10.Visible = false;
+            // 
             // labelControl13
             // 
             this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -2670,6 +2672,16 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(2478, 113);
             this.panelControl2.TabIndex = 111;
+            // 
+            // stokButonGrupVeStokButonlari2
+            // 
+            this.stokButonGrupVeStokButonlari2.CausesValidation = false;
+            this.stokButonGrupVeStokButonlari2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stokButonGrupVeStokButonlari2.Location = new System.Drawing.Point(0, 0);
+            this.stokButonGrupVeStokButonlari2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.stokButonGrupVeStokButonlari2.Name = "stokButonGrupVeStokButonlari2";
+            this.stokButonGrupVeStokButonlari2.Size = new System.Drawing.Size(1146, 1381);
+            this.stokButonGrupVeStokButonlari2.TabIndex = 0;
             // 
             // frmTerazi
             // 
@@ -2887,7 +2899,6 @@
         private DevExpress.XtraBars.BarButtonItem btnButunUrunlereIndirimUygula;
         private DevExpress.XtraBars.BarButtonItem btnButunUrunlereIndirimUygulaTutar;
         private DevExpress.XtraBars.BarCheckItem barCheckItem_ArkaPlanaDussun;
-        public clsTablolar.TeraziSatisClaslari.StokButonGrupVeStokButonlari stokButonGrupVeStokButonlari1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit_AltBirim;
@@ -2977,6 +2988,7 @@
         private DevExpress.XtraLayout.LayoutControl Panel1layoutControl1ConvertedLayoutlayoutControl2ConvertedLayout;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
+        private clsTablolar.TeraziSatisClaslari.StokButonGrupVeStokButonlari stokButonGrupVeStokButonlari2;
     }
 }
 
