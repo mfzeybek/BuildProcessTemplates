@@ -3,20 +3,24 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-namespace TeraziSatis
+namespace clsTablolar.TeraziSatisClaslari
 {
     public partial class frmSiparisListesi : Form
     {
 
-        public delegate void dlg_SiparisiSatisaAktarma(int SiparisID);
+        public delegate void dlg_SiparisiSatisaAktarma(string FaturaBarkod);
         public dlg_SiparisiSatisaAktarma SiparisiSatisaAktarma;
 
-        public frmSiparisListesi()
+        public frmSiparisListesi(SqlConnection Baglanti, int TeraziID)
         {
+            this.Baglanti = Baglanti;
+            TeraziID = TeraziID;
             InitializeComponent();
         }
 
-        SqlConnection connn = new SqlConnection();
+        SqlConnection Baglanti;
+        int TeraziID;
+        //SqlConnection connn = new SqlConnection();
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -30,8 +34,8 @@ namespace TeraziSatis
         {
             try
             {
-                TrGenel = connn.BeginTransaction();
-                checkedListBoxControl1.DataSource = Tanimlar.Dt_Getir_HepsiSatiriIleBirlikte(connn, TrGenel);
+                TrGenel = Baglanti.BeginTransaction();
+                checkedListBoxControl1.DataSource = Tanimlar.Dt_Getir_HepsiSatiriIleBirlikte(Baglanti, TrGenel);
                 TrGenel.Commit();
                 //checkedListBoxControl1.CheckMember = "SiparisDurumTanimID";
 
@@ -40,13 +44,13 @@ namespace TeraziSatis
 
 
 
-                Siparis = new clsTablolar.Siparis.csSiparisArama(connn, TrGenel, -1);
+                Siparis = new clsTablolar.Siparis.csSiparisArama(Baglanti, TrGenel, -1);
 
                 Siparis.HizliSatistaGozukecekMi = 1;
                 Siparis.HizliSatistaDegisiklikYapmaIzniVarMi = 1; // aslında bunun farketmemesi lazım
 
-                TrGenel = connn.BeginTransaction();
-                SiparisDetayi = new clsTablolar.Siparis.csSiparisHareket(connn, TrGenel, -1);
+                TrGenel = Baglanti.BeginTransaction();
+                SiparisDetayi = new clsTablolar.Siparis.csSiparisHareket(Baglanti, TrGenel, -1);
                 TrGenel.Commit();
 
                 gcSiparis.DataSource = Siparis.dt_SiparisListesi;
@@ -98,7 +102,7 @@ namespace TeraziSatis
         {
             try
             {
-                TrGenel = connn.BeginTransaction();
+                TrGenel = Baglanti.BeginTransaction();
                 DetayiniGetir();
                 TrGenel.Commit();
             }
@@ -116,9 +120,9 @@ namespace TeraziSatis
         void DetayiniGetir()
         {
             if (gvSiparis.RowCount != 0)
-                SiparisDetayi = new clsTablolar.Siparis.csSiparisHareket(connn, TrGenel, (int)gvSiparis.GetFocusedRowCellValue(colSiparisID));
+                SiparisDetayi = new clsTablolar.Siparis.csSiparisHareket(Baglanti, TrGenel, (int)gvSiparis.GetFocusedRowCellValue(colSiparisID));
             else
-                SiparisDetayi = new clsTablolar.Siparis.csSiparisHareket(connn, TrGenel, -1);
+                SiparisDetayi = new clsTablolar.Siparis.csSiparisHareket(Baglanti, TrGenel, -1);
 
             gcSiparisDetayi.DataSource = SiparisDetayi.dt_SiparisHareketleri;
         }
@@ -138,14 +142,14 @@ namespace TeraziSatis
                 {
                     Siparis.SiparisDurumTanimID[i] = (int)checkedListBoxControl1.CheckedItems[i];
                 }
-                
+
 
 
                 Siparis.MuhasebelenmeDrumu = new object[1];
                 Siparis.MuhasebelenmeDrumu[0] = radioGroup1.EditValue;
                 gvSiparis.FocusedRowChanged -= gvSiparis_FocusedRowChanged;
-                TrGenel = connn.BeginTransaction();
-                Siparis.SiparisAraListe(connn, TrGenel);
+                TrGenel = Baglanti.BeginTransaction();
+                Siparis.SiparisAraListe(Baglanti, TrGenel);
                 TrGenel.Commit();
             }
             catch (Exception)
@@ -168,27 +172,17 @@ namespace TeraziSatis
             if (gvSiparis.RowCount == 0)
                 return;
 
-            using (frmSiparis frm = new frmSiparis((int)gvSiparis.GetFocusedRowCellValue(colSiparisID)))
+            using (frmSiparis frm = new frmSiparis((int)gvSiparis.GetFocusedRowCellValue(colSiparisID), Baglanti, TeraziID, -1))
             {
                 frm.SiparisiSatisaAktarma = this.SatisaAKtar;
                 frm.ShowDialog();
-                //                Close();
             }
         }
-        public void SatisaAKtar(int dsfsd)
+        public void SatisaAKtar(string FaturaBarkod)
         {
-            SiparisiSatisaAktarma(dsfsd);
-            this.Close();
+            SatisaAKtar(FaturaBarkod);
         }
 
-        private void btnSatisaAktar_Click(object sender, EventArgs e)
-        {
-            if (gvSiparis.RowCount == 0)
-                return;
-
-            SiparisiSatisaAktarma((int)gvSiparis.GetFocusedRowCellValue(colSiparisID));
-            this.Close();
-        }
 
         private void radioGroup1_EditValueChanged(object sender, EventArgs e)
         {

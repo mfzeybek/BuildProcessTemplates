@@ -96,6 +96,12 @@ namespace Aresv2.Stok
                 StokBilgileri.HemenAlSira = Convert.ToInt32(txtHemeAlSiraNu.EditValue);
             if (ceStokTipi.CheckState == CheckState.Checked)
                 StokBilgileri.StokTipi = cmbStokTipi.SelectedIndex;
+            if (checkEdit_OzelKod1Degistir.Checked)
+                StokBilgileri.OzelKod1 = txtOzelKod1.Text;
+            if (checkEdit_OzelKod2Degistir.Checked)
+                StokBilgileri.OzelKod2 = txtOzelKod2.Text;
+            if (checkEdit_OzelKod3Degistir.Checked)
+                StokBilgileri.OzelKod3 = txtOzelKod3.Text;
 
             StokBilgileri.StokGuncelle(SqlConnections.GetBaglanti(), Trgenel);
             //Stok.StokUrunTanitimGuncelle(SqlConnections.GetBaglanti(), Trgenel, Convert.ToBoolean(checkEdit_UrunTanitimdaGosterilsinMi.EditValue), Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(i, "StokID")));
@@ -114,7 +120,6 @@ namespace Aresv2.Stok
                 else
                 {
                     labelControl1.Text = Liste.gvStokListesi.SelectedRowsCount + " adet Stok Güncellenecek";
-
                 }
             }
             else
@@ -254,6 +259,30 @@ namespace Aresv2.Stok
                 cmbStokTipi.Enabled = true;
             else
                 cmbStokTipi.Enabled = false;
+        }
+
+        private void checkEdit_OzelKod1Degistir_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEdit_OzelKod1Degistir.CheckState == CheckState.Checked)
+                txtOzelKod1.Enabled = true;
+            else
+                txtOzelKod1.Enabled = false;
+        }
+
+        private void checkEdit_OzelKod2Degistir_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEdit_OzelKod2Degistir.CheckState == CheckState.Checked)
+                txtOzelKod2.Enabled = true;
+            else
+                txtOzelKod2.Enabled = false;
+        }
+
+        private void checkEdit_OzelKod3Degistir_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEdit_OzelKod3Degistir.CheckState == CheckState.Checked)
+                txtOzelKod3.Enabled = true;
+            else
+                txtOzelKod3.Enabled = false;
         }
     }
 }

@@ -613,110 +613,126 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and Fatura.FaturaID = @Fatura
         {
             IslemTamam = 1,
             SiparisDahaOnceSatisaAktarilmis = 2,
+            Hata = 3
         }
 
 
         public delegate bool dlg_StokSec(int StokID);
         public dlg_StokSec StokEkle;
 
-        public SiparisDonenBilgi SiparisiSatisaAktarma(int SiparisID, SqlConnection Baglanti, SqlTransaction Tr, cari.csCariv2 CariBilgi, clsTablolar.Fatura.csFaturaHareket hareket)
-        {
-            evrakIliski = new clsTablolar.EvrakIliski.csEvrakIliski();
+        //    public SiparisDonenBilgi SiparisiSatisaAktarma(int SiparisID, SqlConnection Baglanti, SqlTransaction Tr, cari.csCariv2 CariBilgi, clsTablolar.Fatura.csFaturaHareket hareket)
+        //    {
+        //        try
+        //        {
+        //            evrakIliski = new clsTablolar.EvrakIliski.csEvrakIliski();
 
-            //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            if (evrakIliski.SiparisFaturayaAktarilmisMi(Baglanti, Tr, SiparisID) == clsTablolar.EvrakIliski.csEvrakIliski.SiparisinFaturayaAktarilmaDurumu.Faturalandi)
-            {
-                //TrGenel.Commit();
-                //MesajGoster("Daha Önce Satışa Aktarılmış");
-                return SiparisDonenBilgi.SiparisDahaOnceSatisaAktarilmis;
-            }
+        //            //TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+        //            if (evrakIliski.SiparisFaturayaAktarilmisMi(Baglanti, Tr, SiparisID) == clsTablolar.EvrakIliski.csEvrakIliski.SiparisinFaturayaAktarilmaDurumu.Faturalandi)
+        //            {
+        //                //TrGenel.Commit();
+        //                //MesajGoster("Daha Önce Satışa Aktarılmış");
+        //                return SiparisDonenBilgi.SiparisDahaOnceSatisaAktarilmis;
+        //            }
 
-            lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
-            {
-                using (clsTablolar.Siparis.csSiparis Siparis = new clsTablolar.Siparis.csSiparis(Baglanti, Tr, SiparisID))
-                {
+        //            //lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
+        //            //{
+        //            //    using (clsTablolar.Siparis.csSiparis Siparis = new clsTablolar.Siparis.csSiparis(Baglanti, Tr, SiparisID))
+        //            //    {
 
-                    //CariGetir(Siparis.CariID);
-                    YeniKayitAc(CariBilgi);
+        //            //        //CariGetir(Siparis.CariID);
+        //            //        YeniKayitAc(CariBilgi);
 
-                    //gvSatislar.MoveLast();
-                    //gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
+        //            //        //gvSatislar.MoveLast();
+        //            //        //gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
 
-                    int SonIndexNo = dt_threadSatislar.Rows.Count - 1;
-                    dt_threadSatislar.Rows[SonIndexNo]["CariID"] = Siparis.CariID;
-                    dt_threadSatislar.Rows[SonIndexNo]["CariKod"] = Siparis.CariKod;
-                    dt_threadSatislar.Rows[SonIndexNo]["CariTanim"] = Siparis.CariTanim;
-                    dt_threadSatislar.Rows[SonIndexNo]["VergiDairesi"] = Siparis.VergiDairesi;
-                    dt_threadSatislar.Rows[SonIndexNo]["VergiNo"] = Siparis.VergiNo;
-                    dt_threadSatislar.Rows[SonIndexNo]["Adres"] = Siparis.Adres;
-                    dt_threadSatislar.Rows[SonIndexNo]["Il"] = Siparis.Il;
-                    dt_threadSatislar.Rows[SonIndexNo]["Ilce"] = Siparis.Ilce;
-                    dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
-
-
-                    dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
-                    dt_threadSatislar.Rows[SonIndexNo]["SatisElemaniID"] = Siparis.SatisElemaniID;
-                    dt_threadSatislar.Rows[SonIndexNo]["Toplam_Iskontosuz_Kdvsiz"] = Siparis.Toplam_Iskontosuz_Kdvsiz;
-
-                    dt_threadSatislar.Rows[SonIndexNo]["CariIskontoToplami"] = Siparis.CariIskontoToplami;
-                    dt_threadSatislar.Rows[SonIndexNo]["StokIskontoToplami"] = Siparis.StokIskontoToplami;
-                    dt_threadSatislar.Rows[SonIndexNo]["ToplamIndirim"] = Siparis.ToplamIndirim;
-                    dt_threadSatislar.Rows[SonIndexNo]["ToplamKdv"] = Siparis.ToplamKdv;
-                    dt_threadSatislar.Rows[SonIndexNo]["IskontoluToplam"] = Siparis.IskontoluToplam;
-                    dt_threadSatislar.Rows[SonIndexNo]["FaturaTutari"] = Siparis.SiparisTutari;
-
-                    clsTablolar.Siparis.csSiparisHareket SiparisHareketi = new clsTablolar.Siparis.csSiparisHareket(Baglanti, Tr, SiparisID);
-                    for (int i = 0; i < SiparisHareketi.dt_SiparisHareketleri.Rows.Count; i++)
-                    {
-
-                        if (StokEkle((int)SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokID"]))
-                        {
-                            int HareketSonIndexNo = hareket.dt_FaturaHareketleri.Rows.Count - 1;
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FaturaHareketStokAdi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SiparisHareketStokAdi"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Miktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Miktar"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokAnaBirimID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokAnaBirimID"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AnaBirimFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AnaBirimFiyat"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2ID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2ID"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KatSayi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KatSayi"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2Fiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2Fiyat"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Kdv"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Kdv"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Toplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Toplam"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto1"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto2"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto3"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto1"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto2"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto3"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["IskontoluFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["IskontoluFiyat"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirIndirimliToplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirIndirimliToplam"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirAciklama"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirAciklama"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["DepoID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["DepoID"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariToplamIskonto"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokToplamIskonto"];
+        //            //        int SonIndexNo = dt_threadSatislar.Rows.Count - 1;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["CariID"] = Siparis.CariID;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["CariKod"] = Siparis.CariKod;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["CariTanim"] = Siparis.CariTanim;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["VergiDairesi"] = Siparis.VergiDairesi;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["VergiNo"] = Siparis.VergiNo;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["Adres"] = Siparis.Adres;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["Il"] = Siparis.Il;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["Ilce"] = Siparis.Ilce;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
 
 
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["ToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["ToplamIskonto"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KdvTutari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KdvTutari"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AltBirimMiktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AltBirimMiktar"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FireMiktari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["FireMiktari"];
-                            hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["BirlesikUrunHareketID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["BirlesikUrunHareketID"];
-                        }
-                    }
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["Aciklama"] = Siparis.Aciklama;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["SatisElemaniID"] = Siparis.SatisElemaniID;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["Toplam_Iskontosuz_Kdvsiz"] = Siparis.Toplam_Iskontosuz_Kdvsiz;
 
-                    //Hesapla.AltToplamlariHesapla();
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["CariIskontoToplami"] = Siparis.CariIskontoToplami;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["StokIskontoToplami"] = Siparis.StokIskontoToplami;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["ToplamIndirim"] = Siparis.ToplamIndirim;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["ToplamKdv"] = Siparis.ToplamKdv;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["IskontoluToplam"] = Siparis.IskontoluToplam;
+        //            //        dt_threadSatislar.Rows[SonIndexNo]["FaturaTutari"] = Siparis.SiparisTutari;
 
-                    evrakIliski.FaturaEvrakIlıski_BosSatirEkle();
-                    //evrakIliski.dt.Rows[0][""] = 
-                    //evrakIliski.FaturadanEvrakIliskiGetir(SqlConnections.GetBaglanti(), TrGenel, (int)Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
-                    evrakIliski.dt.Rows[0]["SiparisID"] = SiparisID;
-                    evrakIliski.FaturaIcinEvrakIliskiKaydet(Baglanti, Tr, (int)dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
-                }
+        //            //        clsTablolar.Siparis.csSiparisHareket SiparisHareketi = new clsTablolar.Siparis.csSiparisHareket(Baglanti, Tr, SiparisID);
+        //            //        for (int i = 0; i < SiparisHareketi.dt_SiparisHareketleri.Rows.Count; i++)
+        //            //        {
 
-                // ahanda bunu frm terazide olacak
-                //cbtnTerazidekiSabitMiktariStokaAktar.Checked = false;
+        //            //            if (StokEkle((int)SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokID"]))
+        //            //            {
+        //            //                int HareketSonIndexNo = hareket.dt_FaturaHareketleri.Rows.Count - 1;
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FaturaHareketStokAdi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SiparisHareketStokAdi"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Miktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Miktar"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokAnaBirimID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokAnaBirimID"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AnaBirimFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AnaBirimFiyat"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2ID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2ID"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KatSayi"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KatSayi"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Birim2Fiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Birim2Fiyat"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Kdv"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Kdv"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["Toplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["Toplam"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto1"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto2"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokIskonto3"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto1"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto1"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto2"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto2"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariIskonto3"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariIskonto3"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["IskontoluFiyat"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["IskontoluFiyat"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirIndirimliToplam"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirIndirimliToplam"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["SatirAciklama"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["SatirAciklama"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["DepoID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["DepoID"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["CariToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["CariToplamIskonto"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["StokToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["StokToplamIskonto"];
 
-                return SiparisDonenBilgi.IslemTamam;
-             }
-        }
+
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["ToplamIskonto"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["ToplamIskonto"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["KdvTutari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["KdvTutari"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["AltBirimMiktar"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["AltBirimMiktar"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["FireMiktari"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["FireMiktari"];
+        //            //                hareket.dt_FaturaHareketleri.Rows[HareketSonIndexNo]["BirlesikUrunHareketID"] = SiparisHareketi.dt_SiparisHareketleri.Rows[i]["BirlesikUrunHareketID"];
+        //            //            }
+        //            //        }
+
+        //            //        //Hesapla.AltToplamlariHesapla();
+
+        //            //        evrakIliski.FaturaEvrakIlıski_BosSatirEkle();
+        //            //        //evrakIliski.dt.Rows[0][""] = 
+        //            //        //evrakIliski.FaturadanEvrakIliskiGetir(SqlConnections.GetBaglanti(), TrGenel, (int)Satislarv2.dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
+        //            //        evrakIliski.dt.Rows[0]["SiparisID"] = SiparisID;
+        //            //        evrakIliski.FaturaIcinEvrakIliskiKaydet(Baglanti, Tr, (int)dt_threadSatislar.Rows[SonIndexNo]["FaturaID"]);
+        //                //}
+
+        //                // ahanda bunu frm terazide olacak
+        //                //cbtnTerazidekiSabitMiktariStokaAktar.Checked = false;
+
+        //                return SiparisDonenBilgi.IslemTamam;
+        //        //    }
+        //        //}
+        //        //catch (Exception ex)
+        //        //{
+        //        //    return SiparisDonenBilgi.Hata;
+        //        //}
+        //    }
+
+
+
+
+
+
     }
 }
+
+

@@ -77,19 +77,30 @@ namespace Aresv2.Stok
 
         void FiltreKriterleriniBindleHamisina()
         {
-            for (int i = 0; i < xtraTabPage1.Controls.Count; i++)
-            {
+            //tabbedControlGroup1.TabPages.
+            //layoutControlGroup5.
 
-                this.xtraTabPage1.Controls[i].DataBindings.Clear();
-            }
-            for (int i = 0; i < xtraTabPage2.Controls.Count; i++)
-            {
 
-                this.xtraTabPage2.Controls[i].DataBindings.Clear();
-            }
-            for (int i = 0; i < xtraTabPage3.Controls.Count; i++)
+            //layoutControlItem33.Control.DataBindings
+
+            for (int i = 0; i < layoutControlGroup6.Items.Count; i++)
             {
-                this.xtraTabPage3.Controls[i].DataBindings.Clear();
+                this.layoutControlGroup6.Items[i].DataBindings.Clear();
+            }
+
+            for (int i = 0; i < layoutControlGroup5.Items.Count; i++)
+            {
+                this.layoutControlGroup5.Items[i].DataBindings.Clear();
+            }
+
+            for (int i = 0; i < layoutControlGroup7.Items.Count; i++)
+            {
+                this.layoutControlGroup7.Items[i].DataBindings.Clear();
+            }
+
+            for (int i = 0; i < layoutControlGroup8.Items.Count; i++)
+            {
+                this.layoutControlGroup8.Items[i].DataBindings.Clear();
             }
 
             txtStokKodu.DataBindings.Add("EditValue", StokArama, "StokKodu", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -194,9 +205,9 @@ namespace Aresv2.Stok
                 panelControl1.Focus();
                 panelControl1.Select();
 
-                xtraTabPage1.Select();
-                xtraTabPage1.Focus();
-                xtraTabPage1.Select();
+                //layoutControlGroup5.tabp
+                //xtraTabPage1.Focus();
+                //xtraTabPage1.Select();
 
                 txtStokAdi.SelectAll();
                 txtStokAdi.Focus();
@@ -817,11 +828,13 @@ namespace Aresv2.Stok
                 if (checkButton_fotoGoster.Checked == true)
                 {
                     pictureEdit1.Visible = true;
+                    layoutControlItem43.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     pictureEdit1.EditValue = StokArama.StokIDverVarsayilanFotoAl(SqlConnections.GetBaglanti(), trGenel, Convert.ToInt32(gvStokListesi.GetFocusedRowCellValue("StokID")));
                 }
                 else
                 {
                     pictureEdit1.Visible = false;
+                    layoutControlItem43.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 }
             }
             catch (Exception)

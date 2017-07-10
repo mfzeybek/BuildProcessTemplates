@@ -344,7 +344,7 @@ namespace clsTablolar.Siparis
 
         }
         private void SiparisGetir(SqlConnection Baglanti, SqlTransaction Tr, int SiparisID)
-       {
+        {
             try
             {
                 using (cmdGenel = new SqlCommand())
@@ -502,6 +502,30 @@ where SiparisID = @SiparisID", Baglanti, Tr);
             {
                 cmdGenel.Parameters.Add("@SiparisID", SqlDbType.Int).Value = SiparisID;
                 cmdGenel.ExecuteNonQuery();
+            }
+        }
+        clsTablolar.EvrakIliski.csEvrakIliski evrakIliski = new EvrakIliski.csEvrakIliski();
+
+        public string SiparisiSatisaAktar(SqlConnection Baglanti, SqlTransaction Tr, int SiparisID, int SiparisiFaturayaAktaranPersonelID)
+        {
+            if (evrakIliski.SiparisFaturayaAktarilmisMi(Baglanti, Tr, SiparisID) == clsTablolar.EvrakIliski.csEvrakIliski.SiparisinFaturayaAktarilmaDurumu.Faturalandi)
+            {
+                //TrGenel.Commit();
+                //MesajGoster("Daha Önce Satışa Aktarılmış");
+                return "";
+            }
+
+            using (SqlCommand cmd = new SqlCommand("SiparisiFaturayaAktar", Baglanti, Tr))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@SiparisID", SqlDbType.Int).Value = SiparisID;
+                cmd.Parameters.Add("@SiparisiFaturayaAktaranPersonelID", SqlDbType.Int).Value = SiparisiFaturayaAktaranPersonelID;
+
+                cmd.Parameters.Add("@Barkod", SqlDbType.NVarChar).Direction = ParameterDirection.Output;
+
+                cmd.ExecuteNonQuery();
+
+                return cmd.Parameters["@Barkod"].Value.ToString();
             }
         }
 

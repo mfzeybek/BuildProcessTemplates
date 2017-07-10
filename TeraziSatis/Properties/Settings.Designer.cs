@@ -95,7 +95,7 @@ namespace TeraziSatis.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Aclas Printer")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ofis Fis")]
         public string Yazici1 {
             get {
                 return ((string)(this["Yazici1"]));
@@ -107,7 +107,7 @@ namespace TeraziSatis.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ofis Fis")]
         public string Yazici2 {
             get {
                 return ((string)(this["Yazici2"]));

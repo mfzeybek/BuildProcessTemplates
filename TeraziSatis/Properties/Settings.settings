@@ -26,10 +26,10 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Yazici1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Aclas Printer</Value>
+      <Value Profile="(Default)">Ofis Fis</Value>
     </Setting>
     <Setting Name="Yazici2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">Ofis Fis</Value>
     </Setting>
   </Settings>
 </SettingsFile>

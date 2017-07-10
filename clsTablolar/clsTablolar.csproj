@@ -335,6 +335,12 @@
     <Compile Include="TeraziSatisClaslari\csTeraziAyarlari.cs" />
     <Compile Include="TeraziSatisClaslari\csTerazidenMiktarAl.cs" />
     <Compile Include="TeraziSatisClaslari\csthreadsafe.cs" />
+    <Compile Include="TeraziSatisClaslari\frmButonUrunler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeraziSatisClaslari\frmButonUrunler.Designer.cs">
+      <DependentUpon>frmButonUrunler.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeraziSatisClaslari\frmSatislar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,6 +433,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeraziSatisClaslari\frmButonUrunler.resx">
+      <DependentUpon>frmButonUrunler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeraziSatisClaslari\frmSatislar.resx">
       <DependentUpon>frmSatislar.cs</DependentUpon>

@@ -59,6 +59,12 @@
             this.cmbStokTipi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ceStokTipi = new DevExpress.XtraEditors.CheckEdit();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.txtOzelKod1 = new DevExpress.XtraEditors.TextEdit();
+            this.checkEdit_OzelKod1Degistir = new DevExpress.XtraEditors.CheckEdit();
+            this.txtOzelKod2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtOzelKod3 = new DevExpress.XtraEditors.TextEdit();
+            this.checkEdit_OzelKod2Degistir = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit_OzelKod3Degistir = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit_TanitimAlani.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit_UrunTanitimdaGosterilsinMi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrubu.Properties)).BeginInit();
@@ -87,6 +93,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbStokTipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceStokTipi.Properties)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit_OzelKod1Degistir.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit_OzelKod2Degistir.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit_OzelKod3Degistir.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // checkEdit_TanitimAlani
@@ -191,7 +203,7 @@
             this.labelControl2.Location = new System.Drawing.Point(38, 112);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(90, 25);
+            this.labelControl2.Size = new System.Drawing.Size(91, 25);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Satış KDV";
             // 
@@ -200,7 +212,7 @@
             this.labelControl3.Location = new System.Drawing.Point(38, 62);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(78, 25);
+            this.labelControl3.Size = new System.Drawing.Size(79, 25);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Alış KDV";
             // 
@@ -368,7 +380,7 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 248);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
@@ -382,6 +394,12 @@
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Genel";
+            this.tabNavigationPage1.Controls.Add(this.checkEdit_OzelKod3Degistir);
+            this.tabNavigationPage1.Controls.Add(this.checkEdit_OzelKod2Degistir);
+            this.tabNavigationPage1.Controls.Add(this.checkEdit_OzelKod1Degistir);
+            this.tabNavigationPage1.Controls.Add(this.txtOzelKod3);
+            this.tabNavigationPage1.Controls.Add(this.txtOzelKod2);
+            this.tabNavigationPage1.Controls.Add(this.txtOzelKod1);
             this.tabNavigationPage1.Controls.Add(this.cmbStokTipi);
             this.tabNavigationPage1.Controls.Add(this.lkpGrubu);
             this.tabNavigationPage1.Controls.Add(this.checkEdit_GrubuAlani);
@@ -394,7 +412,7 @@
             this.tabNavigationPage1.Controls.Add(this.ceStokTipi);
             this.tabNavigationPage1.Controls.Add(this.labelControl3);
             this.tabNavigationPage1.Controls.Add(this.checkEdit_RafYeriAciklama);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(1778, 447);
             // 
@@ -440,9 +458,60 @@
             this.tabNavigationPage2.Controls.Add(this.lkpEticaretStoktaVarsaDurumTanimi);
             this.tabNavigationPage2.Controls.Add(this.checkEdit_ETicaretStokYoksaDurumu);
             this.tabNavigationPage2.Controls.Add(this.memoEdit_anahtarKelime);
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1782, 233);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1778, 447);
+            // 
+            // txtOzelKod1
+            // 
+            this.txtOzelKod1.Enabled = false;
+            this.txtOzelKod1.Location = new System.Drawing.Point(172, 231);
+            this.txtOzelKod1.Name = "txtOzelKod1";
+            this.txtOzelKod1.Size = new System.Drawing.Size(184, 34);
+            this.txtOzelKod1.TabIndex = 14;
+            // 
+            // checkEdit_OzelKod1Degistir
+            // 
+            this.checkEdit_OzelKod1Degistir.Location = new System.Drawing.Point(380, 231);
+            this.checkEdit_OzelKod1Degistir.Name = "checkEdit_OzelKod1Degistir";
+            this.checkEdit_OzelKod1Degistir.Properties.Caption = "Ozel Kod 1 Degiştir";
+            this.checkEdit_OzelKod1Degistir.Size = new System.Drawing.Size(273, 34);
+            this.checkEdit_OzelKod1Degistir.TabIndex = 19;
+            this.checkEdit_OzelKod1Degistir.CheckedChanged += new System.EventHandler(this.checkEdit_OzelKod1Degistir_CheckedChanged);
+            // 
+            // txtOzelKod2
+            // 
+            this.txtOzelKod2.Enabled = false;
+            this.txtOzelKod2.Location = new System.Drawing.Point(162, 308);
+            this.txtOzelKod2.Name = "txtOzelKod2";
+            this.txtOzelKod2.Size = new System.Drawing.Size(184, 34);
+            this.txtOzelKod2.TabIndex = 14;
+            // 
+            // txtOzelKod3
+            // 
+            this.txtOzelKod3.Enabled = false;
+            this.txtOzelKod3.Location = new System.Drawing.Point(152, 369);
+            this.txtOzelKod3.Name = "txtOzelKod3";
+            this.txtOzelKod3.Size = new System.Drawing.Size(184, 34);
+            this.txtOzelKod3.TabIndex = 14;
+            // 
+            // checkEdit_OzelKod2Degistir
+            // 
+            this.checkEdit_OzelKod2Degistir.Location = new System.Drawing.Point(380, 308);
+            this.checkEdit_OzelKod2Degistir.Name = "checkEdit_OzelKod2Degistir";
+            this.checkEdit_OzelKod2Degistir.Properties.Caption = "Ozel Kod 2 Degiştir";
+            this.checkEdit_OzelKod2Degistir.Size = new System.Drawing.Size(273, 34);
+            this.checkEdit_OzelKod2Degistir.TabIndex = 19;
+            this.checkEdit_OzelKod2Degistir.CheckedChanged += new System.EventHandler(this.checkEdit_OzelKod2Degistir_CheckedChanged);
+            // 
+            // checkEdit_OzelKod3Degistir
+            // 
+            this.checkEdit_OzelKod3Degistir.Location = new System.Drawing.Point(380, 369);
+            this.checkEdit_OzelKod3Degistir.Name = "checkEdit_OzelKod3Degistir";
+            this.checkEdit_OzelKod3Degistir.Properties.Caption = "Ozel Kod 1 Degiştir";
+            this.checkEdit_OzelKod3Degistir.Size = new System.Drawing.Size(273, 34);
+            this.checkEdit_OzelKod3Degistir.TabIndex = 19;
+            this.checkEdit_OzelKod3Degistir.CheckedChanged += new System.EventHandler(this.checkEdit_OzelKod3Degistir_CheckedChanged);
             // 
             // frmTopluStokGuncelleme
             // 
@@ -485,6 +554,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbStokTipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceStokTipi.Properties)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit_OzelKod1Degistir.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit_OzelKod2Degistir.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit_OzelKod3Degistir.Properties)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -522,5 +597,11 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraEditors.CheckEdit ceStokTipi;
         private DevExpress.XtraEditors.ComboBoxEdit cmbStokTipi;
+        private DevExpress.XtraEditors.CheckEdit checkEdit_OzelKod1Degistir;
+        private DevExpress.XtraEditors.TextEdit txtOzelKod1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit_OzelKod3Degistir;
+        private DevExpress.XtraEditors.CheckEdit checkEdit_OzelKod2Degistir;
+        private DevExpress.XtraEditors.TextEdit txtOzelKod3;
+        private DevExpress.XtraEditors.TextEdit txtOzelKod2;
     }
 }

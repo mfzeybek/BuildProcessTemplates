@@ -235,12 +235,6 @@
     <Compile Include="frmSatisUstBilgisi.Designer.cs">
       <DependentUpon>frmSatisUstBilgisi.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSiparisListesi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSiparisListesi.Designer.cs">
-      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTarihSaat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,12 +280,6 @@
     <Compile Include="frmPaketleme.Designer.cs">
       <DependentUpon>frmPaketleme.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSiparis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSiparis.Designer.cs">
-      <DependentUpon>frmSiparis.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTerazi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,9 +317,6 @@
     <EmbeddedResource Include="frmSatisUstBilgisi.resx">
       <DependentUpon>frmSatisUstBilgisi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSiparisListesi.resx">
-      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmTarihSaat.resx">
       <DependentUpon>frmTarihSaat.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,9 +338,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPaketleme.resx">
       <DependentUpon>frmPaketleme.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSiparis.resx">
-      <DependentUpon>frmSiparis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTerazi.resx">
       <DependentUpon>frmTerazi.cs</DependentUpon>

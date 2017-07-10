@@ -1,4 +1,4 @@
-﻿namespace TeraziSatis
+﻿namespace clsTablolar.TeraziSatisClaslari
 {
     partial class frmTarihSaat
     {

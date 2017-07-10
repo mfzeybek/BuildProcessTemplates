@@ -65,7 +65,7 @@ namespace TeraziSatis
               BindingFlags.InvokeMethod | BindingFlags.Instance, null,
               control, new object[] { 0x400000, false });
         }
-        public static string VersiyonNo = "Test - 108";
+        public static string VersiyonNo = "Test - 109";
         System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
         csTeraziLogs LogLar;
 
@@ -263,17 +263,23 @@ namespace TeraziSatis
             }
             Exception exxx = new Exception();
         }
-        clsTablolar.EvrakIliski.csEvrakIliski evrakIliski;
-        public void SiparisiSatisaAktarma(int SiparisID)
+
+
+
+        public void SiparisiSatisaAktarma(string FaturaBarkod)
         {
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            if (Satislarv2.SiparisiSatisaAktarma(SiparisID, SqlConnections.GetBaglanti(), TrGenel, CariKart, Hareketler) == clsTablolar.TeraziSatisClaslari.csSatislarV2.SiparisDonenBilgi.SiparisDahaOnceSatisaAktarilmis)
-                MessageBox.Show("Sipariş Daha önce aktarılmış");
+            try
+            {
+                txtBarkodu.Text = FaturaBarkod;
+                btnMusteriler_Click(null, null);
 
-            TrGenel.Commit();
-
-            gvSatislar.MoveLast();
-            gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
+                //gvSatislar.MoveLast();
+                //gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             #region bunlar eski şimdi bunları saitsarv2 nin içine aldım
 
@@ -855,10 +861,11 @@ namespace TeraziSatis
                                     }
                                     else // faturaya aktarılmamışsa
                                     {
-                                        using (frmSiparis sip = new frmSiparis(SipBilgisi.SipariID))
+                                        using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID, -1))
                                         {
                                             sip.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
                                             sip.ShowDialog();
+                                            return;
                                         }
                                     }
                                 }
@@ -2130,7 +2137,7 @@ ne hatısı diye sorarsam hamısına hatası de
             //{
             try
             {
-                frmSiparis frm = new frmSiparis(-1);
+                clsTablolar.TeraziSatisClaslari.frmSiparis frm = new clsTablolar.TeraziSatisClaslari.frmSiparis(-1, SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID, -1);
                 frm.ShowDialog();
             }
             catch (Exception ex)
@@ -2146,7 +2153,7 @@ ne hatısı diye sorarsam hamısına hatası de
 
         private void barBtnSiparisListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            using (frmSiparisListesi frm = new frmSiparisListesi())
+            using (clsTablolar.TeraziSatisClaslari.frmSiparisListesi frm = new clsTablolar.TeraziSatisClaslari.frmSiparisListesi(SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID))
             {
                 frm.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
                 frm.ShowDialog();

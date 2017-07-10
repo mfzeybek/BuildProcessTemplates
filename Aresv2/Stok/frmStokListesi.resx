@@ -129,4 +129,7 @@
   <metadata name="popupMenu_yazdirma.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>433, 25</value>
   </metadata>
+  <metadata name="layoutConverter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>749, 25</value>
+  </metadata>
 </root>

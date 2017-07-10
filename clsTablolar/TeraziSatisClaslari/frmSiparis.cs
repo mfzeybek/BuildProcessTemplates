@@ -3,12 +3,15 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace TeraziSatis
+namespace clsTablolar.TeraziSatisClaslari
 {
     public partial class frmSiparis : Form
     {
-        public frmSiparis(int SiparisID)
+        public frmSiparis(int SiparisID, SqlConnection Baglanti, int TeraziID, int SiparisiFaturalandiracakPersonel)
         {
+            this.TeraziID = TeraziID;
+            this.Baglanti = Baglanti;
+            this.SiparisiFaturalandiracakPersonel = SiparisiFaturalandiracakPersonel;
             _SiparisID = SiparisID;
             InitializeComponent();
         }
@@ -16,20 +19,24 @@ namespace TeraziSatis
         //public sealed class InputPane
         //{
         int _SiparisID;
+        int TeraziID;
+        int SiparisiFaturalandiracakPersonel;
         //}
         clsTablolar.Siparis.csSiparis Siparis;
         clsTablolar.Siparis.csSiparisHareket SiparisHareket;
+        SqlConnection Baglanti;
+
         SqlTransaction TrGenel;
 
-        public delegate void dlg_SiparisiSatisaAktarma(int SiparisID);
+        public delegate void dlg_SiparisiSatisaAktarma(string FaturaBarkod);
         public dlg_SiparisiSatisaAktarma SiparisiSatisaAktarma;
 
         private void frmSiparis_Load(object sender, EventArgs e)
         {
 
             clsTablolar.Siparis.csSiparisDurumTanimlari DurumTanimlari = new clsTablolar.Siparis.csSiparisDurumTanimlari();
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            lkpSiparisDurumu.Properties.DataSource = DurumTanimlari.dt_Getir(SqlConnections.GetBaglanti(), TrGenel);
+            TrGenel = Baglanti.BeginTransaction();
+            lkpSiparisDurumu.Properties.DataSource = DurumTanimlari.dt_Getir(Baglanti, TrGenel);
             TrGenel.Commit();
 
             lkpSiparisDurumu.Properties.ValueMember = "SiparisDurumTanimID";
@@ -37,9 +44,9 @@ namespace TeraziSatis
 
             if (_SiparisID == -1)
             {
-                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                Siparis = new clsTablolar.Siparis.csSiparis(SqlConnections.GetBaglanti(), TrGenel, clsTablolar.Siparis.csSiparis.SiparisTip.AlinanSiparis, clsTablolar.Ayarlar.csAyarlar.TeraziVarsayilanCariID);
-                SiparisHareket = new clsTablolar.Siparis.csSiparisHareket(SqlConnections.GetBaglanti(), TrGenel, _SiparisID);
+                TrGenel = Baglanti.BeginTransaction();
+                Siparis = new clsTablolar.Siparis.csSiparis(Baglanti, TrGenel, clsTablolar.Siparis.csSiparis.SiparisTip.AlinanSiparis, clsTablolar.Ayarlar.csAyarlar.TeraziVarsayilanCariID);
+                SiparisHareket = new clsTablolar.Siparis.csSiparisHareket(Baglanti, TrGenel, _SiparisID);
                 TrGenel.Commit();
                 Siparis.HizliSatistaDegisiklikYapmaIzniVarMi = true;
                 Siparis.HizliSatistaGozukecekMi = true;
@@ -47,9 +54,9 @@ namespace TeraziSatis
             }
             else
             {
-                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                Siparis = new clsTablolar.Siparis.csSiparis(SqlConnections.GetBaglanti(), TrGenel, _SiparisID);
-                SiparisHareket = new clsTablolar.Siparis.csSiparisHareket(SqlConnections.GetBaglanti(), TrGenel, _SiparisID);
+                TrGenel = Baglanti.BeginTransaction();
+                Siparis = new clsTablolar.Siparis.csSiparis(Baglanti, TrGenel, _SiparisID);
+                SiparisHareket = new clsTablolar.Siparis.csSiparisHareket(Baglanti, TrGenel, _SiparisID);
                 TrGenel.Commit();
             }
             bindle();
@@ -61,9 +68,6 @@ namespace TeraziSatis
 
             KayitTamamlandimi(true);
         }
-
-
-
 
         void KayitTamamlandimi(bool TamamMi)
         {
@@ -94,7 +98,6 @@ namespace TeraziSatis
             txtTeslimTarihi.DataBindings.Add("EditValue", Siparis, "TeslimTarihi", true, DataSourceUpdateMode.OnPropertyChanged);
             txtPersonelAdi.DataBindings.Add("EditValue", Siparis, "PersonelAdi", true, DataSourceUpdateMode.OnPropertyChanged);
         }
-
 
         void AltToplamlariAl()
         {
@@ -140,7 +143,7 @@ namespace TeraziSatis
 
         private void btnStokButonlari_Click(object sender, EventArgs e)
         {
-            using (frmButonUrunler frm = new frmButonUrunler(Properties.Settings.Default.TeraziID))
+            using (frmButonUrunler frm = new frmButonUrunler(TeraziID, Baglanti))
             {
                 if (DialogResult.Yes == frm.ShowDialog(this))
                 {
@@ -155,7 +158,7 @@ namespace TeraziSatis
 
         public void StokEkle(int StokID)
         {
-            if (clsTablolar.TeraziSatisClaslari.csStok.StokDonenBilgi.StokBulunamadi != Stok.GetirHamisina(SqlConnections.GetBaglanti(), TrGenel, StokID))
+            if (clsTablolar.TeraziSatisClaslari.csStok.StokDonenBilgi.StokBulunamadi != Stok.GetirHamisina(Baglanti, TrGenel, StokID))
             {
                 //gcSatisHareketleri.DataSource = Hareketler.dt_FaturaHareketleri;
 
@@ -222,8 +225,8 @@ namespace TeraziSatis
                 }
                 if (txtBarkod.Text.StartsWith(clsTablolar.TeraziSatisClaslari.csTeraziAyarlari.PersonelBarkodNumarasiOnEki)) // girinlen numara personel numarası ise
                 {
-                    TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                    Personel.BardoktanPersonelGetir(SqlConnections.GetBaglanti(), TrGenel, txtBarkod.Text);
+                    TrGenel = Baglanti.BeginTransaction();
+                    Personel.BardoktanPersonelGetir(Baglanti, TrGenel, txtBarkod.Text);
                     TrGenel.Commit();
                     if (Personel.PersonelID == -1)
                     {
@@ -237,9 +240,9 @@ namespace TeraziSatis
                 }
                 else
                 {
-                    TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                    TrGenel = Baglanti.BeginTransaction();
                     BarkodtanStokArma = new clsTablolar.TeraziSatisClaslari.csBarkodtanStokArama();
-                    clsTablolar.TeraziSatisClaslari.csBarkodtanStokArama.StokIDMiktarBirim IdveMiktar = BarkodtanStokArma.StokBarkodundanStokIDVer(SqlConnections.GetBaglanti(), TrGenel, txtBarkod.EditValue.ToString());
+                    clsTablolar.TeraziSatisClaslari.csBarkodtanStokArama.StokIDMiktarBirim IdveMiktar = BarkodtanStokArma.StokBarkodundanStokIDVer(Baglanti, TrGenel, txtBarkod.EditValue.ToString());
                     TrGenel.Commit();
 
                     if (IdveMiktar.StokID != -1)
@@ -304,13 +307,13 @@ namespace TeraziSatis
                     // sipariş numarası boşsa varsayilan numarayı ver
                     if (Siparis.SiparisNo == string.Empty)
                     {
-                        TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                        TrGenel = Baglanti.BeginTransaction();
                         NumaraVer = new clsTablolar.csNumaraVer();
-                        Siparis.SiparisNo = NumaraVer.VarsayilanNumaraVer_ve_Kaydet(SqlConnections.GetBaglanti(), TrGenel, clsTablolar.IslemTipi.AlinanSiparis);
+                        Siparis.SiparisNo = NumaraVer.VarsayilanNumaraVer_ve_Kaydet(Baglanti, TrGenel, clsTablolar.IslemTipi.AlinanSiparis);
                         TrGenel.Commit();
                     } // secilen numara şablonID -1 den farklı olması bir numara şablon u seçilmiş demektir o o numarasablonId ye göre numarayı yeniden ver
-                    TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                    Siparis.SiparisBarkodNu = BarkodNuVer.BarkodNuVerYeniNoyuKaydet(SqlConnections.GetBaglanti(), TrGenel, 3);
+                    TrGenel = Baglanti.BeginTransaction();
+                    Siparis.SiparisBarkodNu = BarkodNuVer.BarkodNuVerYeniNoyuKaydet(Baglanti, TrGenel, 3);
                     txtSiparisBarkodu.EditValue = Siparis.SiparisBarkodNu;
                     TrGenel.Commit();
                 }
@@ -320,9 +323,9 @@ namespace TeraziSatis
                     return;
                 }
 
-                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-                Siparis.SiparisKAydet(SqlConnections.GetBaglanti(), TrGenel);
-                SiparisHareket.SiparisHareketleriniKaydet(SqlConnections.GetBaglanti(), TrGenel, Siparis.SiparisID);
+                TrGenel = Baglanti.BeginTransaction();
+                Siparis.SiparisKAydet(Baglanti, TrGenel);
+                SiparisHareket.SiparisHareketleriniKaydet(Baglanti, TrGenel, Siparis.SiparisID);
                 TrGenel.Commit();
 
                 KayitTamamlandimi(true);
@@ -386,13 +389,12 @@ namespace TeraziSatis
 
             try
             {
-                lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
+
+
+                if (DialogResult.Yes == MessageBox.Show(this, "Seçili ürünü silmek istediğinden emin misin hamısna", "Dikkat Hamısına", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
                 {
-                    if (DialogResult.Yes == MessageBox.Show(this, "Seçili ürünü silmek istediğinden emin misin hamısna", "Dikkat Hamısına", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
-                    {
-                        gridView1.DeleteSelectedRows();
-                        hesapla.AltToplamlariHesapla();
-                    }
+                    gridView1.DeleteSelectedRows();
+                    hesapla.AltToplamlariHesapla();
                 }
             }
             catch (Exception hata)
@@ -403,8 +405,6 @@ namespace TeraziSatis
             {
             }
         }
-
-
 
         private void frmSiparis_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
@@ -554,52 +554,52 @@ namespace TeraziSatis
 
         private void barBtnButunUrunlereIskonto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (gridView1.RowCount == 0)
-                return;
-            using (frmIndirim frm = new frmIndirim())
-            {
-                frm.lblStokBilgileri.Text = "Bütün ürünlere Indirim Uygula";
+            //            if (gridView1.RowCount == 0)
+            //                return;
+            //            using (frmIndirim frm = new frmIndirim())
+            //            {
+            //                frm.lblStokBilgileri.Text = "Bütün ürünlere Indirim Uygula";
 
-                //hesapla.
-                decimal TumSatirlarinToplam_KdvDahilIndirimUygulanmamis = 0;
-                decimal ToplamMiktar = 0;
+            //                //hesapla.
+            //                decimal TumSatirlarinToplam_KdvDahilIndirimUygulanmamis = 0;
+            //                decimal ToplamMiktar = 0;
 
-                for (int i = 0; i < gridView1.RowCount; i++)
-                {
-                    TumSatirlarinToplam_KdvDahilIndirimUygulanmamis +=
-(Convert.ToDecimal(gridView1.GetRowCellValue(i, colAnaBirimFiyat)) + (Convert.ToDecimal(gridView1.GetRowCellValue(i, colAnaBirimFiyat)) * Convert.ToDecimal(gridView1.GetRowCellValue(i, colKdv)) / 100)) * Convert.ToDecimal(gridView1.GetRowCellValue(i, colMiktar));
+            //                for (int i = 0; i < gridView1.RowCount; i++)
+            //                {
+            //                    TumSatirlarinToplam_KdvDahilIndirimUygulanmamis +=
+            //(Convert.ToDecimal(gridView1.GetRowCellValue(i, colAnaBirimFiyat)) + (Convert.ToDecimal(gridView1.GetRowCellValue(i, colAnaBirimFiyat)) * Convert.ToDecimal(gridView1.GetRowCellValue(i, colKdv)) / 100)) * Convert.ToDecimal(gridView1.GetRowCellValue(i, colMiktar));
 
-                    ToplamMiktar += Convert.ToDecimal(gridView1.GetRowCellValue(i, colMiktar));
-                }
-                frm.txtNormalFiyat.EditValue = TumSatirlarinToplam_KdvDahilIndirimUygulanmamis;
+            //                    ToplamMiktar += Convert.ToDecimal(gridView1.GetRowCellValue(i, colMiktar));
+            //                }
+            //                frm.txtNormalFiyat.EditValue = TumSatirlarinToplam_KdvDahilIndirimUygulanmamis;
 
-                if (DialogResult.Yes == frm.ShowDialog())
-                {
+            //                if (DialogResult.Yes == frm.ShowDialog())
+            //                {
 
-                    decimal IndirimYuzdesi = ((100 * (TumSatirlarinToplam_KdvDahilIndirimUygulanmamis - Convert.ToDecimal(frm.txtIndirimliFiyat.EditValue))) / TumSatirlarinToplam_KdvDahilIndirimUygulanmamis);
-                    for (int i = 0; i < gridView1.RowCount; i++)
-                    {
-                        gridView1.SetRowCellValue(i, colStokIskonto1, IndirimYuzdesi);
-                    }
-                }
-            }
+            //                    decimal IndirimYuzdesi = ((100 * (TumSatirlarinToplam_KdvDahilIndirimUygulanmamis - Convert.ToDecimal(frm.txtIndirimliFiyat.EditValue))) / TumSatirlarinToplam_KdvDahilIndirimUygulanmamis);
+            //                    for (int i = 0; i < gridView1.RowCount; i++)
+            //                    {
+            //                        gridView1.SetRowCellValue(i, colStokIskonto1, IndirimYuzdesi);
+            //                    }
+            //                }
+            //            }
         }
 
         private void barBtnSeciliUruneIskonto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (gridView1.RowCount == 0)
-                return;
-            using (frmIndirim frm = new frmIndirim())
-            {
-                frm.lblStokBilgileri.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + " Birim Fiyatına Indirim Uygula";
+            //if (gridView1.RowCount == 0)
+            //    return;
+            //using (frmIndirim frm = new frmIndirim())
+            //{
+            //    frm.lblStokBilgileri.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + " Birim Fiyatına Indirim Uygula";
 
-                frm.txtNormalFiyat.EditValue = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilFiyat));
-                frm.txtIndirimYuzdesi.EditValue = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colStokIskonto1));
-                if (DialogResult.Yes == frm.ShowDialog())
-                {
-                    gridView1.SetFocusedRowCellValue(colStokIskonto1, Convert.ToDecimal(frm.txtIndirimYuzdesi.EditValue));
-                }
-            }
+            //    frm.txtNormalFiyat.EditValue = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilFiyat));
+            //    frm.txtIndirimYuzdesi.EditValue = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colStokIskonto1));
+            //    if (DialogResult.Yes == frm.ShowDialog())
+            //    {
+            //        gridView1.SetFocusedRowCellValue(colStokIskonto1, Convert.ToDecimal(frm.txtIndirimYuzdesi.EditValue));
+            //    }
+            //}
         }
 
         private void btnYazdir_Click(object sender, EventArgs e)
@@ -669,11 +669,30 @@ namespace TeraziSatis
             }
         }
 
+        string FaturaBarkod = string.Empty;
+
+
         private void btnSatisaAktar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                TrGenel = Baglanti.BeginTransaction();
+                FaturaBarkod = Siparis.SiparisiSatisaAktar(Baglanti, TrGenel, _SiparisID, SiparisiFaturalandiracakPersonel);
+                TrGenel.Commit();
+                if (FaturaBarkod != "")
+                    SiparisiSatisaAktarma(FaturaBarkod);
 
-            SiparisiSatisaAktarma(Siparis.SiparisID);
-            Close();
+                Close();
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    TrGenel.Rollback();
+                }
+                catch (Exception) { }
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dropDownButton1_Click(object sender, EventArgs e)
@@ -693,8 +712,8 @@ namespace TeraziSatis
 
             clsTablolar.EvrakIliski.csEvrakIliski Evraklari = new clsTablolar.EvrakIliski.csEvrakIliski();
 
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            if (Evraklari.SiparisFaturayaAktarilmisMi(SqlConnections.GetBaglanti(), TrGenel, Siparis.SiparisID) == clsTablolar.EvrakIliski.csEvrakIliski.SiparisinFaturayaAktarilmaDurumu.Faturalandi)
+            TrGenel = Baglanti.BeginTransaction();
+            if (Evraklari.SiparisFaturayaAktarilmisMi(Baglanti, TrGenel, Siparis.SiparisID) == clsTablolar.EvrakIliski.csEvrakIliski.SiparisinFaturayaAktarilmaDurumu.Faturalandi)
             {
                 TrGenel.Commit();
                 if (DialogResult.No == MessageBox.Show("Bu Sipariş Satışa Aktarılmış Gene de Silmek ,istyor musun", "", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2))
@@ -706,8 +725,8 @@ namespace TeraziSatis
             { TrGenel.Commit(); }
 
 
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            Siparis.SiparisSil(SqlConnections.GetBaglanti(), TrGenel, Siparis.SiparisID);
+            TrGenel = Baglanti.BeginTransaction();
+            Siparis.SiparisSil(Baglanti, TrGenel, Siparis.SiparisID);
             TrGenel.Commit();
         }
 
@@ -725,6 +744,122 @@ namespace TeraziSatis
                 //KApora.Entegrasyon = clsTablolar.cari.CariHr.CariHrEntegrasyon.CariKartHareketi;
                 //KApora.
                 txtKaporaTutari.Text = frm.textEdit1.Text;
+            }
+        }
+
+        private void chckbtnIskontoIslemleri_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+            {
+                chckbtnIskontoIslemleri.Checked = false;
+                return;
+            }
+
+            if (chckbtnIskontoIslemleri.Checked)
+            {
+                //Hesapla.AltToplamlariHesapla();
+                colStokIskonto1.Visible = true;
+                //colKdvDahilStokIskonto1IndirimMiktari.Visible = true;
+                colAltBirimKdvDahilIndirimHaricFiyat.Visible = true;
+                //splitContainerControl2.SplitterPosition = splitContainerControl2.Width;
+                //pcontrol_IskontoAyrintilari.Visible = true;
+                txtToplamTutar.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.PaleGreen;
+                colAltBirimKdvDahilFiyat.AppearanceCell.BackColor = System.Drawing.Color.PaleGreen;
+                colStokIskonto1.AppearanceCell.BackColor = System.Drawing.Color.PaleGreen;
+                colStokIskonto1.AppearanceHeader.BackColor = System.Drawing.Color.PaleGreen;
+                colStokIskonto1.AppearanceCell.Options.HighPriority = true;
+                colAltBirimKdvDahilFiyat.AppearanceCell.Options.HighPriority = true;
+            }
+            else
+            {
+                colAltBirimKdvDahilIndirimHaricFiyat.Visible = false;
+                //colKdvDahilStokIskonto1IndirimMiktari.Visible = false;
+                //splitContainerControl2.SplitterPosition = 425;
+                //pcontrol_IskontoAyrintilari.Visible = false;
+                txtToplamTutar.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+                colAltBirimKdvDahilFiyat.AppearanceCell.BackColor = System.Drawing.Color.White;
+                colStokIskonto1.AppearanceCell.BackColor = System.Drawing.Color.White;
+                colStokIskonto1.AppearanceCell.Options.HighPriority = false;
+                colAltBirimKdvDahilFiyat.AppearanceCell.Options.HighPriority = false;
+            }
+        }
+
+        private void txtToplamTutar_EditValueChanged(object sender, EventArgs e)
+        {
+            if (chckbtnIskontoIslemleri.Checked)
+            {
+
+                try
+                {
+                    if (gridView1.RowCount == 0)
+                        return;
+                    //KaydedileBilirMi = false;
+                    hesapla.ToplamFaturaTutariGirerekISkontoUygula(this);
+                    //IndirimVarsaIskontoKolonunuGosterYoksaGosterme();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    //MesajGoster(ex.Message);
+                }
+                finally
+                {
+
+                }
+
+            }
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if (chckbtnIskontoIslemleri.Checked)
+            {
+                if (e.Column == colStokIskonto1)
+                {
+                    try
+                    {
+
+                        using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colStokIskonto1)), clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
+                        {
+                            frm.labelControl1.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + "\nürüne yüzde indirim uygular";
+                            if (frm.ShowDialog() == DialogResult.Yes)
+                            {
+                                decimal IndirimYuzdesi = Convert.ToDecimal(frm.textEdit1.EditValue);
+
+                                gridView1.SetFocusedRowCellValue(colStokIskonto1, IndirimYuzdesi);
+                            }
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                    }
+                }
+                else if (e.Column == colAltBirimKdvDahilFiyat)
+                {
+                    try
+                    {
+                        using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilFiyat)), clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
+                        {
+                            frm.labelControl1.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + "\nstokun olmasını istediğin fiyatını yaz";
+                            if (frm.ShowDialog() == DialogResult.Yes)
+                            {
+                                decimal IndirimliFiyat = Convert.ToDecimal(frm.textEdit1.EditValue);
+                                decimal AltBirimKdvDahilIndirimHaricFiyat = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilIndirimHaricFiyat));
+                                decimal IndirimYuzdesi = 100 * ((AltBirimKdvDahilIndirimHaricFiyat - IndirimliFiyat) / AltBirimKdvDahilIndirimHaricFiyat);
+                                gridView1.SetFocusedRowCellValue(colStokIskonto1, IndirimYuzdesi);
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
             }
         }
     }
