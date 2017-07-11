@@ -271,7 +271,7 @@ namespace TeraziSatis
             try
             {
                 txtBarkodu.Text = FaturaBarkod;
-                btnMusteriler_Click(null, null);
+                btnUrunMusteriAra_Click(null, null);
 
                 //gvSatislar.MoveLast();
                 //gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
@@ -850,14 +850,14 @@ namespace TeraziSatis
                                 {
                                     if (SipBilgisi.FaturaID != -1) // Sipariş Faturaya Aktarılmışsa (sipariş Satışa aktarılmışsa)
                                     {
-                                        if (SipBilgisi.OdemesiTamamlandiMi == false) // Siparişin Faturaya Aktarılmış ve ödemesi tamamlanmamışsa
+                                        //if (SipBilgisi.OdemesiTamamlandiMi == false) // Siparişin Faturaya Aktarılmış ve ödemesi tamamlanmamışsa
                                         {
                                             txtBarkodu.EditValue = SipBilgisi.FaturaBarkod;
                                             btnUrunMusteriAra_Click(null, null);
                                             return;
                                         }
-                                        else
-                                        { MesajGoster("Bu sipariş Satışa aktarılmış ve ödemesi tamamlanmış!"); }
+                                        //else
+                                        //{ MesajGoster("Bu sipariş Satışa aktarılmış ve ödemesi tamamlanmış!"); }
                                     }
                                     else // faturaya aktarılmamışsa
                                     {
@@ -921,6 +921,7 @@ namespace TeraziSatis
             {
                 try { TrGenel.Rollback(); }
                 catch (Exception) { }
+                MesajGoster("Hiç birşey bulunamadı hata");
             }
             finally
             {

@@ -23,9 +23,15 @@ namespace clsTablolar.Siparis
 
         public SiparisOdeme BarkodtaSiparisIDGetir(SqlConnection Baglanti, SqlTransaction Tr, string BarkodNu)
         {
-            using (SqlCommand cmd = new SqlCommand(@"select Siparis.SiparisID, isnull(fatura.FaturaID, -1) FaturaID, ISNULL(OdendiMi, CONVERT(bit, 'false', 0)) OdendiMi , FaturaBarkod from Siparis 
-left join EvrakIsliski on Siparis.SiparisID = EvrakIsliski.SiparisID
-left join fatura on Fatura.FaturaID = EvrakIsliski.FaturaID and Fatura.SilindiMi = 0
+            using (SqlCommand cmd = new SqlCommand(@"select
+ distinct  
+ Siparis.SiparisID
+, isnull((select top 1 FaturaID from Fatura where FaturaID = EvrakIsliski.FaturaID and SilindiMi  = 0), -1) FaturaID
+, [dbo].[FaturaninOdemesiTamamlanmisMi]((select top 1 FaturaID from Fatura where FaturaID = EvrakIsliski.FaturaID and SilindiMi  = 0)) as OdendiMi 
+, (select top 1 FaturaBarkod  from Fatura where FaturaID = EvrakIsliski.FaturaID and SilindiMi  = 0) FaturaBarkod
+from Siparis 
+left join EvrakIsliski on Siparis.SiparisID = EvrakIsliski.SiparisID and EvrakIsliski.FaturaID not in (Select FaturaID from fatura where FaturaID = EvrakIsliski.FaturaID and SilindiMi = 1)
+--left join fatura on Fatura.FaturaID = EvrakIsliski.FaturaID and Fatura.SilindiMi = 0
 where SiparisBarkodNu = @SiparisBarkodNu", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@SiparisBarkodNu", SqlDbType.NVarChar).Value = BarkodNu;

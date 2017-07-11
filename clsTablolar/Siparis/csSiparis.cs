@@ -518,10 +518,12 @@ where SiparisID = @SiparisID", Baglanti, Tr);
             using (SqlCommand cmd = new SqlCommand("SiparisiFaturayaAktar", Baglanti, Tr))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@SiparisID", SqlDbType.Int).Value = SiparisID;
-                cmd.Parameters.Add("@SiparisiFaturayaAktaranPersonelID", SqlDbType.Int).Value = SiparisiFaturayaAktaranPersonelID;
+                cmd.Parameters.Add("@SiparisID", SqlDbType.Int, 0).Value = SiparisID;
+                cmd.Parameters.Add("@SiparisiFaturayaAktaranPersonelID", SqlDbType.Int, 0).Value = SiparisiFaturayaAktaranPersonelID;
 
-                cmd.Parameters.Add("@Barkod", SqlDbType.NVarChar).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@Barkod", SqlDbType.NVarChar, 25).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@FaturaID", SqlDbType.NVarChar, 25).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@HesaplananFaturaNo", SqlDbType.NVarChar, 25).Direction = ParameterDirection.Output;
 
                 cmd.ExecuteNonQuery();
 
