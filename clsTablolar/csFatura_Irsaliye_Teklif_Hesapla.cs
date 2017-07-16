@@ -813,6 +813,7 @@ namespace clsTablolar
         {
             using (clsTablolar.frmMiktarGir frmMiktar = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
             {
+                AltToplamlariHesapla();
                 frmMiktar.labelControl1.Text = "Aktif satışın Istenilen Satis Tutarına ulaşması için indirim uygula \nDaha Sonra eklenen Stokları etkilemez.\n0 Girilirse Tüm Ürünlere %100 iskonto uygulanmış olur\n";
                 if (frmMiktar.ShowDialog(frm) == System.Windows.Forms.DialogResult.Yes)
                 {

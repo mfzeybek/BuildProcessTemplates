@@ -47,7 +47,8 @@ namespace clsTablolar.Yazdirma
                     if (dr.Read())
                     {
                         VarsayilanYaziciAdi = dr["YaziciAdi"].ToString();
-                        VarsayilanYaziciIndex = Convert.ToInt16(dr["KagitKaynagiIndex"]);
+                        if (dr["KagitKaynagiIndex"] != DBNull.Value)
+                            VarsayilanYaziciIndex = Convert.ToInt16(dr["KagitKaynagiIndex"]);
                     }
                 }
                 sqlKonneksin.Close();

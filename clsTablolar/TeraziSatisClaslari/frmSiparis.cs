@@ -67,6 +67,8 @@ namespace clsTablolar.TeraziSatisClaslari
             hesapla.AltToplamlarDegisti = AltToplamlariAl;
 
             KayitTamamlandimi(true);
+
+            //colStokAltBirimAdi.AppearanceCell.BackColor = System.Drawing.Color.PaleGreen;
         }
 
         void KayitTamamlandimi(bool TamamMi)
@@ -169,7 +171,7 @@ namespace clsTablolar.TeraziSatisClaslari
                 SiparisHareket.dt_SiparisHareketleri.Rows[SonSatirIndex]["SiparisID"] = Siparis.SiparisID;
                 SiparisHareket.dt_SiparisHareketleri.Rows[SonSatirIndex]["SiparisHareketStokAdi"] = Stok.StokAdi;
                 SiparisHareket.dt_SiparisHareketleri.Rows[SonSatirIndex]["StokID"] = Stok.StokID;
-                //SiparisHareket.dt_SiparisHareketleri.Rows[SonSatirIndex]["StokAnaBirimAdi"] = Stok.StokAnaBirimAdi;
+                SiparisHareket.dt_SiparisHareketleri.Rows[SonSatirIndex]["StokAnaBirimAdi"] = Stok.StokAnaBirimAdi;
                 SiparisHareket.dt_SiparisHareketleri.Rows[SonSatirIndex]["AnaBirimFiyat"] = Stok.KdvHaricFiyat; // ana Birime Her zaman kdv hariç Fiyatı atıyoruz hamısına çünkü hesaplamaları öyle
                 //Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1]["KdvDahilFiyat"] = Stok.KdvDahilFiyat; // ana Birime Her zaman kdv hariç Fiyatı atıyoruz hamısına çünkü hesaplamaları öyle
 
@@ -493,6 +495,8 @@ namespace clsTablolar.TeraziSatisClaslari
         {
             using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
             {
+                frm.labelControl1.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + Environment.NewLine +
+                   Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colKatSayi)).ToString("F3") + " " + gridView1.GetFocusedRowCellValue("StokAnaBirimAdi").ToString() + " miktardan kaç adet?";
                 if (DialogResult.Yes == frm.ShowDialog())
                 {
                     gridView1.SetFocusedRowCellValue(colAltBirimMiktar, frm.textEdit1.EditValue);
@@ -676,7 +680,12 @@ namespace clsTablolar.TeraziSatisClaslari
         {
             try
             {
-                TrGenel = Baglanti.BeginTransaction();
+                if (btnKaydet.Enabled == true)
+                {
+                    MessageBox.Show("Önce Kaydet");
+                    return;
+                }
+
                 FaturaBarkod = Siparis.SiparisiSatisaAktar(Baglanti, TrGenel, _SiparisID, SiparisiFaturalandiracakPersonel);
                 TrGenel.Commit();
                 if (FaturaBarkod != "")
@@ -732,19 +741,19 @@ namespace clsTablolar.TeraziSatisClaslari
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-            clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli);
+            //clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli);
 
-            if (frm.ShowDialog() == DialogResult.Yes)
-            {
-                //clsTablolar.cari.CariHr.csCariHr KApora = new clsTablolar.cari.CariHr.csCariHr();
-                //KApora.Aciklama = "Kapora";
-                //KApora.AlacakMiBorcMu = clsTablolar.cari.CariHr.HareketYonu.Alacak;
-                //KApora.CariID = Siparis.CariID;
-                //KApora.Devirmi = false;
-                //KApora.Entegrasyon = clsTablolar.cari.CariHr.CariHrEntegrasyon.CariKartHareketi;
-                //KApora.
-                txtKaporaTutari.Text = frm.textEdit1.Text;
-            }
+            //if (frm.ShowDialog() == DialogResult.Yes)
+            //{
+            //    //clsTablolar.cari.CariHr.csCariHr KApora = new clsTablolar.cari.CariHr.csCariHr();
+            //    //KApora.Aciklama = "Kapora";
+            //    //KApora.AlacakMiBorcMu = clsTablolar.cari.CariHr.HareketYonu.Alacak;
+            //    //KApora.CariID = Siparis.CariID;
+            //    //KApora.Devirmi = false;
+            //    //KApora.Entegrasyon = clsTablolar.cari.CariHr.CariHrEntegrasyon.CariKartHareketi;
+            //    //KApora.
+            //    txtKaporaTutari.Text = frm.textEdit1.Text;
+            //}
         }
 
         private void chckbtnIskontoIslemleri_CheckedChanged(object sender, EventArgs e)
@@ -764,6 +773,7 @@ namespace clsTablolar.TeraziSatisClaslari
                 //splitContainerControl2.SplitterPosition = splitContainerControl2.Width;
                 //pcontrol_IskontoAyrintilari.Visible = true;
                 txtToplamTutar.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.PaleGreen;
+                txtToplamIskonto.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.PaleGreen;
                 colAltBirimKdvDahilFiyat.AppearanceCell.BackColor = System.Drawing.Color.PaleGreen;
                 colStokIskonto1.AppearanceCell.BackColor = System.Drawing.Color.PaleGreen;
                 colStokIskonto1.AppearanceHeader.BackColor = System.Drawing.Color.PaleGreen;
@@ -777,6 +787,7 @@ namespace clsTablolar.TeraziSatisClaslari
                 //splitContainerControl2.SplitterPosition = 425;
                 //pcontrol_IskontoAyrintilari.Visible = false;
                 txtToplamTutar.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+                txtToplamIskonto.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
                 colAltBirimKdvDahilFiyat.AppearanceCell.BackColor = System.Drawing.Color.White;
                 colStokIskonto1.AppearanceCell.BackColor = System.Drawing.Color.White;
                 colStokIskonto1.AppearanceCell.Options.HighPriority = false;
@@ -785,6 +796,81 @@ namespace clsTablolar.TeraziSatisClaslari
         }
 
         private void txtToplamTutar_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            try
+            {
+                if (chckbtnIskontoIslemleri.Checked)
+                {
+                    if (e.Column == colStokIskonto1)
+                    {
+                        try
+                        {
+
+                            using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colStokIskonto1)), clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
+                            {
+                                frm.labelControl1.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + "\nürüne yüzde indirim uygular";
+                                if (frm.ShowDialog() == DialogResult.Yes)
+                                {
+                                    decimal IndirimYuzdesi = Convert.ToDecimal(frm.textEdit1.EditValue);
+                                    gridView1.SetFocusedRowCellValue(colStokIskonto1, IndirimYuzdesi);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        finally { }
+                    }
+                    else if (e.Column == colAltBirimKdvDahilFiyat)
+                    {
+                        try
+                        {
+                            using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilFiyat)), clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
+                            {
+                                frm.labelControl1.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + "\nstokun olmasını istediğin fiyatını yaz";
+                                if (frm.ShowDialog() == DialogResult.Yes)
+                                {
+                                    decimal IndirimliFiyat = Convert.ToDecimal(frm.textEdit1.EditValue);
+                                    decimal AltBirimKdvDahilIndirimHaricFiyat = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilIndirimHaricFiyat));
+                                    decimal IndirimYuzdesi = 100 * ((AltBirimKdvDahilIndirimHaricFiyat - IndirimliFiyat) / AltBirimKdvDahilIndirimHaricFiyat);
+                                    gridView1.SetFocusedRowCellValue(colStokIskonto1, IndirimYuzdesi);
+                                }
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+                }
+
+
+                if (e.Column == colStokAltBirimAdi)
+                {
+                    using (Aresv2.Stok.frmStokBirim Birimler = new Aresv2.Stok.frmStokBirim(Baglanti, Convert.ToInt32(gridView1.GetFocusedRowCellValue(colStokID)), true))
+                        if (Birimler.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            gridView1.SetFocusedRowCellValue(colBirim2ID, Birimler.AltBirimID);
+                            gridView1.SetFocusedRowCellValue(colStokAltBirimAdi, Birimler.AltBirimAdi);
+                            gridView1.SetFocusedRowCellValue(colKatSayi, Birimler.AltBirimKatsayi);
+
+                            hesapla.SatirHesaplamasi(gridView1.GetFocusedDataRow());
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtToplamTutar_Click(object sender, EventArgs e)
         {
             if (chckbtnIskontoIslemleri.Checked)
             {
@@ -806,59 +892,37 @@ namespace clsTablolar.TeraziSatisClaslari
                 {
 
                 }
-
             }
         }
 
-        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        private void txtToplamIskonto_Click(object sender, EventArgs e)
         {
-            if (chckbtnIskontoIslemleri.Checked)
+            if (chckbtnIskontoIslemleri.Checked && gridView1.RowCount != 0)
             {
-                if (e.Column == colStokIskonto1)
+                try
                 {
-                    try
+                    using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(Convert.ToDecimal(txtToplamIskonto.EditValue), clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
                     {
-
-                        using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colStokIskonto1)), clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
+                        frm.labelControl1.Text = "İstenilen Toplam İndirim Miktarı";
+                        if (frm.ShowDialog() == DialogResult.Yes)
                         {
-                            frm.labelControl1.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + "\nürüne yüzde indirim uygular";
-                            if (frm.ShowDialog() == DialogResult.Yes)
-                            {
-                                decimal IndirimYuzdesi = Convert.ToDecimal(frm.textEdit1.EditValue);
+                            decimal IndirimMiktari = Convert.ToDecimal(frm.textEdit1.EditValue);
+                            //decimal IndirimYuzdesi = IndirimMiktari / KdvDahilIndirimUygulanmamisFaturaTutari() * 100;
+                            decimal IndirimYuzdesi = IndirimMiktari / hesapla.ToplamKdvDahilIndirimsizSatisTutari * 100;
 
-                                gridView1.SetFocusedRowCellValue(colStokIskonto1, IndirimYuzdesi);
+                            for (int i = 0; i < gridView1.RowCount; i++)
+                            {
+                                gridView1.SetRowCellValue(i, colStokIskonto1, IndirimYuzdesi);
                             }
                         }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
                     }
                 }
-                else if (e.Column == colAltBirimKdvDahilFiyat)
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        using (clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilFiyat)), clsTablolar.frmMiktarGir.SayiCinsi.Ondalikli))
-                        {
-                            frm.labelControl1.Text = gridView1.GetFocusedRowCellValue(colSiparisHareketStokAdi).ToString() + "\nstokun olmasını istediğin fiyatını yaz";
-                            if (frm.ShowDialog() == DialogResult.Yes)
-                            {
-                                decimal IndirimliFiyat = Convert.ToDecimal(frm.textEdit1.EditValue);
-                                decimal AltBirimKdvDahilIndirimHaricFiyat = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colAltBirimKdvDahilIndirimHaricFiyat));
-                                decimal IndirimYuzdesi = 100 * ((AltBirimKdvDahilIndirimHaricFiyat - IndirimliFiyat) / AltBirimKdvDahilIndirimHaricFiyat);
-                                gridView1.SetFocusedRowCellValue(colStokIskonto1, IndirimYuzdesi);
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-
-                    }
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
                 }
             }
         }

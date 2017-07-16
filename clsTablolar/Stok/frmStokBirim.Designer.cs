@@ -1,33 +1,33 @@
 ﻿namespace Aresv2.Stok
 {
-  partial class frmStokBirim
-  {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
-
-    /// <summary>
-    /// Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
+    partial class frmStokBirim
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
-    }
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    #region Windows Form Designer generated code
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-    /// <summary>
-    /// Required method for Designer support - do not modify
-    /// the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent()
-    {
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStokBirimCevirmeID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,22 +38,27 @@
             this.colBarkodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBirimAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnTamam = new DevExpress.XtraEditors.SimpleButton();
+            this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 2);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl1.Location = new System.Drawing.Point(10, 2);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1008, 392);
+            this.gridControl1.Size = new System.Drawing.Size(864, 348);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colStokBirimCevirmeID,
             this.colAciklama,
@@ -121,20 +126,36 @@
             // 
             // btnTamam
             // 
-            this.btnTamam.Location = new System.Drawing.Point(12, 400);
+            this.btnTamam.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTamam.Appearance.Options.UseFont = true;
+            this.btnTamam.Location = new System.Drawing.Point(10, 355);
+            this.btnTamam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTamam.Name = "btnTamam";
-            this.btnTamam.Size = new System.Drawing.Size(1008, 23);
+            this.btnTamam.Size = new System.Drawing.Size(556, 51);
             this.btnTamam.TabIndex = 1;
             this.btnTamam.Text = "Tamam";
             this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
             // 
+            // btnVazgec
+            // 
+            this.btnVazgec.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVazgec.Appearance.Options.UseFont = true;
+            this.btnVazgec.Location = new System.Drawing.Point(572, 355);
+            this.btnVazgec.Name = "btnVazgec";
+            this.btnVazgec.Size = new System.Drawing.Size(302, 51);
+            this.btnVazgec.TabIndex = 2;
+            this.btnVazgec.Text = "Vazgeç";
+            this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
+            // 
             // frmStokBirim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 432);
+            this.ClientSize = new System.Drawing.Size(899, 417);
+            this.Controls.Add(this.btnVazgec);
             this.Controls.Add(this.btnTamam);
             this.Controls.Add(this.gridControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmStokBirim";
             this.Text = "frmStokBirim";
             this.Load += new System.EventHandler(this.frmStokBirim_Load);
@@ -142,19 +163,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        #endregion
+
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton btnTamam;
+        private DevExpress.XtraGrid.Columns.GridColumn colStokBirimCevirmeID;
+        private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
+        private DevExpress.XtraGrid.Columns.GridColumn colStokID;
+        private DevExpress.XtraGrid.Columns.GridColumn colBirimID;
+        private DevExpress.XtraGrid.Columns.GridColumn colKatSayi;
+        private DevExpress.XtraGrid.Columns.GridColumn colBarkodu;
+        private DevExpress.XtraGrid.Columns.GridColumn colBirimAdi;
+        private DevExpress.XtraEditors.SimpleButton btnVazgec;
     }
-
-    #endregion
-
-    private DevExpress.XtraGrid.GridControl gridControl1;
-    private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-    private DevExpress.XtraEditors.SimpleButton btnTamam;
-    private DevExpress.XtraGrid.Columns.GridColumn colStokBirimCevirmeID;
-    private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
-    private DevExpress.XtraGrid.Columns.GridColumn colStokID;
-    private DevExpress.XtraGrid.Columns.GridColumn colBirimID;
-    private DevExpress.XtraGrid.Columns.GridColumn colKatSayi;
-    private DevExpress.XtraGrid.Columns.GridColumn colBarkodu;
-    private DevExpress.XtraGrid.Columns.GridColumn colBirimAdi;
-  }
 }

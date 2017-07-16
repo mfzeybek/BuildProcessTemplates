@@ -1096,16 +1096,15 @@ namespace Aresv2.Fatura
 
         private void txtBirim2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            Stok.frmStokBirim Birimler = new Stok.frmStokBirim(Convert.ToInt32(gvFaturaHareket.GetFocusedRowCellValue("StokID")));
+            using (Stok.frmStokBirim Birimler = new Stok.frmStokBirim(SqlConnections.GetBaglanti(), Convert.ToInt32(gvFaturaHareket.GetFocusedRowCellValue("StokID")), true))
+                if (Birimler.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+                {
+                    gvFaturaHareket.SetFocusedRowCellValue(colBirim2ID, Birimler.AltBirimID);
+                    gvFaturaHareket.SetFocusedRowCellValue(colStokAltBirimAdi, Birimler.AltBirimAdi);
+                    gvFaturaHareket.SetFocusedRowCellValue(colKatSayi, Birimler.AltBirimKatsayi);
 
-
-            if (Birimler.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
-            {
-                gvFaturaHareket.SetFocusedRowCellValue(colBirim2ID, Birimler.AltBirimID);
-                gvFaturaHareket.SetFocusedRowCellValue(colStokAltBirimAdi, Birimler.AltBirimAdi);
-                gvFaturaHareket.SetFocusedRowCellValue(colKatSayi, Birimler.AltBirimKatsayi);
-
-            }
+                    Hesaplamalar.SatirHesaplamasi(gvFaturaHareket.GetFocusedDataRow());
+                }
         }
 
 
@@ -1341,7 +1340,7 @@ order by fatura.FaturaTarihi desc", SqlConnections.GetBaglanti()))
 
         private void gvFaturaHareket_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         { // CellValueChanging Burası cell değişirken tetiklenir  eğer 
-            if (e.Column == colAnaBirimFiyat  || e.Column == colAltBirimMiktar)
+            if (e.Column == colAnaBirimFiyat || e.Column == colAltBirimMiktar)
             {
                 if (e.Value == DBNull.Value || e.Value.ToString() == "")
                 {

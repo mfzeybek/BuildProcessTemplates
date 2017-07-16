@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace Aresv2.Stok
 {
-  public partial class frmStokHrGirisi : Form
+    public partial class frmStokHrGirisi : Form
   {
     public frmStokHrGirisi(int StokHrID)
     {

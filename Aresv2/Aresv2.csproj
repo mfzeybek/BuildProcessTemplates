@@ -854,12 +854,6 @@
     <Compile Include="Stok\frmOzelEtiket.Designer.cs">
       <DependentUpon>frmOzelEtiket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stok\frmStokBirim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stok\frmStokBirim.Designer.cs">
-      <DependentUpon>frmStokBirim.cs</DependentUpon>
-    </Compile>
     <Compile Include="Stok\frmStokDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1410,9 +1404,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\frmOzelEtiket.resx">
       <DependentUpon>frmOzelEtiket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stok\frmStokBirim.resx">
-      <DependentUpon>frmStokBirim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\frmStokDetay.resx">
       <DependentUpon>frmStokDetay.cs</DependentUpon>

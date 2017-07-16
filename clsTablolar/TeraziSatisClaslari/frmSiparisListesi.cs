@@ -14,7 +14,7 @@ namespace clsTablolar.TeraziSatisClaslari
         public frmSiparisListesi(SqlConnection Baglanti, int TeraziID)
         {
             this.Baglanti = Baglanti;
-            TeraziID = TeraziID;
+            this.TeraziID = TeraziID;
             InitializeComponent();
         }
 
@@ -48,6 +48,7 @@ namespace clsTablolar.TeraziSatisClaslari
 
                 Siparis.HizliSatistaGozukecekMi = 1;
                 Siparis.HizliSatistaDegisiklikYapmaIzniVarMi = 1; // aslında bunun farketmemesi lazım
+                Siparis.BirazAzGetir = true;
 
                 TrGenel = Baglanti.BeginTransaction();
                 SiparisDetayi = new clsTablolar.Siparis.csSiparisHareket(Baglanti, TrGenel, -1);
@@ -71,9 +72,9 @@ namespace clsTablolar.TeraziSatisClaslari
                 gvSiparis.BeginSort();
                 gvSiparis.ClearSorting();
                 colTeslimTarihi.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
-                colTeslimTarihi.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+                colTeslimTarihi.SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
                 gvSiparis.EndSort();
-
+                gvSiparis.MoveFirst();
                 //gvSiparis.OptionsCustomization.
 
             }
@@ -193,6 +194,21 @@ namespace clsTablolar.TeraziSatisClaslari
             else if (radioGroup1.SelectedIndex == 1)
             {
                 Siparis.IlkFaturaTarihi = DateTime.Today.Date.AddDays(-2);
+            }
+            Getir();
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            if (Siparis.BirazAzGetir)
+            {
+                simpleButton1.Text = "Çok şey et.";
+                Siparis.BirazAzGetir = false;
+            }
+            else
+            {
+                simpleButton1.Text = "Çok da şey etme.";
+                Siparis.BirazAzGetir = true;
             }
             Getir();
         }

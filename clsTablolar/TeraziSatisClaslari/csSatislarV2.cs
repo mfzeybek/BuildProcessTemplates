@@ -23,7 +23,7 @@ namespace clsTablolar.TeraziSatisClaslari
         public DataTable dt_threadSatislar;
 
         public Thread th1;
-        SqlDataReader dr;
+        //SqlDataReader dr;
 
         public delegate void dlg_VeriTabaniBaglantiDurmu(VeriTabaniBaglantiDurumu BaglnatiDurmu);
         public dlg_VeriTabaniBaglantiDurmu BaglantiDurmu;
@@ -34,7 +34,7 @@ namespace clsTablolar.TeraziSatisClaslari
             BaglantisiKoptu
         }
 
-        bool SurekliSatislariGetir = false;
+        //bool SurekliSatislariGetir = false;
 
         public void OdemesiAlinanSonKirkSatis(SqlConnection Baglanti, SqlTransaction Tr)
         {
@@ -256,7 +256,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
             {
                 if (dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'").Length != 0)
                 {
-                    if ((bool)dr["Iptal"] || (bool)dr["SilindiMi"] || (bool)dr["OdendiMi"]) // eğer gelen satır silinmişse, Iptal edilmişse veya Ödenmişse çıkartıyoruz
+                    if ((bool)dr["Iptal"] || (bool)dr["SilindiMi"])// || (bool)dr["OdendiMi"]) // eğer gelen satır silinmişse, Iptal edilmişse veya Ödenmişse çıkartıyoruz
                     {
                         foreach (var item in dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'").AsEnumerable())
                         {

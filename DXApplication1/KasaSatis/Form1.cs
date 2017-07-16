@@ -336,6 +336,16 @@ namespace KasaSatis
 
         private void btnMusteriUrunAra_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtBarkodu.Text)) // barkoda bişi yazılı değilse yazması için düğmeleri çıkar
+            {
+                clsTablolar.frmMiktarGir frm = new clsTablolar.frmMiktarGir(0, clsTablolar.frmMiktarGir.SayiCinsi.Yazi);
+                if (DialogResult.Yes == frm.ShowDialog() && !string.IsNullOrEmpty(frm.textEdit1.Text)) //textboxın doluluk uğunu sorgulamazsam sonsuz döngüye girer
+                {
+                    txtBarkodu.Text = frm.textEdit1.Text;
+                    btnMusteriUrunAra_Click(null, null);
+                }
+                return;
+            }
             if (txtBarkodu.EditValue.ToString().StartsWith(clsTablolar.TeraziSatisClaslari.csTeraziAyarlari.FaturaBarkodIcinKullanilacakOnEk)) // okutunlan barkod fatura için olan bir barkodsa
             {
                 try
@@ -344,9 +354,49 @@ namespace KasaSatis
                     if (ceBarkoduOkutulanFaturaninOdemesiniYap.Checked)
                         btnAlisVerisiNakitOlarakKapat_Click(null, null);
                 }
-                catch { }
+                catch
+                {
+                }
                 finally
                 { txtBarkodu.EditValue = string.Empty; }
+            }
+            else if (txtBarkodu.EditValue.ToString().StartsWith(clsTablolar.TeraziSatisClaslari.csTeraziAyarlari.SiparisBarkodNumarasiOnEki)) // bu sipariş için sanırım
+            {
+                //lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
+                {
+                    using (clsTablolar.Siparis.csBarkodtanSiparisIDGetir barkodtanGetir = new clsTablolar.Siparis.csBarkodtanSiparisIDGetir())
+                    {
+                        clsTablolar.Siparis.csBarkodtanSiparisIDGetir.SiparisOdeme SipBilgisi = barkodtanGetir.BarkodtaSiparisIDGetir(SqlConnections.GetBaglanti(), TrGenel, txtBarkodu.Text);
+
+                        if (SipBilgisi.SipariID != -1) // Sipariş Varsa
+                        {
+                            if (SipBilgisi.FaturaID != -1) // Sipariş Faturaya Aktarılmışsa (sipariş Satışa aktarılmışsa)
+                            {
+                                //if (SipBilgisi.OdemesiTamamlandiMi == false) // Siparişin Faturaya Aktarılmış ve ödemesi tamamlanmamışsa
+                                {
+                                    txtBarkodu.EditValue = SipBilgisi.FaturaBarkod;
+                                    btnMusteriUrunAra_Click(null, null);
+                                    return;
+                                }
+                                //else
+                                //{ MesajGoster("Bu sipariş Satışa aktarılmış ve ödemesi tamamlanmış!"); }
+                            }
+                            else // faturaya aktarılmamışsa
+                            {
+                                using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), KasaSatis.Properties.Settings.Default.TeraziID, -1))
+                                {
+                                    sip.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
+                                    sip.ShowDialog();
+                                    return;
+                                }
+                            }
+                        }
+                        else  // faturaID gelirse fatura aktarılmıştır.
+                        {
+                            MessageBox.Show("Sipariş Yok");
+                        }
+                    }
+                }
             }
             else if (txtBarkodu.EditValue.ToString().StartsWith(clsTablolar.TeraziSatisClaslari.csTeraziAyarlari.PersonelBarkodNumarasiOnEki)) // girinlen numara personel numarası ise
             {
@@ -459,6 +509,23 @@ namespace KasaSatis
                 catch (Exception) { }
             }
 
+        }
+
+        void SiparisiSatisaAktarma(string FaturaBarkod)// burada yanlış tanımlamışsın siparişi aktarma diye birşey değil bu. Zaten satışa aktarılmış bir siparişin barkodu okutulursa oradan fatura barkodunu buluyor
+        {
+            try
+            {
+                txtBarkodu.Text = FaturaBarkod;
+                btnMusteriUrunAra_Click(null, null);
+
+                //gvSatislar.MoveLast();
+                //gvSatislar.FocusedRowHandle = gvSatislar.RowCount - 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Hesapla.AltToplamlariHesapla();
         }
 
         public void StokEkle(int StokID) // ama nereye ekliyecek mevcut müşteriye mi yeni müşteriye mi

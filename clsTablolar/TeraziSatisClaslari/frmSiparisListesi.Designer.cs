@@ -53,6 +53,7 @@
             this.colKdvDahilToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAltBirimKdvDahilFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcSiparis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSiparis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
@@ -65,12 +66,12 @@
             // 
             this.gcSiparis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSiparis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gcSiparis.Location = new System.Drawing.Point(18, 19);
+            this.gcSiparis.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcSiparis.Location = new System.Drawing.Point(9, 10);
             this.gcSiparis.MainView = this.gvSiparis;
-            this.gcSiparis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcSiparis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcSiparis.Name = "gcSiparis";
-            this.gcSiparis.Size = new System.Drawing.Size(1172, 748);
+            this.gcSiparis.Size = new System.Drawing.Size(711, 281);
             this.gcSiparis.TabIndex = 0;
             this.gcSiparis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSiparis});
@@ -137,6 +138,8 @@
             // colTeslimTarihi
             // 
             this.colTeslimTarihi.Caption = "TeslimTarihi";
+            this.colTeslimTarihi.DisplayFormat.FormatString = "d";
+            this.colTeslimTarihi.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colTeslimTarihi.FieldName = "TeslimTarihi";
             this.colTeslimTarihi.Name = "colTeslimTarihi";
             this.colTeslimTarihi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
@@ -166,10 +169,10 @@
             this.btnSiparisiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSiparisiAc.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.btnSiparisiAc.Appearance.Options.UseFont = true;
-            this.btnSiparisiAc.Location = new System.Drawing.Point(18, 958);
-            this.btnSiparisiAc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSiparisiAc.Location = new System.Drawing.Point(11, 673);
+            this.btnSiparisiAc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSiparisiAc.Name = "btnSiparisiAc";
-            this.btnSiparisiAc.Size = new System.Drawing.Size(280, 98);
+            this.btnSiparisiAc.Size = new System.Drawing.Size(140, 51);
             this.btnSiparisiAc.TabIndex = 1;
             this.btnSiparisiAc.Text = "Siparişi Aç";
             this.btnSiparisiAc.Click += new System.EventHandler(this.btnSiparisiAc_Click);
@@ -180,10 +183,11 @@
             this.checkedListBoxControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
             this.checkedListBoxControl1.Appearance.Options.UseFont = true;
             this.checkedListBoxControl1.CheckOnClick = true;
-            this.checkedListBoxControl1.Location = new System.Drawing.Point(1200, 19);
-            this.checkedListBoxControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkedListBoxControl1.Location = new System.Drawing.Point(727, 11);
+            this.checkedListBoxControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
-            this.checkedListBoxControl1.Size = new System.Drawing.Size(536, 538);
+            this.checkedListBoxControl1.Size = new System.Drawing.Size(268, 280);
             this.checkedListBoxControl1.TabIndex = 2;
             this.checkedListBoxControl1.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxControl1_ItemCheck);
             // 
@@ -192,10 +196,10 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.btnKapat.Appearance.Options.UseFont = true;
-            this.btnKapat.Location = new System.Drawing.Point(1438, 958);
-            this.btnKapat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKapat.Location = new System.Drawing.Point(855, 673);
+            this.btnKapat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(280, 98);
+            this.btnKapat.Size = new System.Drawing.Size(140, 51);
             this.btnKapat.TabIndex = 3;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -205,12 +209,12 @@
             this.gcSiparisDetayi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSiparisDetayi.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gcSiparisDetayi.Location = new System.Drawing.Point(18, 777);
+            this.gcSiparisDetayi.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcSiparisDetayi.Location = new System.Drawing.Point(9, 295);
             this.gcSiparisDetayi.MainView = this.gvSiparisDetayi;
-            this.gcSiparisDetayi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcSiparisDetayi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcSiparisDetayi.Name = "gcSiparisDetayi";
-            this.gcSiparisDetayi.Size = new System.Drawing.Size(1172, 171);
+            this.gcSiparisDetayi.Size = new System.Drawing.Size(711, 363);
             this.gcSiparisDetayi.TabIndex = 4;
             this.gcSiparisDetayi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSiparisDetayi});
@@ -320,33 +324,46 @@
             // radioGroup1
             // 
             this.radioGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroup1.EditValue = ((short)(1));
-            this.radioGroup1.Location = new System.Drawing.Point(1200, 587);
-            this.radioGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioGroup1.EditValue = ((short)(-1));
+            this.radioGroup1.Location = new System.Drawing.Point(727, 306);
+            this.radioGroup1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioGroup1.Name = "radioGroup1";
             this.radioGroup1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
             this.radioGroup1.Properties.Appearance.Options.UseFont = true;
             this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(-1)), "Ahanda"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Satışa Aktarılmadı"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(4)), "Satışa Aktarıldı")});
-            this.radioGroup1.Size = new System.Drawing.Size(536, 287);
+            this.radioGroup1.Size = new System.Drawing.Size(268, 149);
             this.radioGroup1.TabIndex = 7;
             this.radioGroup1.EditValueChanged += new System.EventHandler(this.radioGroup1_EditValueChanged);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Location = new System.Drawing.Point(765, 546);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(176, 50);
+            this.simpleButton1.TabIndex = 8;
+            this.simpleButton1.Text = "Çok da şey etme.";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
             // frmSiparisListesi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1736, 1062);
+            this.ClientSize = new System.Drawing.Size(1006, 735);
             this.ControlBox = false;
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.radioGroup1);
-            this.Controls.Add(this.gcSiparisDetayi);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.checkedListBoxControl1);
             this.Controls.Add(this.btnSiparisiAc);
             this.Controls.Add(this.gcSiparis);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.gcSiparisDetayi);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSiparisListesi";
             this.Text = "frmSiparisListesi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -388,6 +405,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPersonelAdi;
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraGrid.Columns.GridColumn colSiparisDurumTanimAdi;
-
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

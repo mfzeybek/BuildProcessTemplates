@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTerazi));
             this.recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
             this.designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
@@ -40,7 +39,7 @@
             this.txtStokAdi = new DevExpress.XtraEditors.MemoEdit();
             this.txtDaraMiktari = new DevExpress.XtraEditors.TextEdit();
             this.txtAnlikTutar = new DevExpress.XtraEditors.TextEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -187,9 +186,9 @@
             this.txtFaturaNo = new DevExpress.XtraEditors.TextEdit();
             this.btnBirlesikUrunEkle = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazici2 = new DevExpress.XtraEditors.SimpleButton();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ımageList1 = new System.Windows.Forms.ImageList();
             this.lblHareketSayisi = new DevExpress.XtraEditors.LabelControl();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.btnOncekiSayfa = new DevExpress.XtraEditors.SimpleButton();
             this.btnSonrakiSayfa = new DevExpress.XtraEditors.SimpleButton();
             this.btnAktifSatisaDigerSatisinHareketleriniEkle = new DevExpress.XtraEditors.SimpleButton();
@@ -207,7 +206,6 @@
             this.Panel1layoutControl1ConvertedLayoutlayoutControl2ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.stokButonGrupVeStokButonlari2 = new clsTablolar.TeraziSatisClaslari.StokButonGrupVeStokButonlari();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pcontrol_IskontoAyrintilari = new DevExpress.XtraEditors.PanelControl();
@@ -230,7 +228,7 @@
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.btnCikis = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKdvDahilFiyati.Properties)).BeginInit();
@@ -291,8 +289,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Panel1layoutControl1ConvertedLayoutlayoutControl2ConvertedLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
-            this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcontrol_IskontoAyrintilari)).BeginInit();
@@ -326,7 +322,7 @@
             // 
             this.txtKdvDahilFiyati.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKdvDahilFiyati.Location = new System.Drawing.Point(170, 183);
+            this.txtKdvDahilFiyati.Location = new System.Drawing.Point(170, 169);
             this.txtKdvDahilFiyati.Margin = new System.Windows.Forms.Padding(6);
             this.txtKdvDahilFiyati.Name = "txtKdvDahilFiyati";
             this.txtKdvDahilFiyati.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -338,7 +334,7 @@
             this.txtKdvDahilFiyati.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtKdvDahilFiyati.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtKdvDahilFiyati.Properties.ReadOnly = true;
-            this.txtKdvDahilFiyati.Size = new System.Drawing.Size(268, 54);
+            this.txtKdvDahilFiyati.Size = new System.Drawing.Size(302, 54);
             this.txtKdvDahilFiyati.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtKdvDahilFiyati.TabIndex = 2;
             // 
@@ -366,18 +362,18 @@
             this.Panel1layoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.Panel1layoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(0);
             this.Panel1layoutControl1ConvertedLayout.Name = "Panel1layoutControl1ConvertedLayout";
-            this.Panel1layoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(613, 166, 900, 800);
+            this.Panel1layoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(330, 136, 900, 800);
             this.Panel1layoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.Panel1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(442, 1431);
+            this.Panel1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(476, 1225);
             this.Panel1layoutControl1ConvertedLayout.TabIndex = 113;
             // 
             // btnDaraYonetimi
             // 
             this.btnDaraYonetimi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDaraYonetimi.Location = new System.Drawing.Point(358, 725);
+            this.btnDaraYonetimi.Location = new System.Drawing.Point(384, 711);
             this.btnDaraYonetimi.Margin = new System.Windows.Forms.Padding(6);
             this.btnDaraYonetimi.Name = "btnDaraYonetimi";
-            this.btnDaraYonetimi.Size = new System.Drawing.Size(80, 85);
+            this.btnDaraYonetimi.Size = new System.Drawing.Size(88, 85);
             this.btnDaraYonetimi.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.btnDaraYonetimi.TabIndex = 110;
             this.btnDaraYonetimi.Text = "...";
@@ -389,7 +385,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkEdit2.AutoSizeInLayoutControl = true;
             this.checkEdit2.EditValue = true;
-            this.checkEdit2.Location = new System.Drawing.Point(4, 818);
+            this.checkEdit2.Location = new System.Drawing.Point(4, 804);
             this.checkEdit2.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
@@ -414,7 +410,7 @@
             this.memoCariTanim.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
             this.memoCariTanim.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.memoCariTanim.Properties.ReadOnly = true;
-            this.memoCariTanim.Size = new System.Drawing.Size(434, 47);
+            this.memoCariTanim.Size = new System.Drawing.Size(468, 47);
             this.memoCariTanim.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.memoCariTanim.TabIndex = 22;
             // 
@@ -430,7 +426,7 @@
             this.txtStokAdi.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
             this.txtStokAdi.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtStokAdi.Properties.ReadOnly = true;
-            this.txtStokAdi.Size = new System.Drawing.Size(268, 85);
+            this.txtStokAdi.Size = new System.Drawing.Size(302, 71);
             this.txtStokAdi.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtStokAdi.TabIndex = 2;
             // 
@@ -439,7 +435,7 @@
             this.txtDaraMiktari.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDaraMiktari.EditValue = "";
-            this.txtDaraMiktari.Location = new System.Drawing.Point(4, 756);
+            this.txtDaraMiktari.Location = new System.Drawing.Point(4, 742);
             this.txtDaraMiktari.Margin = new System.Windows.Forms.Padding(6);
             this.txtDaraMiktari.Name = "txtDaraMiktari";
             this.txtDaraMiktari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -449,7 +445,7 @@
             this.txtDaraMiktari.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtDaraMiktari.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDaraMiktari.Properties.ReadOnly = true;
-            this.txtDaraMiktari.Size = new System.Drawing.Size(346, 54);
+            this.txtDaraMiktari.Size = new System.Drawing.Size(372, 54);
             this.txtDaraMiktari.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtDaraMiktari.TabIndex = 21;
             // 
@@ -457,7 +453,7 @@
             // 
             this.txtAnlikTutar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAnlikTutar.Location = new System.Drawing.Point(170, 663);
+            this.txtAnlikTutar.Location = new System.Drawing.Point(170, 649);
             this.txtAnlikTutar.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.txtAnlikTutar.MenuManager = this.barManager1;
             this.txtAnlikTutar.Name = "txtAnlikTutar";
@@ -468,7 +464,7 @@
             this.txtAnlikTutar.Properties.DisplayFormat.FormatString = "c2";
             this.txtAnlikTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtAnlikTutar.Properties.ReadOnly = true;
-            this.txtAnlikTutar.Size = new System.Drawing.Size(268, 54);
+            this.txtAnlikTutar.Size = new System.Drawing.Size(302, 54);
             this.txtAnlikTutar.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtAnlikTutar.TabIndex = 112;
             this.txtAnlikTutar.EditValueChanged += new System.EventHandler(this.txtAnlikTutar_EditValueChanged);
@@ -515,16 +511,16 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(6);
-            this.barDockControlTop.Size = new System.Drawing.Size(2316, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(2026, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1544);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1338);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6);
-            this.barDockControlBottom.Size = new System.Drawing.Size(2316, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(2026, 0);
             // 
             // barDockControlLeft
             // 
@@ -533,16 +529,16 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1544);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1338);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(2316, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(2026, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1544);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1338);
             // 
             // btnButunUrunlereIndirimUygula
             // 
@@ -766,10 +762,10 @@
             this.btnOtomatikSabitTutarGir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOtomatikSabitTutarGir.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnOtomatikSabitTutarGir.Appearance.Options.UseFont = true;
-            this.btnOtomatikSabitTutarGir.Location = new System.Drawing.Point(358, 454);
+            this.btnOtomatikSabitTutarGir.Location = new System.Drawing.Point(384, 440);
             this.btnOtomatikSabitTutarGir.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnOtomatikSabitTutarGir.Name = "btnOtomatikSabitTutarGir";
-            this.btnOtomatikSabitTutarGir.Size = new System.Drawing.Size(80, 46);
+            this.btnOtomatikSabitTutarGir.Size = new System.Drawing.Size(88, 46);
             this.btnOtomatikSabitTutarGir.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.btnOtomatikSabitTutarGir.TabIndex = 111;
             this.btnOtomatikSabitTutarGir.Text = "0,25";
@@ -780,10 +776,10 @@
             this.btnOtomatikSabitMiktarGir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOtomatikSabitMiktarGir.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnOtomatikSabitMiktarGir.Appearance.Options.UseFont = true;
-            this.btnOtomatikSabitMiktarGir.Location = new System.Drawing.Point(358, 245);
+            this.btnOtomatikSabitMiktarGir.Location = new System.Drawing.Point(384, 231);
             this.btnOtomatikSabitMiktarGir.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnOtomatikSabitMiktarGir.Name = "btnOtomatikSabitMiktarGir";
-            this.btnOtomatikSabitMiktarGir.Size = new System.Drawing.Size(80, 46);
+            this.btnOtomatikSabitMiktarGir.Size = new System.Drawing.Size(88, 46);
             this.btnOtomatikSabitMiktarGir.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.btnOtomatikSabitMiktarGir.TabIndex = 110;
             this.btnOtomatikSabitMiktarGir.Text = "0,010";
@@ -793,7 +789,7 @@
             // 
             this.txtMiktari.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMiktari.Location = new System.Drawing.Point(4, 330);
+            this.txtMiktari.Location = new System.Drawing.Point(4, 316);
             this.txtMiktari.Margin = new System.Windows.Forms.Padding(6);
             this.txtMiktari.Name = "txtMiktari";
             this.txtMiktari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -805,7 +801,7 @@
             this.txtMiktari.Properties.Mask.EditMask = "f3";
             this.txtMiktari.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtMiktari.Properties.ReadOnly = true;
-            this.txtMiktari.Size = new System.Drawing.Size(434, 54);
+            this.txtMiktari.Size = new System.Drawing.Size(468, 54);
             this.txtMiktari.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtMiktari.TabIndex = 2;
             // 
@@ -813,10 +809,10 @@
             // 
             this.btnMiktarGir.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnMiktarGir.Appearance.Options.UseFont = true;
-            this.btnMiktarGir.Location = new System.Drawing.Point(4, 245);
+            this.btnMiktarGir.Location = new System.Drawing.Point(4, 231);
             this.btnMiktarGir.Margin = new System.Windows.Forms.Padding(6);
             this.btnMiktarGir.Name = "btnMiktarGir";
-            this.btnMiktarGir.Size = new System.Drawing.Size(346, 46);
+            this.btnMiktarGir.Size = new System.Drawing.Size(372, 46);
             this.btnMiktarGir.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.btnMiktarGir.TabIndex = 25;
             this.btnMiktarGir.Text = "Miktar Gir";
@@ -833,10 +829,10 @@
             this.cbtnTerazidekiSabitMiktariStokaAktar.Appearance.Options.UseTextOptions = true;
             this.cbtnTerazidekiSabitMiktariStokaAktar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cbtnTerazidekiSabitMiktariStokaAktar.AutoWidthInLayoutControl = true;
-            this.cbtnTerazidekiSabitMiktariStokaAktar.Location = new System.Drawing.Point(4, 1312);
+            this.cbtnTerazidekiSabitMiktariStokaAktar.Location = new System.Drawing.Point(4, 1124);
             this.cbtnTerazidekiSabitMiktariStokaAktar.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.cbtnTerazidekiSabitMiktariStokaAktar.Name = "cbtnTerazidekiSabitMiktariStokaAktar";
-            this.cbtnTerazidekiSabitMiktariStokaAktar.Size = new System.Drawing.Size(434, 115);
+            this.cbtnTerazidekiSabitMiktariStokaAktar.Size = new System.Drawing.Size(468, 97);
             this.cbtnTerazidekiSabitMiktariStokaAktar.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.cbtnTerazidekiSabitMiktariStokaAktar.TabIndex = 29;
             this.cbtnTerazidekiSabitMiktariStokaAktar.Text = "Sabit Miktarı Aktar";
@@ -846,7 +842,7 @@
             // 
             this.txtFireMiktari.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFireMiktari.Location = new System.Drawing.Point(170, 392);
+            this.txtFireMiktari.Location = new System.Drawing.Point(170, 378);
             this.txtFireMiktari.Margin = new System.Windows.Forms.Padding(6);
             this.txtFireMiktari.Name = "txtFireMiktari";
             this.txtFireMiktari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -858,7 +854,7 @@
             this.txtFireMiktari.Properties.Mask.EditMask = "n3";
             this.txtFireMiktari.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtFireMiktari.Properties.ReadOnly = true;
-            this.txtFireMiktari.Size = new System.Drawing.Size(268, 54);
+            this.txtFireMiktari.Size = new System.Drawing.Size(302, 54);
             this.txtFireMiktari.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtFireMiktari.TabIndex = 2;
             // 
@@ -867,7 +863,7 @@
             this.txtTutari.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTutari.EditValue = "";
-            this.txtTutari.Location = new System.Drawing.Point(4, 539);
+            this.txtTutari.Location = new System.Drawing.Point(4, 525);
             this.txtTutari.Margin = new System.Windows.Forms.Padding(6);
             this.txtTutari.Name = "txtTutari";
             this.txtTutari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -878,7 +874,7 @@
             this.txtTutari.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTutari.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtTutari.Properties.ReadOnly = true;
-            this.txtTutari.Size = new System.Drawing.Size(434, 54);
+            this.txtTutari.Size = new System.Drawing.Size(468, 54);
             this.txtTutari.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtTutari.TabIndex = 5;
             this.txtTutari.EditValueChanged += new System.EventHandler(this.txtTutari_EditValueChanged);
@@ -888,10 +884,10 @@
             this.btnDaraIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDaraIptal.Appearance.Font = new System.Drawing.Font("Tahoma", 17F, System.Drawing.FontStyle.Bold);
             this.btnDaraIptal.Appearance.Options.UseFont = true;
-            this.btnDaraIptal.Location = new System.Drawing.Point(268, 866);
+            this.btnDaraIptal.Location = new System.Drawing.Point(288, 852);
             this.btnDaraIptal.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnDaraIptal.Name = "btnDaraIptal";
-            this.btnDaraIptal.Size = new System.Drawing.Size(164, 85);
+            this.btnDaraIptal.Size = new System.Drawing.Size(178, 85);
             this.btnDaraIptal.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.btnDaraIptal.TabIndex = 30;
             this.btnDaraIptal.Text = "D. İptal";
@@ -903,10 +899,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDaraAl.Appearance.Font = new System.Drawing.Font("Tahoma", 17F, System.Drawing.FontStyle.Bold);
             this.btnDaraAl.Appearance.Options.UseFont = true;
-            this.btnDaraAl.Location = new System.Drawing.Point(10, 866);
+            this.btnDaraAl.Location = new System.Drawing.Point(10, 852);
             this.btnDaraAl.Margin = new System.Windows.Forms.Padding(6);
             this.btnDaraAl.Name = "btnDaraAl";
-            this.btnDaraAl.Size = new System.Drawing.Size(250, 85);
+            this.btnDaraAl.Size = new System.Drawing.Size(270, 85);
             this.btnDaraAl.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.btnDaraAl.TabIndex = 6;
             this.btnDaraAl.Text = "Dara Al";
@@ -916,7 +912,7 @@
             // 
             this.txtTerazidekiMiktari.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTerazidekiMiktari.Location = new System.Drawing.Point(170, 601);
+            this.txtTerazidekiMiktari.Location = new System.Drawing.Point(170, 587);
             this.txtTerazidekiMiktari.Margin = new System.Windows.Forms.Padding(6);
             this.txtTerazidekiMiktari.Name = "txtTerazidekiMiktari";
             this.txtTerazidekiMiktari.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -926,7 +922,7 @@
             this.txtTerazidekiMiktari.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.Lime;
             this.txtTerazidekiMiktari.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtTerazidekiMiktari.Properties.ReadOnly = true;
-            this.txtTerazidekiMiktari.Size = new System.Drawing.Size(268, 54);
+            this.txtTerazidekiMiktari.Size = new System.Drawing.Size(302, 54);
             this.txtTerazidekiMiktari.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.txtTerazidekiMiktari.TabIndex = 21;
             this.txtTerazidekiMiktari.EditValueChanged += new System.EventHandler(this.txtTerazidekiMiktari_EditValueChanged);
@@ -939,10 +935,10 @@
             this.btnTutarGir.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Hide;
             this.btnTutarGir.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Word;
             this.btnTutarGir.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnTutarGir.Location = new System.Drawing.Point(4, 454);
+            this.btnTutarGir.Location = new System.Drawing.Point(4, 440);
             this.btnTutarGir.Margin = new System.Windows.Forms.Padding(6);
             this.btnTutarGir.Name = "btnTutarGir";
-            this.btnTutarGir.Size = new System.Drawing.Size(346, 46);
+            this.btnTutarGir.Size = new System.Drawing.Size(372, 46);
             this.btnTutarGir.StyleController = this.Panel1layoutControl1ConvertedLayout;
             this.btnTutarGir.TabIndex = 26;
             this.btnTutarGir.Text = "Tutar Gir";
@@ -975,7 +971,7 @@
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 6;
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(442, 1431);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(476, 1225);
             this.layoutControlGroup1.Text = "ahanda";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -983,9 +979,9 @@
             // 
             this.layoutControlItem2.BestFitWeight = 30;
             this.layoutControlItem2.Control = this.checkEdit2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 814);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 800);
             this.layoutControlItem2.Name = "checkEdit2item";
-            this.layoutControlItem2.Size = new System.Drawing.Size(442, 42);
+            this.layoutControlItem2.Size = new System.Drawing.Size(476, 42);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem2.Text = "OtomatikDaraIptal";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Bottom;
@@ -997,9 +993,9 @@
             this.layoutControlItem5.BestFitWeight = 80;
             this.layoutControlItem5.Control = this.txtDaraMiktari;
             this.layoutControlItem5.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 721);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 707);
             this.layoutControlItem5.Name = "txtDaraMiktariitem";
-            this.layoutControlItem5.Size = new System.Drawing.Size(354, 93);
+            this.layoutControlItem5.Size = new System.Drawing.Size(380, 93);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem5.Text = "Dara Miktarı";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
@@ -1009,11 +1005,11 @@
             // 
             this.layoutControlItem7.BestFitWeight = 20;
             this.layoutControlItem7.Control = this.btnOtomatikSabitTutarGir;
-            this.layoutControlItem7.Location = new System.Drawing.Point(354, 450);
+            this.layoutControlItem7.Location = new System.Drawing.Point(380, 436);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(0, 54);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(18, 18);
             this.layoutControlItem7.Name = "btnOtomatikSabitTutarGiritem";
-            this.layoutControlItem7.Size = new System.Drawing.Size(88, 54);
+            this.layoutControlItem7.Size = new System.Drawing.Size(96, 54);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -1021,9 +1017,9 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.txtMiktari;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 295);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 281);
             this.layoutControlItem10.Name = "txtMiktariitem";
-            this.layoutControlItem10.Size = new System.Drawing.Size(442, 93);
+            this.layoutControlItem10.Size = new System.Drawing.Size(476, 93);
             this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem10.Text = "Miktarı";
             this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Top;
@@ -1033,11 +1029,11 @@
             // 
             this.layoutControlItem11.BestFitWeight = 80;
             this.layoutControlItem11.Control = this.btnMiktarGir;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 241);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 227);
             this.layoutControlItem11.MaxSize = new System.Drawing.Size(0, 54);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(18, 18);
             this.layoutControlItem11.Name = "btnMiktarGiritem";
-            this.layoutControlItem11.Size = new System.Drawing.Size(354, 54);
+            this.layoutControlItem11.Size = new System.Drawing.Size(380, 54);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
@@ -1045,9 +1041,9 @@
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.txtTutari;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 504);
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 490);
             this.layoutControlItem14.Name = "txtTutariitem";
-            this.layoutControlItem14.Size = new System.Drawing.Size(442, 93);
+            this.layoutControlItem14.Size = new System.Drawing.Size(476, 93);
             this.layoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem14.Text = "Tutarı";
             this.layoutControlItem14.TextLocation = DevExpress.Utils.Locations.Top;
@@ -1057,11 +1053,11 @@
             // 
             this.layoutControlItem18.BestFitWeight = 80;
             this.layoutControlItem18.Control = this.btnTutarGir;
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 450);
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 436);
             this.layoutControlItem18.MaxSize = new System.Drawing.Size(0, 54);
             this.layoutControlItem18.MinSize = new System.Drawing.Size(18, 18);
             this.layoutControlItem18.Name = "btnTutarGiritem";
-            this.layoutControlItem18.Size = new System.Drawing.Size(354, 54);
+            this.layoutControlItem18.Size = new System.Drawing.Size(380, 54);
             this.layoutControlItem18.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
@@ -1072,7 +1068,7 @@
             this.layoutControlItem4.Control = this.txtStokAdi;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 86);
             this.layoutControlItem4.Name = "txtStokAdiitem";
-            this.layoutControlItem4.Size = new System.Drawing.Size(442, 93);
+            this.layoutControlItem4.Size = new System.Drawing.Size(476, 79);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem4.Text = "Stok Adı";
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
@@ -1085,7 +1081,7 @@
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 86);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(18, 49);
             this.layoutControlItem3.Name = "memoCariTanimitem";
-            this.layoutControlItem3.Size = new System.Drawing.Size(442, 86);
+            this.layoutControlItem3.Size = new System.Drawing.Size(476, 86);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "CariTanim";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
@@ -1095,11 +1091,11 @@
             // 
             this.layoutControlItem8.BestFitWeight = 20;
             this.layoutControlItem8.Control = this.btnOtomatikSabitMiktarGir;
-            this.layoutControlItem8.Location = new System.Drawing.Point(354, 241);
+            this.layoutControlItem8.Location = new System.Drawing.Point(380, 227);
             this.layoutControlItem8.MaxSize = new System.Drawing.Size(0, 54);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(18, 18);
             this.layoutControlItem8.Name = "btnOtomatikSabitMiktarGiritem";
-            this.layoutControlItem8.Size = new System.Drawing.Size(88, 54);
+            this.layoutControlItem8.Size = new System.Drawing.Size(96, 54);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -1107,9 +1103,9 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtKdvDahilFiyati;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 179);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 165);
             this.layoutControlItem9.Name = "txtKdvDahilFiyatiitem";
-            this.layoutControlItem9.Size = new System.Drawing.Size(442, 62);
+            this.layoutControlItem9.Size = new System.Drawing.Size(476, 62);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem9.Text = "Fiyatı";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(160, 25);
@@ -1119,22 +1115,22 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem15,
             this.layoutControlItem16});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 856);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 842);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 6;
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(442, 105);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(476, 105);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.BestFitWeight = 40;
             this.layoutControlItem15.Control = this.btnDaraIptal;
-            this.layoutControlItem15.Location = new System.Drawing.Point(258, 0);
+            this.layoutControlItem15.Location = new System.Drawing.Point(278, 0);
             this.layoutControlItem15.MaxSize = new System.Drawing.Size(0, 93);
             this.layoutControlItem15.MinSize = new System.Drawing.Size(18, 18);
             this.layoutControlItem15.Name = "btnDaraIptalitem";
-            this.layoutControlItem15.Size = new System.Drawing.Size(172, 93);
+            this.layoutControlItem15.Size = new System.Drawing.Size(186, 93);
             this.layoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
@@ -1147,7 +1143,7 @@
             this.layoutControlItem16.MaxSize = new System.Drawing.Size(0, 93);
             this.layoutControlItem16.MinSize = new System.Drawing.Size(18, 18);
             this.layoutControlItem16.Name = "btnDaraAlitem";
-            this.layoutControlItem16.Size = new System.Drawing.Size(258, 93);
+            this.layoutControlItem16.Size = new System.Drawing.Size(278, 93);
             this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
@@ -1155,10 +1151,10 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.cbtnTerazidekiSabitMiktariStokaAktar;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 1308);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 1120);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(10, 10);
             this.layoutControlItem12.Name = "cbtnTerazidekiSabitMiktariStokaAktaritem";
-            this.layoutControlItem12.Size = new System.Drawing.Size(442, 123);
+            this.layoutControlItem12.Size = new System.Drawing.Size(476, 105);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
@@ -1167,10 +1163,10 @@
             // 
             this.layoutControlItem1.BestFitWeight = 20;
             this.layoutControlItem1.Control = this.btnDaraYonetimi;
-            this.layoutControlItem1.Location = new System.Drawing.Point(354, 721);
+            this.layoutControlItem1.Location = new System.Drawing.Point(380, 707);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(18, 18);
             this.layoutControlItem1.Name = "btnDaraYonetimiitem";
-            this.layoutControlItem1.Size = new System.Drawing.Size(88, 93);
+            this.layoutControlItem1.Size = new System.Drawing.Size(96, 93);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Dara Miktarı";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Bottom;
@@ -1180,17 +1176,17 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 961);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 947);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(442, 347);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(476, 173);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.txtTerazidekiMiktari;
-            this.layoutControlItem17.Location = new System.Drawing.Point(0, 597);
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 583);
             this.layoutControlItem17.Name = "txtTerazidekiMiktariitem";
-            this.layoutControlItem17.Size = new System.Drawing.Size(442, 62);
+            this.layoutControlItem17.Size = new System.Drawing.Size(476, 62);
             this.layoutControlItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem17.Text = "Terazideki miktar";
             this.layoutControlItem17.TextLocation = DevExpress.Utils.Locations.Left;
@@ -1199,9 +1195,9 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtAnlikTutar;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 659);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 645);
             this.layoutControlItem6.Name = "txtAnlikTutaritem";
-            this.layoutControlItem6.Size = new System.Drawing.Size(442, 62);
+            this.layoutControlItem6.Size = new System.Drawing.Size(476, 62);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem6.Text = "Anlık Tutar";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(160, 25);
@@ -1210,9 +1206,9 @@
             // 
             this.layoutControlItem13.BestFitWeight = 30;
             this.layoutControlItem13.Control = this.txtFireMiktari;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 388);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 374);
             this.layoutControlItem13.Name = "txtFireMiktariitem";
-            this.layoutControlItem13.Size = new System.Drawing.Size(442, 62);
+            this.layoutControlItem13.Size = new System.Drawing.Size(476, 62);
             this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem13.Text = "Fire Miktarı";
             this.layoutControlItem13.TextLocation = DevExpress.Utils.Locations.Left;
@@ -1221,7 +1217,7 @@
             // txtFaturaTutari
             // 
             this.txtFaturaTutari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFaturaTutari.Location = new System.Drawing.Point(358, 1173);
+            this.txtFaturaTutari.Location = new System.Drawing.Point(346, 967);
             this.txtFaturaTutari.Margin = new System.Windows.Forms.Padding(6);
             this.txtFaturaTutari.Name = "txtFaturaTutari";
             this.txtFaturaTutari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
@@ -1244,7 +1240,7 @@
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(30, 1171);
+            this.labelControl6.Location = new System.Drawing.Point(18, 963);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(282, 79);
@@ -1266,7 +1262,7 @@
             this.gcSatisHareketleri.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1,
             this.repositoryItemLookUpEdit_AltBirim});
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(860, 629);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(848, 423);
             this.gcSatisHareketleri.TabIndex = 10;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -1778,7 +1774,7 @@
             this.gcSatislar.MainView = this.gvSatislar;
             this.gcSatislar.Margin = new System.Windows.Forms.Padding(6);
             this.gcSatislar.Name = "gcSatislar";
-            this.gcSatislar.Size = new System.Drawing.Size(726, 413);
+            this.gcSatislar.Size = new System.Drawing.Size(714, 413);
             this.gcSatislar.TabIndex = 11;
             this.gcSatislar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatislar});
@@ -1963,7 +1959,7 @@
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(-1130, 683);
+            this.labelControl9.Location = new System.Drawing.Point(-1142, 683);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(339, 39);
@@ -1978,7 +1974,7 @@
             this.btnYeniMusteri.Appearance.Options.UseFont = true;
             this.btnYeniMusteri.Appearance.Options.UseTextOptions = true;
             this.btnYeniMusteri.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnYeniMusteri.Location = new System.Drawing.Point(676, 1254);
+            this.btnYeniMusteri.Location = new System.Drawing.Point(664, 1048);
             this.btnYeniMusteri.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.btnYeniMusteri.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnYeniMusteri.Margin = new System.Windows.Forms.Padding(6);
@@ -2009,7 +2005,7 @@
             this.btnUrunCikar.Appearance.Options.UseFont = true;
             this.btnUrunCikar.Appearance.Options.UseTextOptions = true;
             this.btnUrunCikar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnUrunCikar.Location = new System.Drawing.Point(28, 1254);
+            this.btnUrunCikar.Location = new System.Drawing.Point(16, 1048);
             this.btnUrunCikar.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.btnUrunCikar.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUrunCikar.Margin = new System.Windows.Forms.Padding(6);
@@ -2068,7 +2064,7 @@
             this.btnYazici2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnYazici2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnYazici2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnYazici2.Location = new System.Drawing.Point(464, 1254);
+            this.btnYazici2.Location = new System.Drawing.Point(452, 1048);
             this.btnYazici2.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnYazici2.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnYazici2.LookAndFeel.SkinName = "Office 2013 Dark Gray";
@@ -2095,7 +2091,7 @@
             this.lblHareketSayisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHareketSayisi.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblHareketSayisi.Appearance.Options.UseFont = true;
-            this.lblHareketSayisi.Location = new System.Drawing.Point(52, 446);
+            this.lblHareketSayisi.Location = new System.Drawing.Point(40, 446);
             this.lblHareketSayisi.Margin = new System.Windows.Forms.Padding(6);
             this.lblHareketSayisi.Name = "lblHareketSayisi";
             this.lblHareketSayisi.Size = new System.Drawing.Size(223, 39);
@@ -2138,7 +2134,7 @@
             this.btnOncekiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOncekiSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.ImageOptions.Image")));
             this.btnOncekiSayfa.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOncekiSayfa.Location = new System.Drawing.Point(740, 119);
+            this.btnOncekiSayfa.Location = new System.Drawing.Point(728, 119);
             this.btnOncekiSayfa.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
             this.btnOncekiSayfa.Size = new System.Drawing.Size(120, 96);
@@ -2150,7 +2146,7 @@
             this.btnSonrakiSayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSonrakiSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.ImageOptions.Image")));
             this.btnSonrakiSayfa.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSonrakiSayfa.Location = new System.Drawing.Point(740, 225);
+            this.btnSonrakiSayfa.Location = new System.Drawing.Point(728, 225);
             this.btnSonrakiSayfa.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnSonrakiSayfa.Name = "btnSonrakiSayfa";
             this.btnSonrakiSayfa.Size = new System.Drawing.Size(120, 96);
@@ -2164,7 +2160,7 @@
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Appearance.Options.UseImage = true;
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAktifSatisaDigerSatisinHareketleriniEkle.ImageOptions.Image")));
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Location = new System.Drawing.Point(740, 13);
+            this.btnAktifSatisaDigerSatisinHareketleriniEkle.Location = new System.Drawing.Point(728, 13);
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Name = "btnAktifSatisaDigerSatisinHareketleriniEkle";
             this.btnAktifSatisaDigerSatisinHareketleriniEkle.Size = new System.Drawing.Size(120, 96);
@@ -2176,7 +2172,7 @@
             this.btnMusteriler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMusteriler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriler.ImageOptions.Image")));
             this.btnMusteriler.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnMusteriler.Location = new System.Drawing.Point(740, 331);
+            this.btnMusteriler.Location = new System.Drawing.Point(728, 331);
             this.btnMusteriler.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnMusteriler.Name = "btnMusteriler";
             this.btnMusteriler.Size = new System.Drawing.Size(120, 96);
@@ -2196,10 +2192,10 @@
             this.splitContainerControl1.Panel1.Controls.Add(this.Panel1layoutControl1ConvertedLayoutlayoutControl1ConvertedLayoutlayoutControl2ConvertedLayout);
             this.splitContainerControl1.Panel1.Controls.Add(this.Panel1layoutControl1ConvertedLayoutlayoutControl2ConvertedLayout);
             this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
+            this.splitContainerControl1.Panel2.Controls.Add(this.stokButonGrupVeStokButonlari2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(2316, 1431);
-            this.splitContainerControl1.SplitterPosition = 442;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1158, 1225);
+            this.splitContainerControl1.SplitterPosition = 476;
             this.splitContainerControl1.TabIndex = 79;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -2320,30 +2316,14 @@
             this.layoutControlItem22.TextLocation = DevExpress.Utils.Locations.Bottom;
             this.layoutControlItem22.TextSize = new System.Drawing.Size(41, 25);
             // 
-            // splitContainerControl2
-            // 
-            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl2.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
-            this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.stokButonGrupVeStokButonlari2);
-            this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.panelControl1);
-            this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1864, 1431);
-            this.splitContainerControl2.SplitterPosition = 880;
-            this.splitContainerControl2.TabIndex = 117;
-            this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
             // stokButonGrupVeStokButonlari2
             // 
             this.stokButonGrupVeStokButonlari2.CausesValidation = false;
             this.stokButonGrupVeStokButonlari2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stokButonGrupVeStokButonlari2.Location = new System.Drawing.Point(0, 0);
-            this.stokButonGrupVeStokButonlari2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.stokButonGrupVeStokButonlari2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.stokButonGrupVeStokButonlari2.Name = "stokButonGrupVeStokButonlari2";
-            this.stokButonGrupVeStokButonlari2.Size = new System.Drawing.Size(974, 1431);
+            this.stokButonGrupVeStokButonlari2.Size = new System.Drawing.Size(672, 1225);
             this.stokButonGrupVeStokButonlari2.TabIndex = 0;
             // 
             // panelControl1
@@ -2367,13 +2347,13 @@
             this.panelControl1.Controls.Add(this.btnYazici2);
             this.panelControl1.Controls.Add(this.txtFaturaTutari);
             this.panelControl1.Controls.Add(this.labelControl6);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl1.Location = new System.Drawing.Point(1158, 113);
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.LookAndFeel.UseWindowsXPTheme = true;
             this.panelControl1.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(880, 1431);
+            this.panelControl1.Size = new System.Drawing.Size(868, 1225);
             this.panelControl1.TabIndex = 116;
             // 
             // pcontrol_IskontoAyrintilari
@@ -2387,7 +2367,7 @@
             this.pcontrol_IskontoAyrintilari.Controls.Add(this.txtIndirimMiktari);
             this.pcontrol_IskontoAyrintilari.Controls.Add(this.lblIndirimYuzdesi);
             this.pcontrol_IskontoAyrintilari.Controls.Add(this.lblIndirimsizSatisTutari);
-            this.pcontrol_IskontoAyrintilari.Location = new System.Drawing.Point(-1028, 1169);
+            this.pcontrol_IskontoAyrintilari.Location = new System.Drawing.Point(-992, 960);
             this.pcontrol_IskontoAyrintilari.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pcontrol_IskontoAyrintilari.LookAndFeel.UseWindowsXPTheme = true;
             this.pcontrol_IskontoAyrintilari.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
@@ -2506,7 +2486,7 @@
             this.chckbtnIskontoIslemleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chckbtnIskontoIslemleri.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.chckbtnIskontoIslemleri.Appearance.Options.UseFont = true;
-            this.chckbtnIskontoIslemleri.Location = new System.Drawing.Point(304, 433);
+            this.chckbtnIskontoIslemleri.Location = new System.Drawing.Point(292, 433);
             this.chckbtnIskontoIslemleri.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.chckbtnIskontoIslemleri.Name = "chckbtnIskontoIslemleri";
             this.chckbtnIskontoIslemleri.Size = new System.Drawing.Size(272, 71);
@@ -2517,7 +2497,7 @@
             // checkButton1
             // 
             this.checkButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkButton1.Location = new System.Drawing.Point(588, 433);
+            this.checkButton1.Location = new System.Drawing.Point(576, 433);
             this.checkButton1.Margin = new System.Windows.Forms.Padding(6);
             this.checkButton1.Name = "checkButton1";
             this.checkButton1.Size = new System.Drawing.Size(272, 71);
@@ -2538,7 +2518,7 @@
             this.btnYaziciBir.ImageOptions.ImageIndex = 3;
             this.btnYaziciBir.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnYaziciBir.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnYaziciBir.Location = new System.Drawing.Point(246, 1254);
+            this.btnYaziciBir.Location = new System.Drawing.Point(234, 1048);
             this.btnYaziciBir.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.btnYaziciBir.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnYaziciBir.Margin = new System.Windows.Forms.Padding(6);
@@ -2581,7 +2561,7 @@
             this.labelControl13.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("labelControl13.Appearance.Image")));
             this.labelControl13.Appearance.Options.UseImage = true;
             this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl13.Location = new System.Drawing.Point(1596, 10);
+            this.labelControl13.Location = new System.Drawing.Point(1306, 10);
             this.labelControl13.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(114, 96);
@@ -2594,7 +2574,7 @@
             this.btnSatislariYenile.Appearance.Options.UseFont = true;
             this.btnSatislariYenile.Appearance.Options.UseTextOptions = true;
             this.btnSatislariYenile.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSatislariYenile.Location = new System.Drawing.Point(1848, 10);
+            this.btnSatislariYenile.Location = new System.Drawing.Point(1558, 10);
             this.btnSatislariYenile.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnSatislariYenile.Name = "btnSatislariYenile";
             this.btnSatislariYenile.Size = new System.Drawing.Size(436, 83);
@@ -2608,7 +2588,7 @@
             this.labelControl8.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("labelControl8.Appearance.Image")));
             this.labelControl8.Appearance.Options.UseImage = true;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(1722, 10);
+            this.labelControl8.Location = new System.Drawing.Point(1434, 10);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(114, 96);
@@ -2619,7 +2599,7 @@
             this.btnUrunMusteriAra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUrunMusteriAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunMusteriAra.ImageOptions.Image")));
             this.btnUrunMusteriAra.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnUrunMusteriAra.Location = new System.Drawing.Point(976, 10);
+            this.btnUrunMusteriAra.Location = new System.Drawing.Point(686, 10);
             this.btnUrunMusteriAra.Margin = new System.Windows.Forms.Padding(6);
             this.btnUrunMusteriAra.Name = "btnUrunMusteriAra";
             this.btnUrunMusteriAra.Size = new System.Drawing.Size(300, 83);
@@ -2632,12 +2612,12 @@
             this.txtBarkodu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBarkodu.EditValue = "";
-            this.txtBarkodu.Location = new System.Drawing.Point(400, 10);
+            this.txtBarkodu.Location = new System.Drawing.Point(400, 23);
             this.txtBarkodu.Margin = new System.Windows.Forms.Padding(6);
             this.txtBarkodu.Name = "txtBarkodu";
             this.txtBarkodu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.txtBarkodu.Properties.Appearance.Options.UseFont = true;
-            this.txtBarkodu.Size = new System.Drawing.Size(564, 54);
+            this.txtBarkodu.Size = new System.Drawing.Size(274, 54);
             this.txtBarkodu.TabIndex = 18;
             this.txtBarkodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkodu_KeyDown);
             // 
@@ -2658,7 +2638,7 @@
             // btnCikis
             // 
             this.btnCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCikis.Location = new System.Drawing.Point(1322, 10);
+            this.btnCikis.Location = new System.Drawing.Point(1034, 10);
             this.btnCikis.Margin = new System.Windows.Forms.Padding(6, 10, 6, 10);
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.Size = new System.Drawing.Size(262, 83);
@@ -2681,7 +2661,7 @@
             this.panelControl2.LookAndFeel.UseWindowsXPTheme = true;
             this.panelControl2.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(2316, 113);
+            this.panelControl2.Size = new System.Drawing.Size(2026, 113);
             this.panelControl2.TabIndex = 111;
             // 
             // frmTerazi
@@ -2692,8 +2672,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(2316, 1544);
+            this.ClientSize = new System.Drawing.Size(2026, 1338);
             this.Controls.Add(this.splitContainerControl1);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -2770,8 +2751,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Panel1layoutControl1ConvertedLayoutlayoutControl2ConvertedLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
-            this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -2930,7 +2909,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox recentlyUsedItemsComboBox1;
         private DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox designRepositoryItemComboBox1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
         private DevExpress.XtraGrid.Columns.GridColumn colAltBirimKdvDahilIndirimHaricFiyat;
         private DevExpress.XtraGrid.Columns.GridColumn colKdvDahilStokIskonto1IndirimMiktari;
         private DevExpress.XtraEditors.CheckButton chckbtnIskontoIslemleri;

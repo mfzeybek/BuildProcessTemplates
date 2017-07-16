@@ -294,6 +294,12 @@
     <Compile Include="StokIhtiyac\csStokIhtiyac.cs" />
     <Compile Include="Stok\csStokMiktar.cs" />
     <Compile Include="Stok\csStokOzellikleri.cs" />
+    <Compile Include="Stok\frmStokBirim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokBirim.Designer.cs">
+      <DependentUpon>frmStokBirim.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\Paket\csPaket.cs" />
     <Compile Include="Stok\Paket\csPaketArama.cs" />
     <Compile Include="Stok\Paket\csPaketDetay.cs" />
@@ -433,6 +439,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokBirim.resx">
+      <DependentUpon>frmStokBirim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeraziSatisClaslari\frmButonUrunler.resx">
       <DependentUpon>frmButonUrunler.cs</DependentUpon>

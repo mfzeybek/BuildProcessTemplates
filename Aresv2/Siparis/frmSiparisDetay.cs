@@ -1003,7 +1003,7 @@ namespace Aresv2.Siparis
 
         private void txtBirim2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            Stok.frmStokBirim Birimler = new Stok.frmStokBirim(Convert.ToInt32(gvSiparisHareket.GetFocusedRowCellValue("StokID")));
+            Stok.frmStokBirim Birimler = new Stok.frmStokBirim(SqlConnections.GetBaglanti(), Convert.ToInt32(gvSiparisHareket.GetFocusedRowCellValue("StokID")), false);
 
 
             if (Birimler.ShowDialog() == System.Windows.Forms.DialogResult.Yes)

@@ -228,7 +228,7 @@ group by FaturaHareket.StokID
 )
 end  as 'Teslim Miktar',
 
-StokAnaBirimID, AnaBirimFiyat, Birim2ID, StokBirim.BirimAdi as StokAltBirimAdi, 
+StokAnaBirimID, AnaBirim.BirimAdi StokAnaBirimAdi ,AnaBirimFiyat, Birim2ID, StokBirim.BirimAdi as StokAltBirimAdi, 
 AltBirimMiktar, KatSayi, Birim2Fiyat, 
 Kdv, Toplam, StokIskonto1, StokIskonto1Tutari, StokIskonto1SonrasiTutar, StokIskonto2, StokIskonto2Tutari, StokIskonto2SonrasiTutar, StokIskonto3, StokIskonto3Tutari, 
 StokIskonto3SonrasiTutar, CariIskonto1, CariIskonto1Tutari, CariIskonto1SonrasiTutar, CariIskonto2, CariIskonto2Tutari, CariIskonto2SonrasiTutar, CariIskonto3, CariIskonto3Tutari, 
@@ -236,7 +236,7 @@ CariIskonto3SonrasiTutar, IskontoluFiyat, SatirIndirimliToplam, SatirAciklama, D
 
 from SiparisHareket
 left join StokBirim on StokBirim.BirimID = SiparisHareket.Birim2ID
-
+left join StokBirim as AnaBirim on AnaBirim.BirimID = StokAnaBirimID
 
 WHERE     (SiparisHareket.SiparisID = @SiparisID)", Baglanti, trGenel);
 

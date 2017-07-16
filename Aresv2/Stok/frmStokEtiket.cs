@@ -437,7 +437,7 @@ namespace Aresv2.Stok
         Stok.frmStokBirim AltBirimler;
         private void repositoryItemButtonEdit_AltBirimAdi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            using (AltBirimler = new frmStokBirim(Convert.ToInt32(gridView1.GetFocusedRowCellValue(colStokID))))
+            using (AltBirimler = new frmStokBirim(SqlConnections.GetBaglanti(), Convert.ToInt32(gridView1.GetFocusedRowCellValue(colStokID)), false))
             {
                 if (AltBirimler.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
                 {

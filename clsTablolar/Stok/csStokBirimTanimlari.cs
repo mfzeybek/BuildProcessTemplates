@@ -35,7 +35,19 @@ namespace clsTablolar.Stok
 				using (dt = new DataTable())
 				{
 					da.Fill(dt);
-					return dt;
+                    dt.Rows.Add(dt.NewRow());
+                    dt.Rows[dt.Rows.Count - 1]["BirimID"] = -3;
+                    dt.Rows[dt.Rows.Count - 1]["BirimAdi"] = "75 GR ADET";
+
+                    dt.Rows.Add(dt.NewRow());
+                    dt.Rows[dt.Rows.Count - 1]["BirimID"] = -4;
+                    dt.Rows[dt.Rows.Count - 1]["BirimAdi"] = "50 GR ADET";
+
+                    dt.Rows.Add(dt.NewRow());
+                    dt.Rows[dt.Rows.Count - 1]["BirimID"] = -5;
+                    dt.Rows[dt.Rows.Count - 1]["BirimAdi"] = "100 GR ADET";
+
+                    return dt;
 				}
 			}
 		}

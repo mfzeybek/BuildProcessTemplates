@@ -25,6 +25,8 @@ namespace clsTablolar.Siparis
         private DateTime _TeslimTarihiIlk;
         private DateTime _TeslimTarihiIkinci;
 
+        private bool _BirazAzGetir;
+
 
         public DateTime IlkFaturaTarihi
         {
@@ -135,6 +137,8 @@ namespace clsTablolar.Siparis
             }
         }
 
+        public bool BirazAzGetir { get => _BirazAzGetir; set => _BirazAzGetir = value; }
+
         public DataTable dt_SiparisListesi;
         SqlDataAdapter da_SiparisListesi;
 
@@ -162,6 +166,7 @@ namespace clsTablolar.Siparis
             _SiparisTarihiIkinci = DateTime.MinValue;
             _TeslimTarihiIlk = DateTime.MinValue;
             _TeslimTarihiIkinci = DateTime.MinValue;
+            _BirazAzGetir = false;
 
             dt_SiparisListesi = new DataTable();
         }
@@ -314,6 +319,10 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
                 {
                     WhereCumlesi += @" and CONVERT(datetime, convert(varchar, Siparis.TeslimTarihi, 101)) <=  @TeslimTarihiIkinci  ";
                     da_SiparisListesi.SelectCommand.Parameters.Add("@TeslimTarihiIkinci", SqlDbType.DateTime).Value = _TeslimTarihiIkinci;
+                }
+                if (_BirazAzGetir)// teslim tarihi 1 hafta geçenleri getirmesin
+                {
+                    WhereCumlesi += @" and CONVERT(datetime, convert(varchar, Siparis.TeslimTarihi, 101)) >=  DATEADD(DAY, -7, GETDATE())";
                 }
 
 
