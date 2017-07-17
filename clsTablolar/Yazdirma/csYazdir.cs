@@ -39,6 +39,19 @@ namespace clsTablolar.Yazdirma
             //ayarlar.
         }
 
+
+        /// <summary>
+        /// Hepaynı form dizaynı ile ard arda hızlı bişiler yazırmak istiyorsan form a bunu at.
+        /// </summary>
+
+        public static XtraReport ArabellektekiRapor;
+        public void DosyayaiArabellegeAl(string DosyaAdi)
+        {
+            ArabellektekiRapor = new XtraReport();
+            ArabellektekiRapor.LoadLayout(DosyaAdi);
+            ArabellektekiRapor.DataSource = ds;
+        }
+
         public void Yazdirr(Nasil NasilAcsin)
         {
             //Rapor.DataAdapter = ds;
@@ -60,51 +73,57 @@ namespace clsTablolar.Yazdirma
             }
         }
 
+
+
         public void Yazdirr(string DosyaAdi, Nasil NasilAcsin)
         {
             try
             {
-                Rapor = new XtraReport();
-                Rapor.LoadLayout(DosyaAdi);
-                Rapor.DataSource = ds;
-                ReportPrintTool pt = new ReportPrintTool(Rapor);
-
-                //Rapor.PrintingSystem.ShowMarginsWarning = false;
-                //pt.PrintingSystem.ShowMarginsWarning = false;
-                //pt.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
-
-
-
-                pt.PrinterSettings.Copies = (Int16)NumberOfCopy;
-                if (!string.IsNullOrEmpty(YaziciAdi))
+                using (Rapor = new XtraReport())
                 {
-                    pt.PrinterSettings.PrinterName = YaziciAdi;
-                    try
+                    Rapor.LoadLayout(DosyaAdi);
+                    Rapor.DataSource = ds;
+                    using (ReportPrintTool pt = new ReportPrintTool(Rapor))
                     {
-                        pt.PrinterSettings.DefaultPageSettings.PaperSource = pt.PrinterSettings.PaperSources[KagitKaynagiIndex];
+                        pt.PrinterSettings.Copies = (Int16)NumberOfCopy;
+
+                        //Rapor.PrintingSystem.ShowMarginsWarning = false;
+                        //pt.PrintingSystem.ShowMarginsWarning = false;
+                        //pt.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+
+
+
+                        if (!string.IsNullOrEmpty(YaziciAdi))
+                        {
+                            pt.PrinterSettings.PrinterName = YaziciAdi;
+                            try
+                            {
+                                pt.PrinterSettings.DefaultPageSettings.PaperSource = pt.PrinterSettings.PaperSources[KagitKaynagiIndex];
+                            }
+                            catch (Exception) { }
+                        }
+
+
+                        //Rapor.prin
+                        switch (NasilAcsin)
+                        {
+                            case Nasil.dizayn:
+                                XRDesignFormEx XrDesigner = new XRDesignFormEx();
+                                XrDesigner.FileName = DosyaAdi;
+                                XrDesigner.OpenReport(Rapor);
+                                XrDesigner.Show();
+                                break;
+                            case Nasil.Goster:
+                                pt.ShowPreviewDialog();
+                                break;
+                            case Nasil.Yazdir:
+                                pt.Print();
+                                break;
+                            case Nasil.YazdirmaDiyalogu:
+                                pt.PrintDialog();
+                                break;
+                        }
                     }
-                    catch (Exception) { }
-                }
-
-
-                //Rapor.prin
-                switch (NasilAcsin)
-                {
-                    case Nasil.dizayn:
-                        XRDesignFormEx XrDesigner = new XRDesignFormEx();
-                        XrDesigner.FileName = DosyaAdi;
-                        XrDesigner.OpenReport(Rapor);
-                        XrDesigner.Show();
-                        break;
-                    case Nasil.Goster:
-                        pt.ShowPreviewDialog();
-                        break;
-                    case Nasil.Yazdir:
-                        pt.Print();
-                        break;
-                    case Nasil.YazdirmaDiyalogu:
-                        pt.PrintDialog();
-                        break;
                 }
             }
             catch (Exception hata)
@@ -113,18 +132,6 @@ namespace clsTablolar.Yazdirma
                 //frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
                 //frmHataBildir.ShowDialog();
             }
-        }
-
-        /// <summary>
-        /// Hepaynı form dizaynı ile ard arda hızlı bişiler yazırmak istiyorsan form a bunu at.
-        /// </summary>
-        public static XtraReport ArabellektekiRapor;
-        public void DosyayaiArabellegeAl(string DosyaAdi)
-        {
-            ArabellektekiRapor = new XtraReport();
-            ArabellektekiRapor.LoadLayout(DosyaAdi);
-            ArabellektekiRapor.DataSource = ds;
-            ArabellektekiRapor.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
         }
 
         /// <summary>
@@ -137,29 +144,52 @@ namespace clsTablolar.Yazdirma
         {
             try
             {
-                Rapor = new XtraReport();
-                Rapor.LoadLayout(DosyaAdi);
-                Rapor.DataSource = ds;
-                Rapor.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
-                switch (NasilAcsin)
+                using (Rapor = new XtraReport())
                 {
-                    case Nasil.dizayn:
-                        XRDesignFormEx XrDesigner = new XRDesignFormEx();
-                        XrDesigner.FileName = DosyaAdi;
-                        XrDesigner.OpenReport(Rapor);
-                        XrDesigner.Show();
-                        break;
-                    case Nasil.Goster:
-                        Rapor.ShowPreviewDialog();
-                        break;
-                    case Nasil.Yazdir:
-                        if (YaziciAdi != string.Empty)
-                            Rapor.PrinterName = YaziciAdi;
-                        Rapor.Print();
-                        break;
-                    case Nasil.YazdirmaDiyalogu:
-                        Rapor.PrintDialog();
-                        break;
+                    Rapor.LoadLayout(DosyaAdi);
+                    Rapor.DataSource = ds;
+
+
+                    using (ReportPrintTool pt = new ReportPrintTool(Rapor))
+                    {
+
+                        //Rapor.PrintingSystem.ShowMarginsWarning = false;
+                        //pt.PrintingSystem.ShowMarginsWarning = false;
+                        //pt.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+
+
+                        pt.PrinterSettings.Copies = (Int16)NumberOfCopy;
+                        if (!string.IsNullOrEmpty(YaziciAdi))
+                        {
+                            pt.PrinterSettings.PrinterName = YaziciAdi;
+                            try
+                            {
+                                pt.PrinterSettings.DefaultPageSettings.PaperSource = pt.PrinterSettings.PaperSources[KagitKaynagiIndex];
+                            }
+                            catch (Exception) { }
+                        }
+
+                        switch (NasilAcsin)
+                        {
+                            case Nasil.dizayn:
+                                XRDesignFormEx XrDesigner = new XRDesignFormEx();
+                                XrDesigner.FileName = DosyaAdi;
+                                XrDesigner.OpenReport(Rapor);
+                                XrDesigner.Show();
+                                break;
+                            case Nasil.Goster:
+                                pt.ShowPreviewDialog();
+                                break;
+                            case Nasil.Yazdir:
+                                if (YaziciAdi != string.Empty)
+                                    pt.PrinterSettings.PrinterName = YaziciAdi;
+                                pt.Print();
+                                break;
+                            case Nasil.YazdirmaDiyalogu:
+                                pt.PrintDialog();
+                                break;
+                        }
+                    }
                 }
             }
             catch (Exception hata)
@@ -169,6 +199,13 @@ namespace clsTablolar.Yazdirma
             }
         }
 
+
+        public void Ahanda(string YaziciAdi, int CopyaSayisi)
+        {
+
+            Yazdirr(Nasil.Yazdir, YaziciAdi, CopyaSayisi);
+        }
+        ReportPrintTool pt;
 
         /// <summary>
         /// Bunda Dizeyn Yok,, Ara belleğe alınan Dosyayı Ywzdırır sürekli ayrnı formdan yazdırma işlemi yapılacaksa hızx açısından bu daha hızlı olur bunu kullan hamısına
@@ -181,29 +218,49 @@ namespace clsTablolar.Yazdirma
             try
             {
                 ArabellektekiRapor.CreateDocument(true);
-                NumberOfCopy = CopyaSayisi;
+                //NumberOfCopy = CopyaSayisi; // bunun hiç bir manası yok düzenlenmesi gerekiyor.
                 //ArabellektekiRapor.DataSource = ds;
 
-                switch (NasilAcsin)
+                using (pt = new ReportPrintTool(ArabellektekiRapor))
                 {
-                    case Nasil.dizayn:
-                        XRDesignFormEx XrDesigner = new XRDesignFormEx();
-                        //XrDesigner.FileName = DosyaAdiE;
-                        XrDesigner.OpenReport(ArabellektekiRapor);
-                        XrDesigner.Show();
-                        break;
-                    case Nasil.Goster:
-                        ArabellektekiRapor.ShowPreviewDialog();
-                        break;
-                    case Nasil.Yazdir:
-                        if (YaziciAdi != string.Empty)
-                            ArabellektekiRapor.PrinterName = YaziciAdi;
-                        ArabellektekiRapor.Print();
 
-                        break;
-                    case Nasil.YazdirmaDiyalogu:
-                        ArabellektekiRapor.PrintDialog();
-                        break;
+                    //Rapor.PrintingSystem.ShowMarginsWarning = false;
+                    //pt.PrintingSystem.ShowMarginsWarning = false;
+                    //pt.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+
+
+                    pt.PrinterSettings.Copies = (Int16)CopyaSayisi;
+                    if (!string.IsNullOrEmpty(YaziciAdi))
+                    {
+                        pt.PrinterSettings.PrinterName = YaziciAdi;
+                        try
+                        {
+                            pt.PrinterSettings.DefaultPageSettings.PaperSource = pt.PrinterSettings.PaperSources[KagitKaynagiIndex];
+                        }
+                        catch (Exception) { }
+                    }
+
+                    switch (NasilAcsin)
+                    {
+                        case Nasil.dizayn:
+                            XRDesignFormEx XrDesigner = new XRDesignFormEx();
+                            //XrDesigner.FileName = DosyaAdiE;
+                            XrDesigner.OpenReport(ArabellektekiRapor);
+                            XrDesigner.Show();
+                            break;
+                        case Nasil.Goster:
+                            pt.ShowPreviewDialog();
+                            break;
+                        case Nasil.Yazdir:
+                            if (YaziciAdi != string.Empty)
+                                pt.PrinterSettings.PrinterName = YaziciAdi;
+                            pt.Print();
+
+                            break;
+                        case Nasil.YazdirmaDiyalogu:
+                            pt.PrintDialog();
+                            break;
+                    }
                 }
             }
             catch (Exception hata)
@@ -213,42 +270,6 @@ namespace clsTablolar.Yazdirma
             }
             finally
             {
-            }
-        }
-
-
-
-        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
-        {
-            try
-            {
-                //for (int i = 0; i < e.PrintDocument.PrinterSettings.PaperSources.Count; i++)
-                //    if (e.PrintDocument.PrinterSettings.PaperSources[i].==
-                //        PaperSourceKind.Cassette)
-                //    {
-                //        e.PrintDocument.DefaultPageSettings.PaperSource =
-                //            e.PrintDocument.PrinterSettings.PaperSources[i];
-                //        break;
-                //    }
-
-                //if (e.PrintDocument.PrinterSettings.CanDuplex == true)
-                //{
-                //    e.PrintDocument.PrinterSettings.Duplex = Duplex.Default;
-                //}
-
-
-
-                //e.PrintDocument.
-
-                //e.PrintDocument.PrinterSettings.PrinterName = YaziciAdi;
-                //e.PrintDocument.PrinterSettings.Copies = (Int16)NumberOfCopy;
-                //e.PrintDocument.DefaultPageSettings.PaperSource = e.PrintDocument.PrinterSettings.PaperSources[KagitKaynagiIndex];
-
-                //e.PrintDocument.DefaultPageSettings.
-            }
-            catch (Exception exep)
-            {
-                throw;
             }
         }
 
@@ -306,10 +327,10 @@ namespace clsTablolar.Yazdirma
         {
             ds.Tables[tableAdi].Rows.Add(ds.Tables[tableAdi].NewRow());
         }
-        public void DtyaYeniSatirEkle_VeriEkle(string tableAdi,string Kolonadi , object Deger)
+        public void DtyaYeniSatirEkle_VeriEkle(string tableAdi, string Kolonadi, object Deger)
         {
             ds.Tables[tableAdi].Rows.Add(ds.Tables[tableAdi].NewRow());
-            
+
             ds.Tables[tableAdi].Rows[ds.Tables[tableAdi].Rows.Count - 1][Kolonadi] = Deger;
         }
 

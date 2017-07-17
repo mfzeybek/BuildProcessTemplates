@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Linq;
-using System.Data;
 
 namespace Aresv2
 {

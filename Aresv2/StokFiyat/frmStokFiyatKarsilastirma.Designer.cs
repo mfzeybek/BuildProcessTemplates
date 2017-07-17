@@ -71,7 +71,6 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -100,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
@@ -111,14 +109,14 @@
             // 
             // lkpStokFiyat1
             // 
-            this.lkpStokFiyat1.Location = new System.Drawing.Point(70, 20);
-            this.lkpStokFiyat1.Margin = new System.Windows.Forms.Padding(2);
+            this.lkpStokFiyat1.Location = new System.Drawing.Point(78, 34);
+            this.lkpStokFiyat1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lkpStokFiyat1.Name = "lkpStokFiyat1";
             this.lkpStokFiyat1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkpStokFiyat1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FiyatTanimAdi", "FiyatTanimAdi")});
-            this.lkpStokFiyat1.Size = new System.Drawing.Size(172, 20);
+            this.lkpStokFiyat1.Size = new System.Drawing.Size(355, 34);
             this.lkpStokFiyat1.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.lkpStokFiyat1.TabIndex = 0;
             // 
@@ -142,18 +140,20 @@
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Controls.Add(this.gridControl1);
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
+            this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Name = "frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout";
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(377, 206, 726, 704);
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Size = new System.Drawing.Size(1072, 547);
+            this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Size = new System.Drawing.Size(2144, 1094);
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.TabIndex = 16;
             this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout.Click += new System.EventHandler(this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout_Click);
             // 
             // btnAsagiYuvarla
             // 
-            this.btnAsagiYuvarla.Location = new System.Drawing.Point(901, 44);
+            this.btnAsagiYuvarla.Location = new System.Drawing.Point(1793, 76);
+            this.btnAsagiYuvarla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAsagiYuvarla.Name = "btnAsagiYuvarla";
-            this.btnAsagiYuvarla.Size = new System.Drawing.Size(167, 22);
+            this.btnAsagiYuvarla.Size = new System.Drawing.Size(345, 42);
             this.btnAsagiYuvarla.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnAsagiYuvarla.TabIndex = 19;
             this.btnAsagiYuvarla.Text = "Aşağı Yuvarla";
@@ -161,9 +161,10 @@
             // 
             // btnYukariYuvarla
             // 
-            this.btnYukariYuvarla.Location = new System.Drawing.Point(744, 44);
+            this.btnYukariYuvarla.Location = new System.Drawing.Point(1469, 76);
+            this.btnYukariYuvarla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnYukariYuvarla.Name = "btnYukariYuvarla";
-            this.btnYukariYuvarla.Size = new System.Drawing.Size(153, 22);
+            this.btnYukariYuvarla.Size = new System.Drawing.Size(316, 42);
             this.btnYukariYuvarla.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnYukariYuvarla.TabIndex = 18;
             this.btnYukariYuvarla.Text = "Yukarı Yuvarla";
@@ -171,41 +172,42 @@
             // 
             // txtYuvarla
             // 
-            this.txtYuvarla.Location = new System.Drawing.Point(744, 20);
+            this.txtYuvarla.Location = new System.Drawing.Point(1469, 34);
+            this.txtYuvarla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtYuvarla.Name = "txtYuvarla";
-            this.txtYuvarla.Size = new System.Drawing.Size(324, 20);
+            this.txtYuvarla.Size = new System.Drawing.Size(669, 34);
             this.txtYuvarla.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.txtYuvarla.TabIndex = 17;
             // 
             // lkpStokFiyat2
             // 
-            this.lkpStokFiyat2.Location = new System.Drawing.Point(246, 20);
-            this.lkpStokFiyat2.Margin = new System.Windows.Forms.Padding(2);
+            this.lkpStokFiyat2.Location = new System.Drawing.Point(441, 34);
+            this.lkpStokFiyat2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lkpStokFiyat2.Name = "lkpStokFiyat2";
             this.lkpStokFiyat2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkpStokFiyat2.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FiyatTanimAdi", "FiyatTanimAdi")});
-            this.lkpStokFiyat2.Size = new System.Drawing.Size(164, 20);
+            this.lkpStokFiyat2.Size = new System.Drawing.Size(339, 34);
             this.lkpStokFiyat2.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.lkpStokFiyat2.TabIndex = 1;
             // 
             // btnFiyat1Getir
             // 
-            this.btnFiyat1Getir.Location = new System.Drawing.Point(70, 44);
-            this.btnFiyat1Getir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiyat1Getir.Location = new System.Drawing.Point(78, 76);
+            this.btnFiyat1Getir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFiyat1Getir.Name = "btnFiyat1Getir";
-            this.btnFiyat1Getir.Size = new System.Drawing.Size(172, 22);
+            this.btnFiyat1Getir.Size = new System.Drawing.Size(355, 42);
             this.btnFiyat1Getir.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnFiyat1Getir.TabIndex = 15;
             this.btnFiyat1Getir.Text = "Fiyat1 Getir";
             // 
             // btnFiyat2Getir
             // 
-            this.btnFiyat2Getir.Location = new System.Drawing.Point(246, 44);
-            this.btnFiyat2Getir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiyat2Getir.Location = new System.Drawing.Point(441, 76);
+            this.btnFiyat2Getir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFiyat2Getir.Name = "btnFiyat2Getir";
-            this.btnFiyat2Getir.Size = new System.Drawing.Size(164, 22);
+            this.btnFiyat2Getir.Size = new System.Drawing.Size(339, 42);
             this.btnFiyat2Getir.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnFiyat2Getir.TabIndex = 15;
             this.btnFiyat2Getir.Text = "Fiyat 2 Getir";
@@ -213,10 +215,10 @@
             // 
             // btnExceleAktar
             // 
-            this.btnExceleAktar.Location = new System.Drawing.Point(9, 183);
-            this.btnExceleAktar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExceleAktar.Location = new System.Drawing.Point(14, 532);
+            this.btnExceleAktar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExceleAktar.Name = "btnExceleAktar";
-            this.btnExceleAktar.Size = new System.Drawing.Size(52, 23);
+            this.btnExceleAktar.Size = new System.Drawing.Size(48, 93);
             this.btnExceleAktar.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnExceleAktar.TabIndex = 14;
             this.btnExceleAktar.Text = "E";
@@ -225,10 +227,10 @@
             // 
             // btnYuzdeAktar
             // 
-            this.btnYuzdeAktar.Location = new System.Drawing.Point(414, 44);
-            this.btnYuzdeAktar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnYuzdeAktar.Location = new System.Drawing.Point(788, 76);
+            this.btnYuzdeAktar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnYuzdeAktar.Name = "btnYuzdeAktar";
-            this.btnYuzdeAktar.Size = new System.Drawing.Size(326, 22);
+            this.btnYuzdeAktar.Size = new System.Drawing.Size(673, 42);
             this.btnYuzdeAktar.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnYuzdeAktar.TabIndex = 10;
             this.btnYuzdeAktar.Text = "Yüzde Aktar";
@@ -241,20 +243,20 @@
             0,
             0,
             0});
-            this.txtYuzde.Location = new System.Drawing.Point(414, 20);
-            this.txtYuzde.Margin = new System.Windows.Forms.Padding(2);
+            this.txtYuzde.Location = new System.Drawing.Point(788, 34);
+            this.txtYuzde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtYuzde.Name = "txtYuzde";
-            this.txtYuzde.Size = new System.Drawing.Size(326, 20);
+            this.txtYuzde.Size = new System.Drawing.Size(673, 34);
             this.txtYuzde.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.txtYuzde.TabIndex = 9;
             // 
             // btnKaydet
             // 
             this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnKaydet.Location = new System.Drawing.Point(70, 520);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKaydet.Location = new System.Drawing.Point(78, 1011);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(215, 23);
+            this.btnKaydet.Size = new System.Drawing.Size(2060, 77);
             this.btnKaydet.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnKaydet.TabIndex = 8;
             this.btnKaydet.Text = "Fiyatları Kaydet";
@@ -262,10 +264,10 @@
             // 
             // btnStokBosalt
             // 
-            this.btnStokBosalt.Location = new System.Drawing.Point(9, 129);
-            this.btnStokBosalt.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStokBosalt.Location = new System.Drawing.Point(14, 332);
+            this.btnStokBosalt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStokBosalt.Name = "btnStokBosalt";
-            this.btnStokBosalt.Size = new System.Drawing.Size(52, 23);
+            this.btnStokBosalt.Size = new System.Drawing.Size(48, 93);
             this.btnStokBosalt.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnStokBosalt.TabIndex = 7;
             this.btnStokBosalt.Text = "---";
@@ -273,10 +275,10 @@
             // 
             // btnStokAc
             // 
-            this.btnStokAc.Location = new System.Drawing.Point(9, 156);
-            this.btnStokAc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStokAc.Location = new System.Drawing.Point(14, 433);
+            this.btnStokAc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStokAc.Name = "btnStokAc";
-            this.btnStokAc.Size = new System.Drawing.Size(52, 23);
+            this.btnStokAc.Size = new System.Drawing.Size(48, 91);
             this.btnStokAc.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnStokAc.TabIndex = 6;
             this.btnStokAc.Text = "A";
@@ -284,10 +286,10 @@
             // 
             // btnStokCikar
             // 
-            this.btnStokCikar.Location = new System.Drawing.Point(9, 102);
-            this.btnStokCikar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStokCikar.Location = new System.Drawing.Point(14, 233);
+            this.btnStokCikar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStokCikar.Name = "btnStokCikar";
-            this.btnStokCikar.Size = new System.Drawing.Size(52, 23);
+            this.btnStokCikar.Size = new System.Drawing.Size(48, 91);
             this.btnStokCikar.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnStokCikar.TabIndex = 6;
             this.btnStokCikar.Text = "-";
@@ -295,10 +297,10 @@
             // 
             // btnStokEkle
             // 
-            this.btnStokEkle.Location = new System.Drawing.Point(9, 75);
-            this.btnStokEkle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStokEkle.Location = new System.Drawing.Point(14, 134);
+            this.btnStokEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStokEkle.Name = "btnStokEkle";
-            this.btnStokEkle.Size = new System.Drawing.Size(52, 23);
+            this.btnStokEkle.Size = new System.Drawing.Size(48, 91);
             this.btnStokEkle.StyleController = this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout;
             this.btnStokEkle.TabIndex = 6;
             this.btnStokEkle.Text = "+";
@@ -309,12 +311,12 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gridControl1.Location = new System.Drawing.Point(70, 70);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.gridControl1.Location = new System.Drawing.Point(78, 126);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(998, 446);
+            this.gridControl1.Size = new System.Drawing.Size(2060, 877);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -459,7 +461,6 @@
             this.layoutControlItem13,
             this.layoutControlGroup2,
             this.layoutControlItem8,
-            this.emptySpaceItem1,
             this.emptySpaceItem4,
             this.layoutControlItem15,
             this.layoutControlItem14,
@@ -469,53 +470,53 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1072, 547);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(2144, 1094);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.lkpStokFiyat2;
-            this.layoutControlItem1.Location = new System.Drawing.Point(242, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(435, 0);
             this.layoutControlItem1.Name = "lkpStokFiyat2item";
-            this.layoutControlItem1.Size = new System.Drawing.Size(168, 40);
+            this.layoutControlItem1.Size = new System.Drawing.Size(347, 70);
             this.layoutControlItem1.Text = "Fiyat 2";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(50, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(98, 25);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.lkpStokFiyat1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(66, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(72, 0);
             this.layoutControlItem2.Name = "lkpStokFiyat1item";
-            this.layoutControlItem2.Size = new System.Drawing.Size(176, 40);
+            this.layoutControlItem2.Size = new System.Drawing.Size(363, 70);
             this.layoutControlItem2.Text = "Fiyat 1";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(50, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(98, 25);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnFiyat1Getir;
-            this.layoutControlItem3.Location = new System.Drawing.Point(66, 40);
+            this.layoutControlItem3.Location = new System.Drawing.Point(72, 70);
             this.layoutControlItem3.Name = "btnFiyat1Getiritem";
-            this.layoutControlItem3.Size = new System.Drawing.Size(176, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(363, 50);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnFiyat2Getir;
-            this.layoutControlItem4.Location = new System.Drawing.Point(242, 40);
+            this.layoutControlItem4.Location = new System.Drawing.Point(435, 70);
             this.layoutControlItem4.Name = "btnFiyat2Getiritem";
-            this.layoutControlItem4.Size = new System.Drawing.Size(168, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(347, 50);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.gridControl1;
-            this.layoutControlItem13.Location = new System.Drawing.Point(66, 66);
+            this.layoutControlItem13.Location = new System.Drawing.Point(72, 120);
             this.layoutControlItem13.Name = "gridControl1item";
-            this.layoutControlItem13.Size = new System.Drawing.Size(1002, 450);
+            this.layoutControlItem13.Size = new System.Drawing.Size(2068, 885);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
@@ -528,19 +529,19 @@
             this.emptySpaceItem2,
             this.layoutControlItem11,
             this.layoutControlItem12});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 66);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 120);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(66, 477);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(72, 970);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnStokAc;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 81);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 299);
             this.layoutControlItem10.MinSize = new System.Drawing.Size(24, 26);
             this.layoutControlItem10.Name = "btnStokAcitem";
-            this.layoutControlItem10.Size = new System.Drawing.Size(56, 27);
+            this.layoutControlItem10.Size = new System.Drawing.Size(56, 99);
             this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
@@ -548,10 +549,10 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnStokBosalt;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 198);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(25, 26);
             this.layoutControlItem9.Name = "btnStokBosaltitem";
-            this.layoutControlItem9.Size = new System.Drawing.Size(56, 27);
+            this.layoutControlItem9.Size = new System.Drawing.Size(56, 101);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
@@ -559,10 +560,10 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnExceleAktar;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 398);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(24, 26);
             this.layoutControlItem5.Name = "btnExceleAktaritem";
-            this.layoutControlItem5.Size = new System.Drawing.Size(56, 27);
+            this.layoutControlItem5.Size = new System.Drawing.Size(56, 101);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -570,21 +571,21 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 200);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 499);
             this.emptySpaceItem2.MaxSize = new System.Drawing.Size(56, 0);
             this.emptySpaceItem2.MinSize = new System.Drawing.Size(56, 10);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(56, 486);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(56, 455);
             this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnStokCikar;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 27);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 99);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(24, 26);
             this.layoutControlItem11.Name = "btnStokCikaritem";
-            this.layoutControlItem11.Size = new System.Drawing.Size(56, 27);
+            this.layoutControlItem11.Size = new System.Drawing.Size(56, 99);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
@@ -595,7 +596,7 @@
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(24, 26);
             this.layoutControlItem12.Name = "btnStokEkleitem";
-            this.layoutControlItem12.Size = new System.Drawing.Size(56, 27);
+            this.layoutControlItem12.Size = new System.Drawing.Size(56, 99);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
@@ -603,21 +604,13 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnKaydet;
-            this.layoutControlItem8.Location = new System.Drawing.Point(66, 516);
+            this.layoutControlItem8.Location = new System.Drawing.Point(72, 1005);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(88, 26);
             this.layoutControlItem8.Name = "btnKaydetitem";
-            this.layoutControlItem8.Size = new System.Drawing.Size(219, 27);
+            this.layoutControlItem8.Size = new System.Drawing.Size(2068, 85);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(284, 722);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(778, 40);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
@@ -626,17 +619,17 @@
             this.emptySpaceItem4.MaxSize = new System.Drawing.Size(0, 66);
             this.emptySpaceItem4.MinSize = new System.Drawing.Size(10, 66);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(66, 66);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(72, 120);
             this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.btnYukariYuvarla;
-            this.layoutControlItem15.Location = new System.Drawing.Point(740, 40);
+            this.layoutControlItem15.Location = new System.Drawing.Point(1463, 70);
             this.layoutControlItem15.MinSize = new System.Drawing.Size(80, 26);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(157, 26);
+            this.layoutControlItem15.Size = new System.Drawing.Size(324, 50);
             this.layoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
@@ -644,20 +637,20 @@
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.txtYuvarla;
-            this.layoutControlItem14.Location = new System.Drawing.Point(740, 0);
+            this.layoutControlItem14.Location = new System.Drawing.Point(1463, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(328, 40);
+            this.layoutControlItem14.Size = new System.Drawing.Size(677, 70);
             this.layoutControlItem14.Text = "Yuvarlama";
             this.layoutControlItem14.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(50, 13);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(98, 25);
             // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.btnAsagiYuvarla;
-            this.layoutControlItem16.Location = new System.Drawing.Point(897, 40);
+            this.layoutControlItem16.Location = new System.Drawing.Point(1787, 70);
             this.layoutControlItem16.MinSize = new System.Drawing.Size(80, 26);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(171, 26);
+            this.layoutControlItem16.Size = new System.Drawing.Size(353, 50);
             this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
@@ -665,31 +658,31 @@
             // txtYuzdeitem
             // 
             this.txtYuzdeitem.Control = this.txtYuzde;
-            this.txtYuzdeitem.Location = new System.Drawing.Point(410, 0);
+            this.txtYuzdeitem.Location = new System.Drawing.Point(782, 0);
             this.txtYuzdeitem.Name = "txtYuzdeitem";
-            this.txtYuzdeitem.Size = new System.Drawing.Size(330, 40);
+            this.txtYuzdeitem.Size = new System.Drawing.Size(681, 70);
             this.txtYuzdeitem.Text = "Yüzde";
             this.txtYuzdeitem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.txtYuzdeitem.TextSize = new System.Drawing.Size(50, 13);
+            this.txtYuzdeitem.TextSize = new System.Drawing.Size(98, 25);
             // 
             // btnYuzdeAktaritem
             // 
             this.btnYuzdeAktaritem.Control = this.btnYuzdeAktar;
-            this.btnYuzdeAktaritem.Location = new System.Drawing.Point(410, 40);
+            this.btnYuzdeAktaritem.Location = new System.Drawing.Point(782, 70);
             this.btnYuzdeAktaritem.Name = "btnYuzdeAktaritem";
-            this.btnYuzdeAktaritem.Size = new System.Drawing.Size(330, 26);
+            this.btnYuzdeAktaritem.Size = new System.Drawing.Size(681, 50);
             this.btnYuzdeAktaritem.TextSize = new System.Drawing.Size(0, 0);
             this.btnYuzdeAktaritem.TextVisible = false;
             // 
             // frmStokFiyatKarsilastirma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1072, 547);
+            this.ClientSize = new System.Drawing.Size(2144, 1094);
             this.Controls.Add(this.frmStokFiyatKarsilastirmalayoutControl1ConvertedLayout);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmStokFiyatKarsilastirma";
             this.Text = "frmStokFiyatKarsilastirma";
             this.Load += new System.EventHandler(this.frmStokFiyatKarsilastirma_Load);
@@ -716,7 +709,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
@@ -768,7 +760,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.TextEdit txtYuvarla;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;

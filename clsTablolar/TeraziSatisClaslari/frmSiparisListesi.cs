@@ -11,8 +11,9 @@ namespace clsTablolar.TeraziSatisClaslari
         public delegate void dlg_SiparisiSatisaAktarma(string FaturaBarkod);
         public dlg_SiparisiSatisaAktarma SiparisiSatisaAktarma;
 
-        public frmSiparisListesi(SqlConnection Baglanti, int TeraziID)
+        public frmSiparisListesi(SqlConnection Baglanti, int TeraziID, string YaziciAdi)
         {
+            this.YaziciAdi = YaziciAdi;
             this.Baglanti = Baglanti;
             this.TeraziID = TeraziID;
             InitializeComponent();
@@ -20,12 +21,9 @@ namespace clsTablolar.TeraziSatisClaslari
 
         SqlConnection Baglanti;
         int TeraziID;
+
+        string YaziciAdi;
         //SqlConnection connn = new SqlConnection();
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         SqlTransaction TrGenel;
         clsTablolar.Siparis.csSiparisDurumTanimlari Tanimlar = new clsTablolar.Siparis.csSiparisDurumTanimlari();
@@ -173,7 +171,7 @@ namespace clsTablolar.TeraziSatisClaslari
             if (gvSiparis.RowCount == 0)
                 return;
 
-            using (frmSiparis frm = new frmSiparis((int)gvSiparis.GetFocusedRowCellValue(colSiparisID), Baglanti, TeraziID, -1))
+            using (frmSiparis frm = new frmSiparis((int)gvSiparis.GetFocusedRowCellValue(colSiparisID), Baglanti, TeraziID, -1, YaziciAdi))
             {
                 frm.SiparisiSatisaAktarma = this.SatisaAKtar;
                 frm.ShowDialog();

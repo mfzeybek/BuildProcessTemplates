@@ -383,7 +383,7 @@ namespace KasaSatis
                             }
                             else // faturaya aktarılmamışsa
                             {
-                                using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), KasaSatis.Properties.Settings.Default.TeraziID, -1))
+                                using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), KasaSatis.Properties.Settings.Default.TeraziID, -1, YaziciAdi1))
                                 {
                                     sip.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
                                     sip.ShowDialog();
@@ -1350,9 +1350,36 @@ namespace KasaSatis
             }
         }
 
+
         #endregion
 
+        private void btnSiparisListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (clsTablolar.TeraziSatisClaslari.frmSiparisListesi frm = new clsTablolar.TeraziSatisClaslari.frmSiparisListesi(SqlConnections.GetBaglanti(), KasaSatis.Properties.Settings.Default.TeraziID, YaziciAdi1))
+            {
+                frm.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
+                frm.ShowDialog();
+            }
+        }
 
+        private void btnYeniSiparis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //{
+            try
+            {
+                clsTablolar.TeraziSatisClaslari.frmSiparis frm = new clsTablolar.TeraziSatisClaslari.frmSiparis(-1, SqlConnections.GetBaglanti(), KasaSatis.Properties.Settings.Default.TeraziID, -1, YaziciAdi1);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //if (Kilitlimi)
+                //    Monitor.Exit(clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit);
+            }
+        }
     }
 }
 

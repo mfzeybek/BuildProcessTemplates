@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Aresv2.Stok
 {
@@ -229,6 +230,14 @@ namespace Aresv2.Stok
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             YazdirmakicinVerileriHazirla(false);
+            YazdirmaIslemi = new Thread(new ThreadStart(Yazdir));
+            YazdirmaIslemi.Start();
+        }
+
+        Thread YazdirmaIslemi;
+
+        void Yazdir()
+        {
             using (varsayilanyol = new clsTablolar.Rapor.csRaporVarsayilanYolu())
             {
 
@@ -240,13 +249,29 @@ namespace Aresv2.Stok
             }
         }
 
+
         public void EklenenSonSatiriYazdir(int KopyaSayisi) //Bir yere bağlı değil sadece falan filan
         {
             YazdirmakicinVerileriHazirla(true);
 
-
-            yazdir.Yazdirr(clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir, SeciliYaziciAdi, KopyaSayisi);
+            Thread th = new Thread(new ParameterizedThreadStart(SonEkleneniYazdir));
+            th.Start(KopyaSayisi);
         }
+
+        object lockTaken = new object();
+
+
+        void SonEkleneniYazdir(object KopyaSayisi)
+        {
+            lock (lockTaken)
+            {
+                yazdir.YaziciAdi = SeciliYaziciAdi;
+                yazdir.NumberOfCopy = (int)KopyaSayisi;
+                yazdir.Yazdirr(clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir, SeciliYaziciAdi, (int)KopyaSayisi);// çok yanlış gelmişsin
+                yazdir.NumberOfCopy = 1;
+            }
+        }
+
 
         // ön izle
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -325,6 +350,12 @@ namespace Aresv2.Stok
 
                 TrGenel.Commit();
 
+                if (string.IsNullOrEmpty(StokBilgileri.Barkod))
+                {
+                    biri
+
+
+                }
             }
             catch (Exception hata)
             {

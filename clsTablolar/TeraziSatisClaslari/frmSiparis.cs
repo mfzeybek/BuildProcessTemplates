@@ -7,8 +7,9 @@ namespace clsTablolar.TeraziSatisClaslari
 {
     public partial class frmSiparis : Form
     {
-        public frmSiparis(int SiparisID, SqlConnection Baglanti, int TeraziID, int SiparisiFaturalandiracakPersonel)
+        public frmSiparis(int SiparisID, SqlConnection Baglanti, int TeraziID, int SiparisiFaturalandiracakPersonel, string YaziciAdi)
         {
+            this.YaziciAdi = YaziciAdi;
             this.TeraziID = TeraziID;
             this.Baglanti = Baglanti;
             this.SiparisiFaturalandiracakPersonel = SiparisiFaturalandiracakPersonel;
@@ -21,10 +22,14 @@ namespace clsTablolar.TeraziSatisClaslari
         int _SiparisID;
         int TeraziID;
         int SiparisiFaturalandiracakPersonel;
+
+        string YaziciAdi;
         //}
         clsTablolar.Siparis.csSiparis Siparis;
         clsTablolar.Siparis.csSiparisHareket SiparisHareket;
         SqlConnection Baglanti;
+
+
 
         SqlTransaction TrGenel;
 
@@ -663,6 +668,8 @@ namespace clsTablolar.TeraziSatisClaslari
                         YazdirDetay.ds.Tables["SiprisHareket"].Rows[SonSatirIndex][colSiparisHareketStokAdi.FieldName] = item[colSiparisHareketStokAdi.FieldName];
                         YazdirDetay.ds.Tables["SiprisHareket"].Rows[SonSatirIndex][colAltBirimKdvDahilFiyat.FieldName] = item[colAltBirimKdvDahilFiyat.FieldName];
                     }
+                    YazdirDetay.YaziciAdi = YaziciAdi;
+                    YazdirDetay.NumberOfCopy = 2;
                     YazdirDetay.Yazdirr(Application.StartupPath + @"\Raporlar\Siparis.repx", clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir);
                 }
             }

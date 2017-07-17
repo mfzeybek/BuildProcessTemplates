@@ -291,7 +291,7 @@
             this.btnSiparisiSil.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnSiparisiSil.Appearance.Options.UseFont = true;
             this.btnSiparisiSil.Location = new System.Drawing.Point(1370, 1254);
-            this.btnSiparisiSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSiparisiSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSiparisiSil.Name = "btnSiparisiSil";
             this.btnSiparisiSil.Size = new System.Drawing.Size(236, 108);
             this.btnSiparisiSil.TabIndex = 37;
@@ -1008,7 +1008,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl1.Location = new System.Drawing.Point(850, 1185);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(144, 25);
             this.labelControl1.TabIndex = 0;
@@ -1018,7 +1018,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl2.Location = new System.Drawing.Point(1282, 1181);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(96, 25);
             this.labelControl2.TabIndex = 23;
@@ -1028,7 +1028,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl3.Location = new System.Drawing.Point(1664, 1181);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(126, 25);
             this.labelControl3.TabIndex = 24;
@@ -1037,7 +1037,7 @@
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(44, 31);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(115, 25);
             this.labelControl4.TabIndex = 0;
@@ -1046,7 +1046,7 @@
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(822, 329);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(146, 25);
             this.labelControl5.TabIndex = 11;
@@ -1055,7 +1055,7 @@
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(822, 254);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(145, 25);
             this.labelControl7.TabIndex = 27;

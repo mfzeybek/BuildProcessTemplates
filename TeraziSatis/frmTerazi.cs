@@ -764,7 +764,7 @@ namespace TeraziSatis
                                     }
                                     else // faturaya aktarılmamışsa
                                     {
-                                        using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID, -1))
+                                        using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID, -1, YaziciAdi1))
                                         {
                                             sip.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
                                             sip.ShowDialog();
@@ -2041,7 +2041,7 @@ ne hatısı diye sorarsam hamısına hatası de
             //{
             try
             {
-                clsTablolar.TeraziSatisClaslari.frmSiparis frm = new clsTablolar.TeraziSatisClaslari.frmSiparis(-1, SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID, -1);
+                clsTablolar.TeraziSatisClaslari.frmSiparis frm = new clsTablolar.TeraziSatisClaslari.frmSiparis(-1, SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID, -1, YaziciAdi1);
                 frm.ShowDialog();
             }
             catch (Exception ex)
@@ -2057,7 +2057,7 @@ ne hatısı diye sorarsam hamısına hatası de
 
         private void barBtnSiparisListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            using (clsTablolar.TeraziSatisClaslari.frmSiparisListesi frm = new clsTablolar.TeraziSatisClaslari.frmSiparisListesi(SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID))
+            using (clsTablolar.TeraziSatisClaslari.frmSiparisListesi frm = new clsTablolar.TeraziSatisClaslari.frmSiparisListesi(SqlConnections.GetBaglanti(), TeraziSatis.Properties.Settings.Default.TeraziID, YaziciAdi1))
             {
                 frm.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
                 frm.ShowDialog();

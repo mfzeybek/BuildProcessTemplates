@@ -67,6 +67,9 @@
             this.barbtnOkcBilgileri = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnOkcFisIptal = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnSonFisiTekrarYazdir = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.btnYeniSiparis = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSiparisListesi = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -79,6 +82,7 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnItemFormSecerekYazdir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMusteriler = new DevExpress.XtraEditors.SimpleButton();
             this.btnUrunButonlari = new DevExpress.XtraEditors.SimpleButton();
             this.btnSeciliUrununMiktariniBirArttir = new DevExpress.XtraEditors.SimpleButton();
@@ -152,10 +156,6 @@
             this.lblKasiyer = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOdemesiYapilacakSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOdemesiYapilacakSatis)).BeginInit();
@@ -570,6 +570,35 @@
             this.barBtnSonFisiTekrarYazdir.Name = "barBtnSonFisiTekrarYazdir";
             this.barBtnSonFisiTekrarYazdir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSonFisiTekrarYazdir_ItemClick);
             // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Sipariş";
+            this.barSubItem2.Id = 23;
+            this.barSubItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.barSubItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnYeniSiparis),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSiparisListesi)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // btnYeniSiparis
+            // 
+            this.btnYeniSiparis.Caption = "Yeni Sipariş";
+            this.btnYeniSiparis.Id = 24;
+            this.btnYeniSiparis.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnYeniSiparis.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnYeniSiparis.Name = "btnYeniSiparis";
+            this.btnYeniSiparis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeniSiparis_ItemClick);
+            // 
+            // btnSiparisListesi
+            // 
+            this.btnSiparisListesi.Caption = "Sipariş Listesi";
+            this.btnSiparisListesi.Id = 25;
+            this.btnSiparisListesi.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnSiparisListesi.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnSiparisListesi.Name = "btnSiparisListesi";
+            this.btnSiparisListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSiparisListesi_ItemClick);
+            // 
             // barManager1
             // 
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -598,8 +627,8 @@
             this.barBtnSonFisiTekrarYazdir,
             this.barButtonItem12,
             this.barSubItem2,
-            this.barButtonItem13,
-            this.barButtonItem14});
+            this.btnYeniSiparis,
+            this.btnSiparisListesi});
             this.barManager1.MaxItemId = 26;
             // 
             // barDockControlTop
@@ -681,6 +710,12 @@
             this.barButtonItem11.Caption = "barButtonItem11";
             this.barButtonItem11.Id = 17;
             this.barButtonItem11.Name = "barButtonItem11";
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Siparis";
+            this.barButtonItem12.Id = 22;
+            this.barButtonItem12.Name = "barButtonItem12";
             // 
             // btnMusteriler
             // 
@@ -1386,33 +1421,6 @@
             this.listBoxControl1.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.listBoxControl1.TabIndex = 174;
             // 
-            // barButtonItem12
-            // 
-            this.barButtonItem12.Caption = "Siparis";
-            this.barButtonItem12.Id = 22;
-            this.barButtonItem12.Name = "barButtonItem12";
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "Sipariş";
-            this.barSubItem2.Id = 23;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
-            // barButtonItem13
-            // 
-            this.barButtonItem13.Caption = "Yeni Sipariş";
-            this.barButtonItem13.Id = 24;
-            this.barButtonItem13.Name = "barButtonItem13";
-            // 
-            // barButtonItem14
-            // 
-            this.barButtonItem14.Caption = "Sipariş Listesi";
-            this.barButtonItem14.Id = 25;
-            this.barButtonItem14.Name = "barButtonItem14";
-            // 
             // frmKasaOdeme
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1600,8 +1608,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit_AltBirim;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarButtonItem btnYeniSiparis;
+        private DevExpress.XtraBars.BarButtonItem btnSiparisListesi;
     }
 }
 

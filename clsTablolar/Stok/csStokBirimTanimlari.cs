@@ -52,6 +52,9 @@ namespace clsTablolar.Stok
 			}
 		}
 
+
+
+
 		public void Dispose()
 		{
 			GC.SuppressFinalize(this);
