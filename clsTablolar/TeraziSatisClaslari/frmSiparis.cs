@@ -308,6 +308,12 @@ namespace clsTablolar.TeraziSatisClaslari
             try
             {
                 gridView1.PostEditor();
+                if (Siparis.SatisElemaniID == -1)
+                {
+                    MessageBox.Show("PERSONEL KARTINI OKUTUN");
+                    return;
+                }
+
                 if (Siparis.SiparisID == -1)
                 {
 
@@ -669,7 +675,10 @@ namespace clsTablolar.TeraziSatisClaslari
                         YazdirDetay.ds.Tables["SiprisHareket"].Rows[SonSatirIndex][colAltBirimKdvDahilFiyat.FieldName] = item[colAltBirimKdvDahilFiyat.FieldName];
                     }
                     YazdirDetay.YaziciAdi = YaziciAdi;
-                    YazdirDetay.NumberOfCopy = 2;
+                    if (Siparis.SiparisID == -1)
+                        YazdirDetay.NumberOfCopy = 4;
+                    else
+                        YazdirDetay.NumberOfCopy = 1;
                     YazdirDetay.Yazdirr(Application.StartupPath + @"\Raporlar\Siparis.repx", clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir);
                 }
             }

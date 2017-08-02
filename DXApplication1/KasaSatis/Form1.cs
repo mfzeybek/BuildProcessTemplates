@@ -364,38 +364,52 @@ namespace KasaSatis
             {
                 //lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit)
                 {
-                    using (clsTablolar.Siparis.csBarkodtanSiparisIDGetir barkodtanGetir = new clsTablolar.Siparis.csBarkodtanSiparisIDGetir())
+                    try
                     {
-                        clsTablolar.Siparis.csBarkodtanSiparisIDGetir.SiparisOdeme SipBilgisi = barkodtanGetir.BarkodtaSiparisIDGetir(SqlConnections.GetBaglanti(), TrGenel, txtBarkodu.Text);
+                        using (clsTablolar.Siparis.csBarkodtanSiparisIDGetir barkodtanGetir = new clsTablolar.Siparis.csBarkodtanSiparisIDGetir())
+                        {
+                            clsTablolar.Siparis.csBarkodtanSiparisIDGetir.SiparisOdeme SipBilgisi = barkodtanGetir.BarkodtaSiparisIDGetir(SqlConnections.GetBaglanti(), TrGenel, txtBarkodu.Text);
 
-                        if (SipBilgisi.SipariID != -1) // Sipariş Varsa
-                        {
-                            if (SipBilgisi.FaturaID != -1) // Sipariş Faturaya Aktarılmışsa (sipariş Satışa aktarılmışsa)
+                            if (SipBilgisi.SipariID != -1) // Sipariş Varsa
                             {
-                                //if (SipBilgisi.OdemesiTamamlandiMi == false) // Siparişin Faturaya Aktarılmış ve ödemesi tamamlanmamışsa
+                                if (SipBilgisi.FaturaID != -1) // Sipariş Faturaya Aktarılmışsa (sipariş Satışa aktarılmışsa)
                                 {
-                                    txtBarkodu.EditValue = SipBilgisi.FaturaBarkod;
-                                    btnMusteriUrunAra_Click(null, null);
-                                    return;
+                                    //if (SipBilgisi.OdemesiTamamlandiMi == false) // Siparişin Faturaya Aktarılmış ve ödemesi tamamlanmamışsa
+                                    {
+                                        txtBarkodu.EditValue = SipBilgisi.FaturaBarkod;
+                                        btnMusteriUrunAra_Click(null, null);
+                                        return;
+                                    }
+                                    //else
+                                    //{ MesajGoster("Bu sipariş Satışa aktarılmış ve ödemesi tamamlanmış!"); }
                                 }
-                                //else
-                                //{ MesajGoster("Bu sipariş Satışa aktarılmış ve ödemesi tamamlanmış!"); }
+                                else // faturaya aktarılmamışsa
+                                {
+                                    using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), KasaSatis.Properties.Settings.Default.TeraziID, -1, YaziciAdi1))
+                                    {
+                                        sip.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
+                                        sip.ShowDialog();
+                                        return;
+                                    }
+                                }
                             }
-                            else // faturaya aktarılmamışsa
+                            else  // faturaID gelirse fatura aktarılmıştır.
                             {
-                                using (clsTablolar.TeraziSatisClaslari.frmSiparis sip = new clsTablolar.TeraziSatisClaslari.frmSiparis(SipBilgisi.SipariID, SqlConnections.GetBaglanti(), KasaSatis.Properties.Settings.Default.TeraziID, -1, YaziciAdi1))
-                                {
-                                    sip.SiparisiSatisaAktarma = SiparisiSatisaAktarma;
-                                    sip.ShowDialog();
-                                    return;
-                                }
+                                MessageBox.Show("Sipariş Yok");
                             }
-                        }
-                        else  // faturaID gelirse fatura aktarılmıştır.
-                        {
-                            MessageBox.Show("Sipariş Yok");
                         }
                     }
+                    catch (Exception)
+                    {
+                        try
+                        { TrGenel.Rollback(); }
+                        catch (Exception) { }
+                    }
+                    finally
+                    {
+                        txtBarkodu.Text = string.Empty;
+                    }
+
                 }
             }
             else if (txtBarkodu.EditValue.ToString().StartsWith(clsTablolar.TeraziSatisClaslari.csTeraziAyarlari.PersonelBarkodNumarasiOnEki)) // girinlen numara personel numarası ise

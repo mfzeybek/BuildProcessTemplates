@@ -152,6 +152,7 @@
     <Compile Include="Ayarlar\csBarkodAyar.cs" />
     <Compile Include="Ayarlar\csBarkodNuVer.cs" />
     <Compile Include="Ayarlar\csBarkodTipleri.cs" />
+    <Compile Include="Ayarlar\csYonetimEkraniAyar.cs" />
     <Compile Include="Ayarlar\KullaniciIslemleri\csYetkiler.cs" />
     <Compile Include="BasitUretim\csBasitUretim.cs" />
     <Compile Include="BasitUretim\csBasitUretimArama.cs" />

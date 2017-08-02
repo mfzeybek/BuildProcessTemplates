@@ -58,12 +58,14 @@
             // gcRaporDizayn
             // 
             this.gcRaporDizayn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcRaporDizayn.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gcRaporDizayn.Location = new System.Drawing.Point(0, 0);
             this.gcRaporDizayn.MainView = this.gvRaporDizayn;
+            this.gcRaporDizayn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gcRaporDizayn.Name = "gcRaporDizayn";
             this.gcRaporDizayn.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gcRaporDizayn.Size = new System.Drawing.Size(959, 266);
+            this.gcRaporDizayn.Size = new System.Drawing.Size(1918, 512);
             this.gcRaporDizayn.TabIndex = 0;
             this.gcRaporDizayn.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRaporDizayn});
@@ -175,25 +177,28 @@
             this.panelControl1.Controls.Add(this.btnYazdir);
             this.panelControl1.Controls.Add(this.btnIptal);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 266);
+            this.panelControl1.Location = new System.Drawing.Point(0, 512);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(959, 36);
+            this.panelControl1.Size = new System.Drawing.Size(1918, 69);
             this.panelControl1.TabIndex = 1;
             // 
             // btnAyarlar
             // 
-            this.btnAyarlar.Location = new System.Drawing.Point(306, 4);
+            this.btnAyarlar.Location = new System.Drawing.Point(612, 8);
+            this.btnAyarlar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAyarlar.Name = "btnAyarlar";
-            this.btnAyarlar.Size = new System.Drawing.Size(75, 23);
+            this.btnAyarlar.Size = new System.Drawing.Size(150, 44);
             this.btnAyarlar.TabIndex = 6;
             this.btnAyarlar.Text = "Ayarlar";
             this.btnAyarlar.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btnYaziciAyarlari
             // 
-            this.btnYaziciAyarlari.Location = new System.Drawing.Point(590, 5);
+            this.btnYaziciAyarlari.Location = new System.Drawing.Point(1180, 10);
+            this.btnYaziciAyarlari.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnYaziciAyarlari.Name = "btnYaziciAyarlari";
-            this.btnYaziciAyarlari.Size = new System.Drawing.Size(75, 23);
+            this.btnYaziciAyarlari.Size = new System.Drawing.Size(150, 44);
             this.btnYaziciAyarlari.TabIndex = 5;
             this.btnYaziciAyarlari.Text = "YaziciAyarlari";
             this.btnYaziciAyarlari.Visible = false;
@@ -201,28 +206,30 @@
             // 
             // btnTamam
             // 
-            this.btnTamam.Location = new System.Drawing.Point(791, 4);
+            this.btnTamam.Location = new System.Drawing.Point(1582, 8);
+            this.btnTamam.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnTamam.Name = "btnTamam";
-            this.btnTamam.Size = new System.Drawing.Size(75, 23);
+            this.btnTamam.Size = new System.Drawing.Size(150, 44);
             this.btnTamam.TabIndex = 4;
             this.btnTamam.Text = "Tamam";
             this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
             // 
             // btnYazdirmaDiyalogu
             // 
-            this.btnYazdirmaDiyalogu.Location = new System.Drawing.Point(165, 4);
+            this.btnYazdirmaDiyalogu.Location = new System.Drawing.Point(330, 8);
+            this.btnYazdirmaDiyalogu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnYazdirmaDiyalogu.Name = "btnYazdirmaDiyalogu";
-            this.btnYazdirmaDiyalogu.Size = new System.Drawing.Size(75, 23);
+            this.btnYazdirmaDiyalogu.Size = new System.Drawing.Size(150, 44);
             this.btnYazdirmaDiyalogu.TabIndex = 3;
             this.btnYazdirmaDiyalogu.Text = "Y. Diyaloğu";
             this.btnYazdirmaDiyalogu.Click += new System.EventHandler(this.btnYazdirmaDiyalogu_Click);
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(509, 4);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSil.Location = new System.Drawing.Point(1018, 8);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.Size = new System.Drawing.Size(150, 44);
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "Sil";
             this.btnSil.Visible = false;
@@ -230,10 +237,10 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(429, 4);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEkle.Location = new System.Drawing.Point(858, 8);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnEkle.Size = new System.Drawing.Size(150, 44);
             this.btnEkle.TabIndex = 2;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Visible = false;
@@ -241,10 +248,10 @@
             // 
             // btnDuzenle
             // 
-            this.btnDuzenle.Location = new System.Drawing.Point(671, 4);
-            this.btnDuzenle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDuzenle.Location = new System.Drawing.Point(1342, 8);
+            this.btnDuzenle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(86, 23);
+            this.btnDuzenle.Size = new System.Drawing.Size(172, 44);
             this.btnDuzenle.TabIndex = 2;
             this.btnDuzenle.Text = "Formu Düzenle";
             this.btnDuzenle.Visible = false;
@@ -252,40 +259,43 @@
             // 
             // btnOnizle
             // 
-            this.btnOnizle.Location = new System.Drawing.Point(3, 4);
-            this.btnOnizle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOnizle.Location = new System.Drawing.Point(6, 8);
+            this.btnOnizle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnOnizle.Name = "btnOnizle";
-            this.btnOnizle.Size = new System.Drawing.Size(75, 23);
+            this.btnOnizle.Size = new System.Drawing.Size(150, 44);
             this.btnOnizle.TabIndex = 2;
             this.btnOnizle.Text = "Önizle";
             this.btnOnizle.Click += new System.EventHandler(this.btnOnizle_Click);
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(84, 4);
+            this.btnYazdir.Location = new System.Drawing.Point(168, 8);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(75, 23);
+            this.btnYazdir.Size = new System.Drawing.Size(150, 44);
             this.btnYazdir.TabIndex = 1;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // btnIptal
             // 
-            this.btnIptal.Location = new System.Drawing.Point(872, 4);
+            this.btnIptal.Location = new System.Drawing.Point(1744, 8);
+            this.btnIptal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(75, 23);
+            this.btnIptal.Size = new System.Drawing.Size(150, 44);
             this.btnIptal.TabIndex = 0;
             this.btnIptal.Text = "İptal";
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // frmRaporDizaynListesiv2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 302);
+            this.ClientSize = new System.Drawing.Size(1918, 581);
             this.Controls.Add(this.gcRaporDizayn);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRaporDizaynListesiv2";

@@ -72,7 +72,7 @@ namespace Aresv2.Yonetim
         //    TrGenel.Commit();
         //}
 
-
+        int BeklemeSuresi = 60000;
 
         void GuncellenecekBilgiler()
         {
@@ -80,10 +80,10 @@ namespace Aresv2.Yonetim
             {
                 if (this.IsActive)
                 {
-                    GirisCikislariGetir();
+                    //GirisCikislariGetir();
                     AlinanSiparisleri();
                 }
-                Thread.Sleep(5000);
+                Thread.Sleep(BeklemeSuresi);
             }
         }
 
@@ -92,17 +92,39 @@ namespace Aresv2.Yonetim
 
         void GirisCikislariGetir()
         {
-            disardakiler.Getir2(PDKSSqlconnection.GetBaglanti());
-            gridControl1.DataSource = disardakiler.dt;
+            if (disardakiler.YeniHareketVarMi(1, PDKSSqlconnection.GetBaglanti()))
+            {
+                disardakiler.Getir2(PDKSSqlconnection.GetBaglanti());
+                gridControl1.DataSource = disardakiler.dt;
+            }
         }
+
+        DateTime AlinanSiparisSonDegisiklikZamani = DateTime.MinValue;
 
         void AlinanSiparisleri()
         {
-            SiparisArama.HizliSatistaGozukecekMi = 1;
-            //SiparisArama.MuhasebelenmeDrumu = new object[1] { 4 };
+            if (SiparisArama.SiparisteDegisiklikVarMi(SqlConnections.GetBaglanti(), AlinanSiparisSonDegisiklikZamani))
+            {
 
-            gridControl2.DataSource = SiparisArama.SiparisAraListe(SqlConnections.GetBaglanti(), TrGenel);
+                SiparisArama.HizliSatistaGozukecekMi = 1;
+
+                //SiparisArama.MuhasebelenmeDrumu = new object[1] { 4 };
+                SiparisArama.SiparisDurumTanimID = new Int32[1] { 2 };
+
+                gcAlinanSiparisler.DataSource = SiparisArama.SiparisAraListe(SqlConnections.GetBaglanti(), TrGenel);
+
+                //SiparisArama.dt_SiparisListesi.Select("DuzenlemeTarihi = MAX(DuzenlemeTarihi)");
+
+                var last = SiparisArama.dt_SiparisListesi.AsEnumerable()
+              .Select(cols => cols.Field<DateTime>(SiparisArama.dt_SiparisListesi.Columns["DuzenlemeTarihi"]))
+              .OrderByDescending(p => p.Ticks)
+              .FirstOrDefault();
+
+                AlinanSiparisSonDegisiklikZamani = last;
+            }
         }
+
+
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -141,6 +163,21 @@ namespace Aresv2.Yonetim
             {
 
             }
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dockPanel2_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            AlinanSiparisleri();
+        }
+
+        private void dockPanel1_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            GirisCikislariGetir();
         }
     }
 }

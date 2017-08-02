@@ -108,10 +108,12 @@ namespace clsTablolar.Yazdirma
                         switch (NasilAcsin)
                         {
                             case Nasil.dizayn:
-                                XRDesignFormEx XrDesigner = new XRDesignFormEx();
-                                XrDesigner.FileName = DosyaAdi;
-                                XrDesigner.OpenReport(Rapor);
-                                XrDesigner.Show();
+                                FormuDuzenle(DosyaAdi);
+                                //XRDesignFormEx XrDesigner = new XRDesignFormEx();
+                                //XrDesigner.FileName = DosyaAdi;
+                                //XrDesigner.OpenReport();
+                                ////XrDesigner.OpenReport(DosyaAdi);
+                                //XrDesigner.Show();
                                 break;
                             case Nasil.Goster:
                                 pt.ShowPreviewDialog();
@@ -131,6 +133,19 @@ namespace clsTablolar.Yazdirma
                 throw hata;
                 //frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
                 //frmHataBildir.ShowDialog();
+            }
+        }
+
+        void FormuDuzenle(string dosyaYolu)
+        {
+            using (Rapor = new XtraReport())
+            {
+                Rapor.LoadLayout(dosyaYolu);
+                Rapor.DataSource = ds;
+                XRDesignFormEx XrDesigner = new XRDesignFormEx();
+                XrDesigner.FileName = dosyaYolu;
+                XrDesigner.OpenReport(Rapor);
+                XrDesigner.ShowDialog();
             }
         }
 

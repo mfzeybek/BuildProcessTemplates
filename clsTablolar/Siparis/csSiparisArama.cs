@@ -26,6 +26,7 @@ namespace clsTablolar.Siparis
         private DateTime _TeslimTarihiIkinci;
 
         private bool _BirazAzGetir;
+        private DateTime _SonDegisiklikTarihi;
 
 
         public DateTime IlkFaturaTarihi
@@ -138,6 +139,8 @@ namespace clsTablolar.Siparis
         }
 
         public bool BirazAzGetir { get => _BirazAzGetir; set => _BirazAzGetir = value; }
+
+        public DateTime SonDegisiklikTarihi { get => _SonDegisiklikTarihi; set => _SonDegisiklikTarihi = value; }
 
         public DataTable dt_SiparisListesi;
         SqlDataAdapter da_SiparisListesi;
@@ -324,8 +327,12 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
                 {
                     WhereCumlesi += @" and CONVERT(datetime, convert(varchar, Siparis.TeslimTarihi, 101)) >=  DATEADD(DAY, -7, GETDATE())";
                 }
+                if (_SonDegisiklikTarihi != DateTime.MinValue)
+                {
+                    //WhereCumlesi += @" and DuzenlenmeTarihi >  DATEADD(DAY, -7, GETDATE())";
 
 
+                }
 
                 da_SiparisListesi.SelectCommand.CommandText = WhereCumlesi;
 
@@ -337,6 +344,32 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
             catch (Exception hata)
             {
                 throw new Exception(hata.Message);
+            }
+        }
+
+        public bool SiparisteDegisiklikVarMi(SqlConnection Baglanti, DateTime SonDegisiklikZamani)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Baglanti;
+                cmd.CommandText = "select * from Siparis where 1 = 1";
+                if (SonDegisiklikZamani != DateTime.MinValue)
+                {
+                    cmd.CommandText += " and DegismeTarihi > @DegismeTarihi";
+                    cmd.Parameters.Add("@DegismeTarihi", SqlDbType.DateTime).Value = SonDegisiklikZamani;
+                }
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
         }
 

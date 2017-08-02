@@ -81,5 +81,27 @@ group by hareketler.PersonelID, Personel.PersonelAdi, hareketler.Tur, Hareketler
 
         }
 
+        public bool YeniHareketVarMi(int SonHareketID, SqlConnection Baglanti)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandText = "select top1 1 from hareketler where ID > @ID";
+
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = SonHareketID;
+                cmd.Connection = Baglanti;
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

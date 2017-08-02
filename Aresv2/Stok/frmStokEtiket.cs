@@ -352,7 +352,7 @@ namespace Aresv2.Stok
 
                 if (string.IsNullOrEmpty(StokBilgileri.Barkod))
                 {
-                    biri
+                    //biri
 
 
                 }
