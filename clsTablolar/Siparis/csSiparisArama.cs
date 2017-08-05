@@ -27,6 +27,10 @@ namespace clsTablolar.Siparis
 
         private bool _BirazAzGetir;
         private DateTime _SonDegisiklikTarihi;
+        private bool _HazirlanmisSiparislerdenSonUcGünüdeGetir;
+
+        private bool _StokMiktarlariniDaGetir;
+
 
 
         public DateTime IlkFaturaTarihi
@@ -40,6 +44,8 @@ namespace clsTablolar.Siparis
             get { return _SiparisBarkodNu; }
             set { _SiparisBarkodNu = value; }
         }
+
+
 
         public int[] SiparisDurumTanimID
         {
@@ -141,6 +147,8 @@ namespace clsTablolar.Siparis
         public bool BirazAzGetir { get => _BirazAzGetir; set => _BirazAzGetir = value; }
 
         public DateTime SonDegisiklikTarihi { get => _SonDegisiklikTarihi; set => _SonDegisiklikTarihi = value; }
+        public bool HazirlanmisSiparislerdenSonUcGünüdeGetir { get => _HazirlanmisSiparislerdenSonUcGünüdeGetir; set => _HazirlanmisSiparislerdenSonUcGünüdeGetir = value; }
+        public bool StokMiktarlariniDaGetir { get => _StokMiktarlariniDaGetir; set => _StokMiktarlariniDaGetir = value; }
 
         public DataTable dt_SiparisListesi;
         SqlDataAdapter da_SiparisListesi;
@@ -198,7 +206,7 @@ CASE
 WHEN SiparisTipi = 10 THEN 'VERİLEN SİPARİŞ' 
 WHEN SiparisTipi = 11 THEN 'ALINAN SİPARİŞ'
 END AS SiparisTipi, 
-dbo.Siparis.SiparisTipi, dbo.Siparis.CariID, dbo.Siparis.CariKod, dbo.Siparis.CariTanim, Fatura.FaturaID,
+dbo.Siparis.SiparisTipi, dbo.Siparis.CariID, dbo.Siparis.CariKod, dbo.Siparis.CariTanim, --Fatura.FaturaID,
                       dbo.Siparis.SiparisTarihi, dbo.Siparis.DuzenlemeTarihi, dbo.Siparis.ToplamIndirim, dbo.Siparis.ToplamKdv, Siparis.SiparisTutari, Siparis.TeslimTarihi,
                       dbo.Siparis.Vadesi, PerseonelCarisi.CariTanim as PersonelAdi,SiparisDurumTanimlari.SiparisDurumTanimAdi,
 					  CASE WHEN dbo.Siparis.Iptal = 1 THEN 'İPTAL EDİLDİ' ELSE '' END AS Iptal, 
@@ -261,8 +269,14 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
                             WhereCumlesi += " or Siparis.SiparisDurumTanimID = @SiparisDurumTanimID" + i.ToString();
                             da_SiparisListesi.SelectCommand.Parameters.Add("@SiparisDurumTanimID" + i.ToString(), SqlDbType.Int).Value = _SiparisDurumTanimID[i];
                         }
+                        if (_HazirlanmisSiparislerdenSonUcGünüdeGetir)
+                        {
+                            WhereCumlesi += " or (Siparis.SiparisDurumTanimID = 1 and TeslimTarihi > DATEADD(day , -2, getdate())) ";
+                        }
                         WhereCumlesi += " ) ";
                     }
+
+
                 }
                 if (!string.IsNullOrEmpty(_SiparisBarkodNu))
                 {
@@ -352,10 +366,10 @@ WHERE     (Siparis.SilindiMi = 0) and (Fatura.SilindiMi = 0 or Fatura.SilindiMi 
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Baglanti;
-                cmd.CommandText = "select * from Siparis where 1 = 1";
+                cmd.CommandText = "select top 1 1 from Siparis where 1 = 1 ";
                 if (SonDegisiklikZamani != DateTime.MinValue)
                 {
-                    cmd.CommandText += " and DegismeTarihi > @DegismeTarihi";
+                    cmd.CommandText += " and DegismeTarihi > @DegismeTarihi ";
                     cmd.Parameters.Add("@DegismeTarihi", SqlDbType.DateTime).Value = SonDegisiklikZamani;
                 }
 

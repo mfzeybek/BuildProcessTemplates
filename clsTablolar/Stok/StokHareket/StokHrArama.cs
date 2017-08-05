@@ -111,18 +111,35 @@ namespace clsTablolar.Stok.StokHareket
 
         public DataTable HareketleriGetir(SqlConnection Baglanti, SqlTransaction Tr)
         {
-            da = new SqlDataAdapter(@"select Stok.StokID, Stok.StokAdi, Stok.StokKodu, StokHr.StokHrID, StokHr.Tarih
+            da = new SqlDataAdapter(@"
+select Stok.StokID, Stok.StokAdi, Stok.StokKodu, StokHr.StokHrID, StokHr.Tarih
 , ISNULL(StokHr.Miktar, 0) Miktar, StokHr.Entegrasyon, StokHr.EntegrasyonID, StokHr.EvrakNo, StokHr.Aciklama, StokHr.CariID
 , StokHr.KaydedenID, StokHr.KayitTarihi, StokHr.DegistirenID, StokHr.DegistirmeTarihi, StokHr.GirisMiCikisMi, StokHr.SilindiMi, StokHr.Fiyat, Cari.CariTanim,
 case
 when GirisMiCikisMi = 1 then
 'Giriş' 
 when GirisMiCikisMi = 2 then 'Çıkış' 
-end As 'HareketYonu' from stokhr 
+end As 'HareketYonu' 
+,
+case
+when GirisMiCikisMi = 1 then -- giriş
+ISNULL(StokHr.Miktar, 0)
+when GirisMiCikisMi = 2 then -- 'Çıkış' 
+0
+end As 'GirişMiktari' 
+, case
+when GirisMiCikisMi = 1 then -- Giriş
+0
+when GirisMiCikisMi = 2 then -- 'Çıkış' 
+ISNULL(StokHr.Miktar, 0)
+end As 'CikisMiktari' 
+, [dbo].[StokMiktari](Stok.StokID) KalanMiktar
+from stokhr  
+
 inner join Stok on Stok.StokID = StokHr.StokID 
 LEFT Join Cari on Cari.cariID = StokHr.CariID
 
-where stokhr.SilindiMi = 0 ", Baglanti);
+where stokhr.SilindiMi = 0  ", Baglanti);
             da.SelectCommand.Transaction = Tr;
 
 

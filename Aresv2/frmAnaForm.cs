@@ -1039,5 +1039,10 @@ namespace Aresv2
             Stok.frmFotoKatalog frm = new Stok.frmFotoKatalog();
             FormuAc2(frm);
         }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

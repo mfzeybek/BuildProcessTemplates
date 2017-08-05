@@ -67,6 +67,8 @@ namespace clsTablolar.n11
                     if (dr.Read())
                     {
                         this.n11ProductID = (int)dr["n11ProductID"];
+                        this.UrunBasligi = dr["EtiketAdi"].ToString();
+                        this.AltBaslik = dr["EtiketAdi"].ToString();
                         this.KategoriID = (int)dr["KategoriID"];
                         this.StokID = (int)dr["StokID"];
                         this.DetayliUrunBilgisi = dr["DetayliUrunBilgisi"].ToString();
@@ -74,15 +76,20 @@ namespace clsTablolar.n11
                         this.KullanilacakBarkodID = (int)dr["KullanilacakBarkodID"];
                         this.KullanilacakFiyatTanimID = (int)dr["KullanilacakFiyatTanimID"];
                     }
-                    else // stok Id ye bağlı n11 produckt yoksa 
+                    else // stok Id ye bağlı n11 produckt yoksa yeni kayıt için verilen stokID den Stok Bilgilerini Getir
                     {
-                        this.n11ProductID = -1;
-                        this.KategoriID = -1;
-                        this.StokID = -1;
-                        this.DetayliUrunBilgisi = string.Empty;
-                        this.HazirlikSuresi = -1;
-                        this.KullanilacakBarkodID = -1;
-                        this.KullanilacakFiyatTanimID = -1;
+                        using (clsTablolar.Stok.csStok stk = new Stok.csStok(Baglanti, Tr, StokID))
+                        {
+                            this.n11ProductID = -1;
+                            this.KategoriID = -1;
+                            this.UrunBasligi = stk.EtiketAdi;
+                            this.AltBaslik = string.Empty;
+                            this.StokID = stk.StokID;
+                            this.DetayliUrunBilgisi = string.Empty;
+                            this.HazirlikSuresi = -1;
+                            this.KullanilacakBarkodID = -1;
+                            this.KullanilacakFiyatTanimID = -1;
+                        }
                     }
                 }
             }

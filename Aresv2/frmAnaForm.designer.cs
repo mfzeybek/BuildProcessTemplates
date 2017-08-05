@@ -28,16 +28,15 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnaForm));
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.ımageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.ımageCollection1 = new DevExpress.Utils.ImageCollection();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup31 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
@@ -69,6 +68,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup34 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem47 = new DevExpress.XtraBars.BarButtonItem();
+            this.frmFotoKatalog = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem_Ajanda = new DevExpress.XtraBars.BarButtonItem();
@@ -191,7 +191,6 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.frmFotoKatalog = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ımageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -498,6 +497,13 @@
             this.barButtonItem47.Name = "barButtonItem47";
             this.barButtonItem47.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem47.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem47_ItemClick);
+            // 
+            // frmFotoKatalog
+            // 
+            this.frmFotoKatalog.Caption = "barButtonItem48";
+            this.frmFotoKatalog.Id = 12;
+            this.frmFotoKatalog.Name = "frmFotoKatalog";
+            this.frmFotoKatalog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.frmFotoKatalog_ItemClick);
             // 
             // ribbonPage7
             // 
@@ -1607,6 +1613,7 @@
             this.ribbonPage1,
             this.ribbonPage3});
             this.ribbon.Size = new System.Drawing.Size(2674, 282);
+            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -1646,13 +1653,6 @@
             // 
             this.ribbonPage8.Name = "ribbonPage8";
             this.ribbonPage8.Text = "ribbonPage8";
-            // 
-            // frmFotoKatalog
-            // 
-            this.frmFotoKatalog.Caption = "barButtonItem48";
-            this.frmFotoKatalog.Id = 12;
-            this.frmFotoKatalog.Name = "frmFotoKatalog";
-            this.frmFotoKatalog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.frmFotoKatalog_ItemClick);
             // 
             // frmAnaForm
             // 

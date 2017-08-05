@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Aresv2
 {
@@ -169,16 +170,26 @@ namespace Aresv2
 
         private void btnYazdir_Click(object sender, EventArgs e)
         {
+            if (gvRaporDizayn.RowCount == 0) return;
+            Thread yazdirr = new Thread(new ThreadStart(Yazdir));
+            yazdirr.Start();
+        }
+        object lockTaken = new object();
+        void Yazdir()
+        {
             try
             {
-                if (gvRaporDizayn.RowCount == 0) return;
-                YaziciAyarlariniGonder();
-                _YazdirClasi.Yazdirr(gvRaporDizayn.GetFocusedRowCellValue(colRaporDizaynYolu).ToString(), clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir);
+                lock (lockTaken)
+                {
+                    YaziciAyarlariniGonder();
+                    _YazdirClasi.Yazdirr(gvRaporDizayn.GetFocusedRowCellValue(colRaporDizaynYolu).ToString(), clsTablolar.Yazdirma.csYazdir.Nasil.Yazdir);
+                }
             }
             catch (Exception exep)
             {
                 MessageBox.Show(exep.Message);
             }
+
         }
 
         private void btnYazdirmaDiyalogu_Click(object sender, EventArgs e)

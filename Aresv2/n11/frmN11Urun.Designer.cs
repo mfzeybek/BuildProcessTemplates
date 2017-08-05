@@ -129,9 +129,7 @@
             // 
             // ımageSlider1
             // 
-            this.ımageSlider1.CurrentImageIndex = -1;
             this.ımageSlider1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ımageSlider1.LayoutMode = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
             this.ımageSlider1.Location = new System.Drawing.Point(24, 397);
             this.ımageSlider1.Margin = new System.Windows.Forms.Padding(4);
             this.ımageSlider1.Name = "ımageSlider1";
@@ -139,7 +137,6 @@
             this.ımageSlider1.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
             this.ımageSlider1.TabIndex = 10;
             this.ımageSlider1.Text = "ımageSlider1";
-            this.ımageSlider1.UseDisabledStatePainter = true;
             // 
             // treeListLookUpEdit1
             // 
@@ -157,7 +154,6 @@
             // 
             this.treeListLookUpEdit1TreeList.Location = new System.Drawing.Point(0, 0);
             this.treeListLookUpEdit1TreeList.Name = "treeListLookUpEdit1TreeList";
-            this.treeListLookUpEdit1TreeList.OptionsBehavior.EnableFiltering = true;
             this.treeListLookUpEdit1TreeList.OptionsView.ShowIndentAsRowStyle = true;
             this.treeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
             this.treeListLookUpEdit1TreeList.TabIndex = 0;

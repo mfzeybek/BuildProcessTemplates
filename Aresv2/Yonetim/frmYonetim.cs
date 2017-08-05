@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading;
+using System.Windows.Forms;
 
 
 
@@ -36,7 +30,6 @@ namespace Aresv2.Yonetim
 
 
         Thread ahanda;
-
         SqlTransaction TrGenel;
 
         private void frmYonetim_Load(object sender, EventArgs e)
@@ -110,6 +103,7 @@ namespace Aresv2.Yonetim
 
                 //SiparisArama.MuhasebelenmeDrumu = new object[1] { 4 };
                 SiparisArama.SiparisDurumTanimID = new Int32[1] { 2 };
+                SiparisArama.HazirlanmisSiparislerdenSonUcGünüdeGetir = true;
 
                 gcAlinanSiparisler.DataSource = SiparisArama.SiparisAraListe(SqlConnections.GetBaglanti(), TrGenel);
 
@@ -170,9 +164,23 @@ namespace Aresv2.Yonetim
 
         }
 
+
+        Siparis.frmSiparisDetay SipDetay;
         private void dockPanel2_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            AlinanSiparisleri();
+            if (e.Button.Properties.Caption == "Yenile")
+            {
+                AlinanSiparisleri();
+            }
+            else if (e.Button.Properties.Caption == "Kaydı Aç")
+            {
+                if (gvAlinanSiparisler.RowCount > 0)
+                {
+                    SipDetay = new Siparis.frmSiparisDetay((int)gvAlinanSiparisler.GetFocusedRowCellValue("SiparisID"));
+                    SipDetay.MdiParent = this.MdiParent;
+                    SipDetay.Show();
+                }
+            }
         }
 
         private void dockPanel1_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)

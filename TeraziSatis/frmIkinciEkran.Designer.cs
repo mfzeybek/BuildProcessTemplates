@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtToplamTutar = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtKdvDahilFiyati = new DevExpress.XtraEditors.TextEdit();
-            this.txtMiktari = new DevExpress.XtraEditors.TextEdit();
-            this.txtTutari = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.memoUrunAdi = new DevExpress.XtraEditors.MemoEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.digitalGauge1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
-            this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
+            this.frmIkinciEkranlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.gcSatisHareketleri = new DevExpress.XtraGrid.GridControl();
             this.gvSatisHareketleri = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFaturaHareketID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,22 +83,51 @@
             this.colKdvDahilFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKdvDahilToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFireVarMi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.digitalGauge1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
+            this.memoUrunAdi = new DevExpress.XtraEditors.MemoEdit();
+            this.txtTutari = new DevExpress.XtraEditors.TextEdit();
+            this.txtMiktari = new DevExpress.XtraEditors.TextEdit();
+            this.txtKdvDahilFiyati = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtToplamTutar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKdvDahilFiyati.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMiktari.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTutari.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoUrunAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmIkinciEkranlayoutControl1ConvertedLayout)).BeginInit();
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcSatisHareketleri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSatisHareketleri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoUrunAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTutari.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMiktari.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKdvDahilFiyati.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtToplamTutar
             // 
             this.txtToplamTutar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtToplamTutar.Location = new System.Drawing.Point(442, 327);
+            this.txtToplamTutar.Location = new System.Drawing.Point(1212, 885);
+            this.txtToplamTutar.Margin = new System.Windows.Forms.Padding(6);
             this.txtToplamTutar.Name = "txtToplamTutar";
             this.txtToplamTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
             this.txtToplamTutar.Properties.Appearance.Options.UseFont = true;
@@ -119,144 +138,26 @@
             this.txtToplamTutar.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Strong;
             this.txtToplamTutar.Properties.Mask.EditMask = "c2";
             this.txtToplamTutar.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtToplamTutar.Size = new System.Drawing.Size(255, 54);
+            this.txtToplamTutar.Size = new System.Drawing.Size(641, 104);
+            this.txtToplamTutar.StyleController = this.frmIkinciEkranlayoutControl1ConvertedLayout;
             this.txtToplamTutar.TabIndex = 1;
             // 
-            // labelControl2
+            // frmIkinciEkranlayoutControl1ConvertedLayout
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl2.Location = new System.Drawing.Point(491, 288);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(161, 33);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Toplam Tutar";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl3.Location = new System.Drawing.Point(397, 191);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(62, 33);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Fiyatı";
-            // 
-            // txtKdvDahilFiyati
-            // 
-            this.txtKdvDahilFiyati.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKdvDahilFiyati.Location = new System.Drawing.Point(575, 182);
-            this.txtKdvDahilFiyati.Name = "txtKdvDahilFiyati";
-            this.txtKdvDahilFiyati.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.txtKdvDahilFiyati.Properties.Appearance.Options.UseFont = true;
-            this.txtKdvDahilFiyati.Properties.DisplayFormat.FormatString = "c2";
-            this.txtKdvDahilFiyati.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtKdvDahilFiyati.Properties.Mask.EditMask = "c2";
-            this.txtKdvDahilFiyati.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtKdvDahilFiyati.Size = new System.Drawing.Size(173, 46);
-            this.txtKdvDahilFiyati.TabIndex = 1;
-            // 
-            // txtMiktari
-            // 
-            this.txtMiktari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMiktari.Location = new System.Drawing.Point(575, 130);
-            this.txtMiktari.Name = "txtMiktari";
-            this.txtMiktari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.txtMiktari.Properties.Appearance.Options.UseFont = true;
-            this.txtMiktari.Properties.DisplayFormat.FormatString = "f3";
-            this.txtMiktari.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtMiktari.Properties.EditFormat.FormatString = "f3";
-            this.txtMiktari.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtMiktari.Properties.Mask.EditMask = "f3";
-            this.txtMiktari.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtMiktari.Size = new System.Drawing.Size(173, 46);
-            this.txtMiktari.TabIndex = 1;
-            // 
-            // txtTutari
-            // 
-            this.txtTutari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTutari.Location = new System.Drawing.Point(575, 234);
-            this.txtTutari.Name = "txtTutari";
-            this.txtTutari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.txtTutari.Properties.Appearance.Options.UseFont = true;
-            this.txtTutari.Properties.DisplayFormat.FormatString = "c2";
-            this.txtTutari.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtTutari.Properties.Mask.EditMask = "c2";
-            this.txtTutari.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtTutari.Size = new System.Drawing.Size(173, 46);
-            this.txtTutari.TabIndex = 1;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl4.Location = new System.Drawing.Point(397, 243);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 33);
-            this.labelControl4.TabIndex = 2;
-            this.labelControl4.Text = "Tutarı";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl5.Location = new System.Drawing.Point(397, 139);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(79, 33);
-            this.labelControl5.TabIndex = 2;
-            this.labelControl5.Text = "Miktarı";
-            // 
-            // memoUrunAdi
-            // 
-            this.memoUrunAdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoUrunAdi.Location = new System.Drawing.Point(396, 50);
-            this.memoUrunAdi.Name = "memoUrunAdi";
-            this.memoUrunAdi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.memoUrunAdi.Properties.Appearance.Options.UseFont = true;
-            this.memoUrunAdi.Size = new System.Drawing.Size(351, 73);
-            this.memoUrunAdi.TabIndex = 3;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl6.Location = new System.Drawing.Point(396, 11);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(103, 33);
-            this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "Ürün Adı";
-            // 
-            // gaugeControl1
-            // 
-            this.gaugeControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gaugeControl1.AutoLayout = false;
-            this.gaugeControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.gaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.digitalGauge1});
-            this.gaugeControl1.Location = new System.Drawing.Point(397, 492);
-            this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(363, 149);
-            this.gaugeControl1.TabIndex = 5;
-            // 
-            // digitalGauge1
-            // 
-            this.digitalGauge1.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF");
-            this.digitalGauge1.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke");
-            this.digitalGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
-            this.digitalBackgroundLayerComponent1});
-            this.digitalGauge1.Bounds = new System.Drawing.Rectangle(3, 2, 360, 166);
-            this.digitalGauge1.DigitCount = 5;
-            this.digitalGauge1.Name = "digitalGauge1";
-            this.digitalGauge1.Text = "00,000";
-            // 
-            // digitalBackgroundLayerComponent1
-            // 
-            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(259.8125F, 99.9625F);
-            this.digitalBackgroundLayerComponent1.Name = "digitalBackgroundLayerComponent7";
-            this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style7;
-            this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
-            this.digitalBackgroundLayerComponent1.ZOrder = 1000;
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Controls.Add(this.gcSatisHareketleri);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Controls.Add(this.txtToplamTutar);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Controls.Add(this.gaugeControl1);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Controls.Add(this.memoUrunAdi);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Controls.Add(this.txtTutari);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Controls.Add(this.txtMiktari);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Controls.Add(this.txtKdvDahilFiyati);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Name = "frmIkinciEkranlayoutControl1ConvertedLayout";
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1623, 789, 900, 800);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.Size = new System.Drawing.Size(1861, 1389);
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.TabIndex = 12;
             // 
             // gcSatisHareketleri
             // 
@@ -264,14 +165,14 @@
             this.gcSatisHareketleri.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcSatisHareketleri.Location = new System.Drawing.Point(3, 3);
+            this.gcSatisHareketleri.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.gcSatisHareketleri.Location = new System.Drawing.Point(8, 8);
             this.gcSatisHareketleri.MainView = this.gvSatisHareketleri;
-            this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcSatisHareketleri.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.gcSatisHareketleri.Name = "gcSatisHareketleri";
             this.gcSatisHareketleri.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.gcSatisHareketleri.Size = new System.Drawing.Size(389, 637);
+            this.gcSatisHareketleri.Size = new System.Drawing.Size(1196, 1373);
             this.gcSatisHareketleri.TabIndex = 11;
             this.gcSatisHareketleri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSatisHareketleri});
@@ -681,7 +582,7 @@
             // 
             this.colKdvDahilFiyat.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
             this.colKdvDahilFiyat.AppearanceCell.Options.UseFont = true;
-            this.colKdvDahilFiyat.Caption = "KdvDahilFiyat";
+            this.colKdvDahilFiyat.Caption = "Fiyatı";
             this.colKdvDahilFiyat.DisplayFormat.FormatString = "c2";
             this.colKdvDahilFiyat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colKdvDahilFiyat.FieldName = "KdvDahilFiyat";
@@ -694,7 +595,7 @@
             // 
             this.colKdvDahilToplam.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.colKdvDahilToplam.AppearanceCell.Options.UseFont = true;
-            this.colKdvDahilToplam.Caption = "KdvDahilToplam";
+            this.colKdvDahilToplam.Caption = "Tutarı";
             this.colKdvDahilToplam.DisplayFormat.FormatString = "c2";
             this.colKdvDahilToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colKdvDahilToplam.FieldName = "KdvDahilToplam";
@@ -709,48 +610,243 @@
             this.colFireVarMi.FieldName = "FireVarMi";
             this.colFireVarMi.Name = "colFireVarMi";
             // 
+            // gaugeControl1
+            // 
+            this.gaugeControl1.AutoLayout = false;
+            this.gaugeControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.gaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
+            this.digitalGauge1});
+            this.gaugeControl1.Location = new System.Drawing.Point(1212, 997);
+            this.gaugeControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.gaugeControl1.Name = "gaugeControl1";
+            this.gaugeControl1.Size = new System.Drawing.Size(641, 384);
+            this.gaugeControl1.TabIndex = 5;
+            // 
+            // digitalGauge1
+            // 
+            this.digitalGauge1.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF");
+            this.digitalGauge1.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke");
+            this.digitalGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.digitalBackgroundLayerComponent1});
+            this.digitalGauge1.Bounds = new System.Drawing.Rectangle(27, 20, 498, 272);
+            this.digitalGauge1.DigitCount = 5;
+            this.digitalGauge1.Name = "digitalGauge1";
+            this.digitalGauge1.Text = "00,000";
+            // 
+            // digitalBackgroundLayerComponent1
+            // 
+            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(259.8125F, 99.9625F);
+            this.digitalBackgroundLayerComponent1.Name = "digitalBackgroundLayerComponent7";
+            this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style7;
+            this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
+            this.digitalBackgroundLayerComponent1.ZOrder = 1000;
+            // 
+            // memoUrunAdi
+            // 
+            this.memoUrunAdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.memoUrunAdi.Location = new System.Drawing.Point(1212, 39);
+            this.memoUrunAdi.Margin = new System.Windows.Forms.Padding(6);
+            this.memoUrunAdi.Name = "memoUrunAdi";
+            this.memoUrunAdi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
+            this.memoUrunAdi.Properties.Appearance.Options.UseFont = true;
+            this.memoUrunAdi.Size = new System.Drawing.Size(641, 158);
+            this.memoUrunAdi.StyleController = this.frmIkinciEkranlayoutControl1ConvertedLayout;
+            this.memoUrunAdi.TabIndex = 3;
+            // 
+            // txtTutari
+            // 
+            this.txtTutari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTutari.Location = new System.Drawing.Point(1212, 490);
+            this.txtTutari.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTutari.Name = "txtTutari";
+            this.txtTutari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
+            this.txtTutari.Properties.Appearance.Options.UseFont = true;
+            this.txtTutari.Properties.DisplayFormat.FormatString = "c2";
+            this.txtTutari.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtTutari.Properties.Mask.EditMask = "c2";
+            this.txtTutari.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtTutari.Size = new System.Drawing.Size(641, 88);
+            this.txtTutari.StyleController = this.frmIkinciEkranlayoutControl1ConvertedLayout;
+            this.txtTutari.TabIndex = 1;
+            // 
+            // txtMiktari
+            // 
+            this.txtMiktari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMiktari.Location = new System.Drawing.Point(1212, 236);
+            this.txtMiktari.Margin = new System.Windows.Forms.Padding(6);
+            this.txtMiktari.Name = "txtMiktari";
+            this.txtMiktari.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
+            this.txtMiktari.Properties.Appearance.Options.UseFont = true;
+            this.txtMiktari.Properties.DisplayFormat.FormatString = "f3";
+            this.txtMiktari.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtMiktari.Properties.EditFormat.FormatString = "f3";
+            this.txtMiktari.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtMiktari.Properties.Mask.EditMask = "f3";
+            this.txtMiktari.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtMiktari.Size = new System.Drawing.Size(641, 88);
+            this.txtMiktari.StyleController = this.frmIkinciEkranlayoutControl1ConvertedLayout;
+            this.txtMiktari.TabIndex = 1;
+            // 
+            // txtKdvDahilFiyati
+            // 
+            this.txtKdvDahilFiyati.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKdvDahilFiyati.Location = new System.Drawing.Point(1212, 363);
+            this.txtKdvDahilFiyati.Margin = new System.Windows.Forms.Padding(6);
+            this.txtKdvDahilFiyati.Name = "txtKdvDahilFiyati";
+            this.txtKdvDahilFiyati.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 25F);
+            this.txtKdvDahilFiyati.Properties.Appearance.Options.UseFont = true;
+            this.txtKdvDahilFiyati.Properties.DisplayFormat.FormatString = "c2";
+            this.txtKdvDahilFiyati.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtKdvDahilFiyati.Properties.Mask.EditMask = "c2";
+            this.txtKdvDahilFiyati.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtKdvDahilFiyati.Size = new System.Drawing.Size(641, 88);
+            this.txtKdvDahilFiyati.StyleController = this.frmIkinciEkranlayoutControl1ConvertedLayout;
+            this.txtKdvDahilFiyati.TabIndex = 1;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10,
+            this.emptySpaceItem1});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1861, 1389);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.BestFitWeight = 65;
+            this.layoutControlItem1.Control = this.gcSatisHareketleri;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "gcSatisHareketleriitem";
+            this.layoutControlItem1.Size = new System.Drawing.Size(1204, 1381);
+            this.layoutControlItem1.Text = "Ürün Adı";
+            this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.BestFitWeight = 35;
+            this.layoutControlItem2.Control = this.txtToplamTutar;
+            this.layoutControlItem2.Location = new System.Drawing.Point(1204, 846);
+            this.layoutControlItem2.Name = "txtToplamTutaritem";
+            this.layoutControlItem2.Size = new System.Drawing.Size(649, 143);
+            this.layoutControlItem2.Text = "Toplam Tutar";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(126, 25);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.BestFitWeight = 35;
+            this.layoutControlItem3.Control = this.gaugeControl1;
+            this.layoutControlItem3.Location = new System.Drawing.Point(1204, 989);
+            this.layoutControlItem3.Name = "gaugeControl1item";
+            this.layoutControlItem3.Size = new System.Drawing.Size(649, 392);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.BestFitWeight = 35;
+            this.layoutControlItem4.Control = this.memoUrunAdi;
+            this.layoutControlItem4.Location = new System.Drawing.Point(1204, 0);
+            this.layoutControlItem4.Name = "memoUrunAdiitem";
+            this.layoutControlItem4.Size = new System.Drawing.Size(649, 197);
+            this.layoutControlItem4.Text = "ÜRÜN ADI";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(126, 25);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.BestFitWeight = 35;
+            this.layoutControlItem8.Control = this.txtTutari;
+            this.layoutControlItem8.Location = new System.Drawing.Point(1204, 451);
+            this.layoutControlItem8.Name = "txtTutariitem";
+            this.layoutControlItem8.Size = new System.Drawing.Size(649, 127);
+            this.layoutControlItem8.Text = "TUTARI";
+            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(126, 25);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.BestFitWeight = 35;
+            this.layoutControlItem9.Control = this.txtMiktari;
+            this.layoutControlItem9.Location = new System.Drawing.Point(1204, 197);
+            this.layoutControlItem9.Name = "txtMiktariitem";
+            this.layoutControlItem9.Size = new System.Drawing.Size(649, 127);
+            this.layoutControlItem9.Text = "MİKTARI";
+            this.layoutControlItem9.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(126, 25);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.BestFitWeight = 35;
+            this.layoutControlItem10.Control = this.txtKdvDahilFiyati;
+            this.layoutControlItem10.Location = new System.Drawing.Point(1204, 324);
+            this.layoutControlItem10.Name = "txtKdvDahilFiyatiitem";
+            this.layoutControlItem10.Size = new System.Drawing.Size(649, 127);
+            this.layoutControlItem10.Text = "FİYATI";
+            this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(126, 25);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.BestFitWeight = 35;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(1204, 578);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(649, 268);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // frmIkinciEkran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 643);
-            this.Controls.Add(this.gcSatisHareketleri);
-            this.Controls.Add(this.gaugeControl1);
-            this.Controls.Add(this.memoUrunAdi);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.txtTutari);
-            this.Controls.Add(this.txtMiktari);
-            this.Controls.Add(this.txtKdvDahilFiyati);
-            this.Controls.Add(this.txtToplamTutar);
+            this.ClientSize = new System.Drawing.Size(1861, 1389);
+            this.Controls.Add(this.frmIkinciEkranlayoutControl1ConvertedLayout);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmIkinciEkran";
             this.Text = "frmIkinciEkran";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmIkinciEkran_FormClosed);
             this.Load += new System.EventHandler(this.frmIkinciEkran_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtToplamTutar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKdvDahilFiyati.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMiktari.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTutari.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoUrunAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmIkinciEkranlayoutControl1ConvertedLayout)).EndInit();
+            this.frmIkinciEkranlayoutControl1ConvertedLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcSatisHareketleri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSatisHareketleri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoUrunAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTutari.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMiktari.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKdvDahilFiyati.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraGauges.Win.GaugeControl gaugeControl1;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge digitalGauge1;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent1;
@@ -811,5 +907,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKdvDahilFiyat;
         private DevExpress.XtraGrid.Columns.GridColumn colKdvDahilToplam;
         private DevExpress.XtraGrid.Columns.GridColumn colFireVarMi;
+        private DevExpress.XtraLayout.LayoutControl frmIkinciEkranlayoutControl1ConvertedLayout;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
     }
 }

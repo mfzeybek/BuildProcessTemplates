@@ -314,5 +314,15 @@ FROM         dbo.SiparisHareket LEFT OUTER JOIN
         {
 
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCariHareketleri_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

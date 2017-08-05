@@ -289,21 +289,40 @@ namespace Aresv2.Stok
 
         private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //            Bugün
+            //Dün
+            //Bu hafta
+            //Bu ay
+            //Bu Yıl
+            //Geçen Ay
+            //Son 2 Ay
             switch (cmbHizliTarih.SelectedIndex)
             {
-                case 0:
+                case 0: // bugun
                     deTarih1.DateTime = DateTime.Today;
                     deTarih2.DateTime = DateTime.Today; break;
-                case 1:
+                case 1: // Dün
                     deTarih1.DateTime = DateTime.Today.AddDays(-1);
                     deTarih2.DateTime = DateTime.Today.AddDays(-1); break;
-                case 2:
+                case 2: // Bu hafta
                     deTarih1.DateTime = haftaBasi(DateTime.Today, DayOfWeek.Monday);
                     deTarih2.DateTime = haftasonu(DateTime.Today, DayOfWeek.Sunday);
                     break;
-                case 3:
+                case 3: // Bu ay
                     deTarih1.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
                     deTarih2.DateTime = deTarih1.DateTime.AddMonths(1).AddDays(-1);
+                    break;
+                case 4: // Bu Yıl
+                    deTarih1.DateTime = new DateTime(DateTime.Today.Year, 1, 1);
+                    deTarih2.DateTime = new DateTime(DateTime.Today.Year, 12, 1);
+                    break;
+                case 5: // Geçen Ay
+                    deTarih1.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month - 1, 1);
+                    deTarih2.DateTime = deTarih1.DateTime.AddMonths(1).AddDays(-1);
+                    break;
+                case 6: // Son 2 Ay
+                    deTarih1.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month - 1, 1);
+                    deTarih2.DateTime = deTarih1.DateTime.AddMonths(2).AddDays(-1);
                     break;
             }
         }

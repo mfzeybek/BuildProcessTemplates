@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTerazi));
             this.recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
             this.designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
@@ -39,7 +40,7 @@
             this.txtStokAdi = new DevExpress.XtraEditors.MemoEdit();
             this.txtDaraMiktari = new DevExpress.XtraEditors.TextEdit();
             this.txtAnlikTutar = new DevExpress.XtraEditors.TextEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -186,9 +187,9 @@
             this.txtFaturaNo = new DevExpress.XtraEditors.TextEdit();
             this.btnBirlesikUrunEkle = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazici2 = new DevExpress.XtraEditors.SimpleButton();
-            this.ımageList1 = new System.Windows.Forms.ImageList();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblHareketSayisi = new DevExpress.XtraEditors.LabelControl();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnOncekiSayfa = new DevExpress.XtraEditors.SimpleButton();
             this.btnSonrakiSayfa = new DevExpress.XtraEditors.SimpleButton();
             this.btnAktifSatisaDigerSatisinHareketleriniEkle = new DevExpress.XtraEditors.SimpleButton();
@@ -228,7 +229,8 @@
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.btnCikis = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKdvDahilFiyati.Properties)).BeginInit();
@@ -2664,6 +2666,10 @@
             this.panelControl2.Size = new System.Drawing.Size(2026, 113);
             this.panelControl2.TabIndex = 111;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmTerazi
             // 
             this.Appearance.BackColor = System.Drawing.Color.Ivory;
@@ -2968,6 +2974,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private clsTablolar.TeraziSatisClaslari.StokButonGrupVeStokButonlari stokButonGrupVeStokButonlari2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -43,7 +43,7 @@ namespace TeraziSatis
 
         public FormState formState = new FormState();
         public frmIkinciEkran IkinciEkran;
-        bool IkinciEkranAcik = false;
+        public bool IkinciEkranAcik = false;
 
         public void MesajGoster(string str)
         {
@@ -65,7 +65,7 @@ namespace TeraziSatis
               BindingFlags.InvokeMethod | BindingFlags.Instance, null,
               control, new object[] { 0x400000, false });
         }
-        public static string VersiyonNo = "Test - 111";
+        public static string VersiyonNo = "Test - 113";
         System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
         csTeraziLogs LogLar;
 
@@ -195,14 +195,6 @@ namespace TeraziSatis
                 //lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit) // terazideki kilite bağlıydı önceki sürümde
 
 
-                #region Ikinc iEkran
-                if (Screen.AllScreens.Length > 1) // iki tane ekran varsa ikinci ekran açılsın
-                {
-                    IkinciEkran = new frmIkinciEkran(this);
-                    IkinciEkran.Show();
-                    IkinciEkranAcik = true;
-                }
-                #endregion
 
                 BindleHamisina();
 
@@ -216,6 +208,9 @@ namespace TeraziSatis
                 //TerazidenSabitMiktariAl(MiktarAl.OkunanSabitMiktar);
                 csTeraziLogs.LogYaz(csTeraziLogs.Grup.Grupsuz, "Program Düzgün Bi şekilde Açıldı");
 
+                timer1.Interval = 600000;
+                timer1.Start();
+                timer1_Tick(null, null);
 
                 for (int i = 0; i < Panel1layoutControl1ConvertedLayout.Controls.Count; i++)
                 {
@@ -244,6 +239,37 @@ namespace TeraziSatis
 
             }
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Screen.AllScreens.Length > 1) // iki tane ekran varsa ikinci ekran açılsın
+            {
+
+                //bool IkinciEkranAcikmi = false;
+
+                //foreach (Form item in Application.OpenForms)
+                //{
+                //    if (item.Name == "frmIkinciEkran")
+                //    {
+                //        IkinciEkranAcikmi = true;
+                //    }
+                //}
+
+                if (IkinciEkranAcik == false)
+                {
+                    IkinciEkran = new frmIkinciEkran(this);
+                    IkinciEkran.Show();
+                    IkinciEkranAcik = true;
+                }
+            }
+            else
+            {
+                if (IkinciEkranAcik == true)
+                {
+                    IkinciEkran.Close();
+                }
+            }
+        }
+
 
         void TerazidenVeriTabaniIleBaglantiKurupSurekliGuncelSatislariGetirebiliyorsa(clsTablolar.TeraziSatisClaslari.csSatislarV2.VeriTabaniBaglantiDurumu durum)
         {
@@ -2826,5 +2852,7 @@ ne hatısı diye sorarsam hamısına hatası de
                 MiktarAl.TeraziyiSifirla();
             }
         }
+
+
     }
 }

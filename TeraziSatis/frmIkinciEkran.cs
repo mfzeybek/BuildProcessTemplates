@@ -47,7 +47,9 @@ namespace TeraziSatis
                 //axWindowsMediaPlayer1.settings.autoStart = false;
                 //axWindowsMediaPlayer1.settings.setMode("loop", true);
                 //axWindowsMediaPlayer1.Ctlcontrols.play();
-                
+
+                digitalGauge1.Bounds = new System.Drawing.Rectangle(2, 2, gaugeControl1.Size.Width, gaugeControl1.Size.Height);
+
             }
             catch (Exception)
             {
@@ -127,6 +129,11 @@ namespace TeraziSatis
             {
                 MessageBox.Show(_TeraziFormu, "İkinci Ekranda Hata");
             }
+        }
+
+        private void frmIkinciEkran_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _TeraziFormu.IkinciEkranAcik = false;
         }
     }
 }

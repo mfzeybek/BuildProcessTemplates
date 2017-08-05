@@ -43,10 +43,10 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(6, 7);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 13);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(227, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(454, 77);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "simpleButton1";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -54,20 +54,20 @@
             // listBoxControl2
             // 
             this.listBoxControl2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxControl2.Location = new System.Drawing.Point(326, 164);
-            this.listBoxControl2.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxControl2.Location = new System.Drawing.Point(652, 315);
+            this.listBoxControl2.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxControl2.Name = "listBoxControl2";
-            this.listBoxControl2.Size = new System.Drawing.Size(316, 394);
+            this.listBoxControl2.Size = new System.Drawing.Size(632, 758);
             this.listBoxControl2.TabIndex = 3;
             // 
             // gridControl1
             // 
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gridControl1.Location = new System.Drawing.Point(660, 164);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gridControl1.Location = new System.Drawing.Point(1320, 315);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(250, 394);
+            this.gridControl1.Size = new System.Drawing.Size(500, 758);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -83,11 +83,11 @@
             this.colID,
             this.colKategoriAdi});
             this.treeList1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.treeList1.Location = new System.Drawing.Point(6, 164);
-            this.treeList1.Margin = new System.Windows.Forms.Padding(2);
+            this.treeList1.Location = new System.Drawing.Point(12, 315);
+            this.treeList1.Margin = new System.Windows.Forms.Padding(4);
             this.treeList1.Name = "treeList1";
             this.treeList1.ParentFieldName = "UstKategoriID";
-            this.treeList1.Size = new System.Drawing.Size(272, 394);
+            this.treeList1.Size = new System.Drawing.Size(544, 758);
             this.treeList1.TabIndex = 6;
             // 
             // colID
@@ -108,13 +108,14 @@
             // 
             // frmN11
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 610);
+            this.ClientSize = new System.Drawing.Size(1888, 1173);
             this.Controls.Add(this.treeList1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.listBoxControl2);
             this.Controls.Add(this.simpleButton1);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmN11";
             this.Text = "frmN11";
             this.Load += new System.EventHandler(this.frmN11_Load);
