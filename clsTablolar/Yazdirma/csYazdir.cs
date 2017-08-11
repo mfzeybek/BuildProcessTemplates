@@ -79,7 +79,8 @@ namespace clsTablolar.Yazdirma
         {
             try
             {
-                using (Rapor = new XtraReport())
+                //using (
+                    Rapor = new XtraReport();
                 {
                     Rapor.LoadLayout(DosyaAdi);
                     Rapor.DataSource = ds;
@@ -100,7 +101,9 @@ namespace clsTablolar.Yazdirma
                             {
                                 pt.PrinterSettings.DefaultPageSettings.PaperSource = pt.PrinterSettings.PaperSources[KagitKaynagiIndex];
                             }
-                            catch (Exception) { }
+                            catch (Exception)
+                            {
+                            }
                         }
 
 
@@ -134,19 +137,32 @@ namespace clsTablolar.Yazdirma
                 //frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
                 //frmHataBildir.ShowDialog();
             }
+            finally
+            {
+                Rapor.Dispose();
+            }
         }
 
         void FormuDuzenle(string dosyaYolu)
         {
-            using (Rapor = new XtraReport())
+            try
             {
-                Rapor.LoadLayout(dosyaYolu);
-                Rapor.DataSource = ds;
-                XRDesignFormEx XrDesigner = new XRDesignFormEx();
-                XrDesigner.FileName = dosyaYolu;
-                XrDesigner.OpenReport(Rapor);
-                XrDesigner.ShowDialog();
+                using (XtraReport DuzenlenecekRapor = new XtraReport())
+                {
+                    DuzenlenecekRapor.LoadLayout(dosyaYolu);
+                    DuzenlenecekRapor.DataSource = ds;
+                    XRDesignFormEx XrDesigner = new XRDesignFormEx();
+                    XrDesigner.FileName = dosyaYolu;
+                    XrDesigner.OpenReport(DuzenlenecekRapor);
+                    XrDesigner.ShowDialog();
+                }
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
 
         /// <summary>

@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             this.btnStokEkle = new DevExpress.XtraEditors.SimpleButton();
             this.frmStokEtiketlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.lkpFiyat2Tanim = new DevExpress.XtraEditors.LookUpEdit();
@@ -35,7 +36,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.ceStokEkleninceYazdir = new DevExpress.XtraEditors.CheckEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -46,7 +47,7 @@
             this.btnYenile = new DevExpress.XtraEditors.SimpleButton();
             this.btnMiktarDegistir = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton_Yazdir = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStokID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,7 +120,7 @@
             this.btnStokEkle.Location = new System.Drawing.Point(6, 6);
             this.btnStokEkle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnStokEkle.Name = "btnStokEkle";
-            this.btnStokEkle.Size = new System.Drawing.Size(152, 55);
+            this.btnStokEkle.Size = new System.Drawing.Size(327, 55);
             this.btnStokEkle.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.btnStokEkle.TabIndex = 0;
             this.btnStokEkle.Text = "+";
@@ -150,18 +151,18 @@
             // 
             // lkpFiyat2Tanim
             // 
-            this.lkpFiyat2Tanim.Location = new System.Drawing.Point(1267, 6);
+            this.lkpFiyat2Tanim.Location = new System.Drawing.Point(1442, 6);
             this.lkpFiyat2Tanim.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.lkpFiyat2Tanim.Name = "lkpFiyat2Tanim";
             this.lkpFiyat2Tanim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkpFiyat2Tanim.Size = new System.Drawing.Size(643, 34);
+            this.lkpFiyat2Tanim.Size = new System.Drawing.Size(468, 34);
             this.lkpFiyat2Tanim.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.lkpFiyat2Tanim.TabIndex = 4;
             // 
             // lkpFiyat1Tanim
             // 
-            this.lkpFiyat1Tanim.Location = new System.Drawing.Point(419, 6);
+            this.lkpFiyat1Tanim.Location = new System.Drawing.Point(594, 6);
             this.lkpFiyat1Tanim.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.lkpFiyat1Tanim.Name = "lkpFiyat1Tanim";
             this.lkpFiyat1Tanim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -175,10 +176,10 @@
             this.simpleButton2.Location = new System.Drawing.Point(6, 510);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(152, 55);
+            this.simpleButton2.Size = new System.Drawing.Size(327, 55);
             this.simpleButton2.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.simpleButton2.TabIndex = 29;
-            this.simpleButton2.Text = "simpleButton2";
+            this.simpleButton2.Text = "seç yazdır için form seç";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
@@ -186,10 +187,10 @@
             this.simpleButton1.Location = new System.Drawing.Point(6, 447);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(152, 55);
+            this.simpleButton1.Size = new System.Drawing.Size(327, 55);
             this.simpleButton1.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 24;
-            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Text = "Seç Yazdir için yazıcı seç";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // ceStokEkleninceYazdir
@@ -198,8 +199,8 @@
             this.ceStokEkleninceYazdir.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.ceStokEkleninceYazdir.MenuManager = this.barManager1;
             this.ceStokEkleninceYazdir.Name = "ceStokEkleninceYazdir";
-            this.ceStokEkleninceYazdir.Properties.Caption = "S E Yazdır";
-            this.ceStokEkleninceYazdir.Size = new System.Drawing.Size(152, 34);
+            this.ceStokEkleninceYazdir.Properties.Caption = "Seç yazdir aktif";
+            this.ceStokEkleninceYazdir.Size = new System.Drawing.Size(327, 34);
             this.ceStokEkleninceYazdir.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.ceStokEkleninceYazdir.TabIndex = 19;
             // 
@@ -278,7 +279,7 @@
             this.btnYenile.Location = new System.Drawing.Point(6, 258);
             this.btnYenile.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnYenile.Name = "btnYenile";
-            this.btnYenile.Size = new System.Drawing.Size(152, 55);
+            this.btnYenile.Size = new System.Drawing.Size(327, 55);
             this.btnYenile.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.btnYenile.TabIndex = 14;
             this.btnYenile.Text = "><";
@@ -290,7 +291,7 @@
             this.btnMiktarDegistir.Location = new System.Drawing.Point(6, 195);
             this.btnMiktarDegistir.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnMiktarDegistir.Name = "btnMiktarDegistir";
-            this.btnMiktarDegistir.Size = new System.Drawing.Size(152, 55);
+            this.btnMiktarDegistir.Size = new System.Drawing.Size(327, 55);
             this.btnMiktarDegistir.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.btnMiktarDegistir.TabIndex = 14;
             this.btnMiktarDegistir.Text = "M";
@@ -304,7 +305,7 @@
             this.dropDownButton_Yazdir.Location = new System.Drawing.Point(6, 321);
             this.dropDownButton_Yazdir.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.dropDownButton_Yazdir.Name = "dropDownButton_Yazdir";
-            this.dropDownButton_Yazdir.Size = new System.Drawing.Size(152, 55);
+            this.dropDownButton_Yazdir.Size = new System.Drawing.Size(327, 55);
             this.dropDownButton_Yazdir.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.dropDownButton_Yazdir.TabIndex = 9;
             this.dropDownButton_Yazdir.Text = "Yazdır";
@@ -324,13 +325,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.gridControl1.Location = new System.Drawing.Point(166, 48);
+            this.gridControl1.Location = new System.Drawing.Point(341, 48);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit_AltBirimAdi});
-            this.gridControl1.Size = new System.Drawing.Size(1744, 1139);
+            this.gridControl1.Size = new System.Drawing.Size(1569, 1139);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -561,7 +562,7 @@
             this.btnStokAc.Location = new System.Drawing.Point(6, 132);
             this.btnStokAc.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnStokAc.Name = "btnStokAc";
-            this.btnStokAc.Size = new System.Drawing.Size(152, 55);
+            this.btnStokAc.Size = new System.Drawing.Size(327, 55);
             this.btnStokAc.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.btnStokAc.TabIndex = 0;
             this.btnStokAc.Text = "A";
@@ -573,7 +574,7 @@
             this.btnStokCikar.Location = new System.Drawing.Point(6, 69);
             this.btnStokCikar.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnStokCikar.Name = "btnStokCikar";
-            this.btnStokCikar.Size = new System.Drawing.Size(152, 55);
+            this.btnStokCikar.Size = new System.Drawing.Size(327, 55);
             this.btnStokCikar.StyleController = this.frmStokEtiketlayoutControl1ConvertedLayout;
             this.btnStokCikar.TabIndex = 0;
             this.btnStokCikar.Text = "-";
@@ -608,9 +609,9 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.lkpFiyat2Tanim;
-            this.layoutControlItem1.Location = new System.Drawing.Point(1008, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(1183, 0);
             this.layoutControlItem1.Name = "lkpFiyat2Tanimitem";
-            this.layoutControlItem1.Size = new System.Drawing.Size(904, 42);
+            this.layoutControlItem1.Size = new System.Drawing.Size(729, 42);
             this.layoutControlItem1.Text = "Fiyat 2 ye aktarılacak Fiyat";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(247, 25);
@@ -618,7 +619,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.lkpFiyat1Tanim;
-            this.layoutControlItem2.Location = new System.Drawing.Point(160, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(335, 0);
             this.layoutControlItem2.Name = "lkpFiyat1Tanimitem";
             this.layoutControlItem2.Size = new System.Drawing.Size(848, 42);
             this.layoutControlItem2.Text = "Fiyat 1 e aktarılacak Fiyat";
@@ -631,7 +632,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 504);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(154, 50);
             this.layoutControlItem3.Name = "simpleButton2item";
-            this.layoutControlItem3.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem3.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -642,7 +643,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 441);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(154, 50);
             this.layoutControlItem4.Name = "simpleButton1item";
-            this.layoutControlItem4.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem4.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -654,7 +655,7 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 378);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(140, 42);
             this.layoutControlItem5.Name = "ceStokEkleninceYazdiritem";
-            this.layoutControlItem5.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem5.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -665,7 +666,7 @@
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 252);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(51, 50);
             this.layoutControlItem6.Name = "btnYenileitem";
-            this.layoutControlItem6.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem6.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
@@ -676,7 +677,7 @@
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 189);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(44, 50);
             this.layoutControlItem7.Name = "btnMiktarDegistiritem";
-            this.layoutControlItem7.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem7.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -687,7 +688,7 @@
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 315);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(78, 50);
             this.layoutControlItem8.Name = "dropDownButton_Yazdiritem";
-            this.layoutControlItem8.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem8.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -695,9 +696,9 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.gridControl1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(160, 42);
+            this.layoutControlItem9.Location = new System.Drawing.Point(335, 42);
             this.layoutControlItem9.Name = "gridControl1item";
-            this.layoutControlItem9.Size = new System.Drawing.Size(1752, 1147);
+            this.layoutControlItem9.Size = new System.Drawing.Size(1577, 1147);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -707,7 +708,7 @@
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 126);
             this.layoutControlItem10.MinSize = new System.Drawing.Size(44, 50);
             this.layoutControlItem10.Name = "btnStokAcitem";
-            this.layoutControlItem10.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem10.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
@@ -718,7 +719,7 @@
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 63);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(44, 50);
             this.layoutControlItem11.Name = "btnStokCikaritem";
-            this.layoutControlItem11.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem11.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
@@ -729,7 +730,7 @@
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 567);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(108, 28);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(160, 622);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(335, 622);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -739,7 +740,7 @@
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(44, 50);
             this.layoutControlItem12.Name = "btnStokEkleitem";
-            this.layoutControlItem12.Size = new System.Drawing.Size(160, 63);
+            this.layoutControlItem12.Size = new System.Drawing.Size(335, 63);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;

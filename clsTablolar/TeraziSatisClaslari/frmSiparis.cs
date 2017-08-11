@@ -701,7 +701,7 @@ namespace clsTablolar.TeraziSatisClaslari
                     MessageBox.Show("Önce Kaydet");
                     return;
                 }
-
+                TrGenel = Baglanti.BeginTransaction();
                 FaturaBarkod = Siparis.SiparisiSatisaAktar(Baglanti, TrGenel, _SiparisID, SiparisiFaturalandiracakPersonel);
                 TrGenel.Commit();
                 if (FaturaBarkod != "")

@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             this.gcRaporDizayn = new DevExpress.XtraGrid.GridControl();
             this.gvRaporDizayn = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,29 +39,30 @@
             this.colYaziciAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKagitKaynagiIndex = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAyarlar = new DevExpress.XtraEditors.SimpleButton();
-            this.btnYaziciAyarlari = new DevExpress.XtraEditors.SimpleButton();
+            this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.btnIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnTamam = new DevExpress.XtraEditors.SimpleButton();
-            this.btnYazdirmaDiyalogu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnYaziciAyarlari = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnYazdirmaDiyalogu = new DevExpress.XtraEditors.SimpleButton();
             this.btnOnizle = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
-            this.btnIptal = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
-            this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gcRaporDizayn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRaporDizayn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -72,12 +74,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // gcRaporDizayn
@@ -89,7 +92,7 @@
             this.gcRaporDizayn.Name = "gcRaporDizayn";
             this.gcRaporDizayn.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gcRaporDizayn.Size = new System.Drawing.Size(2320, 1010);
+            this.gcRaporDizayn.Size = new System.Drawing.Size(2280, 998);
             this.gcRaporDizayn.TabIndex = 0;
             this.gcRaporDizayn.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRaporDizayn});
@@ -190,135 +193,14 @@
             // 
             this.btnAyarlar.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnAyarlar.Appearance.Options.UseFont = true;
-            this.btnAyarlar.Location = new System.Drawing.Point(961, 1032);
+            this.btnAyarlar.Location = new System.Drawing.Point(948, 1020);
             this.btnAyarlar.Margin = new System.Windows.Forms.Padding(6);
             this.btnAyarlar.Name = "btnAyarlar";
-            this.btnAyarlar.Size = new System.Drawing.Size(222, 59);
+            this.btnAyarlar.Size = new System.Drawing.Size(218, 59);
             this.btnAyarlar.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
             this.btnAyarlar.TabIndex = 6;
             this.btnAyarlar.Text = "Ayarlar";
             this.btnAyarlar.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // btnYaziciAyarlari
-            // 
-            this.btnYaziciAyarlari.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnYaziciAyarlari.Appearance.Options.UseFont = true;
-            this.btnYaziciAyarlari.Location = new System.Drawing.Point(480, 1032);
-            this.btnYaziciAyarlari.Margin = new System.Windows.Forms.Padding(6);
-            this.btnYaziciAyarlari.Name = "btnYaziciAyarlari";
-            this.btnYaziciAyarlari.Size = new System.Drawing.Size(243, 59);
-            this.btnYaziciAyarlari.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnYaziciAyarlari.TabIndex = 5;
-            this.btnYaziciAyarlari.Text = "YaziciAyarlari";
-            this.btnYaziciAyarlari.Visible = false;
-            this.btnYaziciAyarlari.Click += new System.EventHandler(this.btnYaziciAyarlari_Click);
-            // 
-            // btnTamam
-            // 
-            this.btnTamam.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnTamam.Appearance.Options.UseFont = true;
-            this.btnTamam.Location = new System.Drawing.Point(1938, 1032);
-            this.btnTamam.Margin = new System.Windows.Forms.Padding(6);
-            this.btnTamam.Name = "btnTamam";
-            this.btnTamam.Size = new System.Drawing.Size(194, 59);
-            this.btnTamam.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnTamam.TabIndex = 4;
-            this.btnTamam.Text = "Tamam";
-            this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
-            // 
-            // btnYazdirmaDiyalogu
-            // 
-            this.btnYazdirmaDiyalogu.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnYazdirmaDiyalogu.Appearance.Options.UseFont = true;
-            this.btnYazdirmaDiyalogu.Location = new System.Drawing.Point(731, 1032);
-            this.btnYazdirmaDiyalogu.Margin = new System.Windows.Forms.Padding(6);
-            this.btnYazdirmaDiyalogu.Name = "btnYazdirmaDiyalogu";
-            this.btnYazdirmaDiyalogu.Size = new System.Drawing.Size(222, 59);
-            this.btnYazdirmaDiyalogu.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnYazdirmaDiyalogu.TabIndex = 3;
-            this.btnYazdirmaDiyalogu.Text = "Y. Diyaloğu";
-            this.btnYazdirmaDiyalogu.Click += new System.EventHandler(this.btnYazdirmaDiyalogu_Click);
-            // 
-            // btnSil
-            // 
-            this.btnSil.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnSil.Appearance.Options.UseFont = true;
-            this.btnSil.Location = new System.Drawing.Point(1421, 1032);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(222, 59);
-            this.btnSil.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnSil.TabIndex = 2;
-            this.btnSil.Text = "Sil";
-            this.btnSil.Visible = false;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnEkle.Appearance.Options.UseFont = true;
-            this.btnEkle.Location = new System.Drawing.Point(1191, 1032);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(222, 59);
-            this.btnEkle.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnEkle.TabIndex = 2;
-            this.btnEkle.Text = "Ekle";
-            this.btnEkle.Visible = false;
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
-            // 
-            // btnDuzenle
-            // 
-            this.btnDuzenle.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnDuzenle.Appearance.Options.UseFont = true;
-            this.btnDuzenle.Location = new System.Drawing.Point(1651, 1032);
-            this.btnDuzenle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(279, 59);
-            this.btnDuzenle.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnDuzenle.TabIndex = 2;
-            this.btnDuzenle.Text = "Formu Düzenle";
-            this.btnDuzenle.Visible = false;
-            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
-            // 
-            // btnOnizle
-            // 
-            this.btnOnizle.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnOnizle.Appearance.Options.UseFont = true;
-            this.btnOnizle.Location = new System.Drawing.Point(14, 1032);
-            this.btnOnizle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.btnOnizle.Name = "btnOnizle";
-            this.btnOnizle.Size = new System.Drawing.Size(225, 59);
-            this.btnOnizle.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnOnizle.TabIndex = 2;
-            this.btnOnizle.Text = "Önizle";
-            this.btnOnizle.Click += new System.EventHandler(this.btnOnizle_Click);
-            // 
-            // btnYazdir
-            // 
-            this.btnYazdir.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnYazdir.Appearance.Options.UseFont = true;
-            this.btnYazdir.Location = new System.Drawing.Point(247, 1032);
-            this.btnYazdir.Margin = new System.Windows.Forms.Padding(6);
-            this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(225, 59);
-            this.btnYazdir.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnYazdir.TabIndex = 1;
-            this.btnYazdir.Text = "Yazdır";
-            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
-            // 
-            // btnIptal
-            // 
-            this.btnIptal.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.btnIptal.Appearance.Options.UseFont = true;
-            this.btnIptal.Location = new System.Drawing.Point(2140, 1032);
-            this.btnIptal.Margin = new System.Windows.Forms.Padding(6);
-            this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(194, 59);
-            this.btnIptal.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
-            this.btnIptal.TabIndex = 0;
-            this.btnIptal.Text = "İptal";
-            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // frmRaporDizaynListesiv2layoutControl1ConvertedLayout
             // 
@@ -338,8 +220,129 @@
             this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout.Name = "frmRaporDizaynListesiv2layoutControl1ConvertedLayout";
             this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1005, 376, 900, 920);
             this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout.Size = new System.Drawing.Size(2348, 1105);
+            this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout.Size = new System.Drawing.Size(2308, 1105);
             this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout.TabIndex = 2;
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnIptal.Appearance.Options.UseFont = true;
+            this.btnIptal.Location = new System.Drawing.Point(2104, 1020);
+            this.btnIptal.Margin = new System.Windows.Forms.Padding(6);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(190, 59);
+            this.btnIptal.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnIptal.TabIndex = 0;
+            this.btnIptal.Text = "İptal";
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
+            // 
+            // btnTamam
+            // 
+            this.btnTamam.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnTamam.Appearance.Options.UseFont = true;
+            this.btnTamam.Location = new System.Drawing.Point(1906, 1020);
+            this.btnTamam.Margin = new System.Windows.Forms.Padding(6);
+            this.btnTamam.Name = "btnTamam";
+            this.btnTamam.Size = new System.Drawing.Size(190, 59);
+            this.btnTamam.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnTamam.TabIndex = 4;
+            this.btnTamam.Text = "Tamam";
+            this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
+            // 
+            // btnYaziciAyarlari
+            // 
+            this.btnYaziciAyarlari.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnYaziciAyarlari.Appearance.Options.UseFont = true;
+            this.btnYaziciAyarlari.Location = new System.Drawing.Point(472, 1020);
+            this.btnYaziciAyarlari.Margin = new System.Windows.Forms.Padding(6);
+            this.btnYaziciAyarlari.Name = "btnYaziciAyarlari";
+            this.btnYaziciAyarlari.Size = new System.Drawing.Size(243, 59);
+            this.btnYaziciAyarlari.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnYaziciAyarlari.TabIndex = 5;
+            this.btnYaziciAyarlari.Text = "YaziciAyarlari";
+            this.btnYaziciAyarlari.Visible = false;
+            this.btnYaziciAyarlari.Click += new System.EventHandler(this.btnYaziciAyarlari_Click);
+            // 
+            // btnDuzenle
+            // 
+            this.btnDuzenle.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnDuzenle.Appearance.Options.UseFont = true;
+            this.btnDuzenle.Location = new System.Drawing.Point(1613, 1026);
+            this.btnDuzenle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnDuzenle.Name = "btnDuzenle";
+            this.btnDuzenle.Size = new System.Drawing.Size(279, 59);
+            this.btnDuzenle.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnDuzenle.TabIndex = 2;
+            this.btnDuzenle.Text = "Formu Düzenle";
+            this.btnDuzenle.Visible = false;
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnSil.Appearance.Options.UseFont = true;
+            this.btnSil.Location = new System.Drawing.Point(1401, 1026);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(204, 59);
+            this.btnSil.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnSil.TabIndex = 2;
+            this.btnSil.Text = "Sil";
+            this.btnSil.Visible = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnEkle.Appearance.Options.UseFont = true;
+            this.btnEkle.Location = new System.Drawing.Point(1180, 1026);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(213, 59);
+            this.btnEkle.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnEkle.TabIndex = 2;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.Visible = false;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            // 
+            // btnYazdirmaDiyalogu
+            // 
+            this.btnYazdirmaDiyalogu.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnYazdirmaDiyalogu.Appearance.Options.UseFont = true;
+            this.btnYazdirmaDiyalogu.Location = new System.Drawing.Point(723, 1020);
+            this.btnYazdirmaDiyalogu.Margin = new System.Windows.Forms.Padding(6);
+            this.btnYazdirmaDiyalogu.Name = "btnYazdirmaDiyalogu";
+            this.btnYazdirmaDiyalogu.Size = new System.Drawing.Size(217, 59);
+            this.btnYazdirmaDiyalogu.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnYazdirmaDiyalogu.TabIndex = 3;
+            this.btnYazdirmaDiyalogu.Text = "Y. Diyaloğu";
+            this.btnYazdirmaDiyalogu.Click += new System.EventHandler(this.btnYazdirmaDiyalogu_Click);
+            // 
+            // btnOnizle
+            // 
+            this.btnOnizle.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnOnizle.Appearance.Options.UseFont = true;
+            this.btnOnizle.Location = new System.Drawing.Point(14, 1020);
+            this.btnOnizle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnOnizle.Name = "btnOnizle";
+            this.btnOnizle.Size = new System.Drawing.Size(221, 59);
+            this.btnOnizle.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnOnizle.TabIndex = 2;
+            this.btnOnizle.Text = "Önizle";
+            this.btnOnizle.Click += new System.EventHandler(this.btnOnizle_Click);
+            // 
+            // btnYazdir
+            // 
+            this.btnYazdir.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnYazdir.Appearance.Options.UseFont = true;
+            this.btnYazdir.Location = new System.Drawing.Point(243, 1020);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(6);
+            this.btnYazdir.Name = "btnYazdir";
+            this.btnYazdir.Size = new System.Drawing.Size(221, 59);
+            this.btnYazdir.StyleController = this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout;
+            this.btnYazdir.TabIndex = 1;
+            this.btnYazdir.Text = "Yazdır";
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // layoutControlGroup1
             // 
@@ -351,17 +354,15 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.layoutControlItem10,
             this.layoutControlItem9,
             this.layoutControlItem11,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlGroup2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 6;
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(2348, 1105);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(2308, 1105);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -371,7 +372,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(108, 28);
             this.layoutControlItem1.Name = "gcRaporDizaynitem";
-            this.layoutControlItem1.Size = new System.Drawing.Size(2328, 1018);
+            this.layoutControlItem1.Size = new System.Drawing.Size(2288, 1006);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -380,9 +381,9 @@
             // 
             this.layoutControlItem3.BestFitWeight = 40;
             this.layoutControlItem3.Control = this.btnOnizle;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 1018);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 1006);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(233, 67);
+            this.layoutControlItem3.Size = new System.Drawing.Size(229, 79);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -390,9 +391,9 @@
             // 
             this.layoutControlItem4.BestFitWeight = 40;
             this.layoutControlItem4.Control = this.btnYazdir;
-            this.layoutControlItem4.Location = new System.Drawing.Point(233, 1018);
+            this.layoutControlItem4.Location = new System.Drawing.Point(229, 1006);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(233, 67);
+            this.layoutControlItem4.Size = new System.Drawing.Size(229, 79);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -400,9 +401,9 @@
             // 
             this.layoutControlItem5.BestFitWeight = 40;
             this.layoutControlItem5.Control = this.btnYazdirmaDiyalogu;
-            this.layoutControlItem5.Location = new System.Drawing.Point(717, 1018);
+            this.layoutControlItem5.Location = new System.Drawing.Point(709, 1006);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(230, 67);
+            this.layoutControlItem5.Size = new System.Drawing.Size(225, 79);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -410,59 +411,29 @@
             // 
             this.layoutControlItem6.BestFitWeight = 40;
             this.layoutControlItem6.Control = this.btnAyarlar;
-            this.layoutControlItem6.Location = new System.Drawing.Point(947, 1018);
+            this.layoutControlItem6.Location = new System.Drawing.Point(934, 1006);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(230, 67);
+            this.layoutControlItem6.Size = new System.Drawing.Size(226, 79);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.BestFitWeight = 40;
-            this.layoutControlItem7.Control = this.btnEkle;
-            this.layoutControlItem7.Location = new System.Drawing.Point(1177, 1018);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(230, 67);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.BestFitWeight = 40;
-            this.layoutControlItem8.Control = this.btnSil;
-            this.layoutControlItem8.Location = new System.Drawing.Point(1407, 1018);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(230, 67);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.BestFitWeight = 40;
             this.layoutControlItem9.Control = this.btnYaziciAyarlari;
-            this.layoutControlItem9.Location = new System.Drawing.Point(466, 1018);
+            this.layoutControlItem9.Location = new System.Drawing.Point(458, 1006);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(251, 67);
+            this.layoutControlItem9.Size = new System.Drawing.Size(251, 79);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.BestFitWeight = 40;
-            this.layoutControlItem10.Control = this.btnDuzenle;
-            this.layoutControlItem10.Location = new System.Drawing.Point(1637, 1018);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(287, 67);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.BestFitWeight = 40;
             this.layoutControlItem11.Control = this.btnTamam;
-            this.layoutControlItem11.Location = new System.Drawing.Point(1924, 1018);
+            this.layoutControlItem11.Location = new System.Drawing.Point(1892, 1006);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(202, 67);
+            this.layoutControlItem11.Size = new System.Drawing.Size(198, 79);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -470,24 +441,67 @@
             // 
             this.layoutControlItem12.BestFitWeight = 40;
             this.layoutControlItem12.Control = this.btnIptal;
-            this.layoutControlItem12.Location = new System.Drawing.Point(2126, 1018);
+            this.layoutControlItem12.Location = new System.Drawing.Point(2090, 1006);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(202, 67);
+            this.layoutControlItem12.Size = new System.Drawing.Size(198, 79);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem10});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(1160, 1006);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(732, 79);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.BestFitWeight = 40;
+            this.layoutControlItem7.Control = this.btnEkle;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(221, 67);
+            this.layoutControlItem7.Text = "lcEkle";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.BestFitWeight = 40;
+            this.layoutControlItem8.Control = this.btnSil;
+            this.layoutControlItem8.Location = new System.Drawing.Point(221, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(212, 67);
+            this.layoutControlItem8.Text = "lcSil";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.BestFitWeight = 40;
+            this.layoutControlItem10.Control = this.btnDuzenle;
+            this.layoutControlItem10.Location = new System.Drawing.Point(433, 0);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(287, 67);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
             // 
             // frmRaporDizaynListesiv2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2348, 1105);
+            this.ClientSize = new System.Drawing.Size(2308, 1105);
             this.Controls.Add(this.frmRaporDizaynListesiv2layoutControl1ConvertedLayout);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRaporDizaynListesiv2";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rapor Dizayn";
@@ -504,12 +518,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -548,5 +563,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
     }
 }

@@ -528,6 +528,9 @@ where KasaHrID =
 
         public int FaturaBarkodtanSatisiGetir(SqlConnection baglanti, SqlTransaction Tr, string _FaturaBarkod)
         {
+            if (string.IsNullOrEmpty(_FaturaBarkod))
+                return -1;
+
             using (SqlCommand cmd = new SqlCommand("FaturaBarkodtanSatisiGetir", baglanti))
             {
                 cmd.CommandType = CommandType.StoredProcedure;

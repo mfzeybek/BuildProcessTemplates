@@ -60,6 +60,7 @@ namespace Aresv2
             RapolarListesi.RaporDizaynYukle(SqlConnections.GetBaglanti(), _Modul);
             gcRaporDizayn.DataSource = RapolarListesi.dt_Raporlar;
 
+            layoutControlGroup2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
 
             //            var query =
             //from tbl1 in RapolarListesi.dt_Raporlar.AsEnumerable()
@@ -137,7 +138,18 @@ namespace Aresv2
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
             if (gvRaporDizayn.RowCount == 0) return;
-            _YazdirClasi.Yazdirr(gvRaporDizayn.GetFocusedRowCellValue(colRaporDizaynYolu).ToString(), clsTablolar.Yazdirma.csYazdir.Nasil.dizayn);
+            try
+            {
+                _YazdirClasi.Yazdirr(gvRaporDizayn.GetFocusedRowCellValue(colRaporDizaynYolu).ToString(), clsTablolar.Yazdirma.csYazdir.Nasil.dizayn);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
         }
 
         private void gvRaporDizayn_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -249,23 +261,27 @@ namespace Aresv2
         {
             if (btnAyarlar.Text == "Ayarlar")
             {
-                colVarsayilanMi.Visible = true;
-                colAciklama.OptionsColumn.AllowEdit = true;
+                layoutControlGroup2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+
+                //colVarsayilanMi.Visible = true;
+                //colAciklama.OptionsColumn.AllowEdit = true;
                 btnAyarlar.Text = "Ayarlandı";
-                btnEkle.Visible = true;
-                btnSil.Visible = true;
-                btnDuzenle.Visible = true;
-                btnYaziciAyarlari.Visible = true;
+                //btnEkle.Visible = true;
+                //btnSil.Visible = true;
+                //btnDuzenle.Visible = true;
+                //btnYaziciAyarlari.Visible = true;
             }
             else
             {
+                layoutControlGroup2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 btnAyarlar.Text = "Ayarlar";
-                colAciklama.OptionsColumn.AllowEdit = false;
-                colVarsayilanMi.Visible = false;
-                btnEkle.Visible = false;
-                btnSil.Visible = false;
-                btnDuzenle.Visible = false;
-                btnYaziciAyarlari.Visible = false;
+
+                //colAciklama.OptionsColumn.AllowEdit = false;
+                //colVarsayilanMi.Visible = false;
+                //btnEkle.Visible = false;
+                //btnSil.Visible = false;
+                //btnDuzenle.Visible = false;
+                //btnYaziciAyarlari.Visible = false;
             }
         }
     }

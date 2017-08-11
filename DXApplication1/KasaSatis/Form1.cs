@@ -820,8 +820,8 @@ namespace KasaSatis
         private void btnYenile_Click(object sender, EventArgs e)
         {// sadece seçili satışı yeniler
             //lock (Satislar.KilitHamisina)
-            if (gvOdemesiYapilacakSatis.RowCount == 0 && string.IsNullOrEmpty(gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaBarkod).ToString()))
-                return;
+            if (gvOdemesiYapilacakSatis.RowCount == 0 || string.IsNullOrEmpty(gvOdemesiYapilacakSatis.GetFocusedRowCellValue(colFaturaBarkod).ToString()))
+                return; // eğer grid boşsa veya barkod yoksa yenmilemesin hata oluyor.
             {
                 gvOdemesiYapilacakSatis_FocusedRowChanged(null, null);
 
