@@ -65,7 +65,7 @@ namespace TeraziSatis
               BindingFlags.InvokeMethod | BindingFlags.Instance, null,
               control, new object[] { 0x400000, false });
         }
-        public static string VersiyonNo = "Test - 113";
+        public static string VersiyonNo = "Test - 114";
         System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
         csTeraziLogs LogLar;
 
@@ -217,6 +217,9 @@ namespace TeraziSatis
                     Panel1layoutControl1ConvertedLayout.Controls[i].MinimumSize = new System.Drawing.Size(0, 0);
                 }
                 Panel1layoutControl1ConvertedLayout.BestFit();
+
+                cbtnTerazidekiSabitMiktariStokaAktar.LookAndFeel.UseDefaultLookAndFeel = false;
+                cbtnTerazidekiSabitMiktariStokaAktar.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             }
             catch (SqlException hata2)
             {
@@ -260,13 +263,19 @@ namespace TeraziSatis
                     IkinciEkran.Show();
                     IkinciEkranAcik = true;
                 }
+                else if (IkinciEkran.Location != Screen.AllScreens[1].Bounds.Location)
+                {
+                    IkinciEkran.Location = Screen.AllScreens[1].Bounds.Location;
+                }
             }
+
             else
             {
                 if (IkinciEkranAcik == true)
                 {
                     IkinciEkran.Close();
                 }
+
             }
         }
 
@@ -523,7 +532,7 @@ namespace TeraziSatis
                         Hareketler.dt_FaturaHareketleri.Rows[SonSatirIndex]["StokID"] = Stok.StokID;
                         Hareketler.dt_FaturaHareketleri.Rows[SonSatirIndex]["StokAnaBirimAdi"] = Stok.StokAnaBirimAdi;
                         Hareketler.dt_FaturaHareketleri.Rows[SonSatirIndex]["AnaBirimFiyat"] = Stok.KdvHaricFiyat; // ana Birime Her zaman kdv hariç Fiyatı atıyoruz hamısına çünkü hesaplamaları öyle
-                        //Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1]["KdvDahilFiyat"] = Stok.KdvDahilFiyat; // ana Birime Her zaman kdv hariç Fiyatı atıyoruz hamısına çünkü hesaplamaları öyle
+                                                                                                                   //Hareketler.dt_FaturaHareketleri.Rows[Hareketler.dt_FaturaHareketleri.Rows.Count - 1]["KdvDahilFiyat"] = Stok.KdvDahilFiyat; // ana Birime Her zaman kdv hariç Fiyatı atıyoruz hamısına çünkü hesaplamaları öyle
 
                         Hareketler.dt_FaturaHareketleri.Rows[SonSatirIndex]["Kdv"] = Stok.Kdv;
 
@@ -928,7 +937,7 @@ namespace TeraziSatis
 
                 //if (Convert.ToDecimal(MiktarAl.OkunanSabitMiktar) + DaraMiktari > TerazidenGelenSabitMiktar && TerazidenGelenSabitMiktar + DaraMiktari == 0) // bu aynı zamanda ürünlerin teraziden kaltığını söylüyor.
                 if (TerazidenGelenSabitMiktar + DaraMiktari == 0) // bu aynı zamanda ürünlerin teraziden kaltığını söylüyor.
-                //if (TerazidenGelenSabitMiktar == 0)
+                                                                  //if (TerazidenGelenSabitMiktar == 0)
                 { //ürün teraziden kalkmış demektir. sadece TerazidenGelenSabitMiktar == 0 kontrolü yapmak iyi olmuyor neden ki yazsaydın keşke
                     lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit) // terazideki kilite bağlıydı önceki sürümde
                         cbtnTerazidekiSabitMiktariStokaAktar.Checked = false;
@@ -958,7 +967,7 @@ namespace TeraziSatis
                                 try
                                 {
                                     lock (clsTablolar.TeraziSatisClaslari.csthreadsafe.ThreadKilit) // terazideki kilite bağlıydı önceki sürümde
-                                        //gvSatisHareketleri.
+                                                                                                    //gvSatisHareketleri.
                                         gvSatisHareketleri.SetFocusedRowCellValue(colMiktar, TerazidenGelenSabitMiktar);
                                     return true;
                                 }
@@ -1983,7 +1992,7 @@ ne hatısı diye sorarsam hamısına hatası de
                             for (int i = 0; i < gvSatisHareketleri.RowCount; i++)
                             {
                                 TumSatirlarinToplam_KdvDahilIndirimUygulanmamis +=
-    (Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colAnaBirimFiyat)) + (Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colAnaBirimFiyat)) * Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colKdv)) / 100)) * Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colMiktar));
+        (Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colAnaBirimFiyat)) + (Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colAnaBirimFiyat)) * Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colKdv)) / 100)) * Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colMiktar));
 
                                 ToplamMiktar += Convert.ToDecimal(gvSatisHareketleri.GetRowCellValue(i, colMiktar));
                             }

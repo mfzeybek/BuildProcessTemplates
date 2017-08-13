@@ -50,6 +50,8 @@ namespace TeraziSatis
 
                 digitalGauge1.Bounds = new System.Drawing.Rectangle(2, 2, gaugeControl1.Size.Width, gaugeControl1.Size.Height);
 
+
+                this.LocationChanged += FrmIkinciEkran_LocationChanged;
             }
             catch (Exception)
             {
@@ -57,7 +59,20 @@ namespace TeraziSatis
             }
         }
 
-
+        private void FrmIkinciEkran_LocationChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Screen.AllScreens[1].Bounds.Location == this.Location)
+                {
+                    this.Location = Screen.AllScreens[1].Bounds.Location;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
 
         void txtFaturaTutari_EditValueChanged(object sender, EventArgs e)
         {

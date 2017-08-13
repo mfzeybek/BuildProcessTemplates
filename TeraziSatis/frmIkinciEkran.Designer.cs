@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtToplamTutar = new DevExpress.XtraEditors.TextEdit();
             this.frmIkinciEkranlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.gcSatisHareketleri = new DevExpress.XtraGrid.GridControl();
@@ -99,7 +98,7 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
             ((System.ComponentModel.ISupportInitialize)(this.txtToplamTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmIkinciEkranlayoutControl1ConvertedLayout)).BeginInit();
             this.frmIkinciEkranlayoutControl1ConvertedLayout.SuspendLayout();
