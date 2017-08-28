@@ -20,6 +20,7 @@ namespace clsTablolar.cari.CariHr
         private int _CariGrupID;
         private DateTime _IlkTarih;
         private DateTime _IkinciTarih;
+        private int _KasaID;
 
 
 
@@ -56,7 +57,7 @@ namespace clsTablolar.cari.CariHr
             set { _IkinciTarih = value; }
         }
 
-
+        public int KasaID { get => _KasaID; set => _KasaID = value; }
 
         public csCariHrArama()
         {
@@ -66,6 +67,7 @@ namespace clsTablolar.cari.CariHr
             _CariGrupID = -1;
             _IlkTarih = DateTime.MinValue;
             _IkinciTarih = DateTime.MinValue;
+            _KasaID = -1;
         }
 
         SqlDataAdapter da;
@@ -107,6 +109,16 @@ namespace clsTablolar.cari.CariHr
                 {
                     //da.SelectCommand.CommandText += " and Tarih <= @IkinciTarih ";
                     da.SelectCommand.Parameters.Add("@IkinciTarih", SqlDbType.DateTime).Value = _IkinciTarih;
+                }
+
+                if (_KasaID != -1)
+                {
+                    da.SelectCommand.Parameters.Add("@KasaID", SqlDbType.Int).Value = _KasaID;
+                }
+
+                if (!string.IsNullOrEmpty(HareketTipleri))
+                {
+                    da.SelectCommand.Parameters.Add("@HareketTipleri", SqlDbType.NVarChar).Value = HareketTipleri;
                 }
 
                 //da.SelectCommand.CommandText += " order by CariHr.Tarih asc ";

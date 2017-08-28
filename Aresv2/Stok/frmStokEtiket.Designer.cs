@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             this.btnStokEkle = new DevExpress.XtraEditors.SimpleButton();
             this.frmStokEtiketlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.lkpFiyat2Tanim = new DevExpress.XtraEditors.LookUpEdit();
@@ -36,7 +35,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.ceStokEkleninceYazdir = new DevExpress.XtraEditors.CheckEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -47,7 +46,7 @@
             this.btnYenile = new DevExpress.XtraEditors.SimpleButton();
             this.btnMiktarDegistir = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton_Yazdir = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStokID = new DevExpress.XtraGrid.Columns.GridColumn();

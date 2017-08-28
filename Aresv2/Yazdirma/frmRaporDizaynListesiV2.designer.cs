@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             this.gcRaporDizayn = new DevExpress.XtraGrid.GridControl();
             this.gvRaporDizayn = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +61,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
             ((System.ComponentModel.ISupportInitialize)(this.gcRaporDizayn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRaporDizayn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();

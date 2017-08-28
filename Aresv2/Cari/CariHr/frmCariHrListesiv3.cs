@@ -40,9 +40,25 @@ namespace Aresv2.Cari.CariHr
             lookUpEdit1.Properties.DataSource = clsTablolar.cari.csCariGrup.CariGrupListesi(SqlConnections.GetBaglanti());
             lookUpEdit1.Properties.DisplayMember = "CariGrup";
             lookUpEdit1.Properties.ValueMember = "CariGrupID";
+
+            KasaGetir();
         }
 
+        void KasaGetir()
+        {
+            clsTablolar.Kasa.csKasaHareket Kasalar = new clsTablolar.Kasa.csKasaHareket();
 
+            Trgenel = SqlConnections.GetBaglanti().BeginTransaction();
+            lkpKasa.Properties.DataSource = Kasalar.KasaListeGetir(SqlConnections.GetBaglanti(), Trgenel);
+            Trgenel.Commit();
+
+
+            lkpKasa.Properties.ValueMember = "KasaID";
+            lkpKasa.Properties.DisplayMember = "KasaAdi";
+            //lkpKasa.EditValue = 2;
+
+
+        }
 
         private void btnCariHrAc_Click(object sender, EventArgs e)
         {
@@ -94,19 +110,32 @@ namespace Aresv2.Cari.CariHr
                 Arama.IlkTarih = deIlkTarih.DateTime;
                 Arama.IkinciTarih = deIkınciTarih.DateTime;
 
-                Arama.HareketTipleri = "";
+                //if (lkpKasa.EditValue != null || !string.IsNullOrEmpty(lkpKasa.EditValue.ToString()))
+                Arama.KasaID = (int)lkpKasa.EditValue;
+                //else
+                //    Arama.KasaID = -1;
 
-                for (int i = 0; i < checkedListBoxControl_IslemTipi.CheckedItemsCount; i++)
+                if (checkedListBoxControl_IslemTipi.CheckedItemsCount > 0)
                 {
-                    if (i > 0) // virgülü koyma ile alaklı bişi sanırım
+                    Arama.HareketTipleri = ",";
+
+                    for (int i = 0; i < checkedListBoxControl_IslemTipi.CheckedItemsCount; i++)
                     {
-                        Arama.HareketTipleri += " ," + checkedListBoxControl_IslemTipi.CheckedItems[i].ToString();
-                    }
-                    else
-                    {
-                        Arama.HareketTipleri = checkedListBoxControl_IslemTipi.CheckedItems[i].ToString();
+                        //if (i > 0) // virgülü koyma ile alaklı bişi sanırım
+                        //{
+                        //    Arama.HareketTipleri += checkedListBoxControl_IslemTipi.CheckedItems[i].ToString() + " ,";
+                        //}
+                        //else
+                        //{
+                        Arama.HareketTipleri += checkedListBoxControl_IslemTipi.CheckedItems[i].ToString() + ",";
+                        //}
                     }
                 }
+                else
+                {
+                    Arama.HareketTipleri = string.Empty;
+                }
+
                 //Arama.HareketTipi = checkedListBoxControl_IslemTipi.CheckedItems
                 Trgenel = SqlConnections.GetBaglanti().BeginTransaction();
                 gridControl1.DataSource = Arama.HareketleriGetir(SqlConnections.GetBaglanti(), Trgenel);
