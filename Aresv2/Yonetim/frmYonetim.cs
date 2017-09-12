@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -180,6 +181,13 @@ namespace Aresv2.Yonetim
                     SipDetay.MdiParent = this.MdiParent;
                     SipDetay.Show();
                 }
+            }
+            else if (e.Button.Properties.Caption == "Görüntü Al")
+            {
+                    Bitmap Screenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+                    Graphics GFX = Graphics.FromImage(Screenshot);
+                    GFX.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, 0, 0, Screen.PrimaryScreen.Bounds.Size);
+
             }
         }
 

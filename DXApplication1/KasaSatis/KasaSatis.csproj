@@ -135,6 +135,12 @@
     <Compile Include="frmGiderKarti.Designer.cs">
       <DependentUpon>frmGiderKarti.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKasaMusteriEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKasaMusteriEkrani.Designer.cs">
+      <DependentUpon>frmKasaMusteriEkrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKasaRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiderKarti.resx">
       <DependentUpon>frmGiderKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKasaMusteriEkrani.resx">
+      <DependentUpon>frmKasaMusteriEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKasaRaporu.resx">
       <DependentUpon>frmKasaRaporu.cs</DependentUpon>

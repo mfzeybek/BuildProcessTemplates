@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.ContextButton contextButton1 = new DevExpress.Utils.ContextButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtEtiketAdi = new DevExpress.XtraEditors.TextEdit();
@@ -455,7 +455,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1908, 162);
+            this.panelControl1.Size = new System.Drawing.Size(2562, 162);
             this.panelControl1.TabIndex = 0;
             // 
             // txtEtiketAdi
@@ -488,16 +488,16 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.barDockControlTop.Size = new System.Drawing.Size(1908, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(2562, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1158);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1274);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1908, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(2562, 0);
             // 
             // barDockControlLeft
             // 
@@ -506,16 +506,16 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1158);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1274);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1908, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(2562, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1158);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1274);
             // 
             // barButtonItem1
             // 
@@ -588,7 +588,7 @@
             this.txtStokKodu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtStokKodu.Name = "txtStokKodu";
             this.txtStokKodu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Undo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Kod Değiştir", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Undo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kod Değiştir")});
             this.txtStokKodu.Properties.MaxLength = 50;
             this.txtStokKodu.Properties.ReadOnly = true;
             this.txtStokKodu.Size = new System.Drawing.Size(634, 34);
@@ -659,7 +659,7 @@
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1908, 919);
+            this.xtraTabControl1.Size = new System.Drawing.Size(2562, 1035);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -1933,13 +1933,13 @@
             this.tpStokResim.Controls.Add(this.panelControl5);
             this.tpStokResim.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tpStokResim.Name = "tpStokResim";
-            this.tpStokResim.Size = new System.Drawing.Size(1896, 866);
+            this.tpStokResim.Size = new System.Drawing.Size(2550, 982);
             this.tpStokResim.Text = "Resim";
             // 
             // btnYukaridanKes
             // 
             this.btnYukaridanKes.Location = new System.Drawing.Point(1314, 113);
-            this.btnYukaridanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnYukaridanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnYukaridanKes.Name = "btnYukaridanKes";
             this.btnYukaridanKes.Size = new System.Drawing.Size(260, 44);
             this.btnYukaridanKes.TabIndex = 10;
@@ -1951,7 +1951,7 @@
             this.btnSagdanKes.Appearance.Options.UseTextOptions = true;
             this.btnSagdanKes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSagdanKes.Location = new System.Drawing.Point(1788, 369);
-            this.btnSagdanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSagdanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnSagdanKes.Name = "btnSagdanKes";
             this.btnSagdanKes.Size = new System.Drawing.Size(46, 185);
             this.btnSagdanKes.TabIndex = 16;
@@ -1963,7 +1963,7 @@
             this.btnSoldanKes.Appearance.Options.UseTextOptions = true;
             this.btnSoldanKes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSoldanKes.Location = new System.Drawing.Point(1060, 369);
-            this.btnSoldanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSoldanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnSoldanKes.Name = "btnSoldanKes";
             this.btnSoldanKes.Size = new System.Drawing.Size(46, 185);
             this.btnSoldanKes.TabIndex = 10;
@@ -1973,7 +1973,7 @@
             // btnAsagidanKes
             // 
             this.btnAsagidanKes.Location = new System.Drawing.Point(1314, 779);
-            this.btnAsagidanKes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAsagidanKes.Margin = new System.Windows.Forms.Padding(6);
             this.btnAsagidanKes.Name = "btnAsagidanKes";
             this.btnAsagidanKes.Size = new System.Drawing.Size(260, 44);
             this.btnAsagidanKes.TabIndex = 10;
@@ -1985,7 +1985,7 @@
             this.simpleButton2.Appearance.Options.UseTextOptions = true;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton2.Location = new System.Drawing.Point(1852, 319);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(304, 92);
             this.simpleButton2.TabIndex = 14;
@@ -1995,7 +1995,7 @@
             // labelControl69
             // 
             this.labelControl69.Location = new System.Drawing.Point(2200, 631);
-            this.labelControl69.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl69.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl69.Name = "labelControl69";
             this.labelControl69.Size = new System.Drawing.Size(169, 25);
             this.labelControl69.TabIndex = 13;
@@ -2004,7 +2004,7 @@
             // lblFotoBilgileri
             // 
             this.lblFotoBilgileri.Location = new System.Drawing.Point(2200, 692);
-            this.lblFotoBilgileri.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblFotoBilgileri.Margin = new System.Windows.Forms.Padding(6);
             this.lblFotoBilgileri.Name = "lblFotoBilgileri";
             this.lblFotoBilgileri.Size = new System.Drawing.Size(133, 25);
             this.lblFotoBilgileri.TabIndex = 11;
@@ -2013,7 +2013,7 @@
             // btnBuyukFoto
             // 
             this.btnBuyukFoto.Location = new System.Drawing.Point(1852, 188);
-            this.btnBuyukFoto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBuyukFoto.Margin = new System.Windows.Forms.Padding(6);
             this.btnBuyukFoto.Name = "btnBuyukFoto";
             this.btnBuyukFoto.Size = new System.Drawing.Size(304, 119);
             this.btnBuyukFoto.TabIndex = 10;
@@ -2053,6 +2053,7 @@
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEdit1.EditValue = global::Aresv2.Properties.Resources._11866382_886550004790846_1980937716037633175_n;
             this.pictureEdit1.Location = new System.Drawing.Point(1116, 169);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -2079,7 +2080,7 @@
             this.gcResim.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gcResim.Size = new System.Drawing.Size(1030, 801);
+            this.gcResim.Size = new System.Drawing.Size(1030, 917);
             this.gcResim.TabIndex = 1;
             this.gcResim.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvResim});
@@ -2175,13 +2176,13 @@
             this.panelControl5.Location = new System.Drawing.Point(0, 0);
             this.panelControl5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1896, 65);
+            this.panelControl5.Size = new System.Drawing.Size(2550, 65);
             this.panelControl5.TabIndex = 0;
             // 
             // btnFotoYapistir
             // 
             this.btnFotoYapistir.Location = new System.Drawing.Point(714, 6);
-            this.btnFotoYapistir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFotoYapistir.Margin = new System.Windows.Forms.Padding(6);
             this.btnFotoYapistir.Name = "btnFotoYapistir";
             this.btnFotoYapistir.Size = new System.Drawing.Size(150, 44);
             this.btnFotoYapistir.TabIndex = 10;
@@ -3194,10 +3195,10 @@
             this.panelControl3.Controls.Add(this.btnVazgec);
             this.panelControl3.Controls.Add(this.btnKaydet);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 1081);
+            this.panelControl3.Location = new System.Drawing.Point(0, 1197);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1908, 77);
+            this.panelControl3.Size = new System.Drawing.Size(2562, 77);
             this.panelControl3.TabIndex = 2;
             // 
             // btnSil
@@ -3343,7 +3344,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1908, 1158);
+            this.ClientSize = new System.Drawing.Size(2562, 1274);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);

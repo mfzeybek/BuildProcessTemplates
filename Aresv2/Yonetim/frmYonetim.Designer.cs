@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colZaman = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYerAdi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
-            this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -50,11 +50,11 @@
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.btnAyarKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.panelContainer1.SuspendLayout();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -64,6 +64,7 @@
             this.dockPanel3.SuspendLayout();
             this.dockPanel3_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
+            this.panelContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -74,7 +75,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(931, 438);
+            this.gridControl1.Size = new System.Drawing.Size(1352, 438);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -135,21 +136,6 @@
             "DevExpress.XtraBars.Navigation.TileNavPane",
             "DevExpress.XtraBars.TabFormControl"});
             // 
-            // panelContainer1
-            // 
-            this.panelContainer1.Controls.Add(this.dockPanel1);
-            this.panelContainer1.Controls.Add(this.dockPanel2);
-            this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
-            this.panelContainer1.FloatSize = new System.Drawing.Size(355, 365);
-            this.panelContainer1.FloatVertical = true;
-            this.panelContainer1.ID = new System.Guid("de7795a7-f47e-44f7-9916-505b2f446a12");
-            this.panelContainer1.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer1.Margin = new System.Windows.Forms.Padding(6);
-            this.panelContainer1.Name = "panelContainer1";
-            this.panelContainer1.OriginalSize = new System.Drawing.Size(200, 500);
-            this.panelContainer1.Size = new System.Drawing.Size(1902, 500);
-            this.panelContainer1.Text = "panelContainer1";
-            // 
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
@@ -162,8 +148,8 @@
             this.dockPanel1.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(952, 288);
-            this.dockPanel1.Size = new System.Drawing.Size(952, 500);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(1373, 500);
             this.dockPanel1.Text = "Dışarıdaki Personel";
             this.dockPanel1.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dockPanel1_CustomButtonClick);
             // 
@@ -173,7 +159,7 @@
             this.dockPanel1_Container.Location = new System.Drawing.Point(8, 49);
             this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(4);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(931, 438);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(1352, 438);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // dockPanel2
@@ -181,16 +167,17 @@
             this.dockPanel2.Controls.Add(this.dockPanel2_Container);
             this.dockPanel2.CustomHeaderButtons.AddRange(new DevExpress.XtraBars.Docking2010.IButton[] {
             new DevExpress.XtraBars.Docking.CustomHeaderButton("Yenile", DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton),
-            new DevExpress.XtraBars.Docking.CustomHeaderButton("Kaydı Aç", DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton)});
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Kaydı Aç", DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton),
+            new DevExpress.XtraBars.Docking.CustomHeaderButton("Görüntü Al", DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton)});
             this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
             this.dockPanel2.FloatSize = new System.Drawing.Size(284, 158);
             this.dockPanel2.FloatVertical = true;
             this.dockPanel2.ID = new System.Guid("8be2d8c5-d3ce-4645-9429-ead55b377460");
-            this.dockPanel2.Location = new System.Drawing.Point(952, 0);
+            this.dockPanel2.Location = new System.Drawing.Point(1373, 0);
             this.dockPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(950, 288);
-            this.dockPanel2.Size = new System.Drawing.Size(950, 500);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(950, 500);
+            this.dockPanel2.Size = new System.Drawing.Size(1371, 500);
             this.dockPanel2.Text = "Alınan Siparişler";
             this.dockPanel2.CustomButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.dockPanel2_CustomButtonClick);
             this.dockPanel2.Click += new System.EventHandler(this.dockPanel2_Click);
@@ -201,7 +188,7 @@
             this.dockPanel2_Container.Location = new System.Drawing.Point(8, 49);
             this.dockPanel2_Container.Margin = new System.Windows.Forms.Padding(6);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(934, 438);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1355, 438);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // gcAlinanSiparisler
@@ -212,7 +199,7 @@
             this.gcAlinanSiparisler.MainView = this.gvAlinanSiparisler;
             this.gcAlinanSiparisler.Margin = new System.Windows.Forms.Padding(4);
             this.gcAlinanSiparisler.Name = "gcAlinanSiparisler";
-            this.gcAlinanSiparisler.Size = new System.Drawing.Size(934, 438);
+            this.gcAlinanSiparisler.Size = new System.Drawing.Size(1355, 438);
             this.gcAlinanSiparisler.TabIndex = 2;
             this.gcAlinanSiparisler.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAlinanSiparisler});
@@ -310,11 +297,25 @@
             this.btnAyarKaydet.TabIndex = 5;
             this.btnAyarKaydet.Text = "Kaydet";
             // 
+            // panelContainer1
+            // 
+            this.panelContainer1.Controls.Add(this.dockPanel1);
+            this.panelContainer1.Controls.Add(this.dockPanel2);
+            this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
+            this.panelContainer1.FloatSize = new System.Drawing.Size(355, 365);
+            this.panelContainer1.FloatVertical = true;
+            this.panelContainer1.ID = new System.Guid("175e1a37-409a-4a6b-9d9b-cc13f6af4344");
+            this.panelContainer1.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer1.Name = "panelContainer1";
+            this.panelContainer1.OriginalSize = new System.Drawing.Size(200, 500);
+            this.panelContainer1.Size = new System.Drawing.Size(2744, 500);
+            this.panelContainer1.Text = "panelContainer1";
+            // 
             // frmYonetim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1902, 1217);
+            this.ClientSize = new System.Drawing.Size(2744, 1217);
             this.Controls.Add(this.dockPanel3);
             this.Controls.Add(this.panelContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -325,7 +326,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.panelContainer1.ResumeLayout(false);
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             this.dockPanel2.ResumeLayout(false);
@@ -335,6 +335,7 @@
             this.dockPanel3.ResumeLayout(false);
             this.dockPanel3_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
+            this.panelContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -357,11 +358,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTeslimTarihi;
         private DevExpress.XtraGrid.Columns.GridColumn colSiparisiAlanPersonelAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colSiparisDurumTanimAdi;
-        private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
         private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
         private DevExpress.XtraVerticalGrid.VGridControl vGridControl1;
         private DevExpress.XtraEditors.SimpleButton btnAyarKaydet;
+        private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
     }
 }

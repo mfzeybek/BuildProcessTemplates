@@ -2519,7 +2519,6 @@ ne hatısı diye sorarsam hamısına hatası de
         {
             if (chckbtnIskontoIslemleri.Checked)
             {
-
                 switch (gvSatisHareketleri.FocusedColumn.FieldName)
                 {
                     case "StokIskonto1":
@@ -2862,6 +2861,9 @@ ne hatısı diye sorarsam hamısına hatası de
             }
         }
 
-
+        private void gvSatislar_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            //if (gvSatislar.get)
+        }
     }
 }

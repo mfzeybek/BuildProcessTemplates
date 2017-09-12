@@ -602,7 +602,7 @@ namespace Aresv2.Stok
             //DevExpress.XtraEditors.TextEdit AktifText = (TextEdit)sender;
             //AktifText.BackColor = Color.White;
         }
-         
+
         private void AktifTextBackColorChange(object sender, EventArgs e)
         {
             //DevExpress.XtraEditors.TextEdit AktifText = (TextEdit)sender;
@@ -715,6 +715,14 @@ namespace Aresv2.Stok
             return returnImage;
         }
 
+        public void GoruntuAl(int )
+        {
+            Bitmap Screenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Graphics GFX = Graphics.FromImage(Screenshot);
+            GFX.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, 0, 0, Screen.PrimaryScreen.Bounds.Size);
+        }
+
+
         public static byte[] ImageToByte2(Image img)
         {
             byte[] byteArray = new byte[0];
@@ -823,8 +831,8 @@ namespace Aresv2.Stok
             btnKaydet.Enabled = A;
             btnVazgec.Enabled = A;
             btnSil.Enabled = !A;
-        }
 
+        }
         #endregion
 
 

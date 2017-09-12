@@ -57,7 +57,7 @@ where fatura.SilindiMi = 0 order by DegismeTarihi desc";
             using (SqlDataAdapter da_Thread = new SqlDataAdapter(@"select fatura.FaturaID, FaturaTipi, FaturaTarihi, fatura.DuzenlemeTarihi, FaturaNo, CariID, CariKod, CariTanim, VergiDairesi, VergiNo, Adres, Il, Ilce, 
 Vadesi, Iptal, SilindiMi, Aciklama, KaydedenID, KayitTarihi, DegistirenID, DegismeTarihi, DepoID, SatisElemaniID, Toplam_Iskontosuz_Kdvsiz, 
 CariIskontoToplami , StokIskontoToplami, ToplamIndirim, ToplamKdv, IskontoluToplam, isnull(FaturaTutari, 0) as FaturaTutari, KullanilanFiyatTanimID, SiparisID, FaturaGrupID, OdendiMi, '' as OdemeSekli,
-FaturaBarkod
+FaturaBarkod, SiparisID
 ---, TeraziFaturaID, TeraziID
 , isnull([dbo].[FaturaBakiyesiniGetir](Fatura.FaturaID), 0) KalanBakiye
 ,isnull([dbo].[FaturaninOdemeTutariniGetir](Fatura.FaturaID), 0) OdenenTutar
@@ -139,6 +139,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
 
             dt_threadSatislar.Rows.Add(droww);
         }
+
         int _BeklemeSurasi = 0;
 
         private void YeniEklenenVeDegisenSatislariGetirSilinenleriCikarV4(SqlConnection Baglanti, SqlTransaction Tr, int _TeraziID)
@@ -227,6 +228,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
 
             }
         }
+
         private void KaydedilmeyenSatirlariSil()
         {
             foreach (DataRow item in dt_threadSatislar.Select("FaturaID = '-1' OR FaturaID is null").AsEnumerable())
@@ -309,7 +311,7 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["KalanBakiye"] = dr["KalanBakiye"];
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["OdenenTutar"] = dr["OdenenTutar"];
                         dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["OdemeSekli"] = dr["OdemeSekli"];
-
+                        dt_threadSatislar.Select("FaturaID = '" + dr["FaturaID"].ToString() + "'")[0]["OdemeSekli"] = dr["SiparisID"];
 
                         //return dr["FaturaBarkod"].ToString();
                         Barkod = dr["FaturaBarkod"].ToString();
@@ -360,6 +362,8 @@ where fatura.OdendiMi = 0 and fatura.SilindiMi = 0 and 1 = 0", Baglanti))
                     droww["KalanBakiye"] = dr["KalanBakiye"];
                     droww["OdenenTutar"] = dr["OdenenTutar"];
                     droww["OdemeSekli"] = dr["OdemeSekli"];
+                    droww["SiparisID"] = dr["SiparisID"];
+                    
 
                     dt_threadSatislar.Rows.Add(droww);
 
