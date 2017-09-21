@@ -16,11 +16,14 @@ namespace clsTablolar
         {
             GC.SuppressFinalize(this);
         }
-        void YuzdeOlarakFotoKucult(decimal Yuzde, )
+        void YuzdeOlarakFotoKucult(decimal Yuzde)
         {
             try
             {
-                FotoEkle(ImageToByte2(ResizeImage(byteArrayToImage((byte[])gvResim.GetFocusedRowCellValue("Resim")), (int)(pictureEdit1.Image.Size.Width - (pictureEdit1.Image.Size.Width * Yuzde / 100)), (int)(pictureEdit1.Image.Size.Height - (pictureEdit1.Image.Size.Height * Yuzde / 100)))));
+                //FotoEkle(ImageToByte2(ResizeImage(byteArrayToImage((byte[])gvResim.GetFocusedRowCellValue("Resim")), (int)(pictureEdit1.Image.Size.Width - (pictureEdit1.Image.Size.Width * Yuzde / 100)), (int)(pictureEdit1.Image.Size.Height - (pictureEdit1.Image.Size.Height * Yuzde / 100)))));
+                
+                
+                
                 //using (frmBuyukFoto bfoto = new frmBuyukFoto(ImageToByte(ResizeImage(byteArrayToImage((byte[])gvResim.GetFocusedRowCellValue("Resim")), pictureEdit1.Image.Size.Width - (pictureEdit1.Image.Size.Width / Yuzde), pictureEdit1.Image.Size.Height - (pictureEdit1.Image.Size.Height / Yuzde)))))
                 //{
                 //    bfoto.ShowDialog();

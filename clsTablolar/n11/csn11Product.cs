@@ -94,5 +94,26 @@ namespace clsTablolar.n11
                 }
             }
         }
+
+        public void Kaydet(SqlConnection Baglanti, SqlTransaction Tr)
+        {
+            using (SqlCommand cmd = new SqlCommand("", Baglanti, Tr))
+            {
+                if (this.n11ProductID == -1)
+                {
+                    cmd.CommandText = " insert into n11Product (KategoriID, StokID, DetayliUrunBilgisi, HazirlikSuresi, KullanilacakBarkodID, KullanilacakFiyatTanimID) " +
+                        "values " +
+                        "(@KategoriID, @StokID, @DetayliUrunBilgisi, @HazirlikSuresi, @KullanilacakBarkodID, @KullanilacakFiyatTanimID) set @YeniID = SCOPE_IDENTITY() ";
+                    
+                }
+                else
+                {
+                    cmd.CommandText = "update n11Product set KategoriID = @KategoriID, StokID = @StokID, DetayliUrunBilgisi = @DetayliUrunBilgisi, " +
+                        "HazirlikSuresi = @HazirlikSuresi, KullanilacakBarkodID = @KullanilacakBarkodID, KullanilacakFiyatTanimID = @KullanilacakFiyatTanimID  where n11ProductID = @n11ProductID";
+                }
+                cmd.Parameters.Add("KategoriID", SqlDbType.Int).Value = KategoriID;
+                cmd.Parameters.Add("StokID", SqlDbType.Int).Value = StokID;
+            }
+        }
     }
 }

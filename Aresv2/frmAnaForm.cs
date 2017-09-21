@@ -1044,5 +1044,11 @@ namespace Aresv2
         {
 
         }
+
+        private void barBtnStokGruplari_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Stok.frmStokGruplari frm = new Stok.frmStokGruplari();
+            FormuAc2(frm);
+        }
     }
 }

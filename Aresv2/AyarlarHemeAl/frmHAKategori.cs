@@ -98,6 +98,8 @@ namespace Aresv2.AyarlarHemeAl
 				frmHataBildir.ShowDialog();
 			}
 		}
+
+
 		private void btnIceriBilgiAl_Click(object sender, EventArgs e)
 		{
 			#region StokGrup TABLOSUNA KAYIT EKLENİYOR.
@@ -160,6 +162,8 @@ namespace Aresv2.AyarlarHemeAl
 
 			trGenel.Commit();
 		}
+
+
 		private void btnWebeGonder_Click(object sender, EventArgs e)
 		{
 			try

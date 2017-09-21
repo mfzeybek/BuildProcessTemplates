@@ -860,6 +860,12 @@
     <Compile Include="Stok\frmStokDetay.designer.cs">
       <DependentUpon>frmStokDetay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stok\frmStokGruplari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokGruplari.Designer.cs">
+      <DependentUpon>frmStokGruplari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\frmStokHrGirisi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1407,6 +1413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\frmStokDetay.resx">
       <DependentUpon>frmStokDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokGruplari.resx">
+      <DependentUpon>frmStokGruplari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\frmStokHrGirisi.resx">
       <DependentUpon>frmStokHrGirisi.cs</DependentUpon>

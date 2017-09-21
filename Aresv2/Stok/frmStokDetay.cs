@@ -389,6 +389,9 @@ namespace Aresv2.Stok
             lkpGrup.Properties.DataSource = Grup.StokGrupDoldur(SqlConnections.GetBaglanti(), trGenel);
             lkpGrup.Properties.DisplayMember = "StokGrupAdi";
             lkpGrup.Properties.ValueMember = "StokGrupID";
+
+            treeList1.DataSource = Grup.dt;
+            
         }
 
         private void AraGrupYukle()
@@ -715,7 +718,7 @@ namespace Aresv2.Stok
             return returnImage;
         }
 
-        public void GoruntuAl(int )
+        public void GoruntuAl(int ahandaa)
         {
             Bitmap Screenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics GFX = Graphics.FromImage(Screenshot);
