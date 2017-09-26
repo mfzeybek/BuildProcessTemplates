@@ -115,8 +115,8 @@ namespace clsTablolar.Stok
                     return;
                 cmdGenel.Dispose();
                 cmdGenel = new SqlCommand(@"
-insert into StokGrup(StokGrupAdi,KaydedenID,KayitTarihi)
-Values(@StokGrupAdi,@KaydedenID,@KayitTarihi) set @YeniID = SCOPE_IDENTITY() ", Baglanti, trGenel);
+insert into StokGrup(StokGrupAdi,KaydedenID,KayitTarihi, UstGrupID)
+Values(@StokGrupAdi,@KaydedenID,@KayitTarihi, @UstGrupID) set @YeniID = SCOPE_IDENTITY() ", Baglanti, trGenel);
                 cmdGenel.Parameters.Add("@KayitTarihi", SqlDbType.DateTime).Value = DateTime.Now;
                 cmdGenel.Parameters.Add("@KaydedenID", SqlDbType.Int).Value = _KaydedenID;
                 cmdGenel.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -132,6 +132,7 @@ where StokGrupID = @StokGrupID", Baglanti, trGenel);
             }
 
             cmdGenel.Parameters.Add("@StokGrupAdi", SqlDbType.NVarChar).Value = _StokGrupAdi;
+            cmdGenel.Parameters.Add("@UstGrupID", SqlDbType.NVarChar).Value = _StokGrupAdi;
             try
             {
                 cmdGenel.ExecuteNonQuery();
@@ -142,6 +143,45 @@ where StokGrupID = @StokGrupID", Baglanti, trGenel);
             {
                 throw new Exception(hata.Message);
             }
+        }
+
+        public void TablodanGrupKaydet(SqlConnection Baglanti, SqlTransaction Trgenel)
+        {
+            try
+            {
+                da.InsertCommand = new SqlCommand("insert into StokGrup(StokGrupAdi, UstGrupID) values(@StokGrupAdi, @UstGrupID) set @YeniID = SCOPE_IDENTITY()", Baglanti, Trgenel);
+
+                da.InsertCommand.Parameters.Add("@StokGrupAdi", SqlDbType.NVarChar, 100, "StokGrupAdi");
+                da.InsertCommand.Parameters.Add("@UstGrupID", SqlDbType.Int, 0, "UstGrupID");
+
+                da.InsertCommand.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                da.UpdateCommand = new SqlCommand("Update StokGrup set StokGrupAdi = @StokGrupAdi where StokGrupID = @StokGrupID", Baglanti, Trgenel);
+                da.UpdateCommand.Parameters.Add("@StokGrupAdi", SqlDbType.NVarChar, 100, "StokGrupAdi");
+                da.UpdateCommand.Parameters.Add("@StokGrupID", SqlDbType.Int, 0, "StokGrupID");
+
+                da.DeleteCommand = new SqlCommand("delete from StokGrup where StokGrupID = @StokGrupID", Baglanti, Trgenel);
+                da.DeleteCommand.Parameters.Add("@StokGrupID", SqlDbType.Int, 0, "StokGrupID");
+
+                
+
+                da.Update(dt);
+
+
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+        private void Da_RowUpdated(object sender, SqlRowUpdatedEventArgs e)
+        {
+            if (e.StatementType == StatementType.Insert)
+                e.Row["StokGrupID"] = e.Command.Parameters["@YeniID"].Value;
         }
 
         private DateTime TarihBossaMinTarihVer(Object Tarih)
@@ -174,11 +214,11 @@ where StokGrupID = @StokGrupID", Baglanti, trGenel);
             da.UpdateCommand.Parameters.Add("@StokGrupID", SqlDbType.NVarChar, 10, "StokGrupID");
 
             da.InsertCommand = new SqlCommand("insert into StokGrup (StokGrupAdi) values (@StokGrupAdi)", Baglanti);
-            da.InsertCommand.Parameters.Add("@StokGrupAdi", SqlDbType.NVarChar, 10, "StokGrupAdi");
+            da.InsertCommand.Parameters.Add("@StokGrupAdi", SqlDbType.NVarChar, 100, "StokGrupAdi");
 
 
             da.DeleteCommand = new SqlCommand("delete StokGrup where StokGrupID = @StokGrupID", Baglanti);
-            da.DeleteCommand.Parameters.Add("@StokGrupID", SqlDbType.Int, 10, "StokGrupID");
+            da.DeleteCommand.Parameters.Add("@StokGrupID", SqlDbType.Int, 100, "StokGrupID");
 
             da.Update(dt);
         }
@@ -189,11 +229,14 @@ where StokGrupID = @StokGrupID", Baglanti, trGenel);
             {
                 using (da = new SqlDataAdapter())
                 {
+                    da.RowUpdated += Da_RowUpdated;
+
                     da.SelectCommand = new SqlCommand("SELECT StokGrupID, UstGrupID ,StokGrupAdi from StokGrup", Baglanti);
                     da.SelectCommand.Transaction = tr;
                     using (dt = new DataTable())
                     {
                         da.Fill(dt);
+                        dt.PrimaryKey = new DataColumn[] { dt.Columns["StokGrupID"] };
                         return dt;
                     }
                 }

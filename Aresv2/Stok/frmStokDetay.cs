@@ -90,12 +90,17 @@ namespace Aresv2.Stok
             }
             catch (Exception hata)
             {
-                trGenel.Rollback();
+                try
+                { trGenel.Rollback(); }
+                catch (Exception) { }
+
                 frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
                 frmHataBildir.ShowDialog();
             }
         }
         clsTablolar.HemenAl.csEticaretDurumTanimlari EticaretDurumTanimlari = new clsTablolar.HemenAl.csEticaretDurumTanimlari();
+
+        clsTablolar.Stok.csStokGrupV2 YeniGruplama;
 
         private void ButunVerileriYukle()
         {
@@ -106,6 +111,13 @@ namespace Aresv2.Stok
                 Stok = new clsTablolar.Stok.csStok(SqlConnections.GetBaglanti(), trGenel, _StokID);
 
                 AraGrup = new clsTablolar.Stok.csStokAraGrup(SqlConnections.GetBaglanti(), trGenel, Stok.StokAraGrupID);
+                YeniGruplama = new clsTablolar.Stok.csStokGrupV2();
+                YeniGruplama.Getir(SqlConnections.GetBaglanti(), trGenel, Stok.StokID);
+
+                //listBoxControl1.DataSource = YeniGruplama.dt;
+
+                ucStokGruplari1.listBoxControl1.DataSource = YeniGruplama.dt;
+                ucStokGruplari1.YeniGruplama = YeniGruplama;
 
                 ResimleriGetir();
                 GrupDoldur();
@@ -390,8 +402,7 @@ namespace Aresv2.Stok
             lkpGrup.Properties.DisplayMember = "StokGrupAdi";
             lkpGrup.Properties.ValueMember = "StokGrupID";
 
-            treeList1.DataSource = Grup.dt;
-            
+            //treeList1.DataSource = Grup.dt;
         }
 
         private void AraGrupYukle()
@@ -531,8 +542,13 @@ namespace Aresv2.Stok
                     clsTablolar.csNumaraVer numver = new csNumaraVer();
                     txtStokKodu.EditValue = numver.VarsayilanNumaraVer_ve_Kaydet(SqlConnections.GetBaglanti(), trGenel, IslemTipi.StokKarti);
                 }
+
+
+
                 Stok.StokGuncelle(SqlConnections.GetBaglanti(), trGenel);
                 _StokID = Stok.StokID;
+
+                YeniGruplama.Kaydet(SqlConnections.GetBaglanti(), trGenel, _StokID);
 
                 BirimCevirme.StokBirimCevrimGuncelle(SqlConnections.GetBaglanti(), trGenel, Stok.StokID);
 
@@ -1331,20 +1347,7 @@ namespace Aresv2.Stok
             }
         }
 
-        private void gvSatisFiyatlari_InvalidValueException(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
-        {
 
-        }
-
-        private void gvSatisFiyatlari_RowLoaded(object sender, DevExpress.XtraGrid.Views.Base.RowEventArgs e)
-        {
-
-        }
-
-        private void gvSatisFiyatlari_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
-        {
-
-        }
 
         private void gvSatisFiyatlari_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
@@ -1386,12 +1389,57 @@ namespace Aresv2.Stok
             frm.Show();
         }
 
+        private void btnGrupSec_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (frmStokGruplari frm = new frmStokGruplari(frmStokGruplari.NasilAcsin.AramaIcin))
+                {
+                    frm.treeList1.OptionsBehavior.Editable = false;
+                    if (YeniGruplama.dt.Rows.Count != 0)
+                    {
+                        frm.SeciliStokGruplari = new System.Collections.Generic.List<frmStokGruplari.SeciliStokGrubu>();
+                        foreach (var item in YeniGruplama.dt.AsEnumerable())
+                        {
+                            if (item.RowState != DataRowState.Deleted)
+                                frm.SeciliStokGruplari.Add(new frmStokGruplari.SeciliStokGrubu() { StokGrupID = (int)item["StokGrupID"] });
+                        }
+                    }
+
+                    if (frm.ShowDialog() == DialogResult.Yes)
+
+                        foreach (var item in frm.SeciliStokGruplari)
+                        {
+                            if (YeniGruplama.dt.Rows.Find(item.StokGrupID) == null)
+                            {
+                                DataRow dr = YeniGruplama.dt.NewRow();
+
+                                dr["ID"] = -1;
+                                dr["StokGrupID"] = item.StokGrupID;
+                                dr["StokGrupAdi"] = item.StokGrupAdi;
+                                YeniGruplama.dt.Rows.Add(dr);
+                                ButonlariAktifPasifYap(true);
+                            }
+                        }
+                }
+            }
+            catch (Exception EX)
+            {
+                //throw EX;
+            }
+
+        }
+
+        private void ucStokGruplari1_VeriDegisti(object sender, EventArgs e)
+        {
+            ButonlariAktifPasifYap(true);
+        }
+
         public System.Drawing.Image cropImage(System.Drawing.Image img, Rectangle cropArea)
         {
             Bitmap bmpImage = new Bitmap(img);
             Bitmap bmpCrop = bmpImage.Clone(cropArea, bmpImage.PixelFormat);
             return (System.Drawing.Image)(bmpCrop);
-
         }
     }
 }

@@ -592,6 +592,12 @@
     <Compile Include="Cek\frmCekListesi.Designer.cs">
       <DependentUpon>frmCekListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl1.Designer.cs">
+      <DependentUpon>CustomControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEvrakYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -937,6 +943,12 @@
     </Compile>
     <Compile Include="Terazi\frmTeraziStokGruplarininStokButonlari.Designer.cs">
       <DependentUpon>frmTeraziStokGruplarininStokButonlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucStokGruplari.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStokGruplari.Designer.cs">
+      <DependentUpon>ucStokGruplari.cs</DependentUpon>
     </Compile>
     <Compile Include="Web References\n11CategoryService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -1290,6 +1302,9 @@
     <EmbeddedResource Include="cs\frmWebCam.resx">
       <DependentUpon>frmWebCam.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl1.resx">
+      <DependentUpon>CustomControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExceldenUrun,CariCek\frmExceldenCariAktar.resx">
       <DependentUpon>frmExceldenCariAktar.cs</DependentUpon>
     </EmbeddedResource>
@@ -1455,6 +1470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Terazi\frmTeraziStokGruplarininStokButonlari.resx">
       <DependentUpon>frmTeraziStokGruplarininStokButonlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStokGruplari.resx">
+      <DependentUpon>ucStokGruplari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Yazdirma\frmRaporDizaynListesiV2.resx">
       <DependentUpon>frmRaporDizaynListesiV2.cs</DependentUpon>

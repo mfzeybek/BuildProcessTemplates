@@ -292,6 +292,7 @@
     <Compile Include="Stok\csStokAraGrup.cs" />
     <Compile Include="Stok\csStokArama.cs" />
     <Compile Include="Stok\csStokBirimTanimlari.cs" />
+    <Compile Include="Stok\csStokGrupV2.cs" />
     <Compile Include="Stok\csStokunBirimleri.cs" />
     <Compile Include="Stok\csStokFiyat.cs" />
     <Compile Include="Stok\csStokFiyatKarsilastirma.cs" />
