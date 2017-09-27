@@ -76,6 +76,8 @@ namespace clsTablolar.Stok
         private Int16 _N11Entegrasyonu;
 
         private bool _TumFotograflariYukle;
+        private clsTablolar.Stok.csStokGrubuField[] _SeciliGruplar;
+        private bool _StokGrupHepsiniGetir;
 
 
         public bool SadeceFiyatiOlanlar
@@ -316,6 +318,8 @@ namespace clsTablolar.Stok
         }
 
         public bool TumFotograflariYukle { get => _TumFotograflariYukle; set => _TumFotograflariYukle = value; }
+        public csStokGrubuField[] SeciliGruplar { get => _SeciliGruplar; set => _SeciliGruplar = value; }
+        public bool StokGrupHepsiniGetir { get => _StokGrupHepsiniGetir; set => _StokGrupHepsiniGetir = value; }
 
 
         #endregion
@@ -669,6 +673,27 @@ WHERE     (s.Silindi = 'false') ";
             if (_N11Entegrasyonu != -1)
             {
                 da.SelectCommand.CommandText += " and s.StokID in (select StokID from n11Product) ";
+            }
+
+            if (SeciliGruplar != null && SeciliGruplar.Length != 0)
+            {
+
+                if (StokGrupHepsiniGetir)
+                    da.SelectCommand.CommandText += " and ( 1 = 2 ";
+
+                foreach (var item in SeciliGruplar)
+                {
+                    if (StokGrupHepsiniGetir)
+                        da.SelectCommand.CommandText += @" or ";
+                    else
+                        da.SelectCommand.CommandText += @" and ";
+                    //da.SelectCommand.CommandText += " and s.StokID in (select StokID from StokGrupV2 where StokGrupID = " + item.StokGrupID +")";
+                    da.SelectCommand.CommandText += @" s.StokID in (select StokID from[dbo].[StokAltGruplariniBul] (" + item.StokGrupID + ") as ahanda " +
+" inner join StokGrupV2 on StokGrupV2.StokGrupID = ahanda.StokGrupID) ";
+                }
+                if (StokGrupHepsiniGetir)
+                    da.SelectCommand.CommandText += " ) ";
+
             }
 
             dt_StokListesi = new DataTable();

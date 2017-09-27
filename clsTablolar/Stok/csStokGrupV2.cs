@@ -15,10 +15,14 @@ namespace clsTablolar.Stok
             GC.SuppressFinalize(this);
         }
 
+
         public DataTable dt;
         SqlDataAdapter da;
 
-        public void Kaydet(SqlConnection Baglanti, SqlTransaction Tr, int StokID)
+        public csStokGrubuField[] StokGruplari { get; set; }
+
+
+        public void Kaydet(SqlConnection Baglanti, SqlTransaction Tr, int StokID) // eğer -1 verirsen 
         {
             try
             {

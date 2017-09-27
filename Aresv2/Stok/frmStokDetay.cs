@@ -1398,11 +1398,11 @@ namespace Aresv2.Stok
                     frm.treeList1.OptionsBehavior.Editable = false;
                     if (YeniGruplama.dt.Rows.Count != 0)
                     {
-                        frm.SeciliStokGruplari = new System.Collections.Generic.List<frmStokGruplari.SeciliStokGrubu>();
+                        frm.SeciliStokGruplari = new System.Collections.Generic.List<clsTablolar.Stok.csStokGrubuField>();
                         foreach (var item in YeniGruplama.dt.AsEnumerable())
                         {
                             if (item.RowState != DataRowState.Deleted)
-                                frm.SeciliStokGruplari.Add(new frmStokGruplari.SeciliStokGrubu() { StokGrupID = (int)item["StokGrupID"] });
+                                frm.SeciliStokGruplari.Add(new clsTablolar.Stok.csStokGrubuField() { StokGrupID = (int)item["StokGrupID"] });
                         }
                     }
 

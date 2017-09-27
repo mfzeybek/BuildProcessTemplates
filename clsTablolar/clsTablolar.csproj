@@ -287,6 +287,7 @@
     <Compile Include="Sayim\csSayimKarsilastirma.cs" />
     <Compile Include="StokIhtiyac\csStokIhtiyacDurumTanimlari.cs" />
     <Compile Include="Stok\csIlgiliStok.cs" />
+    <Compile Include="Stok\csStokGrubuField.cs" />
     <Compile Include="Stok\csStok.cs" />
     <Compile Include="Stok\csStokAltGrup.cs" />
     <Compile Include="Stok\csStokAraGrup.cs" />

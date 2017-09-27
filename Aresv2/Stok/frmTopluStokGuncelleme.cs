@@ -49,6 +49,7 @@ namespace Aresv2.Stok
                     for (int i = 0; i < Liste.gvStokListesi.SelectedRowsCount; i++)
                     {
                         StokYenile(Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(Liste.gvStokListesi.GetSelectedRows()[i], "StokID")));
+
                     }
                 }
                 else
@@ -58,6 +59,8 @@ namespace Aresv2.Stok
                         StokYenile(Convert.ToInt32(Liste.layoutView1.GetRowCellValue(Liste.layoutView1.GetSelectedRows()[i], "StokID")));
                     }
                 }
+
+
                 Trgenel.Commit();
             }
             catch (Exception hata)
@@ -66,6 +69,12 @@ namespace Aresv2.Stok
                 frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
                 frmHataBildir.ShowDialog();
             }
+        }
+
+        void StokGrupYenile(int StokID)
+        {
+
+
         }
 
 
@@ -102,6 +111,31 @@ namespace Aresv2.Stok
                 StokBilgileri.OzelKod2 = txtOzelKod2.Text;
             if (checkEdit_OzelKod3Degistir.Checked)
                 StokBilgileri.OzelKod3 = txtOzelKod3.Text;
+
+
+
+
+            if (ceStokGrubu.CheckState == CheckState.Checked)
+            {
+                clsTablolar.Stok.csStokGrupV2 grup = new clsTablolar.Stok.csStokGrupV2();
+                grup.Getir(SqlConnections.GetBaglanti(), Trgenel, StokID);
+                foreach (var item in ucStokGruplari1.AhandaBuradakiler)
+                {
+                    if (grup.dt.Rows.Find(item.StokGrupID) == null)
+                    {
+                        DataRow dr = grup.dt.NewRow();
+                        dr["ID"] = -1;
+                        dr["StokGrupID"] = item.StokGrupID;
+                        dr["StokGrupAdi"] = item.StokGrupAdi;
+                        grup.dt.Rows.Add(dr);
+                    }
+                }
+                grup.Kaydet(SqlConnections.GetBaglanti(), Trgenel, StokID);
+            }
+
+
+
+
 
             StokBilgileri.StokGuncelle(SqlConnections.GetBaglanti(), Trgenel);
             //Stok.StokUrunTanitimGuncelle(SqlConnections.GetBaglanti(), Trgenel, Convert.ToBoolean(checkEdit_UrunTanitimdaGosterilsinMi.EditValue), Convert.ToInt32(Liste.gvStokListesi.GetRowCellValue(i, "StokID")));
@@ -283,6 +317,14 @@ namespace Aresv2.Stok
                 txtOzelKod3.Enabled = true;
             else
                 txtOzelKod3.Enabled = false;
+        }
+
+        private void ceStokGrubu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ceStokGrubu.CheckState == CheckState.Checked)
+                ucStokGruplari1.Enabled = true;
+            else
+                ucStokGruplari1.Enabled = false;
         }
     }
 }

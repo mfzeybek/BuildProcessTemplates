@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Aresv2.Stok
 {
@@ -82,9 +76,12 @@ namespace Aresv2.Stok
                 MessageBox.Show("Bu işlemi yapmadan önce kaydetmen gerekiyor");
                 return;
             }
-            Guplar.dt.Rows.Add(Guplar.dt.NewRow());
-            Guplar.dt.Rows[Guplar.dt.Rows.Count - 1]["UstGrupID"] = treeList1.GetFocusedRowCellValue(colStokGrupID);
-            Guplar.dt.Rows[Guplar.dt.Rows.Count - 1]["StokGrupID"] = -1 * ahabunesacmalik;
+            DataRow dr = Guplar.dt.NewRow();
+
+            //Guplar.dt.Rows.Add(Guplar.dt.NewRow());
+            dr["UstGrupID"] = treeList1.GetFocusedRowCellValue(colStokGrupID);
+            dr["StokGrupID"] = -1 * ahabunesacmalik;
+            Guplar.dt.Rows.Add(dr);
             ahabunesacmalik++;
         }
 
@@ -117,17 +114,17 @@ namespace Aresv2.Stok
             public string StokGrupAdi { get; set; }
         }
 
-        public List<SeciliStokGrubu> SeciliStokGruplari;
+        public List<clsTablolar.Stok.csStokGrubuField> SeciliStokGruplari;
 
         private void btnTamam_Click(object sender, EventArgs e)
         {
             //SeciliStokGruplari = treeList1.GetSelectedCells().Capacity;
 
-            SeciliStokGruplari = new List<SeciliStokGrubu>(treeList1.GetAllCheckedNodes().Count);
+            SeciliStokGruplari = new List<clsTablolar.Stok.csStokGrubuField>(treeList1.GetAllCheckedNodes().Count);
 
             foreach (var item in treeList1.GetAllCheckedNodes())
             {
-                SeciliStokGruplari.Add(new SeciliStokGrubu() { StokGrupAdi = item[0].ToString(), StokGrupID = (int)treeList1.GetRowCellValue(item, colStokGrupID) });
+                SeciliStokGruplari.Add(new clsTablolar.Stok.csStokGrubuField() { StokGrupAdi = item[0].ToString(), StokGrupID = (int)treeList1.GetRowCellValue(item, colStokGrupID) });
             }
             this.DialogResult = DialogResult.Yes;
         }

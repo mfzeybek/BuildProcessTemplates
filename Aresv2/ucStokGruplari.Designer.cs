@@ -47,10 +47,10 @@
             // 
             // btnGrupSil
             // 
-            this.btnGrupSil.Location = new System.Drawing.Point(424, 508);
+            this.btnGrupSil.Location = new System.Drawing.Point(350, 350);
             this.btnGrupSil.Margin = new System.Windows.Forms.Padding(6);
             this.btnGrupSil.Name = "btnGrupSil";
-            this.btnGrupSil.Size = new System.Drawing.Size(129, 42);
+            this.btnGrupSil.Size = new System.Drawing.Size(105, 42);
             this.btnGrupSil.StyleController = this.UserControl1layoutControl1ConvertedLayout;
             this.btnGrupSil.TabIndex = 12;
             this.btnGrupSil.Text = "Sil";
@@ -65,15 +65,15 @@
             this.UserControl1layoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.UserControl1layoutControl1ConvertedLayout.Name = "UserControl1layoutControl1ConvertedLayout";
             this.UserControl1layoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.UserControl1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(561, 558);
+            this.UserControl1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(463, 400);
             this.UserControl1layoutControl1ConvertedLayout.TabIndex = 13;
             // 
             // btnGrupSec
             // 
-            this.btnGrupSec.Location = new System.Drawing.Point(8, 508);
+            this.btnGrupSec.Location = new System.Drawing.Point(8, 350);
             this.btnGrupSec.Margin = new System.Windows.Forms.Padding(6);
             this.btnGrupSec.Name = "btnGrupSec";
-            this.btnGrupSec.Size = new System.Drawing.Size(408, 42);
+            this.btnGrupSec.Size = new System.Drawing.Size(334, 42);
             this.btnGrupSec.StyleController = this.UserControl1layoutControl1ConvertedLayout;
             this.btnGrupSec.TabIndex = 11;
             this.btnGrupSec.Text = "Grup Seç";
@@ -83,11 +83,12 @@
             // 
             this.listBoxControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.listBoxControl1.DisplayMember = "StokGrupAdi";
+            this.listBoxControl1.HorizontalScrollbar = true;
             this.listBoxControl1.Location = new System.Drawing.Point(8, 8);
             this.listBoxControl1.Margin = new System.Windows.Forms.Padding(6);
             this.listBoxControl1.MultiColumn = true;
             this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(545, 492);
+            this.listBoxControl1.Size = new System.Drawing.Size(447, 334);
             this.listBoxControl1.StyleController = this.UserControl1layoutControl1ConvertedLayout;
             this.listBoxControl1.TabIndex = 10;
             this.listBoxControl1.ValueMember = "StokGrupID";
@@ -104,24 +105,24 @@
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 6;
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(561, 558);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(463, 400);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnGrupSil;
-            this.layoutControlItem1.Location = new System.Drawing.Point(416, 500);
+            this.layoutControlItem1.Location = new System.Drawing.Point(342, 342);
             this.layoutControlItem1.Name = "btnGrupSilitem";
-            this.layoutControlItem1.Size = new System.Drawing.Size(137, 50);
+            this.layoutControlItem1.Size = new System.Drawing.Size(113, 50);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnGrupSec;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 500);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 342);
             this.layoutControlItem2.Name = "btnGrupSecitem";
-            this.layoutControlItem2.Size = new System.Drawing.Size(416, 50);
+            this.layoutControlItem2.Size = new System.Drawing.Size(342, 50);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -130,7 +131,7 @@
             this.layoutControlItem3.Control = this.listBoxControl1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "listBoxControl1item";
-            this.layoutControlItem3.Size = new System.Drawing.Size(553, 500);
+            this.layoutControlItem3.Size = new System.Drawing.Size(455, 342);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -139,8 +140,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.UserControl1layoutControl1ConvertedLayout);
+            this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "ucStokGruplari";
-            this.Size = new System.Drawing.Size(561, 558);
+            this.Size = new System.Drawing.Size(463, 400);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ucStokGruplari_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.UserControl1layoutControl1ConvertedLayout)).EndInit();
             this.UserControl1layoutControl1ConvertedLayout.ResumeLayout(false);

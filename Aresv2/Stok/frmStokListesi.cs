@@ -150,6 +150,7 @@ namespace Aresv2.Stok
             txtOzelKodu3.DataBindings.Add("EditValue", StokArama, "OzelKod3", false, DataSourceUpdateMode.OnPropertyChanged);
 
             cmbStokTipi.DataBindings.Add("SelectedIndex", StokArama, "StokTipi", false, DataSourceUpdateMode.OnPropertyChanged);
+            ceGruptakilerinHepsi.DataBindings.Add("Checked", StokArama, "StokGrupHepsiniGetir", false, DataSourceUpdateMode.OnPropertyChanged);
 
             txtStokAdi.Focus();
         }
@@ -163,6 +164,8 @@ namespace Aresv2.Stok
         {
             try
             {
+                layoutControlItem43.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+
                 trGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 Grubu = new clsTablolar.Stok.csStokGrup(SqlConnections.GetBaglanti(), trGenel, -1);
                 AraGrubu = new clsTablolar.Stok.csStokAraGrup(SqlConnections.GetBaglanti(), trGenel, -1);
@@ -327,6 +330,17 @@ namespace Aresv2.Stok
                     gcStokListesi.MainView = gvStokListesi;
                     StokArama.TumFotograflariYukle = false;
                 }
+
+                if (ucStokGruplari1.AhandaBuradakiler != null && ucStokGruplari1.AhandaBuradakiler.Count != 0)
+                {
+                    StokArama.SeciliGruplar = ucStokGruplari1.AhandaBuradakiler.ToArray();
+
+                    //StokArama.SeciliGruplar = 
+                }
+                else
+                    StokArama.SeciliGruplar = null;
+
+
 
                 gvStokListesi.Columns.Clear();
                 //layoutView1.Columns.Clear();
