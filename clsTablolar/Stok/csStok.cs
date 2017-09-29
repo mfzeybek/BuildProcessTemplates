@@ -455,7 +455,7 @@ SELECT     dbo.Stok.StokID, dbo.Stok.Aktif, dbo.Stok.StokKodu, dbo.Stok.StokAdi,
                       dbo.Stok.StokBirimID, dbo.Stok.iskOrani1, dbo.Stok.iskOrani2, dbo.Stok.iskOrani3, MinumumMiktar, OlmasiGerekenMiktar ,MaksimumMiktar, EtiketAdi, AlisKdv, SatisKdv, Barkod, 
                       UrunTanitimdaGoster, RafYeriID, RafYeriAciklama, ISNULL(Garanti, 0) Garanti, EMagazaErisimi, Desi, HemenAlKategoriID, HemenAlID, HemenAlKategoriGuncellenmesin, HemenAlDrum, HemenAlSira, StokSayimGrubuID, HemenAlAnahtarKelime, StokWebLink, EticaretStokDurumID_StoktaVarsa, EticaretStokDurumID_StoktaYoksa, StokBirim.BirimAdi, ISNULL(Stok.Agirligi, 0) Agirligi , StokTipi
 
-FROM         dbo.Stok 
+FROM         dbo.Stok WITH (NOLOCK)
 left join StokBirim on StokBirim.BirimID = Stok.StokBirimID
 
 WHERE     (dbo.Stok.StokID = @StokID)

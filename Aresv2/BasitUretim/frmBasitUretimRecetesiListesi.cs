@@ -49,11 +49,11 @@ namespace Aresv2.BasitUretim
 
             if (ListelemeIcinmiAciliyor)
             {
-                btnSec.Visible = false;
+                btnSecItem.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             }
             else
             {
-                btnKaydiAc.Visible = false;
+                btnKaydiAcItem.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             }
 
             try

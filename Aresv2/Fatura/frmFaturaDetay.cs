@@ -1324,10 +1324,6 @@ order by fatura.FaturaTarihi desc", SqlConnections.GetBaglanti()))
 
         }
 
-        private void simpleButton26_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {

@@ -358,7 +358,8 @@ namespace Aresv2.Stok
             }
             catch (Exception hata)
             {
-                trGenel.Rollback();
+                try { trGenel.Rollback(); } catch (Exception) { }
+
                 frmHataBildir frmHataBildir = new frmHataBildir(hata.Message, hata.StackTrace);
                 frmHataBildir.ShowDialog();
             }

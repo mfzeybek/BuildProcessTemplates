@@ -28,11 +28,12 @@
     /// </summary>
     private void InitializeComponent()
     {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions3 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions4 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions5 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions6 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -47,7 +48,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu_Islemler = new DevExpress.XtraBars.PopupMenu(this.components);
             this.frmFaturaDetayConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
@@ -142,7 +143,7 @@
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dropDownButton_Yazdir = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu_yazdir = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -180,7 +181,7 @@
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl7 = new DevExpress.XtraLayout.LayoutControl();
             this.lkpFaturaGrubu = new DevExpress.XtraEditors.LookUpEdit();
-            this.barManager2 = new DevExpress.XtraBars.BarManager();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -314,12 +315,12 @@
             this.barBtnYazdir = new DevExpress.XtraBars.BarButtonItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.dropDownButton2 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton3 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitContainerControl4 = new DevExpress.XtraEditors.SplitContainerControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
@@ -865,7 +866,7 @@
             this.frmFaturaDetayConvertedLayout.Controls.Add(this.btnUrunlariBirlestir);
             this.frmFaturaDetayConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmFaturaDetayConvertedLayout.Location = new System.Drawing.Point(0, 0);
-            this.frmFaturaDetayConvertedLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frmFaturaDetayConvertedLayout.Margin = new System.Windows.Forms.Padding(4);
             this.frmFaturaDetayConvertedLayout.Name = "frmFaturaDetayConvertedLayout";
             this.frmFaturaDetayConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(436, 411, 831, 849);
             this.frmFaturaDetayConvertedLayout.Root = this.layoutControlGroup2;
@@ -875,7 +876,7 @@
             // simpleButton4
             // 
             this.simpleButton4.Location = new System.Drawing.Point(6, 77);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(93, 92);
             this.simpleButton4.StyleController = this.frmFaturaDetayConvertedLayout;
@@ -1993,7 +1994,7 @@
             this.txtFaturaNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtFaturaNo.Name = "txtFaturaNo";
             this.txtFaturaNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Undo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Numara Ver")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Undo, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Numara Ver")});
             this.txtFaturaNo.Properties.MaxLength = 50;
             this.txtFaturaNo.Size = new System.Drawing.Size(334, 34);
             this.txtFaturaNo.StyleController = this.layoutControl4;
@@ -2063,7 +2064,7 @@
             this.layoutControl5.Controls.Add(this.btnCariKartAc);
             this.layoutControl5.Controls.Add(this.BtnCariBul);
             this.layoutControl5.Location = new System.Drawing.Point(483, 51);
-            this.layoutControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl5.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl5.Name = "layoutControl5";
             this.layoutControl5.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(539, 210, 450, 400);
             this.layoutControl5.Root = this.layoutControlGroup5;
@@ -2178,7 +2179,7 @@
             this.layoutControl6.Controls.Add(this.txtVergiDairesi);
             this.layoutControl6.Controls.Add(this.txtIlce);
             this.layoutControl6.Location = new System.Drawing.Point(960, 51);
-            this.layoutControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl6.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl6.Name = "layoutControl6";
             this.layoutControl6.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1095, 210, 450, 400);
             this.layoutControl6.Root = this.layoutControlGroup6;
@@ -2326,7 +2327,7 @@
             this.layoutControl7.Controls.Add(this.lkpDepo);
             this.layoutControl7.Controls.Add(this.txtFaturaBarkodu);
             this.layoutControl7.Location = new System.Drawing.Point(1437, 51);
-            this.layoutControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl7.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl7.Name = "layoutControl7";
             this.layoutControl7.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(230, 629, 1246, 478);
             this.layoutControl7.Root = this.layoutControlGroup8;
@@ -2575,12 +2576,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcIskontoDetaylari.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
-            this.gcIskontoDetaylari.Location = new System.Drawing.Point(228, 51);
+            this.gcIskontoDetaylari.Location = new System.Drawing.Point(202, 51);
             this.gcIskontoDetaylari.MainView = this.gvIskontoDetaylari;
             this.gcIskontoDetaylari.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.gcIskontoDetaylari.MenuManager = this.barManager2;
             this.gcIskontoDetaylari.Name = "gcIskontoDetaylari";
-            this.gcIskontoDetaylari.Size = new System.Drawing.Size(1453, 174);
+            this.gcIskontoDetaylari.Size = new System.Drawing.Size(1505, 174);
             this.gcIskontoDetaylari.TabIndex = 16;
             this.gcIskontoDetaylari.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIskontoDetaylari,
@@ -2600,7 +2601,7 @@
             // 
             // simpleButton6
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(1796, 164);
+            this.simpleButton6.Location = new System.Drawing.Point(1809, 151);
             this.simpleButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(85, 24);
@@ -2611,7 +2612,7 @@
             // 
             // simpleButton7
             // 
-            this.simpleButton7.Location = new System.Drawing.Point(1713, 164);
+            this.simpleButton7.Location = new System.Drawing.Point(1726, 151);
             this.simpleButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(75, 24);
@@ -2622,7 +2623,7 @@
             // 
             // simpleButton8
             // 
-            this.simpleButton8.Location = new System.Drawing.Point(1796, 112);
+            this.simpleButton8.Location = new System.Drawing.Point(1809, 99);
             this.simpleButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(85, 18);
@@ -2633,7 +2634,7 @@
             // 
             // simpleButton9
             // 
-            this.simpleButton9.Location = new System.Drawing.Point(1713, 112);
+            this.simpleButton9.Location = new System.Drawing.Point(1726, 99);
             this.simpleButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(75, 18);
@@ -2644,7 +2645,7 @@
             // 
             // simpleButton10
             // 
-            this.simpleButton10.Location = new System.Drawing.Point(1796, 138);
+            this.simpleButton10.Location = new System.Drawing.Point(1809, 125);
             this.simpleButton10.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(85, 18);
@@ -2655,7 +2656,7 @@
             // 
             // simpleButton11
             // 
-            this.simpleButton11.Location = new System.Drawing.Point(1713, 138);
+            this.simpleButton11.Location = new System.Drawing.Point(1726, 125);
             this.simpleButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(75, 18);
@@ -2666,7 +2667,7 @@
             // 
             // btnStokIskontoBirTutarGir
             // 
-            this.btnStokIskontoBirTutarGir.Location = new System.Drawing.Point(113, 112);
+            this.btnStokIskontoBirTutarGir.Location = new System.Drawing.Point(100, 99);
             this.btnStokIskontoBirTutarGir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnStokIskontoBirTutarGir.Name = "btnStokIskontoBirTutarGir";
             this.btnStokIskontoBirTutarGir.Size = new System.Drawing.Size(83, 24);
@@ -2674,10 +2675,11 @@
             this.btnStokIskontoBirTutarGir.TabIndex = 13;
             this.btnStokIskontoBirTutarGir.Text = "Tutar Gir 1";
             this.btnStokIskontoBirTutarGir.Visible = false;
+            this.btnStokIskontoBirTutarGir.Click += new System.EventHandler(this.btnStokIskontoBirTutarGir_Click);
             // 
             // btnStokIskontoIkiTutarGir
             // 
-            this.btnStokIskontoIkiTutarGir.Location = new System.Drawing.Point(113, 144);
+            this.btnStokIskontoIkiTutarGir.Location = new System.Drawing.Point(100, 131);
             this.btnStokIskontoIkiTutarGir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnStokIskontoIkiTutarGir.Name = "btnStokIskontoIkiTutarGir";
             this.btnStokIskontoIkiTutarGir.Size = new System.Drawing.Size(83, 18);
@@ -2685,10 +2687,11 @@
             this.btnStokIskontoIkiTutarGir.TabIndex = 4;
             this.btnStokIskontoIkiTutarGir.Text = "Tutar Gir 2";
             this.btnStokIskontoIkiTutarGir.Visible = false;
+            this.btnStokIskontoIkiTutarGir.Click += new System.EventHandler(this.btnStokIskontoIkiTutarGir_Click);
             // 
             // btnStokIskontoBirinciYuzdeGir
             // 
-            this.btnStokIskontoBirinciYuzdeGir.Location = new System.Drawing.Point(30, 112);
+            this.btnStokIskontoBirinciYuzdeGir.Location = new System.Drawing.Point(17, 99);
             this.btnStokIskontoBirinciYuzdeGir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnStokIskontoBirinciYuzdeGir.Name = "btnStokIskontoBirinciYuzdeGir";
             this.btnStokIskontoBirinciYuzdeGir.Size = new System.Drawing.Size(75, 24);
@@ -2700,7 +2703,7 @@
             // 
             // btnStokIskontoUcuncuYuzdeGir
             // 
-            this.btnStokIskontoUcuncuYuzdeGir.Location = new System.Drawing.Point(30, 170);
+            this.btnStokIskontoUcuncuYuzdeGir.Location = new System.Drawing.Point(17, 157);
             this.btnStokIskontoUcuncuYuzdeGir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnStokIskontoUcuncuYuzdeGir.Name = "btnStokIskontoUcuncuYuzdeGir";
             this.btnStokIskontoUcuncuYuzdeGir.Size = new System.Drawing.Size(75, 18);
@@ -2711,7 +2714,7 @@
             // 
             // btnStokIskontoIkinciYuzdeGir
             // 
-            this.btnStokIskontoIkinciYuzdeGir.Location = new System.Drawing.Point(30, 144);
+            this.btnStokIskontoIkinciYuzdeGir.Location = new System.Drawing.Point(17, 131);
             this.btnStokIskontoIkinciYuzdeGir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnStokIskontoIkinciYuzdeGir.Name = "btnStokIskontoIkinciYuzdeGir";
             this.btnStokIskontoIkinciYuzdeGir.Size = new System.Drawing.Size(75, 18);
@@ -2722,7 +2725,7 @@
             // 
             // btnStokIskontoUcTutarGir
             // 
-            this.btnStokIskontoUcTutarGir.Location = new System.Drawing.Point(113, 170);
+            this.btnStokIskontoUcTutarGir.Location = new System.Drawing.Point(100, 157);
             this.btnStokIskontoUcTutarGir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnStokIskontoUcTutarGir.Name = "btnStokIskontoUcTutarGir";
             this.btnStokIskontoUcTutarGir.Size = new System.Drawing.Size(83, 18);
@@ -2747,7 +2750,7 @@
             // simpleButton18
             // 
             this.simpleButton18.Location = new System.Drawing.Point(643, 101);
-            this.simpleButton18.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton18.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton18.Name = "simpleButton18";
             this.simpleButton18.Size = new System.Drawing.Size(1262, 42);
             this.simpleButton18.StyleController = this.frmFaturaDetayConvertedLayout;
@@ -3002,7 +3005,7 @@
             // btnSatirAciklama
             // 
             this.btnSatirAciklama.Location = new System.Drawing.Point(72, 582);
-            this.btnSatirAciklama.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSatirAciklama.Margin = new System.Windows.Forms.Padding(6);
             this.btnSatirAciklama.Name = "btnSatirAciklama";
             this.btnSatirAciklama.Size = new System.Drawing.Size(48, 85);
             this.btnSatirAciklama.StyleController = this.frmFaturaDetayConvertedLayout;
@@ -3064,7 +3067,7 @@
             // btnUrunlariBirlestir
             // 
             this.btnUrunlariBirlestir.Location = new System.Drawing.Point(72, 759);
-            this.btnUrunlariBirlestir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUrunlariBirlestir.Margin = new System.Windows.Forms.Padding(6);
             this.btnUrunlariBirlestir.Name = "btnUrunlariBirlestir";
             this.btnUrunlariBirlestir.Size = new System.Drawing.Size(48, 99);
             this.btnUrunlariBirlestir.StyleController = this.frmFaturaDetayConvertedLayout;
@@ -3173,8 +3176,8 @@
             this.xtraTabControl1item.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1item.Name = "xtraTabControl1item";
             this.xtraTabControl1item.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.xtraTabControl1item.SelectedTabPage = this.layoutControlGroup23;
-            this.xtraTabControl1item.SelectedTabPageIndex = 0;
+            this.xtraTabControl1item.SelectedTabPage = this.layoutControlGroup24;
+            this.xtraTabControl1item.SelectedTabPageIndex = 1;
             this.xtraTabControl1item.Size = new System.Drawing.Size(1916, 236);
             this.xtraTabControl1item.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, -3, 4, -3);
             this.xtraTabControl1item.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -3259,9 +3262,9 @@
             // 
             this.gcIskontoDetaylariitem.Control = this.gcIskontoDetaylari;
             this.gcIskontoDetaylariitem.CustomizationFormText = "gcIskontoDetaylariitem";
-            this.gcIskontoDetaylariitem.Location = new System.Drawing.Point(222, 0);
+            this.gcIskontoDetaylariitem.Location = new System.Drawing.Point(196, 0);
             this.gcIskontoDetaylariitem.Name = "gcIskontoDetaylariitem";
-            this.gcIskontoDetaylariitem.Size = new System.Drawing.Size(1461, 182);
+            this.gcIskontoDetaylariitem.Size = new System.Drawing.Size(1513, 182);
             this.gcIskontoDetaylariitem.TextSize = new System.Drawing.Size(0, 0);
             this.gcIskontoDetaylariitem.TextVisible = false;
             // 
@@ -3275,10 +3278,11 @@
             this.btnCariIskontoIkiYuzdeGiritem,
             this.btnCariIskontoUcYuzdeGiritem,
             this.btnCariIskontoUcTutarGiritem});
-            this.groupControl5item.Location = new System.Drawing.Point(1683, 0);
+            this.groupControl5item.Location = new System.Drawing.Point(1709, 0);
             this.groupControl5item.Name = "groupControl5item";
             this.groupControl5item.OptionsItemText.TextToControlDistance = 6;
-            this.groupControl5item.Size = new System.Drawing.Size(224, 182);
+            this.groupControl5item.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.groupControl5item.Size = new System.Drawing.Size(198, 182);
             this.groupControl5item.Text = "Cari İskontoları";
             // 
             // btnCariIskontoBirTutarGiritem
@@ -3341,7 +3345,7 @@
             this.btnCariIskontoUcYuzdeGiritem.MaxSize = new System.Drawing.Size(83, 32);
             this.btnCariIskontoUcYuzdeGiritem.MinSize = new System.Drawing.Size(83, 32);
             this.btnCariIskontoUcYuzdeGiritem.Name = "btnCariIskontoUcYuzdeGiritem";
-            this.btnCariIskontoUcYuzdeGiritem.Size = new System.Drawing.Size(83, 45);
+            this.btnCariIskontoUcYuzdeGiritem.Size = new System.Drawing.Size(83, 71);
             this.btnCariIskontoUcYuzdeGiritem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.btnCariIskontoUcYuzdeGiritem.TextSize = new System.Drawing.Size(0, 0);
             this.btnCariIskontoUcYuzdeGiritem.TextVisible = false;
@@ -3354,7 +3358,7 @@
             this.btnCariIskontoUcTutarGiritem.MaxSize = new System.Drawing.Size(93, 32);
             this.btnCariIskontoUcTutarGiritem.MinSize = new System.Drawing.Size(93, 32);
             this.btnCariIskontoUcTutarGiritem.Name = "btnCariIskontoUcTutarGiritem";
-            this.btnCariIskontoUcTutarGiritem.Size = new System.Drawing.Size(93, 45);
+            this.btnCariIskontoUcTutarGiritem.Size = new System.Drawing.Size(93, 71);
             this.btnCariIskontoUcTutarGiritem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.btnCariIskontoUcTutarGiritem.TextSize = new System.Drawing.Size(0, 0);
             this.btnCariIskontoUcTutarGiritem.TextVisible = false;
@@ -3372,7 +3376,8 @@
             this.groupControl4item.Location = new System.Drawing.Point(0, 0);
             this.groupControl4item.Name = "groupControl4item";
             this.groupControl4item.OptionsItemText.TextToControlDistance = 6;
-            this.groupControl4item.Size = new System.Drawing.Size(222, 182);
+            this.groupControl4item.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.groupControl4item.Size = new System.Drawing.Size(196, 182);
             this.groupControl4item.Text = "Stok İskontoları";
             // 
             // btnStokIskontoBirTutarGiritem
@@ -3435,7 +3440,7 @@
             this.btnStokIskontoUcuncuYuzdeGiritem.MaxSize = new System.Drawing.Size(91, 26);
             this.btnStokIskontoUcuncuYuzdeGiritem.MinSize = new System.Drawing.Size(91, 26);
             this.btnStokIskontoUcuncuYuzdeGiritem.Name = "btnStokIskontoUcuncuYuzdeGiritem";
-            this.btnStokIskontoUcuncuYuzdeGiritem.Size = new System.Drawing.Size(91, 39);
+            this.btnStokIskontoUcuncuYuzdeGiritem.Size = new System.Drawing.Size(91, 65);
             this.btnStokIskontoUcuncuYuzdeGiritem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.btnStokIskontoUcuncuYuzdeGiritem.TextSize = new System.Drawing.Size(0, 0);
             this.btnStokIskontoUcuncuYuzdeGiritem.TextVisible = false;
@@ -3448,7 +3453,7 @@
             this.btnStokIskontoUcTutarGiritem.MaxSize = new System.Drawing.Size(83, 26);
             this.btnStokIskontoUcTutarGiritem.MinSize = new System.Drawing.Size(83, 26);
             this.btnStokIskontoUcTutarGiritem.Name = "btnStokIskontoUcTutarGiritem";
-            this.btnStokIskontoUcTutarGiritem.Size = new System.Drawing.Size(83, 39);
+            this.btnStokIskontoUcTutarGiritem.Size = new System.Drawing.Size(83, 65);
             this.btnStokIskontoUcTutarGiritem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.btnStokIskontoUcTutarGiritem.TextSize = new System.Drawing.Size(0, 0);
             this.btnStokIskontoUcTutarGiritem.TextVisible = false;
@@ -3751,7 +3756,7 @@
             this.layoutControlGroup7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.layoutControlGroup7.BestFitWeight = 30;
             this.layoutControlGroup7.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Stok İşlemleri", true, buttonImageOptions1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Stok İşlemleri", true, buttonImageOptions4)});
             this.layoutControlGroup7.ExpandButtonVisible = true;
             this.layoutControlGroup7.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -4779,7 +4784,7 @@
             // 
             this.layoutControlGroup20.AllowHide = false;
             this.layoutControlGroup20.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("cbfb", true, buttonImageOptions2)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("cbfb", true, buttonImageOptions5)});
             this.layoutControlGroup20.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup20.ExpandButtonVisible = true;
             this.layoutControlGroup20.ExpandOnDoubleClick = true;
@@ -4806,7 +4811,7 @@
             // layoutControlGroup21
             // 
             this.layoutControlGroup21.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Stok İşlemleri", true, buttonImageOptions3)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Stok İşlemleri", true, buttonImageOptions6)});
             this.layoutControlGroup21.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutControlGroup21.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem69,

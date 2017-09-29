@@ -28,13 +28,22 @@ namespace Aresv2.n11
 
         private void frmN11Urun_Load(object sender, EventArgs e)
         {
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            Urun = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
-            TrGenel.Commit();
-            Al();
+            try
+            {
+                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                Urun = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
+                TrGenel.Commit();
+                Al();
 
 
-            KategoriDoldur();
+                KategoriDoldur();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         void Al()
@@ -82,7 +91,9 @@ namespace Aresv2.n11
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-
+            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+            Urun.Kaydet(SqlConnections.GetBaglanti(), TrGenel);
+            TrGenel.Commit();
         }
 
         private void textEdit3_EditValueChanged(object sender, EventArgs e)
