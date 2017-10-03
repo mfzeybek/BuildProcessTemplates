@@ -43,6 +43,10 @@ namespace Aresv2.n11
         }
         clsTablolar.n11.csN11Kategori kateg = new clsTablolar.n11.csN11Kategori();
         DataTable dt_Kategoriler;
+        n11ProductService.ProductServicePortService porttur = new n11ProductService.ProductServicePortService();
+
+        n11ProductService.Authentication ProductAuthentication = new n11ProductService.Authentication();
+        n11CategoryService.Authentication KategoriAuthentication = new n11CategoryService.Authentication();
 
         void hamisina()
         {
@@ -116,9 +120,9 @@ namespace Aresv2.n11
 
         void KategorileriGetir()
         {
-            var authentication = new n11CategoryService.Authentication();
-            authentication.appKey = "66e296ef-ba12-4c7a-8d3f-67027f1e1962"; //api anahtarınız
-            authentication.appSecret = "OiVekmVJRKC2wi0X";//api şifeniz
+            //var KategoriAuthentication = new n11CategoryService.Authentication();
+            KategoriAuthentication.appKey = "66e296ef-ba12-4c7a-8d3f-67027f1e1962"; //api anahtarınız
+            KategoriAuthentication.appSecret = "OiVekmVJRKC2wi0X";//api şifeniz
 
             var proxy = new n11CategoryService.CategoryServicePortService();
 
@@ -128,7 +132,7 @@ namespace Aresv2.n11
 
 
             var request = new GetTopLevelCategoriesRequest();
-            request.auth = authentication;
+            request.auth = KategoriAuthentication;
 
             //proxy.
 
@@ -146,19 +150,19 @@ namespace Aresv2.n11
         }
 
 
-        n11CategoryService.Authentication authentication;
+        //n11CategoryService.Authentication authentication;
         n11CategoryService.CategoryServicePortService proxy;
         GetCategoryAttributesRequest ALtKategoriOZelligi;
         void ahanadaAltKAteroriGetir(Int64 CategoriyID)
         {
-            authentication = new n11CategoryService.Authentication();
-            authentication.appKey = "66e296ef-ba12-4c7a-8d3f-67027f1e1962"; //api anahtarınız
-            authentication.appSecret = "OiVekmVJRKC2wi0X";//api şifeniz
+            //authentication = new n11CategoryService.Authentication();
+            KategoriAuthentication.appKey = "66e296ef-ba12-4c7a-8d3f-67027f1e1962"; //api anahtarınız
+            KategoriAuthentication.appSecret = "OiVekmVJRKC2wi0X";//api şifeniz
 
             proxy = new n11CategoryService.CategoryServicePortService();
 
             ALtKategoriOZelligi = new GetCategoryAttributesRequest();
-            ALtKategoriOZelligi.auth = authentication;
+            ALtKategoriOZelligi.auth = KategoriAuthentication;
 
 
             proxy.GetCategoryAttributes(ALtKategoriOZelligi);
@@ -172,7 +176,7 @@ namespace Aresv2.n11
             ALtKategoriOZelligi.categoryId = CategoriyID;
 
             var request = new GetSubCategoriesRequest();
-            request.auth = authentication;
+            request.auth = KategoriAuthentication;
 
             request.categoryId = CategoriyID;
 
@@ -195,21 +199,43 @@ namespace Aresv2.n11
 
         void UrunGetir(int ProducktID)
         {
-            var authentication = new n11ProductService.Authentication();
-            authentication.appKey = "66e296ef-ba12-4c7a-8d3f-67027f1e1962"; //api anahtarınız
-            authentication.appSecret = "OiVekmVJRKC2wi0X";//api şifeniz
+
 
             n11ProductService.GetProductByProductIdRequest ress = new n11ProductService.GetProductByProductIdRequest();
 
+            ProductAuthentication.appKey = "66e296ef-ba12-4c7a-8d3f-67027f1e1962"; //api anahtarınız
+            ProductAuthentication.appSecret = "OiVekmVJRKC2wi0X";//api şifeniz
 
-            ress.auth = authentication;
+            ress.auth = ProductAuthentication;
             ress.productId = ProducktID;
 
-            var porttur = new n11ProductService.ProductServicePortService();
+
 
             var ahandaURun = porttur.GetProductByProductId(ress);
+            //porttur.GetProductList.
+            //porttur.GetProductList
+            GetProductListRequest getProductListRequest = new GetProductListRequest();
+            getProductListRequest.auth = ProductAuthentication;
+
+            n11ProductService.RequestPagingData requestPagingData = new n11ProductService.RequestPagingData();
+
+            //requestPagingData.currentPage (currentPageValue);
+            //requestPagingData.setPageSize(pageSizeValue);
+
+
+            getProductListRequest.pagingData = requestPagingData;
+
+
+            porttur.GetProductList(getProductListRequest);
+
 
             MessageBox.Show(ahandaURun.product.title);
+        }
+
+        void n11UrunleriGetir()
+        {
+
+            //porttur.GetProductList();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

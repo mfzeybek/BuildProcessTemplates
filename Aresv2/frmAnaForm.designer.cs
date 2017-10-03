@@ -61,6 +61,7 @@
             this.barButtonItem37 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem42 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnYetkiler = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnStokGruplari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnGenelAyarlar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
@@ -192,7 +193,8 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.barBtnStokGruplari = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup35 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem48 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ımageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -434,6 +436,15 @@
             this.barBtnYetkiler.Name = "barBtnYetkiler";
             this.barBtnYetkiler.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtnYetkiler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnYetkiler_ItemClick);
+            // 
+            // barBtnStokGruplari
+            // 
+            this.barBtnStokGruplari.Caption = "Stok Grupları";
+            this.barBtnStokGruplari.Id = 13;
+            this.barBtnStokGruplari.LargeWidth = 100;
+            this.barBtnStokGruplari.Name = "barBtnStokGruplari";
+            this.barBtnStokGruplari.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnStokGruplari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnStokGruplari_ItemClick);
             // 
             // ribbonPageGroup17
             // 
@@ -1588,11 +1599,12 @@
             this.barButtonItem46,
             this.barButtonItem47,
             this.frmFotoKatalog,
-            this.barBtnStokGruplari});
+            this.barBtnStokGruplari,
+            this.barButtonItem48});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 14;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.ribbon.MaxItemId = 15;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.OptionsTouch.ShowTouchUISelectorInQAT = true;
@@ -1616,7 +1628,7 @@
             this.rpYonetim,
             this.ribbonPage1,
             this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(1307, 143);
+            this.ribbon.Size = new System.Drawing.Size(2614, 282);
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // skinRibbonGalleryBarItem1
@@ -1642,7 +1654,8 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup33});
+            this.ribbonPageGroup33,
+            this.ribbonPageGroup35});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "N11";
             // 
@@ -1658,28 +1671,32 @@
             this.ribbonPage8.Name = "ribbonPage8";
             this.ribbonPage8.Text = "ribbonPage8";
             // 
-            // barBtnStokGruplari
+            // ribbonPageGroup35
             // 
-            this.barBtnStokGruplari.Caption = "Stok Grupları";
-            this.barBtnStokGruplari.Id = 13;
-            this.barBtnStokGruplari.LargeWidth = 100;
-            this.barBtnStokGruplari.Name = "barBtnStokGruplari";
-            this.barBtnStokGruplari.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barBtnStokGruplari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnStokGruplari_ItemClick);
+            this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem48);
+            this.ribbonPageGroup35.Name = "ribbonPageGroup35";
+            this.ribbonPageGroup35.Text = "ribbonPageGroup35";
+            // 
+            // barButtonItem48
+            // 
+            this.barButtonItem48.Caption = "barButtonItem48";
+            this.barButtonItem48.Id = 14;
+            this.barButtonItem48.Name = "barButtonItem48";
+            this.barButtonItem48.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem48_ItemClick);
             // 
             // frmAnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1307, 627);
+            this.ClientSize = new System.Drawing.Size(2614, 1206);
             this.Controls.Add(this.ribbon);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "frmAnaForm";
             this.Ribbon = this.ribbon;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -1860,5 +1877,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup34;
         private DevExpress.XtraBars.BarButtonItem frmFotoKatalog;
         private DevExpress.XtraBars.BarButtonItem barBtnStokGruplari;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem48;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup35;
     }
 }

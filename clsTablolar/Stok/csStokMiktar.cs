@@ -11,7 +11,7 @@ namespace clsTablolar.Stok
             GC.SuppressFinalize(this);
         }
         SqlCommand cmdGenel;
-
+        public decimal StokMiktari = 0;
 
         public decimal StokMiktariGetir(SqlConnection Baglanti, SqlTransaction Tr, int StokID)
         {

@@ -1050,5 +1050,11 @@ namespace Aresv2
             Stok.frmStokGruplari frm = new Stok.frmStokGruplari(Stok.frmStokGruplari.NasilAcsin.DuzenlemeIcin);
             FormuAc2(frm);
         }
+
+        private void barButtonItem48_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            n11.frmEticaretSenkronizasyon frm = new n11.frmEticaretSenkronizasyon();
+            FormuAc(frm);
+        }
     }
 }

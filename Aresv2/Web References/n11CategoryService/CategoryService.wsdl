@@ -47,6 +47,7 @@
           <xs:sequence>
             <xs:element name="result" type="n11:ResultInfo" />
             <xs:element name="categoryProductAttributeValueList" type="n11:CategoryProductAttributeValueList" />
+            <xs:element name="pagingData" type="n11:RequestPagingData" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -71,6 +72,7 @@
           <xs:sequence>
             <xs:element name="auth" type="n11:Authentication" />
             <xs:element name="categoryId" type="xs:long" />
+            <xs:element name="pagingData" type="n11:RequestPagingData" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -237,32 +239,17 @@
       </xs:complexType>
     </xs:schema>
   </wsdl:types>
-  <wsdl:message name="GetCategoryAttributesResponse">
-    <wsdl:part name="GetCategoryAttributesResponse" element="tns:GetCategoryAttributesResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetParentCategoryResponse">
-    <wsdl:part name="GetParentCategoryResponse" element="tns:GetParentCategoryResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetSubCategoriesResponse">
-    <wsdl:part name="GetSubCategoriesResponse" element="tns:GetSubCategoriesResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetCategoryAttributesRequest">
-    <wsdl:part name="GetCategoryAttributesRequest" element="tns:GetCategoryAttributesRequest" />
-  </wsdl:message>
-  <wsdl:message name="GetSubCategoriesRequest">
-    <wsdl:part name="GetSubCategoriesRequest" element="tns:GetSubCategoriesRequest" />
-  </wsdl:message>
-  <wsdl:message name="GetCategoryAttributesIdResponse">
-    <wsdl:part name="GetCategoryAttributesIdResponse" element="tns:GetCategoryAttributesIdResponse" />
-  </wsdl:message>
   <wsdl:message name="GetTopLevelCategoriesRequest">
     <wsdl:part name="GetTopLevelCategoriesRequest" element="tns:GetTopLevelCategoriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetTopLevelCategoriesResponse">
+    <wsdl:part name="GetTopLevelCategoriesResponse" element="tns:GetTopLevelCategoriesResponse" />
   </wsdl:message>
   <wsdl:message name="GetCategoryAttributesIdRequest">
     <wsdl:part name="GetCategoryAttributesIdRequest" element="tns:GetCategoryAttributesIdRequest" />
   </wsdl:message>
-  <wsdl:message name="GetParentCategoryRequest">
-    <wsdl:part name="GetParentCategoryRequest" element="tns:GetParentCategoryRequest" />
+  <wsdl:message name="GetCategoryAttributesIdResponse">
+    <wsdl:part name="GetCategoryAttributesIdResponse" element="tns:GetCategoryAttributesIdResponse" />
   </wsdl:message>
   <wsdl:message name="GetCategoryAttributeValueRequest">
     <wsdl:part name="GetCategoryAttributeValueRequest" element="tns:GetCategoryAttributeValueRequest" />
@@ -270,10 +257,41 @@
   <wsdl:message name="GetCategoryAttributeValueResponse">
     <wsdl:part name="GetCategoryAttributeValueResponse" element="tns:GetCategoryAttributeValueResponse" />
   </wsdl:message>
-  <wsdl:message name="GetTopLevelCategoriesResponse">
-    <wsdl:part name="GetTopLevelCategoriesResponse" element="tns:GetTopLevelCategoriesResponse" />
+  <wsdl:message name="GetSubCategoriesRequest">
+    <wsdl:part name="GetSubCategoriesRequest" element="tns:GetSubCategoriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetSubCategoriesResponse">
+    <wsdl:part name="GetSubCategoriesResponse" element="tns:GetSubCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryAttributesRequest">
+    <wsdl:part name="GetCategoryAttributesRequest" element="tns:GetCategoryAttributesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryAttributesResponse">
+    <wsdl:part name="GetCategoryAttributesResponse" element="tns:GetCategoryAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetParentCategoryRequest">
+    <wsdl:part name="GetParentCategoryRequest" element="tns:GetParentCategoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetParentCategoryResponse">
+    <wsdl:part name="GetParentCategoryResponse" element="tns:GetParentCategoryResponse" />
   </wsdl:message>
   <wsdl:portType name="CategoryServicePort">
+    <wsdl:operation name="GetTopLevelCategories">
+      <wsdl:input name="GetTopLevelCategoriesRequest" message="tns:GetTopLevelCategoriesRequest" />
+      <wsdl:output name="GetTopLevelCategoriesResponse" message="tns:GetTopLevelCategoriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryAttributesId">
+      <wsdl:input name="GetCategoryAttributesIdRequest" message="tns:GetCategoryAttributesIdRequest" />
+      <wsdl:output name="GetCategoryAttributesIdResponse" message="tns:GetCategoryAttributesIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryAttributeValue">
+      <wsdl:input name="GetCategoryAttributeValueRequest" message="tns:GetCategoryAttributeValueRequest" />
+      <wsdl:output name="GetCategoryAttributeValueResponse" message="tns:GetCategoryAttributeValueResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategories">
+      <wsdl:input name="GetSubCategoriesRequest" message="tns:GetSubCategoriesRequest" />
+      <wsdl:output name="GetSubCategoriesResponse" message="tns:GetSubCategoriesResponse" />
+    </wsdl:operation>
     <wsdl:operation name="GetCategoryAttributes">
       <wsdl:input name="GetCategoryAttributesRequest" message="tns:GetCategoryAttributesRequest" />
       <wsdl:output name="GetCategoryAttributesResponse" message="tns:GetCategoryAttributesResponse" />
@@ -282,25 +300,45 @@
       <wsdl:input name="GetParentCategoryRequest" message="tns:GetParentCategoryRequest" />
       <wsdl:output name="GetParentCategoryResponse" message="tns:GetParentCategoryResponse" />
     </wsdl:operation>
-    <wsdl:operation name="GetSubCategories">
-      <wsdl:input name="GetSubCategoriesRequest" message="tns:GetSubCategoriesRequest" />
-      <wsdl:output name="GetSubCategoriesResponse" message="tns:GetSubCategoriesResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCategoryAttributesId">
-      <wsdl:input name="GetCategoryAttributesIdRequest" message="tns:GetCategoryAttributesIdRequest" />
-      <wsdl:output name="GetCategoryAttributesIdResponse" message="tns:GetCategoryAttributesIdResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTopLevelCategories">
-      <wsdl:input name="GetTopLevelCategoriesRequest" message="tns:GetTopLevelCategoriesRequest" />
-      <wsdl:output name="GetTopLevelCategoriesResponse" message="tns:GetTopLevelCategoriesResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCategoryAttributeValue">
-      <wsdl:input name="GetCategoryAttributeValueRequest" message="tns:GetCategoryAttributeValueRequest" />
-      <wsdl:output name="GetCategoryAttributeValueResponse" message="tns:GetCategoryAttributeValueResponse" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CategoryServicePortSoap11" type="tns:CategoryServicePort">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTopLevelCategories">
+      <soap:operation soapAction="" />
+      <wsdl:input name="GetTopLevelCategoriesRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetTopLevelCategoriesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryAttributesId">
+      <soap:operation soapAction="" />
+      <wsdl:input name="GetCategoryAttributesIdRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCategoryAttributesIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryAttributeValue">
+      <soap:operation soapAction="" />
+      <wsdl:input name="GetCategoryAttributeValueRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCategoryAttributeValueResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategories">
+      <soap:operation soapAction="" />
+      <wsdl:input name="GetSubCategoriesRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSubCategoriesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCategoryAttributes">
       <soap:operation soapAction="" />
       <wsdl:input name="GetCategoryAttributesRequest">
@@ -316,42 +354,6 @@
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output name="GetParentCategoryResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSubCategories">
-      <soap:operation soapAction="" />
-      <wsdl:input name="GetSubCategoriesRequest">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="GetSubCategoriesResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCategoryAttributesId">
-      <soap:operation soapAction="" />
-      <wsdl:input name="GetCategoryAttributesIdRequest">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="GetCategoryAttributesIdResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTopLevelCategories">
-      <soap:operation soapAction="" />
-      <wsdl:input name="GetTopLevelCategoriesRequest">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="GetTopLevelCategoriesResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCategoryAttributeValue">
-      <soap:operation soapAction="" />
-      <wsdl:input name="GetCategoryAttributeValueRequest">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="GetCategoryAttributeValueResponse">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

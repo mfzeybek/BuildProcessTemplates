@@ -21,10 +21,11 @@ namespace Aresv2.n11
             InitializeComponent();
         }
 
-        int StokID;
+        int StokID; // stok ID nin -1 gelme ihtimali yok.
         clsTablolar.n11.csN11Product Urun;
         clsTablolar.n11.csN11Kategori Kategori;
         SqlTransaction TrGenel;
+        clsTablolar.Stok.csStokMiktar miktar = new clsTablolar.Stok.csStokMiktar();
 
         private void frmN11Urun_Load(object sender, EventArgs e)
         {
@@ -32,11 +33,19 @@ namespace Aresv2.n11
             {
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 Urun = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
+
+
+
+
                 TrGenel.Commit();
-                Al();
 
 
                 KategoriDoldur();
+
+
+
+                Al();
+
             }
             catch (Exception ex)
             {
@@ -48,19 +57,32 @@ namespace Aresv2.n11
 
         void Al()
         {
+            treeListLookUpEdit1.EditValue = Urun.KategoriID;
+
+
             txtUrunBasligi.EditValue = Urun.UrunBasligi;
             txtAltBaslik.EditValue = Urun.AltBaslik;
             txtBarkod.EditValue = "";
             DetayliUrunBilgisi.DocumentText = Urun.DetayliUrunBilgisi;
             txtHazirlikSuresi.EditValue = Urun.HazirlikSuresi;
+            txtStokMiktari.EditValue = miktar.StokMiktari;
+
         }
         void Ver()
         {
-            Urun.UrunBasligi = txtUrunBasligi.EditValue.ToString();
-            Urun.AltBaslik = txtAltBaslik.EditValue.ToString();
-            //Urun.txtBarkod.EditValue = "";
-            DetayliUrunBilgisi.DocumentText = Urun.DetayliUrunBilgisi;
-            txtHazirlikSuresi.EditValue = Urun.HazirlikSuresi;
+            try
+            {
+                Urun.KategoriID = (int)treeListLookUpEdit1.EditValue;
+                Urun.UrunBasligi = txtUrunBasligi.EditValue.ToString();
+                Urun.AltBaslik = txtAltBaslik.EditValue.ToString();
+                //Urun.txtBarkod.EditValue = "";
+                Urun.DetayliUrunBilgisi = DetayliUrunBilgisi.DocumentText;
+                Urun.HazirlikSuresi = Convert.ToInt32(txtHazirlikSuresi.EditValue);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         void KategoriDoldur()
@@ -91,6 +113,7 @@ namespace Aresv2.n11
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            Ver();
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             Urun.Kaydet(SqlConnections.GetBaglanti(), TrGenel);
             TrGenel.Commit();

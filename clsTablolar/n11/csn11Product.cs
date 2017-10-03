@@ -31,6 +31,14 @@ namespace clsTablolar.n11
 
         public int KullanilacakFiyatTanimID { get; set; }
 
+
+        enum EnfazlaSatisAdedi
+        {
+            EticarettekiStokMiktariKadar = 1,
+            
+
+        }
+
         
 
 
@@ -112,7 +120,7 @@ namespace clsTablolar.n11
                 else
                 {
                     cmd.CommandText = "update n11Product set KategoriID = @KategoriID, StokID = @StokID, DetayliUrunBilgisi = @DetayliUrunBilgisi, " +
-                        "HazirlikSuresi = @HazirlikSuresi, KullanilacakBarkodID = @KullanilacakBarkodID, KullanilacakFiyatTanimID = @KullanilacakFiyatTanimID, , UrunBasligi = @UrunBasligi, AltBaslik = @AltBaslik where n11ProductID = @n11ProductID ";
+                        "HazirlikSuresi = @HazirlikSuresi, KullanilacakBarkodID = @KullanilacakBarkodID, KullanilacakFiyatTanimID = @KullanilacakFiyatTanimID, UrunBasligi = @UrunBasligi, AltBaslik = @AltBaslik where n11ProductID = @n11ProductID ";
 
                     cmd.Parameters.Add("@n11ProductID", SqlDbType.Int).Value = n11ProductID;
                 }
@@ -124,8 +132,8 @@ namespace clsTablolar.n11
 
                 cmd.Parameters.Add("@KullanilacakBarkodID", SqlDbType.Int).Value = KullanilacakBarkodID;
                 cmd.Parameters.Add("@KullanilacakFiyatTanimID", SqlDbType.Int).Value = KullanilacakFiyatTanimID;
-                cmd.Parameters.Add("@UrunBasligi", SqlDbType.Int).Value = UrunBasligi;
-                cmd.Parameters.Add("@AltBaslik", SqlDbType.Int).Value = AltBaslik;
+                cmd.Parameters.Add("@UrunBasligi", SqlDbType.NVarChar).Value = UrunBasligi;
+                cmd.Parameters.Add("@AltBaslik", SqlDbType.NVarChar).Value = AltBaslik;
 
                 
 
@@ -133,7 +141,7 @@ namespace clsTablolar.n11
 
                 if (n11ProductID == -1)
                 {
-                    n11ProductID = (int)cmd.Parameters["n11ProductID "].Value;
+                    n11ProductID = (int)cmd.Parameters["@YeniID"].Value;
                 }
             }
         }

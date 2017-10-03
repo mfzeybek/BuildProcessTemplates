@@ -23,41 +23,41 @@ namespace Aresv2.n11ProductService {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="ProductServicePortSoap11", Namespace="http://www.n11.com/ws/schemas")]
     public partial class ProductServicePortService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback UpdateDiscountValueByProductIdOperationCompleted;
+        private System.Threading.SendOrPostCallback GetProductByProductIdOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetProductQuestionDetailOperationCompleted;
+        private System.Threading.SendOrPostCallback GetProductBySellerCodeOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetProductListOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetProductQuestionListOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SaveProductOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback DeleteProductBySellerCodeOperationCompleted;
+        private System.Threading.SendOrPostCallback SearchProductsOperationCompleted;
         
         private System.Threading.SendOrPostCallback UpdateProductPriceByIdOperationCompleted;
         
         private System.Threading.SendOrPostCallback UpdateProductPriceBySellerCodeOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetProductByProductIdOperationCompleted;
-        
         private System.Threading.SendOrPostCallback DeleteProductByIdOperationCompleted;
         
-        private System.Threading.SendOrPostCallback UpdateDiscountValueBySellerCodeOperationCompleted;
+        private System.Threading.SendOrPostCallback DeleteProductBySellerCodeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SaveProductOperationCompleted;
         
         private System.Threading.SendOrPostCallback UpdateProductBasicOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SearchProductsOperationCompleted;
+        private System.Threading.SendOrPostCallback UpdateDiscountValueByProductIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateDiscountValueBySellerCodeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetProductQuestionListOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetProductQuestionDetailOperationCompleted;
         
         private System.Threading.SendOrPostCallback SaveProductAnswerOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetProductBySellerCodeOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -98,22 +98,16 @@ namespace Aresv2.n11ProductService {
         }
         
         /// <remarks/>
-        public event UpdateDiscountValueByProductIdCompletedEventHandler UpdateDiscountValueByProductIdCompleted;
+        public event GetProductByProductIdCompletedEventHandler GetProductByProductIdCompleted;
         
         /// <remarks/>
-        public event GetProductQuestionDetailCompletedEventHandler GetProductQuestionDetailCompleted;
+        public event GetProductBySellerCodeCompletedEventHandler GetProductBySellerCodeCompleted;
         
         /// <remarks/>
         public event GetProductListCompletedEventHandler GetProductListCompleted;
         
         /// <remarks/>
-        public event GetProductQuestionListCompletedEventHandler GetProductQuestionListCompleted;
-        
-        /// <remarks/>
-        public event SaveProductCompletedEventHandler SaveProductCompleted;
-        
-        /// <remarks/>
-        public event DeleteProductBySellerCodeCompletedEventHandler DeleteProductBySellerCodeCompleted;
+        public event SearchProductsCompletedEventHandler SearchProductsCompleted;
         
         /// <remarks/>
         public event UpdateProductPriceByIdCompletedEventHandler UpdateProductPriceByIdCompleted;
@@ -122,83 +116,89 @@ namespace Aresv2.n11ProductService {
         public event UpdateProductPriceBySellerCodeCompletedEventHandler UpdateProductPriceBySellerCodeCompleted;
         
         /// <remarks/>
-        public event GetProductByProductIdCompletedEventHandler GetProductByProductIdCompleted;
-        
-        /// <remarks/>
         public event DeleteProductByIdCompletedEventHandler DeleteProductByIdCompleted;
         
         /// <remarks/>
-        public event UpdateDiscountValueBySellerCodeCompletedEventHandler UpdateDiscountValueBySellerCodeCompleted;
+        public event DeleteProductBySellerCodeCompletedEventHandler DeleteProductBySellerCodeCompleted;
+        
+        /// <remarks/>
+        public event SaveProductCompletedEventHandler SaveProductCompleted;
         
         /// <remarks/>
         public event UpdateProductBasicCompletedEventHandler UpdateProductBasicCompleted;
         
         /// <remarks/>
-        public event SearchProductsCompletedEventHandler SearchProductsCompleted;
+        public event UpdateDiscountValueByProductIdCompletedEventHandler UpdateDiscountValueByProductIdCompleted;
+        
+        /// <remarks/>
+        public event UpdateDiscountValueBySellerCodeCompletedEventHandler UpdateDiscountValueBySellerCodeCompleted;
+        
+        /// <remarks/>
+        public event GetProductQuestionListCompletedEventHandler GetProductQuestionListCompleted;
+        
+        /// <remarks/>
+        public event GetProductQuestionDetailCompletedEventHandler GetProductQuestionDetailCompleted;
         
         /// <remarks/>
         public event SaveProductAnswerCompletedEventHandler SaveProductAnswerCompleted;
         
         /// <remarks/>
-        public event GetProductBySellerCodeCompletedEventHandler GetProductBySellerCodeCompleted;
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("UpdateDiscountValueByProductIdResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public UpdateDiscountValueByProductIdResponse UpdateDiscountValueByProductId([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] UpdateDiscountValueByProductIdRequest UpdateDiscountValueByProductIdRequest) {
-            object[] results = this.Invoke("UpdateDiscountValueByProductId", new object[] {
-                        UpdateDiscountValueByProductIdRequest});
-            return ((UpdateDiscountValueByProductIdResponse)(results[0]));
+        [return: System.Xml.Serialization.XmlElementAttribute("GetProductByProductIdResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public GetProductByProductIdResponse GetProductByProductId([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductByProductIdRequest GetProductByProductIdRequest) {
+            object[] results = this.Invoke("GetProductByProductId", new object[] {
+                        GetProductByProductIdRequest});
+            return ((GetProductByProductIdResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void UpdateDiscountValueByProductIdAsync(UpdateDiscountValueByProductIdRequest UpdateDiscountValueByProductIdRequest) {
-            this.UpdateDiscountValueByProductIdAsync(UpdateDiscountValueByProductIdRequest, null);
+        public void GetProductByProductIdAsync(GetProductByProductIdRequest GetProductByProductIdRequest) {
+            this.GetProductByProductIdAsync(GetProductByProductIdRequest, null);
         }
         
         /// <remarks/>
-        public void UpdateDiscountValueByProductIdAsync(UpdateDiscountValueByProductIdRequest UpdateDiscountValueByProductIdRequest, object userState) {
-            if ((this.UpdateDiscountValueByProductIdOperationCompleted == null)) {
-                this.UpdateDiscountValueByProductIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateDiscountValueByProductIdOperationCompleted);
+        public void GetProductByProductIdAsync(GetProductByProductIdRequest GetProductByProductIdRequest, object userState) {
+            if ((this.GetProductByProductIdOperationCompleted == null)) {
+                this.GetProductByProductIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductByProductIdOperationCompleted);
             }
-            this.InvokeAsync("UpdateDiscountValueByProductId", new object[] {
-                        UpdateDiscountValueByProductIdRequest}, this.UpdateDiscountValueByProductIdOperationCompleted, userState);
+            this.InvokeAsync("GetProductByProductId", new object[] {
+                        GetProductByProductIdRequest}, this.GetProductByProductIdOperationCompleted, userState);
         }
         
-        private void OnUpdateDiscountValueByProductIdOperationCompleted(object arg) {
-            if ((this.UpdateDiscountValueByProductIdCompleted != null)) {
+        private void OnGetProductByProductIdOperationCompleted(object arg) {
+            if ((this.GetProductByProductIdCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.UpdateDiscountValueByProductIdCompleted(this, new UpdateDiscountValueByProductIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetProductByProductIdCompleted(this, new GetProductByProductIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("GetProductQuestionDetailResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public GetProductQuestionDetailResponse GetProductQuestionDetail([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductQuestionDetailRequest GetProductQuestionDetailRequest) {
-            object[] results = this.Invoke("GetProductQuestionDetail", new object[] {
-                        GetProductQuestionDetailRequest});
-            return ((GetProductQuestionDetailResponse)(results[0]));
+        [return: System.Xml.Serialization.XmlElementAttribute("GetProductBySellerCodeResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public GetProductBySellerCodeResponse GetProductBySellerCode([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductBySellerCodeRequest GetProductBySellerCodeRequest) {
+            object[] results = this.Invoke("GetProductBySellerCode", new object[] {
+                        GetProductBySellerCodeRequest});
+            return ((GetProductBySellerCodeResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void GetProductQuestionDetailAsync(GetProductQuestionDetailRequest GetProductQuestionDetailRequest) {
-            this.GetProductQuestionDetailAsync(GetProductQuestionDetailRequest, null);
+        public void GetProductBySellerCodeAsync(GetProductBySellerCodeRequest GetProductBySellerCodeRequest) {
+            this.GetProductBySellerCodeAsync(GetProductBySellerCodeRequest, null);
         }
         
         /// <remarks/>
-        public void GetProductQuestionDetailAsync(GetProductQuestionDetailRequest GetProductQuestionDetailRequest, object userState) {
-            if ((this.GetProductQuestionDetailOperationCompleted == null)) {
-                this.GetProductQuestionDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductQuestionDetailOperationCompleted);
+        public void GetProductBySellerCodeAsync(GetProductBySellerCodeRequest GetProductBySellerCodeRequest, object userState) {
+            if ((this.GetProductBySellerCodeOperationCompleted == null)) {
+                this.GetProductBySellerCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductBySellerCodeOperationCompleted);
             }
-            this.InvokeAsync("GetProductQuestionDetail", new object[] {
-                        GetProductQuestionDetailRequest}, this.GetProductQuestionDetailOperationCompleted, userState);
+            this.InvokeAsync("GetProductBySellerCode", new object[] {
+                        GetProductBySellerCodeRequest}, this.GetProductBySellerCodeOperationCompleted, userState);
         }
         
-        private void OnGetProductQuestionDetailOperationCompleted(object arg) {
-            if ((this.GetProductQuestionDetailCompleted != null)) {
+        private void OnGetProductBySellerCodeOperationCompleted(object arg) {
+            if ((this.GetProductBySellerCodeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetProductQuestionDetailCompleted(this, new GetProductQuestionDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetProductBySellerCodeCompleted(this, new GetProductBySellerCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -234,91 +234,31 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("GetProductQuestionListResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public GetProductQuestionListResponse GetProductQuestionList([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductQuestionListRequest GetProductQuestionListRequest) {
-            object[] results = this.Invoke("GetProductQuestionList", new object[] {
-                        GetProductQuestionListRequest});
-            return ((GetProductQuestionListResponse)(results[0]));
+        [return: System.Xml.Serialization.XmlElementAttribute("SearchProductsResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public SearchProductsResponse SearchProducts([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] SearchProductsRequest SearchProductsRequest) {
+            object[] results = this.Invoke("SearchProducts", new object[] {
+                        SearchProductsRequest});
+            return ((SearchProductsResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void GetProductQuestionListAsync(GetProductQuestionListRequest GetProductQuestionListRequest) {
-            this.GetProductQuestionListAsync(GetProductQuestionListRequest, null);
+        public void SearchProductsAsync(SearchProductsRequest SearchProductsRequest) {
+            this.SearchProductsAsync(SearchProductsRequest, null);
         }
         
         /// <remarks/>
-        public void GetProductQuestionListAsync(GetProductQuestionListRequest GetProductQuestionListRequest, object userState) {
-            if ((this.GetProductQuestionListOperationCompleted == null)) {
-                this.GetProductQuestionListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductQuestionListOperationCompleted);
+        public void SearchProductsAsync(SearchProductsRequest SearchProductsRequest, object userState) {
+            if ((this.SearchProductsOperationCompleted == null)) {
+                this.SearchProductsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSearchProductsOperationCompleted);
             }
-            this.InvokeAsync("GetProductQuestionList", new object[] {
-                        GetProductQuestionListRequest}, this.GetProductQuestionListOperationCompleted, userState);
+            this.InvokeAsync("SearchProducts", new object[] {
+                        SearchProductsRequest}, this.SearchProductsOperationCompleted, userState);
         }
         
-        private void OnGetProductQuestionListOperationCompleted(object arg) {
-            if ((this.GetProductQuestionListCompleted != null)) {
+        private void OnSearchProductsOperationCompleted(object arg) {
+            if ((this.SearchProductsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetProductQuestionListCompleted(this, new GetProductQuestionListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("SaveProductResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public SaveProductResponse SaveProduct([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] SaveProductRequest SaveProductRequest) {
-            object[] results = this.Invoke("SaveProduct", new object[] {
-                        SaveProductRequest});
-            return ((SaveProductResponse)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SaveProductAsync(SaveProductRequest SaveProductRequest) {
-            this.SaveProductAsync(SaveProductRequest, null);
-        }
-        
-        /// <remarks/>
-        public void SaveProductAsync(SaveProductRequest SaveProductRequest, object userState) {
-            if ((this.SaveProductOperationCompleted == null)) {
-                this.SaveProductOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveProductOperationCompleted);
-            }
-            this.InvokeAsync("SaveProduct", new object[] {
-                        SaveProductRequest}, this.SaveProductOperationCompleted, userState);
-        }
-        
-        private void OnSaveProductOperationCompleted(object arg) {
-            if ((this.SaveProductCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SaveProductCompleted(this, new SaveProductCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("DeleteProductBySellerCodeResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public DeleteProductBySellerCodeResponse DeleteProductBySellerCode([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] DeleteProductBySellerCodeRequest DeleteProductBySellerCodeRequest) {
-            object[] results = this.Invoke("DeleteProductBySellerCode", new object[] {
-                        DeleteProductBySellerCodeRequest});
-            return ((DeleteProductBySellerCodeResponse)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void DeleteProductBySellerCodeAsync(DeleteProductBySellerCodeRequest DeleteProductBySellerCodeRequest) {
-            this.DeleteProductBySellerCodeAsync(DeleteProductBySellerCodeRequest, null);
-        }
-        
-        /// <remarks/>
-        public void DeleteProductBySellerCodeAsync(DeleteProductBySellerCodeRequest DeleteProductBySellerCodeRequest, object userState) {
-            if ((this.DeleteProductBySellerCodeOperationCompleted == null)) {
-                this.DeleteProductBySellerCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteProductBySellerCodeOperationCompleted);
-            }
-            this.InvokeAsync("DeleteProductBySellerCode", new object[] {
-                        DeleteProductBySellerCodeRequest}, this.DeleteProductBySellerCodeOperationCompleted, userState);
-        }
-        
-        private void OnDeleteProductBySellerCodeOperationCompleted(object arg) {
-            if ((this.DeleteProductBySellerCodeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.DeleteProductBySellerCodeCompleted(this, new DeleteProductBySellerCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SearchProductsCompleted(this, new SearchProductsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -384,36 +324,6 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("GetProductByProductIdResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public GetProductByProductIdResponse GetProductByProductId([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductByProductIdRequest GetProductByProductIdRequest) {
-            object[] results = this.Invoke("GetProductByProductId", new object[] {
-                        GetProductByProductIdRequest});
-            return ((GetProductByProductIdResponse)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetProductByProductIdAsync(GetProductByProductIdRequest GetProductByProductIdRequest) {
-            this.GetProductByProductIdAsync(GetProductByProductIdRequest, null);
-        }
-        
-        /// <remarks/>
-        public void GetProductByProductIdAsync(GetProductByProductIdRequest GetProductByProductIdRequest, object userState) {
-            if ((this.GetProductByProductIdOperationCompleted == null)) {
-                this.GetProductByProductIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductByProductIdOperationCompleted);
-            }
-            this.InvokeAsync("GetProductByProductId", new object[] {
-                        GetProductByProductIdRequest}, this.GetProductByProductIdOperationCompleted, userState);
-        }
-        
-        private void OnGetProductByProductIdOperationCompleted(object arg) {
-            if ((this.GetProductByProductIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetProductByProductIdCompleted(this, new GetProductByProductIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
         [return: System.Xml.Serialization.XmlElementAttribute("DeleteProductByIdResponse", Namespace="http://www.n11.com/ws/schemas")]
         public DeleteProductByIdResponse DeleteProductById([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] DeleteProductByIdRequest DeleteProductByIdRequest) {
             object[] results = this.Invoke("DeleteProductById", new object[] {
@@ -444,31 +354,61 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("UpdateDiscountValueBySellerCodeResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public UpdateDiscountValueBySellerCodeResponse UpdateDiscountValueBySellerCode([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] UpdateDiscountValueBySellerCodeRequest UpdateDiscountValueBySellerCodeRequest) {
-            object[] results = this.Invoke("UpdateDiscountValueBySellerCode", new object[] {
-                        UpdateDiscountValueBySellerCodeRequest});
-            return ((UpdateDiscountValueBySellerCodeResponse)(results[0]));
+        [return: System.Xml.Serialization.XmlElementAttribute("DeleteProductBySellerCodeResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public DeleteProductBySellerCodeResponse DeleteProductBySellerCode([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] DeleteProductBySellerCodeRequest DeleteProductBySellerCodeRequest) {
+            object[] results = this.Invoke("DeleteProductBySellerCode", new object[] {
+                        DeleteProductBySellerCodeRequest});
+            return ((DeleteProductBySellerCodeResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void UpdateDiscountValueBySellerCodeAsync(UpdateDiscountValueBySellerCodeRequest UpdateDiscountValueBySellerCodeRequest) {
-            this.UpdateDiscountValueBySellerCodeAsync(UpdateDiscountValueBySellerCodeRequest, null);
+        public void DeleteProductBySellerCodeAsync(DeleteProductBySellerCodeRequest DeleteProductBySellerCodeRequest) {
+            this.DeleteProductBySellerCodeAsync(DeleteProductBySellerCodeRequest, null);
         }
         
         /// <remarks/>
-        public void UpdateDiscountValueBySellerCodeAsync(UpdateDiscountValueBySellerCodeRequest UpdateDiscountValueBySellerCodeRequest, object userState) {
-            if ((this.UpdateDiscountValueBySellerCodeOperationCompleted == null)) {
-                this.UpdateDiscountValueBySellerCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateDiscountValueBySellerCodeOperationCompleted);
+        public void DeleteProductBySellerCodeAsync(DeleteProductBySellerCodeRequest DeleteProductBySellerCodeRequest, object userState) {
+            if ((this.DeleteProductBySellerCodeOperationCompleted == null)) {
+                this.DeleteProductBySellerCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteProductBySellerCodeOperationCompleted);
             }
-            this.InvokeAsync("UpdateDiscountValueBySellerCode", new object[] {
-                        UpdateDiscountValueBySellerCodeRequest}, this.UpdateDiscountValueBySellerCodeOperationCompleted, userState);
+            this.InvokeAsync("DeleteProductBySellerCode", new object[] {
+                        DeleteProductBySellerCodeRequest}, this.DeleteProductBySellerCodeOperationCompleted, userState);
         }
         
-        private void OnUpdateDiscountValueBySellerCodeOperationCompleted(object arg) {
-            if ((this.UpdateDiscountValueBySellerCodeCompleted != null)) {
+        private void OnDeleteProductBySellerCodeOperationCompleted(object arg) {
+            if ((this.DeleteProductBySellerCodeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.UpdateDiscountValueBySellerCodeCompleted(this, new UpdateDiscountValueBySellerCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.DeleteProductBySellerCodeCompleted(this, new DeleteProductBySellerCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
+        [return: System.Xml.Serialization.XmlElementAttribute("SaveProductResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public SaveProductResponse SaveProduct([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] SaveProductRequest SaveProductRequest) {
+            object[] results = this.Invoke("SaveProduct", new object[] {
+                        SaveProductRequest});
+            return ((SaveProductResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SaveProductAsync(SaveProductRequest SaveProductRequest) {
+            this.SaveProductAsync(SaveProductRequest, null);
+        }
+        
+        /// <remarks/>
+        public void SaveProductAsync(SaveProductRequest SaveProductRequest, object userState) {
+            if ((this.SaveProductOperationCompleted == null)) {
+                this.SaveProductOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveProductOperationCompleted);
+            }
+            this.InvokeAsync("SaveProduct", new object[] {
+                        SaveProductRequest}, this.SaveProductOperationCompleted, userState);
+        }
+        
+        private void OnSaveProductOperationCompleted(object arg) {
+            if ((this.SaveProductCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SaveProductCompleted(this, new SaveProductCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -504,31 +444,121 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("SearchProductsResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public SearchProductsResponse SearchProducts([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] SearchProductsRequest SearchProductsRequest) {
-            object[] results = this.Invoke("SearchProducts", new object[] {
-                        SearchProductsRequest});
-            return ((SearchProductsResponse)(results[0]));
+        [return: System.Xml.Serialization.XmlElementAttribute("UpdateDiscountValueByProductIdResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public UpdateDiscountValueByProductIdResponse UpdateDiscountValueByProductId([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] UpdateDiscountValueByProductIdRequest UpdateDiscountValueByProductIdRequest) {
+            object[] results = this.Invoke("UpdateDiscountValueByProductId", new object[] {
+                        UpdateDiscountValueByProductIdRequest});
+            return ((UpdateDiscountValueByProductIdResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void SearchProductsAsync(SearchProductsRequest SearchProductsRequest) {
-            this.SearchProductsAsync(SearchProductsRequest, null);
+        public void UpdateDiscountValueByProductIdAsync(UpdateDiscountValueByProductIdRequest UpdateDiscountValueByProductIdRequest) {
+            this.UpdateDiscountValueByProductIdAsync(UpdateDiscountValueByProductIdRequest, null);
         }
         
         /// <remarks/>
-        public void SearchProductsAsync(SearchProductsRequest SearchProductsRequest, object userState) {
-            if ((this.SearchProductsOperationCompleted == null)) {
-                this.SearchProductsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSearchProductsOperationCompleted);
+        public void UpdateDiscountValueByProductIdAsync(UpdateDiscountValueByProductIdRequest UpdateDiscountValueByProductIdRequest, object userState) {
+            if ((this.UpdateDiscountValueByProductIdOperationCompleted == null)) {
+                this.UpdateDiscountValueByProductIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateDiscountValueByProductIdOperationCompleted);
             }
-            this.InvokeAsync("SearchProducts", new object[] {
-                        SearchProductsRequest}, this.SearchProductsOperationCompleted, userState);
+            this.InvokeAsync("UpdateDiscountValueByProductId", new object[] {
+                        UpdateDiscountValueByProductIdRequest}, this.UpdateDiscountValueByProductIdOperationCompleted, userState);
         }
         
-        private void OnSearchProductsOperationCompleted(object arg) {
-            if ((this.SearchProductsCompleted != null)) {
+        private void OnUpdateDiscountValueByProductIdOperationCompleted(object arg) {
+            if ((this.UpdateDiscountValueByProductIdCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SearchProductsCompleted(this, new SearchProductsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.UpdateDiscountValueByProductIdCompleted(this, new UpdateDiscountValueByProductIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
+        [return: System.Xml.Serialization.XmlElementAttribute("UpdateDiscountValueBySellerCodeResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public UpdateDiscountValueBySellerCodeResponse UpdateDiscountValueBySellerCode([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] UpdateDiscountValueBySellerCodeRequest UpdateDiscountValueBySellerCodeRequest) {
+            object[] results = this.Invoke("UpdateDiscountValueBySellerCode", new object[] {
+                        UpdateDiscountValueBySellerCodeRequest});
+            return ((UpdateDiscountValueBySellerCodeResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void UpdateDiscountValueBySellerCodeAsync(UpdateDiscountValueBySellerCodeRequest UpdateDiscountValueBySellerCodeRequest) {
+            this.UpdateDiscountValueBySellerCodeAsync(UpdateDiscountValueBySellerCodeRequest, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateDiscountValueBySellerCodeAsync(UpdateDiscountValueBySellerCodeRequest UpdateDiscountValueBySellerCodeRequest, object userState) {
+            if ((this.UpdateDiscountValueBySellerCodeOperationCompleted == null)) {
+                this.UpdateDiscountValueBySellerCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateDiscountValueBySellerCodeOperationCompleted);
+            }
+            this.InvokeAsync("UpdateDiscountValueBySellerCode", new object[] {
+                        UpdateDiscountValueBySellerCodeRequest}, this.UpdateDiscountValueBySellerCodeOperationCompleted, userState);
+        }
+        
+        private void OnUpdateDiscountValueBySellerCodeOperationCompleted(object arg) {
+            if ((this.UpdateDiscountValueBySellerCodeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateDiscountValueBySellerCodeCompleted(this, new UpdateDiscountValueBySellerCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
+        [return: System.Xml.Serialization.XmlElementAttribute("GetProductQuestionListResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public GetProductQuestionListResponse GetProductQuestionList([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductQuestionListRequest GetProductQuestionListRequest) {
+            object[] results = this.Invoke("GetProductQuestionList", new object[] {
+                        GetProductQuestionListRequest});
+            return ((GetProductQuestionListResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetProductQuestionListAsync(GetProductQuestionListRequest GetProductQuestionListRequest) {
+            this.GetProductQuestionListAsync(GetProductQuestionListRequest, null);
+        }
+        
+        /// <remarks/>
+        public void GetProductQuestionListAsync(GetProductQuestionListRequest GetProductQuestionListRequest, object userState) {
+            if ((this.GetProductQuestionListOperationCompleted == null)) {
+                this.GetProductQuestionListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductQuestionListOperationCompleted);
+            }
+            this.InvokeAsync("GetProductQuestionList", new object[] {
+                        GetProductQuestionListRequest}, this.GetProductQuestionListOperationCompleted, userState);
+        }
+        
+        private void OnGetProductQuestionListOperationCompleted(object arg) {
+            if ((this.GetProductQuestionListCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetProductQuestionListCompleted(this, new GetProductQuestionListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
+        [return: System.Xml.Serialization.XmlElementAttribute("GetProductQuestionDetailResponse", Namespace="http://www.n11.com/ws/schemas")]
+        public GetProductQuestionDetailResponse GetProductQuestionDetail([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductQuestionDetailRequest GetProductQuestionDetailRequest) {
+            object[] results = this.Invoke("GetProductQuestionDetail", new object[] {
+                        GetProductQuestionDetailRequest});
+            return ((GetProductQuestionDetailResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetProductQuestionDetailAsync(GetProductQuestionDetailRequest GetProductQuestionDetailRequest) {
+            this.GetProductQuestionDetailAsync(GetProductQuestionDetailRequest, null);
+        }
+        
+        /// <remarks/>
+        public void GetProductQuestionDetailAsync(GetProductQuestionDetailRequest GetProductQuestionDetailRequest, object userState) {
+            if ((this.GetProductQuestionDetailOperationCompleted == null)) {
+                this.GetProductQuestionDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductQuestionDetailOperationCompleted);
+            }
+            this.InvokeAsync("GetProductQuestionDetail", new object[] {
+                        GetProductQuestionDetailRequest}, this.GetProductQuestionDetailOperationCompleted, userState);
+        }
+        
+        private void OnGetProductQuestionDetailOperationCompleted(object arg) {
+            if ((this.GetProductQuestionDetailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetProductQuestionDetailCompleted(this, new GetProductQuestionDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -563,36 +593,6 @@ namespace Aresv2.n11ProductService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Bare)]
-        [return: System.Xml.Serialization.XmlElementAttribute("GetProductBySellerCodeResponse", Namespace="http://www.n11.com/ws/schemas")]
-        public GetProductBySellerCodeResponse GetProductBySellerCode([System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.n11.com/ws/schemas")] GetProductBySellerCodeRequest GetProductBySellerCodeRequest) {
-            object[] results = this.Invoke("GetProductBySellerCode", new object[] {
-                        GetProductBySellerCodeRequest});
-            return ((GetProductBySellerCodeResponse)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetProductBySellerCodeAsync(GetProductBySellerCodeRequest GetProductBySellerCodeRequest) {
-            this.GetProductBySellerCodeAsync(GetProductBySellerCodeRequest, null);
-        }
-        
-        /// <remarks/>
-        public void GetProductBySellerCodeAsync(GetProductBySellerCodeRequest GetProductBySellerCodeRequest, object userState) {
-            if ((this.GetProductBySellerCodeOperationCompleted == null)) {
-                this.GetProductBySellerCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetProductBySellerCodeOperationCompleted);
-            }
-            this.InvokeAsync("GetProductBySellerCode", new object[] {
-                        GetProductBySellerCodeRequest}, this.GetProductBySellerCodeOperationCompleted, userState);
-        }
-        
-        private void OnGetProductBySellerCodeOperationCompleted(object arg) {
-            if ((this.GetProductBySellerCodeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetProductBySellerCodeCompleted(this, new GetProductBySellerCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -612,18 +612,16 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class UpdateDiscountValueByProductIdRequest {
+    public partial class GetProductByProductIdRequest {
         
         private Authentication authField;
         
         private long productIdField;
-        
-        private SellerProductDiscount productDiscountField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -646,21 +644,10 @@ namespace Aresv2.n11ProductService {
                 this.productIdField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SellerProductDiscount productDiscount {
-            get {
-                return this.productDiscountField;
-            }
-            set {
-                this.productDiscountField = value;
-            }
-        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -695,7 +682,1017 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductQuestionDetail {
+        
+        private long productIdField;
+        
+        private string productTitleField;
+        
+        private string questionSubjectField;
+        
+        private string questionField;
+        
+        private string fullNameField;
+        
+        private string emailField;
+        
+        private string productStatusField;
+        
+        private string statusField;
+        
+        private System.DateTime questionDateField;
+        
+        private System.DateTime answeredDateField;
+        
+        private string sellerExposeField;
+        
+        private string buyerExposeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long productId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productTitle {
+            get {
+                return this.productTitleField;
+            }
+            set {
+                this.productTitleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string questionSubject {
+            get {
+                return this.questionSubjectField;
+            }
+            set {
+                this.questionSubjectField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string question {
+            get {
+                return this.questionField;
+            }
+            set {
+                this.questionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string fullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                this.fullNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productStatus {
+            get {
+                return this.productStatusField;
+            }
+            set {
+                this.productStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date")]
+        public System.DateTime questionDate {
+            get {
+                return this.questionDateField;
+            }
+            set {
+                this.questionDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date")]
+        public System.DateTime answeredDate {
+            get {
+                return this.answeredDateField;
+            }
+            set {
+                this.answeredDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sellerExpose {
+            get {
+                return this.sellerExposeField;
+            }
+            set {
+                this.sellerExposeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string buyerExpose {
+            get {
+                return this.buyerExposeField;
+            }
+            set {
+                this.buyerExposeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductQuestion {
+        
+        private long idField;
+        
+        private long productIdField;
+        
+        private string productTitleField;
+        
+        private string questionSubjectField;
+        
+        private string questionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long productId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productTitle {
+            get {
+                return this.productTitleField;
+            }
+            set {
+                this.productTitleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string questionSubject {
+            get {
+                return this.questionSubjectField;
+            }
+            set {
+                this.questionSubjectField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string question {
+            get {
+                return this.questionField;
+            }
+            set {
+                this.questionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductQuestionSearch {
+        
+        private long productIdField;
+        
+        private string buyerEmailField;
+        
+        private string subjectField;
+        
+        private ProductQuestionStatus statusField;
+        
+        private string questionDateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long productId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string buyerEmail {
+            get {
+                return this.buyerEmailField;
+            }
+            set {
+                this.buyerEmailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string subject {
+            get {
+                return this.subjectField;
+            }
+            set {
+                this.subjectField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductQuestionStatus status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string questionDate {
+            get {
+                return this.questionDateField;
+            }
+            set {
+                this.questionDateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public enum ProductQuestionStatus {
+        
+        /// <remarks/>
+        CLOSED,
+        
+        /// <remarks/>
+        OPEN,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductUpdateSkuBasicRequest {
+        
+        private string sellerStockCodeField;
+        
+        private long idField;
+        
+        private decimal optionPriceField;
+        
+        private string quantityField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sellerStockCode {
+            get {
+                return this.sellerStockCodeField;
+            }
+            set {
+                this.sellerStockCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal optionPrice {
+            get {
+                return this.optionPriceField;
+            }
+            set {
+                this.optionPriceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class SellerProductDiscount {
+        
+        private string discountTypeField;
+        
+        private double discountValueField;
+        
+        private string discountStartDateField;
+        
+        private string discountEndDateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string discountType {
+            get {
+                return this.discountTypeField;
+            }
+            set {
+                this.discountTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public double discountValue {
+            get {
+                return this.discountValueField;
+            }
+            set {
+                this.discountValueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string discountStartDate {
+            get {
+                return this.discountStartDateField;
+            }
+            set {
+                this.discountStartDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string discountEndDate {
+            get {
+                return this.discountEndDateField;
+            }
+            set {
+                this.discountEndDateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductSkuRequest {
+        
+        private System.Nullable<bool> bundleField;
+        
+        private string mpnField;
+        
+        private string gtinField;
+        
+        private string quantityField;
+        
+        private string sellerStockCodeField;
+        
+        private ProductAttributeRequest[] attributesField;
+        
+        private decimal optionPriceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<bool> bundle {
+            get {
+                return this.bundleField;
+            }
+            set {
+                this.bundleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public string mpn {
+            get {
+                return this.mpnField;
+            }
+            set {
+                this.mpnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public string gtin {
+            get {
+                return this.gtinField;
+            }
+            set {
+                this.gtinField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sellerStockCode {
+            get {
+                return this.sellerStockCodeField;
+            }
+            set {
+                this.sellerStockCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("attribute", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ProductAttributeRequest[] attributes {
+            get {
+                return this.attributesField;
+            }
+            set {
+                this.attributesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal optionPrice {
+            get {
+                return this.optionPriceField;
+            }
+            set {
+                this.optionPriceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductAttributeRequest {
+        
+        private string nameField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductDiscountRequest {
+        
+        private string startDateField;
+        
+        private string endDateField;
+        
+        private string typeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string startDate {
+            get {
+                return this.startDateField;
+            }
+            set {
+                this.startDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string endDate {
+            get {
+                return this.endDateField;
+            }
+            set {
+                this.endDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class CategoryRequest {
+        
+        private long idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductRequest {
+        
+        private string productSellerCodeField;
+        
+        private string titleField;
+        
+        private string subtitleField;
+        
+        private string descriptionField;
+        
+        private CategoryRequest categoryField;
+        
+        private SpecialProductInfoApiModel[] specialProductInfoListField;
+        
+        private decimal priceField;
+        
+        private string currencyTypeField;
+        
+        private ProductImage[] imagesField;
+        
+        private string approvalStatusField;
+        
+        private ProductAttributeRequest[] attributesField;
+        
+        private string saleStartDateField;
+        
+        private string saleEndDateField;
+        
+        private string productionDateField;
+        
+        private string expirationDateField;
+        
+        private string productConditionField;
+        
+        private string preparingDayField;
+        
+        private ProductDiscountRequest discountField;
+        
+        private string shipmentTemplateField;
+        
+        private ProductSkuRequest[] stockItemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productSellerCode {
+            get {
+                return this.productSellerCodeField;
+            }
+            set {
+                this.productSellerCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string subtitle {
+            get {
+                return this.subtitleField;
+            }
+            set {
+                this.subtitleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public CategoryRequest category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("specialProductInfo", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public SpecialProductInfoApiModel[] specialProductInfoList {
+            get {
+                return this.specialProductInfoListField;
+            }
+            set {
+                this.specialProductInfoListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string currencyType {
+            get {
+                return this.currencyTypeField;
+            }
+            set {
+                this.currencyTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("image", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ProductImage[] images {
+            get {
+                return this.imagesField;
+            }
+            set {
+                this.imagesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer", IsNullable=true)]
+        public string approvalStatus {
+            get {
+                return this.approvalStatusField;
+            }
+            set {
+                this.approvalStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("attribute", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ProductAttributeRequest[] attributes {
+            get {
+                return this.attributesField;
+            }
+            set {
+                this.attributesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string saleStartDate {
+            get {
+                return this.saleStartDateField;
+            }
+            set {
+                this.saleStartDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string saleEndDate {
+            get {
+                return this.saleEndDateField;
+            }
+            set {
+                this.saleEndDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productionDate {
+            get {
+                return this.productionDateField;
+            }
+            set {
+                this.productionDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string expirationDate {
+            get {
+                return this.expirationDateField;
+            }
+            set {
+                this.expirationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productCondition {
+            get {
+                return this.productConditionField;
+            }
+            set {
+                this.productConditionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string preparingDay {
+            get {
+                return this.preparingDayField;
+            }
+            set {
+                this.preparingDayField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductDiscountRequest discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                this.discountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string shipmentTemplate {
+            get {
+                return this.shipmentTemplateField;
+            }
+            set {
+                this.shipmentTemplateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("stockItem", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ProductSkuRequest[] stockItems {
+            get {
+                return this.stockItemsField;
+            }
+            set {
+                this.stockItemsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class SpecialProductInfoApiModel {
+        
+        private string keyField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductImage {
+        
+        private string urlField;
+        
+        private string orderField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string order {
+            get {
+                return this.orderField;
+            }
+            set {
+                this.orderField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -730,7 +1727,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -817,7 +1814,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
     public enum ProductStatus {
@@ -833,31 +1830,97 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductUpdateSkuBasicRequest {
+    public partial class PagingData {
         
-        private string sellerStockCodeField;
+        private System.Nullable<int> currentPageField;
+        
+        private System.Nullable<int> pageSizeField;
+        
+        private System.Nullable<long> totalCountField;
+        
+        private System.Nullable<int> pageCountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<int> currentPage {
+            get {
+                return this.currentPageField;
+            }
+            set {
+                this.currentPageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<int> pageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<long> totalCount {
+            get {
+                return this.totalCountField;
+            }
+            set {
+                this.totalCountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<int> pageCount {
+            get {
+                return this.pageCountField;
+            }
+            set {
+                this.pageCountField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductBasic {
         
         private long idField;
         
-        private decimal optionPriceField;
+        private string productSellerCodeField;
         
-        private string quantityField;
+        private string titleField;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sellerStockCode {
-            get {
-                return this.sellerStockCodeField;
-            }
-            set {
-                this.sellerStockCodeField = value;
-            }
-        }
+        private string subtitleField;
+        
+        private decimal priceField;
+        
+        private decimal displayPriceField;
+        
+        private string saleStatusField;
+        
+        private string approvalStatusField;
+        
+        private ProductSkuList stockItemsField;
+        
+        private decimal oldPriceField;
+        
+        private decimal currencyAmountField;
+        
+        private string currencyTypeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -872,12 +1935,209 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal optionPrice {
+        public string productSellerCode {
             get {
-                return this.optionPriceField;
+                return this.productSellerCodeField;
             }
             set {
-                this.optionPriceField = value;
+                this.productSellerCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string subtitle {
+            get {
+                return this.subtitleField;
+            }
+            set {
+                this.subtitleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal displayPrice {
+            get {
+                return this.displayPriceField;
+            }
+            set {
+                this.displayPriceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string saleStatus {
+            get {
+                return this.saleStatusField;
+            }
+            set {
+                this.saleStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer", IsNullable=true)]
+        public string approvalStatus {
+            get {
+                return this.approvalStatusField;
+            }
+            set {
+                this.approvalStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductSkuList stockItems {
+            get {
+                return this.stockItemsField;
+            }
+            set {
+                this.stockItemsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal oldPrice {
+            get {
+                return this.oldPriceField;
+            }
+            set {
+                this.oldPriceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal currencyAmount {
+            get {
+                return this.currencyAmountField;
+            }
+            set {
+                this.currencyAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        public string currencyType {
+            get {
+                return this.currencyTypeField;
+            }
+            set {
+                this.currencyTypeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductSkuList {
+        
+        private long idField;
+        
+        private ProductSku[] stockItemField;
+        
+        private string productSellerCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("stockItem", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductSku[] stockItem {
+            get {
+                return this.stockItemField;
+            }
+            set {
+                this.stockItemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productSellerCode {
+            get {
+                return this.productSellerCodeField;
+            }
+            set {
+                this.productSellerCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductSku : ProductSkuBasic {
+        
+        private long idField;
+        
+        private long versionField;
+        
+        private string quantityField;
+        
+        private ProductAttribute[] attributesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
             }
         }
         
@@ -891,10 +2151,230 @@ namespace Aresv2.n11ProductService {
                 this.quantityField = value;
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("attribute", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ProductAttribute[] attributes {
+            get {
+                return this.attributesField;
+            }
+            set {
+                this.attributesField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductAttribute {
+        
+        private long idField;
+        
+        private string nameField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductSku))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductSkuBasic : ProductSkuBasicRequest {
+        
+        private decimal currencyAmountField;
+        
+        private decimal displayPriceField;
+        
+        private decimal oldOptionPriceField;
+        
+        private string gtinField;
+        
+        private string mpnField;
+        
+        private bool bundleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal currencyAmount {
+            get {
+                return this.currencyAmountField;
+            }
+            set {
+                this.currencyAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal displayPrice {
+            get {
+                return this.displayPriceField;
+            }
+            set {
+                this.displayPriceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal oldOptionPrice {
+            get {
+                return this.oldOptionPriceField;
+            }
+            set {
+                this.oldOptionPriceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string gtin {
+            get {
+                return this.gtinField;
+            }
+            set {
+                this.gtinField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string mpn {
+            get {
+                return this.mpnField;
+            }
+            set {
+                this.mpnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool bundle {
+            get {
+                return this.bundleField;
+            }
+            set {
+                this.bundleField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductSkuBasic))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductSku))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class ProductSkuBasicRequest {
+        
+        private string sellerStockCodeField;
+        
+        private decimal optionPriceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sellerStockCode {
+            get {
+                return this.sellerStockCodeField;
+            }
+            set {
+                this.sellerStockCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal optionPrice {
+            get {
+                return this.optionPriceField;
+            }
+            set {
+                this.optionPriceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
+    public partial class RequestPagingData {
+        
+        private System.Nullable<int> currentPageField;
+        
+        private System.Nullable<int> pageSizeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<int> currentPage {
+            get {
+                return this.currentPageField;
+            }
+            set {
+                this.currentPageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<int> pageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -968,7 +2448,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1016,7 +2496,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1327,1439 +2807,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class SpecialProductInfoApiModel {
-        
-        private string keyField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductImage {
-        
-        private string urlField;
-        
-        private string orderField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string url {
-            get {
-                return this.urlField;
-            }
-            set {
-                this.urlField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string order {
-            get {
-                return this.orderField;
-            }
-            set {
-                this.orderField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductSkuList {
-        
-        private long idField;
-        
-        private ProductSku[] stockItemField;
-        
-        private string productSellerCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("stockItem", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductSku[] stockItem {
-            get {
-                return this.stockItemField;
-            }
-            set {
-                this.stockItemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productSellerCode {
-            get {
-                return this.productSellerCodeField;
-            }
-            set {
-                this.productSellerCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductSku : ProductSkuBasic {
-        
-        private long idField;
-        
-        private long versionField;
-        
-        private string quantityField;
-        
-        private ProductAttribute[] attributesField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long version {
-            get {
-                return this.versionField;
-            }
-            set {
-                this.versionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string quantity {
-            get {
-                return this.quantityField;
-            }
-            set {
-                this.quantityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("attribute", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public ProductAttribute[] attributes {
-            get {
-                return this.attributesField;
-            }
-            set {
-                this.attributesField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductAttribute {
-        
-        private long idField;
-        
-        private string nameField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductSku))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductSkuBasic : ProductSkuBasicRequest {
-        
-        private decimal currencyAmountField;
-        
-        private decimal displayPriceField;
-        
-        private decimal oldOptionPriceField;
-        
-        private string gtinField;
-        
-        private string mpnField;
-        
-        private bool bundleField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal currencyAmount {
-            get {
-                return this.currencyAmountField;
-            }
-            set {
-                this.currencyAmountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal displayPrice {
-            get {
-                return this.displayPriceField;
-            }
-            set {
-                this.displayPriceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal oldOptionPrice {
-            get {
-                return this.oldOptionPriceField;
-            }
-            set {
-                this.oldOptionPriceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gtin {
-            get {
-                return this.gtinField;
-            }
-            set {
-                this.gtinField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string mpn {
-            get {
-                return this.mpnField;
-            }
-            set {
-                this.mpnField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool bundle {
-            get {
-                return this.bundleField;
-            }
-            set {
-                this.bundleField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductSkuBasic))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductSku))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductSkuBasicRequest {
-        
-        private string sellerStockCodeField;
-        
-        private decimal optionPriceField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sellerStockCode {
-            get {
-                return this.sellerStockCodeField;
-            }
-            set {
-                this.sellerStockCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal optionPrice {
-            get {
-                return this.optionPriceField;
-            }
-            set {
-                this.optionPriceField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductSkuRequest {
-        
-        private System.Nullable<bool> bundleField;
-        
-        private string mpnField;
-        
-        private string gtinField;
-        
-        private string quantityField;
-        
-        private string sellerStockCodeField;
-        
-        private ProductAttributeRequest[] attributesField;
-        
-        private decimal optionPriceField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public System.Nullable<bool> bundle {
-            get {
-                return this.bundleField;
-            }
-            set {
-                this.bundleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public string mpn {
-            get {
-                return this.mpnField;
-            }
-            set {
-                this.mpnField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public string gtin {
-            get {
-                return this.gtinField;
-            }
-            set {
-                this.gtinField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string quantity {
-            get {
-                return this.quantityField;
-            }
-            set {
-                this.quantityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sellerStockCode {
-            get {
-                return this.sellerStockCodeField;
-            }
-            set {
-                this.sellerStockCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("attribute", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public ProductAttributeRequest[] attributes {
-            get {
-                return this.attributesField;
-            }
-            set {
-                this.attributesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal optionPrice {
-            get {
-                return this.optionPriceField;
-            }
-            set {
-                this.optionPriceField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductAttributeRequest {
-        
-        private string nameField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductDiscountRequest {
-        
-        private string startDateField;
-        
-        private string endDateField;
-        
-        private string typeField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string startDate {
-            get {
-                return this.startDateField;
-            }
-            set {
-                this.startDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string endDate {
-            get {
-                return this.endDateField;
-            }
-            set {
-                this.endDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class CategoryRequest {
-        
-        private long idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductRequest {
-        
-        private string productSellerCodeField;
-        
-        private string titleField;
-        
-        private string subtitleField;
-        
-        private string descriptionField;
-        
-        private CategoryRequest categoryField;
-        
-        private SpecialProductInfoApiModel[] specialProductInfoListField;
-        
-        private decimal priceField;
-        
-        private string currencyTypeField;
-        
-        private ProductImage[] imagesField;
-        
-        private string approvalStatusField;
-        
-        private ProductAttributeRequest[] attributesField;
-        
-        private string saleStartDateField;
-        
-        private string saleEndDateField;
-        
-        private string productionDateField;
-        
-        private string expirationDateField;
-        
-        private string productConditionField;
-        
-        private string preparingDayField;
-        
-        private ProductDiscountRequest discountField;
-        
-        private string shipmentTemplateField;
-        
-        private ProductSkuRequest[] stockItemsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productSellerCode {
-            get {
-                return this.productSellerCodeField;
-            }
-            set {
-                this.productSellerCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string title {
-            get {
-                return this.titleField;
-            }
-            set {
-                this.titleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string subtitle {
-            get {
-                return this.subtitleField;
-            }
-            set {
-                this.subtitleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CategoryRequest category {
-            get {
-                return this.categoryField;
-            }
-            set {
-                this.categoryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("specialProductInfo", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public SpecialProductInfoApiModel[] specialProductInfoList {
-            get {
-                return this.specialProductInfoListField;
-            }
-            set {
-                this.specialProductInfoListField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal price {
-            get {
-                return this.priceField;
-            }
-            set {
-                this.priceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string currencyType {
-            get {
-                return this.currencyTypeField;
-            }
-            set {
-                this.currencyTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("image", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public ProductImage[] images {
-            get {
-                return this.imagesField;
-            }
-            set {
-                this.imagesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer", IsNullable=true)]
-        public string approvalStatus {
-            get {
-                return this.approvalStatusField;
-            }
-            set {
-                this.approvalStatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("attribute", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public ProductAttributeRequest[] attributes {
-            get {
-                return this.attributesField;
-            }
-            set {
-                this.attributesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string saleStartDate {
-            get {
-                return this.saleStartDateField;
-            }
-            set {
-                this.saleStartDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string saleEndDate {
-            get {
-                return this.saleEndDateField;
-            }
-            set {
-                this.saleEndDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productionDate {
-            get {
-                return this.productionDateField;
-            }
-            set {
-                this.productionDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string expirationDate {
-            get {
-                return this.expirationDateField;
-            }
-            set {
-                this.expirationDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productCondition {
-            get {
-                return this.productConditionField;
-            }
-            set {
-                this.productConditionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string preparingDay {
-            get {
-                return this.preparingDayField;
-            }
-            set {
-                this.preparingDayField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductDiscountRequest discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                this.discountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string shipmentTemplate {
-            get {
-                return this.shipmentTemplateField;
-            }
-            set {
-                this.shipmentTemplateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("stockItem", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public ProductSkuRequest[] stockItems {
-            get {
-                return this.stockItemsField;
-            }
-            set {
-                this.stockItemsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductQuestion {
-        
-        private long idField;
-        
-        private long productIdField;
-        
-        private string productTitleField;
-        
-        private string questionSubjectField;
-        
-        private string questionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long productId {
-            get {
-                return this.productIdField;
-            }
-            set {
-                this.productIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productTitle {
-            get {
-                return this.productTitleField;
-            }
-            set {
-                this.productTitleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string questionSubject {
-            get {
-                return this.questionSubjectField;
-            }
-            set {
-                this.questionSubjectField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string question {
-            get {
-                return this.questionField;
-            }
-            set {
-                this.questionField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductQuestionSearch {
-        
-        private long productIdField;
-        
-        private string buyerEmailField;
-        
-        private string subjectField;
-        
-        private ProductQuestionStatus statusField;
-        
-        private string questionDateField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long productId {
-            get {
-                return this.productIdField;
-            }
-            set {
-                this.productIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string buyerEmail {
-            get {
-                return this.buyerEmailField;
-            }
-            set {
-                this.buyerEmailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string subject {
-            get {
-                return this.subjectField;
-            }
-            set {
-                this.subjectField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductQuestionStatus status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string questionDate {
-            get {
-                return this.questionDateField;
-            }
-            set {
-                this.questionDateField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public enum ProductQuestionStatus {
-        
-        /// <remarks/>
-        CLOSED,
-        
-        /// <remarks/>
-        OPEN,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class PagingData {
-        
-        private System.Nullable<int> currentPageField;
-        
-        private System.Nullable<int> pageSizeField;
-        
-        private System.Nullable<long> totalCountField;
-        
-        private System.Nullable<int> pageCountField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public System.Nullable<int> currentPage {
-            get {
-                return this.currentPageField;
-            }
-            set {
-                this.currentPageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public System.Nullable<int> pageSize {
-            get {
-                return this.pageSizeField;
-            }
-            set {
-                this.pageSizeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public System.Nullable<long> totalCount {
-            get {
-                return this.totalCountField;
-            }
-            set {
-                this.totalCountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public System.Nullable<int> pageCount {
-            get {
-                return this.pageCountField;
-            }
-            set {
-                this.pageCountField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class RequestPagingData {
-        
-        private System.Nullable<int> currentPageField;
-        
-        private System.Nullable<int> pageSizeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public System.Nullable<int> currentPage {
-            get {
-                return this.currentPageField;
-            }
-            set {
-                this.currentPageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public System.Nullable<int> pageSize {
-            get {
-                return this.pageSizeField;
-            }
-            set {
-                this.pageSizeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductQuestionDetail {
-        
-        private long productIdField;
-        
-        private string productTitleField;
-        
-        private string questionSubjectField;
-        
-        private string questionField;
-        
-        private string fullNameField;
-        
-        private string emailField;
-        
-        private string productStatusField;
-        
-        private string statusField;
-        
-        private System.DateTime questionDateField;
-        
-        private System.DateTime answeredDateField;
-        
-        private string sellerExposeField;
-        
-        private string buyerExposeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long productId {
-            get {
-                return this.productIdField;
-            }
-            set {
-                this.productIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productTitle {
-            get {
-                return this.productTitleField;
-            }
-            set {
-                this.productTitleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string questionSubject {
-            get {
-                return this.questionSubjectField;
-            }
-            set {
-                this.questionSubjectField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string question {
-            get {
-                return this.questionField;
-            }
-            set {
-                this.questionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string fullName {
-            get {
-                return this.fullNameField;
-            }
-            set {
-                this.fullNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productStatus {
-            get {
-                return this.productStatusField;
-            }
-            set {
-                this.productStatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date")]
-        public System.DateTime questionDate {
-            get {
-                return this.questionDateField;
-            }
-            set {
-                this.questionDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date")]
-        public System.DateTime answeredDate {
-            get {
-                return this.answeredDateField;
-            }
-            set {
-                this.answeredDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sellerExpose {
-            get {
-                return this.sellerExposeField;
-            }
-            set {
-                this.sellerExposeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string buyerExpose {
-            get {
-                return this.buyerExposeField;
-            }
-            set {
-                this.buyerExposeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class ProductBasic {
-        
-        private long idField;
-        
-        private string productSellerCodeField;
-        
-        private string titleField;
-        
-        private string subtitleField;
-        
-        private decimal priceField;
-        
-        private decimal displayPriceField;
-        
-        private string saleStatusField;
-        
-        private string approvalStatusField;
-        
-        private ProductSkuList stockItemsField;
-        
-        private decimal oldPriceField;
-        
-        private decimal currencyAmountField;
-        
-        private string currencyTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productSellerCode {
-            get {
-                return this.productSellerCodeField;
-            }
-            set {
-                this.productSellerCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string title {
-            get {
-                return this.titleField;
-            }
-            set {
-                this.titleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string subtitle {
-            get {
-                return this.subtitleField;
-            }
-            set {
-                this.subtitleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal price {
-            get {
-                return this.priceField;
-            }
-            set {
-                this.priceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal displayPrice {
-            get {
-                return this.displayPriceField;
-            }
-            set {
-                this.displayPriceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string saleStatus {
-            get {
-                return this.saleStatusField;
-            }
-            set {
-                this.saleStatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer", IsNullable=true)]
-        public string approvalStatus {
-            get {
-                return this.approvalStatusField;
-            }
-            set {
-                this.approvalStatusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductSkuList stockItems {
-            get {
-                return this.stockItemsField;
-            }
-            set {
-                this.stockItemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal oldPrice {
-            get {
-                return this.oldPriceField;
-            }
-            set {
-                this.oldPriceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal currencyAmount {
-            get {
-                return this.currencyAmountField;
-            }
-            set {
-                this.currencyAmountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string currencyType {
-            get {
-                return this.currencyTypeField;
-            }
-            set {
-                this.currencyTypeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2820,77 +2868,16 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.n11.com/ws/schemas")]
-    public partial class SellerProductDiscount {
-        
-        private string discountTypeField;
-        
-        private double discountValueField;
-        
-        private string discountStartDateField;
-        
-        private string discountEndDateField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string discountType {
-            get {
-                return this.discountTypeField;
-            }
-            set {
-                this.discountTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double discountValue {
-            get {
-                return this.discountValueField;
-            }
-            set {
-                this.discountValueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string discountStartDate {
-            get {
-                return this.discountStartDateField;
-            }
-            set {
-                this.discountStartDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string discountEndDate {
-            get {
-                return this.discountEndDateField;
-            }
-            set {
-                this.discountEndDateField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class UpdateDiscountValueByProductIdResponse {
+    public partial class GetProductByProductIdResponse {
         
         private ResultInfo resultField;
         
-        private ProductBasic productField;
+        private Product productField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -2905,7 +2892,7 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductBasic product {
+        public Product product {
             get {
                 return this.productField;
             }
@@ -2916,16 +2903,16 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductQuestionDetailRequest {
+    public partial class GetProductBySellerCodeRequest {
         
         private Authentication authField;
         
-        private long productQuestionIdField;
+        private string sellerCodeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -2940,40 +2927,53 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long productQuestionId {
+        public string sellerCode {
             get {
-                return this.productQuestionIdField;
+                return this.sellerCodeField;
             }
             set {
-                this.productQuestionIdField = value;
+                this.sellerCodeField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductQuestionDetailResponse {
+    public partial class GetProductBySellerCodeResponse {
         
-        private ProductQuestionDetail productQuestionField;
+        private ResultInfo resultField;
+        
+        private Product productField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductQuestionDetail productQuestion {
+        public ResultInfo result {
             get {
-                return this.productQuestionField;
+                return this.resultField;
             }
             set {
-                this.productQuestionField = value;
+                this.resultField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Product product {
+            get {
+                return this.productField;
+            }
+            set {
+                this.productField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3008,7 +3008,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3057,18 +3057,18 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductQuestionListRequest {
+    public partial class SearchProductsRequest {
         
         private Authentication authField;
         
-        private ProductQuestionSearch productQuestionSearchField;
-        
         private RequestPagingData pagingDataField;
+        
+        private ProductSearch productSearchField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3083,17 +3083,6 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductQuestionSearch productQuestionSearch {
-            get {
-                return this.productQuestionSearchField;
-            }
-            set {
-                this.productQuestionSearchField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public RequestPagingData pagingData {
             get {
                 return this.pagingDataField;
@@ -3102,29 +3091,53 @@ namespace Aresv2.n11ProductService {
                 this.pagingDataField = value;
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductSearch productSearch {
+            get {
+                return this.productSearchField;
+            }
+            set {
+                this.productSearchField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductQuestionListResponse {
+    public partial class SearchProductsResponse {
         
-        private ProductQuestion[] productQuestionsField;
+        private ResultInfo resultField;
+        
+        private ProductBasic[] productsField;
         
         private PagingData pagingDataField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("productQuestion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public ProductQuestion[] productQuestions {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ResultInfo result {
             get {
-                return this.productQuestionsField;
+                return this.resultField;
             }
             set {
-                this.productQuestionsField = value;
+                this.resultField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("product", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ProductBasic[] products {
+            get {
+                return this.productsField;
+            }
+            set {
+                this.productsField = value;
             }
         }
         
@@ -3141,147 +3154,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class SaveProductRequest {
-        
-        private Authentication authField;
-        
-        private ProductRequest productField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Authentication auth {
-            get {
-                return this.authField;
-            }
-            set {
-                this.authField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductRequest product {
-            get {
-                return this.productField;
-            }
-            set {
-                this.productField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class SaveProductResponse {
-        
-        private ResultInfo resultField;
-        
-        private ProductBasic productField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResultInfo result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductBasic product {
-            get {
-                return this.productField;
-            }
-            set {
-                this.productField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class DeleteProductBySellerCodeRequest {
-        
-        private Authentication authField;
-        
-        private string productSellerCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Authentication auth {
-            get {
-                return this.authField;
-            }
-            set {
-                this.authField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string productSellerCode {
-            get {
-                return this.productSellerCodeField;
-            }
-            set {
-                this.productSellerCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class DeleteProductBySellerCodeResponse {
-        
-        private ResultInfo resultField;
-        
-        private ProductBasic productField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResultInfo result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductBasic product {
-            get {
-                return this.productField;
-            }
-            set {
-                this.productField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3356,7 +3229,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3391,7 +3264,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3466,7 +3339,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3501,77 +3374,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductByProductIdRequest {
-        
-        private Authentication authField;
-        
-        private long productIdField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Authentication auth {
-            get {
-                return this.authField;
-            }
-            set {
-                this.authField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long productId {
-            get {
-                return this.productIdField;
-            }
-            set {
-                this.productIdField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductByProductIdResponse {
-        
-        private ResultInfo resultField;
-        
-        private Product productField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResultInfo result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Product product {
-            get {
-                return this.productField;
-            }
-            set {
-                this.productField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3606,7 +3409,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3641,18 +3444,16 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class UpdateDiscountValueBySellerCodeRequest {
+    public partial class DeleteProductBySellerCodeRequest {
         
         private Authentication authField;
         
         private string productSellerCodeField;
-        
-        private SellerProductDiscount productDiscountField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3675,26 +3476,15 @@ namespace Aresv2.n11ProductService {
                 this.productSellerCodeField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SellerProductDiscount productDiscount {
-            get {
-                return this.productDiscountField;
-            }
-            set {
-                this.productDiscountField = value;
-            }
-        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class UpdateDiscountValueBySellerCodeResponse {
+    public partial class DeleteProductBySellerCodeResponse {
         
         private ResultInfo resultField;
         
@@ -3724,7 +3514,77 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class SaveProductRequest {
+        
+        private Authentication authField;
+        
+        private ProductRequest productField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Authentication auth {
+            get {
+                return this.authField;
+            }
+            set {
+                this.authField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductRequest product {
+            get {
+                return this.productField;
+            }
+            set {
+                this.productField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class SaveProductResponse {
+        
+        private ResultInfo resultField;
+        
+        private ProductBasic productField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ResultInfo result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductBasic product {
+            get {
+                return this.productField;
+            }
+            set {
+                this.productField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3812,7 +3672,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3847,18 +3707,18 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class SearchProductsRequest {
+    public partial class UpdateDiscountValueByProductIdRequest {
         
         private Authentication authField;
         
-        private RequestPagingData pagingDataField;
+        private long productIdField;
         
-        private ProductSearch productSearchField;
+        private SellerProductDiscount productDiscountField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3873,40 +3733,38 @@ namespace Aresv2.n11ProductService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RequestPagingData pagingData {
+        public long productId {
             get {
-                return this.pagingDataField;
+                return this.productIdField;
             }
             set {
-                this.pagingDataField = value;
+                this.productIdField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ProductSearch productSearch {
+        public SellerProductDiscount productDiscount {
             get {
-                return this.productSearchField;
+                return this.productDiscountField;
             }
             set {
-                this.productSearchField = value;
+                this.productDiscountField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class SearchProductsResponse {
+    public partial class UpdateDiscountValueByProductIdResponse {
         
         private ResultInfo resultField;
         
-        private ProductBasic[] productsField;
-        
-        private PagingData pagingDataField;
+        private ProductBasic productField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3920,14 +3778,169 @@ namespace Aresv2.n11ProductService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("product", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public ProductBasic[] products {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductBasic product {
             get {
-                return this.productsField;
+                return this.productField;
             }
             set {
-                this.productsField = value;
+                this.productField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class UpdateDiscountValueBySellerCodeRequest {
+        
+        private Authentication authField;
+        
+        private string productSellerCodeField;
+        
+        private SellerProductDiscount productDiscountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Authentication auth {
+            get {
+                return this.authField;
+            }
+            set {
+                this.authField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string productSellerCode {
+            get {
+                return this.productSellerCodeField;
+            }
+            set {
+                this.productSellerCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SellerProductDiscount productDiscount {
+            get {
+                return this.productDiscountField;
+            }
+            set {
+                this.productDiscountField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class UpdateDiscountValueBySellerCodeResponse {
+        
+        private ResultInfo resultField;
+        
+        private ProductBasic productField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ResultInfo result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductBasic product {
+            get {
+                return this.productField;
+            }
+            set {
+                this.productField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class GetProductQuestionListRequest {
+        
+        private Authentication authField;
+        
+        private ProductQuestionSearch productQuestionSearchField;
+        
+        private RequestPagingData pagingDataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Authentication auth {
+            get {
+                return this.authField;
+            }
+            set {
+                this.authField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductQuestionSearch productQuestionSearch {
+            get {
+                return this.productQuestionSearchField;
+            }
+            set {
+                this.productQuestionSearchField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public RequestPagingData pagingData {
+            get {
+                return this.pagingDataField;
+            }
+            set {
+                this.pagingDataField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class GetProductQuestionListResponse {
+        
+        private ProductQuestion[] productQuestionsField;
+        
+        private PagingData pagingDataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("productQuestion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ProductQuestion[] productQuestions {
+            get {
+                return this.productQuestionsField;
+            }
+            set {
+                this.productQuestionsField = value;
             }
         }
         
@@ -3944,7 +3957,64 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class GetProductQuestionDetailRequest {
+        
+        private Authentication authField;
+        
+        private long productQuestionIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Authentication auth {
+            get {
+                return this.authField;
+            }
+            set {
+                this.authField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long productQuestionId {
+            get {
+                return this.productQuestionIdField;
+            }
+            set {
+                this.productQuestionIdField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
+    public partial class GetProductQuestionDetailResponse {
+        
+        private ProductQuestionDetail productQuestionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ProductQuestionDetail productQuestion {
+            get {
+                return this.productQuestionField;
+            }
+            set {
+                this.productQuestionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3992,7 +4062,7 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4014,289 +4084,11 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductBySellerCodeRequest {
-        
-        private Authentication authField;
-        
-        private string sellerCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Authentication auth {
-            get {
-                return this.authField;
-            }
-            set {
-                this.authField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sellerCode {
-            get {
-                return this.sellerCodeField;
-            }
-            set {
-                this.sellerCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.n11.com/ws/schemas")]
-    public partial class GetProductBySellerCodeResponse {
-        
-        private ResultInfo resultField;
-        
-        private Product productField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResultInfo result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Product product {
-            get {
-                return this.productField;
-            }
-            set {
-                this.productField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void UpdateDiscountValueByProductIdCompletedEventHandler(object sender, UpdateDiscountValueByProductIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UpdateDiscountValueByProductIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal UpdateDiscountValueByProductIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public UpdateDiscountValueByProductIdResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((UpdateDiscountValueByProductIdResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void GetProductQuestionDetailCompletedEventHandler(object sender, GetProductQuestionDetailCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetProductQuestionDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetProductQuestionDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public GetProductQuestionDetailResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((GetProductQuestionDetailResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void GetProductListCompletedEventHandler(object sender, GetProductListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetProductListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetProductListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public GetProductListResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((GetProductListResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void GetProductQuestionListCompletedEventHandler(object sender, GetProductQuestionListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetProductQuestionListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetProductQuestionListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public GetProductQuestionListResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((GetProductQuestionListResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void SaveProductCompletedEventHandler(object sender, SaveProductCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveProductCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveProductCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public SaveProductResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((SaveProductResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void DeleteProductBySellerCodeCompletedEventHandler(object sender, DeleteProductBySellerCodeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DeleteProductBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal DeleteProductBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public DeleteProductBySellerCodeResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((DeleteProductBySellerCodeResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void UpdateProductPriceByIdCompletedEventHandler(object sender, UpdateProductPriceByIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UpdateProductPriceByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal UpdateProductPriceByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public UpdateProductPriceByIdResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((UpdateProductPriceByIdResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void UpdateProductPriceBySellerCodeCompletedEventHandler(object sender, UpdateProductPriceBySellerCodeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UpdateProductPriceBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal UpdateProductPriceBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public UpdateProductPriceBySellerCodeResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((UpdateProductPriceBySellerCodeResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void GetProductByProductIdCompletedEventHandler(object sender, GetProductByProductIdCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetProductByProductIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4318,89 +4110,63 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void DeleteProductByIdCompletedEventHandler(object sender, DeleteProductByIdCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void GetProductBySellerCodeCompletedEventHandler(object sender, GetProductBySellerCodeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DeleteProductByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetProductBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal DeleteProductByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetProductBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public DeleteProductByIdResponse Result {
+        public GetProductBySellerCodeResponse Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((DeleteProductByIdResponse)(this.results[0]));
+                return ((GetProductBySellerCodeResponse)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void UpdateDiscountValueBySellerCodeCompletedEventHandler(object sender, UpdateDiscountValueBySellerCodeCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void GetProductListCompletedEventHandler(object sender, GetProductListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UpdateDiscountValueBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetProductListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal UpdateDiscountValueBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetProductListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public UpdateDiscountValueBySellerCodeResponse Result {
+        public GetProductListResponse Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((UpdateDiscountValueBySellerCodeResponse)(this.results[0]));
+                return ((GetProductListResponse)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void UpdateProductBasicCompletedEventHandler(object sender, UpdateProductBasicCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UpdateProductBasicCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal UpdateProductBasicCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public UpdateProductBasicResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((UpdateProductBasicResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SearchProductsCompletedEventHandler(object sender, SearchProductsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SearchProductsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4422,11 +4188,271 @@ namespace Aresv2.n11ProductService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void UpdateProductPriceByIdCompletedEventHandler(object sender, UpdateProductPriceByIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateProductPriceByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateProductPriceByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public UpdateProductPriceByIdResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((UpdateProductPriceByIdResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void UpdateProductPriceBySellerCodeCompletedEventHandler(object sender, UpdateProductPriceBySellerCodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateProductPriceBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateProductPriceBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public UpdateProductPriceBySellerCodeResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((UpdateProductPriceBySellerCodeResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void DeleteProductByIdCompletedEventHandler(object sender, DeleteProductByIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DeleteProductByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DeleteProductByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public DeleteProductByIdResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((DeleteProductByIdResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void DeleteProductBySellerCodeCompletedEventHandler(object sender, DeleteProductBySellerCodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DeleteProductBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DeleteProductBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public DeleteProductBySellerCodeResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((DeleteProductBySellerCodeResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SaveProductCompletedEventHandler(object sender, SaveProductCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveProductCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveProductCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public SaveProductResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((SaveProductResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void UpdateProductBasicCompletedEventHandler(object sender, UpdateProductBasicCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateProductBasicCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateProductBasicCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public UpdateProductBasicResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((UpdateProductBasicResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void UpdateDiscountValueByProductIdCompletedEventHandler(object sender, UpdateDiscountValueByProductIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateDiscountValueByProductIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateDiscountValueByProductIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public UpdateDiscountValueByProductIdResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((UpdateDiscountValueByProductIdResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void UpdateDiscountValueBySellerCodeCompletedEventHandler(object sender, UpdateDiscountValueBySellerCodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateDiscountValueBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateDiscountValueBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public UpdateDiscountValueBySellerCodeResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((UpdateDiscountValueBySellerCodeResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void GetProductQuestionListCompletedEventHandler(object sender, GetProductQuestionListCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetProductQuestionListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetProductQuestionListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public GetProductQuestionListResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((GetProductQuestionListResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void GetProductQuestionDetailCompletedEventHandler(object sender, GetProductQuestionDetailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetProductQuestionDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetProductQuestionDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public GetProductQuestionDetailResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((GetProductQuestionDetailResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SaveProductAnswerCompletedEventHandler(object sender, SaveProductAnswerCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveProductAnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4443,32 +4469,6 @@ namespace Aresv2.n11ProductService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((SaveProductAnswerResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void GetProductBySellerCodeCompletedEventHandler(object sender, GetProductBySellerCodeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetProductBySellerCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetProductBySellerCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public GetProductBySellerCodeResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((GetProductBySellerCodeResponse)(this.results[0]));
             }
         }
     }

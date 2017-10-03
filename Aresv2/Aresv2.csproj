@@ -770,6 +770,14 @@
     <Compile Include="Kasa\KasaHareketListesi.Designer.cs">
       <DependentUpon>KasaHareketListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="n11\csn11ProductList .cs" />
+    <Compile Include="n11\csN11ProductService.cs" />
+    <Compile Include="n11\frmEticaretSenkronizasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="n11\frmEticaretSenkronizasyon.Designer.cs">
+      <DependentUpon>frmEticaretSenkronizasyon.cs</DependentUpon>
+    </Compile>
     <Compile Include="n11\frmN11.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -956,6 +964,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\n11ProductService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\n11ProductStockService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -1383,6 +1396,9 @@
     <EmbeddedResource Include="Kasa\KasaHareketListesi.resx">
       <DependentUpon>KasaHareketListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="n11\frmEticaretSenkronizasyon.resx">
+      <DependentUpon>frmEticaretSenkronizasyon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="n11\frmN11.resx">
       <DependentUpon>frmN11.cs</DependentUpon>
     </EmbeddedResource>
@@ -1799,6 +1815,35 @@
     <None Include="Web References\n11ProductService\UpdateProductPriceBySellerCodeResponse1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\n11ProductStockService\DeleteAndUpdateStockByStockAttributesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductStockService\GetProductStockByProductIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductStockService\GetProductStockByProductSellerCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductStockService\IncreaseStockByStockAttributesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductStockService\IncreaseStockByStockIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductStockService\IncreaseStockByStockSellerCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductStockService\ProductStockService.wsdl" />
+    <None Include="Web References\n11ProductStockService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\n11ProductStockService\UpdateStockByStockIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductStockService\UpdateStockByStockSellerCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="11Notlar.txt" />
@@ -1891,6 +1936,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Aresv2_ProductService_ProductServicePortService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://api.n11.com/ws/ProductStockService.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\n11ProductStockService\</RelPath>
+      <UpdateFromURL>https://api.n11.com/ws/ProductStockService.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Aresv2_n11ProductStockService_ProductStockServicePortService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

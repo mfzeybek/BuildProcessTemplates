@@ -30,5 +30,10 @@ namespace Aresv2.n11
 
             gridControl2.DataSource = n11UrunListesi.dt;
         }
+
+        private void frmN11ProductList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

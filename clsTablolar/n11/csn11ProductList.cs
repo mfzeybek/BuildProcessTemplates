@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+
+
 namespace clsTablolar.n11
 {
     public class csn11ProductList : IDisposable
@@ -17,6 +19,7 @@ namespace clsTablolar.n11
 
         SqlDataAdapter da;
         public DataTable dt;
+
 
         public void Getir(SqlConnection Baglanti, SqlTransaction Tr)
         {
@@ -32,6 +35,9 @@ namespace clsTablolar.n11
                 }
             }
         }
+
+
+        
 
 
     }

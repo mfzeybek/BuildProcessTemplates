@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.frmN11ProductListlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.btnN11KartiniAc = new DevExpress.XtraEditors.SimpleButton();
             this.btnStokKartiniAc = new DevExpress.XtraEditors.SimpleButton();
@@ -233,6 +234,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmN11ProductList";
             this.Text = "frmN11ProductList";
+            this.Load += new System.EventHandler(this.frmN11ProductList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmN11ProductListlayoutControl1ConvertedLayout)).EndInit();
