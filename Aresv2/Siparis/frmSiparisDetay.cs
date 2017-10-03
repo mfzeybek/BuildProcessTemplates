@@ -1046,5 +1046,13 @@ namespace Aresv2.Siparis
         {
 
         }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (frmExceleAktar frm = new frmExceleAktar(gcSiparisHareket))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

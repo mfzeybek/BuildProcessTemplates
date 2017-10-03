@@ -34,22 +34,13 @@ namespace Aresv2.n11
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 Urun = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
 
-
-
-
                 TrGenel.Commit();
-
-
                 KategoriDoldur();
 
-
-
                 Al();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
 

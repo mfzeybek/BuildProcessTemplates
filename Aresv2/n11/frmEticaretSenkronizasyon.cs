@@ -32,7 +32,7 @@ namespace Aresv2.n11
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             n11.csN11ProductService urun = new csN11ProductService();
-            urun.ProducktGetir("sdfs");
+            urun.ProducktGetir("S04013");
         }
     }
 }

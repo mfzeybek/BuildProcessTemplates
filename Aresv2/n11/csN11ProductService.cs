@@ -24,7 +24,7 @@ namespace Aresv2.n11
 
         string title { get; set; }
 
-        string subtitle { get; set; }
+        string subtitle { get; set; } // Ürün sayfasında görünecek altbaşlık, en fazla 100 kaakter olmalıdır.
         Category category { get; set; }
         string description { get; set; }
         decimal displayPrice { get; set; }
@@ -35,6 +35,25 @@ namespace Aresv2.n11
         ProductAttribute[] attributes { get; set; }
         string productSellerCode { get; set; }
         string shipmentTemplate { get; set; }
+        string FotoUrl { get; set; }
+        string saleStatus { get; set; }
+
+        ProductImage[] Foto { get; set; }
+
+
+        //product.saleStatus
+        //1: Satış Öncesi(Before_Sale)
+        //2: Satışta(On_Sale)
+        //3: Stok yok(Out of_Stock)
+        //4: Satışa kapalı(Sale_Closed)
+
+
+
+        //product.approvalStatus Ürün onay durumu:
+        //1: Aktif(Satışta)
+        //2: Beklemede 
+        //3: Yasaklı
+
 
 
         public void ProducktGetir(string SaticiUrunKodu) // yani stok kodu olarak ne verdiysen o işte
@@ -55,25 +74,26 @@ namespace Aresv2.n11
             this.title = response.product.title;
             this.subtitle = response.product.subtitle;
             this.category = response.product.category;
-            this.description = response.product.description;
-            this.displayPrice = response.product.displayPrice;
-            this.discount = response.product.discount;
-            this.preparingDay = response.product.preparingDay;
-            this.price = response.product.price;
-            this.approvalStatus = response.product.approvalStatus;
-            this.attributes = response.product.attributes;
-            this.productSellerCode = response.product.productSellerCode;
+            this.description = response.product.description; // detay
+            this.displayPrice = response.product.displayPrice; // Görüntülenen ürün fiyatı(Ürünün indirimler sonucu tanımlanan son fiyat hali)
+            this.discount = response.product.discount; // indirim
+            this.preparingDay = response.product.preparingDay; // hazırlama zamanı
+            this.price = response.product.price; // Ürünün baz fiyatı
+            this.approvalStatus = response.product.approvalStatus; // onay durumu
+            this.attributes = response.product.attributes; // özellikleri biz değiştiremiyoruz n11 den kategoriye göre geliyor. attributes[0].name (bu hep marka)
+            this.productSellerCode = response.product.productSellerCode; // bizdeki stok kodu
             this.shipmentTemplate = response.product.shipmentTemplate;
+            this.Foto = response.product.images;
         }
 
         public void Kaydet()
         {
-
+            ahandaaa();
         }
-        public void main(String[] args)
+        public void ahandaaa()
         {
-            String strAppKey = "64155786-da91-4204-8735-443d17acf808";
-            String strAppSecret = "***";
+            //String strAppKey = "64155786-da91-4204-8735-443d17acf808";
+            //String strAppSecret = "***";
             String strUrl = "https://www.google.com/logos/doodles/2016/bahrain-national-day-2016-6221988579246080-hp2x.jpg";
             String strSellerStockCode = "MaviKod-APIDeneme432100000000";
             String strSellerStockCode1 = "KırmızıKod-APIDeneme4321000000000";

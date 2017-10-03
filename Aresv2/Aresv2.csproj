@@ -772,6 +772,8 @@
     </Compile>
     <Compile Include="n11\csn11ProductList .cs" />
     <Compile Include="n11\csN11ProductService.cs" />
+    <Compile Include="n11\csN11UpdateProductBasic.cs" />
+    <Compile Include="n11\csN11UpdateProductPriceBySellerCode.cs" />
     <Compile Include="n11\frmEticaretSenkronizasyon.cs">
       <SubType>Form</SubType>
     </Compile>
