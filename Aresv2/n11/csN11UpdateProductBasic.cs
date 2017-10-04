@@ -71,19 +71,20 @@ namespace Aresv2.n11
             productUpdateSkuBasicRequestItemList.Add(productUpdateSkuBasicRequest);
 
             UpdateProductBasicRequest request = new UpdateProductBasicRequest();
-            request.setProductSellerCode(strProdSellerCode);
-            request.setPrice(BigDecimal.valueOf(priceDec));
-            request.setAuth(authentication);
-            request.setProductId(productIdVal);
-            request.setProductDiscount(sellerProductDiscount);
-            request.setStockItems(productUpdateSkuBasicRequestItemList);
+            request.productSellerCode = strProdSellerCode;
+            request.price = (decimal)priceDec;
+            request.auth = authentication;
+            request.productId = productIdVal;
+            request.productDiscount = sellerProductDiscount;
+            request.stockItems = productUpdateSkuBasicRequestItemList.ToArray();
 
             ProductServicePortService port = new ProductServicePortService();
-            SaveProductResponse response = port.updateProductBasic(request);
+            UpdateProductBasicResponse response = port.UpdateProductBasic(request);
 
 
-            System.out.println(response.getProduct().getId() + " Display price:"
-                    + response.getProduct().getDisplayPrice() + " Price:" + response.getProduct().getPrice());
+
+            //System.out.println(response.getProduct().getId() + " Display price:"
+            //        + response.getProduct().getDisplayPrice() + " Price:" + response.getProduct().getPrice());
 
 
         }
