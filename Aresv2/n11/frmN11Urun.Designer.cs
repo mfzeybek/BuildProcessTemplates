@@ -95,7 +95,7 @@
             // txtUrunBasligi
             // 
             this.txtUrunBasligi.Location = new System.Drawing.Point(11, 42);
-            this.txtUrunBasligi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUrunBasligi.Margin = new System.Windows.Forms.Padding(4);
             this.txtUrunBasligi.Name = "txtUrunBasligi";
             this.txtUrunBasligi.Size = new System.Drawing.Size(675, 34);
             this.txtUrunBasligi.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -120,7 +120,7 @@
             this.frmN11UrunlayoutControl1ConvertedLayout.Controls.Add(this.btnKaydet);
             this.frmN11UrunlayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmN11UrunlayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
-            this.frmN11UrunlayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frmN11UrunlayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(4);
             this.frmN11UrunlayoutControl1ConvertedLayout.Name = "frmN11UrunlayoutControl1ConvertedLayout";
             this.frmN11UrunlayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(820, 580, 900, 800);
             this.frmN11UrunlayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
@@ -131,7 +131,7 @@
             // 
             this.ımageSlider1.Cursor = System.Windows.Forms.Cursors.Default;
             this.ımageSlider1.Location = new System.Drawing.Point(11, 384);
-            this.ımageSlider1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ımageSlider1.Margin = new System.Windows.Forms.Padding(4);
             this.ımageSlider1.Name = "ımageSlider1";
             this.ımageSlider1.Size = new System.Drawing.Size(955, 728);
             this.ımageSlider1.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -141,7 +141,7 @@
             // treeListLookUpEdit1
             // 
             this.treeListLookUpEdit1.Location = new System.Drawing.Point(694, 42);
-            this.treeListLookUpEdit1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeListLookUpEdit1.Margin = new System.Windows.Forms.Padding(4);
             this.treeListLookUpEdit1.Name = "treeListLookUpEdit1";
             this.treeListLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -161,7 +161,7 @@
             // txtStokMiktari
             // 
             this.txtStokMiktari.Location = new System.Drawing.Point(698, 188);
-            this.txtStokMiktari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStokMiktari.Margin = new System.Windows.Forms.Padding(4);
             this.txtStokMiktari.Name = "txtStokMiktari";
             this.txtStokMiktari.Size = new System.Drawing.Size(601, 34);
             this.txtStokMiktari.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -170,7 +170,7 @@
             // textEdit3
             // 
             this.textEdit3.Location = new System.Drawing.Point(1307, 188);
-            this.textEdit3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textEdit3.Margin = new System.Windows.Forms.Padding(4);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(598, 34);
             this.textEdit3.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -180,7 +180,7 @@
             // textEdit2
             // 
             this.textEdit2.Location = new System.Drawing.Point(694, 115);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(4);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(1211, 34);
             this.textEdit2.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -189,7 +189,7 @@
             // txtMarka
             // 
             this.txtMarka.Location = new System.Drawing.Point(694, 261);
-            this.txtMarka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMarka.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(1211, 34);
             this.txtMarka.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -199,7 +199,7 @@
             // 
             this.txtHazirlikSuresi.EditValue = -1;
             this.txtHazirlikSuresi.Location = new System.Drawing.Point(11, 261);
-            this.txtHazirlikSuresi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHazirlikSuresi.Margin = new System.Windows.Forms.Padding(4);
             this.txtHazirlikSuresi.Name = "txtHazirlikSuresi";
             this.txtHazirlikSuresi.Size = new System.Drawing.Size(675, 34);
             this.txtHazirlikSuresi.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -208,7 +208,7 @@
             // txtBarkod
             // 
             this.txtBarkod.Location = new System.Drawing.Point(11, 188);
-            this.txtBarkod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBarkod.Margin = new System.Windows.Forms.Padding(4);
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Size = new System.Drawing.Size(679, 34);
             this.txtBarkod.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -217,7 +217,7 @@
             // txtAltBaslik
             // 
             this.txtAltBaslik.Location = new System.Drawing.Point(11, 115);
-            this.txtAltBaslik.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAltBaslik.Margin = new System.Windows.Forms.Padding(4);
             this.txtAltBaslik.Name = "txtAltBaslik";
             this.txtAltBaslik.Size = new System.Drawing.Size(675, 34);
             this.txtAltBaslik.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -235,7 +235,7 @@
             // btnAciklamaDuzenle
             // 
             this.btnAciklamaDuzenle.Location = new System.Drawing.Point(11, 303);
-            this.btnAciklamaDuzenle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAciklamaDuzenle.Margin = new System.Windows.Forms.Padding(4);
             this.btnAciklamaDuzenle.Name = "btnAciklamaDuzenle";
             this.btnAciklamaDuzenle.Size = new System.Drawing.Size(1894, 42);
             this.btnAciklamaDuzenle.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -246,7 +246,7 @@
             // simpleButton3
             // 
             this.simpleButton3.Location = new System.Drawing.Point(585, 1120);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(552, 42);
             this.simpleButton3.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -256,7 +256,7 @@
             // simpleButton2
             // 
             this.simpleButton2.Location = new System.Drawing.Point(1145, 1120);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(760, 42);
             this.simpleButton2.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -266,7 +266,7 @@
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(11, 1120);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(566, 42);
             this.btnKaydet.StyleController = this.frmN11UrunlayoutControl1ConvertedLayout;
@@ -451,7 +451,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1916, 1173);
             this.Controls.Add(this.frmN11UrunlayoutControl1ConvertedLayout);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmN11Urun";
             this.Text = "frmN11Urun";
             this.Load += new System.EventHandler(this.frmN11Urun_Load);

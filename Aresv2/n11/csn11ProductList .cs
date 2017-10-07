@@ -71,33 +71,52 @@ namespace Aresv2.n11
             ds = new DataSet();
             DataTable dt = new DataTable();
 
-            DataTable dt2 = new DataTable();
+            DataTable dtStokSecenekleri = new DataTable();
 
             dt.Columns.Add("id");
             dt.Columns.Add("title");
             dt.Columns.Add("subtitle");
             dt.Columns.Add("displayPrice");
-            dt.Columns.Add("approvalStatus");
+            dt.Columns.Add("approvalStatus"); // bunu biz değiştiriyoruz
+
+            //approvalStatus Ürünün onay durumu 
+            //              1:  “Active”: satışda olan ürünler (aktif)
+            //              2:  “Suspended”: Beklemede olan ürünler (beklemede)
+            //              3:  “Prohibited”: Yasaklı olan ürünler () bu daha gelmdi
+            //              4:  (Limit dışı)
+
             dt.Columns.Add("currencyAmount");
             dt.Columns.Add("currencyType");
             dt.Columns.Add("oldPrice");
             dt.Columns.Add("price");
             dt.Columns.Add("productSellerCode");
-            dt.Columns.Add("saleStatus");
-            //dt.Columns.Add("stockItems");
+            dt.Columns.Add("saleStatus"); // Bu sanırım stok miktarına göre değişiyor
+
+            //saleStatus  
+            //            1: Satış Öncesi(Before_Sale)
+            //            2: Satışta(On_Sale)
+            //            3: Stok yok(Out of_Stock)
+            //            4: Satışa kapalı(Sale_Closed)
+
+
+            dt.Columns.Add("StokMiktari"); // Seçeneklerden Topluyor
 
             DataColumn optionPrice = new DataColumn();
-            dt2.Columns.Add("optionPrice");
-            dt2.Columns.Add("quantity");
-            dt2.Columns.Add("sellerStockCode");
-            dt2.Columns.Add("id");
-            dt2.Columns.Add("id2");
-
+            dtStokSecenekleri.Columns.Add("optionPrice");
+            dtStokSecenekleri.Columns.Add("quantity");
+            dtStokSecenekleri.Columns.Add("sellerStockCode");
+            dtStokSecenekleri.Columns.Add("id");
+            dtStokSecenekleri.Columns.Add("id2");
+            dtStokSecenekleri.Columns.Add("bundle");
+            dtStokSecenekleri.Columns.Add("sellerStockCode2");
+            dtStokSecenekleri.Columns.Add("attributes_name");
+            dtStokSecenekleri.Columns.Add("attributes_value");
+            dtStokSecenekleri.Columns.Add("version");
 
 
 
             ds.Tables.Add(dt);
-            ds.Tables.Add(dt2);
+            ds.Tables.Add(dtStokSecenekleri);
 
 
             //productSku = new List<ProductSku>();
@@ -117,22 +136,57 @@ namespace Aresv2.n11
                 dr["saleStatus"] = item.saleStatus;
 
 
-                dt.Rows.Add(dr);
+
+
+                decimal SecenektenToplananStokMiktari = 0;
+
 
                 foreach (var item2 in item.stockItems.stockItem)
                 {
-                    DataRow dr2 = dt2.NewRow();
-                    dr2["optionPrice"] = item2.optionPrice;
-                    dr2["quantity"] = item2.quantity;
-                    dr2["sellerStockCode"] = item2.sellerStockCode;
-                    dr2["id"] = item.id;
-                    dr2["id2"] = item.stockItems.id;
-                    dt2.Rows.Add(dr2);
+                    if (item2.attributes.Count() == 0)
+                    {
+                        break;
+                    }
+
+                    DataRow drStokSecenekleri = dtStokSecenekleri.NewRow();
+                    drStokSecenekleri["optionPrice"] = item2.optionPrice;
+                    drStokSecenekleri["quantity"] = item2.quantity;
+
+                    SecenektenToplananStokMiktari += Convert.ToDecimal(item2.quantity);
+
+                    drStokSecenekleri["sellerStockCode"] = item2.sellerStockCode;
+                    drStokSecenekleri["sellerStockCode2"] = item.stockItems.productSellerCode;
+                    drStokSecenekleri["id"] = item.id;
+                    drStokSecenekleri["id2"] = item.stockItems.id;
+                    drStokSecenekleri["bundle"] = item2.bundle;
+
+                    if (item.productSellerCode == "S04390S")
+                    {
+                    }
+                    if (item2.attributes.Count() == 0)
+                    {
+                        drStokSecenekleri["attributes_name"] = "Seçeneği Yok";
+                        drStokSecenekleri["attributes_value"] = "Seçeneği Yok";
+                    }
+                    else
+                    {
+
+                        drStokSecenekleri["attributes_name"] = item2.attributes[0].name;
+                        drStokSecenekleri["attributes_value"] = item2.attributes[0].value;
+                    }
+                    drStokSecenekleri["version"] = item2.version;
+
+
+                    dtStokSecenekleri.Rows.Add(drStokSecenekleri);
                 }
+
+                dr["StokMiktari"] = SecenektenToplananStokMiktari;
+                dt.Rows.Add(dr);
+
 
                 //productSku.AddRange(item.stockItems.stockItem);
             }
-            ds.Relations.Add("ahanda", dt.Columns["id"], dt2.Columns["id"]);
+            ds.Relations.Add("ahanda", dt.Columns["id"], dtStokSecenekleri.Columns["id"]);
 
         }
         //public DataTable ToDataTable<T>(this IList<T> data)
