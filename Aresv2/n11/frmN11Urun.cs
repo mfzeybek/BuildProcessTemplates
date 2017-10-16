@@ -36,6 +36,7 @@ namespace Aresv2.n11
 
                 TrGenel.Commit();
                 KategoriDoldur();
+                FiyatTanimlariniGetir();
 
                 Al();
             }
@@ -49,8 +50,6 @@ namespace Aresv2.n11
         void Al()
         {
             treeListLookUpEdit1.EditValue = Urun.KategoriID;
-
-
             txtUrunBasligi.EditValue = Urun.UrunBasligi;
             txtAltBaslik.EditValue = Urun.AltBaslik;
             txtBarkod.EditValue = "";
@@ -58,6 +57,11 @@ namespace Aresv2.n11
             txtHazirlikSuresi.EditValue = Urun.HazirlikSuresi;
             txtStokMiktari.EditValue = miktar.StokMiktari;
 
+            comboBoxEdit1.SelectedIndex = (int)Urun.StokMiktariEsitlemeSekli - 1;
+
+            txtStokMiktari.EditValue = Urun.StokMiktariEsitlemeMiktari;
+            lkpFiyatTanimlari.EditValue = Urun.KullanilacakFiyatTanimID;
+            txtN11StokKodu.EditValue = Urun.N11StokKodu;
         }
         void Ver()
         {
@@ -69,6 +73,12 @@ namespace Aresv2.n11
                 //Urun.txtBarkod.EditValue = "";
                 Urun.DetayliUrunBilgisi = DetayliUrunBilgisi.DocumentText;
                 Urun.HazirlikSuresi = Convert.ToInt32(txtHazirlikSuresi.EditValue);
+
+                Urun.StokMiktariEsitlemeSekli = (clsTablolar.n11.csN11Product.StokMiktariEsitlemeSekliTanim)comboBoxEdit1.SelectedIndex + 1;
+                Urun.StokMiktariEsitlemeMiktari = Convert.ToDecimal(txtStokMiktari.EditValue);
+                Urun.KullanilacakFiyatTanimID = Convert.ToInt32(lkpFiyatTanimlari.EditValue);
+
+                Urun.N11StokKodu = txtN11StokKodu.EditValue.ToString();
             }
             catch (Exception ex)
             {
@@ -102,6 +112,20 @@ namespace Aresv2.n11
             }
         }
 
+        void FiyatTanimlariniGetir()
+        {
+            clsTablolar.csFiyatTanim tanim = new clsTablolar.csFiyatTanim();
+            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+            tanim.SatisTanimlariniGetir(SqlConnections.GetBaglanti(), TrGenel);
+            TrGenel.Commit();
+
+            lkpFiyatTanimlari.Properties.DataSource = tanim.dt_SatisTanimlari;
+            lkpFiyatTanimlari.Properties.DisplayMember = "FiyatTanimAdi";
+            lkpFiyatTanimlari.Properties.ValueMember = "FiyatTanimID";
+        }
+
+
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Ver();
@@ -111,6 +135,11 @@ namespace Aresv2.n11
         }
 
         private void textEdit3_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxEdit3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

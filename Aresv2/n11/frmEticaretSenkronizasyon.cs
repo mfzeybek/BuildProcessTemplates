@@ -31,177 +31,297 @@ namespace Aresv2.n11
             TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
             dtArestekiStoklar = stkArama.StokListeGetir(SqlConnections.GetBaglanti(), TrGenel);
             TrGenel.Commit();
-
-            //JoinTwoDataTablesOnOneColumn(dtArestekiStoklar, )
         }
 
-        public enum JoinType
+        void ArestekiStoklarIcinVtYiOluştur()
         {
-            /// <summary>
-            /// Same as regular join. Inner join produces only the set of records that match in both Table A and Table B.
-            /// </summary>
-            Inner = 0,
-            /// <summary>
-            /// Same as Left Outer join. Left outer join produces a complete set of records from Table A, with the matching records (where available) in Table B. If there is no match, the right side will contain null.
-            /// </summary>
-            Left = 1
+
+
         }
 
-        /// <summary>
-        /// Joins the passed in DataTables on the colToJoinOn.
-        /// <para>Returns an appropriate DataTable with zero rows if the colToJoinOn does not exist in both tables.</para>
-        /// </summary>
-        /// <param name="dtblLeft"></param>
-        /// <param name="dtblRight"></param>
-        /// <param name="colToJoinOn"></param>
-        /// <param name="joinType"></param>
-        /// <returns></returns>
-        /// <remarks>
-        /// <para>http://stackoverflow.com/questions/2379747/create-combined-datatable-from-two-datatables-joined-with-linq-c-sharp?rq=1</para>
-        /// <para>http://msdn.microsoft.com/en-us/library/vstudio/bb397895.aspx</para>
-        /// <para>http://www.codinghorror.com/blog/2007/10/a-visual-explanation-of-sql-joins.html</para>
-        /// <para>http://stackoverflow.com/questions/406294/left-join-and-left-outer-join-in-sql-server</para>
-        /// </remarks>
-        public static DataTable JoinTwoDataTablesOnOneColumn(DataTable dtblLeft, DataTable dtblRight, string colToJoinOn, JoinType joinType)
-        {
-            //Change column name to a temp name so the LINQ for getting row data will work properly.
-            string strTempColName = colToJoinOn + "_2";
-            if (dtblRight.Columns.Contains(colToJoinOn))
-                dtblRight.Columns[colToJoinOn].ColumnName = strTempColName;
-
-            //Get columns from dtblLeft
-            DataTable dtblResult = dtblLeft.Clone();
-
-            //Get columns from dtblRight
-            var dt2Columns = dtblRight.Columns.OfType<DataColumn>().Select(dc => new DataColumn(dc.ColumnName, dc.DataType, dc.Expression, dc.ColumnMapping));
-
-            //Get columns from dtblRight that are not in dtblLeft
-            var dt2FinalColumns = from dc in dt2Columns.AsEnumerable()
-                                  where !dtblResult.Columns.Contains(dc.ColumnName)
-                                  select dc;
-
-            //Add the rest of the columns to dtblResult
-            dtblResult.Columns.AddRange(dt2FinalColumns.ToArray());
-
-            //No reason to continue if the colToJoinOn does not exist in both DataTables.
-            if (!dtblLeft.Columns.Contains(colToJoinOn) || (!dtblRight.Columns.Contains(colToJoinOn) && !dtblRight.Columns.Contains(strTempColName)))
-            {
-                if (!dtblResult.Columns.Contains(colToJoinOn))
-                    dtblResult.Columns.Add(colToJoinOn);
-                return dtblResult;
-            }
-
-            switch (joinType)
-            {
-
-                default:
-                case JoinType.Inner:
-                    #region Inner
-                    //get row data
-                    //To use the DataTable.AsEnumerable() extension method you need to add a reference to the System.Data.DataSetExtension assembly in your project. 
-                    var rowDataLeftInner = from rowLeft in dtblLeft.AsEnumerable()
-                                           join rowRight in dtblRight.AsEnumerable() on rowLeft[colToJoinOn] equals rowRight[strTempColName]
-                                           select rowLeft.ItemArray.Concat(rowRight.ItemArray).ToArray();
 
 
-                    //Add row data to dtblResult
-                    foreach (object[] values in rowDataLeftInner)
-                        dtblResult.Rows.Add(values);
-
-                    #endregion
-                    break;
-                case JoinType.Left:
-                    #region Left
-                    var rowDataLeftOuter = from rowLeft in dtblLeft.AsEnumerable()
-                                           join rowRight in dtblRight.AsEnumerable() on rowLeft[colToJoinOn] equals rowRight[strTempColName] into gj
-                                           from subRight in gj.DefaultIfEmpty()
-                                           select rowLeft.ItemArray.Concat((subRight == null) ? (dtblRight.NewRow().ItemArray) : subRight.ItemArray).ToArray();
-
-
-                    //Add row data to dtblResult
-                    foreach (object[] values in rowDataLeftOuter)
-                        dtblResult.Rows.Add(values);
-
-                    #endregion
-                    break;
-            }
-
-            //Change column name back to original
-            dtblRight.Columns[strTempColName].ColumnName = colToJoinOn;
-
-            //Remove extra column from result
-            dtblResult.Columns.Remove(strTempColName);
-
-            return dtblResult;
-        }
         csN11ProductList liste = new csN11ProductList();
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             liste.UrunlistesiniGetir();
             liste.DTolustir();
-
-            //gridControl1.DataSource = liste.productList.AsEnumerable();
-            //DevExpress.XtraGrid.GridLevelNode nodd = new DevExpress.XtraGrid.GridLevelNode();
-
-            //BindingSource gPSucursalesBindingSource = new BindingSource(liste.productList.AsEnumerable(), "stockItems");
-            //gPSucursalesBindingSource.DataSource = liste.productList;
-            //gridView1.OptionsDetail.EnableMasterViewMode = true;
-            //gPSucursalesBindingSource.child
-
-            gridControl1.DataSource = liste.ds.Tables[0];
             dtN11Deki = liste.ds.Tables[0];
-            //gridControl1.LevelTree.Nodes.Add("ahanda", gridView3);
-            //gridView3.PopulateColumns(liste.ds.Tables[1]);
+            //gridControl1.DataSource = liste.ds.Tables[0];
+            //gridView1.PopulateColumns();
+
+            //return;
+
+            liste.ds.Tables[0].Columns.Add("ArestekiN11Fiyati", typeof(System.Decimal));
+
+            foreach (var item in liste.ds.Tables[0].AsEnumerable())
+            {
+                //item["ArestekiN11Fiyati"] = Convert.ToDecimal(AresStokununN11IcinTanimliFiyatiniGetir(item["StokID"], item[]));
+            }
 
 
 
 
-            //gridControl1.LevelTree.Nodes.Add(new DevExpress.XtraGrid.GridLevelNode)
-            //gridView3.DefaultRelationIndex = 0;
+            var AresteOlupN11deOlmayanlar =
+    from Aresteki in dtArestekiStoklar.AsEnumerable()
+    join N11Deki in dtN11Deki.AsEnumerable() on Aresteki["AresN11StokKodu"] equals N11Deki[9] into ps
+    from N11Deki in ps.DefaultIfEmpty()
+    where (N11Deki == null)
+    select new
+    {
+        StokID = (int)Aresteki["AresStokID"],
+        StokAdi = Aresteki["AresUrunBasligi"].ToString(),
+        n11dekiTitle = Aresteki["AresAltBaslik"].ToString(),
+
+        Aciklama = "Areste var n11 stok kartı açılmamış",
+        ArestekiStokKodu = Aresteki["AresN11StokKodu"].ToString(),
+        N11DekiStokKodu = string.Empty,
+        KalanMiktar = (decimal)Aresteki["ArestekiN11Miktari"],
+        Fiyat = (decimal)Aresteki["AresTekiN11Fiyati"],
+    };
+
+            try
+            {
+                var N11deOlupAresteOlmayanlar =
+from N11Deki in dtN11Deki.AsEnumerable()
+join Aresteki in dtArestekiStoklar.AsEnumerable() on N11Deki[9] equals Aresteki["AresN11StokKodu"] into ps
+from Aresteki in ps.DefaultIfEmpty()
+where (Aresteki == null)//|| k.CategoryName == "Condiments") && (l.City == "London" || l.City == "Bend") && b.Quantity == 20
+select new
+{
+
+    Aciklama = "N11 de var Areste n11 kartı açılmamış",
+
+    approvalStatus = N11Deki["approvalStatus"],
+    currencyAmount = N11Deki["currencyAmount"],
+    currencyType = N11Deki["currencyType"],
+    oldPrice = N11Deki["oldPrice"],
+    price = N11Deki["price"],
+
+    saleStatus = N11Deki["saleStatus"],
+    StokID = -2,
+
+    n11dekiTitle = N11Deki["title"].ToString(),
+
+    AresStokAdi = string.Empty,
+
+    title = N11Deki["title"].ToString(),
+    subtitle = N11Deki["subtitle"].ToString(),
+    displayPrice = Convert.ToDecimal(N11Deki["displayPrice"]),
+    productSellerCode = N11Deki["productSellerCode"].ToString(),
+    StokMiktari = Convert.ToDecimal(N11Deki["StokMiktari"]),
+    N11DekiStokKodu = N11Deki == null ? "(Kayıtlı Değil)" : N11Deki[9]
+};
+
+                var Farklar =
+                    from N11Deki in dtN11Deki.AsEnumerable()
+                    join Aresteki in dtArestekiStoklar.AsEnumerable() on N11Deki[9] equals Aresteki["AresN11StokKodu"] into ps
+                    from Aresteki in ps.DefaultIfEmpty()
+                    where !(Aresteki == null || N11Deki == null)//|| k.CategoryName == "Condiments") && (l.City == "London" || l.City == "Bend") && b.Quantity == 20
+                    select new
+                    {
+                        Aciklama = (Aresteki == null ? "Arese Kayıtlı Değil" :
+                    Convert.ToDecimal(Aresteki["ArestekiN11Miktari"]).ToString("0.##") == Convert.ToDecimal(N11Deki["StokMiktari"]).ToString("0.##") ? "Miktarları Aynı" :
+                    "Miktarlar Farklı"),
 
 
+                        AresMiktari = Convert.ToDecimal(Aresteki["ArestekiN11Miktari"]),
+                        N11Miktari = Convert.ToDecimal(N11Deki["StokMiktari"]),
+
+                        AresStokAdi = Aresteki["AresUrunBasligi"].ToString(),
+                        n11Title = N11Deki["title"].ToString(),
+
+                        AresFiyati = (decimal)Aresteki["AresTekiN11Fiyati"],
+                        n11Fiyati = Convert.ToDecimal(N11Deki["displayPrice"]),
+                        StokID = (int)Aresteki["AresStokID"],
+
+                        id = N11Deki["id"],
+                        title = N11Deki["title"],
+                        subtitle = N11Deki["subtitle"],
+                        displayPrice = N11Deki["displayPrice"],
+                        approvalStatus = N11Deki["approvalStatus"], // güncel durum
+                        currencyAmount = N11Deki["currencyAmount"],
+                        currencyType = N11Deki["currencyType"],
+                        oldPrice = N11Deki["oldPrice"],
+                        price = N11Deki["price"],
+                        productSellerCode = N11Deki["productSellerCode"],
+                        saleStatus = N11Deki["saleStatus"],
+                        StokMiktari = N11Deki["StokMiktari"],
+                        
+
+
+                        N11DekiStokKodu = N11Deki["productSellerCode"].ToString()
+                    };
+
+                var ahanda =
+
+                N11deOlupAresteOlmayanlar.Select(y => new
+                {
+                    StokID = y.StokID,
+                    StokAdi = y.n11dekiTitle,
+                    n11dekiTitle = y.n11dekiTitle,
+                    Aciklama = y.Aciklama,
+                    AresStokkodu = y.productSellerCode,
+                    AresFiyati = Convert.ToDecimal(0),
+                    n11Fiyati = y.displayPrice,
+                    AresMiktari = Convert.ToDecimal(0),
+                    n11Miktari = y.StokMiktari,
+                    approvalStatus = y.approvalStatus.ToString()
+                }).Union
+                (
+                    AresteOlupN11deOlmayanlar.Select(z => new
+                    {
+                        StokID = z.StokID,
+                        StokAdi = z.StokAdi,
+                        n11dekiTitle = z.n11dekiTitle,
+                        Aciklama = z.Aciklama,
+                        AresStokkodu = z.ArestekiStokKodu.ToString(),
+                        AresFiyati = z.Fiyat,
+                        n11Fiyati = Convert.ToDecimal(0),
+                        AresMiktari = z.KalanMiktar,
+                        n11Miktari = Convert.ToDecimal(0),
+                        approvalStatus = string.Empty
+                    })
+
+            );
+                var ahanda2 = Farklar.Select(x => new
+                {
+                    StokID = x.StokID,
+                    StokAdi = x.AresStokAdi,
+                    n11dekiTitle = x.n11Title,
+                    Aciklama = x.Aciklama,
+                    StokKodu = x.N11DekiStokKodu,
+                    AresFiyati = x.AresFiyati,
+                    n11Fiyati = x.n11Fiyati,
+                    AresMiktari = x.AresMiktari,
+                    n11Miktari = x.N11Miktari,
+                    approvalStatus = x.approvalStatus.ToString()
+
+                }
+                    ).Union(ahanda.Select(z => new
+                    {
+                        StokID = z.StokID,
+                        StokAdi = z.StokAdi,
+                        n11dekiTitle = z.n11dekiTitle,
+                        Aciklama = z.Aciklama,
+                        StokKodu = z.AresStokkodu,
+                        AresFiyati = z.AresFiyati,
+                        n11Fiyati = z.n11Fiyati,
+                        AresMiktari = z.AresMiktari,
+                        n11Miktari = z.n11Miktari,
+                        approvalStatus = z.approvalStatus
+                    }));
+
+                gridControl1.DataSource = ahanda2;
+                gridView1.PopulateColumns();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void frmEticaretSenkronizasyon_Load(object sender, EventArgs e)
         {
+            dtArestekiStoklar = new DataTable();
+            dtArestekiStoklar.Columns.Add("AresStokID", typeof(System.Int32));
+            dtArestekiStoklar.Columns.Add("AresN11StokKodu", typeof(System.String));
+            dtArestekiStoklar.Columns.Add("AresUrunBasligi", typeof(System.String));
+            dtArestekiStoklar.Columns.Add("AresAltBaslik", typeof(System.String));
+            dtArestekiStoklar.Columns.Add("ArestekiN11Miktari", typeof(System.Decimal));
+            dtArestekiStoklar.Columns.Add("AresTekiN11Fiyati", typeof(System.Decimal));
 
+            gridControl1.DataSource = dtArestekiStoklar;
+        }
+        Stok.frmStokDetay frmStok;
+        private void btnStokKartiniAc_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                return;
+
+            int StokID = Convert.ToInt32(gridView1.GetFocusedRowCellValue("StokID"));
+
+            if (StokID < 0)
+            {
+                MessageBox.Show("Bu stok Areste bir stoga baglanmamis veya arest böyle bir stok yok");
+                return;
+            }
+            frmStok = new Stok.frmStokDetay(StokID);
+            frmStok.MdiParent = this.MdiParent;
+            frmStok.Show();
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void btnStokEkle_Click(object sender, EventArgs e)
         {
-            n11.csN11ProductService urun = new csN11ProductService();
-            urun.ProducktGetir("S04013");
+            Stok.frmStokListesi frm = new Stok.frmStokListesi(true);
+            frm.Stok_Sec = stokEkle;
+            frm.StokArama.N11Entegrasyonu = 1;
+            frm.cmbN11.SelectedIndex = 1;
+            frm.cmbN11.Enabled = false;
+            frm.ShowDialog();
         }
+        clsTablolar.Stok.csStokMiktar miktarr = new clsTablolar.Stok.csStokMiktar();
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        void stokEkle(int StokID, decimal Miktar)
         {
-            ArestekiN11StoklariniGetir();
+            try
+            {
+                DataRow dr = dtArestekiStoklar.NewRow();
 
-            //var result = from o in dtArestekiStoklar.AsEnumerable()
-            //             from p in dtN11Deki.AsEnumerable()
-            //             select new
-            //             {
-            //                 id = o["StokKodu"],
-            //                 id2 = p[9]
-            //                 //id3 = p["id"]
-            //                 //p.ProductName,
-            //                 //o.Quantity,
-            //                 //o.TotalAmount,
-            //                 //o.OrderDate
-            //             };
+                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                //clsTablolar.Stok.csStok stokEkleme = new clsTablolar.Stok.csStok(SqlConnections.GetBaglanti(), TrGenel, StokID);
+                clsTablolar.n11.csN11Product n11Prod = new clsTablolar.n11.csN11Product(SqlConnections.GetBaglanti(), TrGenel, StokID);
+                clsTablolar.Stok.csStokFiyat Fiyat = new clsTablolar.Stok.csStokFiyat();
 
-            //gridControl1.DataSource = result;
-            //gridView1.PopulateColumns();
+                dr["AresStokID"] = StokID;
+                dr["AresN11StokKodu"] = n11Prod.N11StokKodu;
+                dr["AresUrunBasligi"] = n11Prod.UrunBasligi;
+                dr["AresAltBaslik"] = n11Prod.AltBaslik;
 
+                switch (n11Prod.StokMiktariEsitlemeSekli)
+                {
+                    case clsTablolar.n11.csN11Product.StokMiktariEsitlemeSekliTanim.SabitMiktar:
+                        dr["ArestekiN11Miktari"] = n11Prod.StokMiktariEsitlemeMiktari;
+                        break;
+                    case clsTablolar.n11.csN11Product.StokMiktariEsitlemeSekliTanim.StokMiktarıninAynisi:
+                        dr["ArestekiN11Miktari"] = miktarr.StokMiktariGetir(SqlConnections.GetBaglanti(), TrGenel, StokID);
+                        break;
+                    case clsTablolar.n11.csN11Product.StokMiktariEsitlemeSekliTanim.StokMiktarindanAdetFazla:
+                        dr["ArestekiN11Miktari"] = miktarr.StokMiktariGetir(SqlConnections.GetBaglanti(), TrGenel, StokID) + n11Prod.StokMiktariEsitlemeMiktari;
+                        break;
+                    case clsTablolar.n11.csN11Product.StokMiktariEsitlemeSekliTanim.StokMiktarindanAdetEksik:
+                        dr["ArestekiN11Miktari"] = miktarr.StokMiktariGetir(SqlConnections.GetBaglanti(), TrGenel, StokID) - n11Prod.StokMiktariEsitlemeMiktari;
+                        break;
+                    default:
+                        break;
+                }
 
-            var q =
-    from c in dtArestekiStoklar.AsEnumerable()
-    join p in dtN11Deki.AsEnumerable() on c["StokKodu"] equals p[9] into ps
-    from p in ps.DefaultIfEmpty()
-    select new { Category = c["StokKodu"], ProductName = p == null ? "(No products)" : p[9] };
+                dr["AresTekiN11Fiyati"] = Fiyat.StokFiyatiniGetir(SqlConnections.GetBaglanti(), TrGenel, StokID, n11Prod.KullanilacakFiyatTanimID);
 
-            gridControl1.DataSource = q;
-            gridView1.PopulateColumns();
+                TrGenel.Commit();
+                dtArestekiStoklar.Rows.Add(dr);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        n11.frmN11Urun n11frm;
+        private void btnN11KartiniAc_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                return;
+
+            int StokID = Convert.ToInt32(gridView1.GetFocusedRowCellValue("StokID"));
+
+            if (StokID < 0)
+            {
+                MessageBox.Show("Bu stok Areste bir stoga baglanmamis veya areste böyle bir stok yok");
+                return;
+            }
+            n11frm = new frmN11Urun(StokID);
+            n11frm.MdiParent = this.MdiParent;
+            n11frm.Show();
         }
     }
 }

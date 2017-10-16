@@ -171,6 +171,18 @@ namespace clsTablolar.Stok
             }
         }
 
+        public decimal StokFiyatiniGetir(SqlConnection Baglanti, SqlTransaction Tr, int StokID, int FiyatTanimID)
+        {
+            using (SqlCommand cmd = new SqlCommand("select isnull((Select ISNULL(Fiyat, 0) from StokFiyat where FiyatTanimID = @FiyatTanimID  and StokID = @StokID),0)", Baglanti, Tr))
+            {
+                cmd.Parameters.Add("@StokID", SqlDbType.Int).Value = StokID;
+                cmd.Parameters.Add("@FiyatTanimID", SqlDbType.Int).Value = FiyatTanimID;
+
+
+                return (decimal)cmd.ExecuteScalar();
+            }
+        }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);

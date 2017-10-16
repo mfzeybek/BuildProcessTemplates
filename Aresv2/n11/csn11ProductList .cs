@@ -136,7 +136,12 @@ namespace Aresv2.n11
                 dr["saleStatus"] = item.saleStatus;
 
 
-
+                if (item.stockItems.stockItem.Count() == 0)
+                {
+                }
+                if (item.productSellerCode == "ST02131")
+                {
+                }
 
                 decimal SecenektenToplananStokMiktari = 0;
 
@@ -145,7 +150,7 @@ namespace Aresv2.n11
                 {
                     if (item2.attributes.Count() == 0)
                     {
-                        break;
+                        //break;
                     }
 
                     DataRow drStokSecenekleri = dtStokSecenekleri.NewRow();
@@ -160,7 +165,7 @@ namespace Aresv2.n11
                     drStokSecenekleri["id2"] = item.stockItems.id;
                     drStokSecenekleri["bundle"] = item2.bundle;
 
-                    if (item.productSellerCode == "S04390S")
+                    if (item.productSellerCode == "ST02131")
                     {
                     }
                     if (item2.attributes.Count() == 0)
@@ -182,34 +187,11 @@ namespace Aresv2.n11
 
                 dr["StokMiktari"] = SecenektenToplananStokMiktari;
                 dt.Rows.Add(dr);
-
-
-                //productSku.AddRange(item.stockItems.stockItem);
             }
-            ds.Relations.Add("ahanda", dt.Columns["id"], dtStokSecenekleri.Columns["id"]);
+            //ds.Relations.Add("ahanda", dt.Columns["id"], dtStokSecenekleri.Columns["id"]);
 
         }
-        //public DataTable ToDataTable<T>(this IList<T> data)
-        //{
-        //    PropertyDescriptorCollection props =
-        //        TypeDescriptor.GetProperties(typeof(T));
-        //    DataTable table = new DataTable();
-        //    for (int i = 0; i < props.Count; i++)
-        //    {
-        //        PropertyDescriptor prop = props[i];
-        //        table.Columns.Add(prop.Name, prop.PropertyType);
-        //    }
-        //    object[] values = new object[props.Count];
-        //    foreach (T item in data)
-        //    {
-        //        for (int i = 0; i < values.Length; i++)
-        //        {
-        //            values[i] = props[i].GetValue(item);
-        //        }
-        //        table.Rows.Add(values);
-        //    }
-        //    return table;
-        //}
+
 
     }
 }

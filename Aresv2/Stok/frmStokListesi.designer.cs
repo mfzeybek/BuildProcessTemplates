@@ -69,6 +69,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_HepsiniSec = new DevExpress.XtraBars.BarButtonItem();
             this.frmStokListesilayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.ucStokGruplari1 = new Aresv2.ucStokGruplari();
             this.ceGruptakilerinHepsi = new DevExpress.XtraEditors.CheckEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.ceMiktariElleGir = new DevExpress.XtraEditors.CheckEdit();
@@ -141,6 +142,18 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
+            this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -156,18 +169,7 @@
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem48 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem49 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem32 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -192,8 +194,6 @@
             this.layoutControlItem43 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
-            this.ucStokGruplari1 = new Aresv2.ucStokGruplari();
-            this.layoutControlItem49 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolStokID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_lvcolStokAdi)).BeginInit();
@@ -269,6 +269,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -284,18 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).BeginInit();
@@ -319,7 +320,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem43)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutView1
@@ -604,6 +604,9 @@
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.ucStokGruplari1);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.ceGruptakilerinHepsi);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.panelControl3);
+            this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtOzelKodu1);
+            this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtOzelKodu2);
+            this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtOzelKodu3);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.lkpAltGrup);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.lkpAraGrup);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.lkpGrup);
@@ -612,11 +615,8 @@
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.cmbUrunTanitim);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtStokKodu);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtStokAdi);
-            this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtOzelKodu1);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtAciklama);
-            this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtOzelKodu2);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtBarkodu);
-            this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtOzelKodu3);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.txtRafYeriAciklama);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.checkEdit_OlmasiGerekenMiktardanAzOlanlar);
             this.frmStokListesilayoutControl1ConvertedLayout.Controls.Add(this.checkBox_MinMikAltındaolanlar);
@@ -660,6 +660,16 @@
             this.frmStokListesilayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
             this.frmStokListesilayoutControl1ConvertedLayout.Size = new System.Drawing.Size(2452, 1321);
             this.frmStokListesilayoutControl1ConvertedLayout.TabIndex = 5;
+            // 
+            // ucStokGruplari1
+            // 
+            this.ucStokGruplari1.AhandaBuradakiler = null;
+            this.ucStokGruplari1.Location = new System.Drawing.Point(34, 243);
+            this.ucStokGruplari1.MinimumSize = new System.Drawing.Size(100, 125);
+            this.ucStokGruplari1.Name = "ucStokGruplari1";
+            this.ucStokGruplari1.Size = new System.Drawing.Size(403, 125);
+            this.ucStokGruplari1.TabIndex = 64;
+            this.ucStokGruplari1.YeniGruplama = null;
             // 
             // ceGruptakilerinHepsi
             // 
@@ -1654,14 +1664,146 @@
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.tabbedControlGroup1.Name = "xtraTabControl1item";
             this.tabbedControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup5;
-            this.tabbedControlGroup1.SelectedTabPageIndex = 0;
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup6;
+            this.tabbedControlGroup1.SelectedTabPageIndex = 1;
             this.tabbedControlGroup1.Size = new System.Drawing.Size(432, 789);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup5,
             this.layoutControlGroup6,
             this.layoutControlGroup7,
             this.layoutControlGroup8});
+            // 
+            // layoutControlGroup6
+            // 
+            this.layoutControlGroup6.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem20,
+            this.layoutControlItem21,
+            this.layoutControlItem22,
+            this.layoutControlItem23,
+            this.layoutControlItem24,
+            this.layoutControlItem25,
+            this.layoutControlItem26,
+            this.layoutControlItem27,
+            this.layoutControlItem28,
+            this.layoutControlItem29,
+            this.layoutControlItem30});
+            this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup6.Name = "layoutControlGroup6";
+            this.layoutControlGroup6.OptionsItemText.TextToControlDistance = 6;
+            this.layoutControlGroup6.Size = new System.Drawing.Size(411, 727);
+            this.layoutControlGroup6.Text = "Hemen Al";
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.cmbN11;
+            this.layoutControlItem20.Location = new System.Drawing.Point(0, 420);
+            this.layoutControlItem20.Name = "cmbN11item";
+            this.layoutControlItem20.Size = new System.Drawing.Size(411, 307);
+            this.layoutControlItem20.Text = "n11 Entegrayon";
+            this.layoutControlItem20.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.lkpHemenAlKategori;
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 210);
+            this.layoutControlItem21.Name = "lkpHemenAlKategoriitem";
+            this.layoutControlItem21.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem21.Text = "HemenAl Kategori";
+            this.layoutControlItem21.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem22
+            // 
+            this.layoutControlItem22.Control = this.cmbEMagazaErisimi;
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem22.Name = "cmbEMagazaErisimiitem";
+            this.layoutControlItem22.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem22.Text = "E Magaza Erişimi";
+            this.layoutControlItem22.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem22.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem23
+            // 
+            this.layoutControlItem23.Control = this.txtHemenAlID;
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 378);
+            this.layoutControlItem23.Name = "txtHemenAlIDitem";
+            this.layoutControlItem23.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem23.Text = "HemenAl ID";
+            this.layoutControlItem23.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem24
+            // 
+            this.layoutControlItem24.Control = this.txtHemenAlSira;
+            this.layoutControlItem24.Location = new System.Drawing.Point(0, 336);
+            this.layoutControlItem24.Name = "txtHemenAlSiraitem";
+            this.layoutControlItem24.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem24.Text = "HemenAl Sıra";
+            this.layoutControlItem24.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem25
+            // 
+            this.layoutControlItem25.Control = this.txtDetayliAciklama;
+            this.layoutControlItem25.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem25.Name = "txtDetayliAciklamaitem";
+            this.layoutControlItem25.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem25.Text = "Detaylı Açıklama";
+            this.layoutControlItem25.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem26
+            // 
+            this.layoutControlItem26.Control = this.txtKisaAciklama;
+            this.layoutControlItem26.Location = new System.Drawing.Point(0, 126);
+            this.layoutControlItem26.Name = "txtKisaAciklamaitem";
+            this.layoutControlItem26.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem26.Text = "Kısa Açıklama";
+            this.layoutControlItem26.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem27
+            // 
+            this.layoutControlItem27.Control = this.txtDesi;
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 84);
+            this.layoutControlItem27.Name = "txtDesiitem";
+            this.layoutControlItem27.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem27.Text = "Desi";
+            this.layoutControlItem27.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem28
+            // 
+            this.layoutControlItem28.Control = this.txtGaranti;
+            this.layoutControlItem28.Location = new System.Drawing.Point(0, 42);
+            this.layoutControlItem28.Name = "txtGarantiitem";
+            this.layoutControlItem28.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem28.Text = "Garanti";
+            this.layoutControlItem28.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem28.TextSize = new System.Drawing.Size(168, 25);
+            // 
+            // layoutControlItem29
+            // 
+            this.layoutControlItem29.Control = this.cmbHemenAlKategoriGuncellenmesin;
+            this.layoutControlItem29.Location = new System.Drawing.Point(0, 252);
+            this.layoutControlItem29.Name = "cmbHemenAlKategoriGuncellenmesinitem";
+            this.layoutControlItem29.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem29.Text = "HemenAl Kategori Güncellenmesin";
+            this.layoutControlItem29.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem29.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem29.TextSize = new System.Drawing.Size(322, 25);
+            this.layoutControlItem29.TextToControlDistance = 5;
+            // 
+            // layoutControlItem30
+            // 
+            this.layoutControlItem30.Control = this.lkpHemanAlDurum;
+            this.layoutControlItem30.Location = new System.Drawing.Point(0, 294);
+            this.layoutControlItem30.Name = "lkpHemanAlDurumitem";
+            this.layoutControlItem30.Size = new System.Drawing.Size(411, 42);
+            this.layoutControlItem30.Text = "HemenAl Durum";
+            this.layoutControlItem30.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(168, 25);
             // 
             // layoutControlGroup5
             // 
@@ -1824,137 +1966,14 @@
             this.layoutControlItem48.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem48.TextVisible = false;
             // 
-            // layoutControlGroup6
+            // layoutControlItem49
             // 
-            this.layoutControlGroup6.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem20,
-            this.layoutControlItem21,
-            this.layoutControlItem22,
-            this.layoutControlItem23,
-            this.layoutControlItem24,
-            this.layoutControlItem25,
-            this.layoutControlItem26,
-            this.layoutControlItem27,
-            this.layoutControlItem28,
-            this.layoutControlItem29,
-            this.layoutControlItem30});
-            this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup6.Name = "layoutControlGroup6";
-            this.layoutControlGroup6.OptionsItemText.TextToControlDistance = 6;
-            this.layoutControlGroup6.Size = new System.Drawing.Size(411, 727);
-            this.layoutControlGroup6.Text = "Hemen Al";
-            // 
-            // layoutControlItem20
-            // 
-            this.layoutControlItem20.Control = this.cmbN11;
-            this.layoutControlItem20.Location = new System.Drawing.Point(0, 420);
-            this.layoutControlItem20.Name = "cmbN11item";
-            this.layoutControlItem20.Size = new System.Drawing.Size(411, 307);
-            this.layoutControlItem20.Text = "n11 Entegrayon";
-            this.layoutControlItem20.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem20.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem21
-            // 
-            this.layoutControlItem21.Control = this.lkpHemenAlKategori;
-            this.layoutControlItem21.Location = new System.Drawing.Point(0, 210);
-            this.layoutControlItem21.Name = "lkpHemenAlKategoriitem";
-            this.layoutControlItem21.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem21.Text = "HemenAl Kategori";
-            this.layoutControlItem21.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem22
-            // 
-            this.layoutControlItem22.Control = this.cmbEMagazaErisimi;
-            this.layoutControlItem22.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem22.Name = "cmbEMagazaErisimiitem";
-            this.layoutControlItem22.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem22.Text = "E Magaza Erişimi";
-            this.layoutControlItem22.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem22.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem23
-            // 
-            this.layoutControlItem23.Control = this.txtHemenAlID;
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 378);
-            this.layoutControlItem23.Name = "txtHemenAlIDitem";
-            this.layoutControlItem23.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem23.Text = "HemenAl ID";
-            this.layoutControlItem23.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem24
-            // 
-            this.layoutControlItem24.Control = this.txtHemenAlSira;
-            this.layoutControlItem24.Location = new System.Drawing.Point(0, 336);
-            this.layoutControlItem24.Name = "txtHemenAlSiraitem";
-            this.layoutControlItem24.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem24.Text = "HemenAl Sıra";
-            this.layoutControlItem24.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem24.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem25
-            // 
-            this.layoutControlItem25.Control = this.txtDetayliAciklama;
-            this.layoutControlItem25.Location = new System.Drawing.Point(0, 168);
-            this.layoutControlItem25.Name = "txtDetayliAciklamaitem";
-            this.layoutControlItem25.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem25.Text = "Detaylı Açıklama";
-            this.layoutControlItem25.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem26
-            // 
-            this.layoutControlItem26.Control = this.txtKisaAciklama;
-            this.layoutControlItem26.Location = new System.Drawing.Point(0, 126);
-            this.layoutControlItem26.Name = "txtKisaAciklamaitem";
-            this.layoutControlItem26.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem26.Text = "Kısa Açıklama";
-            this.layoutControlItem26.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem27
-            // 
-            this.layoutControlItem27.Control = this.txtDesi;
-            this.layoutControlItem27.Location = new System.Drawing.Point(0, 84);
-            this.layoutControlItem27.Name = "txtDesiitem";
-            this.layoutControlItem27.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem27.Text = "Desi";
-            this.layoutControlItem27.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem28
-            // 
-            this.layoutControlItem28.Control = this.txtGaranti;
-            this.layoutControlItem28.Location = new System.Drawing.Point(0, 42);
-            this.layoutControlItem28.Name = "txtGarantiitem";
-            this.layoutControlItem28.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem28.Text = "Garanti";
-            this.layoutControlItem28.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem28.TextSize = new System.Drawing.Size(168, 25);
-            // 
-            // layoutControlItem29
-            // 
-            this.layoutControlItem29.Control = this.cmbHemenAlKategoriGuncellenmesin;
-            this.layoutControlItem29.Location = new System.Drawing.Point(0, 252);
-            this.layoutControlItem29.Name = "cmbHemenAlKategoriGuncellenmesinitem";
-            this.layoutControlItem29.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem29.Text = "HemenAl Kategori Güncellenmesin";
-            this.layoutControlItem29.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem29.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem29.TextSize = new System.Drawing.Size(322, 25);
-            this.layoutControlItem29.TextToControlDistance = 5;
-            // 
-            // layoutControlItem30
-            // 
-            this.layoutControlItem30.Control = this.lkpHemanAlDurum;
-            this.layoutControlItem30.Location = new System.Drawing.Point(0, 294);
-            this.layoutControlItem30.Name = "lkpHemanAlDurumitem";
-            this.layoutControlItem30.Size = new System.Drawing.Size(411, 42);
-            this.layoutControlItem30.Text = "HemenAl Durum";
-            this.layoutControlItem30.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem30.TextSize = new System.Drawing.Size(168, 25);
+            this.layoutControlItem49.Control = this.ucStokGruplari1;
+            this.layoutControlItem49.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem49.Name = "layoutControlItem49";
+            this.layoutControlItem49.Size = new System.Drawing.Size(411, 133);
+            this.layoutControlItem49.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem49.TextVisible = false;
             // 
             // layoutControlGroup7
             // 
@@ -2190,25 +2209,6 @@
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(10, 1281);
             // 
-            // ucStokGruplari1
-            // 
-            this.ucStokGruplari1.AhandaBuradakiler = null;
-            this.ucStokGruplari1.Location = new System.Drawing.Point(34, 243);
-            this.ucStokGruplari1.MinimumSize = new System.Drawing.Size(100, 125);
-            this.ucStokGruplari1.Name = "ucStokGruplari1";
-            this.ucStokGruplari1.Size = new System.Drawing.Size(403, 125);
-            this.ucStokGruplari1.TabIndex = 64;
-            this.ucStokGruplari1.YeniGruplama = null;
-            // 
-            // layoutControlItem49
-            // 
-            this.layoutControlItem49.Control = this.ucStokGruplari1;
-            this.layoutControlItem49.Location = new System.Drawing.Point(0, 168);
-            this.layoutControlItem49.Name = "layoutControlItem49";
-            this.layoutControlItem49.Size = new System.Drawing.Size(411, 133);
-            this.layoutControlItem49.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem49.TextVisible = false;
-            // 
             // frmStokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2306,6 +2306,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
@@ -2321,18 +2333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).EndInit();
@@ -2356,7 +2357,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem43)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2441,7 +2441,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.ButtonEdit btnEdit_SayimAciklama;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbN11;
         private DevExpress.XtraEditors.CheckEdit cedit_FotoKatolog;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn lvcolStokID;
@@ -2515,6 +2514,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem48;
         private ucStokGruplari ucStokGruplari1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem49;
+        public DevExpress.XtraEditors.ComboBoxEdit cmbN11;
         //private DevExpress.XtraBars.BarDockControl barDockControlTop;
         //private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         //private DevExpress.XtraBars.BarDockControl barDockControlLeft;

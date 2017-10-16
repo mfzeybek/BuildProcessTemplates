@@ -28,11 +28,12 @@
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             this.lkpAltGrup = new DevExpress.XtraEditors.LookUpEdit();
             this.frmStokHrListesilayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.cmbHizliTarih = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -56,7 +57,7 @@
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.btnHareketiAc = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnStokKartiniAc = new DevExpress.XtraEditors.SimpleButton();
             this.lkpAraGrup = new DevExpress.XtraEditors.LookUpEdit();
             this.lkpGrup = new DevExpress.XtraEditors.LookUpEdit();
@@ -117,7 +118,7 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.lkpAltGrup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmStokHrListesilayoutControl1ConvertedLayout)).BeginInit();
             this.frmStokHrListesilayoutControl1ConvertedLayout.SuspendLayout();
@@ -1238,8 +1239,6 @@
     public DevExpress.XtraEditors.TextEdit txtStokKodu;
     private DevExpress.XtraEditors.ComboBoxEdit N;
     private DevExpress.XtraEditors.SimpleButton btnBugun;
-    private DevExpress.XtraEditors.DateEdit deTarih2;
-    private DevExpress.XtraEditors.DateEdit deTarih1;
     private DevExpress.XtraEditors.TextEdit txtCariAdi;
         private DevExpress.XtraEditors.LookUpEdit lkpAltGrup;
         private DevExpress.XtraEditors.LookUpEdit lkpAraGrup;
@@ -1297,5 +1296,7 @@
         private DevExpress.XtraEditors.SimpleButton btnTemizle;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraGrid.Columns.GridColumn colKalanMiktar;
+        public DevExpress.XtraEditors.DateEdit deTarih2;
+        public DevExpress.XtraEditors.DateEdit deTarih1;
     }
 }

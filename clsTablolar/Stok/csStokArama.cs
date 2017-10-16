@@ -429,6 +429,7 @@ s.HemenAlID, s.HemenAlSira, s.StokSayimGrubuID, s.OlmasiGerekenMiktar, s.StokTip
 				      where StokHr.GirisMiCikisMi = 2 and StokHr.SilindiMi = 0
 				      group by StokHr.StokID) Cikislar on Cikislar.StokID = s.StokID
                       --left join SayimDetay on SayimDetay.StokID = s.StokID
+
 WHERE     (s.Silindi = 'false') ";
 
             da.SelectCommand.Connection = Baglanti;

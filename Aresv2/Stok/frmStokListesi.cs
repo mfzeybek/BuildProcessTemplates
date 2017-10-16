@@ -971,6 +971,7 @@ namespace Aresv2.Stok
             frm.MdiParent = this.MdiParent;
             frm.Show();
             frm.txtStokKodu.EditValue = gvStokListesi.GetFocusedRowCellValue("StokKodu").ToString();
+            frm.deTarih1.DateTime = DateTime.Now.AddMonths(-6);
             frm.btnFiltrele_Click(null, null);
         }
 
