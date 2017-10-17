@@ -39,5 +39,8 @@
     <Setting Name="Aresv2_n11ProductStockService_ProductStockServicePortService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://api.n11.com/ws/productStockService/</Value>
     </Setting>
+    <Setting Name="Aresv2_n11ProductSellingService_ProductSellingServicePortService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://api.n11.com/ws/productSellingService/</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

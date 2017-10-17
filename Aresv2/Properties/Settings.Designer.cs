@@ -118,5 +118,15 @@ namespace Aresv2.Properties {
                 return ((string)(this["Aresv2_n11ProductStockService_ProductStockServicePortService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.n11.com/ws/productSellingService/")]
+        public string Aresv2_n11ProductSellingService_ProductSellingServicePortService {
+            get {
+                return ((string)(this["Aresv2_n11ProductSellingService_ProductSellingServicePortService"]));
+            }
+        }
     }
 }

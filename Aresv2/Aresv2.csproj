@@ -770,6 +770,7 @@
     <Compile Include="Kasa\KasaHareketListesi.Designer.cs">
       <DependentUpon>KasaHareketListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="n11\csn11Authentication .cs" />
     <Compile Include="n11\csn11ProductList .cs" />
     <Compile Include="n11\csN11ProductService.cs" />
     <Compile Include="n11\csN11UpdateProductBasic.cs" />
@@ -961,6 +962,11 @@
       <DependentUpon>ucStokGruplari.cs</DependentUpon>
     </Compile>
     <Compile Include="Web References\n11CategoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\n11ProductSellingService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -1767,6 +1773,23 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Web References\n11ProductSellingService\ProductSellingService.wsdl" />
+    <None Include="Web References\n11ProductSellingService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\n11ProductSellingService\StartSellingProductByProductIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductSellingService\StartSellingProductBySellerCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductSellingService\StopSellingProductByProductIdResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\n11ProductSellingService\StopSellingProductBySellerCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\n11ProductService\DeleteProductByIdResponse1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -1927,6 +1950,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Aresv2_n11CategoryService_CategoryServicePortService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://api.n11.com/ws/ProductSellingService.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\n11ProductSellingService\</RelPath>
+      <UpdateFromURL>https://api.n11.com/ws/ProductSellingService.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Aresv2_n11ProductSellingService_ProductSellingServicePortService</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="https://api.n11.com/ws/ProductService.wsdl">
       <UrlBehavior>Dynamic</UrlBehavior>

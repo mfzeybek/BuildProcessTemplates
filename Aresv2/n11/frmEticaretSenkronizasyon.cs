@@ -93,6 +93,7 @@ select new
     Aciklama = "N11 de var Areste n11 kartı açılmamış",
 
     approvalStatus = N11Deki["approvalStatus"],
+    approvalStatus2 = N11Deki["approvalStatus2"],
     currencyAmount = N11Deki["currencyAmount"],
     currencyType = N11Deki["currencyType"],
     oldPrice = N11Deki["oldPrice"],
@@ -140,6 +141,7 @@ select new
                         subtitle = N11Deki["subtitle"],
                         displayPrice = N11Deki["displayPrice"],
                         approvalStatus = N11Deki["approvalStatus"], // güncel durum
+                        approvalStatus2 = N11Deki["approvalStatus2"], // güncel durum
                         currencyAmount = N11Deki["currencyAmount"],
                         currencyType = N11Deki["currencyType"],
                         oldPrice = N11Deki["oldPrice"],
@@ -147,7 +149,7 @@ select new
                         productSellerCode = N11Deki["productSellerCode"],
                         saleStatus = N11Deki["saleStatus"],
                         StokMiktari = N11Deki["StokMiktari"],
-                        
+
 
 
                         N11DekiStokKodu = N11Deki["productSellerCode"].ToString()
@@ -166,7 +168,8 @@ select new
                     n11Fiyati = y.displayPrice,
                     AresMiktari = Convert.ToDecimal(0),
                     n11Miktari = y.StokMiktari,
-                    approvalStatus = y.approvalStatus.ToString()
+                    approvalStatus = y.approvalStatus.ToString(),
+                    approvalStatus2 = y.approvalStatus2.ToString()
                 }).Union
                 (
                     AresteOlupN11deOlmayanlar.Select(z => new
@@ -180,9 +183,9 @@ select new
                         n11Fiyati = Convert.ToDecimal(0),
                         AresMiktari = z.KalanMiktar,
                         n11Miktari = Convert.ToDecimal(0),
-                        approvalStatus = string.Empty
+                        approvalStatus = string.Empty,
+                        approvalStatus2 = string.Empty
                     })
-
             );
                 var ahanda2 = Farklar.Select(x => new
                 {
@@ -195,7 +198,8 @@ select new
                     n11Fiyati = x.n11Fiyati,
                     AresMiktari = x.AresMiktari,
                     n11Miktari = x.N11Miktari,
-                    approvalStatus = x.approvalStatus.ToString()
+                    approvalStatus = x.approvalStatus.ToString(),
+                    approvalStatus2 = x.approvalStatus2.ToString()
 
                 }
                     ).Union(ahanda.Select(z => new
@@ -209,7 +213,9 @@ select new
                         n11Fiyati = z.n11Fiyati,
                         AresMiktari = z.AresMiktari,
                         n11Miktari = z.n11Miktari,
-                        approvalStatus = z.approvalStatus
+                        approvalStatus = z.approvalStatus,
+                        approvalStatus2 = z.approvalStatus2.ToString()
+
                     }));
 
                 gridControl1.DataSource = ahanda2;
@@ -322,6 +328,36 @@ select new
             n11frm = new frmN11Urun(StokID);
             n11frm.MdiParent = this.MdiParent;
             n11frm.Show();
+        }
+
+        public void SatisaBaslat(string StokKodu)
+        {
+
+
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                return;
+            string StokKodu = gridView1.GetFocusedRowCellValue("StokKodu").ToString();
+            liste.UrunSatisiniBaaslat(StokKodu);
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                return;
+            string StokKodu = gridView1.GetFocusedRowCellValue("StokKodu").ToString();
+            liste.UrunSatisiniDurdur(StokKodu);
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                return;
+            string StokKodu = gridView1.GetFocusedRowCellValue("StokKodu").ToString();
+            liste.StokMiktariGuncelle(StokKodu, 12, 0);
         }
     }
 }
