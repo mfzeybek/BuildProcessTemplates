@@ -67,13 +67,7 @@ namespace Aresv2.n11
 
         public DataSet ds;
 
-        enum approvalStatusSecimi
-        {
-            satisda = 1,//:  “Active”: satışda olan ürünler (aktif)
-            Beklemede = 2, //:  “Suspended”: Beklemede olan ürünler (beklemede)
-            Yasakli = 3,
-            LimitDisi = 4
-        }
+        
 
         public void DTolustir()
         {
@@ -139,7 +133,8 @@ namespace Aresv2.n11
                 dr["displayPrice"] = item.displayPrice;
                 dr["approvalStatus"] = item.approvalStatus;
 
-                dr["approvalStatus2"] = ((approvalStatusSecimi)(Convert.ToInt16(item.approvalStatus))).ToString();
+     
+                dr["approvalStatus2"] = ((clsTablolar.n11.csN11ApprovalStatus.approvalStatus)(Convert.ToInt16(item.approvalStatus))).ToString();
 
 
 
@@ -272,53 +267,30 @@ namespace Aresv2.n11
                 //String strAppKey = "***";
                 //String strAppSecret = "***";
                 String strSellerStockCode = StokKodu;
-                int quantityValue = 12;
-                long versionValue = 0;
+                int quantityValue = StokMikari;
+                long versionValue = 6;
 
                 n11ProductStockService.Authentication authentication = new n11ProductStockService.Authentication();
                 authentication.appKey = strAppKey;
                 authentication.appSecret = strAppSecret;
-
-                //n11ProductStockService.ProductStockServicePortService ahanda = new n11ProductStockService.ProductStockServicePortService().;
-                //ahanda.stockIte
-
-                //List<n11ProductStockService.StockItemForUpdateStockWithSellerStockCode> stockItemList = 
-                //n11ProductStockService.StockItemForUpdateStockWithSellerStockCode[] stockItemList = new List<n11ProductStockService.StockItemForUpdateStockWithSellerStockCode>().ToArray();
-
-                //n11ProductStockService.StockItemForUpdateStockWithSellerStockCode  StockItemForAddStockWithSellerStockCodeList
-
-                //n11ProductStockService.
+                List<n11ProductStockService.StockItemForUpdateStockWithSellerStockCode> stockItemList = new List<n11ProductStockService.StockItemForUpdateStockWithSellerStockCode>();
+                //n11ProductStockService.StockItemForUpdateStockWithSellerStockCodeList stockItemList = new StockItemForUpdateStockWithSellerStockCodeList();
                 n11ProductStockService.StockItemForUpdateStockWithSellerStockCode stockItem = new n11ProductStockService.StockItemForUpdateStockWithSellerStockCode();
                 stockItem.version = versionValue;
                 stockItem.sellerStockCode = strSellerStockCode;
                 stockItem.quantity = quantityValue.ToString();
 
-                
-
-                
-
-
-
+                //stockItemList.getStockItem().add(stockItem);
+                stockItemList.Add(stockItem);
+                //stockItemList.getStockItem().add(stockItem);
 
                 n11ProductStockService.UpdateStockByStockSellerCodeRequest request = new n11ProductStockService.UpdateStockByStockSellerCodeRequest();
                 request.auth = authentication;
+                request.stockItems = stockItemList.ToArray();
 
-                request.stockItems = new n11ProductStockService.StockItemForUpdateStockWithSellerStockCode[1];
-                request.stockItems[0] = stockItem;
-
-
-
-
-
-                var port = new n11ProductStockService.ProductStockServicePortService();
+                n11ProductStockService.ProductStockServicePortService port = new n11ProductStockService.ProductStockServicePortService();
+                //ProductStockServicePort port = new ProductStockServicePortService().getProductStockServicePortSoap11();
                 n11ProductStockService.UpdateStockByStockSellerCodeResponse response = port.UpdateStockByStockSellerCode(request);
-                //n11ProductStockService.UpdateStockByStockSellerCodeResponse response = new n11ProductStockService.ProductStockServicePortService().UpdateStockByStockSellerCode(request);
-
-                //n11ProductStockService.
-
-
-                //port.UpdateStockByStockSellerCode(request);
-
                 //System.out.println("Update status is " + response.getResult().getStatus().getValue());
             }
             catch (Exception ex)
@@ -362,225 +334,66 @@ namespace Aresv2.n11
 
 
 
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://schemas.xmlsoap.org/soap/envelope/", IsNullable = false)]
-        public partial class Envelope
+        public void StokFiyatiGuncelle(string StokKoud, decimal Fiyati)
         {
-
-            private object headerField;
-
-            private EnvelopeBody bodyField;
-
-            /// <remarks/>
-            public object Header
+            try
             {
-                get
-                {
-                    return this.headerField;
-                }
-                set
-                {
-                    this.headerField = value;
-                }
+                //String strAppKey = "***";
+                //String strAppSecret = "***";
+                String strSellerCode = StokKoud;
+                String strSellerStockCode = StokKoud;
+                int currencyTypeValue = 1;
+                decimal optionalPriceValue = Fiyati;
+                decimal priceValue = Fiyati;
+
+                n11ProductService.Authentication authentication = new Authentication();
+                authentication.appKey = strAppKey;
+                authentication.appSecret = strAppSecret;
+
+                List<n11ProductService.ProductSkuBasicRequest> productSkuBasicRequestItemList = new List<ProductSkuBasicRequest>();
+                n11ProductService.ProductSkuRequest productSkuRequest = new ProductSkuRequest();
+                productSkuRequest.sellerStockCode = strSellerStockCode;
+                productSkuRequest.optionPrice = Convert.ToDecimal(optionalPriceValue);
+
+                UpdateProductPriceBySellerCodeRequest request = new UpdateProductPriceBySellerCodeRequest();
+                request.auth = authentication;
+                request.currencyType = currencyTypeValue.ToString();
+
+                request.stockItems = productSkuBasicRequestItemList.ToArray();
+
+
+                request.price = Convert.ToDecimal(priceValue);
+                request.productSellerCode = strSellerCode;
+
+                //n11ProductService.ProductServicePortService  port = new ProductServicePortService().getProductServicePortSoap11();
+                n11ProductService.ProductServicePortService port = new ProductServicePortService();
+
+                UpdateProductPriceBySellerCodeResponse response = port.UpdateProductPriceBySellerCode(request);
+                ProductBasic sampleProduct = response.product;
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            /// <remarks/>
-            public EnvelopeBody Body
-            {
-                get
-                {
-                    return this.bodyField;
-                }
-                set
-                {
-                    this.bodyField = value;
-                }
-            }
+
+            //authentication = new Authentication();
+
+
         }
 
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public partial class EnvelopeBody
-        {
 
-            private IncreaseStockByStockSellerCodeRequest increaseStockByStockSellerCodeRequestField;
 
-            /// <remarks/>
-            [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.n11.com/ws/schemas")]
-            public IncreaseStockByStockSellerCodeRequest IncreaseStockByStockSellerCodeRequest
-            {
-                get
-                {
-                    return this.increaseStockByStockSellerCodeRequestField;
-                }
-                set
-                {
-                    this.increaseStockByStockSellerCodeRequestField = value;
-                }
-            }
-        }
 
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.n11.com/ws/schemas")]
-        [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.n11.com/ws/schemas", IsNullable = false)]
-        public partial class IncreaseStockByStockSellerCodeRequest
-        {
 
-            private auth authField;
 
-            private stockItems stockItemsField;
 
-            /// <remarks/>
-            [System.Xml.Serialization.XmlElementAttribute(Namespace = "")]
-            public auth auth
-            {
-                get
-                {
-                    return this.authField;
-                }
-                set
-                {
-                    this.authField = value;
-                }
-            }
 
-            /// <remarks/>
-            [System.Xml.Serialization.XmlElementAttribute(Namespace = "")]
-            public stockItems stockItems
-            {
-                get
-                {
-                    return this.stockItemsField;
-                }
-                set
-                {
-                    this.stockItemsField = value;
-                }
-            }
-        }
 
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-        [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-        public partial class auth
-        {
 
-            private string appKeyField;
-
-            private string appSecretField;
-
-            /// <remarks/>
-            public string appKey
-            {
-                get
-                {
-                    return this.appKeyField;
-                }
-                set
-                {
-                    this.appKeyField = value;
-                }
-            }
-
-            /// <remarks/>
-            public string appSecret
-            {
-                get
-                {
-                    return this.appSecretField;
-                }
-                set
-                {
-                    this.appSecretField = value;
-                }
-            }
-        }
-
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-        [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-        public partial class stockItems
-        {
-
-            private stockItemsStockItem stockItemField;
-
-            /// <remarks/>
-            public stockItemsStockItem stockItem
-            {
-                get
-                {
-                    return this.stockItemField;
-                }
-                set
-                {
-                    this.stockItemField = value;
-                }
-            }
-        }
-
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-        public partial class stockItemsStockItem
-        {
-
-            private string sellerStockCodeField;
-
-            private byte quantityToIncreaseField;
-
-            private byte versionField;
-
-            /// <remarks/>
-            public string sellerStockCode
-            {
-                get
-                {
-                    return this.sellerStockCodeField;
-                }
-                set
-                {
-                    this.sellerStockCodeField = value;
-                }
-            }
-
-            /// <remarks/>
-            public byte quantityToIncrease
-            {
-                get
-                {
-                    return this.quantityToIncreaseField;
-                }
-                set
-                {
-                    this.quantityToIncreaseField = value;
-                }
-            }
-
-            /// <remarks/>
-            public byte version
-            {
-                get
-                {
-                    return this.versionField;
-                }
-                set
-                {
-                    this.versionField = value;
-                }
-            }
-        }
 
 
     }

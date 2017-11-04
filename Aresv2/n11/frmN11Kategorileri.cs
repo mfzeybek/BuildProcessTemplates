@@ -15,9 +15,9 @@ using System.Data.SqlClient;
 
 namespace Aresv2.n11
 {
-    public partial class frmN11 : Form
+    public partial class frmN11Kategorileri : Form
     {
-        public frmN11()
+        public frmN11Kategorileri()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace Aresv2.n11
             dt_Kategoriler.Columns.Add("UstKategoriID");
             dt_Kategoriler.Columns.Add("KategoriAdi");
 
-            KategorileriGetir();
+
             //UrunGetir();
             //hamisina();
 
@@ -263,6 +263,29 @@ namespace Aresv2.n11
                 TrGenel.Commit();
 
             }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            KategorileriGetir();
+        }
+
+        private void btnArestekiN11KategorileriniGetir_Click(object sender, EventArgs e)
+        {
+            clsTablolar.n11.csN11Kategori KAte = new clsTablolar.n11.csN11Kategori();
+            treeList_ArestekiN11Kategorileri.DataSource = KAte.KategoriListesi(SqlConnections.GetBaglanti(), TrGenel);
+
+        }
+
+        private void btnKategoriOzellikleriniGetir_Click(object sender, EventArgs e)
+        {
+            n11.csKategoriOzellikGosterme Ozellikleri = new csKategoriOzellikGosterme();
+            Ozellikleri.KategoriOzellikVeDegerGosterme((int)treeList_ArestekiN11Kategorileri.GetFocusedDataRow()["n11KategoriID"]);
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

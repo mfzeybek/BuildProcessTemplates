@@ -19,6 +19,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -35,8 +37,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -770,22 +770,24 @@
     <Compile Include="Kasa\KasaHareketListesi.Designer.cs">
       <DependentUpon>KasaHareketListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="n11\csKategoriOzellikGosterme.cs" />
     <Compile Include="n11\csn11Authentication .cs" />
     <Compile Include="n11\csn11ProductList .cs" />
     <Compile Include="n11\csN11ProductService.cs" />
     <Compile Include="n11\csN11UpdateProductBasic.cs" />
     <Compile Include="n11\csN11UpdateProductPriceBySellerCode.cs" />
+    <Compile Include="n11\csUstKategoriBilgileri.cs" />
     <Compile Include="n11\frmEticaretSenkronizasyon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="n11\frmEticaretSenkronizasyon.Designer.cs">
       <DependentUpon>frmEticaretSenkronizasyon.cs</DependentUpon>
     </Compile>
-    <Compile Include="n11\frmN11.cs">
+    <Compile Include="n11\frmN11Kategorileri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="n11\frmN11.Designer.cs">
-      <DependentUpon>frmN11.cs</DependentUpon>
+    <Compile Include="n11\frmN11Kategorileri.Designer.cs">
+      <DependentUpon>frmN11Kategorileri.cs</DependentUpon>
     </Compile>
     <Compile Include="n11\frmN11ProductList.cs">
       <SubType>Form</SubType>
@@ -1407,8 +1409,8 @@
     <EmbeddedResource Include="n11\frmEticaretSenkronizasyon.resx">
       <DependentUpon>frmEticaretSenkronizasyon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="n11\frmN11.resx">
-      <DependentUpon>frmN11.cs</DependentUpon>
+    <EmbeddedResource Include="n11\frmN11Kategorileri.resx">
+      <DependentUpon>frmN11Kategorileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="n11\frmN11ProductList.resx">
       <DependentUpon>frmN11ProductList.cs</DependentUpon>

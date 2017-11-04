@@ -65,7 +65,7 @@ namespace clsTablolar.cari.CariHr
             _Carikodu = string.Empty;
             _HareketTipleri = string.Empty;
             _CariGrupID = -1;
-            _IlkTarih = DateTime.MinValue;
+            _IlkTarih = DateTime.Now.AddMonths(-6);
             _IkinciTarih = DateTime.MinValue;
             _KasaID = -1;
         }

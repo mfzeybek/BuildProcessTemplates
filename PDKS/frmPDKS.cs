@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace PDKS
 {
     public partial class frmPDKS : DevExpress.XtraEditors.XtraForm
@@ -105,6 +106,33 @@ namespace PDKS
                     lblBilgilendirme.Text = "Böyle Biri Yok Hamsına";
                 }
                 timer1.Start();
+            }
+
+            else if(e.Control && e.KeyCode == Keys.F)
+            {
+                try
+                {
+                    //foreach (System.Diagnostics.Process proc in System.Diagnostics.Process.GetProcessesByName("TeraziSatisBaslat2"))
+                    //{
+                    //    proc.Kill();
+                    //}
+
+                    if (!System.IO.Directory.Exists(Application.StartupPath + @"\Guncelleme"))
+                    {
+                        System.IO.Directory.CreateDirectory(Application.StartupPath + @"\Guncelleme");
+                    }
+
+                    System.IO.File.Copy(Application.StartupPath + @"\TeraziSatisGuncelleme.exe", Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.exe", true);
+                    System.IO.File.Copy(Application.StartupPath + @"\TeraziSatisGuncelleme.pdb", Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.pdb", true);
+
+
+                    System.Diagnostics.Process.Start(Application.StartupPath + @"\Guncelleme\TeraziSatisGuncelleme.exe", "1");
+                    Application.Exit();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
 

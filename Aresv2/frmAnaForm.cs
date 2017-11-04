@@ -478,7 +478,7 @@ namespace Aresv2
         {
             Stok.frmStokListesi frm = new Stok.frmStokListesi(false);
             frm.Text = "Stok Listesi";
-            FormuAc(frm);
+            FormuAc2(frm);
         }
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -997,7 +997,7 @@ namespace Aresv2
 
         private void barButtonItem45_ItemClick(object sender, ItemClickEventArgs e)
         {
-            n11.frmN11 frm = new n11.frmN11();
+            n11.frmN11Kategorileri frm = new n11.frmN11Kategorileri();
             FormuAc2(frm);
         }
 
@@ -1054,6 +1054,12 @@ namespace Aresv2
         private void barButtonItem48_ItemClick(object sender, ItemClickEventArgs e)
         {
             n11.frmEticaretSenkronizasyon frm = new n11.frmEticaretSenkronizasyon();
+            FormuAc(frm);
+        }
+
+        private void barButtonItem49_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            n11.frmN11Kategorileri frm = new n11.frmN11Kategorileri();
             FormuAc(frm);
         }
     }

@@ -18,7 +18,8 @@ namespace TeraziSatisGuncelleme
             Ares = 1,
             Terazi = 2,
             Kasa = 3,
-            Kavurma = 4
+            Kavurma = 4,
+            Pdks = 5
         }
 
         public GuncellenecekProgram AhandaGuncellenecekProgram;
@@ -45,6 +46,9 @@ namespace TeraziSatisGuncelleme
                     break;
                 case GuncellenecekProgram.Kavurma:
                     label1.Text = "Güncellenecek Program Kavurma Makinası";
+                    break;
+                case GuncellenecekProgram.Pdks:
+                    label1.Text = "PDKS Program Kavurma Makinası";
                     break;
                 default:
                     break;
@@ -186,10 +190,17 @@ namespace TeraziSatisGuncelleme
             }
             else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Kavurma)
             {
-                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\kAVURMA\", Directory.GetParent(Application.StartupPath).FullName, false);
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\kAVURMA\Debug\", Directory.GetParent(Application.StartupPath).FullName, false);
                 MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
                 System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\WindowsFormsApplication2.exe");
             }
+            else if (AhandaGuncellenecekProgram == GuncellenecekProgram.Pdks)
+            {
+                CopyDirectory(@"\\192.168.2.8\TeraziDosyalari\PDKS\Debug\", Directory.GetParent(Application.StartupPath).FullName, false);
+                MessageBox.Show("Kopyalanan Dosya Sayısı : " + KopyalananDosyaSayisi.ToString());
+                System.Diagnostics.Process.Start(Directory.GetParent(Application.StartupPath).FullName + @"\WindowsFormsApplication2.exe");
+            }
+                
             label1.Text = "Güncelleme Tamamlandi";
             Close();
             Application.Exit();

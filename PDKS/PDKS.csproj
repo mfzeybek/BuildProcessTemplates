@@ -161,6 +161,10 @@
       <Project>{222cdcff-bba7-4363-8346-2556a90604b0}</Project>
       <Name>clsTablolar</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TeraziSatisGuncelleme\TeraziSatisGuncelleme.csproj">
+      <Project>{f632bc66-4e67-4d79-933e-f35bb2d41ed5}</Project>
+      <Name>TeraziSatisGuncelleme</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

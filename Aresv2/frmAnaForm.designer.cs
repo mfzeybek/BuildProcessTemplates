@@ -190,11 +190,16 @@
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barButtonItem45 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem46 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem48 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem49 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup35 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem48 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.barButtonItem50 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem51 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup36 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ımageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -1600,11 +1605,12 @@
             this.barButtonItem47,
             this.frmFotoKatalog,
             this.barBtnStokGruplari,
-            this.barButtonItem48});
+            this.barButtonItem48,
+            this.barButtonItem49});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.ribbon.MaxItemId = 15;
+            this.ribbon.MaxItemId = 16;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.OptionsTouch.ShowTouchUISelectorInQAT = true;
@@ -1627,8 +1633,9 @@
             this.rpTerazi,
             this.rpYonetim,
             this.ribbonPage1,
-            this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(2614, 282);
+            this.ribbonPage3,
+            this.ribbonPage9});
+            this.ribbon.Size = new System.Drawing.Size(2436, 282);
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // skinRibbonGalleryBarItem1
@@ -1651,6 +1658,24 @@
             this.barButtonItem46.Name = "barButtonItem46";
             this.barButtonItem46.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem46_ItemClick);
             // 
+            // barButtonItem48
+            // 
+            this.barButtonItem48.Caption = "n11 Basit Güncelleme";
+            this.barButtonItem48.Id = 14;
+            this.barButtonItem48.LargeWidth = 100;
+            this.barButtonItem48.Name = "barButtonItem48";
+            this.barButtonItem48.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem48.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem48_ItemClick);
+            // 
+            // barButtonItem49
+            // 
+            this.barButtonItem49.Caption = "n11 Kategorileri";
+            this.barButtonItem49.Id = 15;
+            this.barButtonItem49.LargeWidth = 100;
+            this.barButtonItem49.Name = "barButtonItem49";
+            this.barButtonItem49.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem49.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem49_ItemClick);
+            // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1665,24 +1690,47 @@
             this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem46);
             this.ribbonPageGroup33.Name = "ribbonPageGroup33";
             this.ribbonPageGroup33.Text = "ribbonPageGroup33";
+            this.ribbonPageGroup33.Visible = false;
+            // 
+            // ribbonPageGroup35
+            // 
+            this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem48);
+            this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem49);
+            this.ribbonPageGroup35.Name = "ribbonPageGroup35";
+            this.ribbonPageGroup35.Text = "ribbonPageGroup35";
             // 
             // ribbonPage8
             // 
             this.ribbonPage8.Name = "ribbonPage8";
             this.ribbonPage8.Text = "ribbonPage8";
             // 
-            // ribbonPageGroup35
+            // barButtonItem50
             // 
-            this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem48);
-            this.ribbonPageGroup35.Name = "ribbonPageGroup35";
-            this.ribbonPageGroup35.Text = "ribbonPageGroup35";
+            this.barButtonItem50.Caption = "n11 Basit Güncelleme";
+            this.barButtonItem50.Id = 14;
+            this.barButtonItem50.LargeWidth = 100;
+            this.barButtonItem50.Name = "barButtonItem50";
+            this.barButtonItem50.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem48
+            // barButtonItem51
             // 
-            this.barButtonItem48.Caption = "barButtonItem48";
-            this.barButtonItem48.Id = 14;
-            this.barButtonItem48.Name = "barButtonItem48";
-            this.barButtonItem48.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem48_ItemClick);
+            this.barButtonItem51.Caption = "n11 Basit Güncelleme";
+            this.barButtonItem51.Id = 14;
+            this.barButtonItem51.LargeWidth = 100;
+            this.barButtonItem51.Name = "barButtonItem51";
+            this.barButtonItem51.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ribbonPage9
+            // 
+            this.ribbonPage9.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup36});
+            this.ribbonPage9.Name = "ribbonPage9";
+            this.ribbonPage9.Text = "ribbonPage9";
+            // 
+            // ribbonPageGroup36
+            // 
+            this.ribbonPageGroup36.Name = "ribbonPageGroup36";
+            this.ribbonPageGroup36.Text = "ribbonPageGroup36";
             // 
             // frmAnaForm
             // 
@@ -1690,7 +1738,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(2614, 1206);
+            this.ClientSize = new System.Drawing.Size(2436, 1206);
             this.Controls.Add(this.ribbon);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1879,5 +1927,10 @@
         private DevExpress.XtraBars.BarButtonItem barBtnStokGruplari;
         private DevExpress.XtraBars.BarButtonItem barButtonItem48;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup35;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem49;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem50;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem51;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage9;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup36;
     }
 }

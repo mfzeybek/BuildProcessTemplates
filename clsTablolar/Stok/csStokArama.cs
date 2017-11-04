@@ -73,7 +73,14 @@ namespace clsTablolar.Stok
         /// </summary>
         private int _StokTipi;
         private int _SayimID;
-        private Int16 _N11Entegrasyonu;
+        private n11entegrasyon _N11Entegrasyonu;
+
+        public enum n11entegrasyon
+        {
+            Hepsi = -1,
+            Olan = 0,
+            Olmayan = 1
+        }
 
         private bool _TumFotograflariYukle;
         private clsTablolar.Stok.csStokGrubuField[] _SeciliGruplar;
@@ -304,7 +311,7 @@ namespace clsTablolar.Stok
             }
         }
 
-        public short N11Entegrasyonu
+        public n11entegrasyon N11Entegrasyonu
         {
             get
             {
@@ -362,6 +369,7 @@ namespace clsTablolar.Stok
             _StokTipi = -1;
             _SayimID = -1;
             _TumFotograflariYukle = false;
+            _N11Entegrasyonu = n11entegrasyon.Hepsi;
         }
 
         public enum enumFotoOzellikleri
@@ -671,18 +679,28 @@ WHERE     (s.Silindi = 'false') ";
                 da.SelectCommand.CommandText += " and s.StokID in (select StokID from SayimDetay where SayimDetay.SayimID = @SayimID )";
                 da.SelectCommand.Parameters.Add("@SayimID", SqlDbType.Int).Value = _SayimID;
             }
-            if (_N11Entegrasyonu != -1)
+
+            switch (_N11Entegrasyonu)
             {
-                da.SelectCommand.CommandText += " and s.StokID in (select StokID from n11Product) ";
+                case n11entegrasyon.Hepsi:
+                    break;
+                case n11entegrasyon.Olan:
+                    da.SelectCommand.CommandText += " and s.StokID in (select StokID from n11Product) ";
+                    break;
+                case n11entegrasyon.Olmayan:
+                    da.SelectCommand.CommandText += " and s.StokID not in (select StokID from n11Product) ";
+                    break;
+                default:
+                    break;
             }
 
-            if (SeciliGruplar != null && SeciliGruplar.Length != 0)
+            if (_SeciliGruplar != null && _SeciliGruplar.Length != 0)
             {
 
                 if (StokGrupHepsiniGetir)
                     da.SelectCommand.CommandText += " and ( 1 = 2 ";
 
-                foreach (var item in SeciliGruplar)
+                foreach (var item in _SeciliGruplar)
                 {
                     if (StokGrupHepsiniGetir)
                         da.SelectCommand.CommandText += @" or ";

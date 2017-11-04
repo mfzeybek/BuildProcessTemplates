@@ -36,6 +36,11 @@ namespace clsTablolar.n11
         public StokMiktariEsitlemeSekliTanim StokMiktariEsitlemeSekli { get; set; }
 
 
+        public csN11ApprovalStatus.approvalStatus N11approvalStatus { get; set; }
+
+
+
+
         public enum StokMiktariEsitlemeSekliTanim
         {
             SabitMiktar = 1,
@@ -102,6 +107,13 @@ namespace clsTablolar.n11
                         this.StokMiktariEsitlemeMiktari = Convert.ToDecimal(dr["StokMiktariEsitlemeMiktari"]);
 
                         this.N11StokKodu = dr["n11StokKodu"].ToString();
+
+
+                        if (dr["n11approvalStatus"] != DBNull.Value)
+                            this.N11approvalStatus = (csN11ApprovalStatus.approvalStatus)Convert.ToInt16(dr["n11approvalStatus"]);
+                        else
+                            this.N11approvalStatus = csN11ApprovalStatus.approvalStatus.Beklemede;
+
                     }
 
                     else // stok Id ye bağlı n11 produckt yoksa yeni kayıt için verilen stokID den Stok Bilgilerini Getir
@@ -115,13 +127,14 @@ namespace clsTablolar.n11
                             this.AltBaslik = stk.EtiketAdi;
                             this.StokID = stk.StokID;
                             this.DetayliUrunBilgisi = string.Empty;
-                            this.HazirlikSuresi = 0;
+                            this.HazirlikSuresi = 1; //TODO: Bunu daha sonr ayarlardan alacak
                             this.KullanilacakBarkodID = -1;
                             this.KullanilacakFiyatTanimID = 2; // TODO: Bunu da ayarlardan alıcak
                             this.StokMiktariEsitlemeSekli = StokMiktariEsitlemeSekliTanim.StokMiktarıninAynisi;
 
                             this.StokMiktariEsitlemeMiktari = 0;
                             this.N11StokKodu = stk.StokKodu;
+                            this.N11approvalStatus = csN11ApprovalStatus.approvalStatus.Satisda;
                         }
                     }
                 }
@@ -134,9 +147,9 @@ namespace clsTablolar.n11
             {
                 if (this.n11ProductID == -1)
                 {
-                    cmd.CommandText = " insert into n11Product (KategoriID, StokID, DetayliUrunBilgisi, HazirlikSuresi, KullanilacakBarkodID, KullanilacakFiyatTanimID, UrunBasligi, AltBaslik, StokMiktariEsitlemeSekli, StokMiktariEsitlemeMiktari, n11StokKodu) " +
+                    cmd.CommandText = " insert into n11Product (KategoriID, StokID, DetayliUrunBilgisi, HazirlikSuresi, KullanilacakBarkodID, KullanilacakFiyatTanimID, UrunBasligi, AltBaslik, StokMiktariEsitlemeSekli, StokMiktariEsitlemeMiktari, n11StokKodu, n11approvalStatus) " +
                         "values " +
-                        "(@KategoriID, @StokID, @DetayliUrunBilgisi, @HazirlikSuresi, @KullanilacakBarkodID, @KullanilacakFiyatTanimID, @UrunBasligi, @AltBaslik, @StokMiktariEsitlemeSekli, @StokMiktariEsitlemeMiktari, @n11StokKodu) set @YeniID = SCOPE_IDENTITY() ";
+                        "(@KategoriID, @StokID, @DetayliUrunBilgisi, @HazirlikSuresi, @KullanilacakBarkodID, @KullanilacakFiyatTanimID, @UrunBasligi, @AltBaslik, @StokMiktariEsitlemeSekli, @StokMiktariEsitlemeMiktari, @n11StokKodu, @n11approvalStatus) set @YeniID = SCOPE_IDENTITY() ";
 
                     cmd.Parameters.Add("@YeniID", SqlDbType.Int).Direction = ParameterDirection.Output;
 
@@ -145,7 +158,7 @@ namespace clsTablolar.n11
                 else
                 {
                     cmd.CommandText = "update n11Product set KategoriID = @KategoriID, StokID = @StokID, DetayliUrunBilgisi = @DetayliUrunBilgisi, " +
-                        "HazirlikSuresi = @HazirlikSuresi, KullanilacakBarkodID = @KullanilacakBarkodID, KullanilacakFiyatTanimID = @KullanilacakFiyatTanimID, UrunBasligi = @UrunBasligi, AltBaslik = @AltBaslik, StokMiktariEsitlemeSekli = @StokMiktariEsitlemeSekli, StokMiktariEsitlemeMiktari = @StokMiktariEsitlemeMiktari, n11StokKodu = @n11StokKodu where n11ProductID = @n11ProductID ";
+                        "HazirlikSuresi = @HazirlikSuresi, KullanilacakBarkodID = @KullanilacakBarkodID, KullanilacakFiyatTanimID = @KullanilacakFiyatTanimID, UrunBasligi = @UrunBasligi, AltBaslik = @AltBaslik, StokMiktariEsitlemeSekli = @StokMiktariEsitlemeSekli, StokMiktariEsitlemeMiktari = @StokMiktariEsitlemeMiktari, n11StokKodu = @n11StokKodu, n11approvalStatus = @n11approvalStatus where n11ProductID = @n11ProductID ";
 
                     cmd.Parameters.Add("@n11ProductID", SqlDbType.Int).Value = n11ProductID;
                 }
@@ -165,7 +178,7 @@ namespace clsTablolar.n11
 
                 cmd.Parameters.Add("@n11StokKodu", SqlDbType.NVarChar).Value = N11StokKodu;
 
-
+                cmd.Parameters.Add("@n11approvalStatus", SqlDbType.SmallInt).Value = N11approvalStatus;
 
 
                 cmd.ExecuteNonQuery();

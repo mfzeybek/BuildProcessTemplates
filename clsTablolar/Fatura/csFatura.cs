@@ -386,63 +386,66 @@ WHERE     (dbo.Fatura.FaturaID = @FaturaID) ";
 
                     using (drGenel = cmdGenel.ExecuteReader())
                     {
-                        drGenel.Read();
+                        if (drGenel.Read())
+                        {
 
 
-                        _FaturaID = Convert.ToInt32(drGenel["FaturaID"]);
+                            _FaturaID = Convert.ToInt32(drGenel["FaturaID"]);
 
-                        _FaturaTipi = (IslemTipi)Enum.Parse(typeof(IslemTipi), drGenel["FaturaTipi"].ToString());
-                        _CariID = Convert.ToInt32(drGenel["CariID"]);
-                        _CariKod = drGenel["CariKod"].ToString();
-                        _CariTanim = drGenel["CariTanim"].ToString();
-                        _VergiDairesi = drGenel["VergiDairesi"].ToString();
-                        _VergiNo = drGenel["VergiNo"].ToString();
-                        _Adres = drGenel["Adres"].ToString();
-                        _Il = drGenel["Il"].ToString();
-                        _Ilce = drGenel["Ilce"].ToString();
-                        _FaturaNo = drGenel["FaturaNo"].ToString();
-                        _FaturaTarihi = Convert.ToDateTime(drGenel["FaturaTarihi"]);
-                        _Vadesi = Convert.ToDateTime(drGenel["Vadesi"]);
-                        _Iptal = Convert.ToBoolean(drGenel["Iptal"]);
-                        _SilindiMi = Convert.ToBoolean(drGenel["SilindiMi"]);
-                        _KayitTarihi = Convert.ToDateTime(drGenel["KayitTarihi"]);
-                        _KaydedenID = Convert.ToInt32(drGenel["KaydedenID"]);
-                        DateTime.TryParse(drGenel["DegismeTarihi"].ToString(), out _DegismeTarihi);
-                        //_DegismeTarihi = Convert.ToDateTime(drGenel["DegismeTarihi"]);
-                        int.TryParse(drGenel["DegistirenID"].ToString(), out _DegistirenID);
-                        //_DegistirenID = Convert.ToInt32(drGenel["DegistirenID"]);
-                        _Aciklama = drGenel["Aciklama"].ToString();
-                        _ToplamIndirim = Convert.ToDecimal(drGenel["ToplamIndirim"]);
-                        _ToplamKdv = Convert.ToDecimal(drGenel["ToplamKdv"]);
+                            _FaturaTipi = (IslemTipi)Enum.Parse(typeof(IslemTipi), drGenel["FaturaTipi"].ToString());
+                            _CariID = Convert.ToInt32(drGenel["CariID"]);
+                            _CariKod = drGenel["CariKod"].ToString();
+                            _CariTanim = drGenel["CariTanim"].ToString();
+                            _VergiDairesi = drGenel["VergiDairesi"].ToString();
+                            _VergiNo = drGenel["VergiNo"].ToString();
+                            _Adres = drGenel["Adres"].ToString();
+                            _Il = drGenel["Il"].ToString();
+                            _Ilce = drGenel["Ilce"].ToString();
+                            _FaturaNo = drGenel["FaturaNo"].ToString();
+                            _FaturaTarihi = Convert.ToDateTime(drGenel["FaturaTarihi"]);
+                            _Vadesi = Convert.ToDateTime(drGenel["Vadesi"]);
+                            _Iptal = Convert.ToBoolean(drGenel["Iptal"]);
+                            _SilindiMi = Convert.ToBoolean(drGenel["SilindiMi"]);
+                            _KayitTarihi = Convert.ToDateTime(drGenel["KayitTarihi"]);
+                            _KaydedenID = Convert.ToInt32(drGenel["KaydedenID"]);
+                            DateTime.TryParse(drGenel["DegismeTarihi"].ToString(), out _DegismeTarihi);
+                            //_DegismeTarihi = Convert.ToDateTime(drGenel["DegismeTarihi"]);
+                            int.TryParse(drGenel["DegistirenID"].ToString(), out _DegistirenID);
+                            //_DegistirenID = Convert.ToInt32(drGenel["DegistirenID"]);
+                            _Aciklama = drGenel["Aciklama"].ToString();
+                            _ToplamIndirim = Convert.ToDecimal(drGenel["ToplamIndirim"]);
+                            _ToplamKdv = Convert.ToDecimal(drGenel["ToplamKdv"]);
 
-                        if (!int.TryParse(drGenel["KullanilanFiyatTanimID"].ToString(), out _KullanilanFiyatTanimID))
-                            _KullanilanFiyatTanimID = -1;
+                            if (!int.TryParse(drGenel["KullanilanFiyatTanimID"].ToString(), out _KullanilanFiyatTanimID))
+                                _KullanilanFiyatTanimID = -1;
 
 
 
-                        _DuzenlemeTarihi = Convert.ToDateTime(drGenel["DuzenlemeTarihi"]);
+                            _DuzenlemeTarihi = Convert.ToDateTime(drGenel["DuzenlemeTarihi"]);
 
-                        if (drGenel["DepoID"].ToString() != "") // bunları get set ile ayarlamak gerek aslında
-                            _DepoID = Convert.ToInt32(drGenel["DepoID"]);
+                            if (drGenel["DepoID"].ToString() != "") // bunları get set ile ayarlamak gerek aslında
+                                _DepoID = Convert.ToInt32(drGenel["DepoID"]);
 
-                        if (drGenel["SatisElemaniID"].ToString() != "")
-                            _SatisElemaniID = Convert.ToInt32(drGenel["SatisElemaniID"]);
+                            if (drGenel["SatisElemaniID"].ToString() != "")
+                                _SatisElemaniID = Convert.ToInt32(drGenel["SatisElemaniID"]);
 
-                        CariIskontoToplami = Convert.ToDecimal(drGenel["CariIskontoToplami"]);
-                        StokIskontoToplami = Convert.ToDecimal(drGenel["StokIskontoToplami"]);
+                            CariIskontoToplami = Convert.ToDecimal(drGenel["CariIskontoToplami"]);
+                            StokIskontoToplami = Convert.ToDecimal(drGenel["StokIskontoToplami"]);
 
-                        _Toplam_Iskontosuz_Kdvsiz = Convert.ToDecimal(drGenel["Toplam_Iskontosuz_Kdvsiz"]);
-                        _FaturaTutari = Convert.ToDecimal(drGenel["FaturaTutari"]);
+                            _Toplam_Iskontosuz_Kdvsiz = Convert.ToDecimal(drGenel["Toplam_Iskontosuz_Kdvsiz"]);
+                            _FaturaTutari = Convert.ToDecimal(drGenel["FaturaTutari"]);
 
-                        _FaturaGrupID = Convert.ToInt32(drGenel["FaturaGrupID"]);
-                        _FaturaBarkod = drGenel["FaturaBarkod"].ToString();
-                        _HizliSatistaGozukecekMi = (bool)drGenel["HizliSatistaGozukecekMi"];
-                        _HizliSatistaDegisiklikYapilmasinaIzniVarMi = (bool)drGenel["HizliSatistaDegisiklikYapilmasinaIzniVarMi"];
+                            _FaturaGrupID = Convert.ToInt32(drGenel["FaturaGrupID"]);
+                            _FaturaBarkod = drGenel["FaturaBarkod"].ToString();
+                            _HizliSatistaGozukecekMi = (bool)drGenel["HizliSatistaGozukecekMi"];
+                            _HizliSatistaDegisiklikYapilmasinaIzniVarMi = (bool)drGenel["HizliSatistaDegisiklikYapilmasinaIzniVarMi"];
+                        }
                     }
                 }
             }
             catch (Exception hata)
             {
+                try { Tr.Rollback(); } catch (Exception) { }
                 throw new Exception(hata.Message);
             }
         }

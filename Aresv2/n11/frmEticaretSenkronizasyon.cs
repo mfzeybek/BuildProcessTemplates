@@ -24,18 +24,6 @@ namespace Aresv2.n11
         DataTable dtN11Deki;
         public void ArestekiN11StoklariniGetir()
         {
-            clsTablolar.Stok.csStokArama stkArama = new clsTablolar.Stok.csStokArama();
-            stkArama.N11Entegrasyonu = 1;
-
-            stkArama.Aktif = true;
-            TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
-            dtArestekiStoklar = stkArama.StokListeGetir(SqlConnections.GetBaglanti(), TrGenel);
-            TrGenel.Commit();
-        }
-
-        void ArestekiStoklarIcinVtYiOluştur()
-        {
-
 
         }
 
@@ -64,7 +52,7 @@ namespace Aresv2.n11
 
             var AresteOlupN11deOlmayanlar =
     from Aresteki in dtArestekiStoklar.AsEnumerable()
-    join N11Deki in dtN11Deki.AsEnumerable() on Aresteki["AresN11StokKodu"] equals N11Deki[9] into ps
+    join N11Deki in dtN11Deki.AsEnumerable() on Aresteki["AresN11StokKodu"] equals N11Deki["productSellerCode"] into ps
     from N11Deki in ps.DefaultIfEmpty()
     where (N11Deki == null)
     select new
@@ -78,13 +66,14 @@ namespace Aresv2.n11
         N11DekiStokKodu = string.Empty,
         KalanMiktar = (decimal)Aresteki["ArestekiN11Miktari"],
         Fiyat = (decimal)Aresteki["AresTekiN11Fiyati"],
+        ArestekiN11ApprovalStatus = ((clsTablolar.n11.csN11ApprovalStatus.approvalStatus)Aresteki["ArestekiN11approvalStatus"]).ToString()
     };
 
             try
             {
                 var N11deOlupAresteOlmayanlar =
 from N11Deki in dtN11Deki.AsEnumerable()
-join Aresteki in dtArestekiStoklar.AsEnumerable() on N11Deki[9] equals Aresteki["AresN11StokKodu"] into ps
+join Aresteki in dtArestekiStoklar.AsEnumerable() on N11Deki["productSellerCode"] equals Aresteki["AresN11StokKodu"] into ps
 from Aresteki in ps.DefaultIfEmpty()
 where (Aresteki == null)//|| k.CategoryName == "Condiments") && (l.City == "London" || l.City == "Bend") && b.Quantity == 20
 select new
@@ -111,20 +100,24 @@ select new
     displayPrice = Convert.ToDecimal(N11Deki["displayPrice"]),
     productSellerCode = N11Deki["productSellerCode"].ToString(),
     StokMiktari = Convert.ToDecimal(N11Deki["StokMiktari"]),
-    N11DekiStokKodu = N11Deki == null ? "(Kayıtlı Değil)" : N11Deki[9]
+    N11DekiStokKodu = N11Deki == null ? "(Kayıtlı Değil)" : N11Deki[9],
+    ArestekiN11ApprovalStatus = string.Empty
+
 };
 
                 var Farklar =
                     from N11Deki in dtN11Deki.AsEnumerable()
-                    join Aresteki in dtArestekiStoklar.AsEnumerable() on N11Deki[9] equals Aresteki["AresN11StokKodu"] into ps
+                    join Aresteki in dtArestekiStoklar.AsEnumerable() on N11Deki["productSellerCode"] equals Aresteki["AresN11StokKodu"] into ps
                     from Aresteki in ps.DefaultIfEmpty()
                     where !(Aresteki == null || N11Deki == null)//|| k.CategoryName == "Condiments") && (l.City == "London" || l.City == "Bend") && b.Quantity == 20
                     select new
                     {
-                        Aciklama = (Aresteki == null ? "Arese Kayıtlı Değil" :
-                    Convert.ToDecimal(Aresteki["ArestekiN11Miktari"]).ToString("0.##") == Convert.ToDecimal(N11Deki["StokMiktari"]).ToString("0.##") ? "Miktarları Aynı" :
-                    "Miktarlar Farklı"),
-
+                        Aciklama = ((Convert.ToDecimal(Aresteki["ArestekiN11Miktari"]).ToString("0.##") == Convert.ToDecimal(N11Deki["StokMiktari"]).ToString("0.##")) ? "" :
+                    " (Miktarlar Farklı) ")
+                        + ((Convert.ToDecimal(Aresteki["AresTekiN11Fiyati"]).ToString("0.##") == Convert.ToDecimal(N11Deki["displayPrice"]).ToString("0.##")) ? "" :
+                        "(Fiyatları Farklı)")
+                        + ((int)Aresteki["ArestekiN11approvalStatus"] == Convert.ToInt32(N11Deki["approvalStatus"]) ? "" :
+                        " (Durumu Farklı)"),
 
                         AresMiktari = Convert.ToDecimal(Aresteki["ArestekiN11Miktari"]),
                         N11Miktari = Convert.ToDecimal(N11Deki["StokMiktari"]),
@@ -150,6 +143,8 @@ select new
                         saleStatus = N11Deki["saleStatus"],
                         StokMiktari = N11Deki["StokMiktari"],
 
+                        ArestekiN11ApprovalStatus = ((clsTablolar.n11.csN11ApprovalStatus.approvalStatus)Aresteki["ArestekiN11approvalStatus"]).ToString(),
+                        ArestekiN11ApprovalStatusID = (int)Aresteki["ArestekiN11approvalStatus"],
 
 
                         N11DekiStokKodu = N11Deki["productSellerCode"].ToString()
@@ -169,7 +164,8 @@ select new
                     AresMiktari = Convert.ToDecimal(0),
                     n11Miktari = y.StokMiktari,
                     approvalStatus = y.approvalStatus.ToString(),
-                    approvalStatus2 = y.approvalStatus2.ToString()
+                    N11dekiapprovalStatus2 = y.approvalStatus2.ToString(),
+                    ArestekiN11ApprovalStatus = y.ArestekiN11ApprovalStatus
                 }).Union
                 (
                     AresteOlupN11deOlmayanlar.Select(z => new
@@ -184,7 +180,8 @@ select new
                         AresMiktari = z.KalanMiktar,
                         n11Miktari = Convert.ToDecimal(0),
                         approvalStatus = string.Empty,
-                        approvalStatus2 = string.Empty
+                        N11dekiapprovalStatus2 = string.Empty,
+                        ArestekiN11ApprovalStatus = z.ArestekiN11ApprovalStatus
                     })
             );
                 var ahanda2 = Farklar.Select(x => new
@@ -199,7 +196,9 @@ select new
                     AresMiktari = x.AresMiktari,
                     n11Miktari = x.N11Miktari,
                     approvalStatus = x.approvalStatus.ToString(),
-                    approvalStatus2 = x.approvalStatus2.ToString()
+                    N11dekiapprovalStatus2 = x.approvalStatus2.ToString(),
+                    ArestekiN11ApprovalStatus = x.ArestekiN11ApprovalStatus
+
 
                 }
                     ).Union(ahanda.Select(z => new
@@ -214,7 +213,8 @@ select new
                         AresMiktari = z.AresMiktari,
                         n11Miktari = z.n11Miktari,
                         approvalStatus = z.approvalStatus,
-                        approvalStatus2 = z.approvalStatus2.ToString()
+                        N11dekiapprovalStatus2 = z.N11dekiapprovalStatus2.ToString(),
+                        ArestekiN11ApprovalStatus = z.ArestekiN11ApprovalStatus
 
                     }));
 
@@ -235,7 +235,9 @@ select new
             dtArestekiStoklar.Columns.Add("AresUrunBasligi", typeof(System.String));
             dtArestekiStoklar.Columns.Add("AresAltBaslik", typeof(System.String));
             dtArestekiStoklar.Columns.Add("ArestekiN11Miktari", typeof(System.Decimal));
-            dtArestekiStoklar.Columns.Add("AresTekiN11Fiyati", typeof(System.Decimal));
+            dtArestekiStoklar.Columns.Add("ArestekiN11Fiyati", typeof(System.Decimal));
+            dtArestekiStoklar.Columns.Add("ArestekiN11approvalStatus", typeof(clsTablolar.n11.csN11ApprovalStatus.approvalStatus));
+
 
             gridControl1.DataSource = dtArestekiStoklar;
         }
@@ -261,7 +263,7 @@ select new
         {
             Stok.frmStokListesi frm = new Stok.frmStokListesi(true);
             frm.Stok_Sec = stokEkle;
-            frm.StokArama.N11Entegrasyonu = 1;
+            frm.StokArama.N11Entegrasyonu = clsTablolar.Stok.csStokArama.n11entegrasyon.Olan;
             frm.cmbN11.SelectedIndex = 1;
             frm.cmbN11.Enabled = false;
             frm.ShowDialog();
@@ -302,7 +304,11 @@ select new
                         break;
                 }
 
-                dr["AresTekiN11Fiyati"] = Fiyat.StokFiyatiniGetir(SqlConnections.GetBaglanti(), TrGenel, StokID, n11Prod.KullanilacakFiyatTanimID);
+                dr["ArestekiN11approvalStatus"] = n11Prod.N11approvalStatus;
+
+                dr["ArestekiN11Fiyati"] = Fiyat.StokFiyatiniGetir(SqlConnections.GetBaglanti(), TrGenel, StokID, n11Prod.KullanilacakFiyatTanimID);
+
+
 
                 TrGenel.Commit();
                 dtArestekiStoklar.Rows.Add(dr);
@@ -330,11 +336,7 @@ select new
             n11frm.Show();
         }
 
-        public void SatisaBaslat(string StokKodu)
-        {
 
-
-        }
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
@@ -352,12 +354,47 @@ select new
             liste.UrunSatisiniDurdur(StokKodu);
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void btnFiyatiGuncelle_Click(object sender, EventArgs e)
         {
+            //if (gridView1.RowCount == 0)
+            //    return;
+            //string StokKodu = gridView1.GetFocusedRowCellValue("StokKodu").ToString();
+            //liste.StokMiktariGuncelle(StokKodu, 12, 0);
+
+
             if (gridView1.RowCount == 0)
                 return;
             string StokKodu = gridView1.GetFocusedRowCellValue("StokKodu").ToString();
-            liste.StokMiktariGuncelle(StokKodu, 12, 0);
+            liste.StokFiyatiGuncelle(StokKodu, (decimal)gridView1.GetFocusedRowCellValue("AresFiyati"));
+        }
+
+        private void simpleButton3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnButunN11StoklariniGetir_Click(object sender, EventArgs e)
+        {
+            using (clsTablolar.Stok.csStokArama stkArama = new clsTablolar.Stok.csStokArama())
+            {
+                stkArama.N11Entegrasyonu = clsTablolar.Stok.csStokArama.n11entegrasyon.Olan;
+
+                stkArama.Aktif = true;
+                TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
+                using (DataTable dt = stkArama.StokListeGetir(SqlConnections.GetBaglanti(), TrGenel))
+                {
+                    TrGenel.Commit();
+                    foreach (var item in dt.AsEnumerable())
+                    {
+                        stokEkle((int)item["StokID"], 0);
+                    }
+                }
+            }
+        }
+
+        private void gridView1_RowCountChanged(object sender, EventArgs e)
+        {
+            lblBilgi.Text = gridView1.RowCount + " Adet";
         }
     }
 }

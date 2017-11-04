@@ -23,6 +23,9 @@ namespace clsTablolar.Stok.StokHareket
         private int _StokGrupID;
         private int _StokAraGrupID;
         private int _StokAltGrupID;
+        private clsTablolar.Stok.csStokGrubuField[] _SeciliGruplar;
+        private bool _StokGrupHepsiniGetir;
+
 
         public string StokKodu
         {
@@ -93,6 +96,9 @@ namespace clsTablolar.Stok.StokHareket
                 _StokAltGrupID = value;
             }
         }
+
+        public csStokGrubuField[] SeciliGruplar { get => _SeciliGruplar; set => _SeciliGruplar = value; }
+        public bool StokGrupHepsiniGetir { get => _StokGrupHepsiniGetir; set => _StokGrupHepsiniGetir = value; }
 
         SqlDataAdapter da;
         public DataTable dt;
@@ -183,6 +189,26 @@ where stokhr.SilindiMi = 0  ", Baglanti);
             {
                 da.SelectCommand.CommandText += " and Stok.StokAltGrupID =  @StokAltGrupID ";
                 da.SelectCommand.Parameters.Add("@StokAltGrupID", SqlDbType.Int).Value = _StokAltGrupID;
+            }
+            if (_SeciliGruplar != null && _SeciliGruplar.Length != 0)
+            {
+
+                if (StokGrupHepsiniGetir)
+                    da.SelectCommand.CommandText += " and ( 1 = 2 ";
+
+                foreach (var item in _SeciliGruplar)
+                {
+                    if (StokGrupHepsiniGetir)
+                        da.SelectCommand.CommandText += @" or ";
+                    else
+                        da.SelectCommand.CommandText += @" and ";
+                    //da.SelectCommand.CommandText += " and s.StokID in (select StokID from StokGrupV2 where StokGrupID = " + item.StokGrupID +")";
+                    da.SelectCommand.CommandText += @" Stok.StokID in (select StokID from[dbo].[StokAltGruplariniBul] (" + item.StokGrupID + ") as ahanda " +
+" inner join StokGrupV2 on StokGrupV2.StokGrupID = ahanda.StokGrupID) ";
+                }
+                if (StokGrupHepsiniGetir)
+                    da.SelectCommand.CommandText += " ) ";
+
             }
 
 

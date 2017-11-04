@@ -304,13 +304,20 @@ namespace Aresv2.Stok
                     }
                 }
 
-                if (cmbN11.SelectedIndex == 1)
+                switch (cmbN11.SelectedIndex)
                 {
-                    StokArama.N11Entegrasyonu = 1;
+                    case 0:
+                        StokArama.N11Entegrasyonu = clsTablolar.Stok.csStokArama.n11entegrasyon.Hepsi;
+                        break;
+                    case 1:
+                        StokArama.N11Entegrasyonu = clsTablolar.Stok.csStokArama.n11entegrasyon.Olan;
+                        break;
+                    case 2:
+                        StokArama.N11Entegrasyonu = clsTablolar.Stok.csStokArama.n11entegrasyon.Olmayan;
+                        break;
+                    default:
+                        break;
                 }
-                else
-                { StokArama.N11Entegrasyonu = -1; }
-
 
 
                 //= StokArama.dt_StokListesi;
@@ -482,7 +489,9 @@ namespace Aresv2.Stok
                         if (btnSec.Visible == false)
                             btnKaydiAc_Click(null, null);
                         else
+                        {
                             btnSec_Click(null, null);
+                        }
                         return;
                     }
                     else
@@ -494,7 +503,22 @@ namespace Aresv2.Stok
                         if (btnSec.Visible == false)
                             btnKaydiAc_Click(null, null);
                         else
+                        {
                             btnSec_Click(null, null);
+                        }
+                    else
+                    if (gvStokListesi.RowCount == 0)
+                    {
+                        System.Media.SystemSounds.Beep.Play();
+
+                        System.Media.SystemSounds.Beep.Play();
+                        System.Media.SystemSounds.Asterisk.Play();
+                        System.Media.SystemSounds.Exclamation.Play();
+                        System.Media.SystemSounds.Question.Play();
+                        System.Media.SystemSounds.Hand.Play();
+
+                    }
+
                     break;
                 case Keys.F10:
                     if (ceBarkoddanMiktarAl.Checked == true)

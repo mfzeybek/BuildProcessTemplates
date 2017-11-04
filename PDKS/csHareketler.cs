@@ -29,9 +29,8 @@ namespace PDKS
         public Tur PersonelinEnSonKayitTipiNe(SqlConnection Baglanti, SqlTransaction Tr, int PersonelID)
         {
             using (cmd = new SqlCommand(@"--declare @PersonelID int = 1
-
-                        select Top 1 Tur from hareketler where PersonelID = @PersonelID and Zaman between CONVERT(varchar,GETDATE(),101) and GETDATE()
-                        order by Zaman desc", Baglanti, Tr))
+select Top 1 Tur from hareketler where PersonelID = @PersonelID and CONVERT(date, Zaman)  = CONVERT(date, GETDATE())
+order by Zaman desc", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@PersonelID", SqlDbType.Int).Value = PersonelID;
 

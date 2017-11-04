@@ -62,6 +62,8 @@ namespace Aresv2.n11
             txtStokMiktari.EditValue = Urun.StokMiktariEsitlemeMiktari;
             lkpFiyatTanimlari.EditValue = Urun.KullanilacakFiyatTanimID;
             txtN11StokKodu.EditValue = Urun.N11StokKodu;
+
+            cmbapprovalStatus.SelectedIndex = (int)Urun.N11approvalStatus - 1;
         }
         void Ver()
         {
@@ -79,6 +81,8 @@ namespace Aresv2.n11
                 Urun.KullanilacakFiyatTanimID = Convert.ToInt32(lkpFiyatTanimlari.EditValue);
 
                 Urun.N11StokKodu = txtN11StokKodu.EditValue.ToString();
+
+                Urun.N11approvalStatus = (clsTablolar.n11.csN11ApprovalStatus.approvalStatus)(cmbapprovalStatus.SelectedIndex + 1);
             }
             catch (Exception ex)
             {
@@ -143,5 +147,32 @@ namespace Aresv2.n11
         {
 
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            csN11ProductService ahanda = new csN11ProductService();
+            ahanda.ProducktGetir(txtN11StokKodu.Text);
+
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            //n11CategoryService. aha = new Aresv2.n11CategoryService();
+            csKategoriOzellikGosterme kat = new csKategoriOzellikGosterme();
+            kat.main(Convert.ToInt64(treeListLookUpEdit1.EditValue));
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            csN11ProductService ahanda = new csN11ProductService();
+            ahanda.ProducktGetir(txtN11StokKodu.Text);
+            ahanda.description = DetayliUrunBilgisi.DocumentText;
+            //ahanda.description = DetayliUrunBilgisi.Document.Body.InnerHtml;
+            if (ahanda.ahandaaa() == csN11ProductService.KayitIslemi.Basarili)
+            {
+                MessageBox.Show("Basarili");
+            }
+        }
     }
 }
+

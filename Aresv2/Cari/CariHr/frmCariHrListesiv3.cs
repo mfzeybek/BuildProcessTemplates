@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 
 namespace Aresv2.Cari.CariHr
@@ -42,6 +35,19 @@ namespace Aresv2.Cari.CariHr
             lookUpEdit1.Properties.ValueMember = "CariGrupID";
 
             KasaGetir();
+
+            deIlkTarih.DateTime = Arama.IlkTarih;
+
+            if (AramaMiListeMi == NasilAcicak.Arama)
+            {
+                btnCariHrAcItem.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                btnCariKartAcItem.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                dropDownButton1Item.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+            else
+            {
+                btnCariSecItem.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
         }
 
         void KasaGetir()
@@ -69,7 +75,7 @@ namespace Aresv2.Cari.CariHr
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
-            if (Convert.ToInt32(gridView1.GetFocusedRowCellValue("Entegrasyon")) == Convert.ToInt32(clsTablolar.cari.CariHr.CariHrEntegrasyon.AlisFaturasi) || Convert.ToInt32(gridView1.GetFocusedRowCellValue("Entegrasyon")) == Convert.ToInt32(clsTablolar.cari.CariHr.CariHrEntegrasyon.SatisFaturasi))
+            if (Convert.ToInt32(gridView1.GetFocusedRowCellValue("Entegrasyon")) == Convert.ToInt32(clsTablolar.cari.CariHr.CariHrEntegrasyon.AlisFaturasi) || Convert.ToInt32(gridView1.GetFocusedRowCellValue("Entegrasyon")) == Convert.ToInt32(clsTablolar.cari.CariHr.CariHrEntegrasyon.SatisFaturasi) || Convert.ToInt32(gridView1.GetFocusedRowCellValue("Entegrasyon")) == Convert.ToInt32(clsTablolar.cari.CariHr.CariHrEntegrasyon.AlistanIadeFaturasi) || Convert.ToInt32(gridView1.GetFocusedRowCellValue("Entegrasyon")) == Convert.ToInt32(clsTablolar.cari.CariHr.CariHrEntegrasyon.SatistanIadeFaturasi))
             {
                 Fatura.frmFaturaDetay frm = new Fatura.frmFaturaDetay((int)gridView1.GetFocusedRowCellValue("EntegrasyonID"));
                 frm.MdiParent = this.MdiParent;
@@ -169,22 +175,12 @@ namespace Aresv2.Cari.CariHr
             frm.Show();
         }
 
-        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkedListBoxControl_IslemTipi_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
         {
 
         }

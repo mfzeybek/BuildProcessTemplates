@@ -217,7 +217,9 @@
     <Compile Include="Kasa\csKasaHareket.cs" />
     <Compile Include="Kasa\csKasaHareketArama.cs" />
     <Compile Include="Kasa\csKasaRapor.cs" />
+    <Compile Include="n11\csN11ApprovalStatus.cs" />
     <Compile Include="n11\csN11Kategori.cs" />
+    <Compile Include="n11\csN11KategoriOzellikleri.cs" />
     <Compile Include="n11\csN11Product.cs" />
     <Compile Include="n11\csn11ProductList.cs" />
     <Compile Include="Personel\csDisaridakiPersonel.cs" />

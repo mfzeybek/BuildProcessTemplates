@@ -124,6 +124,15 @@ namespace Aresv2.Stok
             HareketArama.StokGrupID = (int)lkpGrup.EditValue;
             HareketArama.StokAraGrupID = (int)lkpAraGrup.EditValue;
             HareketArama.StokAltGrupID = (int)lkpAltGrup.EditValue;
+
+            if (ucStokGruplari1.AhandaBuradakiler != null && ucStokGruplari1.AhandaBuradakiler.Count != 0)
+            {
+                HareketArama.SeciliGruplar = ucStokGruplari1.AhandaBuradakiler.ToArray();
+
+                //StokArama.SeciliGruplar = 
+            }
+            else
+                HareketArama.SeciliGruplar = null;
         }
 
         SqlTransaction TrGenel;
@@ -132,6 +141,7 @@ namespace Aresv2.Stok
             try
             {
                 Ver();
+
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();
                 gridControl1.DataSource = HareketArama.HareketleriGetir(SqlConnections.GetBaglanti(), TrGenel);
                 try
@@ -156,6 +166,7 @@ namespace Aresv2.Stok
 
         void gruplariYukle()
         {
+
             using (clsTablolar.Stok.csStokGrup StokGrup = new clsTablolar.Stok.csStokGrup(SqlConnections.GetBaglanti(), TrGenel, -1))
             {
                 TrGenel = SqlConnections.GetBaglanti().BeginTransaction();

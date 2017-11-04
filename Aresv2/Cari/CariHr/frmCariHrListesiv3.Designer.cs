@@ -28,8 +28,9 @@
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             this.monthEdit1 = new DevExpress.XtraScheduler.UI.MonthEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -42,7 +43,7 @@
             this.btnCariSec = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.btnCariHrAc = new DevExpress.XtraEditors.SimpleButton();
             this.btnCariKartAc = new DevExpress.XtraEditors.SimpleButton();
@@ -76,11 +77,11 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
+            this.btnCariSecItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnCariKartAcItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnCariHrAcItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dropDownButton1Item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.monthEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmCariHrListesiv3layoutControl1ConvertedLayout)).BeginInit();
@@ -117,10 +118,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariSecItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariKartAcItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariHrAcItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dropDownButton1Item)).BeginInit();
             this.SuspendLayout();
             // 
             // monthEdit1
@@ -231,7 +232,7 @@
             this.frmCariHrListesiv3layoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmCariHrListesiv3layoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.frmCariHrListesiv3layoutControl1ConvertedLayout.Name = "frmCariHrListesiv3layoutControl1ConvertedLayout";
-            this.frmCariHrListesiv3layoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1127, 563, 900, 800);
+            this.frmCariHrListesiv3layoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1119, 563, 900, 800);
             this.frmCariHrListesiv3layoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
             this.frmCariHrListesiv3layoutControl1ConvertedLayout.Size = new System.Drawing.Size(2721, 1393);
             this.frmCariHrListesiv3layoutControl1ConvertedLayout.TabIndex = 6;
@@ -667,10 +668,10 @@
             // layoutControlGroup5
             // 
             this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem13,
-            this.layoutControlItem14,
-            this.layoutControlItem15,
-            this.layoutControlItem16});
+            this.btnCariSecItem,
+            this.btnCariKartAcItem,
+            this.btnCariHrAcItem,
+            this.dropDownButton1Item});
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.OptionsItemText.TextToControlDistance = 6;
@@ -678,41 +679,41 @@
             this.layoutControlGroup5.Size = new System.Drawing.Size(2681, 72);
             this.layoutControlGroup5.TextVisible = false;
             // 
-            // layoutControlItem13
+            // btnCariSecItem
             // 
-            this.layoutControlItem13.Control = this.btnCariSec;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(665, 50);
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem13.TextVisible = false;
+            this.btnCariSecItem.Control = this.btnCariSec;
+            this.btnCariSecItem.Location = new System.Drawing.Point(0, 0);
+            this.btnCariSecItem.Name = "btnCariSecItem";
+            this.btnCariSecItem.Size = new System.Drawing.Size(665, 50);
+            this.btnCariSecItem.TextSize = new System.Drawing.Size(0, 0);
+            this.btnCariSecItem.TextVisible = false;
             // 
-            // layoutControlItem14
+            // btnCariKartAcItem
             // 
-            this.layoutControlItem14.Control = this.btnCariKartAc;
-            this.layoutControlItem14.Location = new System.Drawing.Point(665, 0);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(665, 50);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
+            this.btnCariKartAcItem.Control = this.btnCariKartAc;
+            this.btnCariKartAcItem.Location = new System.Drawing.Point(665, 0);
+            this.btnCariKartAcItem.Name = "btnCariKartAcItem";
+            this.btnCariKartAcItem.Size = new System.Drawing.Size(665, 50);
+            this.btnCariKartAcItem.TextSize = new System.Drawing.Size(0, 0);
+            this.btnCariKartAcItem.TextVisible = false;
             // 
-            // layoutControlItem15
+            // btnCariHrAcItem
             // 
-            this.layoutControlItem15.Control = this.btnCariHrAc;
-            this.layoutControlItem15.Location = new System.Drawing.Point(1330, 0);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(664, 50);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
+            this.btnCariHrAcItem.Control = this.btnCariHrAc;
+            this.btnCariHrAcItem.Location = new System.Drawing.Point(1330, 0);
+            this.btnCariHrAcItem.Name = "btnCariHrAcItem";
+            this.btnCariHrAcItem.Size = new System.Drawing.Size(664, 50);
+            this.btnCariHrAcItem.TextSize = new System.Drawing.Size(0, 0);
+            this.btnCariHrAcItem.TextVisible = false;
             // 
-            // layoutControlItem16
+            // dropDownButton1Item
             // 
-            this.layoutControlItem16.Control = this.dropDownButton1;
-            this.layoutControlItem16.Location = new System.Drawing.Point(1994, 0);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(665, 50);
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextVisible = false;
+            this.dropDownButton1Item.Control = this.dropDownButton1;
+            this.dropDownButton1Item.Location = new System.Drawing.Point(1994, 0);
+            this.dropDownButton1Item.Name = "dropDownButton1Item";
+            this.dropDownButton1Item.Size = new System.Drawing.Size(665, 50);
+            this.dropDownButton1Item.TextSize = new System.Drawing.Size(0, 0);
+            this.dropDownButton1Item.TextVisible = false;
             // 
             // frmCariHrListesiv3
             // 
@@ -764,10 +765,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariSecItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariKartAcItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariHrAcItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dropDownButton1Item)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,10 +821,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraLayout.LayoutControlItem btnCariSecItem;
+        private DevExpress.XtraLayout.LayoutControlItem btnCariKartAcItem;
+        private DevExpress.XtraLayout.LayoutControlItem btnCariHrAcItem;
+        private DevExpress.XtraLayout.LayoutControlItem dropDownButton1Item;
         private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
         private DevExpress.XtraEditors.LookUpEdit lkpKasa;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
