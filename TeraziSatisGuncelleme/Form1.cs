@@ -48,7 +48,7 @@ namespace TeraziSatisGuncelleme
                     label1.Text = "Güncellenecek Program Kavurma Makinası";
                     break;
                 case GuncellenecekProgram.Pdks:
-                    label1.Text = "PDKS Program Kavurma Makinası";
+                    label1.Text = "Güncellenecek Program PDKS";
                     break;
                 default:
                     break;

@@ -30,7 +30,8 @@ namespace PDKS
         {
             using (cmd = new SqlCommand(@"--declare @PersonelID int = 1
 select Top 1 Tur from hareketler where PersonelID = @PersonelID and CONVERT(date, Zaman)  = CONVERT(date, GETDATE())
-order by Zaman desc", Baglanti, Tr))
+order by Hareketler.ID desc
+--order by Zaman desc", Baglanti, Tr))
             {
                 cmd.Parameters.Add("@PersonelID", SqlDbType.Int).Value = PersonelID;
 
@@ -51,12 +52,12 @@ order by Zaman desc", Baglanti, Tr))
 
         public void HareketKaydet(SqlConnection Baglanti, SqlTransaction Tr, int PersonelID, Tur HareketTuru, int YerID)
         {
-            using (cmd = new SqlCommand("insert into Hareketler (PersonelID, Zaman, Tur, YerID) values (@PersonelID, @Zaman, @Tur, @YerID)", Baglanti, Tr))
+            using (cmd = new SqlCommand("insert into Hareketler (PersonelID, Zaman, Tur, YerID) values (@PersonelID, GETDATE(), @Tur, @YerID)", Baglanti, Tr))
             {
                 try
                 {
                     cmd.Parameters.Add("@PersonelID", SqlDbType.Int).Value = PersonelID;
-                    cmd.Parameters.Add("@Zaman", SqlDbType.DateTime).Value = DateTime.Now;
+                    //cmd.Parameters.Add("@Zaman", SqlDbType.DateTime).Value = DateTime.Now;
 
                     cmd.Parameters.Add("@Tur", SqlDbType.Int).Value = (int)HareketTuru;
 
