@@ -152,6 +152,7 @@
     <Compile Include="Ajanda\csNotArama.cs" />
     <Compile Include="Ajanda\csNotGuruplari.cs" />
     <Compile Include="Ajanda\csNotlar.cs" />
+    <Compile Include="Ayarlar\csAramaKriterleri.cs" />
     <Compile Include="Ayarlar\csAyarlar.cs" />
     <Compile Include="Ayarlar\csBarkodAyar.cs" />
     <Compile Include="Ayarlar\csBarkodNuVer.cs" />

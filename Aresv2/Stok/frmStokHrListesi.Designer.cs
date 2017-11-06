@@ -28,12 +28,12 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
             this.lkpAltGrup = new DevExpress.XtraEditors.LookUpEdit();
             this.frmStokHrListesilayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.ucStokGruplari1 = new Aresv2.ucStokGruplari();
             this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.cmbHizliTarih = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -57,7 +57,7 @@
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.btnHareketiAc = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.btnStokKartiniAc = new DevExpress.XtraEditors.SimpleButton();
             this.lkpAraGrup = new DevExpress.XtraEditors.LookUpEdit();
             this.lkpGrup = new DevExpress.XtraEditors.LookUpEdit();
@@ -108,6 +108,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lkpGrupitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.lkpAltGrupitem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -118,9 +119,7 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
-            this.ucStokGruplari1 = new Aresv2.ucStokGruplari();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
             ((System.ComponentModel.ISupportInitialize)(this.lkpAltGrup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmStokHrListesilayoutControl1ConvertedLayout)).BeginInit();
             this.frmStokHrListesilayoutControl1ConvertedLayout.SuspendLayout();
@@ -159,6 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpAltGrupitem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -169,7 +169,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // lkpAltGrup
@@ -215,12 +214,23 @@
             this.tabbedControlGroup1,
             this.layoutControlItem12});
             this.frmStokHrListesilayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
-            this.frmStokHrListesilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.frmStokHrListesilayoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2);
             this.frmStokHrListesilayoutControl1ConvertedLayout.Name = "frmStokHrListesilayoutControl1ConvertedLayout";
             this.frmStokHrListesilayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(512, 60, 1401, 1148);
             this.frmStokHrListesilayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
             this.frmStokHrListesilayoutControl1ConvertedLayout.Size = new System.Drawing.Size(959, 611);
             this.frmStokHrListesilayoutControl1ConvertedLayout.TabIndex = 6;
+            // 
+            // ucStokGruplari1
+            // 
+            this.ucStokGruplari1.AhandaBuradakiler = null;
+            this.ucStokGruplari1.Location = new System.Drawing.Point(86, 301);
+            this.ucStokGruplari1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucStokGruplari1.MinimumSize = new System.Drawing.Size(50, 52);
+            this.ucStokGruplari1.Name = "ucStokGruplari1";
+            this.ucStokGruplari1.Size = new System.Drawing.Size(167, 96);
+            this.ucStokGruplari1.TabIndex = 18;
+            this.ucStokGruplari1.YeniGruplama = null;
             // 
             // btnTemizle
             // 
@@ -412,7 +422,7 @@
             // comboBoxEdit1
             // 
             this.comboBoxEdit1.Location = new System.Drawing.Point(86, 61);
-            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEdit1.MenuManager = this.barManager1;
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -424,7 +434,7 @@
             // checkEdit1
             // 
             this.checkEdit1.Location = new System.Drawing.Point(13, 85);
-            this.checkEdit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkEdit1.Margin = new System.Windows.Forms.Padding(2);
             this.checkEdit1.MenuManager = this.barManager1;
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "Maliyet Fiyatı Gelsin Mi";
@@ -436,7 +446,7 @@
             // 
             this.btnHareketiAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHareketiAc.Location = new System.Drawing.Point(278, 6);
-            this.btnHareketiAc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHareketiAc.Margin = new System.Windows.Forms.Padding(2);
             this.btnHareketiAc.Name = "btnHareketiAc";
             this.btnHareketiAc.Size = new System.Drawing.Size(336, 22);
             this.btnHareketiAc.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
@@ -451,7 +461,7 @@
             this.dropDownButton1.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
             this.dropDownButton1.DropDownControl = this.popupMenu1;
             this.dropDownButton1.Location = new System.Drawing.Point(618, 6);
-            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(2);
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(335, 22);
             this.dropDownButton1.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
@@ -474,7 +484,7 @@
             // 
             this.btnStokKartiniAc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStokKartiniAc.Location = new System.Drawing.Point(6, 6);
-            this.btnStokKartiniAc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStokKartiniAc.Margin = new System.Windows.Forms.Padding(2);
             this.btnStokKartiniAc.Name = "btnStokKartiniAc";
             this.btnStokKartiniAc.Size = new System.Drawing.Size(268, 22);
             this.btnStokKartiniAc.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
@@ -557,7 +567,7 @@
             this.txtStokKodu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStokKodu.Location = new System.Drawing.Point(86, 85);
-            this.txtStokKodu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStokKodu.Margin = new System.Windows.Forms.Padding(2);
             this.txtStokKodu.Name = "txtStokKodu";
             this.txtStokKodu.Size = new System.Drawing.Size(167, 20);
             this.txtStokKodu.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
@@ -585,7 +595,7 @@
             this.txtStokAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStokAdi.Location = new System.Drawing.Point(86, 61);
-            this.txtStokAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStokAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtStokAdi.MenuManager = this.barManager1;
             this.txtStokAdi.Name = "txtStokAdi";
             this.txtStokAdi.Size = new System.Drawing.Size(167, 20);
@@ -612,7 +622,7 @@
             // btnFiltrele
             // 
             this.btnFiltrele.Location = new System.Drawing.Point(6, 559);
-            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrele.Name = "btnFiltrele";
             this.btnFiltrele.Size = new System.Drawing.Size(144, 46);
             this.btnFiltrele.StyleController = this.frmStokHrListesilayoutControl1ConvertedLayout;
@@ -635,10 +645,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.gridControl1.Location = new System.Drawing.Point(269, 32);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(684, 573);
             this.gridControl1.TabIndex = 17;
@@ -1047,6 +1057,18 @@
             this.lkpAltGrupitem.TextLocation = DevExpress.Utils.Locations.Left;
             this.lkpAltGrupitem.TextSize = new System.Drawing.Size(67, 13);
             // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.ucStokGruplari1;
+            this.layoutControlItem5.CustomizationFormText = "<";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 240);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(153, 100);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(244, 100);
+            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem5.Text = "Grubu";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(67, 13);
+            // 
             // layoutControlGroup5
             // 
             this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -1143,29 +1165,6 @@
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
-            // ucStokGruplari1
-            // 
-            this.ucStokGruplari1.AhandaBuradakiler = null;
-            this.ucStokGruplari1.Location = new System.Drawing.Point(86, 301);
-            this.ucStokGruplari1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ucStokGruplari1.MinimumSize = new System.Drawing.Size(50, 52);
-            this.ucStokGruplari1.Name = "ucStokGruplari1";
-            this.ucStokGruplari1.Size = new System.Drawing.Size(167, 96);
-            this.ucStokGruplari1.TabIndex = 18;
-            this.ucStokGruplari1.YeniGruplama = null;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.ucStokGruplari1;
-            this.layoutControlItem5.CustomizationFormText = "<";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 240);
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(153, 100);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(244, 100);
-            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem5.Text = "Grubu";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(67, 13);
-            // 
             // frmStokHrListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1176,7 +1175,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmStokHrListesi";
             this.Text = "Stok Hareketleri";
             this.Load += new System.EventHandler(this.frmStokHrListesi_Load);
@@ -1218,6 +1217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpAltGrupitem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -1228,7 +1228,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
