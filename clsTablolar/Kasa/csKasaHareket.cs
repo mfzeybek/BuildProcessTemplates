@@ -117,7 +117,6 @@ namespace clsTablolar.Kasa
             }
 
             //cmd.Parameters.Add("@KasaID", SqlDbType.Int).Value;
-
             return KasaHrID;
         }
 

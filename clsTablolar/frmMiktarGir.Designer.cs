@@ -51,9 +51,11 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(11, 0);
+            this.labelControl1.Location = new System.Drawing.Point(7, 0);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(228, 89);

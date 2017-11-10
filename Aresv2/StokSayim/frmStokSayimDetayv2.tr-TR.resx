@@ -155,7 +155,7 @@
   <data name="deSayimTarih.Properties.AutoHeight" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="DevExpress.XtraEditors.v17.1" name="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <assembly alias="DevExpress.XtraEditors.v17.1" name="DevExpress.XtraEditors.v17.1, Version=17.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="deSayimTarih.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v17.1">
     <value>Default</value>
   </data>
@@ -279,7 +279,7 @@
   <data name="gcSayim.EmbeddedNavigator.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <assembly alias="DevExpress.Data.v17.1" name="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <assembly alias="DevExpress.Data.v17.1" name="DevExpress.Data.v17.1, Version=17.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="gcSayim.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v17.1">
     <value>Default</value>
   </data>
@@ -305,7 +305,7 @@
   <data name="gcSayim.EmbeddedNavigator.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <assembly alias="DevExpress.Utils.v17.1" name="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <assembly alias="DevExpress.Utils.v17.1" name="DevExpress.Utils.v17.1, Version=17.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="gcSayim.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v17.1">
     <value>None</value>
   </data>

@@ -1141,6 +1141,29 @@ namespace Aresv2.Stok
 
         }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            clsTablolar.Ayarlar.csAramaKriterleri kriter = new clsTablolar.Ayarlar.csAramaKriterleri();
+            foreach (DevExpress.XtraLayout.LayoutControlItem item in layoutControlGroup6.Items)
+            {
+                string Adi = item.Control.Name;
+                string degeri = item.Control.Text;
+                if (item.Control.GetType() == typeof(DevExpress.XtraEditors.TextEdit))
+                {
+                    degeri = ((DevExpress.XtraEditors.TextEdit)item.Control).EditValue.ToString();
+                }
+                else if (item.Control.GetType() == typeof(DevExpress.XtraEditors.ComboBoxEdit))
+                {
+                    degeri = ((DevExpress.XtraEditors.ComboBoxEdit)item.Control).SelectedIndex.ToString();
+                }
+                else if (item.Control.GetType() == typeof(DevExpress.XtraEditors.LookUpEdit))
+                {
+                    degeri = ((DevExpress.XtraEditors.LookUpEdit)item.Control).EditValue.ToString();
+                }
+                kriter.xmlolustur(Adi, degeri);
+            }
+        }
+
         bool KontrolNumarasiTutuyorMU(string BarkodNumarasiOlmaIhtimaliOlanNumara) //şimdilik sadece ean 13 ve ean 8 de kontrol etsin hatta her ihtimale karşı bu kontrolü kapatmada olsun
         {
             string numara = BarkodNumarasiOlmaIhtimaliOlanNumara.Substring(0, BarkodNumarasiOlmaIhtimaliOlanNumara.Length - 1);

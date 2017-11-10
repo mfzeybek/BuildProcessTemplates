@@ -87,6 +87,7 @@ namespace clsTablolar.Stok
         private bool _StokGrupHepsiniGetir;
 
 
+
         public bool SadeceFiyatiOlanlar
         {
             get { return _SadeceFiyatiOlanlar; }
@@ -849,6 +850,51 @@ WHERE     (s.Silindi = 'false') ";
             dt_FiyatListesi.Columns["Fiyat"].ColumnName = cmb.ExecuteScalar().ToString();
 
             return dt_FiyatListesi;
+        }
+
+        public void xmlKaydet()
+        {
+            Ayarlar.csAramaKriterleri kriterler = new Ayarlar.csAramaKriterleri();
+
+            //_StokAramaID
+            kriterler.xmlolustur("_Aktif", _Aktif.ToString());
+
+            _StokKodu = string.Empty;
+            _StokAdi = string.Empty;
+            _StokFiyatTanimIDleri = string.Empty;
+            _StokFiyatTanimAdlari = string.Empty;
+            _OzelKod1 = string.Empty;
+            _OzelKod2 = string.Empty;
+            _OzelKod3 = string.Empty;
+            _StokGrupID = -1;
+            _StokAraGrupID = -1;
+            _StokAltGrupID = -1;
+            _Aciklama = string.Empty;
+            _Barkod = string.Empty;
+            _StokBirimID = -1;
+            _RafYeriAciklama = string.Empty;
+            _UrunTanitimdaGoster = 0; // sıfır stok listede hepsi manasına geliyor
+
+            _EMagazaErisimi = 0;
+            _Garanti = string.Empty;
+            _Desi = string.Empty;
+            _KisaAciklama = string.Empty;
+            _DetayliUrunBilgisi = string.Empty;
+            _HemenAlKategoriID = -1;
+            _HemenAlID = string.Empty;
+            _HemenAlKategoriGuncellenmesin = 0;
+
+            _HemenAlDrum = string.Empty;
+            _HemenAlSira = string.Empty;
+            _FotoOzellikleri = enumFotoOzellikleri.Hepsi;
+            _StokSayimGrubuID = -1;
+            _OlmasiGerekenMiktardanAzOlanlar = false;
+            _StokTipi = -1;
+            _SayimID = -1;
+            _TumFotograflariYukle = false;
+            _N11Entegrasyonu = n11entegrasyon.Hepsi;
+
+            kriterler.xml
         }
     }
 }
