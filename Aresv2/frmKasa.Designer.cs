@@ -54,10 +54,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(289, 12);
+            this.gridControl1.Location = new System.Drawing.Point(298, 24);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1615, 1149);
+            this.gridControl1.Size = new System.Drawing.Size(1594, 1125);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -82,17 +82,17 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(94, 12);
+            this.textEdit1.Location = new System.Drawing.Point(106, 24);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(191, 32);
+            this.textEdit1.Size = new System.Drawing.Size(184, 34);
             this.textEdit1.StyleController = this.frmKasalayoutControl1ConvertedLayout;
             this.textEdit1.TabIndex = 2;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 1129);
+            this.simpleButton1.Location = new System.Drawing.Point(24, 1107);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(273, 32);
+            this.simpleButton1.Size = new System.Drawing.Size(266, 42);
             this.simpleButton1.StyleController = this.frmKasalayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Filtrele";
@@ -115,18 +115,18 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.simpleButton1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 1117);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 1083);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(277, 36);
+            this.layoutControlItem2.Size = new System.Drawing.Size(274, 50);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(277, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(274, 0);
             this.layoutControlItem1.Name = "gridControl1item";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1619, 1153);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1602, 1133);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -135,16 +135,16 @@
             this.layoutControlItem3.Control = this.textEdit1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(277, 36);
+            this.layoutControlItem3.Size = new System.Drawing.Size(274, 42);
             this.layoutControlItem3.Text = "Kasa Nu";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(76, 25);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 36);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 42);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(277, 1081);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(274, 1041);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmKasa
@@ -155,6 +155,7 @@
             this.Controls.Add(this.frmKasalayoutControl1ConvertedLayout);
             this.Name = "frmKasa";
             this.Text = "frmKasa";
+            this.Load += new System.EventHandler(this.frmKasa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmKasalayoutControl1ConvertedLayout)).EndInit();

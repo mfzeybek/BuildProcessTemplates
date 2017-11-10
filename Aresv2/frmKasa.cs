@@ -16,5 +16,12 @@ namespace Aresv2
         {
             InitializeComponent();
         }
+
+        private void frmKasa_Load(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
 }
